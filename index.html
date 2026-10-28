@@ -381,6 +381,28 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
   .vc-sec { padding-block: 64px; }
 }
 @media (max-width: 560px) { .vc-form { grid-template-columns: minmax(0, 1fr); } .vc-loc { grid-template-columns: minmax(0, 1fr); } }
+/* ---- 科技縮圖 ---- */
+.thumb, .va-about-img, .vc-about-img { height: auto; }
+.va-card { overflow: hidden; }
+.va-card .thumb { display: block; margin: -28px -28px 6px; width: calc(100% + 56px); max-width: none; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .5s; }
+.va-card.wide .thumb { aspect-ratio: 16 / 6.4; }
+.va-card:hover .thumb { transform: scale(1.03); }
+.va-about-side { display: grid; gap: 20px; }
+.va-about-img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 10px; display: block; }
+.va-cta { background: linear-gradient(100deg, rgba(8,73,127,.92) 0%, rgba(11,107,203,.8) 60%, rgba(21,163,154,.75) 130%), url("assets/thumbs/future.svg") center / cover; }
+.vb-cell .thumb { display: block; margin: -26px -26px 4px; width: calc(100% + 52px); max-width: none; aspect-ratio: 16 / 8; object-fit: cover; border-bottom: 1px solid var(--b-line); opacity: .9; transition: opacity .25s; }
+.vb-cell:hover .thumb { opacity: 1; }
+.vb-cell.big .bg-img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; opacity: .55; }
+.vb-cta { background: linear-gradient(180deg, var(--b-bg), rgba(6,13,24,.55) 50%, var(--b-bg)), url("assets/thumbs/future.svg") center / cover; }
+.vc-row { grid-template-columns: 168px minmax(0, 3fr) minmax(0, 5fr) 56px; }
+.vc-row .thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; filter: grayscale(1) contrast(1.1); transition: filter .3s; display: block; }
+.vc-row:hover .thumb { filter: none; }
+.vc-about-img { margin-top: 40px; width: 100%; aspect-ratio: 21 / 9; object-fit: cover; display: block; filter: grayscale(1) contrast(1.05); }
+@media (max-width: 900px) {
+  .vc-row { grid-template-columns: minmax(0, 1fr) 40px; }
+  .vc-row .thumb { grid-column: 1 / -1; grid-row: 1; aspect-ratio: 16 / 7; }
+  .vc-row h3 { grid-row: 2; } .vc-row .arr { grid-row: 2; } .vc-row p { grid-row: 3; }
+}
 </style>
 </head>
 <body data-v="a">
@@ -426,11 +448,12 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 
   <section class="va-sec soft" id="va-about">
     <div class="wrap va-about">
+      <div class="va-about-side"><img class="va-about-img" src="assets/thumbs/datacenter.svg" alt="資料中心機房" loading="lazy" width="800" height="500">
       <div class="va-facts">
         <div><b>2016</b><span>成立年份，深耕企業 IT 服務</span></div>
         <div><b>5 大</b><span>解決方案：直播、網路、架構、整合、威脅情報</span></div>
         <div><b>新加坡 · 台灣</b><span>雙據點，服務全球客戶</span></div>
-      </div>
+      </div></div>
       <div class="text">
         <span class="va-kicker">ABOUT US</span>
         <h2 class="va-h2">關於我們</h2>
@@ -450,31 +473,31 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
       </div>
       <div class="va-sol">
         <article class="va-card wide">
-          <div class="ic"><svg class="ico"><use href="#i-live"/></svg></div>
+          <img class="thumb" src="assets/thumbs/live.svg" alt="直播示意圖" loading="lazy" width="800" height="500">
           <h3>直播</h3>
           <p>透過 MOOTECH 的直播解決方案，您可以接觸到全球受眾，提升品牌曝光度與互動率。我們可自訂的平台讓您根據自身需求打造專屬直播內容，無論是虛擬活動、產品發表會或其他任何形式的直播，都能輕鬆進行。MOOTECH 幫助您將直播提升至全新高度。</p>
           <a href="#va-contact" data-scroll>了解更多 →</a>
         </article>
         <article class="va-card">
-          <div class="ic"><svg class="ico"><use href="#i-net"/></svg></div>
+          <img class="thumb" src="assets/thumbs/network.svg" alt="網路連線示意圖" loading="lazy" width="800" height="500">
           <h3>網路連線</h3>
           <p>我們提供的網路與連線解決方案具備高度靈活且強大的連接能力，並提供專業的諮詢與支援，以保護您的業務。</p>
           <a href="#va-contact" data-scroll>了解更多 →</a>
         </article>
         <article class="va-card">
-          <div class="ic"><svg class="ico"><use href="#i-arch"/></svg></div>
+          <img class="thumb" src="assets/thumbs/architecture.svg" alt="網路架構示意圖" loading="lazy" width="800" height="500">
           <h3>網路架構</h3>
           <p>MOOTECH 團隊將依您的需求設計架構，協助您選擇符合業務需求與預算的最佳化網路解決方案。</p>
           <a href="#va-contact" data-scroll>了解更多 →</a>
         </article>
         <article class="va-card">
-          <div class="ic"><svg class="ico"><use href="#i-int"/></svg></div>
+          <img class="thumb" src="assets/thumbs/integration.svg" alt="系統整合示意圖" loading="lazy" width="800" height="500">
           <h3>系統整合</h3>
           <p>我們為客戶提供最佳解決方案，將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。</p>
           <a href="#va-contact" data-scroll>了解更多 →</a>
         </article>
         <article class="va-card">
-          <div class="ic"><svg class="ico"><use href="#i-shield"/></svg></div>
+          <img class="thumb" src="assets/thumbs/threat.svg" alt="威脅情報庫示意圖" loading="lazy" width="800" height="500">
           <h3>威脅情報庫</h3>
           <p>我們提供以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。</p>
           <a href="#va-contact" data-scroll>了解更多 →</a>
@@ -593,6 +616,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
       <div class="vb-sec-head"><div><span class="vb-path">~/mootech/solutions</span><h2 class="vb-h2">解決方案</h2></div><p>五個服務模組，可獨立導入，也能組合成完整的企業 IT 基礎。</p></div>
       <div class="vb-bento">
         <article class="vb-cell big">
+          <img class="bg-img" src="assets/thumbs/live.svg" alt="" loading="lazy">
           <canvas class="fill" data-art="wave" aria-hidden="true"></canvas>
           <div class="body">
             <span class="slug">svc/live-streaming</span>
@@ -602,28 +626,28 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
           </div>
         </article>
         <article class="vb-cell">
-          <svg class="ico"><use href="#i-net"/></svg>
+          <img class="thumb" src="assets/thumbs/network.svg" alt="網路連線示意圖" loading="lazy" width="800" height="500">
           <span class="slug">svc/connectivity</span>
           <h3>網路連線</h3>
           <p>高度靈活且強大的連接能力，並提供專業諮詢與支援，保護您的業務。</p>
           <a class="more" href="#vb-contact" data-scroll>了解更多 →</a>
         </article>
         <article class="vb-cell">
-          <svg class="ico"><use href="#i-arch"/></svg>
+          <img class="thumb" src="assets/thumbs/architecture.svg" alt="網路架構示意圖" loading="lazy" width="800" height="500">
           <span class="slug">svc/architecture</span>
           <h3>網路架構</h3>
           <p>依需求設計架構，選擇符合業務與預算的最佳化網路方案。</p>
           <a class="more" href="#vb-contact" data-scroll>了解更多 →</a>
         </article>
         <article class="vb-cell half">
-          <svg class="ico"><use href="#i-int"/></svg>
+          <img class="thumb" src="assets/thumbs/integration.svg" alt="系統整合示意圖" loading="lazy" width="800" height="500">
           <span class="slug">svc/integration</span>
           <h3>系統整合</h3>
           <p>將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。</p>
           <a class="more" href="#vb-contact" data-scroll>了解更多 →</a>
         </article>
         <article class="vb-cell half">
-          <svg class="ico"><use href="#i-shield"/></svg>
+          <img class="thumb" src="assets/thumbs/threat.svg" alt="威脅情報庫示意圖" loading="lazy" width="800" height="500">
           <span class="slug">svc/threat-intel</span>
           <h3>威脅情報庫</h3>
           <p>以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保網路與系統安全。</p>
@@ -718,6 +742,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
           <p>在 MOOTECH，我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，這有助於我們主動應對潛在的安全問題。我們秉持前瞻性的 IT 解決方案理念，憑藉精湛的技術實力和對卓越的不懈追求，為全球客戶提供穩定且可擴展的創新解決方案。</p>
           <p>從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的解決方案。我們的服務同時涵蓋免費威脅情報庫，讓更多企業能及早掌握風險。</p>
         </div>
+        <img class="vc-about-img" src="assets/thumbs/datacenter.svg" alt="資料中心機房" loading="lazy" width="800" height="500">
       </div>
     </div>
   </section>
@@ -727,11 +752,11 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
       <div class="vc-sidehead"><span class="vc-label">Solutions</span><h2>解決方案</h2></div>
       <div class="vc-main">
         <div class="vc-sol">
-          <a class="vc-row" href="#vc-contact" data-scroll><h3><small>Live Streaming</small>直播</h3><p>接觸全球受眾，提升品牌曝光度與互動率。可自訂的平台讓您打造專屬直播內容，虛擬活動、產品發表會或任何形式的直播都能輕鬆進行。</p><span class="arr">→</span></a>
-          <a class="vc-row" href="#vc-contact" data-scroll><h3><small>Connectivity</small>網路連線</h3><p>高度靈活且強大的網路連接能力，並提供專業的諮詢與支援，以保護您的業務。</p><span class="arr">→</span></a>
-          <a class="vc-row" href="#vc-contact" data-scroll><h3><small>Architecture</small>網路架構</h3><p>依您的需求設計架構，協助選擇符合業務需求與預算的最佳化網路解決方案。</p><span class="arr">→</span></a>
-          <a class="vc-row" href="#vc-contact" data-scroll><h3><small>Integration</small>系統整合</h3><p>將市場上多個 IT 系統、硬體與軟體連接成一個協調一致、操作流暢的整體。</p><span class="arr">→</span></a>
-          <a class="vc-row" href="#vc-contact" data-scroll><h3><small>Threat Intelligence</small>威脅情報庫</h3><p>以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。</p><span class="arr">→</span></a>
+          <a class="vc-row" href="#vc-contact" data-scroll><img class="thumb" src="assets/thumbs/live.svg" alt="直播示意圖" loading="lazy" width="800" height="500"><h3><small>Live Streaming</small>直播</h3><p>接觸全球受眾，提升品牌曝光度與互動率。可自訂的平台讓您打造專屬直播內容，虛擬活動、產品發表會或任何形式的直播都能輕鬆進行。</p><span class="arr">→</span></a>
+          <a class="vc-row" href="#vc-contact" data-scroll><img class="thumb" src="assets/thumbs/network.svg" alt="網路連線示意圖" loading="lazy" width="800" height="500"><h3><small>Connectivity</small>網路連線</h3><p>高度靈活且強大的網路連接能力，並提供專業的諮詢與支援，以保護您的業務。</p><span class="arr">→</span></a>
+          <a class="vc-row" href="#vc-contact" data-scroll><img class="thumb" src="assets/thumbs/architecture.svg" alt="網路架構示意圖" loading="lazy" width="800" height="500"><h3><small>Architecture</small>網路架構</h3><p>依您的需求設計架構，協助選擇符合業務需求與預算的最佳化網路解決方案。</p><span class="arr">→</span></a>
+          <a class="vc-row" href="#vc-contact" data-scroll><img class="thumb" src="assets/thumbs/integration.svg" alt="系統整合示意圖" loading="lazy" width="800" height="500"><h3><small>Integration</small>系統整合</h3><p>將市場上多個 IT 系統、硬體與軟體連接成一個協調一致、操作流暢的整體。</p><span class="arr">→</span></a>
+          <a class="vc-row" href="#vc-contact" data-scroll><img class="thumb" src="assets/thumbs/threat.svg" alt="威脅情報庫示意圖" loading="lazy" width="800" height="500"><h3><small>Threat Intelligence</small>威脅情報庫</h3><p>以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。</p><span class="arr">→</span></a>
         </div>
       </div>
     </div>
