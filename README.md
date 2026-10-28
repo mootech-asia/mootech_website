@@ -9,7 +9,7 @@
 | C 瑞士網格 | 純白、巨型字體、12 欄網格、單一青綠色 | 品牌辨識度、國際感，不依賴照片 |
 
 - 切換方式：右側按鈕、鍵盤 `1` `2` `3`，或網址 `#design-a` / `#design-b` / `#design-c`
-- 照片：放進 `assets/photos/`（檔名見該資料夾 README）就會自動套用，沒有照片的位置會退回 `assets/thumbs/` 插圖
+- 照片：原始檔在 `assets/photos-src/`，網站使用 `assets/photos/` 的 WebP（見下方「效能」）
 - 中英切換：右上角 EN / 中文，翻譯字典在 `index.html` 的 `EN` 物件
 - 響應式：桌機、平板、手機皆支援，手機版有漢堡選單
 - 首頁動態視覺（走廊、節點網路、直播波形、地圖）為程式繪製
@@ -21,3 +21,12 @@
 部署於 GitHub Pages：https://mootech-asia.github.io/mootech_website/
 
 推送到 `main` 或 `claude/inspiring-hypatia-rpjq0j` 後，GitHub Actions（`.github/workflows/deploy-pages.yml`）會自動部署。
+
+## 效能
+
+- 動畫：畫布只在畫面上看得到時繪製，並限制幀率（走廊 24fps、節點與波形 30fps）；被照片蓋住或捲出畫面就停止。CPU 核心數或記憶體 ≤ 4、或開啟省流量模式時自動降載
+- 圖片：WebP 多尺寸（`srcset`），全部延遲載入，沒在看的版型不下載
+- 換照片：把 JPG 放進 `assets/photos-src/<a|b|c>/`，執行 `python3 tools/optimize-images.py` 重新產生 WebP
+- 字型：思源黑體只下載頁面用到的字（`index.html` 中 Noto Sans TC 連結的 `text` 參數）；改動中文內容後需重新產生
+- 動畫只動 transform / opacity；畫面外的區塊延後渲染（content-visibility）
+- 支援 `prefers-reduced-motion`：系統開啟「減少動態」時停止所有動畫

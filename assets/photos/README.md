@@ -7,4 +7,4 @@
 - B：`3d-*` 解決方案全景分頁
 - C：`field-*` 服務場景橫向圖帶（黑白）
 
-換圖時用相同檔名覆蓋即可。照片缺漏時，解決方案與關於我們會自動退回 `assets/thumbs/` 的插圖。
+這裡是自動產生的 WebP，請勿手動編輯。換圖時把 JPG 用相同檔名放進 `assets/photos-src/<a|b|c>/`，再執行 `python3 tools/optimize-images.py`。照片缺漏時，解決方案與關於我們會自動退回 `assets/thumbs/` 的插圖。
