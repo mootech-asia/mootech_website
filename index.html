@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MOOTECH 官網</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="MOOTECH 成立於 2016 年，專注於直播、網路連線、網路架構、系統整合與威脅情報庫等企業 IT 解決方案，據點位於新加坡與台灣。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<style>
+/*
+  三個版型各自是獨立的視覺世界（刻意單一主題，不跟隨系統深淺色）：
+  A 企業信賴：延續原站藍白，資料中心走廊主視覺，穩重、清楚、易信任。
+  B 網路維運中心：深色主控台語彙，節點/監控/等寬字，展示技術實力。
+  C 瑞士網格：純白、巨型字體、嚴格網格、單一品牌青綠色，不靠照片。
+*/
+:root {
+  --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --latin-a: "Manrope", "Noto Sans TC", system-ui, sans-serif;
+  --latin-c: "Archivo", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
+
+  /* A 企業信賴 */
+  --a-bg: #ffffff; --a-soft: #f2f5f9; --a-ink: #142033; --a-muted: #5a6779;
+  --a-line: #dde3eb; --a-blue: #0b6bcb; --a-blue-deep: #08497f; --a-teal: #15a39a;
+
+  /* B 網路維運中心 */
+  --b-bg: #060d18; --b-panel: #0b1626; --b-line: #1a2a40; --b-ink: #e3ecf7;
+  --b-muted: #8193ab; --b-cyan: #3ad0e6; --b-blue: #3b82f6; --b-ok: #4ade80;
+
+  /* C 瑞士網格 */
+  --c-bg: #ffffff; --c-ink: #0e1116; --c-muted: #5d636b; --c-line: #0e1116;
+  --c-hair: #d9dcdf; --c-accent: #00a19a; --c-accent-ink: #ffffff;
+
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body { margin: 0; font-family: var(--sans); background: var(--page-bg, #fff); color: var(--page-fg, #142033); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body[data-v="a"] { --page-bg: var(--a-bg); --page-fg: var(--a-ink); --band: var(--a-bg); }
+body[data-v="b"] { --page-bg: var(--b-bg); --page-fg: var(--b-ink); --band: var(--b-bg); color-scheme: dark; }
+body[data-v="c"] { --page-bg: var(--c-bg); --page-fg: var(--c-ink); --band: var(--c-bg); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--band); }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: inherit; }
+button, input, textarea { font: inherit; }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ico { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.map { width: 100%; height: auto; display: block; }
+.form-note { font-size: .875rem; min-height: 1.4em; }
+
+/* ============ 版型切換器 ============ */
+.switcher {
+  position: fixed; z-index: 100;
+  right: calc(16px + env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%);
+  display: flex; flex-direction: column; gap: 6px; padding: 10px 8px;
+  background: #0f1724; color: #e6edf6; border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(5, 10, 20, .35), 0 0 0 1px rgba(255,255,255,.08) inset;
+  font-family: var(--sans);
+}
+.switcher .sw-label { font-size: 11px; letter-spacing: .14em; text-align: center; color: #93a3b8; padding-bottom: 2px; }
+.switcher button {
+  appearance: none; border: 0; cursor: pointer; width: 54px; padding: 8px 0 7px; border-radius: 12px;
+  background: transparent; color: #c9d4e2; display: grid; justify-items: center; gap: 2px;
+  transition: background .2s, color .2s;
+}
+.switcher button b { font: 800 18px/1 var(--latin-a); }
+.switcher button span { font-size: 11px; line-height: 1.2; }
+.switcher button:hover { background: rgba(255,255,255,.08); }
+.switcher button[aria-pressed="true"] { background: #ffffff; color: #0f1724; }
+.switcher .sw-tip { position: absolute; right: calc(100% + 10px); top: 50%; transform: translateY(-50%); width: 210px; padding: 10px 12px; border-radius: 10px; background: #0f1724; color: #e6edf6; font-size: 12.5px; line-height: 1.55; opacity: 0; pointer-events: none; transition: opacity .2s; box-shadow: 0 8px 24px rgba(5,10,20,.3); }
+.switcher .sw-tip strong { display: block; font-size: 13.5px; margin-bottom: 2px; }
+.switcher:hover .sw-tip, .switcher:focus-within .sw-tip { opacity: 1; }
+@media (max-width: 720px) {
+  .switcher { top: auto; transform: none; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); flex-direction: row; align-items: center; padding: 6px; border-radius: 16px; }
+  .switcher .sw-label { writing-mode: vertical-rl; padding: 0 2px; letter-spacing: .1em; }
+  .switcher button { width: 50px; }
+  .switcher .sw-tip { display: none; }
+}
+
+/* ===================================================== */
+/* A 企業信賴                                             */
+/* ===================================================== */
+.va { background: var(--a-bg); color: var(--a-ink); font-size: 16px; line-height: 1.75; }
+.va-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(255,255,255,.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--a-line); }
+.va-head .wrap { display: flex; align-items: center; gap: 32px; height: 68px; }
+.va-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font: 800 19px/1 var(--latin-a); letter-spacing: .04em; color: var(--a-ink); }
+.va-logo svg { width: 34px; height: 34px; }
+.va-nav { display: flex; gap: 28px; margin-left: auto; font-size: 15px; }
+.va-nav a { text-decoration: none; color: var(--a-muted); }
+.va-nav a:hover { color: var(--a-blue); }
+.va-lang { font: 700 13px/1 var(--latin-a); border: 1px solid var(--a-line); border-radius: 999px; padding: 8px 12px; color: var(--a-muted); background: none; }
+.va-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 6px; background: var(--a-blue); color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; border: 0; cursor: pointer; transition: background .2s; }
+.va-btn:hover { background: var(--a-blue-deep); }
+.va-btn.ghost { background: transparent; border: 1px solid rgba(255,255,255,.55); }
+.va-btn.ghost:hover { background: rgba(255,255,255,.12); }
+.va-hero { position: relative; background: #05070c; color: #fff; overflow: hidden; }
+.va-hero .wrap { position: relative; padding-block: 132px 120px; text-align: center; display: grid; justify-items: center; gap: 18px; }
+.va-hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 70% at 50% 45%, rgba(5,7,12,.15), rgba(5,7,12,.75)); pointer-events: none; }
+.va-hero .wrap { z-index: 1; }
+.va-eyebrow { font: 700 13px/1 var(--latin-a); letter-spacing: .28em; color: #9cc8f5; }
+.va-hero h1 { font: 800 clamp(44px, 8vw, 84px)/1 var(--latin-a); letter-spacing: .08em; }
+.va-hero p { font-size: clamp(17px, 2.2vw, 22px); color: #d5e2f1; letter-spacing: .08em; }
+.va-hero .actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 14px; }
+.va-sec { padding-block: 96px; }
+.va-sec.soft { background: var(--a-soft); }
+.va-h2 { font-size: clamp(26px, 3.2vw, 34px); font-weight: 700; color: var(--a-blue); letter-spacing: .04em; }
+.va-kicker { font: 700 12px/1 var(--latin-a); letter-spacing: .24em; color: var(--a-teal); margin-bottom: 12px; display: block; }
+.va-about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; align-items: start; }
+.va-facts { display: grid; gap: 1px; background: var(--a-line); border: 1px solid var(--a-line); border-radius: 10px; overflow: hidden; }
+.va-facts div { background: var(--a-bg); padding: 22px 24px; display: grid; gap: 4px; }
+.va-facts b { font: 800 30px/1.1 var(--latin-a); color: var(--a-blue); }
+.va-facts span { color: var(--a-muted); font-size: 14.5px; }
+.va-about .text { display: grid; gap: 18px; max-width: 62ch; color: #2c394c; }
+.va-about .text .va-h2 { margin-bottom: 6px; }
+.va-sol-head { text-align: center; display: grid; gap: 10px; justify-items: center; margin-bottom: 44px; }
+.va-sol-head p { color: var(--a-muted); max-width: 52ch; }
+.va-sol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.va-card { border: 1px solid var(--a-line); border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 12px; background: var(--a-bg); transition: box-shadow .25s, transform .25s, border-color .25s; }
+.va-card:hover { box-shadow: 0 14px 36px rgba(11,107,203,.12); transform: translateY(-3px); border-color: #b9d3ee; }
+.va-card.wide { grid-column: span 2; background: linear-gradient(135deg, #0b6bcb, #08497f); color: #fff; border-color: transparent; }
+.va-card .ic { width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center; background: #e8f1fb; color: var(--a-blue); }
+.va-card.wide .ic { background: rgba(255,255,255,.14); color: #fff; }
+.va-card h3 { font-size: 20px; font-weight: 700; }
+.va-card p { color: var(--a-muted); font-size: 15px; flex: 1; }
+.va-card.wide p { color: #d8e7f7; max-width: 60ch; }
+.va-card a { font-weight: 700; font-size: 14.5px; color: var(--a-blue); text-decoration: none; }
+.va-card.wide a { color: #fff; }
+.va-cta { background: linear-gradient(100deg, #08497f 0%, #0b6bcb 60%, #15a39a 130%); color: #fff; }
+.va-cta .wrap { padding-block: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.va-cta h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: .06em; }
+.va-cta p { color: #d8e7f7; margin-top: 6px; font-size: 18px; }
+.va-cta .va-btn { background: #fff; color: var(--a-blue-deep); }
+.va-cta .va-btn:hover { background: #e8f1fb; }
+.va-global { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 48px; align-items: center; }
+.va-global .map .dot { fill: #a9c4e8; }
+.va-global .map .pin-office { fill: #e23b3b; }
+.va-global .map .pin-dc { fill: var(--a-blue); }
+.va-global .map .halo { fill: none; stroke-width: .35; opacity: .5; }
+.va-global .map .halo.pin-office { stroke: #e23b3b; }
+.va-global .map .halo.pin-dc { stroke: var(--a-blue); }
+.va-loc { display: grid; gap: 14px; }
+.va-loc li { list-style: none; display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; border: 1px solid var(--a-line); border-radius: 10px; }
+.va-loc ul { padding: 0; margin: 0; display: grid; gap: 12px; }
+.va-loc .mk { width: 12px; height: 12px; border-radius: 50%; margin-top: 7px; flex: none; }
+.va-loc b { display: block; }
+.va-loc span { color: var(--a-muted); font-size: 14.5px; }
+.va-contact { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 56px; }
+.va-form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px; }
+.va-form label { display: grid; gap: 6px; font-weight: 700; font-size: 14.5px; color: var(--a-blue); }
+.va-form .full { grid-column: 1 / -1; }
+.va-form input, .va-form textarea { border: 1px solid #cdd6e1; background: #fff; border-radius: 6px; padding: 12px 14px; color: var(--a-ink); width: 100%; }
+.va-form textarea { min-height: 150px; resize: vertical; }
+.va-form input:focus, .va-form textarea:focus { outline: 2px solid var(--a-blue); outline-offset: 0; border-color: transparent; }
+.va-form .row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.va-info { border-left: 1px solid var(--a-line); padding-left: 40px; display: grid; gap: 26px; align-content: start; margin-top: 64px; }
+.va-info h3 { font-size: 15px; color: var(--a-blue); margin-bottom: 4px; }
+.va-info p { color: #2c394c; }
+.va-social { display: flex; gap: 10px; }
+.va-social a { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--a-line); display: grid; place-items: center; color: var(--a-blue); }
+.va-social svg { width: 18px; height: 18px; fill: currentColor; }
+.va-foot { background: #0a2f55; color: #b6c9de; font-size: 14px; }
+.va-foot .wrap { padding-block: 26px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+.va-foot .va-logo { color: #fff; font-size: 16px; }
+@media (max-width: 900px) {
+  .va-nav { display: none; }
+  .va-head .wrap { justify-content: space-between; }
+  .va-about, .va-global, .va-contact { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .va-sol { grid-template-columns: minmax(0, 1fr); }
+  .va-card.wide { grid-column: auto; }
+  .va-info { border-left: 0; padding-left: 0; margin-top: 0; }
+  .va-sec { padding-block: 64px; }
+}
+@media (max-width: 560px) { .va-form { grid-template-columns: minmax(0, 1fr); } .va-hero .wrap { padding-block: 96px 88px; } }
+
+/* ===================================================== */
+/* B 網路維運中心                                         */
+/* ===================================================== */
+.vb { background: var(--b-bg); color: var(--b-ink); font-size: 16px; line-height: 1.75; }
+.vb .mono { font-family: var(--mono); }
+.vb-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(6,13,24,.86); backdrop-filter: blur(12px); border-bottom: 1px solid var(--b-line); }
+.vb-head .wrap { display: flex; align-items: center; gap: 28px; height: 62px; }
+.vb-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--b-ink); font: 500 16px/1 var(--mono); letter-spacing: .12em; }
+.vb-logo svg { width: 28px; height: 28px; }
+.vb-nav { display: flex; gap: 4px; margin-left: auto; font: 400 13.5px/1 var(--mono); }
+.vb-nav a { text-decoration: none; color: var(--b-muted); padding: 8px 12px; border-radius: 4px; }
+.vb-nav a:hover { color: var(--b-cyan); background: rgba(58,208,230,.08); }
+.vb-status { display: flex; align-items: center; gap: 8px; font: 400 12px/1 var(--mono); color: var(--b-muted); }
+.vb-status i { width: 8px; height: 8px; border-radius: 50%; background: var(--b-ok); box-shadow: 0 0 0 0 rgba(74,222,128,.6); animation: vbPulse 2s infinite; }
+@keyframes vbPulse { 0% { box-shadow: 0 0 0 0 rgba(74,222,128,.55); } 70% { box-shadow: 0 0 0 9px rgba(74,222,128,0); } 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); } }
+.vb-hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--b-line); }
+.vb-hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(var(--b-line) 1px, transparent 1px), linear-gradient(90deg, var(--b-line) 1px, transparent 1px); background-size: 48px 48px; opacity: .45; mask-image: radial-gradient(70% 80% at 30% 40%, #000, transparent); -webkit-mask-image: radial-gradient(70% 80% at 30% 40%, #000, transparent); }
+.vb-hero .wrap { position: relative; z-index: 1; padding-block: 112px 96px; display: grid; gap: 22px; }
+.vb-tag { font: 400 13px/1 var(--mono); color: var(--b-cyan); letter-spacing: .08em; }
+.vb-hero h1 { font-weight: 900; font-size: clamp(40px, 7vw, 82px); line-height: 1.08; letter-spacing: .01em; max-width: 13ch; }
+.vb-hero h1 em { font-style: normal; color: transparent; background: linear-gradient(90deg, var(--b-cyan), var(--b-blue)); -webkit-background-clip: text; background-clip: text; }
+.vb-hero .lead { color: var(--b-muted); max-width: 52ch; font-size: 17px; }
+.vb-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+.vb-btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; font: 500 14px/1 var(--mono); text-decoration: none; color: var(--b-bg); background: var(--b-cyan); border: 1px solid var(--b-cyan); border-radius: 4px; cursor: pointer; transition: background .2s, color .2s, box-shadow .2s; }
+.vb-btn:hover { box-shadow: 0 0 24px rgba(58,208,230,.45); }
+.vb-btn.line { background: transparent; color: var(--b-cyan); }
+.vb-ticker { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--b-line); position: relative; z-index: 1; background: rgba(6,13,24,.7); }
+.vb-ticker div { padding: 18px 20px; border-right: 1px solid var(--b-line); display: grid; gap: 4px; }
+.vb-ticker div:last-child { border-right: 0; }
+.vb-ticker small { font: 400 11.5px/1.2 var(--mono); color: var(--b-muted); letter-spacing: .08em; }
+.vb-ticker b { font-weight: 700; font-size: 17px; }
+.vb-sec { padding-block: 96px; border-bottom: 1px solid var(--b-line); }
+.vb-sec-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
+.vb-h2 { font-size: clamp(28px, 3.6vw, 40px); font-weight: 900; }
+.vb-path { font: 400 13px/1 var(--mono); color: var(--b-cyan); margin-bottom: 14px; display: block; }
+.vb-sec-head p { color: var(--b-muted); max-width: 46ch; }
+.vb-about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; }
+.vb-spec { border: 1px solid var(--b-line); background: var(--b-panel); border-radius: 6px; font: 400 13.5px/1.6 var(--mono); }
+.vb-spec .bar { display: flex; gap: 6px; padding: 12px 14px; border-bottom: 1px solid var(--b-line); color: var(--b-muted); align-items: center; }
+.vb-spec .bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--b-line); }
+.vb-spec .bar span { margin-left: 8px; }
+.vb-spec dl { margin: 0; padding: 8px 0; }
+.vb-spec dl div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 12px; padding: 9px 18px; }
+.vb-spec dt { color: var(--b-muted); }
+.vb-spec dd { margin: 0; color: var(--b-ink); }
+.vb-spec dd.ok { color: var(--b-ok); }
+.vb-about .text { display: grid; gap: 18px; color: #bccadc; max-width: 62ch; align-content: start; }
+.vb-about .text p:first-child { color: var(--b-ink); font-size: 19px; }
+.vb-bento { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+.vb-cell { position: relative; grid-column: span 2; border: 1px solid var(--b-line); background: var(--b-panel); border-radius: 6px; padding: 26px; display: flex; flex-direction: column; gap: 12px; overflow: hidden; transition: border-color .25s, background .25s; }
+.vb-cell:hover { border-color: rgba(58,208,230,.55); background: #0d1b2e; }
+.vb-cell.big { grid-column: span 4; grid-row: span 2; justify-content: end; min-height: 360px; }
+.vb-cell.half { grid-column: span 3; }
+.vb-cell .slug { font: 400 12px/1 var(--mono); color: var(--b-cyan); }
+.vb-cell h3 { font-size: 22px; font-weight: 700; }
+.vb-cell.big h3 { font-size: 34px; }
+.vb-cell p { color: var(--b-muted); font-size: 15px; }
+.vb-cell .ico { color: var(--b-cyan); width: 30px; height: 30px; }
+.vb-cell .more { font: 500 13px/1 var(--mono); color: var(--b-ink); text-decoration: none; margin-top: auto; padding-top: 6px; }
+.vb-cell .more:hover { color: var(--b-cyan); }
+.vb-cell.big canvas { opacity: .9; }
+.vb-cell.big .body { position: relative; z-index: 1; display: grid; gap: 12px; max-width: 46ch; }
+.vb-cell.big::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,22,38,0) 20%, rgba(11,22,38,.95) 80%); }
+.vb-cta { position: relative; overflow: hidden; }
+.vb-cta .wrap { padding-block: 104px; display: grid; gap: 18px; justify-items: start; position: relative; z-index: 1; }
+.vb-cta h2 { font-weight: 900; font-size: clamp(36px, 6vw, 68px); line-height: 1.1; }
+.vb-cta p { color: var(--b-muted); font-size: 18px; }
+.vb-cta::before { content: ""; position: absolute; width: 720px; height: 720px; right: -200px; top: -260px; border-radius: 50%; background: radial-gradient(circle, rgba(59,130,246,.28), transparent 65%); }
+.vb-global { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 32px; align-items: center; }
+.vb-mapbox { border: 1px solid var(--b-line); border-radius: 6px; background: var(--b-panel); padding: 20px; }
+.vb-global .map .dot { fill: #2b4466; }
+.vb-global .map .arc { fill: none; stroke: var(--b-cyan); stroke-width: .3; stroke-dasharray: 1.2 1; opacity: .8; animation: vbDash 3s linear infinite; }
+@keyframes vbDash { to { stroke-dashoffset: -11; } }
+.vb-global .map .pin-office { fill: var(--b-cyan); }
+.vb-global .map .pin-dc { fill: var(--b-ok); }
+.vb-global .map .halo { fill: none; stroke-width: .3; }
+.vb-global .map .halo.pin-office { stroke: var(--b-cyan); }
+.vb-global .map .halo.pin-dc { stroke: var(--b-ok); }
+.vb-global .map text { fill: var(--b-ink); font: 2.2px var(--mono); }
+.vb-nodes { display: grid; gap: 10px; font-family: var(--mono); font-size: 13.5px; }
+.vb-nodes div { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 12px; align-items: center; border: 1px solid var(--b-line); border-radius: 6px; padding: 14px 16px; background: var(--b-panel); }
+.vb-nodes i { width: 10px; height: 10px; border-radius: 2px; }
+.vb-nodes small { color: var(--b-muted); }
+.vb-contact { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; }
+.vb-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.vb-form label { display: grid; gap: 8px; font: 400 12.5px/1 var(--mono); color: var(--b-muted); letter-spacing: .06em; }
+.vb-form .full { grid-column: 1 / -1; }
+.vb-form input, .vb-form textarea { background: var(--b-panel); border: 1px solid var(--b-line); border-radius: 4px; padding: 13px 14px; color: var(--b-ink); width: 100%; font-family: var(--sans); font-size: 15px; }
+.vb-form textarea { min-height: 160px; resize: vertical; }
+.vb-form input:focus, .vb-form textarea:focus { outline: none; border-color: var(--b-cyan); box-shadow: 0 0 0 3px rgba(58,208,230,.15); }
+.vb-form .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.vb-form .form-note { color: var(--b-cyan); font-family: var(--mono); font-size: 12.5px; }
+.vb-info { display: grid; gap: 0; border: 1px solid var(--b-line); border-radius: 6px; align-content: start; background: var(--b-panel); }
+.vb-info div { padding: 20px 22px; border-bottom: 1px solid var(--b-line); display: grid; gap: 4px; }
+.vb-info div:last-child { border-bottom: 0; }
+.vb-info small { font: 400 12px/1 var(--mono); color: var(--b-muted); letter-spacing: .08em; }
+.vb-info a { color: var(--b-cyan); text-decoration: none; }
+.vb-foot { font: 400 12.5px/1.6 var(--mono); color: var(--b-muted); }
+.vb-foot .wrap { padding-block: 28px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+@media (max-width: 900px) {
+  .vb-nav, .vb-status { display: none; }
+  .vb-head .wrap { justify-content: space-between; }
+  .vb-about, .vb-global, .vb-contact { grid-template-columns: minmax(0, 1fr); }
+  .vb-bento { grid-template-columns: minmax(0, 1fr); }
+  .vb-cell, .vb-cell.big, .vb-cell.half { grid-column: auto; grid-row: auto; }
+  .vb-cell.big { min-height: 320px; }
+  .vb-ticker { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vb-ticker div:nth-child(2) { border-right: 0; }
+  .vb-ticker div:nth-child(-n+2) { border-bottom: 1px solid var(--b-line); }
+  .vb-sec { padding-block: 64px; }
+}
+@media (max-width: 560px) { .vb-form { grid-template-columns: minmax(0, 1fr); } .vb-spec dl div { grid-template-columns: 88px minmax(0, 1fr); } }
+
+/* ===================================================== */
+/* C 瑞士網格                                             */
+/* ===================================================== */
+.vc { background: var(--c-bg); color: var(--c-ink); font-size: 16px; line-height: 1.7; }
+.vc-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--c-bg); border-bottom: 2px solid var(--c-line); }
+.vc-head .wrap { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: center; height: 60px; gap: 16px; }
+.vc-logo { grid-column: span 3; font: 900 20px/1 var(--latin-c); letter-spacing: -.01em; text-decoration: none; color: var(--c-ink); display: flex; align-items: center; gap: 8px; }
+.vc-logo i { width: 14px; height: 14px; background: var(--c-accent); display: inline-block; }
+.vc-nav { grid-column: 4 / span 7; display: flex; gap: 28px; font-weight: 700; font-size: 14.5px; }
+.vc-nav a { text-decoration: none; }
+.vc-nav a:hover { color: var(--c-accent); }
+.vc-lang { grid-column: 12; justify-self: end; font: 800 13px/1 var(--latin-c); background: none; border: 0; color: var(--c-ink); }
+.vc-hero .wrap { padding-block: 56px 0; }
+.vc-mega { font: 900 clamp(64px, 17.5vw, 248px)/.82 var(--latin-c); letter-spacing: -.055em; margin-left: -.04em; }
+.vc-hero-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; border-top: 2px solid var(--c-line); margin-top: 36px; padding-block: 24px 64px; }
+.vc-hero-grid .claim { grid-column: 1 / span 6; font-size: clamp(26px, 3.6vw, 44px); font-weight: 900; line-height: 1.25; }
+.vc-hero-grid .claim span { background: var(--c-accent); color: var(--c-accent-ink); padding: 0 .12em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.vc-hero-grid .meta { grid-column: 8 / span 5; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 16px; align-content: start; }
+.vc-label { font: 800 12px/1.2 var(--latin-c); letter-spacing: .12em; text-transform: uppercase; color: var(--c-muted); display: block; margin-bottom: 6px; }
+.vc-hero-grid .meta b { font: 800 22px/1.2 var(--latin-c); }
+.vc-hero-grid .meta .go { grid-column: 1 / -1; }
+.vc-btn { display: inline-flex; align-items: center; justify-content: space-between; gap: 40px; padding: 16px 20px; background: var(--c-ink); color: var(--c-bg); text-decoration: none; font-weight: 700; border: 0; cursor: pointer; transition: background .2s; }
+.vc-btn:hover { background: var(--c-accent); }
+.vc-btn .arr { font-family: var(--latin-c); font-weight: 900; }
+.vc-sec { padding-block: 88px; border-top: 2px solid var(--c-line); }
+.vc-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
+.vc-sidehead { grid-column: 1 / span 3; }
+.vc-sidehead h2 { font-size: 15px; font-weight: 900; letter-spacing: .04em; }
+.vc-sidehead .vc-label { margin-bottom: 8px; }
+.vc-main { grid-column: 4 / span 9; min-width: 0; }
+.vc-lead { font-size: clamp(24px, 3vw, 36px); font-weight: 700; line-height: 1.45; letter-spacing: .01em; max-width: 30ch; }
+.vc-lead mark { background: none; color: var(--c-accent); }
+.vc-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; color: #2f343a; }
+.vc-sol { border-top: 2px solid var(--c-line); }
+.vc-row { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 5fr) 56px; gap: 24px; align-items: start; padding-block: 28px; border-bottom: 1px solid var(--c-hair); text-decoration: none; color: inherit; position: relative; transition: padding .25s, background .25s; }
+.vc-row h3 { font-size: clamp(24px, 3vw, 34px); font-weight: 900; line-height: 1.15; }
+.vc-row h3 small { display: block; font: 800 12px/1 var(--latin-c); letter-spacing: .12em; color: var(--c-muted); margin-bottom: 10px; text-transform: uppercase; }
+.vc-row p { color: #2f343a; font-size: 15.5px; }
+.vc-row .arr { font: 900 30px/1 var(--latin-c); justify-self: end; transition: transform .25s; }
+.vc-row:hover { background: var(--c-accent); color: var(--c-accent-ink); padding-inline: 20px; }
+.vc-row:hover p, .vc-row:hover h3 small { color: var(--c-accent-ink); }
+.vc-row:hover .arr { transform: translateX(-6px); }
+.vc-cta { background: var(--c-accent); color: var(--c-accent-ink); }
+.vc-cta .wrap { padding-block: 72px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; align-items: end; }
+.vc-cta h2 { grid-column: 1 / span 9; font-size: clamp(48px, 9vw, 128px); font-weight: 900; line-height: 1; letter-spacing: -.02em; }
+.vc-cta p { grid-column: 1 / span 6; font-size: 20px; font-weight: 700; }
+.vc-cta .vc-btn { grid-column: 10 / span 3; background: var(--c-ink); color: var(--c-bg); }
+.vc-cta .vc-btn:hover { background: var(--c-bg); color: var(--c-ink); }
+.vc-global .map .dot { fill: var(--c-ink); }
+.vc-global .map .pin-office, .vc-global .map .pin-dc { fill: var(--c-accent); }
+.vc-global .map .pin-dc { fill: var(--c-bg); stroke: var(--c-accent); stroke-width: .5; }
+.vc-global .map .halo { display: none; }
+.vc-loc { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--c-line); margin-top: 32px; }
+.vc-loc div { padding: 18px 16px 18px 0; border-bottom: 1px solid var(--c-hair); }
+.vc-loc b { font-size: 20px; font-weight: 900; display: block; }
+.vc-loc .coord { font: 500 13px/1.4 var(--latin-c); color: var(--c-muted); font-variant-numeric: tabular-nums; }
+.vc-legend { display: flex; gap: 24px; margin-top: 16px; font-size: 14px; font-weight: 700; }
+.vc-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.vc-legend i { width: 12px; height: 12px; border-radius: 50%; background: var(--c-accent); }
+.vc-legend i.o { background: var(--c-bg); border: 2px solid var(--c-accent); }
+.vc-form { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 24px; }
+.vc-form label { display: grid; gap: 4px; }
+.vc-form .full { grid-column: 1 / -1; }
+.vc-form input, .vc-form textarea { border: 0; border-bottom: 2px solid var(--c-line); border-radius: 0; background: transparent; padding: 10px 0; font-size: 20px; font-weight: 700; color: var(--c-ink); width: 100%; }
+.vc-form textarea { min-height: 120px; resize: vertical; }
+.vc-form input:focus, .vc-form textarea:focus { outline: none; border-bottom-color: var(--c-accent); }
+.vc-form .row { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.vc-info { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 56px; border-top: 2px solid var(--c-line); padding-top: 20px; }
+.vc-info p { font-weight: 700; font-size: 18px; }
+.vc-info a { text-decoration: none; border-bottom: 2px solid var(--c-accent); }
+.vc-foot { background: var(--c-ink); color: #c7cbd0; font-size: 14px; }
+.vc-foot .wrap { padding-block: 40px 28px; display: grid; gap: 28px; }
+.vc-foot .big { font: 900 clamp(40px, 10vw, 120px)/.9 var(--latin-c); color: var(--c-bg); letter-spacing: -.05em; }
+.vc-foot .line { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid #3a3f46; padding-top: 16px; }
+@media (max-width: 900px) {
+  .vc-nav { display: none; }
+  .vc-logo { grid-column: span 8; } .vc-lang { grid-column: 9 / span 4; }
+  .vc-hero-grid .claim, .vc-hero-grid .meta, .vc-sidehead, .vc-main, .vc-cta h2, .vc-cta p, .vc-cta .vc-btn { grid-column: 1 / -1; }
+  .vc-sidehead { margin-bottom: 20px; }
+  .vc-row { grid-template-columns: minmax(0, 1fr) 40px; }
+  .vc-row p { grid-column: 1 / -1; grid-row: 2; }
+  .vc-row .arr { grid-column: 2; grid-row: 1; }
+  .vc-cols, .vc-info { grid-template-columns: minmax(0, 1fr); }
+  .vc-sec { padding-block: 64px; }
+}
+@media (max-width: 560px) { .vc-form { grid-template-columns: minmax(0, 1fr); } .vc-loc { grid-template-columns: minmax(0, 1fr); } }
+</style>
+</head>
+<body data-v="a">
+
+<!-- 共用圖示 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e8be0"/><stop offset="1" stop-color="#2fc4a0"/></linearGradient>
+  </defs>
+  <symbol id="i-live" viewBox="0 0 32 32"><rect x="3" y="9" width="18" height="14" rx="2"/><path d="M21 14l8-4v12l-8-4"/><circle cx="9" cy="16" r="2.5"/></symbol>
+  <symbol id="i-net" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M4 16h24M16 4c4 3.5 5 8 5 12s-1 8.5-5 12M16 4c-4 3.5-5 8-5 12s1 8.5 5 12"/></symbol>
+  <symbol id="i-arch" viewBox="0 0 32 32"><path d="M16 4l12 6-12 6-12-6z"/><path d="M4 16l12 6 12-6M4 22l12 6 12-6"/></symbol>
+  <symbol id="i-int" viewBox="0 0 32 32"><rect x="4" y="4" width="9" height="9" rx="1.5"/><rect x="19" y="4" width="9" height="9" rx="1.5"/><rect x="4" y="19" width="9" height="9" rx="1.5"/><rect x="19" y="19" width="9" height="9" rx="1.5"/><path d="M13 8.5h6M8.5 13v6M23.5 13v6M13 23.5h6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 32 32"><path d="M16 3l11 4v8c0 7-5 12-11 14C10 27 5 22 5 15V7z"/><path d="M11 16l3.5 3.5L21 13"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M13.5 21v-7.5H16l.5-3h-3V8.6c0-.9.3-1.6 1.6-1.6h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4V10.5H8v3h2.5V21z"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24"><path d="M4.5 9h3.2v11H4.5zM6.1 3.8a1.9 1.9 0 110 3.8 1.9 1.9 0 010-3.8zM10 9h3.1v1.5h.1c.4-.8 1.5-1.7 3.1-1.7 3.3 0 3.9 2.2 3.9 5V20H17v-5.4c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V20H10z"/></symbol>
+  <symbol id="i-logo" viewBox="0 0 40 40"><path d="M6 32V9l14 14L34 9v23" fill="none" stroke="url(#mGrad)" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+</svg>
+
+<!-- ======================= 版型 A 企業信賴 ======================= -->
+<div class="v va" id="va" data-variant="a">
+  <header class="va-head">
+    <div class="wrap">
+      <a class="va-logo" href="#va-top" data-scroll><svg aria-hidden="true"><use href="#i-logo"/></svg>MOOTECH</a>
+      <nav class="va-nav" aria-label="主選單">
+        <a href="#va-about" data-scroll>關於我們</a><a href="#va-solutions" data-scroll>解決方案</a><a href="#va-global" data-scroll>全球據點</a><a href="#va-contact" data-scroll>聯絡我們</a>
+      </nav>
+      <button class="va-lang" type="button" aria-label="切換語言">EN</button>
+    </div>
+  </header>
+  <section class="va-hero" id="va-top">
+    <canvas class="fill" data-art="corridor" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <span class="va-eyebrow">SINCE 2016 · SINGAPORE · TAIWAN</span>
+      <h1>MOOTECH</h1>
+      <p>透過創新推動企業發展</p>
+      <div class="actions">
+        <a class="va-btn" href="#va-solutions" data-scroll>探索解決方案</a>
+        <a class="va-btn ghost" href="#va-contact" data-scroll>聯絡我們</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="va-sec soft" id="va-about">
+    <div class="wrap va-about">
+      <div class="va-facts">
+        <div><b>2016</b><span>成立年份，深耕企業 IT 服務</span></div>
+        <div><b>5 大</b><span>解決方案：直播、網路、架構、整合、威脅情報</span></div>
+        <div><b>新加坡 · 台灣</b><span>雙據點，服務全球客戶</span></div>
+      </div>
+      <div class="text">
+        <span class="va-kicker">ABOUT US</span>
+        <h2 class="va-h2">關於我們</h2>
+        <p>MOOTECH 是一家成立於 2016 年的專業 IT 公司，專注於創新解決方案。我們的服務範圍包括 Web API 架構、系統和網路高可用性優化、即時串流媒體以及免費威脅情報庫。</p>
+        <p>在 MOOTECH，我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，這有助於我們主動應對潛在的安全問題。我們秉持前瞻性的 IT 解決方案理念，憑藉精湛的技術實力和對卓越的不懈追求，我們能夠為全球客戶提供穩定且可擴展的創新解決方案。</p>
+        <p>從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的解決方案。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="va-sec" id="va-solutions">
+    <div class="wrap">
+      <div class="va-sol-head">
+        <span class="va-kicker">SOLUTIONS</span>
+        <h2 class="va-h2">解決方案</h2>
+        <p>從內容傳遞到基礎架構與資安防護，為企業打造穩定、可擴展的 IT 環境。</p>
+      </div>
+      <div class="va-sol">
+        <article class="va-card wide">
+          <div class="ic"><svg class="ico"><use href="#i-live"/></svg></div>
+          <h3>直播</h3>
+          <p>透過 MOOTECH 的直播解決方案，您可以接觸到全球受眾，提升品牌曝光度與互動率。我們可自訂的平台讓您根據自身需求打造專屬直播內容，無論是虛擬活動、產品發表會或其他任何形式的直播，都能輕鬆進行。MOOTECH 幫助您將直播提升至全新高度。</p>
+          <a href="#va-contact" data-scroll>了解更多 →</a>
+        </article>
+        <article class="va-card">
+          <div class="ic"><svg class="ico"><use href="#i-net"/></svg></div>
+          <h3>網路連線</h3>
+          <p>我們提供的網路與連線解決方案具備高度靈活且強大的連接能力，並提供專業的諮詢與支援，以保護您的業務。</p>
+          <a href="#va-contact" data-scroll>了解更多 →</a>
+        </article>
+        <article class="va-card">
+          <div class="ic"><svg class="ico"><use href="#i-arch"/></svg></div>
+          <h3>網路架構</h3>
+          <p>MOOTECH 團隊將依您的需求設計架構，協助您選擇符合業務需求與預算的最佳化網路解決方案。</p>
+          <a href="#va-contact" data-scroll>了解更多 →</a>
+        </article>
+        <article class="va-card">
+          <div class="ic"><svg class="ico"><use href="#i-int"/></svg></div>
+          <h3>系統整合</h3>
+          <p>我們為客戶提供最佳解決方案，將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。</p>
+          <a href="#va-contact" data-scroll>了解更多 →</a>
+        </article>
+        <article class="va-card">
+          <div class="ic"><svg class="ico"><use href="#i-shield"/></svg></div>
+          <h3>威脅情報庫</h3>
+          <p>我們提供以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。</p>
+          <a href="#va-contact" data-scroll>了解更多 →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="va-cta">
+    <div class="wrap">
+      <div><h2>釋放你的潛能</h2><p>我們將帶你展望未來。</p></div>
+      <a class="va-btn" href="#va-contact" data-scroll>我們走吧 →</a>
+    </div>
+  </section>
+
+  <section class="va-sec soft" id="va-global">
+    <div class="wrap">
+      <div class="va-sol-head">
+        <span class="va-kicker">GLOBAL PRESENCE</span>
+        <h2 class="va-h2">我們力求精益求精，並擁有全球視野。</h2>
+      </div>
+      <div class="va-global">
+        <svg class="map" data-map="a" viewBox="0 0 100 98" role="img" aria-label="亞太區據點地圖"></svg>
+        <div class="va-loc">
+          <ul>
+            <li><i class="mk" style="background:#e23b3b"></i><div><b>辦公室</b><span>新加坡、台灣</span></div></li>
+            <li><i class="mk" style="background:#0b6bcb"></i><div><b>資料中心</b><span>香港、新加坡、東京</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="va-sec" id="va-contact">
+    <div class="wrap va-contact">
+      <div>
+        <span class="va-kicker">CONTACT</span>
+        <h2 class="va-h2">聯絡我們</h2>
+        <form class="va-form" data-form>
+          <label for="a-name">姓名<input id="a-name" name="name" required autocomplete="name"></label>
+          <label for="a-email">電子郵件<input id="a-email" name="email" type="email" required autocomplete="email"></label>
+          <label class="full" for="a-msg">訊息<textarea id="a-msg" name="message" required></textarea></label>
+          <div class="full row"><button class="va-btn" type="submit">發送訊息</button><span class="form-note" role="status"></span></div>
+        </form>
+      </div>
+      <aside class="va-info">
+        <div><h3>電子郵件</h3><p>contact@mootech.asia</p></div>
+        <div><h3>地點</h3><p>新加坡<br>台灣</p></div>
+        <div><h3>社群</h3><div class="va-social"><a href="https://www.facebook.com/" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a><a href="https://www.linkedin.com/" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a></div></div>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="va-foot">
+    <div class="wrap"><span class="va-logo"><svg aria-hidden="true"><use href="#i-logo"/></svg>MOOTECH</span><span>Mootech 私人有限公司 · © 2026 版權所有</span></div>
+  </footer>
+</div>
+
+<!-- ======================= 版型 B 網路維運中心 ======================= -->
+<div class="v vb" id="vb" data-variant="b" hidden>
+  <header class="vb-head">
+    <div class="wrap">
+      <a class="vb-logo" href="#vb-top" data-scroll><svg aria-hidden="true"><use href="#i-logo"/></svg>MOOTECH</a>
+      <span class="vb-status"><i></i>ALL SYSTEMS OPERATIONAL</span>
+      <nav class="vb-nav" aria-label="主選單">
+        <a href="#vb-about" data-scroll>/about</a><a href="#vb-solutions" data-scroll>/solutions</a><a href="#vb-global" data-scroll>/network</a><a href="#vb-contact" data-scroll>/contact</a>
+      </nav>
+      <a class="vb-btn line" href="#vb-contact" data-scroll>EN</a>
+    </div>
+  </header>
+  <section class="vb-hero" id="vb-top">
+    <canvas class="fill" data-art="mesh" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <span class="vb-tag">&gt; mootech --since 2016 --region apac</span>
+      <h1>透過<em>創新</em><br>推動企業發展</h1>
+      <p class="lead">Web API 架構、高可用性網路、即時串流與威脅情報。MOOTECH 讓企業的關鍵系統保持穩定、安全且隨時可擴展。</p>
+      <div class="vb-actions">
+        <a class="vb-btn" href="#vb-solutions" data-scroll>查看解決方案 →</a>
+        <a class="vb-btn line" href="#vb-contact" data-scroll>聯絡工程團隊</a>
+      </div>
+    </div>
+    <div class="vb-ticker wrap">
+      <div><small>FOUNDED</small><b>2016</b></div>
+      <div><small>OFFICES</small><b>新加坡 / 台灣</b></div>
+      <div><small>FOCUS</small><b>高可用性架構</b></div>
+      <div><small>SECURITY</small><b>威脅情報庫</b></div>
+    </div>
+  </section>
+
+  <section class="vb-sec" id="vb-about">
+    <div class="wrap">
+      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/about</span><h2 class="vb-h2">關於我們</h2></div></div>
+      <div class="vb-about">
+        <div class="vb-spec">
+          <div class="bar"><i></i><i></i><i></i><span>company.yaml</span></div>
+          <dl>
+            <div><dt>name</dt><dd>MOOTECH</dd></div>
+            <div><dt>founded</dt><dd>2016</dd></div>
+            <div><dt>offices</dt><dd>Singapore, Taiwan</dd></div>
+            <div><dt>stack</dt><dd>Web API · HA Network · Streaming</dd></div>
+            <div><dt>security</dt><dd>Threat Intelligence DB</dd></div>
+            <div><dt>status</dt><dd class="ok">● serving clients worldwide</dd></div>
+          </dl>
+        </div>
+        <div class="text">
+          <p>MOOTECH 是一家成立於 2016 年的專業 IT 公司，專注於創新解決方案。服務範圍包括 Web API 架構、系統和網路高可用性優化、即時串流媒體以及免費威脅情報庫。</p>
+          <p>我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，主動應對潛在的安全問題。秉持前瞻性的 IT 解決方案理念，以精湛的技術實力為全球客戶提供穩定且可擴展的創新方案。</p>
+          <p>從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的服務。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vb-sec" id="vb-solutions">
+    <div class="wrap">
+      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/solutions</span><h2 class="vb-h2">解決方案</h2></div><p>五個服務模組，可獨立導入，也能組合成完整的企業 IT 基礎。</p></div>
+      <div class="vb-bento">
+        <article class="vb-cell big">
+          <canvas class="fill" data-art="wave" aria-hidden="true"></canvas>
+          <div class="body">
+            <span class="slug">svc/live-streaming</span>
+            <h3>直播</h3>
+            <p>接觸全球受眾，提升品牌曝光與互動率。可自訂的平台讓您打造專屬直播內容，虛擬活動、產品發表會或任何形式的直播都能輕鬆進行。</p>
+            <a class="more" href="#vb-contact" data-scroll>了解更多 →</a>
+          </div>
+        </article>
+        <article class="vb-cell">
+          <svg class="ico"><use href="#i-net"/></svg>
+          <span class="slug">svc/connectivity</span>
+          <h3>網路連線</h3>
+          <p>高度靈活且強大的連接能力，並提供專業諮詢與支援，保護您的業務。</p>
+          <a class="more" href="#vb-contact" data-scroll>了解更多 →</a>
+        </article>
+        <article class="vb-cell">
+          <svg class="ico"><use href="#i-arch"/></svg>
+          <span class="slug">svc/architecture</span>
+          <h3>網路架構</h3>
+          <p>依需求設計架構，選擇符合業務與預算的最佳化網路方案。</p>
+          <a class="more" href="#vb-contact" data-scroll>了解更多 →</a>
+        </article>
+        <article class="vb-cell half">
+          <svg class="ico"><use href="#i-int"/></svg>
+          <span class="slug">svc/integration</span>
+          <h3>系統整合</h3>
+          <p>將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。</p>
+          <a class="more" href="#vb-contact" data-scroll>了解更多 →</a>
+        </article>
+        <article class="vb-cell half">
+          <svg class="ico"><use href="#i-shield"/></svg>
+          <span class="slug">svc/threat-intel</span>
+          <h3>威脅情報庫</h3>
+          <p>以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保網路與系統安全。</p>
+          <a class="more" href="#vb-contact" data-scroll>了解更多 →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="vb-sec vb-cta">
+    <div class="wrap">
+      <span class="vb-path">~/next</span>
+      <h2>釋放你的潛能</h2>
+      <p>我們將帶你展望未來。</p>
+      <a class="vb-btn" href="#vb-contact" data-scroll>我們走吧 →</a>
+    </div>
+  </section>
+
+  <section class="vb-sec" id="vb-global">
+    <div class="wrap">
+      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/network</span><h2 class="vb-h2">我們力求精益求精，<br>並擁有全球視野。</h2></div></div>
+      <div class="vb-global">
+        <div class="vb-mapbox"><svg class="map" data-map="b" viewBox="0 0 100 98" role="img" aria-label="亞太區據點與連線地圖"></svg></div>
+        <div class="vb-nodes">
+          <div><i style="background:var(--b-cyan)"></i><span>SIN · 新加坡</span><small>office</small></div>
+          <div><i style="background:var(--b-cyan)"></i><span>TPE · 台灣</span><small>office</small></div>
+          <div><i style="background:var(--b-ok)"></i><span>HKG · 香港</span><small>datacenter</small></div>
+          <div><i style="background:var(--b-ok)"></i><span>SIN · 新加坡</span><small>datacenter</small></div>
+          <div><i style="background:var(--b-ok)"></i><span>TYO · 東京</span><small>datacenter</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vb-sec" id="vb-contact">
+    <div class="wrap">
+      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/contact</span><h2 class="vb-h2">聯絡我們</h2></div><p>告訴我們您的需求，工程團隊會盡快回覆。</p></div>
+      <div class="vb-contact">
+        <form class="vb-form" data-form>
+          <label for="b-name">NAME · 姓名<input id="b-name" name="name" required autocomplete="name"></label>
+          <label for="b-email">EMAIL · 電子郵件<input id="b-email" name="email" type="email" required autocomplete="email"></label>
+          <label class="full" for="b-msg">MESSAGE · 訊息<textarea id="b-msg" name="message" required></textarea></label>
+          <div class="full row"><button class="vb-btn" type="submit">發送訊息 →</button><span class="form-note" role="status"></span></div>
+        </form>
+        <aside class="vb-info">
+          <div><small>EMAIL</small><span>contact@mootech.asia</span></div>
+          <div><small>LOCATIONS</small><span>新加坡 · 台灣</span></div>
+          <div><small>SOCIAL</small><span><a href="https://www.facebook.com/">Facebook</a> · <a href="https://www.linkedin.com/">LinkedIn</a></span></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer class="vb-foot">
+    <div class="wrap"><span>© 2026 Mootech 私人有限公司 · 版權所有</span><span>build: corporate-site · region: apac</span></div>
+  </footer>
+</div>
+
+<!-- ======================= 版型 C 瑞士網格 ======================= -->
+<div class="v vc" id="vc" data-variant="c" hidden>
+  <header class="vc-head">
+    <div class="wrap">
+      <a class="vc-logo" href="#vc-top" data-scroll><i></i>MOOTECH</a>
+      <nav class="vc-nav" aria-label="主選單">
+        <a href="#vc-about" data-scroll>關於</a><a href="#vc-solutions" data-scroll>解決方案</a><a href="#vc-global" data-scroll>據點</a><a href="#vc-contact" data-scroll>聯絡</a>
+      </nav>
+      <button class="vc-lang" type="button">中 / EN</button>
+    </div>
+  </header>
+  <section class="vc-hero" id="vc-top">
+    <div class="wrap">
+      <h1 class="vc-mega">MOOTECH</h1>
+      <div class="vc-hero-grid">
+        <p class="claim">透過<span>創新</span>推動<br>企業發展。</p>
+        <div class="meta">
+          <div><span class="vc-label">Est.</span><b>2016</b></div>
+          <div><span class="vc-label">Based in</span><b>SG / TW</b></div>
+          <div><span class="vc-label">Solutions</span><b>05</b></div>
+          <div><span class="vc-label">Contact</span><b>mootech.asia</b></div>
+          <div class="go"><a class="vc-btn" href="#vc-solutions" data-scroll>查看解決方案 <span class="arr">↓</span></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vc-sec" id="vc-about">
+    <div class="wrap vc-grid">
+      <div class="vc-sidehead"><span class="vc-label">About</span><h2>關於我們</h2></div>
+      <div class="vc-main">
+        <p class="vc-lead">成立於 2016 年的專業 IT 公司，專注 Web API 架構、高可用性網路、即時串流與<mark>威脅情報</mark>。</p>
+        <div class="vc-cols">
+          <p>在 MOOTECH，我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，這有助於我們主動應對潛在的安全問題。我們秉持前瞻性的 IT 解決方案理念，憑藉精湛的技術實力和對卓越的不懈追求，為全球客戶提供穩定且可擴展的創新解決方案。</p>
+          <p>從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的解決方案。我們的服務同時涵蓋免費威脅情報庫，讓更多企業能及早掌握風險。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vc-sec" id="vc-solutions">
+    <div class="wrap vc-grid">
+      <div class="vc-sidehead"><span class="vc-label">Solutions</span><h2>解決方案</h2></div>
+      <div class="vc-main">
+        <div class="vc-sol">
+          <a class="vc-row" href="#vc-contact" data-scroll><h3><small>Live Streaming</small>直播</h3><p>接觸全球受眾，提升品牌曝光度與互動率。可自訂的平台讓您打造專屬直播內容，虛擬活動、產品發表會或任何形式的直播都能輕鬆進行。</p><span class="arr">→</span></a>
+          <a class="vc-row" href="#vc-contact" data-scroll><h3><small>Connectivity</small>網路連線</h3><p>高度靈活且強大的網路連接能力，並提供專業的諮詢與支援，以保護您的業務。</p><span class="arr">→</span></a>
+          <a class="vc-row" href="#vc-contact" data-scroll><h3><small>Architecture</small>網路架構</h3><p>依您的需求設計架構，協助選擇符合業務需求與預算的最佳化網路解決方案。</p><span class="arr">→</span></a>
+          <a class="vc-row" href="#vc-contact" data-scroll><h3><small>Integration</small>系統整合</h3><p>將市場上多個 IT 系統、硬體與軟體連接成一個協調一致、操作流暢的整體。</p><span class="arr">→</span></a>
+          <a class="vc-row" href="#vc-contact" data-scroll><h3><small>Threat Intelligence</small>威脅情報庫</h3><p>以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。</p><span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vc-cta">
+    <div class="wrap">
+      <h2>釋放你的潛能</h2>
+      <p>我們將帶你展望未來。</p>
+      <a class="vc-btn" href="#vc-contact" data-scroll>我們走吧 <span class="arr">→</span></a>
+    </div>
+  </section>
+
+  <section class="vc-sec vc-global" id="vc-global">
+    <div class="wrap vc-grid">
+      <div class="vc-sidehead"><span class="vc-label">Global</span><h2>我們力求精益求精，並擁有全球視野。</h2></div>
+      <div class="vc-main">
+        <svg class="map" data-map="c" viewBox="0 0 100 98" role="img" aria-label="亞太區據點地圖"></svg>
+        <div class="vc-legend"><span><i></i>辦公室</span><span><i class="o"></i>資料中心</span></div>
+        <div class="vc-loc">
+          <div><span class="vc-label">Office</span><b>新加坡</b><span class="coord">1.35° N, 103.82° E</span></div>
+          <div><span class="vc-label">Office</span><b>台灣</b><span class="coord">25.03° N, 121.56° E</span></div>
+          <div><span class="vc-label">Data Center</span><b>香港</b><span class="coord">22.32° N, 114.17° E</span></div>
+          <div><span class="vc-label">Data Center</span><b>東京</b><span class="coord">35.68° N, 139.69° E</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vc-sec" id="vc-contact">
+    <div class="wrap vc-grid">
+      <div class="vc-sidehead"><span class="vc-label">Contact</span><h2>聯絡我們</h2></div>
+      <div class="vc-main">
+        <form class="vc-form" data-form>
+          <label for="c-name"><span class="vc-label">姓名</span><input id="c-name" name="name" required autocomplete="name"></label>
+          <label for="c-email"><span class="vc-label">電子郵件</span><input id="c-email" name="email" type="email" required autocomplete="email"></label>
+          <label class="full" for="c-msg"><span class="vc-label">訊息</span><textarea id="c-msg" name="message" required></textarea></label>
+          <div class="full row"><button class="vc-btn" type="submit">發送訊息 <span class="arr">→</span></button><span class="form-note" role="status"></span></div>
+        </form>
+        <div class="vc-info">
+          <div><span class="vc-label">Email</span><p>contact@mootech.asia</p></div>
+          <div><span class="vc-label">Locations</span><p>新加坡 · 台灣</p></div>
+          <div><span class="vc-label">Social</span><p><a href="https://www.facebook.com/">Facebook</a>　<a href="https://www.linkedin.com/">LinkedIn</a></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="vc-foot">
+    <div class="wrap">
+      <div class="big">MOOTECH</div>
+      <div class="line"><span>Mootech 私人有限公司</span><span>© 2026 版權所有</span></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ======================= 版型切換器 ======================= -->
+<aside class="switcher" aria-label="版型切換">
+  <span class="sw-label">版型</span>
+  <button type="button" data-set="a" aria-pressed="true"><b>A</b><span>企業</span></button>
+  <button type="button" data-set="b" aria-pressed="false"><b>B</b><span>科技</span></button>
+  <button type="button" data-set="c" aria-pressed="false"><b>C</b><span>網格</span></button>
+  <div class="sw-tip" aria-live="polite"><strong></strong><span></span></div>
+</aside>
+
+<script>
+(function () {
+  var NOTES = {
+    a: ["A · 企業信賴", "延續原站藍白，資料中心主視覺。穩重清楚，適合重視信任感的企業客戶。"],
+    b: ["B · 網路維運中心", "深色主控台語彙、節點與連線動態，突顯網路、資安的技術實力。"],
+    c: ["C · 瑞士網格", "巨型字體與嚴格網格，單一品牌青綠色，不依賴照片也有強烈辨識度。"]
+  };
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var current = null;
+
+  /* ---------- 地圖：以經緯度多邊形產生點陣 ---------- */
+  var LAND = [
+    [[60,55],[100,55],[120,53],[135,50],[140,45],[131,43],[129,40],[126,38],[126,35],[122,40],[118,38],[121,32],[122,30],[120,26],[116,23],[110,21],[108,21],[106,18],[109,12],[105,9],[104,11],[100,13],[100,7],[103,1.3],[101,3],[98,8],[98,16],[94,16],[92,22],[88,22],[80,15],[77,8],[73,16],[72,21],[67,25],[60,25]],
+    [[130,31],[131,34],[135,34],[140,35],[141,38],[142,42],[145,44],[141,45],[140,41],[139,38],[136,36.5],[132,35.5],[130,33]],
+    [[120.1,22],[121,21.9],[122,25.2],[121.4,25.4],[120,23.5]],
+    [[120,18.5],[122.5,18.5],[124,13],[126,10],[126,7],[125,6],[122,7],[123,10],[121,12],[120,15]],
+    [[109,2],[111,1.5],[117,7],[119,5],[118,1],[116,-3.5],[111,-3],[109,-1]],
+    [[95,5.5],[98,4],[104,-2],[106,-6],[103,-5],[100,-1],[96,3]],
+    [[105,-5.8],[114.5,-7],[114.5,-8.6],[106,-7.4]],
+    [[119,-5.5],[120.5,1],[125,1.5],[121.5,-1],[122.5,-5]],
+    [[131,-1],[138,-1.5],[147,-6],[150.5,-10.5],[141,-9.2],[138,-8.2],[132,-4]],
+    [[114,-22],[114,-34],[118,-35],[124,-33],[131,-31.5],[138,-35],[141,-38],[146,-39],[150,-37],[153.5,-29],[153,-25],[146,-19],[145.5,-15],[142.5,-10.7],[141.5,-17],[136,-12],[132,-11],[129,-15],[122,-17]],
+    [[79.8,9.8],[81.8,7.5],[81,6],[80,6.5]]
+  ];
+  /* 據點（示意，請依實際據點確認） */
+  var PINS = [
+    { lon: 103.82, lat: 1.35, kind: "office", code: "SIN" },
+    { lon: 121.56, lat: 25.03, kind: "office", code: "TPE" },
+    { lon: 114.17, lat: 22.32, kind: "dc", code: "HKG" },
+    { lon: 139.69, lat: 35.68, kind: "dc", code: "TYO" }
+  ];
+  function inPoly(x, y, poly) {
+    var inside = false;
+    for (var i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+      var xi = poly[i][0], yi = poly[i][1], xj = poly[j][0], yj = poly[j][1];
+      if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) inside = !inside;
+    }
+    return inside;
+  }
+  function px(lon) { return lon - 60; }
+  function py(lat) { return 56 - lat; }
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+  function drawMap(svg) {
+    var style = svg.getAttribute("data-map");
+    var step = style === "c" ? 1.5 : 1.7, r = style === "c" ? .42 : .5;
+    var g = el("g", {});
+    for (var lat = 55; lat > -42; lat -= step) {
+      for (var lon = 61; lon < 160; lon += step) {
+        for (var p = 0; p < LAND.length; p++) {
+          if (inPoly(lon, lat, LAND[p])) { g.appendChild(el("circle", { cx: px(lon).toFixed(2), cy: py(lat).toFixed(2), r: r, "class": "dot" })); break; }
+        }
+      }
+    }
+    svg.appendChild(g);
+    if (style === "b") {
+      var hub = PINS[0];
+      PINS.slice(1).forEach(function (t) {
+        var x1 = px(hub.lon), y1 = py(hub.lat), x2 = px(t.lon), y2 = py(t.lat);
+        var mx = (x1 + x2) / 2 - (y2 - y1) * .25, my = (y1 + y2) / 2 + (x2 - x1) * .1 - 6;
+        svg.appendChild(el("path", { d: "M" + x1 + " " + y1 + " Q" + mx + " " + my + " " + x2 + " " + y2, "class": "arc" }));
+      });
+    }
+    PINS.forEach(function (p) {
+      var cls = p.kind === "office" ? "pin-office" : "pin-dc";
+      var cx = px(p.lon), cy = py(p.lat);
+      var halo = el("circle", { cx: cx, cy: cy, r: 2.6, "class": "halo " + cls });
+      if (!reduce) {
+        halo.appendChild(el("animate", { attributeName: "r", values: "1.4;4;1.4", dur: "2.6s", repeatCount: "indefinite" }));
+        halo.appendChild(el("animate", { attributeName: "opacity", values: ".8;0;.8", dur: "2.6s", repeatCount: "indefinite" }));
+      }
+      svg.appendChild(halo);
+      svg.appendChild(el("circle", { cx: cx, cy: cy, r: style === "c" ? 1.3 : 1.2, "class": cls }));
+      if (style === "b") { var t = el("text", { x: cx + 2, y: cy - 1.6 }); t.textContent = p.code; svg.appendChild(t); }
+    });
+  }
+
+  /* ---------- 畫布藝術 ---------- */
+  function seeded(seed) { return function () { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }; }
+  var ARTS = {
+    corridor: function (cv) {
+      var ctx = cv.getContext("2d"), rnd = seeded(7), leds = [];
+      for (var i = 0; i < 900; i++) leds.push({ d: rnd(), v: rnd(), side: rnd() < .5 ? -1 : 1, c: rnd() < .8 ? "#3d8bff" : "#7fe3ff", ph: rnd() * 6.28 });
+      return function (t) {
+        var w = cv.width, h = cv.height, vx = w / 2, vy = h * .5;
+        ctx.fillStyle = "#05070c"; ctx.fillRect(0, 0, w, h);
+        var fl = ctx.createLinearGradient(0, vy, 0, h); fl.addColorStop(0, "#0b111b"); fl.addColorStop(1, "#1a2433");
+        ctx.fillStyle = fl; ctx.beginPath(); ctx.moveTo(vx, vy); ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.fill();
+        var depthAt = function (u) { return 1 / (1 + u * 9); };
+        [-1, 1].forEach(function (side) {
+          var nearX = side < 0 ? -w * .05 : w * 1.05;
+          for (var k = 0; k < 12; k++) {
+            var s1 = depthAt(k / 12), s2 = depthAt((k + .92) / 12);
+            var xa = vx + (nearX - vx) * s1, xb = vx + (nearX - vx) * s2;
+            var ta = vy - vy * 1.1 * s1, tb = vy - vy * 1.1 * s2, ba = vy + (h - vy) * .92 * s1, bb = vy + (h - vy) * .92 * s2;
+            ctx.fillStyle = k % 2 ? "#0c121c" : "#0f1622";
+            ctx.beginPath(); ctx.moveTo(xa, ta); ctx.lineTo(xb, tb); ctx.lineTo(xb, bb); ctx.lineTo(xa, ba); ctx.closePath(); ctx.fill();
+            ctx.strokeStyle = "rgba(120,150,190,.18)"; ctx.lineWidth = Math.max(1, 2 * s1); ctx.stroke();
+          }
+          ctx.fillStyle = "rgba(200,220,255,.85)";
+          for (var c = 0; c < 10; c++) {
+            var s = depthAt((c + .5) / 10), y = vy - vy * 1.02 * s, cx = vx + side * w * .06 * s * 4;
+            ctx.globalAlpha = .25 + .75 * s; ctx.fillRect(cx - 18 * s * 3, y, 36 * s * 3, Math.max(1.5, 5 * s)); ctx.globalAlpha = 1;
+          }
+        });
+        leds.forEach(function (l) {
+          var u = l.d, s = depthAt(u), nearX = l.side < 0 ? -w * .05 : w * 1.05;
+          var x = vx + (nearX - vx) * s, top = vy - vy * 1.1 * s, bot = vy + (h - vy) * .92 * s;
+          var y = top + (bot - top) * (.06 + l.v * .88);
+          var on = .45 + .55 * Math.max(0, Math.sin(t / 700 + l.ph));
+          ctx.globalAlpha = on * (.35 + .65 * s); ctx.fillStyle = l.c;
+          ctx.fillRect(x, y, Math.max(1, 6 * s), Math.max(1, 2.4 * s));
+        });
+        ctx.globalAlpha = 1;
+        var glow = ctx.createRadialGradient(vx, vy, 0, vx, vy, h * .5); glow.addColorStop(0, "rgba(110,160,255,.35)"); glow.addColorStop(1, "rgba(110,160,255,0)");
+        ctx.fillStyle = glow; ctx.fillRect(0, 0, w, h);
+      };
+    },
+    mesh: function (cv) {
+      var ctx = cv.getContext("2d"), rnd = seeded(11), pts = [];
+      for (var i = 0; i < 70; i++) pts.push({ x: rnd(), y: rnd(), vx: (rnd() - .5) * .00012, vy: (rnd() - .5) * .00012 });
+      return function (t, dt) {
+        var w = cv.width, h = cv.height, dpr = cv._dpr, lim = 150 * dpr;
+        ctx.clearRect(0, 0, w, h);
+        pts.forEach(function (p) { p.x += p.vx * dt; p.y += p.vy * dt; if (p.x < 0 || p.x > 1) p.vx *= -1; if (p.y < 0 || p.y > 1) p.vy *= -1; });
+        for (var i = 0; i < pts.length; i++) {
+          var a = pts[i], ax = (.35 + a.x * .65) * w, ay = a.y * h;
+          for (var j = i + 1; j < pts.length; j++) {
+            var b = pts[j], bx = (.35 + b.x * .65) * w, by = b.y * h, d = Math.hypot(ax - bx, ay - by);
+            if (d < lim) { ctx.strokeStyle = "rgba(58,208,230," + (.28 * (1 - d / lim)).toFixed(3) + ")"; ctx.lineWidth = dpr; ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.stroke(); }
+          }
+          ctx.fillStyle = i % 9 === 0 ? "#4ade80" : "rgba(58,208,230,.8)";
+          ctx.beginPath(); ctx.arc(ax, ay, (i % 9 === 0 ? 2.6 : 1.6) * dpr, 0, 6.29); ctx.fill();
+        }
+      };
+    },
+    wave: function (cv) {
+      var ctx = cv.getContext("2d");
+      return function (t) {
+        var w = cv.width, h = cv.height, dpr = cv._dpr;
+        ctx.clearRect(0, 0, w, h);
+        for (var k = 0; k < 5; k++) {
+          ctx.beginPath();
+          for (var x = 0; x <= w; x += 6 * dpr) {
+            var y = h * .35 + Math.sin(x / (90 * dpr) + t / 900 + k * .8) * 26 * dpr * (1 + k * .3) + Math.sin(x / (37 * dpr) - t / 600) * 8 * dpr;
+            x ? ctx.lineTo(x, y + k * 14 * dpr) : ctx.moveTo(x, y + k * 14 * dpr);
+          }
+          ctx.strokeStyle = k === 0 ? "rgba(58,208,230,.9)" : "rgba(59,130,246," + (.5 - k * .08) + ")";
+          ctx.lineWidth = (k === 0 ? 2 : 1.2) * dpr; ctx.stroke();
+        }
+        ctx.fillStyle = "#ef4444"; ctx.beginPath(); ctx.arc(28 * dpr, 30 * dpr, 5 * dpr, 0, 6.29); ctx.fill();
+        ctx.fillStyle = "rgba(227,236,247,.85)"; ctx.font = (12 * dpr) + "px 'IBM Plex Mono', monospace"; ctx.fillText("LIVE", 40 * dpr, 34 * dpr);
+      };
+    }
+  };
+  var running = [];
+  function setupArt(root) {
+    running = [];
+    root.querySelectorAll("canvas[data-art]").forEach(function (cv) {
+      if (!cv._draw) cv._draw = ARTS[cv.getAttribute("data-art")](cv);
+      running.push(cv);
+    });
+    resize();
+  }
+  function resize() {
+    running.forEach(function (cv) {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2), r = cv.getBoundingClientRect();
+      cv._dpr = dpr; cv.width = Math.max(1, Math.round(r.width * dpr)); cv.height = Math.max(1, Math.round(r.height * dpr));
+      cv._draw(performance.now(), 16);
+    });
+  }
+  var last = performance.now();
+  function loop(now) {
+    var dt = Math.min(50, now - last); last = now;
+    running.forEach(function (cv) { cv._draw(now, dt); });
+    requestAnimationFrame(loop);
+  }
+  window.addEventListener("resize", resize);
+
+  /* ---------- 切換版型 ---------- */
+  var tip = document.querySelector(".sw-tip");
+  function show(v) {
+    if (!NOTES[v]) v = "a";
+    if (v === current) return;
+    current = v;
+    document.querySelectorAll(".v").forEach(function (d) { d.hidden = d.getAttribute("data-variant") !== v; });
+    document.querySelectorAll(".switcher [data-set]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-set") === v)); });
+    document.body.setAttribute("data-v", v);
+    tip.querySelector("strong").textContent = NOTES[v][0];
+    tip.querySelector("span").textContent = NOTES[v][1];
+    try { localStorage.setItem("mootech-variant", v); } catch (e) {}
+    if (location.hash !== "#design-" + v) { try { history.replaceState(null, "", "#design-" + v); } catch (e) {} }
+    setupArt(document.getElementById("v" + v));
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }
+  document.querySelectorAll(".switcher [data-set]").forEach(function (b) {
+    b.addEventListener("click", function () { show(b.getAttribute("data-set")); });
+  });
+  document.addEventListener("keydown", function (e) {
+    if (/input|textarea/i.test(e.target.tagName)) return;
+    var map = { "1": "a", "2": "b", "3": "c" };
+    if (map[e.key]) show(map[e.key]);
+  });
+  window.addEventListener("hashchange", function () {
+    var m = location.hash.match(/^#design-([abc])$/); if (m) show(m[1]);
+  });
+
+  /* 區塊捲動不改動網址 hash，避免與版型切換衝突 */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest("a[data-scroll]"); if (!a) return;
+    var t = document.getElementById(a.getAttribute("href").slice(1)); if (!t) return;
+    e.preventDefault();
+    var head = document.querySelector(".v:not([hidden]) header");
+    var y = t.getBoundingClientRect().top + window.scrollY - (head ? head.offsetHeight : 0) + 1;
+    window.scrollTo({ top: Math.max(0, y), behavior: reduce ? "auto" : "smooth" });
+  });
+
+  document.querySelectorAll("form[data-form]").forEach(function (f) {
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      f.querySelector(".form-note").textContent = "感謝您的訊息。此為設計預覽，表單尚未串接寄信服務。";
+    });
+  });
+
+  document.querySelectorAll("svg[data-map]").forEach(drawMap);
+  var init = (location.hash.match(/^#design-([abc])$/) || [])[1];
+  if (!init) { try { init = localStorage.getItem("mootech-variant"); } catch (e) {} }
+  show(init || "a");
+  if (!reduce) requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
