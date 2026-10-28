@@ -105,7 +105,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .va-btn.ghost:hover { background: rgba(255,255,255,.12); }
 .va-hero { position: relative; background: #05070c; color: #fff; overflow: hidden; }
 .va-hero .wrap { position: relative; padding-block: 132px 120px; text-align: center; display: grid; justify-items: center; gap: 18px; }
-.va-hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 70% at 50% 45%, rgba(5,7,12,.15), rgba(5,7,12,.75)); pointer-events: none; }
+.va-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(4,12,26,.6), rgba(4,12,26,.4) 45%, rgba(4,12,26,.82)); pointer-events: none; }
 .va-hero .wrap { z-index: 1; }
 .va-eyebrow { font: 700 13px/1 var(--latin-a); letter-spacing: .28em; color: #9cc8f5; }
 .va-hero h1 { font: 800 clamp(44px, 8vw, 84px)/1 var(--latin-a); letter-spacing: .08em; }
@@ -390,15 +390,15 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .va-card:hover .thumb { transform: scale(1.03); }
 .va-about-side { display: grid; gap: 20px; }
 .va-about-img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 10px; display: block; }
-.va-cta { background: linear-gradient(100deg, rgba(8,73,127,.92) 0%, rgba(11,107,203,.8) 60%, rgba(21,163,154,.75) 130%), url("assets/photos/cta-team.jpg") center / cover, url("assets/thumbs/future.svg") center / cover; }
+.va-cta { background: linear-gradient(100deg, rgba(8,73,127,.95) 0%, rgba(11,107,203,.78) 45%, rgba(11,107,203,.12) 100%), url("assets/photos/a/cta-team.jpg") center / cover, url("assets/thumbs/future.svg") center / cover; }
 .vb-cell .thumb { display: block; margin: -26px -26px 4px; width: calc(100% + 52px); max-width: none; aspect-ratio: 16 / 8; object-fit: cover; border-bottom: 1px solid var(--b-line); opacity: .9; transition: opacity .25s; }
 .vb-cell:hover .thumb { opacity: 1; }
 .vb-cell.big .bg-img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; opacity: .55; }
-.vb-cta { background: linear-gradient(180deg, var(--b-bg), rgba(6,13,24,.55) 50%, var(--b-bg)), url("assets/photos/cta-team.jpg") center / cover, url("assets/thumbs/future.svg") center / cover; }
+.vb-cta { background: linear-gradient(90deg, var(--b-bg) 20%, rgba(6,13,24,.35) 75%), linear-gradient(180deg, var(--b-bg), transparent 25%, transparent 75%, var(--b-bg)), url("assets/photos/b/cta-team.jpg") center / cover, url("assets/thumbs/future.svg") center / cover; }
 .vc-row { grid-template-columns: 168px minmax(0, 3fr) minmax(0, 5fr) 56px; }
-.vc-row .thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; filter: grayscale(1) contrast(1.1); transition: filter .3s; display: block; }
-.vc-row:hover .thumb { filter: none; }
-.vc-about-img { margin-top: 40px; width: 100%; aspect-ratio: 21 / 9; object-fit: cover; display: block; filter: grayscale(1) contrast(1.05); }
+.vc-row .thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; transition: transform .5s; display: block; }
+.vc-row:hover .thumb { transform: scale(1.04); }
+.vc-about-img { margin-top: 40px; width: 100%; aspect-ratio: 21 / 9; object-fit: cover; display: block; }
 @media (max-width: 900px) {
   .vc-row { grid-template-columns: minmax(0, 1fr) 40px; }
   .vc-row .thumb { grid-column: 1 / -1; grid-row: 1; aspect-ratio: 16 / 7; }
@@ -455,7 +455,6 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 @media (max-width: 560px) { .va-why { grid-template-columns: minmax(0, 1fr); } .va-strip span { display: none; } }
 
 /* ===================== 升級：B ===================== */
-.vb .thumb, .vb .bg-img { filter: grayscale(1) contrast(1.15) brightness(.9) sepia(1) hue-rotate(160deg) saturate(2.2); }
 .vb .hero-photo { filter: inherit; }
 .vb-hero-copy > * { animation: up .8s cubic-bezier(.2,.7,.2,1) both; }
 .vb-hero-copy > :nth-child(2) { animation-delay: .1s; } .vb-hero-copy > :nth-child(3) { animation-delay: .2s; } .vb-hero-copy > :nth-child(4) { animation-delay: .3s; }
@@ -490,7 +489,6 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 }
 
 /* ===================== 升級：C ===================== */
-.vc .thumb, .vc .vc-about-img { filter: grayscale(1) contrast(1.2); }
 .vc-mega > span { display: flex; overflow: hidden; padding-bottom: .04em; }
 .vc-mega > span > span { display: inline-block; animation: rise 1s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(var(--i) * 70ms); }
 @keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
@@ -520,6 +518,76 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
   .vc-nav { margin-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; } }
+/* ---- 實拍照片 ---- */
+.va-slides { overflow: hidden; }
+.va-slides > * { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; opacity: 0; transition: opacity 1.4s ease; }
+.va-slides > .on { opacity: 1; animation: kb 9s ease-out both; }
+@keyframes kb { from { transform: scale(1.08); } to { transform: scale(1); } }
+.va-about-img.va-slides { position: relative; aspect-ratio: 16 / 10; }
+.va-dots { display: flex; gap: 8px; justify-content: center; order: 9; }
+.va-dots button { width: 28px; height: 4px; border: 0; border-radius: 2px; background: rgba(255,255,255,.35); cursor: pointer; padding: 0; transition: background .3s, width .3s; }
+.va-dots button.on { background: #fff; width: 44px; }
+.va-hero .va-dots { position: absolute; left: 0; right: 0; bottom: 92px; animation: none; }
+.vb-hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; opacity: .55; }
+.vb-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--b-bg) 8%, rgba(6,13,24,.55) 55%, rgba(6,13,24,.8)); }
+.vb-hero > canvas, .vb-hero::before { z-index: 1; }
+.vb-hero .vb-hero-grid, .vb-ticker { z-index: 2; }
+.vb-cell.big .bg-img { opacity: .85; }
+.vb-cell.big::after { background: linear-gradient(180deg, rgba(11,22,38,0) 25%, rgba(11,22,38,.96) 78%); }
+.vb-cell .thumb { opacity: 1; }
+.vb-about-side { display: grid; gap: 14px; align-content: start; min-width: 0; }
+.vb-about-img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border: 1px solid var(--b-line); border-radius: 6px; display: block; }
+.vc-hero-img { display: block; width: 100%; height: auto; aspect-ratio: 21 / 8; object-fit: cover; margin-bottom: 56px; animation: up 1s .7s cubic-bezier(.2,.7,.2,1) both; }
+.vc-row .thumb { overflow: hidden; }
+.vc-cta h2 { grid-column: 1 / span 7; } .vc-cta p { grid-column: 1 / span 6; } .vc-cta .vc-btn { grid-column: 1 / span 4; justify-self: start; }
+.vc-cta-img { grid-column: 8 / span 5; grid-row: 1 / span 3; width: 100%; height: 100%; min-height: 260px; object-fit: cover; object-position: 75% center; display: block; border: 2px solid var(--c-ink); }
+.va-why-item { box-shadow: 0 10px 30px rgba(8,30,60,.06); }
+@media (max-width: 900px) {
+  .vc-cta-img { grid-column: 1 / -1; grid-row: auto; min-height: 0; height: auto; aspect-ratio: 16 / 9; }
+  .vc-cta .vc-btn { grid-column: 1 / -1; }
+  .vc-hero-img { aspect-ratio: 16 / 10; margin-bottom: 40px; }
+  .va-hero .va-dots { bottom: 84px; }
+}
+/* ---- 新增圖片區塊 ---- */
+.va-slides > .blank { position: absolute; inset: 0; }
+.va-mosaic { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 220px; gap: 14px; }
+.va-mosaic figure { position: relative; margin: 0; border-radius: 12px; overflow: hidden; }
+.va-mosaic figure:first-child { grid-column: span 2; grid-row: span 2; }
+.va-mosaic img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s; }
+.va-mosaic figure:hover img { transform: scale(1.05); }
+.va-mosaic figcaption { position: absolute; inset: auto 0 0 0; padding: 40px 18px 16px; background: linear-gradient(transparent, rgba(4,16,34,.85)); color: #fff; display: grid; gap: 2px; }
+.va-mosaic figcaption b { font-size: 17px; } .va-mosaic figcaption span { font-size: 13px; color: #b9d3ee; }
+.vb-tabs { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 14px; }
+.vb-tablist { display: grid; gap: 8px; align-content: start; }
+.vb-tablist button { appearance: none; text-align: left; border: 1px solid var(--b-line); background: var(--b-panel); color: var(--b-muted); border-radius: 6px; padding: 16px 18px; cursor: pointer; display: grid; gap: 4px; position: relative; overflow: hidden; transition: border-color .25s, color .25s; }
+.vb-tablist button small { font: 400 12px/1 var(--mono); color: var(--b-muted); }
+.vb-tablist button span { font-size: 18px; font-weight: 700; }
+.vb-tablist button.on { border-color: var(--b-cyan); color: var(--b-ink); }
+.vb-tablist button.on small { color: var(--b-cyan); }
+.vb-tabs.manual .vb-tablist button.on::after { display: none; }
+.vb-tablist button.on::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; background: var(--b-cyan); animation: tabbar 6s linear both; }
+@keyframes tabbar { from { width: 0; } to { width: 100%; } }
+.vb-stage { position: relative; border: 1px solid var(--b-line); border-radius: 6px; overflow: hidden; aspect-ratio: 16 / 10; background: var(--b-panel); }
+.vb-stage figure { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity .6s; }
+.vb-stage figure.on { opacity: 1; }
+.vb-stage img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vb-stage figcaption { position: absolute; inset: auto 0 0 0; padding: 48px 24px 20px; background: linear-gradient(transparent, rgba(6,13,24,.92)); display: grid; gap: 6px; }
+.vb-stage .slug { font: 400 12px/1 var(--mono); color: var(--b-cyan); } .vb-stage p { color: var(--b-ink); max-width: 60ch; font-size: 15px; }
+.vc-field-intro { font-size: clamp(20px, 2.4vw, 28px); font-weight: 700; max-width: 30ch; }
+.vc-strip { --sp: max(var(--gutter-l), calc((100vw - 1180px) / 2 + 16px)); scroll-padding-left: var(--sp); display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 40px; padding-bottom: 16px; padding-left: var(--sp); padding-right: var(--gutter-r); scrollbar-color: var(--c-ink) transparent; }
+.vc-strip figure { flex: 0 0 min(420px, 78vw); margin: 0; scroll-snap-align: start; display: grid; gap: 10px; }
+.vc-strip img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; transition: filter .4s; }
+.vc-strip figure:hover img { filter: contrast(1.15); }
+.vc-strip figcaption { border-top: 2px solid var(--c-ink); padding-top: 10px; display: grid; gap: 2px; }
+.vc-strip b { font-size: 20px; font-weight: 900; }
+@media (max-width: 900px) {
+  .va-mosaic { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 170px; }
+  .va-mosaic figure:first-child { grid-row: span 1; }
+  .vb-tabs { grid-template-columns: minmax(0, 1fr); }
+  .vb-tablist { grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr); overflow-x: auto; padding-bottom: 4px; }
+  .vb-stage { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 560px) { .va-mosaic { grid-template-columns: minmax(0, 1fr); } .va-mosaic figure:first-child { grid-column: auto; grid-row: span 1; } .va-mosaic figure { grid-row: span 1; } }
 </style>
 </head>
 <body data-v="a">
@@ -556,11 +624,17 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
   </header>
   <section class="va-hero" id="va-top">
     <canvas class="fill" data-art="corridor" aria-hidden="true"></canvas>
-    <img class="hero-photo" src="assets/photos/hero-datacenter.jpg" alt="" onerror="this.remove()">
+    <div class="hero-photo va-slides" data-slides aria-hidden="true">
+      <span class="blank on"></span>
+      <img src="assets/photos/a/hero-datacenter.jpg" alt="">
+      <img src="assets/photos/a/hero-2.jpg" alt="" loading="lazy">
+      <img src="assets/photos/a/hero-3.jpg" alt="" loading="lazy">
+    </div>
     <div class="wrap">
       <span class="va-eyebrow">SINCE 2016 · SINGAPORE · TAIWAN</span>
       <h1>MOOTECH</h1>
       <p>透過創新推動企業發展</p>
+      <div class="va-dots" data-dots role="tablist" aria-label="主視覺切換"><button type="button" class="on" aria-label="1"></button><button type="button" aria-label="2"></button><button type="button" aria-label="3"></button><button type="button" aria-label="4"></button></div>
       <div class="actions">
         <a class="va-btn" href="#va-solutions" data-scroll>探索解決方案</a>
         <a class="va-btn ghost" href="#va-contact" data-scroll>聯絡我們</a>
@@ -571,7 +645,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 
   <section class="va-sec soft" id="va-about">
     <div class="wrap va-about">
-      <div class="va-about-side"><img class="va-about-img" src="assets/photos/about-office.jpg" data-fallback="assets/thumbs/datacenter.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="資料中心機房" loading="lazy" width="800" height="500">
+      <div class="va-about-side"><div class="va-about-img va-slides" data-slides><img class="on" src="assets/photos/a/about-office.jpg" alt="MOOTECH 辦公室" loading="lazy"><img src="assets/photos/a/about-2.jpg" alt="MOOTECH 團隊" loading="lazy"></div>
       <div class="va-facts">
         <div><b>2016</b><span>成立年份，深耕企業 IT 服務</span></div>
         <div><b>5 大</b><span>解決方案：直播、網路、架構、整合、威脅情報</span></div>
@@ -596,31 +670,31 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
       </div>
       <div class="va-sol">
         <article class="va-card wide">
-          <img class="thumb" src="assets/photos/sol-live.jpg" data-fallback="assets/thumbs/live.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="直播示意圖" loading="lazy" width="800" height="500">
+          <img class="thumb" src="assets/photos/a/sol-live.jpg" data-fallback="assets/thumbs/live.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="直播示意圖" loading="lazy" width="800" height="500">
           <h3>直播</h3>
           <p>透過 MOOTECH 的直播解決方案，您可以接觸到全球受眾，提升品牌曝光度與互動率。我們可自訂的平台讓您根據自身需求打造專屬直播內容，無論是虛擬活動、產品發表會或其他任何形式的直播，都能輕鬆進行。MOOTECH 幫助您將直播提升至全新高度。</p>
           <a href="#va-contact" data-scroll>了解更多 →</a>
         </article>
         <article class="va-card">
-          <img class="thumb" src="assets/photos/sol-network.jpg" data-fallback="assets/thumbs/network.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="網路連線示意圖" loading="lazy" width="800" height="500">
+          <img class="thumb" src="assets/photos/a/sol-network.jpg" data-fallback="assets/thumbs/network.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="網路連線示意圖" loading="lazy" width="800" height="500">
           <h3>網路連線</h3>
           <p>我們提供的網路與連線解決方案具備高度靈活且強大的連接能力，並提供專業的諮詢與支援，以保護您的業務。</p>
           <a href="#va-contact" data-scroll>了解更多 →</a>
         </article>
         <article class="va-card">
-          <img class="thumb" src="assets/photos/sol-architecture.jpg" data-fallback="assets/thumbs/architecture.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="網路架構示意圖" loading="lazy" width="800" height="500">
+          <img class="thumb" src="assets/photos/a/sol-architecture.jpg" data-fallback="assets/thumbs/architecture.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="網路架構示意圖" loading="lazy" width="800" height="500">
           <h3>網路架構</h3>
           <p>MOOTECH 團隊將依您的需求設計架構，協助您選擇符合業務需求與預算的最佳化網路解決方案。</p>
           <a href="#va-contact" data-scroll>了解更多 →</a>
         </article>
         <article class="va-card">
-          <img class="thumb" src="assets/photos/sol-integration.jpg" data-fallback="assets/thumbs/integration.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="系統整合示意圖" loading="lazy" width="800" height="500">
+          <img class="thumb" src="assets/photos/a/sol-integration.jpg" data-fallback="assets/thumbs/integration.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="系統整合示意圖" loading="lazy" width="800" height="500">
           <h3>系統整合</h3>
           <p>我們為客戶提供最佳解決方案，將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。</p>
           <a href="#va-contact" data-scroll>了解更多 →</a>
         </article>
         <article class="va-card">
-          <img class="thumb" src="assets/photos/sol-threat.jpg" data-fallback="assets/thumbs/threat.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="威脅情報庫示意圖" loading="lazy" width="800" height="500">
+          <img class="thumb" src="assets/photos/a/sol-threat.jpg" data-fallback="assets/thumbs/threat.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="威脅情報庫示意圖" loading="lazy" width="800" height="500">
           <h3>威脅情報庫</h3>
           <p>我們提供以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。</p>
           <a href="#va-contact" data-scroll>了解更多 →</a>
@@ -637,6 +711,13 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
         <h3 class="va-steps-title">合作流程</h3>
         <ol><li><b>01</b><h4>需求諮詢</h4><p>了解您的業務目標、現有系統與預算。</p></li><li><b>02</b><h4>架構設計</h4><p>規劃網路與系統架構，選出最適合的解決方案。</p></li><li><b>03</b><h4>部署導入</h4><p>實施核心解決方案，完成系統整合與測試。</p></li><li><b>04</b><h4>維運支援</h4><p>提供專業支援與優化，並依需求擴充加值功能。</p></li></ol>
       </div>
+    </div>
+  </section>
+
+  <section class="va-sec" id="va-field">
+    <div class="wrap">
+      <div class="va-sol-head"><span class="va-kicker">IN ACTION</span><h2 class="va-h2">服務場景</h2><p>從機房、會議室到活動現場，看看 MOOTECH 的解決方案如何運作。</p></div>
+      <div class="va-mosaic"><figure><img src="assets/photos/a/field-network.jpg" alt="機房佈線" loading="lazy" width="1200" height="750"><figcaption><b>機房佈線</b><span>網路連線</span></figcaption></figure><figure><img src="assets/photos/a/field-architecture.jpg" alt="架構規劃" loading="lazy" width="1200" height="750"><figcaption><b>架構規劃</b><span>網路架構</span></figcaption></figure><figure><img src="assets/photos/a/field-integration.jpg" alt="系統整合" loading="lazy" width="1200" height="750"><figcaption><b>系統整合</b><span>系統整合</span></figcaption></figure><figure><img src="assets/photos/a/field-threat.jpg" alt="資安監控" loading="lazy" width="1200" height="750"><figcaption><b>資安監控</b><span>威脅情報庫</span></figcaption></figure><figure><img src="assets/photos/a/field-live.jpg" alt="活動直播" loading="lazy" width="1200" height="750"><figcaption><b>活動直播</b><span>直播</span></figcaption></figure></div>
     </div>
   </section>
 
@@ -704,6 +785,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
     </div>
   </header>
   <section class="vb-hero" id="vb-top">
+    <img class="vb-hero-photo" src="assets/photos/b/hero-datacenter.jpg" alt="">
     <canvas class="fill" data-art="mesh" aria-hidden="true"></canvas>
     <div class="wrap vb-hero-grid">
       <div class="vb-hero-copy">
@@ -731,7 +813,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
   <section class="vb-sec" id="vb-about">
     <div class="wrap">
       <div class="vb-sec-head"><div><span class="vb-path">~/mootech/about</span><h2 class="vb-h2">關於我們</h2></div></div>
-      <div class="vb-about">
+      <div class="vb-about"><div class="vb-about-side">
         <div class="vb-spec">
           <div class="bar"><i></i><i></i><i></i><span>company.yaml</span></div>
           <dl>
@@ -743,6 +825,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
             <div><dt>status</dt><dd class="ok">● serving clients worldwide</dd></div>
           </dl>
         </div>
+        <img class="vb-about-img" src="assets/photos/b/about-office.jpg" alt="MOOTECH 辦公室" loading="lazy" width="1584" height="990"></div>
         <div class="text">
           <p>MOOTECH 是一家成立於 2016 年的專業 IT 公司，專注於創新解決方案。服務範圍包括 Web API 架構、系統和網路高可用性優化、即時串流媒體以及免費威脅情報庫。</p>
           <p>我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，主動應對潛在的安全問題。秉持前瞻性的 IT 解決方案理念，以精湛的技術實力為全球客戶提供穩定且可擴展的創新方案。</p>
@@ -757,7 +840,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
       <div class="vb-sec-head"><div><span class="vb-path">~/mootech/solutions</span><h2 class="vb-h2">解決方案</h2></div><p>五個服務模組，可獨立導入，也能組合成完整的企業 IT 基礎。</p></div>
       <div class="vb-bento">
         <article class="vb-cell big">
-          <img class="bg-img" src="assets/photos/sol-live.jpg" data-fallback="assets/thumbs/live.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="" loading="lazy">
+          <img class="bg-img" src="assets/photos/b/sol-live.jpg" data-fallback="assets/thumbs/live.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="" loading="lazy">
           <canvas class="fill" data-art="wave" aria-hidden="true"></canvas>
           <div class="body">
             <span class="slug">svc/live-streaming</span>
@@ -767,33 +850,43 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
           </div>
         </article>
         <article class="vb-cell">
-          <img class="thumb" src="assets/photos/sol-network.jpg" data-fallback="assets/thumbs/network.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="網路連線示意圖" loading="lazy" width="800" height="500">
+          <img class="thumb" src="assets/photos/b/sol-network.jpg" data-fallback="assets/thumbs/network.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="網路連線示意圖" loading="lazy" width="800" height="500">
           <span class="slug">svc/connectivity</span>
           <h3>網路連線</h3>
           <p>高度靈活且強大的連接能力，並提供專業諮詢與支援，保護您的業務。</p>
           <a class="more" href="#vb-contact" data-scroll>了解更多 →</a>
         </article>
         <article class="vb-cell">
-          <img class="thumb" src="assets/photos/sol-architecture.jpg" data-fallback="assets/thumbs/architecture.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="網路架構示意圖" loading="lazy" width="800" height="500">
+          <img class="thumb" src="assets/photos/b/sol-architecture.jpg" data-fallback="assets/thumbs/architecture.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="網路架構示意圖" loading="lazy" width="800" height="500">
           <span class="slug">svc/architecture</span>
           <h3>網路架構</h3>
           <p>依需求設計架構，選擇符合業務與預算的最佳化網路方案。</p>
           <a class="more" href="#vb-contact" data-scroll>了解更多 →</a>
         </article>
         <article class="vb-cell half">
-          <img class="thumb" src="assets/photos/sol-integration.jpg" data-fallback="assets/thumbs/integration.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="系統整合示意圖" loading="lazy" width="800" height="500">
+          <img class="thumb" src="assets/photos/b/sol-integration.jpg" data-fallback="assets/thumbs/integration.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="系統整合示意圖" loading="lazy" width="800" height="500">
           <span class="slug">svc/integration</span>
           <h3>系統整合</h3>
           <p>將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。</p>
           <a class="more" href="#vb-contact" data-scroll>了解更多 →</a>
         </article>
         <article class="vb-cell half">
-          <img class="thumb" src="assets/photos/sol-threat.jpg" data-fallback="assets/thumbs/threat.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="威脅情報庫示意圖" loading="lazy" width="800" height="500">
+          <img class="thumb" src="assets/photos/b/sol-threat.jpg" data-fallback="assets/thumbs/threat.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="威脅情報庫示意圖" loading="lazy" width="800" height="500">
           <span class="slug">svc/threat-intel</span>
           <h3>威脅情報庫</h3>
           <p>以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保網路與系統安全。</p>
           <a class="more" href="#vb-contact" data-scroll>了解更多 →</a>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="vb-sec" id="vb-overview">
+    <div class="wrap">
+      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/overview</span><h2 class="vb-h2">解決方案全景</h2></div><p>點選服務，查看它在企業環境中的樣貌。</p></div>
+      <div class="vb-tabs" data-tabs>
+        <div class="vb-tablist" role="tablist" aria-label="解決方案全景"><button type="button" role="tab" aria-selected="true" class="on"><small>svc/connectivity</small><span>網路連線</span></button><button type="button" role="tab" aria-selected="false"><small>svc/architecture</small><span>網路架構</span></button><button type="button" role="tab" aria-selected="false"><small>svc/integration</small><span>系統整合</span></button><button type="button" role="tab" aria-selected="false"><small>svc/threat-intel</small><span>威脅情報庫</span></button><button type="button" role="tab" aria-selected="false"><small>svc/live-streaming</small><span>直播</span></button></div>
+        <div class="vb-stage"><figure role="tabpanel" class="on"><img src="assets/photos/b/3d-network.jpg" alt="網路連線" loading="lazy" width="1400" height="875"><figcaption><span class="slug">svc/connectivity</span><p>高度靈活且強大的連接能力，並提供專業諮詢與支援，保護您的業務。</p></figcaption></figure><figure role="tabpanel"><img src="assets/photos/b/3d-architecture.jpg" alt="網路架構" loading="lazy" width="1400" height="875"><figcaption><span class="slug">svc/architecture</span><p>依需求設計架構，選擇符合業務與預算的最佳化網路方案。</p></figcaption></figure><figure role="tabpanel"><img src="assets/photos/b/3d-integration.jpg" alt="系統整合" loading="lazy" width="1400" height="875"><figcaption><span class="slug">svc/integration</span><p>將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。</p></figcaption></figure><figure role="tabpanel"><img src="assets/photos/b/3d-threat.jpg" alt="威脅情報庫" loading="lazy" width="1400" height="875"><figcaption><span class="slug">svc/threat-intel</span><p>以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保網路與系統安全。</p></figcaption></figure><figure role="tabpanel"><img src="assets/photos/b/3d-live.jpg" alt="直播" loading="lazy" width="1400" height="875"><figcaption><span class="slug">svc/live-streaming</span><p>接觸全球受眾，提升品牌曝光與互動率。可自訂的平台讓您打造專屬直播內容，虛擬活動、產品發表會或任何形式的直播都能輕鬆進行。</p></figcaption></figure></div>
       </div>
     </div>
   </section>
@@ -884,6 +977,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
           <div class="go"><a class="vc-btn" href="#vc-solutions" data-scroll>查看解決方案 <span class="arr">↓</span></a></div>
         </div>
       </div>
+      <img class="vc-hero-img" src="assets/photos/c/hero-datacenter.jpg" alt="資料中心機房" width="1664" height="936">
     </div>
   </section>
   <div class="vc-marquee" aria-hidden="true"><div class="track"><div><span>直播</span><i></i><span>網路連線</span><i></i><span>網路架構</span><i></i><span>系統整合</span><i></i><span>威脅情報庫</span><i></i></div><div><span>直播</span><i></i><span>網路連線</span><i></i><span>網路架構</span><i></i><span>系統整合</span><i></i><span>威脅情報庫</span><i></i></div></div></div>
@@ -897,7 +991,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
           <p>在 MOOTECH，我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，這有助於我們主動應對潛在的安全問題。我們秉持前瞻性的 IT 解決方案理念，憑藉精湛的技術實力和對卓越的不懈追求，為全球客戶提供穩定且可擴展的創新解決方案。</p>
           <p>從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的解決方案。我們的服務同時涵蓋免費威脅情報庫，讓更多企業能及早掌握風險。</p>
         </div>
-        <img class="vc-about-img" src="assets/photos/about-office.jpg" data-fallback="assets/thumbs/datacenter.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="資料中心機房" loading="lazy" width="800" height="500">
+        <img class="vc-about-img" src="assets/photos/c/about-office.jpg" data-fallback="assets/thumbs/datacenter.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="MOOTECH 辦公室" loading="lazy" width="800" height="500">
       </div>
     </div>
   </section>
@@ -907,14 +1001,22 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
       <div class="vc-sidehead"><span class="vc-label">Solutions</span><h2>解決方案</h2></div>
       <div class="vc-main">
         <div class="vc-sol">
-          <a class="vc-row" href="#vc-contact" data-scroll><img class="thumb" src="assets/photos/sol-live.jpg" data-fallback="assets/thumbs/live.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="直播示意圖" loading="lazy" width="800" height="500"><h3><small>Live Streaming</small>直播</h3><p>接觸全球受眾，提升品牌曝光度與互動率。可自訂的平台讓您打造專屬直播內容，虛擬活動、產品發表會或任何形式的直播都能輕鬆進行。</p><span class="arr">→</span></a>
-          <a class="vc-row" href="#vc-contact" data-scroll><img class="thumb" src="assets/photos/sol-network.jpg" data-fallback="assets/thumbs/network.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="網路連線示意圖" loading="lazy" width="800" height="500"><h3><small>Connectivity</small>網路連線</h3><p>高度靈活且強大的網路連接能力，並提供專業的諮詢與支援，以保護您的業務。</p><span class="arr">→</span></a>
-          <a class="vc-row" href="#vc-contact" data-scroll><img class="thumb" src="assets/photos/sol-architecture.jpg" data-fallback="assets/thumbs/architecture.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="網路架構示意圖" loading="lazy" width="800" height="500"><h3><small>Architecture</small>網路架構</h3><p>依您的需求設計架構，協助選擇符合業務需求與預算的最佳化網路解決方案。</p><span class="arr">→</span></a>
-          <a class="vc-row" href="#vc-contact" data-scroll><img class="thumb" src="assets/photos/sol-integration.jpg" data-fallback="assets/thumbs/integration.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="系統整合示意圖" loading="lazy" width="800" height="500"><h3><small>Integration</small>系統整合</h3><p>將市場上多個 IT 系統、硬體與軟體連接成一個協調一致、操作流暢的整體。</p><span class="arr">→</span></a>
-          <a class="vc-row" href="#vc-contact" data-scroll><img class="thumb" src="assets/photos/sol-threat.jpg" data-fallback="assets/thumbs/threat.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="威脅情報庫示意圖" loading="lazy" width="800" height="500"><h3><small>Threat Intelligence</small>威脅情報庫</h3><p>以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。</p><span class="arr">→</span></a>
+          <a class="vc-row" href="#vc-contact" data-scroll><img class="thumb" src="assets/photos/c/sol-live.jpg" data-fallback="assets/thumbs/live.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="直播示意圖" loading="lazy" width="800" height="500"><h3><small>Live Streaming</small>直播</h3><p>接觸全球受眾，提升品牌曝光度與互動率。可自訂的平台讓您打造專屬直播內容，虛擬活動、產品發表會或任何形式的直播都能輕鬆進行。</p><span class="arr">→</span></a>
+          <a class="vc-row" href="#vc-contact" data-scroll><img class="thumb" src="assets/photos/c/sol-network.jpg" data-fallback="assets/thumbs/network.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="網路連線示意圖" loading="lazy" width="800" height="500"><h3><small>Connectivity</small>網路連線</h3><p>高度靈活且強大的網路連接能力，並提供專業的諮詢與支援，以保護您的業務。</p><span class="arr">→</span></a>
+          <a class="vc-row" href="#vc-contact" data-scroll><img class="thumb" src="assets/photos/c/sol-architecture.jpg" data-fallback="assets/thumbs/architecture.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="網路架構示意圖" loading="lazy" width="800" height="500"><h3><small>Architecture</small>網路架構</h3><p>依您的需求設計架構，協助選擇符合業務需求與預算的最佳化網路解決方案。</p><span class="arr">→</span></a>
+          <a class="vc-row" href="#vc-contact" data-scroll><img class="thumb" src="assets/photos/c/sol-integration.jpg" data-fallback="assets/thumbs/integration.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="系統整合示意圖" loading="lazy" width="800" height="500"><h3><small>Integration</small>系統整合</h3><p>將市場上多個 IT 系統、硬體與軟體連接成一個協調一致、操作流暢的整體。</p><span class="arr">→</span></a>
+          <a class="vc-row" href="#vc-contact" data-scroll><img class="thumb" src="assets/photos/c/sol-threat.jpg" data-fallback="assets/thumbs/threat.svg" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="威脅情報庫示意圖" loading="lazy" width="800" height="500"><h3><small>Threat Intelligence</small>威脅情報庫</h3><p>以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。</p><span class="arr">→</span></a>
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="vc-sec" id="vc-field">
+    <div class="wrap vc-grid">
+      <div class="vc-sidehead"><span class="vc-label">In Action</span><h2>服務場景</h2></div>
+      <div class="vc-main"><p class="vc-field-intro">從機房、會議室到活動現場，看看 MOOTECH 的解決方案如何運作。</p></div>
+    </div>
+    <div class="vc-strip" tabindex="0" aria-label="服務場景"><figure><img src="assets/photos/c/field-network.jpg" alt="機房佈線" loading="lazy" width="1200" height="750"><figcaption><span class="vc-label">01 / 05</span><b>機房佈線</b></figcaption></figure><figure><img src="assets/photos/c/field-architecture.jpg" alt="架構規劃" loading="lazy" width="1200" height="750"><figcaption><span class="vc-label">02 / 05</span><b>架構規劃</b></figcaption></figure><figure><img src="assets/photos/c/field-integration.jpg" alt="系統整合" loading="lazy" width="1200" height="750"><figcaption><span class="vc-label">03 / 05</span><b>系統整合</b></figcaption></figure><figure><img src="assets/photos/c/field-threat.jpg" alt="資安監控" loading="lazy" width="1200" height="750"><figcaption><span class="vc-label">04 / 05</span><b>資安監控</b></figcaption></figure><figure><img src="assets/photos/c/field-live.jpg" alt="活動直播" loading="lazy" width="1200" height="750"><figcaption><span class="vc-label">05 / 05</span><b>活動直播</b></figcaption></figure></div>
   </section>
 
   <section class="vc-sec" id="vc-why">
@@ -936,6 +1038,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
       <h2>釋放你的潛能</h2>
       <p>我們將帶你展望未來。</p>
       <a class="vc-btn" href="#vc-contact" data-scroll>我們走吧 <span class="arr">→</span></a>
+      <img class="vc-cta-img" src="assets/photos/c/cta-team.jpg" alt="團隊合作" loading="lazy" width="1911" height="819">
     </div>
   </section>
 
@@ -1270,7 +1373,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
     })();
   });
 
-  var RV = ".va-sol-head,.va-card,.va-why-item,.va-steps li,.va-facts,.va-about .text,.va-about-img,.va-loc li,.va-cta .wrap > *,.vb-sec-head,.vb-cell,.vb-check,.vb-pipe li,.vb-spec,.vb-about .text,.vb-nodes > div,.vc-row,.vc-why > div,.vc-steps li,.vc-lead,.vc-cols,.vc-about-img,.vc-loc > div,.vc-cta h2";
+  var RV = ".va-mosaic figure,.va-sol-head,.va-card,.va-why-item,.va-steps li,.va-facts,.va-about .text,.va-about-img,.va-loc li,.va-cta .wrap > *,.vb-sec-head,.vb-cell,.vb-check,.vb-pipe li,.vb-spec,.vb-about .text,.vb-nodes > div,.vc-row,.vc-why > div,.vc-steps li,.vc-lead,.vc-cols,.vc-about-img,.vc-loc > div,.vc-cta h2";
   if ("IntersectionObserver" in window && !reduce) {
     var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { rootMargin: "0px 0px -8% 0px" });
     document.querySelectorAll(RV).forEach(function (el) {
@@ -1287,8 +1390,33 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
     heroA.style.setProperty("--mx", (-x * 18).toFixed(1) + "px"); heroA.style.setProperty("--my", (-y * 12).toFixed(1) + "px");
   });
 
+  /* ---------- B 解決方案全景分頁 ---------- */
+  document.querySelectorAll("[data-tabs]").forEach(function (box) {
+    var tabs = box.querySelectorAll("[role=tab]"), panels = box.querySelectorAll("[role=tabpanel]"), cur = 0, timer, auto = true;
+    function go(n) {
+      tabs[cur].classList.remove("on"); tabs[cur].setAttribute("aria-selected", "false"); panels[cur].classList.remove("on");
+      cur = (n + tabs.length) % tabs.length;
+      tabs[cur].classList.add("on"); tabs[cur].setAttribute("aria-selected", "true"); panels[cur].classList.add("on");
+    }
+    tabs.forEach(function (t, n) { t.addEventListener("click", function () { auto = false; clearInterval(timer); box.classList.add("manual"); go(n); }); });
+    if (!reduce) timer = setInterval(function () { if (auto) go(cur + 1); }, 6000);
+  });
+
+  /* ---------- 照片輪播 ---------- */
+  document.querySelectorAll("[data-slides]").forEach(function (box, bi) {
+    var imgs = box.children, dots = bi === 0 ? document.querySelectorAll("[data-dots] button") : [], i = 0, timer;
+    function go(n) {
+      imgs[i].classList.remove("on"); if (dots[i]) dots[i].classList.remove("on");
+      i = (n + imgs.length) % imgs.length;
+      imgs[i].classList.add("on"); if (dots[i]) dots[i].classList.add("on");
+    }
+    function play() { clearInterval(timer); if (!reduce) timer = setInterval(function () { go(i + 1); }, bi === 0 ? 6000 : 4500); }
+    Array.prototype.forEach.call(dots, function (d, n) { d.addEventListener("click", function () { go(n); play(); }); });
+    play();
+  });
+
   /* ---------- 中英切換 ---------- */
-  var EN = {"主選單": "Main menu", "關於我們": "About", "解決方案": "Solutions", "全球據點": "Global", "聯絡我們": "Contact", "切換語言": "Switch language", "開啟選單": "Open menu", "透過創新推動企業發展": "Driving business through innovation", "探索解決方案": "Explore solutions", "解決方案捷徑": "Solution shortcuts", "直播": "Live Streaming", "網路連線": "Connectivity", "網路架構": "Network Architecture", "系統整合": "System Integration", "威脅情報庫": "Threat Intelligence", "資料中心機房": "Data center", "成立年份，深耕企業 IT 服務": "Founded, serving enterprise IT ever since", "5 大": "5 core", "解決方案：直播、網路、架構、整合、威脅情報": "Solutions: streaming, connectivity, architecture, integration, threat intel", "新加坡 · 台灣": "Singapore · Taiwan", "雙據點，服務全球客戶": "Two offices serving clients worldwide", "MOOTECH 是一家成立於 2016 年的專業 IT 公司，專注於創新解決方案。我們的服務範圍包括 Web API 架構、系統和網路高可用性優化、即時串流媒體以及免費威脅情報庫。": "MOOTECH is a professional IT company founded in 2016, focused on innovative solutions. Our services cover Web API architecture, high-availability optimisation for systems and networks, real-time streaming media and a free threat intelligence database.", "在 MOOTECH，我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，這有助於我們主動應對潛在的安全問題。我們秉持前瞻性的 IT 解決方案理念，憑藉精湛的技術實力和對卓越的不懈追求，我們能夠為全球客戶提供穩定且可擴展的創新解決方案。": "At MOOTECH, security and threat assessment come first. We maintain a robust threat intelligence database that lets us address potential security issues before they become problems. With a forward-looking approach to IT, strong engineering and a constant pursuit of excellence, we deliver stable, scalable and innovative solutions to clients around the world.", "從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的解決方案。": "From implementing core solutions to deploying value-added features, we work in a flexible, responsive way to give users worldwide stable and innovative solutions.", "從內容傳遞到基礎架構與資安防護，為企業打造穩定、可擴展的 IT 環境。": "From content delivery to infrastructure and security, we build stable, scalable IT environments for businesses.", "直播示意圖": "Live streaming", "網路連線示意圖": "Connectivity", "網路架構示意圖": "Network architecture", "系統整合示意圖": "System integration", "威脅情報庫示意圖": "Threat intelligence", "透過 MOOTECH 的直播解決方案，您可以接觸到全球受眾，提升品牌曝光度與互動率。我們可自訂的平台讓您根據自身需求打造專屬直播內容，無論是虛擬活動、產品發表會或其他任何形式的直播，都能輕鬆進行。MOOTECH 幫助您將直播提升至全新高度。": "With MOOTECH live streaming you can reach a global audience and lift brand exposure and engagement. Our customisable platform lets you build streams around your own needs, whether it is a virtual event, a product launch or any other kind of broadcast. MOOTECH takes your live streaming to a new level.", "了解更多 →": "Learn more →", "我們提供的網路與連線解決方案具備高度靈活且強大的連接能力，並提供專業的諮詢與支援，以保護您的業務。": "Our network and connectivity solutions offer flexible, powerful connections, backed by expert consulting and support to protect your business.", "MOOTECH 團隊將依您的需求設計架構，協助您選擇符合業務需求與預算的最佳化網路解決方案。": "The MOOTECH team designs an architecture around your requirements and helps you choose the optimal network solution for your business and budget.", "我們為客戶提供最佳解決方案，將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。": "We connect multiple IT systems, hardware and software from the market into one coordinated whole that runs smoothly.", "我們提供以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。": "Our IP-based threat intelligence database addresses a wide range of threats and malicious activity, keeping your networks and systems secure.", "為什麼選擇 MOOTECH": "Why MOOTECH", "安全優先": "Security first", "以威脅評估為起點，持續維護威脅情報庫，主動應對潛在的安全風險。": "We start from threat assessment and keep our threat intelligence database current, so risks are handled before they hit.", "高可用性": "High availability", "從 Web API 架構到網路層，針對穩定與高可用性進行設計與優化。": "From Web API architecture down to the network layer, everything is designed and tuned for stability and uptime.", "靈活迅速": "Fast and flexible", "從核心解決方案到加值功能，以靈活、反應迅速的方式交付。": "From core solutions to value-added features, we deliver quickly and adapt as you go.", "全球視野": "Global reach", "以新加坡與台灣為據點，為全球客戶提供穩定且可擴展的服務。": "Based in Singapore and Taiwan, we provide stable, scalable services to clients worldwide.", "合作流程": "How we work", "需求諮詢": "Consultation", "了解您的業務目標、現有系統與預算。": "We learn your business goals, current systems and budget.", "架構設計": "Architecture design", "規劃網路與系統架構，選出最適合的解決方案。": "We plan the network and system architecture and choose the best-fit solution.", "部署導入": "Deployment", "實施核心解決方案，完成系統整合與測試。": "We implement the core solution and complete integration and testing.", "維運支援": "Ongoing support", "提供專業支援與優化，並依需求擴充加值功能。": "We provide expert support and optimisation, and add value-added features as you grow.", "釋放你的潛能": "Unleash your potential", "我們將帶你展望未來。": "We will take you into the future.", "我們走吧 →": "Let's go →", "我們走吧": "Let's go", "我們力求精益求精，並擁有全球視野。": "We strive for excellence, with a global perspective.", "亞太區據點地圖": "Asia-Pacific locations map", "辦公室": "Office", "新加坡、台灣": "Singapore, Taiwan", "資料中心": "Data center", "香港、新加坡、東京": "Hong Kong, Singapore, Tokyo", "姓名": "Name", "電子郵件": "Email", "訊息": "Message", "發送訊息": "Send message", "地點": "Locations", "新加坡": "Singapore", "台灣": "Taiwan", "社群": "Social", "Mootech 私人有限公司 · © 2026 版權所有": "Mootech Pte. Ltd. · © 2026 All rights reserved", "Web API 架構、高可用性網路、即時串流與威脅情報。MOOTECH 讓企業的關鍵系統保持穩定、安全且隨時可擴展。": "Web API architecture, high-availability networks, real-time streaming and threat intelligence. MOOTECH keeps critical business systems stable, secure and ready to scale.", "查看解決方案 →": "View solutions →", "查看解決方案": "View solutions", "聯絡工程團隊": "Talk to our engineers", "新加坡 / 台灣": "Singapore / Taiwan", "高可用性架構": "HA architecture", "MOOTECH 是一家成立於 2016 年的專業 IT 公司，專注於創新解決方案。服務範圍包括 Web API 架構、系統和網路高可用性優化、即時串流媒體以及免費威脅情報庫。": "MOOTECH is a professional IT company founded in 2016, focused on innovative solutions. Our services cover Web API architecture, high-availability optimisation for systems and networks, real-time streaming media and a free threat intelligence database.", "我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，主動應對潛在的安全問題。秉持前瞻性的 IT 解決方案理念，以精湛的技術實力為全球客戶提供穩定且可擴展的創新方案。": "Security and threat assessment come first. We maintain a robust threat intelligence database to get ahead of potential security issues, and apply strong engineering to deliver stable, scalable solutions to clients worldwide.", "從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的服務。": "From implementing core solutions to deploying value-added features, we work in a flexible, responsive way to give users worldwide stable and innovative service.", "五個服務模組，可獨立導入，也能組合成完整的企業 IT 基礎。": "Five service modules. Adopt one, or combine them into a complete enterprise IT foundation.", "接觸全球受眾，提升品牌曝光與互動率。可自訂的平台讓您打造專屬直播內容，虛擬活動、產品發表會或任何形式的直播都能輕鬆進行。": "Reach a global audience and lift brand exposure and engagement. Our customisable platform handles virtual events, product launches and any other kind of broadcast.", "高度靈活且強大的連接能力，並提供專業諮詢與支援，保護您的業務。": "Flexible, powerful connectivity, backed by expert consulting and support to protect your business.", "依需求設計架構，選擇符合業務與預算的最佳化網路方案。": "Architecture designed around your needs, with the optimal network for your business and budget.", "將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。": "Multiple IT systems, hardware and software connected into one coordinated, smooth-running whole.", "以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保網路與系統安全。": "An IP-based threat intelligence database that counters threats and malicious activity to keep networks and systems secure.", "我們力求精益求精，": "We strive for excellence,", "並擁有全球視野。": "with a global perspective.", "亞太區據點與連線地圖": "Asia-Pacific locations and links map", "SIN · 新加坡": "SIN · Singapore", "TPE · 台灣": "TPE · Taiwan", "HKG · 香港": "HKG · Hong Kong", "TYO · 東京": "TYO · Tokyo", "告訴我們您的需求，工程團隊會盡快回覆。": "Tell us what you need and our engineering team will get back to you soon.", "NAME · 姓名": "NAME", "EMAIL · 電子郵件": "EMAIL", "MESSAGE · 訊息": "MESSAGE", "發送訊息 →": "Send message →", "© 2026 Mootech 私人有限公司 · 版權所有": "© 2026 Mootech Pte. Ltd. · All rights reserved", "關於": "About", "據點": "Locations", "聯絡": "Contact", "在 MOOTECH，我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，這有助於我們主動應對潛在的安全問題。我們秉持前瞻性的 IT 解決方案理念，憑藉精湛的技術實力和對卓越的不懈追求，為全球客戶提供穩定且可擴展的創新解決方案。": "At MOOTECH, security and threat assessment come first. We maintain a robust threat intelligence database that lets us address potential security issues early. With a forward-looking approach to IT, strong engineering and a constant pursuit of excellence, we deliver stable, scalable and innovative solutions worldwide.", "從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的解決方案。我們的服務同時涵蓋免費威脅情報庫，讓更多企業能及早掌握風險。": "From implementing core solutions to deploying value-added features, we work in a flexible, responsive way. Our services also include a free threat intelligence database, so more businesses can see risks early.", "接觸全球受眾，提升品牌曝光度與互動率。可自訂的平台讓您打造專屬直播內容，虛擬活動、產品發表會或任何形式的直播都能輕鬆進行。": "Reach a global audience and lift brand exposure and engagement. Our customisable platform handles virtual events, product launches and any other kind of broadcast.", "高度靈活且強大的網路連接能力，並提供專業的諮詢與支援，以保護您的業務。": "Flexible, powerful network connectivity, backed by expert consulting and support to protect your business.", "依您的需求設計架構，協助選擇符合業務需求與預算的最佳化網路解決方案。": "We design the architecture around your needs and help you choose the optimal network for your business and budget.", "將市場上多個 IT 系統、硬體與軟體連接成一個協調一致、操作流暢的整體。": "We connect multiple IT systems, hardware and software into one coordinated, smooth-running whole.", "以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。": "An IP-based threat intelligence database that counters threats and malicious activity to keep your networks and systems secure.", "香港": "Hong Kong", "東京": "Tokyo", "Mootech 私人有限公司": "Mootech Pte. Ltd.", "© 2026 版權所有": "© 2026 All rights reserved"};
+  var EN = {"主選單": "Main menu", "關於我們": "About", "解決方案": "Solutions", "全球據點": "Global", "聯絡我們": "Contact", "切換語言": "Switch language", "開啟選單": "Open menu", "透過創新推動企業發展": "Driving business through innovation", "探索解決方案": "Explore solutions", "解決方案捷徑": "Solution shortcuts", "直播": "Live Streaming", "網路連線": "Connectivity", "網路架構": "Network Architecture", "系統整合": "System Integration", "威脅情報庫": "Threat Intelligence", "資料中心機房": "Data center", "服務場景": "In action", "從機房、會議室到活動現場，看看 MOOTECH 的解決方案如何運作。": "From data centers and meeting rooms to live events, see MOOTECH solutions at work.", "機房佈線": "Data center cabling", "架構規劃": "Architecture planning", "資安監控": "Security monitoring", "活動直播": "Event streaming", "解決方案全景": "Solution overview", "點選服務，查看它在企業環境中的樣貌。": "Pick a service to see how it fits into an enterprise environment.", "MOOTECH 辦公室": "MOOTECH office", "MOOTECH 團隊": "MOOTECH team", "團隊合作": "Team collaboration", "主視覺切換": "Hero slides", "成立年份，深耕企業 IT 服務": "Founded, serving enterprise IT ever since", "5 大": "5 core", "解決方案：直播、網路、架構、整合、威脅情報": "Solutions: streaming, connectivity, architecture, integration, threat intel", "新加坡 · 台灣": "Singapore · Taiwan", "雙據點，服務全球客戶": "Two offices serving clients worldwide", "MOOTECH 是一家成立於 2016 年的專業 IT 公司，專注於創新解決方案。我們的服務範圍包括 Web API 架構、系統和網路高可用性優化、即時串流媒體以及免費威脅情報庫。": "MOOTECH is a professional IT company founded in 2016, focused on innovative solutions. Our services cover Web API architecture, high-availability optimisation for systems and networks, real-time streaming media and a free threat intelligence database.", "在 MOOTECH，我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，這有助於我們主動應對潛在的安全問題。我們秉持前瞻性的 IT 解決方案理念，憑藉精湛的技術實力和對卓越的不懈追求，我們能夠為全球客戶提供穩定且可擴展的創新解決方案。": "At MOOTECH, security and threat assessment come first. We maintain a robust threat intelligence database that lets us address potential security issues before they become problems. With a forward-looking approach to IT, strong engineering and a constant pursuit of excellence, we deliver stable, scalable and innovative solutions to clients around the world.", "從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的解決方案。": "From implementing core solutions to deploying value-added features, we work in a flexible, responsive way to give users worldwide stable and innovative solutions.", "從內容傳遞到基礎架構與資安防護，為企業打造穩定、可擴展的 IT 環境。": "From content delivery to infrastructure and security, we build stable, scalable IT environments for businesses.", "直播示意圖": "Live streaming", "網路連線示意圖": "Connectivity", "網路架構示意圖": "Network architecture", "系統整合示意圖": "System integration", "威脅情報庫示意圖": "Threat intelligence", "透過 MOOTECH 的直播解決方案，您可以接觸到全球受眾，提升品牌曝光度與互動率。我們可自訂的平台讓您根據自身需求打造專屬直播內容，無論是虛擬活動、產品發表會或其他任何形式的直播，都能輕鬆進行。MOOTECH 幫助您將直播提升至全新高度。": "With MOOTECH live streaming you can reach a global audience and lift brand exposure and engagement. Our customisable platform lets you build streams around your own needs, whether it is a virtual event, a product launch or any other kind of broadcast. MOOTECH takes your live streaming to a new level.", "了解更多 →": "Learn more →", "我們提供的網路與連線解決方案具備高度靈活且強大的連接能力，並提供專業的諮詢與支援，以保護您的業務。": "Our network and connectivity solutions offer flexible, powerful connections, backed by expert consulting and support to protect your business.", "MOOTECH 團隊將依您的需求設計架構，協助您選擇符合業務需求與預算的最佳化網路解決方案。": "The MOOTECH team designs an architecture around your requirements and helps you choose the optimal network solution for your business and budget.", "我們為客戶提供最佳解決方案，將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。": "We connect multiple IT systems, hardware and software from the market into one coordinated whole that runs smoothly.", "我們提供以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。": "Our IP-based threat intelligence database addresses a wide range of threats and malicious activity, keeping your networks and systems secure.", "為什麼選擇 MOOTECH": "Why MOOTECH", "安全優先": "Security first", "以威脅評估為起點，持續維護威脅情報庫，主動應對潛在的安全風險。": "We start from threat assessment and keep our threat intelligence database current, so risks are handled before they hit.", "高可用性": "High availability", "從 Web API 架構到網路層，針對穩定與高可用性進行設計與優化。": "From Web API architecture down to the network layer, everything is designed and tuned for stability and uptime.", "靈活迅速": "Fast and flexible", "從核心解決方案到加值功能，以靈活、反應迅速的方式交付。": "From core solutions to value-added features, we deliver quickly and adapt as you go.", "全球視野": "Global reach", "以新加坡與台灣為據點，為全球客戶提供穩定且可擴展的服務。": "Based in Singapore and Taiwan, we provide stable, scalable services to clients worldwide.", "合作流程": "How we work", "需求諮詢": "Consultation", "了解您的業務目標、現有系統與預算。": "We learn your business goals, current systems and budget.", "架構設計": "Architecture design", "規劃網路與系統架構，選出最適合的解決方案。": "We plan the network and system architecture and choose the best-fit solution.", "部署導入": "Deployment", "實施核心解決方案，完成系統整合與測試。": "We implement the core solution and complete integration and testing.", "維運支援": "Ongoing support", "提供專業支援與優化，並依需求擴充加值功能。": "We provide expert support and optimisation, and add value-added features as you grow.", "釋放你的潛能": "Unleash your potential", "我們將帶你展望未來。": "We will take you into the future.", "我們走吧 →": "Let's go →", "我們走吧": "Let's go", "我們力求精益求精，並擁有全球視野。": "We strive for excellence, with a global perspective.", "亞太區據點地圖": "Asia-Pacific locations map", "辦公室": "Office", "新加坡、台灣": "Singapore, Taiwan", "資料中心": "Data center", "香港、新加坡、東京": "Hong Kong, Singapore, Tokyo", "姓名": "Name", "電子郵件": "Email", "訊息": "Message", "發送訊息": "Send message", "地點": "Locations", "新加坡": "Singapore", "台灣": "Taiwan", "社群": "Social", "Mootech 私人有限公司 · © 2026 版權所有": "Mootech Pte. Ltd. · © 2026 All rights reserved", "Web API 架構、高可用性網路、即時串流與威脅情報。MOOTECH 讓企業的關鍵系統保持穩定、安全且隨時可擴展。": "Web API architecture, high-availability networks, real-time streaming and threat intelligence. MOOTECH keeps critical business systems stable, secure and ready to scale.", "查看解決方案 →": "View solutions →", "查看解決方案": "View solutions", "聯絡工程團隊": "Talk to our engineers", "新加坡 / 台灣": "Singapore / Taiwan", "高可用性架構": "HA architecture", "MOOTECH 是一家成立於 2016 年的專業 IT 公司，專注於創新解決方案。服務範圍包括 Web API 架構、系統和網路高可用性優化、即時串流媒體以及免費威脅情報庫。": "MOOTECH is a professional IT company founded in 2016, focused on innovative solutions. Our services cover Web API architecture, high-availability optimisation for systems and networks, real-time streaming media and a free threat intelligence database.", "我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，主動應對潛在的安全問題。秉持前瞻性的 IT 解決方案理念，以精湛的技術實力為全球客戶提供穩定且可擴展的創新方案。": "Security and threat assessment come first. We maintain a robust threat intelligence database to get ahead of potential security issues, and apply strong engineering to deliver stable, scalable solutions to clients worldwide.", "從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的服務。": "From implementing core solutions to deploying value-added features, we work in a flexible, responsive way to give users worldwide stable and innovative service.", "五個服務模組，可獨立導入，也能組合成完整的企業 IT 基礎。": "Five service modules. Adopt one, or combine them into a complete enterprise IT foundation.", "接觸全球受眾，提升品牌曝光與互動率。可自訂的平台讓您打造專屬直播內容，虛擬活動、產品發表會或任何形式的直播都能輕鬆進行。": "Reach a global audience and lift brand exposure and engagement. Our customisable platform handles virtual events, product launches and any other kind of broadcast.", "高度靈活且強大的連接能力，並提供專業諮詢與支援，保護您的業務。": "Flexible, powerful connectivity, backed by expert consulting and support to protect your business.", "依需求設計架構，選擇符合業務與預算的最佳化網路方案。": "Architecture designed around your needs, with the optimal network for your business and budget.", "將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。": "Multiple IT systems, hardware and software connected into one coordinated, smooth-running whole.", "以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保網路與系統安全。": "An IP-based threat intelligence database that counters threats and malicious activity to keep networks and systems secure.", "我們力求精益求精，": "We strive for excellence,", "並擁有全球視野。": "with a global perspective.", "亞太區據點與連線地圖": "Asia-Pacific locations and links map", "SIN · 新加坡": "SIN · Singapore", "TPE · 台灣": "TPE · Taiwan", "HKG · 香港": "HKG · Hong Kong", "TYO · 東京": "TYO · Tokyo", "告訴我們您的需求，工程團隊會盡快回覆。": "Tell us what you need and our engineering team will get back to you soon.", "NAME · 姓名": "NAME", "EMAIL · 電子郵件": "EMAIL", "MESSAGE · 訊息": "MESSAGE", "發送訊息 →": "Send message →", "© 2026 Mootech 私人有限公司 · 版權所有": "© 2026 Mootech Pte. Ltd. · All rights reserved", "關於": "About", "據點": "Locations", "聯絡": "Contact", "在 MOOTECH，我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，這有助於我們主動應對潛在的安全問題。我們秉持前瞻性的 IT 解決方案理念，憑藉精湛的技術實力和對卓越的不懈追求，為全球客戶提供穩定且可擴展的創新解決方案。": "At MOOTECH, security and threat assessment come first. We maintain a robust threat intelligence database that lets us address potential security issues early. With a forward-looking approach to IT, strong engineering and a constant pursuit of excellence, we deliver stable, scalable and innovative solutions worldwide.", "從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的解決方案。我們的服務同時涵蓋免費威脅情報庫，讓更多企業能及早掌握風險。": "From implementing core solutions to deploying value-added features, we work in a flexible, responsive way. Our services also include a free threat intelligence database, so more businesses can see risks early.", "接觸全球受眾，提升品牌曝光度與互動率。可自訂的平台讓您打造專屬直播內容，虛擬活動、產品發表會或任何形式的直播都能輕鬆進行。": "Reach a global audience and lift brand exposure and engagement. Our customisable platform handles virtual events, product launches and any other kind of broadcast.", "高度靈活且強大的網路連接能力，並提供專業的諮詢與支援，以保護您的業務。": "Flexible, powerful network connectivity, backed by expert consulting and support to protect your business.", "依您的需求設計架構，協助選擇符合業務需求與預算的最佳化網路解決方案。": "We design the architecture around your needs and help you choose the optimal network for your business and budget.", "將市場上多個 IT 系統、硬體與軟體連接成一個協調一致、操作流暢的整體。": "We connect multiple IT systems, hardware and software into one coordinated, smooth-running whole.", "以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。": "An IP-based threat intelligence database that counters threats and malicious activity to keep your networks and systems secure.", "香港": "Hong Kong", "東京": "Tokyo", "Mootech 私人有限公司": "Mootech Pte. Ltd.", "© 2026 版權所有": "© 2026 All rights reserved"};
   var lang = "zh", done = [];
   function setLang(l) {
     if (l === lang) return;
