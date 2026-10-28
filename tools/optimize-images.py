@@ -7,11 +7,11 @@ import os
 from PIL import Image
 
 SRC, OUT = "assets/photos-src", "assets/photos"
-WIDE = ("hero", "cta")          # 全寬圖：1280 / 1920
+WIDE = ("hero", "cta")          # 全寬圖：960 / 1440 / 1920
 QUALITY = 74
 
 def widths(name):
-    return (1280, 1920) if name.startswith(WIDE) else (640, 1280)
+    return (960, 1440, 1920) if name.startswith(WIDE) else (480, 800, 1280)
 
 total = 0
 for folder in sorted(os.listdir(SRC)):
