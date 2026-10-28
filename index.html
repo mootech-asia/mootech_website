@@ -202,7 +202,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .va-social a { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--a-line); display: grid; place-items: center; color: var(--a-blue); }
 .va-social svg { width: 18px; height: 18px; fill: currentColor; }
 .va-foot { background: #0a2f55; color: #b6c9de; font-size: 14px; }
-.va-foot .wrap { padding-block: 26px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+.va-foot .wrap { padding-block: 26px; display: flex; gap: 0; align-items: center; flex-wrap: wrap; }
 .va-foot .va-logo { color: #fff; font-size: 16px; }
 @media (max-width: 900px) {
   .va-nav { display: none; }
@@ -656,6 +656,12 @@ canvas.fill { contain: strict; }
   .vb-term .bar { padding: 9px 12px; }
   .vb-hero-copy { gap: 16px; }
 }
+/* ---- 頁尾版權列（比照原站：logo ｜ 公司 ｜ 版權） ---- */
+.foot-legal { display: inline-flex; align-items: center; flex-wrap: wrap; row-gap: 6px; }
+.foot-legal > span, .va-foot .brand + .foot-legal::before { display: inline-flex; align-items: center; }
+.foot-legal > span + span::before, .va-foot .brand + .foot-legal::before { content: ""; width: 1px; height: 14px; background: currentColor; opacity: .45; margin-inline: 14px; }
+.va-foot .brand + .foot-legal::before { height: 22px; margin-inline: 18px; }
+@media (max-width: 560px) { .va-foot .brand + .foot-legal::before { display: none; } .va-foot .wrap { row-gap: 12px; } .va-foot .foot-legal { flex-basis: 100%; } }
 </style>
 </head>
 <body data-v="a">
@@ -831,7 +837,7 @@ canvas.fill { contain: strict; }
   </section>
 
   <footer class="va-foot">
-    <div class="wrap"><span class="va-logo brand"><img src="assets/brand/logo-h-white.png" alt="MOOTECH" width="189" height="41"></span><span>Mootech 私人有限公司 · © 2026 版權所有</span></div>
+    <div class="wrap"><span class="va-logo brand"><img src="assets/brand/logo-h-white.png" alt="MOOTECH" width="189" height="41"></span><span class="foot-legal"><span>Mootech 私人有限公司</span><span>© 2026 版權所有</span></span></div>
   </footer>
 </div>
 
@@ -1012,7 +1018,7 @@ canvas.fill { contain: strict; }
   </section>
 
   <footer class="vb-foot">
-    <div class="wrap"><span class="brand"><img src="assets/brand/logo-h-white.png" alt="MOOTECH" width="189" height="41"></span><span>© 2026 Mootech 私人有限公司 · 版權所有</span><span>build: corporate-site · region: apac</span></div>
+    <div class="wrap"><span class="brand"><img src="assets/brand/logo-h-white.png" alt="MOOTECH" width="189" height="41"></span><span class="foot-legal"><span>Mootech 私人有限公司</span><span>© 2026 版權所有</span></span><span>build: corporate-site · region: apac</span></div>
   </footer>
 </div>
 
