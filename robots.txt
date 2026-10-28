@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mootech-asia.github.io/mootech_website/sitemap.xml

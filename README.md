@@ -10,7 +10,7 @@
 
 - 切換方式：右側按鈕、鍵盤 `1` `2` `3`，或網址 `#design-a` / `#design-b` / `#design-c`
 - 照片：原始檔在 `assets/photos-src/`，網站使用 `assets/photos/` 的 WebP（見下方「效能」）
-- 中英切換：右上角 EN / 中文，翻譯字典在 `index.html` 的 `EN` 物件
+- 中英切換：中文版 `/`、英文版 `/en/`（部署時由 `tools/build-en.py` 自動產生），翻譯字典在 `index.html` 的 `EN` 物件
 - 響應式：桌機、平板、手機皆支援，手機版有漢堡選單
 - 首頁動態視覺（走廊、節點網路、直播波形、地圖）為程式繪製
 - 地圖上的資料中心位置（香港、新加坡、東京）是示意，請確認實際據點後修改 `index.html` 中的 `PINS`
@@ -41,3 +41,18 @@
 | C | 100 | 100 | 100 / 100 / 100 |
 
 GitHub Pages 的快取時間固定為 10 分鐘，若要更長需另外接 CDN。
+
+## SEO 與分享
+
+- 社群分享縮圖：`assets/og.jpg`（1200×630）
+- 結構化資料（Organization）、canonical、hreflang、`sitemap.xml`、`robots.txt`
+- 正式網域上線時，把 `index.html`、`tools/build-en.py`、`sitemap.xml`、`robots.txt` 中的 `https://mootech-asia.github.io/mootech_website/` 換成正式網址
+
+## 維護工具
+
+| 指令 | 用途 |
+| --- | --- |
+| `python3 tools/optimize-images.py` | 換照片後重新產生 WebP |
+| `python3 tools/update-font-subset.py` | 改動中文內容後更新字型子集 |
+| `python3 tools/build-en.py` | 本機產生英文版（部署時自動執行） |
+| `node tools/map-mask.mjs` | 重新產生地圖點陣（需先安裝檔案開頭註明的套件） |

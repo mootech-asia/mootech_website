@@ -26,6 +26,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build English page
+        run: python3 tools/build-en.py
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
