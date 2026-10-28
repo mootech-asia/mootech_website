@@ -632,7 +632,6 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .vc-strip { --sp: max(var(--gutter-l), calc((100vw - 1180px) / 2 + 16px)); scroll-padding-left: var(--sp); display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 40px; padding-bottom: 16px; padding-left: var(--sp); padding-right: var(--gutter-r); scrollbar-color: var(--c-ink) transparent; }
 .vc-strip figure { flex: 0 0 min(420px, 78vw); margin: 0; scroll-snap-align: start; display: grid; gap: 10px; }
 .vc-strip img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; transition: filter .4s; }
-.vc-strip figure:hover img { filter: contrast(1.15); }
 .vc-strip figcaption { border-top: 2px solid var(--c-ink); padding-top: 10px; display: grid; gap: 2px; }
 .vc-strip b { font-size: 20px; font-weight: 900; }
 @media (max-width: 900px) {
@@ -813,6 +812,9 @@ canvas.fill { contain: strict; }
   .vd-about-text, .vd-form { padding: 24px; }
   .vd-foot .brand + .foot-legal::before { display: none; } .vd-foot .wrap { row-gap: 12px; } .vd-foot .foot-legal { flex-basis: 100%; }
 }
+/* ---- C：照片平常黑白，滑鼠移上去轉為彩色（同一張彩色圖以濾鏡呈現，不多下載） ---- */
+.vc .thumb, .vc-hero-img, .vc-about-img, .vc-strip img, .vc-cta-img { filter: grayscale(1) contrast(1.1); transition: filter .5s ease, transform .5s ease; }
+.vc-row:hover .thumb, .vc-row:focus-visible .thumb, .vc-hero-img:hover, .vc-about-img:hover, .vc-strip figure:hover img, .vc-cta-img:hover { filter: none; }
 </style>
 </head>
 <body data-v="a">
