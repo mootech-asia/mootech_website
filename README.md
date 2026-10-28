@@ -12,3 +12,9 @@
 - 目前視覺（走廊、節點網路、直播波形、地圖）都是程式繪製，不需要圖片檔
 - 地圖上的資料中心位置（香港、新加坡、東京）是示意，請確認實際據點後修改 `index.html` 中的 `PINS`
 - 聯絡表單尚未串接寄信服務
+
+## 線上瀏覽
+
+部署於 GitHub Pages：https://mootech-asia.github.io/mootech_website/
+
+推送到 `main` 或 `claude/inspiring-hypatia-rpjq0j` 後，GitHub Actions（`.github/workflows/deploy-pages.yml`）會自動部署。
