@@ -26,13 +26,25 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"MOOTECH","legalName":"Mootech Pte. Ltd.","url":"https://mootech-asia.github.io/mootech_website/","logo":"https://mootech-asia.github.io/mootech_website/assets/brand/logo-stacked.png","email":"contact@mootech.asia","foundingDate":"2016","address":[{"@type":"PostalAddress","addressCountry":"SG"},{"@type":"PostalAddress","addressCountry":"TW"}],"knowsAbout":["Live streaming","Network connectivity","Network architecture","System integration","Threat intelligence"]}</script>
 <link rel="icon" type="image/png" href="assets/brand/favicon.png">
 <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<script>
+  (function () {
+    var m = location.hash.match(/^#design-([a-d])$/), v = m && m[1];
+    if (!v) { try { v = localStorage.getItem("mootech-variant"); } catch (e) {} }
+    if (/^[bcd]$/.test(v)) document.documentElement.setAttribute("data-init", v);
+  })();
+</script>
+<style>
+  html[data-init] #va { display: none; }
+  html[data-init="b"] #vb, html[data-init="c"] #vc, html[data-init="d"] #vd { display: block; }
+  html[data-init="b"] body { --page-bg: #060d18; } html[data-init="c"] body { --page-bg: #ffffff; } html[data-init="d"] body { --page-bg: #000000; }
+</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@700;800&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@700;800&family=Inter:wght@300;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@700;800&family=Inter:wght@300;500;600;700&display=swap"></noscript>
 <!-- 思源黑體只下載頁面用到的字（內容改動後請重新產生 text 參數），使用者輸入的其他字會退回系統字型 -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap&text=%E3%80%80%E3%80%81%E3%80%82%E4%B8%80%E4%B8%89%E4%B8%8A%E4%B8%8B%E4%B8%8D%E4%B8%94%E4%B8%96%E4%B8%A6%E4%B8%AD%E4%B8%B2%E4%B8%BB%E4%B9%9F%E4%BA%86%E4%BA%92%E4%BA%94%E4%BA%9E%E4%BA%A4%E4%BA%AC%E4%BA%BA%E4%BB%80%E4%BB%96%E4%BB%98%E4%BB%A5%E4%BB%B6%E4%BB%BB%E4%BB%BD%E4%BC%81%E4%BC%B0%E4%BD%88%E4%BD%8D%E4%BD%95%E4%BD%9C%E4%BD%B3%E4%BD%B5%E4%BD%BF%E4%BE%9B%E4%BE%9D%E4%BF%9D%E4%BF%A1%E5%80%8B%E5%80%91%E5%80%BC%E5%81%9A%E5%81%9C%E5%82%99%E5%82%B3%E5%84%AA%E5%85%85%E5%85%88%E5%85%89%E5%85%8D%E5%85%A5%E5%85%A7%E5%85%A8%E5%85%AC%E5%85%B1%E5%85%B6%E5%85%B7%E5%86%8D%E5%87%BA%E5%88%86%E5%88%87%E5%88%B0%E5%88%BB%E5%89%8D%E5%89%A9%E5%89%B5%E5%8A%83%E5%8A%9B%E5%8A%9F%E5%8A%A0%E5%8A%A9%E5%8B%95%E5%8B%99%E5%8C%85%E5%8C%96%E5%8D%80%E5%8D%83%E5%8D%87%E5%8D%93%E5%8D%94%E5%8D%B3%E5%8E%9F%E5%8F%83%E5%8F%8A%E5%8F%8D%E5%8F%96%E5%8F%97%E5%8F%AA%E5%8F%AF%E5%8F%B0%E5%8F%B8%E5%90%84%E5%90%88%E5%90%8C%E5%90%8D%E5%91%8A%E5%92%8C%E5%93%81%E5%95%8F%E5%95%9F%E5%96%AE%E5%99%A8%E5%9A%B4%E5%9B%9E%E5%9C%88%E5%9C%8D%E5%9C%93%E5%9C%96%E5%9C%98%E5%9C%A8%E5%9C%B0%E5%9D%80%E5%9D%A1%E5%9E%8B%E5%9F%B7%E5%9F%BA%E5%A0%B1%E5%A0%B4%E5%A1%8A%E5%A1%AB%E5%A2%83%E5%A2%9E%E5%A3%AB%E5%A4%9A%E5%A4%A0%E5%A4%A7%E5%A4%AA%E5%A5%8F%E5%A5%BD%E5%A6%82%E5%A7%8B%E5%A7%93%E5%A8%81%E5%AA%92%E5%AD%90%E5%AD%97%E5%AE%83%E5%AE%89%E5%AE%8C%E5%AE%9A%E5%AE%A2%E5%AE%A4%E5%AE%B6%E5%AE%B9%E5%AF%84%E5%AF%A6%E5%AF%AC%E5%B0%87%E5%B0%88%E5%B0%8D%E5%B0%8E%E5%B0%8F%E5%B0%9A%E5%B0%B1%E5%B1%8F%E5%B1%95%E5%B1%A4%E5%B1%AC%E5%B7%A5%E5%B7%A8%E5%B7%AE%E5%B7%B1%E5%B8%82%E5%B8%83%E5%B9%80%E5%B9%AB%E5%B9%B3%E5%B9%B4%E5%BA%95%E5%BA%A6%E5%BA%AB%E5%BB%8A%E5%BB%B6%E5%BC%8F%E5%BC%A7%E5%BC%B5%E5%BC%B7%E5%BD%99%E5%BD%A2%E5%BE%8C%E5%BE%91%E5%BE%97%E5%BE%9E%E5%BF%83%E5%BF%85%E5%BF%AB%E5%BF%B5%E6%80%9D%E6%80%A7%E6%81%AF%E6%82%A8%E6%83%85%E6%83%A1%E6%84%8F%E6%84%9F%E6%85%8B%E6%85%AE%E6%86%91%E6%87%88%E6%87%89%E6%88%90%E6%88%91%E6%88%96%E6%88%B6%E6%88%BF%E6%89%80%E6%89%8B%E6%89%8D%E6%89%93%E6%89%B9%E6%8A%80%E6%8B%8D%E6%8B%AC%E6%8C%81%E6%8D%B2%E6%8D%B7%E6%8E%8C%E6%8E%A1%E6%8E%A2%E6%8E%A5%E6%8E%A7%E6%8E%A8%E6%8F%8F%E6%8F%90%E6%8F%9B%E6%8F%A1%E6%8F%B4%E6%92%AD%E6%93%87%E6%93%8D%E6%93%9A%E6%93%AC%E6%93%B4%E6%94%AF%E6%94%B9%E6%94%BE%E6%95%88%E6%95%B4%E6%95%B8%E6%96%87%E6%96%99%E6%96%B0%E6%96%B9%E6%96%BC%E6%96%BD%E6%97%A9%E6%98%8E%E6%98%93%E6%98%AF%E6%99%82%E6%99%AF%E6%9A%88%E6%9A%A2%E6%9B%9D%E6%9B%B4%E6%9C%80%E6%9C%83%E6%9C%89%E6%9C%8D%E6%9C%AA%E6%9D%B1%E6%9E%B6%E6%9F%93%E6%9F%A5%E6%A0%A1%E6%A0%B8%E6%A0%B9%E6%A0%BC%E6%A1%88%E6%A5%9A%E6%A5%AD%E6%A7%8B%E6%A8%99%E6%A8%A1%E6%A8%A3%E6%A9%9F%E6%AC%8A%E6%AC%A1%E6%AD%A2%E6%AD%A3%E6%AD%A4%E6%AF%8F%E6%AF%94%E6%B1%82%E6%B1%BA%E6%B2%92%E6%B3%A8%E6%B4%BB%E6%B5%81%E6%B6%B5%E6%B7%B1%E6%B7%BA%E6%B8%85%E6%B8%9B%E6%B8%AC%E6%B8%AF%E6%B8%B2%E6%B9%9B%E6%BA%90%E6%BD%9B%E7%81%A3%E7%82%BA%E7%83%88%E7%84%A1%E7%85%A7%E7%89%86%E7%89%87%E7%89%88%E7%89%8C%E7%8D%A8%E7%8E%87%E7%8F%BE%E7%90%83%E7%90%86%E7%91%9E%E7%92%B0%E7%94%9F%E7%94%A2%E7%94%A8%E7%94%B1%E7%95%8C%E7%95%AB%E7%99%BC%E7%99%BD%E7%9A%84%E7%9B%A1%E7%9B%A3%E7%9B%AE%E7%9B%B4%E7%9C%8B%E7%9C%9F%E7%9C%BE%E7%9E%BB%E7%A1%AC%E7%A2%BA%E7%A4%8E%E7%A4%BA%E7%A4%BE%E7%A7%81%E7%A7%89%E7%A7%91%E7%A8%8B%E7%A9%A9%E7%AA%81%E7%AB%8B%E7%AB%99%E7%AB%AF%E7%AC%A6%E7%AC%AC%E7%AD%89%E7%AE%97%E7%AF%80%E7%AF%84%E7%B2%BE%E7%B3%BB%E7%B4%84%E7%B4%94%E7%B4%9A%E7%B4%A2%E7%B5%82%E7%B5%84%E7%B5%A1%E7%B5%B1%E7%B6%93%E7%B6%A0%E7%B6%AD%E7%B6%B2%E7%B7%9A%E7%B7%AF%E7%B8%AE%E7%B9%AA%E7%BA%8C%E7%BD%A9%E7%BD%AE%E7%BD%B2%E7%BE%A4%E8%80%83%E8%80%85%E8%80%95%E8%81%AF%E8%83%BD%E8%84%85%E8%87%AA%E8%87%B3%E8%87%B4%E8%88%87%E8%89%B2%E8%8B%B1%E8%93%8B%E8%97%89%E8%97%8D%E8%97%9D%E8%99%9B%E8%A1%8C%E8%A1%93%E8%A1%9D%E8%A1%A8%E8%A3%9D%E8%A3%BD%E8%A6%86%E8%A6%8F%E8%A6%96%E8%A6%BA%E8%A6%BD%E8%A7%A3%E8%A7%B8%E8%A8%80%E8%A8%82%E8%A8%88%E8%A8%8A%E8%A8%AD%E8%A8%B4%E8%A9%95%E8%A9%A2%E8%A9%A6%E8%AA%8D%E8%AA%9E%E8%AA%BF%E8%AB%8B%E8%AB%96%E8%AB%AE%E8%AC%9D%E8%AD%98%E8%AD%B0%E8%AD%B7%E8%AE%93%E8%B2%8C%E8%B2%BB%E8%B3%87%E8%B3%B4%E8%B5%B0%E8%B5%B7%E8%B6%8A%E8%B6%B3%E8%B7%9D%E8%B7%9F%E8%B7%AF%E8%BA%AB%E8%BB%9F%E8%BC%83%E8%BC%89%E8%BC%95%E8%BC%AA%E8%BC%B8%E8%BE%A6%E8%BE%A8%E8%BF%85%E8%BF%B4%E8%BF%BD%E9%80%80%E9%80%81%E9%80%8F%E9%80%94%E9%80%99%E9%80%9F%E9%80%A0%E9%80%A3%E9%80%B2%E9%81%8B%E9%81%8E%E9%81%9E%E9%81%A9%E9%81%AE%E9%81%B8%E9%81%BF%E9%82%8A%E9%83%A8%E9%83%B5%E9%83%BD%E9%87%8D%E9%87%8E%E9%87%9D%E9%8D%B5%E9%96%8B%E9%97%9C%E9%98%B2%E9%99%8D%E9%99%90%E9%99%A3%E9%99%B8%E9%9A%8A%E9%9A%9B%E9%9A%A8%E9%9A%AA%E9%9B%99%E9%9B%A2%E9%9B%BB%E9%9C%80%E9%9D%88%E9%9D%92%E9%9D%9C%E9%9D%9E%E9%9D%A0%E9%9D%A2%E9%A0%81%E9%A0%90%E9%A1%8C%E9%A1%9E%E9%A1%AF%E9%A2%A8%E9%A6%99%E9%AB%94%E9%AB%98%E9%AC%86%E9%BA%BC%E9%BB%91%E9%BB%9E%EF%BC%88%EF%BC%89%EF%BC%8C%EF%BC%9A%EF%BC%9B%EF%BD%9C0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz%20.%2C%3A%3B%21%3F-%E2%80%93%E2%80%94%C2%B7/%28%29%26%40%25%2B%E2%86%92%E2%86%90%E2%86%93%E2%9C%93%E2%97%8F" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap&text=%E3%80%80%E3%80%81%E3%80%82%E4%B8%80%E4%B8%89%E4%B8%8A%E4%B8%8B%E4%B8%8D%E4%B8%94%E4%B8%96%E4%B8%A6%E4%B8%AD%E4%B8%B2%E4%B8%BB%E4%B9%9F%E4%BA%86%E4%BA%92%E4%BA%94%E4%BA%9E%E4%BA%A4%E4%BA%AC%E4%BA%BA%E4%BB%80%E4%BB%96%E4%BB%98%E4%BB%A5%E4%BB%B6%E4%BB%BB%E4%BB%BD%E4%BC%81%E4%BC%B0%E4%BD%88%E4%BD%8D%E4%BD%95%E4%BD%9C%E4%BD%B3%E4%BD%B5%E4%BD%BF%E4%BE%9B%E4%BE%9D%E4%BF%9D%E4%BF%A1%E5%80%8B%E5%80%91%E5%80%BC%E5%81%9A%E5%81%9C%E5%82%99%E5%82%B3%E5%84%AA%E5%85%85%E5%85%88%E5%85%89%E5%85%8D%E5%85%A5%E5%85%A7%E5%85%A8%E5%85%AC%E5%85%B1%E5%85%B6%E5%85%B7%E5%86%8D%E5%87%BA%E5%88%86%E5%88%87%E5%88%B0%E5%88%BB%E5%89%8D%E5%89%A9%E5%89%B5%E5%8A%83%E5%8A%9B%E5%8A%9F%E5%8A%A0%E5%8A%A9%E5%8B%95%E5%8B%99%E5%8C%85%E5%8C%96%E5%8D%80%E5%8D%83%E5%8D%87%E5%8D%93%E5%8D%94%E5%8D%B3%E5%8E%9F%E5%8F%83%E5%8F%8A%E5%8F%8D%E5%8F%96%E5%8F%97%E5%8F%AA%E5%8F%AF%E5%8F%B0%E5%8F%B8%E5%90%84%E5%90%88%E5%90%8C%E5%90%8D%E5%91%8A%E5%92%8C%E5%93%81%E5%95%8F%E5%95%9F%E5%96%AE%E5%99%A8%E5%9A%B4%E5%9B%9E%E5%9C%88%E5%9C%8D%E5%9C%93%E5%9C%96%E5%9C%98%E5%9C%A8%E5%9C%B0%E5%9D%80%E5%9D%A1%E5%9E%8B%E5%9F%B7%E5%9F%BA%E5%A0%B1%E5%A0%B4%E5%A1%8A%E5%A1%AB%E5%A2%83%E5%A2%9E%E5%A3%AB%E5%A4%9A%E5%A4%A0%E5%A4%A7%E5%A4%AA%E5%A5%8F%E5%A5%BD%E5%A6%82%E5%A7%8B%E5%A7%93%E5%A8%81%E5%AA%92%E5%AD%90%E5%AD%97%E5%AE%83%E5%AE%89%E5%AE%8C%E5%AE%9A%E5%AE%A2%E5%AE%A4%E5%AE%B6%E5%AE%B9%E5%AF%84%E5%AF%A6%E5%AF%AC%E5%B0%87%E5%B0%88%E5%B0%8D%E5%B0%8E%E5%B0%8F%E5%B0%9A%E5%B0%B1%E5%B1%8F%E5%B1%95%E5%B1%A4%E5%B1%AC%E5%B7%A5%E5%B7%A8%E5%B7%AE%E5%B7%B1%E5%B8%82%E5%B8%83%E5%B9%80%E5%B9%AB%E5%B9%B3%E5%B9%B4%E5%BA%95%E5%BA%A6%E5%BA%AB%E5%BB%8A%E5%BB%B6%E5%BC%8F%E5%BC%A7%E5%BC%B5%E5%BC%B7%E5%BD%99%E5%BD%A2%E5%BE%8C%E5%BE%91%E5%BE%97%E5%BE%9E%E5%BF%83%E5%BF%85%E5%BF%AB%E5%BF%B5%E6%80%9D%E6%80%A7%E6%81%AF%E6%82%A8%E6%83%85%E6%83%A1%E6%84%8F%E6%84%9F%E6%85%8B%E6%85%AE%E6%86%91%E6%87%88%E6%87%89%E6%88%90%E6%88%91%E6%88%96%E6%88%B6%E6%88%BF%E6%89%80%E6%89%8B%E6%89%8D%E6%89%93%E6%89%B9%E6%8A%80%E6%8B%8D%E6%8B%AC%E6%8C%81%E6%8D%B2%E6%8D%B7%E6%8E%8C%E6%8E%A1%E6%8E%A2%E6%8E%A5%E6%8E%A7%E6%8E%A8%E6%8F%8F%E6%8F%90%E6%8F%9B%E6%8F%A1%E6%8F%B4%E6%92%AD%E6%93%87%E6%93%8D%E6%93%9A%E6%93%AC%E6%93%B4%E6%94%AF%E6%94%B9%E6%94%BE%E6%95%88%E6%95%B4%E6%95%B8%E6%96%87%E6%96%99%E6%96%B0%E6%96%B9%E6%96%BC%E6%96%BD%E6%97%A9%E6%98%8E%E6%98%93%E6%98%AF%E6%99%82%E6%99%AF%E6%9A%88%E6%9A%A2%E6%9B%9D%E6%9B%B4%E6%9C%80%E6%9C%83%E6%9C%89%E6%9C%8D%E6%9C%AA%E6%9D%B1%E6%9E%B6%E6%9F%93%E6%9F%A5%E6%A0%A1%E6%A0%B8%E6%A0%B9%E6%A0%BC%E6%A1%88%E6%A5%9A%E6%A5%AD%E6%A7%8B%E6%A8%99%E6%A8%A1%E6%A8%A3%E6%A9%9F%E6%AC%8A%E6%AC%A1%E6%AD%A2%E6%AD%A3%E6%AD%A4%E6%AF%8F%E6%AF%94%E6%B1%82%E6%B1%BA%E6%B2%92%E6%B3%A8%E6%B4%BB%E6%B5%81%E6%B6%B5%E6%B7%B1%E6%B7%BA%E6%B8%85%E6%B8%9B%E6%B8%AC%E6%B8%AF%E6%B8%B2%E6%B9%9B%E6%BA%90%E6%BD%9B%E7%81%A3%E7%82%BA%E7%83%88%E7%84%A1%E7%85%A7%E7%89%86%E7%89%87%E7%89%88%E7%89%8C%E7%8D%A8%E7%8E%87%E7%8F%BE%E7%90%83%E7%90%86%E7%91%9E%E7%92%B0%E7%94%9F%E7%94%A2%E7%94%A8%E7%94%B1%E7%95%8C%E7%95%AB%E7%99%BC%E7%99%BD%E7%9A%84%E7%9B%A1%E7%9B%A3%E7%9B%AE%E7%9B%B4%E7%9C%8B%E7%9C%9F%E7%9C%BE%E7%9E%BB%E7%A1%AC%E7%A2%BA%E7%A4%8E%E7%A4%BA%E7%A4%BE%E7%A7%81%E7%A7%89%E7%A7%91%E7%A8%8B%E7%A9%A9%E7%AA%81%E7%AB%8B%E7%AB%99%E7%AB%AF%E7%AC%A6%E7%AC%AC%E7%AD%89%E7%AE%97%E7%AF%80%E7%AF%84%E7%B2%BE%E7%B3%BB%E7%B4%84%E7%B4%94%E7%B4%9A%E7%B4%A2%E7%B5%82%E7%B5%84%E7%B5%A1%E7%B5%B1%E7%B6%93%E7%B6%A0%E7%B6%AD%E7%B6%B2%E7%B7%9A%E7%B7%AF%E7%B8%AE%E7%B9%AA%E7%BA%8C%E7%BD%A9%E7%BD%AE%E7%BD%B2%E7%BE%A4%E8%80%83%E8%80%85%E8%80%95%E8%81%AF%E8%83%BD%E8%84%85%E8%87%AA%E8%87%B3%E8%87%B4%E8%88%87%E8%89%B2%E8%8B%B1%E8%93%8B%E8%97%89%E8%97%8D%E8%97%9D%E8%99%9B%E8%A1%8C%E8%A1%93%E8%A1%9D%E8%A1%A8%E8%A3%9D%E8%A3%BD%E8%A6%86%E8%A6%8F%E8%A6%96%E8%A6%BA%E8%A6%BD%E8%A7%A3%E8%A7%B8%E8%A8%80%E8%A8%82%E8%A8%88%E8%A8%8A%E8%A8%AD%E8%A8%B4%E8%A9%95%E8%A9%A2%E8%A9%A6%E8%AA%8D%E8%AA%9E%E8%AA%BF%E8%AB%8B%E8%AB%96%E8%AB%AE%E8%AC%9D%E8%AD%98%E8%AD%B0%E8%AD%B7%E8%AE%93%E8%B2%8C%E8%B2%BB%E8%B3%87%E8%B3%B4%E8%B5%B0%E8%B5%B7%E8%B6%8A%E8%B6%B3%E8%B7%9D%E8%B7%9F%E8%B7%AF%E8%BA%AB%E8%BB%9F%E8%BC%83%E8%BC%89%E8%BC%95%E8%BC%AA%E8%BC%B8%E8%BE%A6%E8%BE%A8%E8%BF%85%E8%BF%B4%E8%BF%BD%E9%80%80%E9%80%81%E9%80%8F%E9%80%94%E9%80%99%E9%80%9F%E9%80%A0%E9%80%A3%E9%80%B2%E9%81%8B%E9%81%8E%E9%81%9E%E9%81%A9%E9%81%AE%E9%81%B8%E9%81%BF%E9%82%8A%E9%83%A8%E9%83%B5%E9%83%BD%E9%87%8D%E9%87%8E%E9%87%9D%E9%8D%B5%E9%96%8B%E9%97%9C%E9%98%B2%E9%99%8D%E9%99%90%E9%99%A3%E9%99%B8%E9%9A%8A%E9%9A%9B%E9%9A%A8%E9%9A%AA%E9%9B%99%E9%9B%A2%E9%9B%BB%E9%9C%80%E9%9D%88%E9%9D%92%E9%9D%9C%E9%9D%9E%E9%9D%A0%E9%9D%A2%E9%A0%81%E9%A0%90%E9%A1%8C%E9%A1%9E%E9%A1%AF%E9%A2%A8%E9%A6%99%E9%AB%94%E9%AB%98%E9%AC%86%E9%BA%BC%E9%BB%91%E9%BB%9E%EF%BC%88%EF%BC%89%EF%BC%8C%EF%BC%9A%EF%BC%9B%EF%BD%9C0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz%20.%2C%3A%3B%21%3F-%E2%80%93%E2%80%94%C2%B7/%28%29%26%40%25%2B%E2%86%92%E2%86%90%E2%86%93%E2%9C%93%E2%97%8F"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap&text=%E3%80%80%E3%80%81%E3%80%82%E4%B8%80%E4%B8%89%E4%B8%8A%E4%B8%8B%E4%B8%8D%E4%B8%94%E4%B8%96%E4%B8%A6%E4%B8%AD%E4%B8%B2%E4%B8%BB%E4%B9%9F%E4%BA%86%E4%BA%92%E4%BA%94%E4%BA%9E%E4%BA%A4%E4%BA%AC%E4%BA%BA%E4%BB%80%E4%BB%96%E4%BB%98%E4%BB%A5%E4%BB%B6%E4%BB%BB%E4%BB%BD%E4%BC%81%E4%BC%B0%E4%BD%88%E4%BD%8D%E4%BD%95%E4%BD%9C%E4%BD%B3%E4%BD%B5%E4%BD%BF%E4%BE%86%E4%BE%9B%E4%BE%9D%E4%BF%9D%E4%BF%A1%E5%80%8B%E5%80%91%E5%80%BC%E5%81%9A%E5%81%9C%E5%82%99%E5%82%B3%E5%84%AA%E5%85%85%E5%85%88%E5%85%89%E5%85%8D%E5%85%A5%E5%85%A7%E5%85%A8%E5%85%AC%E5%85%B1%E5%85%B6%E5%85%B7%E5%86%8D%E5%87%BA%E5%88%86%E5%88%87%E5%88%97%E5%88%B0%E5%88%BB%E5%89%8D%E5%89%A9%E5%89%B5%E5%8A%83%E5%8A%9B%E5%8A%9F%E5%8A%A0%E5%8A%A9%E5%8B%95%E5%8B%99%E5%8C%85%E5%8C%96%E5%8D%80%E5%8D%83%E5%8D%87%E5%8D%93%E5%8D%94%E5%8D%B3%E5%8E%9F%E5%8F%83%E5%8F%8A%E5%8F%8D%E5%8F%96%E5%8F%97%E5%8F%AA%E5%8F%AF%E5%8F%B0%E5%8F%B3%E5%8F%B8%E5%90%84%E5%90%88%E5%90%8C%E5%90%8D%E5%91%8A%E5%92%8C%E5%93%81%E5%95%8F%E5%95%9F%E5%96%AE%E5%99%A8%E5%9A%B4%E5%9B%9E%E5%9C%88%E5%9C%8D%E5%9C%93%E5%9C%96%E5%9C%98%E5%9C%A8%E5%9C%B0%E5%9D%80%E5%9D%A1%E5%9E%8B%E5%9F%B7%E5%9F%BA%E5%A0%B1%E5%A0%B4%E5%A1%8A%E5%A1%AB%E5%A2%83%E5%A2%9E%E5%A3%AB%E5%A4%9A%E5%A4%A0%E5%A4%A7%E5%A4%AA%E5%A5%8F%E5%A5%BD%E5%A6%82%E5%A7%8B%E5%A7%93%E5%A8%81%E5%AA%92%E5%AD%90%E5%AD%97%E5%AE%83%E5%AE%89%E5%AE%8C%E5%AE%9A%E5%AE%A2%E5%AE%A4%E5%AE%B6%E5%AE%B9%E5%AF%84%E5%AF%A6%E5%AF%AC%E5%B0%87%E5%B0%88%E5%B0%8D%E5%B0%8E%E5%B0%8F%E5%B0%9A%E5%B0%B1%E5%B0%BE%E5%B1%8F%E5%B1%95%E5%B1%A4%E5%B1%AC%E5%B7%A5%E5%B7%A6%E5%B7%A8%E5%B7%AE%E5%B7%B1%E5%B8%82%E5%B8%83%E5%B9%80%E5%B9%AB%E5%B9%B3%E5%B9%B4%E5%BA%95%E5%BA%A6%E5%BA%AB%E5%BB%8A%E5%BB%B6%E5%BC%8F%E5%BC%A7%E5%BC%B5%E5%BC%B7%E5%BD%99%E5%BD%A2%E5%BE%8C%E5%BE%91%E5%BE%97%E5%BE%9E%E5%BF%83%E5%BF%85%E5%BF%AB%E5%BF%B5%E6%80%9D%E6%80%A7%E6%81%AF%E6%82%A8%E6%83%85%E6%83%A1%E6%84%8F%E6%84%9F%E6%85%8B%E6%85%AE%E6%86%91%E6%87%88%E6%87%89%E6%88%90%E6%88%91%E6%88%96%E6%88%B6%E6%88%BF%E6%89%80%E6%89%8B%E6%89%8D%E6%89%93%E6%89%B9%E6%8A%80%E6%8B%8D%E6%8B%AC%E6%8C%81%E6%8D%B2%E6%8D%B7%E6%8E%8C%E6%8E%A1%E6%8E%A2%E6%8E%A5%E6%8E%A7%E6%8E%A8%E6%8F%8F%E6%8F%90%E6%8F%9B%E6%8F%A1%E6%8F%B4%E6%92%AD%E6%93%87%E6%93%8D%E6%93%9A%E6%93%AC%E6%93%B4%E6%94%AF%E6%94%B9%E6%94%BE%E6%95%88%E6%95%B4%E6%95%B8%E6%96%87%E6%96%99%E6%96%B0%E6%96%B9%E6%96%BC%E6%96%BD%E6%97%8B%E6%97%97%E6%97%A9%E6%98%8E%E6%98%93%E6%98%AF%E6%99%82%E6%99%AF%E6%9A%88%E6%9A%A2%E6%9B%9D%E6%9B%B4%E6%9C%80%E6%9C%83%E6%9C%89%E6%9C%8D%E6%9C%AA%E6%9D%B1%E6%9E%B6%E6%9F%93%E6%9F%A5%E6%A0%A1%E6%A0%B8%E6%A0%B9%E6%A0%BC%E6%A1%88%E6%A5%9A%E6%A5%AD%E6%A7%8B%E6%A8%99%E6%A8%A1%E6%A8%A3%E6%A9%9F%E6%AC%8A%E6%AC%A1%E6%AD%A2%E6%AD%A3%E6%AD%A4%E6%AF%8F%E6%AF%94%E6%B1%82%E6%B1%BA%E6%B2%92%E6%B3%A8%E6%B4%BB%E6%B5%81%E6%B6%B5%E6%B7%B1%E6%B7%BA%E6%B8%85%E6%B8%9B%E6%B8%AC%E6%B8%AF%E6%B8%B2%E6%B9%9B%E6%BA%90%E6%BC%B8%E6%BD%9B%E7%81%A3%E7%82%BA%E7%83%88%E7%84%A1%E7%85%A7%E7%89%86%E7%89%87%E7%89%88%E7%89%8C%E7%8D%A8%E7%8E%87%E7%8E%BB%E7%8F%BE%E7%90%83%E7%90%86%E7%91%9E%E7%92%83%E7%92%B0%E7%94%9F%E7%94%A2%E7%94%A8%E7%94%B1%E7%95%8C%E7%95%AB%E7%99%BC%E7%99%BD%E7%9A%84%E7%9B%A1%E7%9B%A3%E7%9B%AE%E7%9B%B4%E7%9C%8B%E7%9C%9F%E7%9C%BE%E7%9E%BB%E7%A1%AC%E7%A2%BA%E7%A4%8E%E7%A4%BA%E7%A4%BE%E7%A7%81%E7%A7%89%E7%A7%91%E7%A8%8B%E7%A9%A9%E7%AA%81%E7%AB%8B%E7%AB%99%E7%AB%AF%E7%AC%A6%E7%AC%AC%E7%AD%89%E7%AE%97%E7%AF%80%E7%AF%84%E7%B2%92%E7%B2%BE%E7%B3%BB%E7%B4%84%E7%B4%94%E7%B4%9A%E7%B4%A2%E7%B5%82%E7%B5%84%E7%B5%A1%E7%B5%B1%E7%B6%93%E7%B6%A0%E7%B6%AD%E7%B6%B2%E7%B7%9A%E7%B7%AF%E7%B8%AE%E7%B9%AA%E7%BA%8C%E7%BD%A9%E7%BD%AE%E7%BD%B2%E7%BE%A4%E8%80%83%E8%80%85%E8%80%95%E8%81%AF%E8%83%BD%E8%84%85%E8%87%AA%E8%87%B3%E8%87%B4%E8%88%87%E8%89%A6%E8%89%B2%E8%8B%B1%E8%93%8B%E8%97%89%E8%97%8D%E8%97%9D%E8%99%9B%E8%9E%BA%E8%A1%8C%E8%A1%93%E8%A1%9D%E8%A1%A8%E8%A3%9D%E8%A3%BD%E8%A6%86%E8%A6%8F%E8%A6%96%E8%A6%BA%E8%A6%BD%E8%A7%A3%E8%A7%B8%E8%A8%80%E8%A8%82%E8%A8%88%E8%A8%8A%E8%A8%AD%E8%A8%B4%E8%A9%95%E8%A9%A2%E8%A9%A6%E8%AA%8D%E8%AA%9E%E8%AA%BF%E8%AB%8B%E8%AB%96%E8%AB%AE%E8%AC%9D%E8%AD%98%E8%AD%B0%E8%AD%B7%E8%AE%93%E8%B2%8C%E8%B2%BB%E8%B3%87%E8%B3%AA%E8%B3%B4%E8%B5%B0%E8%B5%B7%E8%B6%8A%E8%B6%B3%E8%B7%9D%E8%B7%9F%E8%B7%AF%E8%BA%AB%E8%BB%9F%E8%BC%83%E8%BC%89%E8%BC%95%E8%BC%AA%E8%BC%B8%E8%BE%A6%E8%BE%A8%E8%BF%85%E8%BF%B4%E8%BF%BD%E9%80%80%E9%80%81%E9%80%8F%E9%80%94%E9%80%99%E9%80%9F%E9%80%A0%E9%80%A3%E9%80%B2%E9%81%8B%E9%81%8E%E9%81%9E%E9%81%A9%E9%81%AE%E9%81%B8%E9%81%BF%E9%82%8A%E9%83%A8%E9%83%B5%E9%83%BD%E9%87%8D%E9%87%8E%E9%87%9D%E9%8D%B5%E9%96%8B%E9%97%9C%E9%98%B2%E9%99%8D%E9%99%90%E9%99%A3%E9%99%B8%E9%9A%8A%E9%9A%8E%E9%9A%9B%E9%9A%A8%E9%9A%AA%E9%9B%99%E9%9B%A2%E9%9B%BB%E9%9C%80%E9%9D%88%E9%9D%92%E9%9D%9C%E9%9D%9E%E9%9D%A0%E9%9D%A2%E9%A0%81%E9%A0%90%E9%A1%8C%E9%A1%9E%E9%A1%AF%E9%A2%A8%E9%A6%96%E9%A6%99%E9%AB%94%E9%AB%98%E9%AC%86%E9%BA%BC%E9%BB%83%E9%BB%91%E9%BB%9E%EF%BC%88%EF%BC%89%EF%BC%8C%EF%BC%9A%EF%BC%9B%EF%BD%9C0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz%20.%2C%3A%3B%21%3F-%E2%80%93%E2%80%94%C2%B7/%28%29%26%40%25%2B%E2%86%92%E2%86%90%E2%86%93%E2%9C%93%E2%97%8F" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap&text=%E3%80%80%E3%80%81%E3%80%82%E4%B8%80%E4%B8%89%E4%B8%8A%E4%B8%8B%E4%B8%8D%E4%B8%94%E4%B8%96%E4%B8%A6%E4%B8%AD%E4%B8%B2%E4%B8%BB%E4%B9%9F%E4%BA%86%E4%BA%92%E4%BA%94%E4%BA%9E%E4%BA%A4%E4%BA%AC%E4%BA%BA%E4%BB%80%E4%BB%96%E4%BB%98%E4%BB%A5%E4%BB%B6%E4%BB%BB%E4%BB%BD%E4%BC%81%E4%BC%B0%E4%BD%88%E4%BD%8D%E4%BD%95%E4%BD%9C%E4%BD%B3%E4%BD%B5%E4%BD%BF%E4%BE%86%E4%BE%9B%E4%BE%9D%E4%BF%9D%E4%BF%A1%E5%80%8B%E5%80%91%E5%80%BC%E5%81%9A%E5%81%9C%E5%82%99%E5%82%B3%E5%84%AA%E5%85%85%E5%85%88%E5%85%89%E5%85%8D%E5%85%A5%E5%85%A7%E5%85%A8%E5%85%AC%E5%85%B1%E5%85%B6%E5%85%B7%E5%86%8D%E5%87%BA%E5%88%86%E5%88%87%E5%88%97%E5%88%B0%E5%88%BB%E5%89%8D%E5%89%A9%E5%89%B5%E5%8A%83%E5%8A%9B%E5%8A%9F%E5%8A%A0%E5%8A%A9%E5%8B%95%E5%8B%99%E5%8C%85%E5%8C%96%E5%8D%80%E5%8D%83%E5%8D%87%E5%8D%93%E5%8D%94%E5%8D%B3%E5%8E%9F%E5%8F%83%E5%8F%8A%E5%8F%8D%E5%8F%96%E5%8F%97%E5%8F%AA%E5%8F%AF%E5%8F%B0%E5%8F%B3%E5%8F%B8%E5%90%84%E5%90%88%E5%90%8C%E5%90%8D%E5%91%8A%E5%92%8C%E5%93%81%E5%95%8F%E5%95%9F%E5%96%AE%E5%99%A8%E5%9A%B4%E5%9B%9E%E5%9C%88%E5%9C%8D%E5%9C%93%E5%9C%96%E5%9C%98%E5%9C%A8%E5%9C%B0%E5%9D%80%E5%9D%A1%E5%9E%8B%E5%9F%B7%E5%9F%BA%E5%A0%B1%E5%A0%B4%E5%A1%8A%E5%A1%AB%E5%A2%83%E5%A2%9E%E5%A3%AB%E5%A4%9A%E5%A4%A0%E5%A4%A7%E5%A4%AA%E5%A5%8F%E5%A5%BD%E5%A6%82%E5%A7%8B%E5%A7%93%E5%A8%81%E5%AA%92%E5%AD%90%E5%AD%97%E5%AE%83%E5%AE%89%E5%AE%8C%E5%AE%9A%E5%AE%A2%E5%AE%A4%E5%AE%B6%E5%AE%B9%E5%AF%84%E5%AF%A6%E5%AF%AC%E5%B0%87%E5%B0%88%E5%B0%8D%E5%B0%8E%E5%B0%8F%E5%B0%9A%E5%B0%B1%E5%B0%BE%E5%B1%8F%E5%B1%95%E5%B1%A4%E5%B1%AC%E5%B7%A5%E5%B7%A6%E5%B7%A8%E5%B7%AE%E5%B7%B1%E5%B8%82%E5%B8%83%E5%B9%80%E5%B9%AB%E5%B9%B3%E5%B9%B4%E5%BA%95%E5%BA%A6%E5%BA%AB%E5%BB%8A%E5%BB%B6%E5%BC%8F%E5%BC%A7%E5%BC%B5%E5%BC%B7%E5%BD%99%E5%BD%A2%E5%BE%8C%E5%BE%91%E5%BE%97%E5%BE%9E%E5%BF%83%E5%BF%85%E5%BF%AB%E5%BF%B5%E6%80%9D%E6%80%A7%E6%81%AF%E6%82%A8%E6%83%85%E6%83%A1%E6%84%8F%E6%84%9F%E6%85%8B%E6%85%AE%E6%86%91%E6%87%88%E6%87%89%E6%88%90%E6%88%91%E6%88%96%E6%88%B6%E6%88%BF%E6%89%80%E6%89%8B%E6%89%8D%E6%89%93%E6%89%B9%E6%8A%80%E6%8B%8D%E6%8B%AC%E6%8C%81%E6%8D%B2%E6%8D%B7%E6%8E%8C%E6%8E%A1%E6%8E%A2%E6%8E%A5%E6%8E%A7%E6%8E%A8%E6%8F%8F%E6%8F%90%E6%8F%9B%E6%8F%A1%E6%8F%B4%E6%92%AD%E6%93%87%E6%93%8D%E6%93%9A%E6%93%AC%E6%93%B4%E6%94%AF%E6%94%B9%E6%94%BE%E6%95%88%E6%95%B4%E6%95%B8%E6%96%87%E6%96%99%E6%96%B0%E6%96%B9%E6%96%BC%E6%96%BD%E6%97%8B%E6%97%97%E6%97%A9%E6%98%8E%E6%98%93%E6%98%AF%E6%99%82%E6%99%AF%E6%9A%88%E6%9A%A2%E6%9B%9D%E6%9B%B4%E6%9C%80%E6%9C%83%E6%9C%89%E6%9C%8D%E6%9C%AA%E6%9D%B1%E6%9E%B6%E6%9F%93%E6%9F%A5%E6%A0%A1%E6%A0%B8%E6%A0%B9%E6%A0%BC%E6%A1%88%E6%A5%9A%E6%A5%AD%E6%A7%8B%E6%A8%99%E6%A8%A1%E6%A8%A3%E6%A9%9F%E6%AC%8A%E6%AC%A1%E6%AD%A2%E6%AD%A3%E6%AD%A4%E6%AF%8F%E6%AF%94%E6%B1%82%E6%B1%BA%E6%B2%92%E6%B3%A8%E6%B4%BB%E6%B5%81%E6%B6%B5%E6%B7%B1%E6%B7%BA%E6%B8%85%E6%B8%9B%E6%B8%AC%E6%B8%AF%E6%B8%B2%E6%B9%9B%E6%BA%90%E6%BC%B8%E6%BD%9B%E7%81%A3%E7%82%BA%E7%83%88%E7%84%A1%E7%85%A7%E7%89%86%E7%89%87%E7%89%88%E7%89%8C%E7%8D%A8%E7%8E%87%E7%8E%BB%E7%8F%BE%E7%90%83%E7%90%86%E7%91%9E%E7%92%83%E7%92%B0%E7%94%9F%E7%94%A2%E7%94%A8%E7%94%B1%E7%95%8C%E7%95%AB%E7%99%BC%E7%99%BD%E7%9A%84%E7%9B%A1%E7%9B%A3%E7%9B%AE%E7%9B%B4%E7%9C%8B%E7%9C%9F%E7%9C%BE%E7%9E%BB%E7%A1%AC%E7%A2%BA%E7%A4%8E%E7%A4%BA%E7%A4%BE%E7%A7%81%E7%A7%89%E7%A7%91%E7%A8%8B%E7%A9%A9%E7%AA%81%E7%AB%8B%E7%AB%99%E7%AB%AF%E7%AC%A6%E7%AC%AC%E7%AD%89%E7%AE%97%E7%AF%80%E7%AF%84%E7%B2%92%E7%B2%BE%E7%B3%BB%E7%B4%84%E7%B4%94%E7%B4%9A%E7%B4%A2%E7%B5%82%E7%B5%84%E7%B5%A1%E7%B5%B1%E7%B6%93%E7%B6%A0%E7%B6%AD%E7%B6%B2%E7%B7%9A%E7%B7%AF%E7%B8%AE%E7%B9%AA%E7%BA%8C%E7%BD%A9%E7%BD%AE%E7%BD%B2%E7%BE%A4%E8%80%83%E8%80%85%E8%80%95%E8%81%AF%E8%83%BD%E8%84%85%E8%87%AA%E8%87%B3%E8%87%B4%E8%88%87%E8%89%A6%E8%89%B2%E8%8B%B1%E8%93%8B%E8%97%89%E8%97%8D%E8%97%9D%E8%99%9B%E8%9E%BA%E8%A1%8C%E8%A1%93%E8%A1%9D%E8%A1%A8%E8%A3%9D%E8%A3%BD%E8%A6%86%E8%A6%8F%E8%A6%96%E8%A6%BA%E8%A6%BD%E8%A7%A3%E8%A7%B8%E8%A8%80%E8%A8%82%E8%A8%88%E8%A8%8A%E8%A8%AD%E8%A8%B4%E8%A9%95%E8%A9%A2%E8%A9%A6%E8%AA%8D%E8%AA%9E%E8%AA%BF%E8%AB%8B%E8%AB%96%E8%AB%AE%E8%AC%9D%E8%AD%98%E8%AD%B0%E8%AD%B7%E8%AE%93%E8%B2%8C%E8%B2%BB%E8%B3%87%E8%B3%AA%E8%B3%B4%E8%B5%B0%E8%B5%B7%E8%B6%8A%E8%B6%B3%E8%B7%9D%E8%B7%9F%E8%B7%AF%E8%BA%AB%E8%BB%9F%E8%BC%83%E8%BC%89%E8%BC%95%E8%BC%AA%E8%BC%B8%E8%BE%A6%E8%BE%A8%E8%BF%85%E8%BF%B4%E8%BF%BD%E9%80%80%E9%80%81%E9%80%8F%E9%80%94%E9%80%99%E9%80%9F%E9%80%A0%E9%80%A3%E9%80%B2%E9%81%8B%E9%81%8E%E9%81%9E%E9%81%A9%E9%81%AE%E9%81%B8%E9%81%BF%E9%82%8A%E9%83%A8%E9%83%B5%E9%83%BD%E9%87%8D%E9%87%8E%E9%87%9D%E9%8D%B5%E9%96%8B%E9%97%9C%E9%98%B2%E9%99%8D%E9%99%90%E9%99%A3%E9%99%B8%E9%9A%8A%E9%9A%8E%E9%9A%9B%E9%9A%A8%E9%9A%AA%E9%9B%99%E9%9B%A2%E9%9B%BB%E9%9C%80%E9%9D%88%E9%9D%92%E9%9D%9C%E9%9D%9E%E9%9D%A0%E9%9D%A2%E9%A0%81%E9%A0%90%E9%A1%8C%E9%A1%9E%E9%A1%AF%E9%A2%A8%E9%A6%96%E9%A6%99%E9%AB%94%E9%AB%98%E9%AC%86%E9%BA%BC%E9%BB%83%E9%BB%91%E9%BB%9E%EF%BC%88%EF%BC%89%EF%BC%8C%EF%BC%9A%EF%BC%9B%EF%BD%9C0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz%20.%2C%3A%3B%21%3F-%E2%80%93%E2%80%94%C2%B7/%28%29%26%40%25%2B%E2%86%92%E2%86%90%E2%86%93%E2%9C%93%E2%97%8F"></noscript>
 <style>
 /*
   三個版型各自是獨立的視覺世界（刻意單一主題，不跟隨系統深淺色）：
@@ -58,6 +70,11 @@
   --c-bg: #ffffff; --c-ink: #0e1116; --c-muted: #5d636b; --c-line: #0e1116;
   --c-hair: #d9dcdf; --c-accent: #00a19a; --c-accent-ink: #ffffff;
 
+  /* D 未來光感：純黑、玻璃、品牌漸層（取自 logo 的藍→黃綠） */
+  --d-bg: #000000; --d-ink: #ffffff; --d-muted: rgba(255,255,255,.62); --d-line: rgba(255,255,255,.12);
+  --d-glass: rgba(255,255,255,.05); --d-g1: #29b6e8; --d-g2: #b9d85a;
+  --inter: "Inter", "Noto Sans TC", "PingFang TC", system-ui, sans-serif;
+
   --gutter-l: max(16px, env(safe-area-inset-left, 0px));
   --gutter-r: max(16px, env(safe-area-inset-right, 0px));
   color-scheme: light;
@@ -70,6 +87,7 @@ html { overflow-x: hidden; overflow-x: clip; }
 body[data-v="a"] { --page-bg: var(--a-bg); --page-fg: var(--a-ink); --band: var(--a-bg); }
 body[data-v="b"] { --page-bg: var(--b-bg); --page-fg: var(--b-ink); --band: var(--b-bg); color-scheme: dark; }
 body[data-v="c"] { --page-bg: var(--c-bg); --page-fg: var(--c-ink); --band: var(--c-bg); }
+body[data-v="d"] { --page-bg: var(--d-bg); --page-fg: var(--d-ink); --band: var(--d-bg); color-scheme: dark; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--band); }
 h1, h2, h3 { text-wrap: balance; margin: 0; }
 p { margin: 0; }
@@ -662,6 +680,139 @@ canvas.fill { contain: strict; }
 .foot-legal > span + span::before, .va-foot .brand + .foot-legal::before { content: ""; width: 1px; height: 14px; background: currentColor; opacity: .45; margin-inline: 14px; }
 .va-foot .brand + .foot-legal::before { height: 22px; margin-inline: 18px; }
 @media (max-width: 560px) { .va-foot .brand + .foot-legal::before { display: none; } .va-foot .wrap { row-gap: 12px; } .va-foot .foot-legal { flex-basis: 100%; } }
+/* ===================================================== */
+/* D 未來光感                                             */
+/* ===================================================== */
+@property --ang { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+.vd { background: var(--d-bg); color: var(--d-ink); font-family: var(--inter); font-size: 16px; line-height: 1.7; }
+.vd-head { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 50; transition: background .3s, border-color .3s; border-bottom: 1px solid transparent; }
+.vd:has(.vd-hero.off) .vd-head { background: rgba(0,0,0,.86); border-bottom-color: var(--d-line); }
+.vd-head .wrap { display: flex; align-items: center; gap: 20px; height: 84px; max-width: 1280px; }
+.vd .brand img { height: 32px; }
+.vd-nav { margin: 0 auto; display: flex; gap: 2px; padding: 6px; border: 1px solid var(--d-line); border-radius: 999px; background: var(--d-glass); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.vd-nav a { padding: 9px 18px; border-radius: 999px; text-decoration: none; color: var(--d-muted); font-weight: 500; font-size: 15px; transition: color .3s, background .3s; }
+.vd-nav a:hover { color: #fff; background: rgba(255,255,255,.06); }
+.vd-nav a.on { color: var(--d-g1); }
+.vd-pill { appearance: none; background: transparent; border: 1px solid rgba(255,255,255,.2); color: #fff; border-radius: 999px; padding: 10px 20px; font: 600 14px/1 var(--inter); cursor: pointer; transition: background .3s, border-color .3s; }
+.vd-pill:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.4); }
+.vd-hero { position: relative; min-height: min(940px, 100svh); display: grid; place-items: center; overflow: hidden; isolation: isolate; }
+.vd-hero canvas { z-index: -1; }
+.vd-hero::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(55% 50% at 50% 50%, rgba(0,0,0,.6), rgba(0,0,0,.1) 75%), linear-gradient(180deg, rgba(0,0,0,.45), transparent 28%, transparent 70%, #000); }
+.vd-hero .wrap { position: relative; z-index: 1; text-align: center; display: grid; justify-items: center; gap: 26px; padding-block: 140px 80px; }
+.vd-hero .wrap > * { animation: up .9s cubic-bezier(.2,.7,.2,1) both; }
+.vd-hero .wrap > h1 { animation: none; }
+.vd-hero .wrap > :nth-child(2) { animation-delay: .1s; } .vd-hero .wrap > :nth-child(3) { animation-delay: .2s; } .vd-hero .wrap > :nth-child(4) { animation-delay: .3s; } .vd-hero .wrap > :nth-child(5) { animation-delay: .45s; }
+.vd-badge { font: 600 12px/1 var(--inter); letter-spacing: .32em; text-transform: uppercase; padding: 12px 22px; border: 1px solid var(--d-line); border-radius: 999px; background: rgba(255,255,255,.04); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); color: rgba(255,255,255,.78); }
+.vd-hero h1 { display: grid; font-weight: 700; font-size: clamp(44px, 8vw, 104px); line-height: 1.08; letter-spacing: -.02em; }
+.vd .l1 { background: linear-gradient(180deg, #ffffff 35%, #8f99a4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.vd .l2 { background: linear-gradient(90deg, var(--d-g1), var(--d-g2)); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .08em; }
+.vd-sub { max-width: 40em; color: var(--d-muted); font-size: clamp(16px, 1.6vw, 19px); font-weight: 300; }
+.vd-actions { display: flex; gap: 26px; align-items: center; flex-wrap: wrap; justify-content: center; margin-top: 6px; }
+.vd-cta { position: relative; display: inline-flex; align-items: center; gap: 18px; padding: 9px 9px 9px 30px; border-radius: 999px; background: rgba(10,14,20,.72); color: #fff; text-decoration: none; font: 600 15px/1 var(--inter); letter-spacing: .08em; text-transform: uppercase; border: 0; cursor: pointer; isolation: isolate; transition: transform .3s, box-shadow .3s; }
+.vd-cta::before { content: ""; position: absolute; inset: -1.5px; border-radius: inherit; padding: 1.5px; background: conic-gradient(from var(--ang), var(--d-g1), var(--d-g2), transparent 35%, transparent 60%, var(--d-g1)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: ang 4s linear infinite; z-index: -1; }
+@keyframes ang { to { --ang: 360deg; } }
+.vd-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(41,182,232,.25); }
+.vd-arrow { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--d-g1), var(--d-g2)); color: #00131c; transition: transform .3s; }
+.vd-arrow svg { width: 16px; height: 16px; }
+.vd-cta:hover .vd-arrow { transform: rotate(45deg); }
+.vd-link { color: var(--d-muted); text-decoration: none; font-weight: 500; border-bottom: 1px solid var(--d-line); padding-bottom: 4px; transition: color .3s, border-color .3s; }
+.vd-link:hover { color: #fff; border-color: #fff; }
+.vd-trust { margin-top: 3.25rem; display: grid; justify-items: center; gap: 6px; }
+.vd-chips { display: flex; filter: drop-shadow(0 12px 25px rgba(0,0,0,.7)); }
+.vd-chips i { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: #0b1118; border: 2px solid #000; margin-left: -10px; color: var(--d-g1); box-shadow: 0 0 0 1px var(--d-line); }
+.vd-chips i:first-child { margin-left: 0; } .vd-chips i:nth-child(n+4) { color: var(--d-g2); }
+.vd-chips .ico { width: 19px; height: 19px; }
+.vd-trust b { font-weight: 600; font-size: 16px; margin-top: 8px; }
+.vd-trust small { font: 500 11px/1 var(--inter); letter-spacing: .18em; color: rgba(255,255,255,.5); }
+.vd-sec { position: relative; padding-block: 110px; }
+.vd-head2 { display: grid; gap: 12px; margin-bottom: 48px; max-width: 720px; }
+.vd-kicker { font: 600 12px/1.2 var(--inter); letter-spacing: .24em; text-transform: uppercase; color: var(--d-g1); }
+.vd-h2 { font-size: clamp(30px, 4vw, 48px); font-weight: 700; letter-spacing: -.01em; line-height: 1.2; }
+.vd-head2 p { color: var(--d-muted); }
+.vd-glass { background: var(--d-glass); border: 1px solid var(--d-line); border-radius: 20px; }
+.vd-grad { background: linear-gradient(90deg, var(--d-g1), var(--d-g2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.vd-about { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 20px; }
+.vd-about-text { padding: 36px; display: grid; gap: 18px; color: rgba(255,255,255,.78); align-content: start; }
+.vd-facts { display: grid; gap: 20px; }
+.vd-facts > div { padding: 24px 28px; display: grid; gap: 4px; }
+.vd-facts b { font-size: 30px; font-weight: 700; justify-self: start; line-height: 1.3; }
+.vd-facts span { color: var(--d-muted); font-size: 14.5px; }
+.vd-sol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.vd-card { position: relative; border-radius: 20px; overflow: hidden; background: #07090d; border: 1px solid var(--d-line); display: flex; flex-direction: column; transition: border-color .3s, transform .3s; }
+.vd-card.wide { grid-column: span 2; }
+.vd-card .thumb { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block; opacity: .82; transition: opacity .3s, transform .6s; }
+.vd-card.wide .thumb { aspect-ratio: 16 / 7.4; }
+.vd-card .body { padding: 24px 26px 26px; display: grid; gap: 10px; flex: 1; align-content: start; }
+.vd-card .ico { color: var(--d-g1); }
+.vd-card h3 { font-size: 20px; font-weight: 600; }
+.vd-card p { color: var(--d-muted); font-size: 15px; }
+.vd-card a { color: var(--d-g1); text-decoration: none; font-weight: 600; font-size: 14.5px; }
+.vd-card:hover { border-color: rgba(41,182,232,.5); transform: translateY(-4px); }
+.vd-card:hover .thumb { opacity: 1; transform: scale(1.03); }
+.vd-why { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.vd-why > div { padding: 28px; display: grid; gap: 10px; align-content: start; }
+.vd-why i { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: linear-gradient(135deg, rgba(41,182,232,.18), rgba(185,216,90,.1)); color: var(--d-g1); border: 1px solid var(--d-line); }
+.vd-why h3 { font-size: 19px; font-weight: 600; }
+.vd-why p, .vd-steps p { color: var(--d-muted); font-size: 15px; }
+.vd-h3 { font-size: 24px; font-weight: 700; margin: 72px 0 28px; }
+.vd-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.vd-steps li { position: relative; border-top: 1px solid var(--d-line); padding-top: 20px; display: grid; gap: 8px; align-content: start; }
+.vd-steps li::before { content: ""; position: absolute; top: -1px; left: 0; width: 56px; height: 1px; background: linear-gradient(90deg, var(--d-g1), var(--d-g2)); }
+.vd-steps b { font-size: 44px; font-weight: 700; line-height: 1; justify-self: start; }
+.vd-steps h4 { margin: 0; font-size: 18px; font-weight: 600; }
+.vd-ctasec { text-align: center; overflow: hidden; }
+.vd-ctasec::before { content: ""; position: absolute; left: 50%; top: 50%; width: 900px; height: 900px; max-width: 160vw; transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(41,182,232,.18), rgba(185,216,90,.06) 40%, transparent 65%); pointer-events: none; }
+.vd-ctasec .wrap { position: relative; display: grid; justify-items: center; gap: 22px; }
+.vd-ctasec h2 { display: grid; font-size: clamp(38px, 6vw, 76px); font-weight: 700; line-height: 1.12; letter-spacing: -.02em; }
+.vd-ctasec p { color: var(--d-muted); max-width: 36em; }
+.vd-global { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 20px; align-items: center; }
+.vd-mapbox { padding: 24px; }
+.vd-global .map .dot { fill: #1d3450; }
+.vd-global .map .arc { fill: none; stroke: var(--d-g1); stroke-width: .3; stroke-dasharray: 1.2 1; animation: vbDash 1.6s ease-in-out infinite alternate; }
+.vd-global .map .arc:nth-of-type(2) { animation-delay: .5s; } .vd-global .map .arc:nth-of-type(3) { animation-delay: 1s; }
+.vd-global .map .pin-office { fill: var(--d-g1); } .vd-global .map .pin-dc { fill: var(--d-g2); }
+.vd-global .map .halo { fill: none; stroke-width: .3; } .vd-global .map .halo.pin-office { stroke: var(--d-g1); } .vd-global .map .halo.pin-dc { stroke: var(--d-g2); }
+.vd-global .map text { fill: #ffffff; font: 600 2.2px var(--inter); }
+.vd-loc { display: grid; gap: 20px; }
+.vd-loc > div { padding: 24px 26px; display: grid; gap: 8px; }
+.vd-loc b { font-size: 18px; font-weight: 600; }
+.vd-contact { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 20px; }
+.vd-form { padding: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.vd-form label { display: grid; gap: 8px; font-size: 13px; font-weight: 500; color: var(--d-muted); }
+.vd-form .full { grid-column: 1 / -1; }
+.vd-form input, .vd-form textarea { background: rgba(255,255,255,.04); border: 1px solid var(--d-line); border-radius: 12px; padding: 13px 15px; color: #fff; font: 400 15px var(--inter); width: 100%; transition: border-color .3s, box-shadow .3s; }
+.vd-form textarea { min-height: 150px; resize: vertical; }
+.vd-form input:focus, .vd-form textarea:focus { outline: none; border-color: var(--d-g1); box-shadow: 0 0 0 3px rgba(41,182,232,.18); }
+.vd-form .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.vd-form .form-note { color: var(--d-g1); }
+.vd-info { display: grid; gap: 20px; align-content: start; }
+.vd-info > div { padding: 22px 26px; display: grid; gap: 8px; }
+.vd-info a { color: var(--d-g1); text-decoration: none; }
+.vd-foot { border-top: 1px solid var(--d-line); color: rgba(255,255,255,.55); font-size: 14px; }
+.vd-foot .wrap { padding-block: 28px; display: flex; align-items: center; flex-wrap: wrap; }
+.vd-foot .brand img { height: 28px; }
+.vd-foot .brand + .foot-legal::before { content: ""; width: 1px; height: 22px; background: currentColor; opacity: .45; margin-inline: 18px; display: inline-flex; }
+.off::before { animation-play-state: paused !important; }
+#vd-why { content-visibility: auto; contain-intrinsic-size: auto 1100px; }
+@media (max-width: 900px) {
+  .vd-head .wrap { height: 68px; gap: 10px; }
+  .vd-head.menu-open { background: #000; }
+  .vd-head.menu-open .vd-nav { border-radius: 0; border: 0; border-bottom: 1px solid var(--d-line); background: #000; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .vd-head.menu-open .vd-nav a { border-radius: 0; }
+  .vd-nav { display: none; }
+  .vd .brand img { height: 28px; }
+  .vd-hero .wrap { padding-block: 120px 64px; gap: 22px; }
+  .vd-about, .vd-global, .vd-contact { grid-template-columns: minmax(0, 1fr); }
+  .vd-sol { grid-template-columns: minmax(0, 1fr); } .vd-card.wide { grid-column: auto; } .vd-card.wide .thumb { aspect-ratio: 16 / 9; }
+  .vd-why, .vd-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vd-sec { padding-block: 72px; }
+}
+@media (max-width: 560px) {
+  .vd-why, .vd-steps, .vd-form { grid-template-columns: minmax(0, 1fr); }
+  .vd-badge { letter-spacing: .18em; font-size: 10.5px; padding: 10px 16px; }
+  .vd-about-text, .vd-form { padding: 24px; }
+  .vd-foot .brand + .foot-legal::before { display: none; } .vd-foot .wrap { row-gap: 12px; } .vd-foot .foot-legal { flex-basis: 100%; }
+}
 </style>
 </head>
 <body data-v="a">
@@ -1155,6 +1306,115 @@ canvas.fill { contain: strict; }
   </footer>
 </div>
 
+<!-- ======================= 版型 D 未來光感 ======================= -->
+<div class="v vd" id="vd" data-variant="d" hidden>
+  <header class="vd-head">
+    <div class="wrap">
+      <a class="brand" href="#vd-top" data-scroll><img src="assets/brand/logo-h-white.png" alt="MOOTECH" width="189" height="41"></a>
+      <nav class="vd-nav" aria-label="主選單">
+        <a href="#vd-top" data-scroll class="on">首頁</a><a href="#vd-about" data-scroll>關於我們</a><a href="#vd-solutions" data-scroll>解決方案</a><a href="#vd-global" data-scroll>全球據點</a><a href="#vd-contact" data-scroll>聯絡我們</a>
+      </nav>
+      <button class="vd-pill vd-lang" type="button" aria-label="EN 切換為英文" data-lang-toggle>EN</button>
+      <button class="menu-btn" type="button" aria-label="開啟選單" aria-expanded="false" data-menu><svg class="ico"><use href="#i-menu"/></svg></button>
+    </div>
+  </header>
+
+  <section class="vd-hero" id="vd-top">
+    <canvas class="fill" data-art="helix" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <span class="vd-badge">SINCE 2016 · SINGAPORE · TAIWAN</span>
+      <h1 data-en="&lt;span class=&quot;l1&quot;&gt;Driving business&lt;/span&gt;&lt;span class=&quot;l2&quot;&gt;through innovation&lt;/span&gt;"><span class="l1">透過創新</span><span class="l2">推動企業發展</span></h1>
+      <p class="vd-sub">Web API 架構、高可用性網路、即時串流與威脅情報。MOOTECH 讓企業的關鍵系統保持穩定、安全且隨時可擴展。</p>
+      <div class="vd-actions">
+        <a class="vd-cta" href="#vd-contact" data-scroll><span>預約諮詢</span><span class="vd-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="vd-link" href="#vd-solutions" data-scroll>查看解決方案</a>
+      </div>
+      <div class="vd-trust">
+        <div class="vd-chips" aria-hidden="true"><i><svg class="ico"><use href="#i-live"/></svg></i><i><svg class="ico"><use href="#i-net"/></svg></i><i><svg class="ico"><use href="#i-arch"/></svg></i><i><svg class="ico"><use href="#i-int"/></svg></i><i><svg class="ico"><use href="#i-shield"/></svg></i></div>
+        <b>5 大解決方案</b>
+        <small>SINGAPORE · TAIWAN · SINCE 2016</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="vd-sec" id="vd-about">
+    <div class="wrap">
+      <div class="vd-head2"><span class="vd-kicker">ABOUT US</span><h2 class="vd-h2">關於我們</h2></div>
+      <div class="vd-about">
+        <div class="vd-glass vd-about-text">
+          <p>MOOTECH 是一家成立於 2016 年的專業 IT 公司，專注於創新解決方案。我們的服務範圍包括 Web API 架構、系統和網路高可用性優化、即時串流媒體以及免費威脅情報庫。</p>
+          <p>在 MOOTECH，我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，這有助於我們主動應對潛在的安全問題。我們秉持前瞻性的 IT 解決方案理念，憑藉精湛的技術實力和對卓越的不懈追求，我們能夠為全球客戶提供穩定且可擴展的創新解決方案。</p>
+        </div>
+        <div class="vd-facts">
+          <div class="vd-glass"><b class="vd-grad">2016</b><span>成立年份，深耕企業 IT 服務</span></div>
+          <div class="vd-glass"><b class="vd-grad">5 大</b><span>解決方案：直播、網路、架構、整合、威脅情報</span></div>
+          <div class="vd-glass"><b class="vd-grad">新加坡 · 台灣</b><span>雙據點，服務全球客戶</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vd-sec" id="vd-solutions">
+    <div class="wrap">
+      <div class="vd-head2"><span class="vd-kicker">SOLUTIONS</span><h2 class="vd-h2">解決方案</h2><p>五個服務模組，可獨立導入，也能組合成完整的企業 IT 基礎。</p></div>
+      <div class="vd-sol"><article class="vd-card wide"><img decoding="async" loading="lazy" class="thumb" src="assets/photos/b/sol-live-800.webp" srcset="assets/photos/b/sol-live-480.webp 480w, assets/photos/b/sol-live-800.webp 800w, assets/photos/b/sol-live-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 60vw" alt="直播示意圖" width="1280" height="800"><div class="body"><svg class="ico"><use href="#i-live"/></svg><h3>直播</h3><p>透過 MOOTECH 的直播解決方案，您可以接觸到全球受眾，提升品牌曝光度與互動率。我們可自訂的平台讓您根據自身需求打造專屬直播內容，無論是虛擬活動、產品發表會或其他任何形式的直播，都能輕鬆進行。MOOTECH 幫助您將直播提升至全新高度。</p><a href="#vd-contact" data-scroll>諮詢此方案 →</a></div></article><article class="vd-card"><img decoding="async" loading="lazy" class="thumb" src="assets/photos/b/sol-network-800.webp" srcset="assets/photos/b/sol-network-480.webp 480w, assets/photos/b/sol-network-800.webp 800w, assets/photos/b/sol-network-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 30vw" alt="網路連線示意圖" width="1280" height="800"><div class="body"><svg class="ico"><use href="#i-net"/></svg><h3>網路連線</h3><p>高度靈活且強大的連接能力，並提供專業諮詢與支援，保護您的業務。</p><a href="#vd-contact" data-scroll>諮詢此方案 →</a></div></article><article class="vd-card"><img decoding="async" loading="lazy" class="thumb" src="assets/photos/b/sol-architecture-800.webp" srcset="assets/photos/b/sol-architecture-480.webp 480w, assets/photos/b/sol-architecture-800.webp 800w, assets/photos/b/sol-architecture-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 30vw" alt="網路架構示意圖" width="1280" height="800"><div class="body"><svg class="ico"><use href="#i-arch"/></svg><h3>網路架構</h3><p>依需求設計架構，選擇符合業務與預算的最佳化網路方案。</p><a href="#vd-contact" data-scroll>諮詢此方案 →</a></div></article><article class="vd-card"><img decoding="async" loading="lazy" class="thumb" src="assets/photos/b/sol-integration-800.webp" srcset="assets/photos/b/sol-integration-480.webp 480w, assets/photos/b/sol-integration-800.webp 800w, assets/photos/b/sol-integration-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 30vw" alt="系統整合示意圖" width="1280" height="800"><div class="body"><svg class="ico"><use href="#i-int"/></svg><h3>系統整合</h3><p>將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。</p><a href="#vd-contact" data-scroll>諮詢此方案 →</a></div></article><article class="vd-card"><img decoding="async" loading="lazy" class="thumb" src="assets/photos/b/sol-threat-800.webp" srcset="assets/photos/b/sol-threat-480.webp 480w, assets/photos/b/sol-threat-800.webp 800w, assets/photos/b/sol-threat-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 30vw" alt="威脅情報庫示意圖" width="1280" height="800"><div class="body"><svg class="ico"><use href="#i-shield"/></svg><h3>威脅情報庫</h3><p>以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保網路與系統安全。</p><a href="#vd-contact" data-scroll>諮詢此方案 →</a></div></article></div>
+    </div>
+  </section>
+
+  <section class="vd-sec" id="vd-why">
+    <div class="wrap">
+      <div class="vd-head2"><span class="vd-kicker">WHY MOOTECH</span><h2 class="vd-h2">為什麼選擇 MOOTECH</h2></div>
+      <div class="vd-why"><div class="vd-glass"><i><svg class="ico"><use href="#i-shield"/></svg></i><h3>安全優先</h3><p>以威脅評估為起點，持續維護威脅情報庫，主動應對潛在的安全風險。</p></div><div class="vd-glass"><i><svg class="ico"><use href="#i-pulse"/></svg></i><h3>高可用性</h3><p>從 Web API 架構到網路層，針對穩定與高可用性進行設計與優化。</p></div><div class="vd-glass"><i><svg class="ico"><use href="#i-bolt"/></svg></i><h3>靈活迅速</h3><p>從核心解決方案到加值功能，以靈活、反應迅速的方式交付。</p></div><div class="vd-glass"><i><svg class="ico"><use href="#i-net"/></svg></i><h3>全球視野</h3><p>以新加坡與台灣為據點，為全球客戶提供穩定且可擴展的服務。</p></div></div>
+      <h3 class="vd-h3">合作流程</h3>
+      <ol class="vd-steps"><li><b class="vd-grad">01</b><h4>需求諮詢</h4><p>了解您的業務目標、現有系統與預算。</p></li><li><b class="vd-grad">02</b><h4>架構設計</h4><p>規劃網路與系統架構，選出最適合的解決方案。</p></li><li><b class="vd-grad">03</b><h4>部署導入</h4><p>實施核心解決方案，完成系統整合與測試。</p></li><li><b class="vd-grad">04</b><h4>維運支援</h4><p>提供專業支援與優化，並依需求擴充加值功能。</p></li></ol>
+    </div>
+  </section>
+
+  <section class="vd-sec vd-ctasec">
+    <div class="wrap">
+      <h2><span class="l1">穩定，</span><span class="l2">從架構開始。</span></h2>
+      <p>從架構規劃到上線維運，MOOTECH 與您一起打造穩定、安全的 IT 基礎。</p>
+      <a class="vd-cta" href="#vd-contact" data-scroll><span>預約諮詢</span><span class="vd-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    </div>
+  </section>
+
+  <section class="vd-sec" id="vd-global">
+    <div class="wrap">
+      <div class="vd-head2"><span class="vd-kicker">GLOBAL</span><h2 class="vd-h2">立足新加坡與台灣，服務全球客戶。</h2></div>
+      <div class="vd-global">
+        <div class="vd-glass vd-mapbox"><svg class="map" data-map="d" viewBox="0 0 100 98" role="img" aria-label="亞太區據點與連線地圖"></svg></div>
+        <div class="vd-loc">
+          <div class="vd-glass"><span class="vd-kicker">辦公室</span><b>新加坡、台灣</b></div>
+          <div class="vd-glass"><span class="vd-kicker">資料中心</span><b>香港、新加坡、東京</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vd-sec" id="vd-contact">
+    <div class="wrap">
+      <div class="vd-head2"><span class="vd-kicker">CONTACT</span><h2 class="vd-h2">聯絡我們</h2><p>告訴我們您的需求，工程團隊會盡快回覆。</p></div>
+      <div class="vd-contact">
+        <form class="vd-glass vd-form" data-form>
+          <label for="d-name">姓名<input id="d-name" name="name" required autocomplete="name"></label>
+          <label for="d-email">電子郵件<input id="d-email" name="email" type="email" required autocomplete="email"></label>
+          <label class="full" for="d-msg">訊息<textarea id="d-msg" name="message" required></textarea></label>
+          <div class="full row"><button class="vd-cta" type="submit"><span>發送訊息</span><span class="vd-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button><span class="form-note" role="status"></span></div>
+        </form>
+        <aside class="vd-info">
+          <div class="vd-glass"><span class="vd-kicker">電子郵件</span><p>contact@mootech.asia</p></div>
+          <div class="vd-glass"><span class="vd-kicker">地點</span><p>新加坡 · 台灣</p></div>
+          <div class="vd-glass"><span class="vd-kicker">社群</span><p><a href="https://www.facebook.com/">Facebook</a> · <a href="https://www.linkedin.com/">LinkedIn</a></p></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer class="vd-foot">
+    <div class="wrap"><span class="brand"><img src="assets/brand/logo-h-white.png" alt="MOOTECH" width="189" height="41" loading="lazy"></span><span class="foot-legal"><span>Mootech 私人有限公司</span><span>© 2026 版權所有</span></span></div>
+  </footer>
+</div>
+
 <!-- ======================= 版型切換器 ======================= -->
 <aside class="switcher" aria-label="版型切換">
   <button type="button" class="sw-toggle" aria-expanded="false" aria-label="展開版型切換"><span class="sw-cur">A</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
@@ -1162,6 +1422,7 @@ canvas.fill { contain: strict; }
   <button type="button" data-set="a" aria-pressed="true"><b>A</b><span>企業</span></button>
   <button type="button" data-set="b" aria-pressed="false"><b>B</b><span>科技</span></button>
   <button type="button" data-set="c" aria-pressed="false"><b>C</b><span>網格</span></button>
+  <button type="button" data-set="d" aria-pressed="false"><b>D</b><span>光感</span></button>
   <div class="sw-tip" aria-live="polite"><strong></strong><span></span></div>
 </aside>
 
@@ -1170,7 +1431,8 @@ canvas.fill { contain: strict; }
   var NOTES = {
     a: ["A · 企業信賴", "延續原站藍白，資料中心主視覺。穩重清楚，適合重視信任感的企業客戶。"],
     b: ["B · 網路維運中心", "深色主控台語彙、節點與連線動態，突顯網路、資安的技術實力。"],
-    c: ["C · 瑞士網格", "巨型字體與嚴格網格，單一品牌青綠色，不依賴照片也有強烈辨識度。"]
+    c: ["C · 瑞士網格", "巨型字體與嚴格網格，單一品牌青綠色，不依賴照片也有強烈辨識度。"],
+    d: ["D · 未來光感", "黑底玻璃質感、品牌漸層大標與粒子雙螺旋，科技感最強的旗艦風格。"]
   };
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var current = null;
@@ -1206,7 +1468,7 @@ canvas.fill { contain: strict; }
     var base = el("svg", { viewBox: svg.getAttribute("viewBox"), "class": "map map-dots", "aria-hidden": "true" });
     base.appendChild(el("path", { d: d.join(""), "class": "dot" }));
     wrap.insertBefore(base, svg);
-    if (style === "b") {
+    if (style === "b" || style === "d") {
       var hub = PINS[0];
       PINS.slice(1).forEach(function (t) {
         var x1 = px(hub.lon), y1 = py(hub.lat), x2 = px(t.lon), y2 = py(t.lat);
@@ -1219,7 +1481,7 @@ canvas.fill { contain: strict; }
       var cx = px(p.lon), cy = py(p.lat);
       svg.appendChild(el("circle", { cx: cx, cy: cy, r: 2.6, "class": "halo " + cls }));
       svg.appendChild(el("circle", { cx: cx, cy: cy, r: style === "c" ? 1.3 : 1.2, "class": cls }));
-      if (style === "b") { var t = el("text", { x: cx + 2, y: cy - 1.6 }); t.textContent = p.code; svg.appendChild(t); }
+      if (style === "b" || style === "d") { var t = el("text", { x: cx + 2, y: cy - 1.6 }); t.textContent = p.code; svg.appendChild(t); }
     });
   }
 
@@ -1231,7 +1493,7 @@ canvas.fill { contain: strict; }
   }, { rootMargin: "120px 0px" }) : null;
   function watch(el) { if (el._watched) return; el._watched = true; el._vis = !viewIO; if (viewIO) viewIO.observe(el); }
   function live(el) { return !!el._vis && !document.hidden && !el.closest(".v[hidden]"); }
-  document.querySelectorAll(".map, .vc-marquee, .vb-pipe, .vb-status, .vb-term, .va-slides").forEach(watch);
+  document.querySelectorAll(".map, .vc-marquee, .vb-pipe, .vb-status, .vb-term, .va-slides, .vd-cta, .vd-hero").forEach(watch);
   document.addEventListener("visibilitychange", kick);
 
   /* ---------- 畫布藝術 ---------- */
@@ -1319,6 +1581,47 @@ canvas.fill { contain: strict; }
         ctx.fillStyle = "#4ade80"; ctx.fill(hot);
       };
     },
+    /* 粒子雙螺旋：左右各一組，依深度與色階分 12 批一次填色 */
+    /* 粒子雙螺旋：每條鏈由 3 道粒子組成緞帶，橫檔也是粒子；依深度與色階分 12 批一次填色 */
+    helix: function (cv) {
+      var ctx = cv.getContext("2d"), small = LOW || innerWidth < 700, n = small ? 70 : 160, rnd = seeded(5), jit = [];
+      var COLS = [[41, 182, 232], [80, 196, 200], [130, 206, 150], [185, 216, 90]], ALPHA = [.32, .62, 1];
+      for (var q = 0; q < n * 8; q++) jit.push(rnd() - .5);
+      cv._fps = LOW ? 20 : small ? 24 : 30;
+      function dot(out, x, y, z, u, r) {
+        var di = z < -.33 ? 0 : z < .33 ? 1 : 2, ci = Math.min(3, (u * 4) | 0), size = r * (.7 + (z + 1) * .55);
+        out[ci * 3 + di].moveTo(x + size, y); out[ci * 3 + di].arc(x, y, size, 0, 6.283);
+      }
+      function strandSet(w, h, cx, tilt, R, t, dir, out) {
+        var r = 1.9 * cv._dpr, ribbon = small ? 2 : 3;
+        for (var i = 0; i < n; i++) {
+          var u = i / (n - 1), ax = cx + tilt * (u - .5) * 2, ay = -h * .08 + u * h * 1.16, base = u * 2.2 * 6.283 + t * .0006 * dir;
+          var pts = [];
+          for (var s2 = 0; s2 < 2; s2++) {
+            for (var k = 0; k < ribbon; k++) {
+              var ph = base + s2 * 3.1416 + (k - (ribbon - 1) / 2) * .09, z = Math.sin(ph);
+              dot(out, ax + Math.cos(ph) * R + jit[i * 8 + k] * 3 * cv._dpr, ay + z * R * .18 + jit[i * 8 + k + 3] * 2 * cv._dpr, z, u, r);
+            }
+            pts.push([ax + Math.cos(base + s2 * 3.1416) * R, ay + Math.sin(base + s2 * 3.1416) * R * .18, Math.sin(base + s2 * 3.1416)]);
+          }
+          if (i % (small ? 3 : 2) === 0) for (var m = 1; m < 7; m++) {
+            var f = m / 7, zz = pts[0][2] + (pts[1][2] - pts[0][2]) * f;
+            dot(out, pts[0][0] + (pts[1][0] - pts[0][0]) * f, pts[0][1] + (pts[1][1] - pts[0][1]) * f, zz * .6, u, r * .7);
+          }
+        }
+      }
+      return function (t) {
+        var w = cv.width, h = cv.height, R = Math.min(w, h) * (small ? .22 : .17), out = [];
+        for (var k = 0; k < 12; k++) out.push(new Path2D());
+        ctx.clearRect(0, 0, w, h);
+        var edge = small ? .02 : .1;
+        strandSet(w, h, w * edge, w * .06, R, t, 1, out);
+        strandSet(w, h, w * (1 - edge), -w * .06, R, t + 4000, -1, out);
+        for (var c = 0; c < 4; c++) for (var d = 0; d < 3; d++) {
+          ctx.fillStyle = "rgba(" + COLS[c].join(",") + "," + ALPHA[d] + ")"; ctx.fill(out[c * 3 + d]);
+        }
+      };
+    },
     wave: function (cv) {
       var ctx = cv.getContext("2d");
       cv._fps = LOW ? 20 : 30;
@@ -1379,6 +1682,7 @@ canvas.fill { contain: strict; }
     if (v === current) return;
     current = v;
     document.querySelectorAll(".v").forEach(function (d) { d.hidden = d.getAttribute("data-variant") !== v; });
+    document.documentElement.removeAttribute("data-init");
     document.querySelectorAll(".switcher [data-set]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-set") === v)); });
     document.body.setAttribute("data-v", v);
     document.querySelector(".sw-cur").textContent = v.toUpperCase();
@@ -1398,11 +1702,11 @@ canvas.fill { contain: strict; }
   });
   document.addEventListener("keydown", function (e) {
     if (/input|textarea/i.test(e.target.tagName)) return;
-    var map = { "1": "a", "2": "b", "3": "c" };
+    var map = { "1": "a", "2": "b", "3": "c", "4": "d" };
     if (map[e.key]) show(map[e.key]);
   });
   window.addEventListener("hashchange", function () {
-    var m = location.hash.match(/^#design-([abc])$/); if (m) show(m[1]);
+    var m = location.hash.match(/^#design-([a-d])$/); if (m) show(m[1]);
   });
 
   /* 區塊捲動不改動網址 hash，避免與版型切換衝突 */
@@ -1432,7 +1736,7 @@ canvas.fill { contain: strict; }
     });
   });
 
-  var init = (location.hash.match(/^#design-([abc])$/) || [])[1];
+  var init = (location.hash.match(/^#design-([a-d])$/) || [])[1];
   if (!init) { try { init = localStorage.getItem("mootech-variant"); } catch (e) {} }
   show(init || "a");
 
@@ -1490,7 +1794,7 @@ canvas.fill { contain: strict; }
     }, 35);
   });
 
-  var RV = ".va-mosaic figure,.va-sol-head,.va-card,.va-why-item,.va-steps li,.va-facts,.va-about .text,.va-about-img,.va-loc li,.va-cta .wrap > *,.vb-sec-head,.vb-cell,.vb-check,.vb-pipe li,.vb-spec,.vb-about .text,.vb-nodes > div,.vc-row,.vc-why > div,.vc-steps li,.vc-lead,.vc-cols,.vc-about-img,.vc-loc > div,.vc-cta h2";
+  var RV = ".va-mosaic figure,.va-sol-head,.va-card,.va-why-item,.va-steps li,.va-facts,.va-about .text,.va-about-img,.va-loc li,.va-cta .wrap > *,.vb-sec-head,.vb-cell,.vb-check,.vb-pipe li,.vb-spec,.vb-about .text,.vb-nodes > div,.vc-row,.vc-why > div,.vc-steps li,.vc-lead,.vc-cols,.vc-about-img,.vc-loc > div,.vc-cta h2,.vd-head2,.vd-card,.vd-why > div,.vd-steps li,.vd-facts > div,.vd-about-text,.vd-loc > div,.vd-ctasec .wrap > *";
   if ("IntersectionObserver" in window && !reduce) {
     var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { rootMargin: "0px 0px -8% 0px" });
     document.querySelectorAll(RV).forEach(function (el) {
@@ -1539,7 +1843,7 @@ canvas.fill { contain: strict; }
   });
 
   /* ---------- 中英切換 ---------- */
-  var EN = {"主選單": "Main menu", "關於我們": "About", "解決方案": "Solutions", "全球據點": "Global", "聯絡我們": "Contact", "切換語言": "Switch language", "開啟選單": "Open menu", "透過創新推動企業發展": "Driving business through innovation", "探索解決方案": "Explore solutions", "解決方案捷徑": "Solution shortcuts", "直播": "Live Streaming", "網路連線": "Connectivity", "網路架構": "Network Architecture", "系統整合": "System Integration", "威脅情報庫": "Threat Intelligence", "資料中心機房": "Data center", "服務場景": "In action", "從機房、會議室到活動現場，看看 MOOTECH 的解決方案如何運作。": "From data centers and meeting rooms to live events, see MOOTECH solutions at work.", "機房佈線": "Data center cabling", "架構規劃": "Architecture planning", "資安監控": "Security monitoring", "活動直播": "Event streaming", "解決方案全景": "Solution overview", "點選服務，查看它在企業環境中的樣貌。": "Pick a service to see how it fits into an enterprise environment.", "MOOTECH 辦公室": "MOOTECH office", "MOOTECH 團隊": "MOOTECH team", "團隊合作": "Team collaboration", "主視覺切換": "Hero slides", "成立年份，深耕企業 IT 服務": "Founded, serving enterprise IT ever since", "5 大": "5 core", "解決方案：直播、網路、架構、整合、威脅情報": "Solutions: streaming, connectivity, architecture, integration, threat intel", "新加坡 · 台灣": "Singapore · Taiwan", "雙據點，服務全球客戶": "Two offices serving clients worldwide", "MOOTECH 是一家成立於 2016 年的專業 IT 公司，專注於創新解決方案。我們的服務範圍包括 Web API 架構、系統和網路高可用性優化、即時串流媒體以及免費威脅情報庫。": "MOOTECH is a professional IT company founded in 2016, focused on innovative solutions. Our services cover Web API architecture, high-availability optimisation for systems and networks, real-time streaming media and a free threat intelligence database.", "在 MOOTECH，我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，這有助於我們主動應對潛在的安全問題。我們秉持前瞻性的 IT 解決方案理念，憑藉精湛的技術實力和對卓越的不懈追求，我們能夠為全球客戶提供穩定且可擴展的創新解決方案。": "At MOOTECH, security and threat assessment come first. We maintain a robust threat intelligence database that lets us address potential security issues before they become problems. With a forward-looking approach to IT, strong engineering and a constant pursuit of excellence, we deliver stable, scalable and innovative solutions to clients around the world.", "從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的解決方案。": "From implementing core solutions to deploying value-added features, we work in a flexible, responsive way to give users worldwide stable and innovative solutions.", "從內容傳遞到基礎架構與資安防護，為企業打造穩定、可擴展的 IT 環境。": "From content delivery to infrastructure and security, we build stable, scalable IT environments for businesses.", "直播示意圖": "Live streaming", "網路連線示意圖": "Connectivity", "網路架構示意圖": "Network architecture", "系統整合示意圖": "System integration", "威脅情報庫示意圖": "Threat intelligence", "透過 MOOTECH 的直播解決方案，您可以接觸到全球受眾，提升品牌曝光度與互動率。我們可自訂的平台讓您根據自身需求打造專屬直播內容，無論是虛擬活動、產品發表會或其他任何形式的直播，都能輕鬆進行。MOOTECH 幫助您將直播提升至全新高度。": "With MOOTECH live streaming you can reach a global audience and lift brand exposure and engagement. Our customisable platform lets you build streams around your own needs, whether it is a virtual event, a product launch or any other kind of broadcast. MOOTECH takes your live streaming to a new level.", "諮詢此方案 →": "Ask about this →", "我們提供的網路與連線解決方案具備高度靈活且強大的連接能力，並提供專業的諮詢與支援，以保護您的業務。": "Our network and connectivity solutions offer flexible, powerful connections, backed by expert consulting and support to protect your business.", "MOOTECH 團隊將依您的需求設計架構，協助您選擇符合業務需求與預算的最佳化網路解決方案。": "The MOOTECH team designs an architecture around your requirements and helps you choose the optimal network solution for your business and budget.", "我們為客戶提供最佳解決方案，將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。": "We connect multiple IT systems, hardware and software from the market into one coordinated whole that runs smoothly.", "我們提供以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。": "Our IP-based threat intelligence database addresses a wide range of threats and malicious activity, keeping your networks and systems secure.", "為什麼選擇 MOOTECH": "Why MOOTECH", "安全優先": "Security first", "以威脅評估為起點，持續維護威脅情報庫，主動應對潛在的安全風險。": "We start from threat assessment and keep our threat intelligence database current, so risks are handled before they hit.", "高可用性": "High availability", "從 Web API 架構到網路層，針對穩定與高可用性進行設計與優化。": "From Web API architecture down to the network layer, everything is designed and tuned for stability and uptime.", "靈活迅速": "Fast and flexible", "從核心解決方案到加值功能，以靈活、反應迅速的方式交付。": "From core solutions to value-added features, we deliver quickly and adapt as you go.", "全球視野": "Global reach", "以新加坡與台灣為據點，為全球客戶提供穩定且可擴展的服務。": "Based in Singapore and Taiwan, we provide stable, scalable services to clients worldwide.", "合作流程": "How we work", "需求諮詢": "Consultation", "了解您的業務目標、現有系統與預算。": "We learn your business goals, current systems and budget.", "架構設計": "Architecture design", "規劃網路與系統架構，選出最適合的解決方案。": "We plan the network and system architecture and choose the best-fit solution.", "部署導入": "Deployment", "實施核心解決方案，完成系統整合與測試。": "We implement the core solution and complete integration and testing.", "維運支援": "Ongoing support", "提供專業支援與優化，並依需求擴充加值功能。": "We provide expert support and optimisation, and add value-added features as you grow.", "穩定，從架構開始。": "Stability starts with architecture.", "從架構規劃到上線維運，MOOTECH 與您一起打造穩定、安全的 IT 基礎。": "From architecture planning to day-to-day operations, MOOTECH builds a stable, secure IT foundation with you.", "預約諮詢 →": "Book a consultation →", "預約諮詢": "Book a consultation", "立足新加坡與台灣，服務全球客戶。": "Based in Singapore and Taiwan, serving clients worldwide.", "亞太區據點地圖": "Asia-Pacific locations map", "辦公室": "Office", "新加坡、台灣": "Singapore, Taiwan", "資料中心": "Data center", "香港、新加坡、東京": "Hong Kong, Singapore, Tokyo", "姓名": "Name", "電子郵件": "Email", "訊息": "Message", "發送訊息": "Send message", "地點": "Locations", "新加坡": "Singapore", "台灣": "Taiwan", "社群": "Social", "Mootech 私人有限公司 · © 2026 版權所有": "Mootech Pte. Ltd. · © 2026 All rights reserved", "Web API 架構、高可用性網路、即時串流與威脅情報。MOOTECH 讓企業的關鍵系統保持穩定、安全且隨時可擴展。": "Web API architecture, high-availability networks, real-time streaming and threat intelligence. MOOTECH keeps critical business systems stable, secure and ready to scale.", "查看解決方案 →": "View solutions →", "查看解決方案": "View solutions", "聯絡工程團隊": "Talk to our engineers", "新加坡 / 台灣": "Singapore / Taiwan", "高可用性架構": "HA architecture", "MOOTECH 是一家成立於 2016 年的專業 IT 公司，專注於創新解決方案。服務範圍包括 Web API 架構、系統和網路高可用性優化、即時串流媒體以及免費威脅情報庫。": "MOOTECH is a professional IT company founded in 2016, focused on innovative solutions. Our services cover Web API architecture, high-availability optimisation for systems and networks, real-time streaming media and a free threat intelligence database.", "我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，主動應對潛在的安全問題。秉持前瞻性的 IT 解決方案理念，以精湛的技術實力為全球客戶提供穩定且可擴展的創新方案。": "Security and threat assessment come first. We maintain a robust threat intelligence database to get ahead of potential security issues, and apply strong engineering to deliver stable, scalable solutions to clients worldwide.", "從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的服務。": "From implementing core solutions to deploying value-added features, we work in a flexible, responsive way to give users worldwide stable and innovative service.", "五個服務模組，可獨立導入，也能組合成完整的企業 IT 基礎。": "Five service modules. Adopt one, or combine them into a complete enterprise IT foundation.", "接觸全球受眾，提升品牌曝光與互動率。可自訂的平台讓您打造專屬直播內容，虛擬活動、產品發表會或任何形式的直播都能輕鬆進行。": "Reach a global audience and lift brand exposure and engagement. Our customisable platform handles virtual events, product launches and any other kind of broadcast.", "高度靈活且強大的連接能力，並提供專業諮詢與支援，保護您的業務。": "Flexible, powerful connectivity, backed by expert consulting and support to protect your business.", "依需求設計架構，選擇符合業務與預算的最佳化網路方案。": "Architecture designed around your needs, with the optimal network for your business and budget.", "將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。": "Multiple IT systems, hardware and software connected into one coordinated, smooth-running whole.", "以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保網路與系統安全。": "An IP-based threat intelligence database that counters threats and malicious activity to keep networks and systems secure.", "立足新加坡與台灣，": "Based in Singapore and Taiwan,", "服務全球客戶。": "serving clients worldwide.", "亞太區據點與連線地圖": "Asia-Pacific locations and links map", "SIN · 新加坡": "SIN · Singapore", "TPE · 台灣": "TPE · Taiwan", "HKG · 香港": "HKG · Hong Kong", "TYO · 東京": "TYO · Tokyo", "告訴我們您的需求，工程團隊會盡快回覆。": "Tell us what you need and our engineering team will get back to you soon.", "NAME · 姓名": "NAME", "EMAIL · 電子郵件": "EMAIL", "MESSAGE · 訊息": "MESSAGE", "發送訊息 →": "Send message →", "© 2026 Mootech 私人有限公司 · 版權所有": "© 2026 Mootech Pte. Ltd. · All rights reserved", "關於": "About", "據點": "Locations", "聯絡": "Contact", "在 MOOTECH，我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，這有助於我們主動應對潛在的安全問題。我們秉持前瞻性的 IT 解決方案理念，憑藉精湛的技術實力和對卓越的不懈追求，為全球客戶提供穩定且可擴展的創新解決方案。": "At MOOTECH, security and threat assessment come first. We maintain a robust threat intelligence database that lets us address potential security issues early. With a forward-looking approach to IT, strong engineering and a constant pursuit of excellence, we deliver stable, scalable and innovative solutions worldwide.", "從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的解決方案。我們的服務同時涵蓋免費威脅情報庫，讓更多企業能及早掌握風險。": "From implementing core solutions to deploying value-added features, we work in a flexible, responsive way. Our services also include a free threat intelligence database, so more businesses can see risks early.", "接觸全球受眾，提升品牌曝光度與互動率。可自訂的平台讓您打造專屬直播內容，虛擬活動、產品發表會或任何形式的直播都能輕鬆進行。": "Reach a global audience and lift brand exposure and engagement. Our customisable platform handles virtual events, product launches and any other kind of broadcast.", "高度靈活且強大的網路連接能力，並提供專業的諮詢與支援，以保護您的業務。": "Flexible, powerful network connectivity, backed by expert consulting and support to protect your business.", "依您的需求設計架構，協助選擇符合業務需求與預算的最佳化網路解決方案。": "We design the architecture around your needs and help you choose the optimal network for your business and budget.", "將市場上多個 IT 系統、硬體與軟體連接成一個協調一致、操作流暢的整體。": "We connect multiple IT systems, hardware and software into one coordinated, smooth-running whole.", "以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。": "An IP-based threat intelligence database that counters threats and malicious activity to keep your networks and systems secure.", "香港": "Hong Kong", "東京": "Tokyo", "Mootech 私人有限公司": "Mootech Pte. Ltd.", "© 2026 版權所有": "© 2026 All rights reserved"};
+  var EN = {"主選單": "Main menu", "關於我們": "About", "解決方案": "Solutions", "全球據點": "Global", "聯絡我們": "Contact", "切換語言": "Switch language", "開啟選單": "Open menu", "透過創新推動企業發展": "Driving business through innovation", "探索解決方案": "Explore solutions", "解決方案捷徑": "Solution shortcuts", "直播": "Live Streaming", "網路連線": "Connectivity", "網路架構": "Network Architecture", "系統整合": "System Integration", "威脅情報庫": "Threat Intelligence", "資料中心機房": "Data center", "首頁": "Home", "5 大解決方案": "5 core solutions", "穩定，": "Stability", "從架構開始。": "starts with architecture.", "服務場景": "In action", "從機房、會議室到活動現場，看看 MOOTECH 的解決方案如何運作。": "From data centers and meeting rooms to live events, see MOOTECH solutions at work.", "機房佈線": "Data center cabling", "架構規劃": "Architecture planning", "資安監控": "Security monitoring", "活動直播": "Event streaming", "解決方案全景": "Solution overview", "點選服務，查看它在企業環境中的樣貌。": "Pick a service to see how it fits into an enterprise environment.", "MOOTECH 辦公室": "MOOTECH office", "MOOTECH 團隊": "MOOTECH team", "團隊合作": "Team collaboration", "主視覺切換": "Hero slides", "成立年份，深耕企業 IT 服務": "Founded, serving enterprise IT ever since", "5 大": "5 core", "解決方案：直播、網路、架構、整合、威脅情報": "Solutions: streaming, connectivity, architecture, integration, threat intel", "新加坡 · 台灣": "Singapore · Taiwan", "雙據點，服務全球客戶": "Two offices serving clients worldwide", "MOOTECH 是一家成立於 2016 年的專業 IT 公司，專注於創新解決方案。我們的服務範圍包括 Web API 架構、系統和網路高可用性優化、即時串流媒體以及免費威脅情報庫。": "MOOTECH is a professional IT company founded in 2016, focused on innovative solutions. Our services cover Web API architecture, high-availability optimisation for systems and networks, real-time streaming media and a free threat intelligence database.", "在 MOOTECH，我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，這有助於我們主動應對潛在的安全問題。我們秉持前瞻性的 IT 解決方案理念，憑藉精湛的技術實力和對卓越的不懈追求，我們能夠為全球客戶提供穩定且可擴展的創新解決方案。": "At MOOTECH, security and threat assessment come first. We maintain a robust threat intelligence database that lets us address potential security issues before they become problems. With a forward-looking approach to IT, strong engineering and a constant pursuit of excellence, we deliver stable, scalable and innovative solutions to clients around the world.", "從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的解決方案。": "From implementing core solutions to deploying value-added features, we work in a flexible, responsive way to give users worldwide stable and innovative solutions.", "從內容傳遞到基礎架構與資安防護，為企業打造穩定、可擴展的 IT 環境。": "From content delivery to infrastructure and security, we build stable, scalable IT environments for businesses.", "直播示意圖": "Live streaming", "網路連線示意圖": "Connectivity", "網路架構示意圖": "Network architecture", "系統整合示意圖": "System integration", "威脅情報庫示意圖": "Threat intelligence", "透過 MOOTECH 的直播解決方案，您可以接觸到全球受眾，提升品牌曝光度與互動率。我們可自訂的平台讓您根據自身需求打造專屬直播內容，無論是虛擬活動、產品發表會或其他任何形式的直播，都能輕鬆進行。MOOTECH 幫助您將直播提升至全新高度。": "With MOOTECH live streaming you can reach a global audience and lift brand exposure and engagement. Our customisable platform lets you build streams around your own needs, whether it is a virtual event, a product launch or any other kind of broadcast. MOOTECH takes your live streaming to a new level.", "諮詢此方案 →": "Ask about this →", "我們提供的網路與連線解決方案具備高度靈活且強大的連接能力，並提供專業的諮詢與支援，以保護您的業務。": "Our network and connectivity solutions offer flexible, powerful connections, backed by expert consulting and support to protect your business.", "MOOTECH 團隊將依您的需求設計架構，協助您選擇符合業務需求與預算的最佳化網路解決方案。": "The MOOTECH team designs an architecture around your requirements and helps you choose the optimal network solution for your business and budget.", "我們為客戶提供最佳解決方案，將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。": "We connect multiple IT systems, hardware and software from the market into one coordinated whole that runs smoothly.", "我們提供以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。": "Our IP-based threat intelligence database addresses a wide range of threats and malicious activity, keeping your networks and systems secure.", "為什麼選擇 MOOTECH": "Why MOOTECH", "安全優先": "Security first", "以威脅評估為起點，持續維護威脅情報庫，主動應對潛在的安全風險。": "We start from threat assessment and keep our threat intelligence database current, so risks are handled before they hit.", "高可用性": "High availability", "從 Web API 架構到網路層，針對穩定與高可用性進行設計與優化。": "From Web API architecture down to the network layer, everything is designed and tuned for stability and uptime.", "靈活迅速": "Fast and flexible", "從核心解決方案到加值功能，以靈活、反應迅速的方式交付。": "From core solutions to value-added features, we deliver quickly and adapt as you go.", "全球視野": "Global reach", "以新加坡與台灣為據點，為全球客戶提供穩定且可擴展的服務。": "Based in Singapore and Taiwan, we provide stable, scalable services to clients worldwide.", "合作流程": "How we work", "需求諮詢": "Consultation", "了解您的業務目標、現有系統與預算。": "We learn your business goals, current systems and budget.", "架構設計": "Architecture design", "規劃網路與系統架構，選出最適合的解決方案。": "We plan the network and system architecture and choose the best-fit solution.", "部署導入": "Deployment", "實施核心解決方案，完成系統整合與測試。": "We implement the core solution and complete integration and testing.", "維運支援": "Ongoing support", "提供專業支援與優化，並依需求擴充加值功能。": "We provide expert support and optimisation, and add value-added features as you grow.", "穩定，從架構開始。": "Stability starts with architecture.", "從架構規劃到上線維運，MOOTECH 與您一起打造穩定、安全的 IT 基礎。": "From architecture planning to day-to-day operations, MOOTECH builds a stable, secure IT foundation with you.", "預約諮詢 →": "Book a consultation →", "預約諮詢": "Book a consultation", "立足新加坡與台灣，服務全球客戶。": "Based in Singapore and Taiwan, serving clients worldwide.", "亞太區據點地圖": "Asia-Pacific locations map", "辦公室": "Office", "新加坡、台灣": "Singapore, Taiwan", "資料中心": "Data center", "香港、新加坡、東京": "Hong Kong, Singapore, Tokyo", "姓名": "Name", "電子郵件": "Email", "訊息": "Message", "發送訊息": "Send message", "地點": "Locations", "新加坡": "Singapore", "台灣": "Taiwan", "社群": "Social", "Mootech 私人有限公司 · © 2026 版權所有": "Mootech Pte. Ltd. · © 2026 All rights reserved", "Web API 架構、高可用性網路、即時串流與威脅情報。MOOTECH 讓企業的關鍵系統保持穩定、安全且隨時可擴展。": "Web API architecture, high-availability networks, real-time streaming and threat intelligence. MOOTECH keeps critical business systems stable, secure and ready to scale.", "查看解決方案 →": "View solutions →", "查看解決方案": "View solutions", "聯絡工程團隊": "Talk to our engineers", "新加坡 / 台灣": "Singapore / Taiwan", "高可用性架構": "HA architecture", "MOOTECH 是一家成立於 2016 年的專業 IT 公司，專注於創新解決方案。服務範圍包括 Web API 架構、系統和網路高可用性優化、即時串流媒體以及免費威脅情報庫。": "MOOTECH is a professional IT company founded in 2016, focused on innovative solutions. Our services cover Web API architecture, high-availability optimisation for systems and networks, real-time streaming media and a free threat intelligence database.", "我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，主動應對潛在的安全問題。秉持前瞻性的 IT 解決方案理念，以精湛的技術實力為全球客戶提供穩定且可擴展的創新方案。": "Security and threat assessment come first. We maintain a robust threat intelligence database to get ahead of potential security issues, and apply strong engineering to deliver stable, scalable solutions to clients worldwide.", "從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的服務。": "From implementing core solutions to deploying value-added features, we work in a flexible, responsive way to give users worldwide stable and innovative service.", "五個服務模組，可獨立導入，也能組合成完整的企業 IT 基礎。": "Five service modules. Adopt one, or combine them into a complete enterprise IT foundation.", "接觸全球受眾，提升品牌曝光與互動率。可自訂的平台讓您打造專屬直播內容，虛擬活動、產品發表會或任何形式的直播都能輕鬆進行。": "Reach a global audience and lift brand exposure and engagement. Our customisable platform handles virtual events, product launches and any other kind of broadcast.", "高度靈活且強大的連接能力，並提供專業諮詢與支援，保護您的業務。": "Flexible, powerful connectivity, backed by expert consulting and support to protect your business.", "依需求設計架構，選擇符合業務與預算的最佳化網路方案。": "Architecture designed around your needs, with the optimal network for your business and budget.", "將市場上多個 IT 系統、硬體與軟體連接成協調一致、操作流暢的整體。": "Multiple IT systems, hardware and software connected into one coordinated, smooth-running whole.", "以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保網路與系統安全。": "An IP-based threat intelligence database that counters threats and malicious activity to keep networks and systems secure.", "立足新加坡與台灣，": "Based in Singapore and Taiwan,", "服務全球客戶。": "serving clients worldwide.", "亞太區據點與連線地圖": "Asia-Pacific locations and links map", "SIN · 新加坡": "SIN · Singapore", "TPE · 台灣": "TPE · Taiwan", "HKG · 香港": "HKG · Hong Kong", "TYO · 東京": "TYO · Tokyo", "告訴我們您的需求，工程團隊會盡快回覆。": "Tell us what you need and our engineering team will get back to you soon.", "NAME · 姓名": "NAME", "EMAIL · 電子郵件": "EMAIL", "MESSAGE · 訊息": "MESSAGE", "發送訊息 →": "Send message →", "© 2026 Mootech 私人有限公司 · 版權所有": "© 2026 Mootech Pte. Ltd. · All rights reserved", "關於": "About", "據點": "Locations", "聯絡": "Contact", "在 MOOTECH，我們優先考慮安全和威脅評估，並致力於維護強大的威脅情報庫，這有助於我們主動應對潛在的安全問題。我們秉持前瞻性的 IT 解決方案理念，憑藉精湛的技術實力和對卓越的不懈追求，為全球客戶提供穩定且可擴展的創新解決方案。": "At MOOTECH, security and threat assessment come first. We maintain a robust threat intelligence database that lets us address potential security issues early. With a forward-looking approach to IT, strong engineering and a constant pursuit of excellence, we deliver stable, scalable and innovative solutions worldwide.", "從實施核心解決方案到部署加值功能，我們採取靈活、反應迅速的方式，為全球用戶提供穩定且創新的解決方案。我們的服務同時涵蓋免費威脅情報庫，讓更多企業能及早掌握風險。": "From implementing core solutions to deploying value-added features, we work in a flexible, responsive way. Our services also include a free threat intelligence database, so more businesses can see risks early.", "接觸全球受眾，提升品牌曝光度與互動率。可自訂的平台讓您打造專屬直播內容，虛擬活動、產品發表會或任何形式的直播都能輕鬆進行。": "Reach a global audience and lift brand exposure and engagement. Our customisable platform handles virtual events, product launches and any other kind of broadcast.", "高度靈活且強大的網路連接能力，並提供專業的諮詢與支援，以保護您的業務。": "Flexible, powerful network connectivity, backed by expert consulting and support to protect your business.", "依您的需求設計架構，協助選擇符合業務需求與預算的最佳化網路解決方案。": "We design the architecture around your needs and help you choose the optimal network for your business and budget.", "將市場上多個 IT 系統、硬體與軟體連接成一個協調一致、操作流暢的整體。": "We connect multiple IT systems, hardware and software into one coordinated, smooth-running whole.", "以 IP 位址為基礎的威脅情報資料庫，針對各類威脅與惡意行為提供解決方案，確保您的網路與系統安全。": "An IP-based threat intelligence database that counters threats and malicious activity to keep your networks and systems secure.", "香港": "Hong Kong", "東京": "Tokyo", "Mootech 私人有限公司": "Mootech Pte. Ltd.", "© 2026 版權所有": "© 2026 All rights reserved"};
   var lang = "zh", done = [];
   function setLang(l) {
     if (l === lang) return;
