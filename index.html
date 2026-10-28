@@ -6,6 +6,8 @@
 <title>MOOTECH 官網</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="MOOTECH 成立於 2016 年，專注於直播、網路連線、網路架構、系統整合與威脅情報庫等企業 IT 解決方案，據點位於新加坡與台灣。">
+<link rel="icon" type="image/png" href="assets/brand/favicon.png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
@@ -588,15 +590,19 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
   .vb-stage { aspect-ratio: 4 / 3; }
 }
 @media (max-width: 560px) { .va-mosaic { grid-template-columns: minmax(0, 1fr); } .va-mosaic figure:first-child { grid-column: auto; grid-row: span 1; } .va-mosaic figure { grid-row: span 1; } }
+/* ---- 品牌 logo ---- */
+.brand { display: inline-flex; align-items: center; line-height: 0; }
+.brand img { display: block; width: auto; height: 34px; }
+.va-foot .brand img, .vb-foot .brand img { height: 28px; }
+.vb-foot .wrap { align-items: center; }
+.big-logo { display: block; width: auto; height: clamp(110px, 16vw, 180px); }
+@media (max-width: 560px) { .brand img { height: 28px; } }
 </style>
 </head>
 <body data-v="a">
 
 <!-- 共用圖示 -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e8be0"/><stop offset="1" stop-color="#2fc4a0"/></linearGradient>
-  </defs>
   <symbol id="i-live" viewBox="0 0 32 32"><rect x="3" y="9" width="18" height="14" rx="2"/><path d="M21 14l8-4v12l-8-4"/><circle cx="9" cy="16" r="2.5"/></symbol>
   <symbol id="i-net" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M4 16h24M16 4c4 3.5 5 8 5 12s-1 8.5-5 12M16 4c-4 3.5-5 8-5 12s1 8.5 5 12"/></symbol>
   <symbol id="i-arch" viewBox="0 0 32 32"><path d="M16 4l12 6-12 6-12-6z"/><path d="M4 16l12 6 12-6M4 22l12 6 12-6"/></symbol>
@@ -607,14 +613,13 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
   <symbol id="i-menu" viewBox="0 0 32 32"><path d="M5 9h22M5 16h22M5 23h22"/></symbol>
   <symbol id="i-fb" viewBox="0 0 24 24"><path d="M13.5 21v-7.5H16l.5-3h-3V8.6c0-.9.3-1.6 1.6-1.6h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4V10.5H8v3h2.5V21z"/></symbol>
   <symbol id="i-in" viewBox="0 0 24 24"><path d="M4.5 9h3.2v11H4.5zM6.1 3.8a1.9 1.9 0 110 3.8 1.9 1.9 0 010-3.8zM10 9h3.1v1.5h.1c.4-.8 1.5-1.7 3.1-1.7 3.3 0 3.9 2.2 3.9 5V20H17v-5.4c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V20H10z"/></symbol>
-  <symbol id="i-logo" viewBox="0 0 40 40"><path d="M6 32V9l14 14L34 9v23" fill="none" stroke="url(#mGrad)" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/></symbol>
 </svg>
 
 <!-- ======================= 版型 A 企業信賴 ======================= -->
 <div class="v va" id="va" data-variant="a">
   <header class="va-head">
     <div class="wrap">
-      <a class="va-logo" href="#va-top" data-scroll><svg aria-hidden="true"><use href="#i-logo"/></svg>MOOTECH</a>
+      <a class="va-logo brand" href="#va-top" data-scroll><img src="assets/brand/logo-h.png" alt="MOOTECH" width="189" height="41"></a>
       <nav class="va-nav" aria-label="主選單">
         <a href="#va-about" data-scroll>關於我們</a><a href="#va-solutions" data-scroll>解決方案</a><a href="#va-global" data-scroll>全球據點</a><a href="#va-contact" data-scroll>聯絡我們</a>
       </nav>
@@ -767,7 +772,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
   </section>
 
   <footer class="va-foot">
-    <div class="wrap"><span class="va-logo"><svg aria-hidden="true"><use href="#i-logo"/></svg>MOOTECH</span><span>Mootech 私人有限公司 · © 2026 版權所有</span></div>
+    <div class="wrap"><span class="va-logo brand"><img src="assets/brand/logo-h-white.png" alt="MOOTECH" width="189" height="41"></span><span>Mootech 私人有限公司 · © 2026 版權所有</span></div>
   </footer>
 </div>
 
@@ -775,7 +780,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 <div class="v vb" id="vb" data-variant="b" hidden>
   <header class="vb-head">
     <div class="wrap">
-      <a class="vb-logo" href="#vb-top" data-scroll><svg aria-hidden="true"><use href="#i-logo"/></svg>MOOTECH</a>
+      <a class="vb-logo brand" href="#vb-top" data-scroll><img src="assets/brand/logo-h-white.png" alt="MOOTECH" width="189" height="41"></a>
       <span class="vb-status"><i></i>ALL SYSTEMS OPERATIONAL</span>
       <nav class="vb-nav" aria-label="主選單">
         <a href="#vb-about" data-scroll>/about</a><a href="#vb-solutions" data-scroll>/solutions</a><a href="#vb-global" data-scroll>/network</a><a href="#vb-contact" data-scroll>/contact</a>
@@ -948,7 +953,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
   </section>
 
   <footer class="vb-foot">
-    <div class="wrap"><span>© 2026 Mootech 私人有限公司 · 版權所有</span><span>build: corporate-site · region: apac</span></div>
+    <div class="wrap"><span class="brand"><img src="assets/brand/logo-h-white.png" alt="MOOTECH" width="189" height="41"></span><span>© 2026 Mootech 私人有限公司 · 版權所有</span><span>build: corporate-site · region: apac</span></div>
   </footer>
 </div>
 
@@ -956,7 +961,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 <div class="v vc" id="vc" data-variant="c" hidden>
   <header class="vc-head">
     <div class="wrap">
-      <a class="vc-logo" href="#vc-top" data-scroll><i></i>MOOTECH</a>
+      <a class="vc-logo brand" href="#vc-top" data-scroll><img src="assets/brand/logo-h.png" alt="MOOTECH" width="189" height="41"></a>
       <nav class="vc-nav" aria-label="主選單">
         <a href="#vc-about" data-scroll>關於</a><a href="#vc-solutions" data-scroll>解決方案</a><a href="#vc-global" data-scroll>據點</a><a href="#vc-contact" data-scroll>聯絡</a>
       </nav>
@@ -1079,7 +1084,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 
   <footer class="vc-foot">
     <div class="wrap">
-      <div class="big">MOOTECH</div>
+      <img class="big-logo" src="assets/brand/logo-stacked-white.png" alt="MOOTECH" width="463" height="360" loading="lazy">
       <div class="line"><span>Mootech 私人有限公司</span><span>© 2026 版權所有</span></div>
     </div>
   </footer>
