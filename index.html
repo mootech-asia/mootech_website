@@ -925,8 +925,11 @@ canvas.fill { contain: strict; }
 .ve-global { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 24px; align-items: center; }
 .ve-mapbox { border: 1px solid var(--e-line); border-radius: 10px; padding: 20px; background: var(--e-panel); }
 .ve-global .map .dot { fill: #1c2a3f; }
-.ve-global .map .atk { fill: none; stroke: var(--e-threat); stroke-width: .35; stroke-dasharray: 1.4 1; animation: vbDash 1.4s ease-in-out infinite alternate; }
-.ve-global .map .atk:nth-of-type(2n) { animation-delay: .7s; }
+.ve-global .map .atk { fill: none; stroke: var(--e-threat); stroke-width: .3; stroke-dasharray: 1.2 1.2; opacity: .28; }
+.ve-global .map .atk-run { fill: none; stroke: var(--e-threat); stroke-width: .7; stroke-linecap: round; stroke-dasharray: 9 91; stroke-dashoffset: 9; animation: atkRun 2.75s cubic-bezier(.45,0,.75,1) infinite; filter: drop-shadow(0 0 1px rgba(255,93,108,.9)); }
+@keyframes atkRun { from { stroke-dashoffset: 9; } to { stroke-dashoffset: -91; } }
+.ve-global .map .hit { fill: none; stroke: var(--e-safe); stroke-width: .45; opacity: 0; transform-box: fill-box; transform-origin: center; animation: hit 2.75s linear infinite; }
+@keyframes hit { 0%, 93% { opacity: 0; transform: scale(.4); } 96% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(2.6); } }
 .ve-global .map .pin-office, .ve-global .map .pin-dc { fill: var(--e-safe); }
 .ve-global .map .halo { fill: none; stroke: var(--e-safe); stroke-width: .3; }
 .ve-global .map text { fill: var(--e-ink); font: 600 2.2px var(--mono); }
@@ -1794,9 +1797,13 @@ canvas.fill { contain: strict; }
       });
     }
     if (style === "e") {
-      [[60, 48, 121.56, 25.03], [160, 50, 121.56, 25.03], [62, -12, 103.82, 1.35], [158, -30, 103.82, 1.35], [95, 55, 103.82, 1.35]].forEach(function (a) {
+      [[60, 48, 121.56, 25.03], [160, 50, 121.56, 25.03], [62, -12, 103.82, 1.35], [158, -30, 103.82, 1.35], [95, 55, 103.82, 1.35]].forEach(function (a, i) {
         var x1 = px(a[0]), y1 = py(a[1]), x2 = px(a[2]), y2 = py(a[3]), mx = (x1 + x2) / 2, my = Math.min(y1, y2) - 10;
-        svg.appendChild(el("path", { d: "M" + x1 + " " + y1 + " Q" + mx + " " + my + " " + x2 + " " + y2, "class": "atk" }));
+        var d = "M" + x1 + " " + y1 + " Q" + mx + " " + my + " " + x2 + " " + y2, delay = (i * .55).toFixed(2) + "s";
+        /* 底層淡紅虛線＋沿路徑飛行的攻擊光束，抵達據點時炸開綠色攔截波 */
+        svg.appendChild(el("path", { d: d, "class": "atk" }));
+        svg.appendChild(el("path", { d: d, "class": "atk-run", pathLength: "100", style: "animation-delay:" + delay }));
+        svg.appendChild(el("circle", { cx: x2, cy: y2, r: 2.2, "class": "hit", style: "animation-delay:" + delay }));
       });
     }
     PINS.forEach(function (p) {
