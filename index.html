@@ -1007,6 +1007,8 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
 /* ---- E：首屏底圖（黑曜石盾）；有底圖時不畫程式盾牌 ---- */
 .ve-hero.has-poster canvas { display: none; }
 .ve-hero .ve-poster { object-position: 60% center; }
+/* 桌機：底圖與影片稍微放大並往右下移，讓盾牌靠右下 */
+@media (min-width: 901px) { .ve-hero .ve-poster, .ve-hero video { object-position: 40% 50%; transform: scale(1.14) translate(5.5%, 5.5%); transform-origin: center; } }
 @media (max-width: 900px) {
   .ve-hero.has-poster .ve-poster { inset: 0 0 auto 0; height: auto; aspect-ratio: 4 / 3; object-position: 63% 50%; }
   .ve-hero.has-poster::after { background: linear-gradient(180deg, rgba(7,9,14,.45) 0, transparent 70px, transparent calc(75vw - 110px), var(--e-bg) 75vw); }
