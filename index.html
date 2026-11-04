@@ -846,8 +846,8 @@ canvas.fill { contain: strict; }
 
 .ve-hero { position: relative; min-height: min(900px, 100svh); display: flex; align-items: center; overflow: hidden; isolation: isolate; }
 .ve-hero canvas, .ve-hero video, .ve-hero .ve-poster { z-index: -2; }
-.ve-hero video, .ve-hero .ve-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s; }
-.ve-hero.has-video video, .ve-hero.has-poster .ve-poster { opacity: 1; }
+.ve-hero video, .ve-hero .ve-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ve-hero video { z-index: -1 !important; }
 .ve-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, rgba(7,9,14,.92) 0%, rgba(7,9,14,.55) 45%, rgba(7,9,14,0) 75%), linear-gradient(180deg, rgba(7,9,14,.5), transparent 25%, transparent 75%, var(--e-bg)); }
 .ve-hero .wrap { width: 100%; max-width: 1280px; padding-block: 120px 96px; }
 .ve-copy { max-width: 600px; display: grid; gap: 22px; }
@@ -1639,6 +1639,10 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
   <!-- 首屏影片：生成後放到 assets/video/，再把 data-video 設成 "assets/video/e-hero"（不含副檔名）、data-poster 設成第一格靜態圖 -->
   <section class="ve-hero has-poster" id="ve-top" data-video="assets/video/e-hero" data-poster="assets/video/e-hero-poster.jpg">
     <canvas class="fill" data-art="shield" aria-hidden="true"></canvas>
+    <video class="ve-video" autoplay muted loop playsinline preload="auto" poster="assets/video/e-hero-poster.jpg" aria-hidden="true">
+      <source src="assets/video/e-hero.webm?v=4" type="video/webm">
+      <source src="assets/video/e-hero.mp4?v=4" type="video/mp4">
+    </video>
     <img class="ve-poster" src="assets/video/e-hero-poster-1440.webp" srcset="assets/video/e-hero-poster-960.webp 960w, assets/video/e-hero-poster-1440.webp 1440w, assets/video/e-hero-poster-1920.webp 1920w" sizes="100vw" alt="" loading="lazy" decoding="async" fetchpriority="high" width="2000" height="1125">
     <div class="ve-corners" aria-hidden="true">
       <span class="tl">SIN 1.35°N 103.82°E</span><span class="tr">TPE 25.03°N 121.56°E</span>
@@ -2138,6 +2142,7 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
     var root = document.getElementById("v" + v);
     root.querySelectorAll("svg[data-map]").forEach(drawMap);
     setupArt(root); kick();
+    root.querySelectorAll(".ve-hero").forEach(function (h) { if (h._play) h._play(); });
     root.querySelectorAll("[data-query]").forEach(function (f) { if (f._run && !f._ran) { f._ran = true; setTimeout(f._run, 700); } });
     window.scrollTo({ top: 0, behavior: "instant" });
   }
@@ -2315,30 +2320,21 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
     steps[0].classList.add("on");
   });
 
-  /* ---------- E：首屏影片（手機也播放；只有省流量模式不載入；提供暫停按鈕） ---------- */
+  /* ---------- E：首屏影片（預設一定播放；右下角可暫停） ---------- */
   document.querySelectorAll(".ve-hero").forEach(function (hero) {
-    var src = hero.getAttribute("data-video"), poster = hero.getAttribute("data-poster");
-    var saveData = !!(navigator.connection && navigator.connection.saveData);
-    if (!src || saveData) return;
-    var VER = "?v=3", v = document.createElement("video"), userPaused = false;
-    ["muted", "loop", "playsinline", "autoplay"].forEach(function (k) { v.setAttribute(k, ""); });
-    v.muted = true; v.playsInline = true; v.preload = "auto"; v.setAttribute("aria-hidden", "true");
-    if (poster) v.poster = poster;
-    ["webm", "mp4"].forEach(function (ext) { var so = document.createElement("source"); so.src = src + "." + ext + VER; so.type = "video/" + ext; v.appendChild(so); });
-    var btn = document.createElement("button");
-    btn.type = "button"; btn.className = "ve-vbtn"; btn.hidden = true;
+    var v = hero.querySelector("video.ve-video"); if (!v) return;
+    var userPaused = false, btn = document.createElement("button");
+    v.muted = true; v.playsInline = true;
+    btn.type = "button"; btn.className = "ve-vbtn";
     function label() { var p = v.paused; btn.setAttribute("aria-label", p ? "播放背景影片" : "暫停背景影片"); btn.innerHTML = p ? '<svg viewBox="0 0 16 16"><path d="M5 3l8 5-8 5z"/></svg>' : '<svg viewBox="0 0 16 16"><path d="M4 3h3v10H4zM9 3h3v10H9z"/></svg>'; }
     function tryPlay() { if (userPaused) return; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
-    v.addEventListener("playing", function () { hero.classList.add("has-video"); btn.hidden = false; label(); });
-    v.addEventListener("pause", label);
-    btn.addEventListener("click", function () { if (v.paused) { userPaused = false; tryPlay(); } else { userPaused = true; v.pause(); } label(); });
-    hero.insertBefore(v, hero.firstChild); hero.appendChild(btn);
-    /* 背景影片一律自動播放（含系統「減少動態」），右下角暫停按鈕讓訪客隨時停止，符合 WCAG 2.2.2 */
+    hero._play = tryPlay;
+    v.addEventListener("play", label); v.addEventListener("pause", label);
+    btn.addEventListener("click", function () { if (v.paused) { userPaused = false; tryPlay(); } else { userPaused = true; v.pause(); } });
+    hero.appendChild(btn); label();
+    ["pointerdown", "touchstart", "scroll", "keydown", "click"].forEach(function (ev) { window.addEventListener(ev, function () { if (v.paused) tryPlay(); }, { passive: true }); });
+    setInterval(function () { if (v.paused && !userPaused && !hero.closest(".v[hidden]")) tryPlay(); }, 1000);
     tryPlay();
-    /* 瀏覽器擋自動播放（例如低耗電模式）時，訪客第一次觸碰或捲動就開始播放 */
-    ["pointerdown", "touchstart", "scroll", "keydown"].forEach(function (ev) { window.addEventListener(ev, function once() { if (v.paused) tryPlay(); window.removeEventListener(ev, once); }, { passive: true }); });
-    watch(hero);
-    setInterval(function () { if (!hero.classList.contains("has-video") || userPaused) return; if (live(hero)) { if (v.paused) tryPlay(); } else if (!v.paused) v.pause(); }, 800);
   });
 
   /* ---------- 照片輪播 ---------- */
