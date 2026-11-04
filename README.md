@@ -57,4 +57,5 @@ GitHub Pages 的快取時間固定為 10 分鐘，若要更長需另外接 CDN�
 | `python3 tools/optimize-images.py` | 換照片後重新產生 WebP |
 | `python3 tools/update-font-subset.py` | 改動中文內容後更新字型子集 |
 | `python3 tools/build-en.py` | 本機產生英文版（部署時自動執行） |
+| `python3 tools/make-loop.py 影片.mp4` | 把 E 版首屏影片做成無縫循環並產生對齊的靜態圖 |
 | `node tools/map-mask.mjs` | 重新產生地圖點陣（需先安裝檔案開頭註明的套件） |
