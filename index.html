@@ -1010,11 +1010,16 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
 /* 桌機：底圖與影片稍微放大並往右下移，讓盾牌靠右下 */
 @media (min-width: 901px) { .ve-hero .ve-poster, .ve-hero video { object-position: 40% 50%; transform: scale(1.07) translate(3.2%, 3.2%); transform-origin: center; } }
 @media (max-width: 900px) {
-  .ve-hero.has-poster .ve-poster { inset: 0 0 auto 0; height: auto; aspect-ratio: 4 / 3; object-position: 63% 50%; }
+  .ve-hero.has-poster .ve-poster, .ve-hero.has-poster video { inset: 0 0 auto 0; height: auto; aspect-ratio: 4 / 3; object-position: 63% 50%; }
   .ve-hero.has-poster::after { background: linear-gradient(180deg, rgba(7,9,14,.45) 0, transparent 70px, transparent calc(75vw - 110px), var(--e-bg) 75vw); }
   .ve-hero.has-poster .wrap { padding-block: calc(75vw - 36px) 56px; }
   .ve-hero.has-poster { align-items: flex-start; min-height: 0; }
 }
+.ve-vbtn { position: absolute; z-index: 3; right: calc(var(--gutter-r) + 64px); bottom: 20px; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: rgba(13,17,25,.7); border: 1px solid rgba(232,237,245,.25); color: var(--e-ink); cursor: pointer; transition: border-color .3s; }
+.ve-vbtn:hover { border-color: var(--d-g1); }
+.ve-vbtn svg { width: 13px; height: 13px; fill: currentColor; }
+@media (min-width: 1312px) { .ve-vbtn { right: calc((100vw - 1280px) / 2 + 80px); } }
+@media (max-width: 900px) { .ve-vbtn { top: calc(75vw - 52px); bottom: auto; right: var(--gutter-r); } }
 </style>
 </head>
 <body data-v="a">
@@ -2310,25 +2315,30 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
     steps[0].classList.add("on");
   });
 
-  /* ---------- E：首屏影片（設定 data-video 後才載入；手機、省流量、減少動態時改用靜態圖） ---------- */
+  /* ---------- E：首屏影片（手機也播放；只有省流量模式不載入；提供暫停按鈕） ---------- */
   document.querySelectorAll(".ve-hero").forEach(function (hero) {
     var src = hero.getAttribute("data-video"), poster = hero.getAttribute("data-poster");
-    /* 影片由顯示卡硬體解碼，不受 CPU 核心數影響；只在省流量、減少動態或手機尺寸時不播 */
     var saveData = !!(navigator.connection && navigator.connection.saveData);
-    var canPlay = src && !reduce && !saveData && matchMedia("(min-width: 900px)").matches;
-    if (poster && !canPlay && !hero.querySelector(".ve-poster")) {
-      var im = new Image(); im.className = "ve-poster"; im.alt = ""; im.decoding = "async"; im.src = poster;
-      im.onload = function () { hero.classList.add("has-poster"); }; hero.insertBefore(im, hero.firstChild);
-    }
-    if (!canPlay) return;
-    var v = document.createElement("video");
-    v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute("aria-hidden", "true"); v.preload = "auto";
+    if (!src || saveData) return;
+    var VER = "?v=3", v = document.createElement("video"), userPaused = false;
+    ["muted", "loop", "playsinline", "autoplay"].forEach(function (k) { v.setAttribute(k, ""); });
+    v.muted = true; v.playsInline = true; v.preload = "auto"; v.setAttribute("aria-hidden", "true");
     if (poster) v.poster = poster;
-    ["webm", "mp4"].forEach(function (ext) { var so = document.createElement("source"); so.src = src + "." + ext; so.type = "video/" + ext; v.appendChild(so); });
-    v.addEventListener("canplay", function () { hero.classList.add("has-video"); v.play().catch(function () {}); }, { once: true });
-    hero.insertBefore(v, hero.firstChild);
+    ["webm", "mp4"].forEach(function (ext) { var so = document.createElement("source"); so.src = src + "." + ext + VER; so.type = "video/" + ext; v.appendChild(so); });
+    var btn = document.createElement("button");
+    btn.type = "button"; btn.className = "ve-vbtn"; btn.hidden = true;
+    function label() { var p = v.paused; btn.setAttribute("aria-label", p ? "播放背景影片" : "暫停背景影片"); btn.innerHTML = p ? '<svg viewBox="0 0 16 16"><path d="M5 3l8 5-8 5z"/></svg>' : '<svg viewBox="0 0 16 16"><path d="M4 3h3v10H4zM9 3h3v10H9z"/></svg>'; }
+    function tryPlay() { if (userPaused) return; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
+    v.addEventListener("playing", function () { hero.classList.add("has-video"); btn.hidden = false; label(); });
+    v.addEventListener("pause", label);
+    btn.addEventListener("click", function () { if (v.paused) { userPaused = false; tryPlay(); } else { userPaused = true; v.pause(); } label(); });
+    hero.insertBefore(v, hero.firstChild); hero.appendChild(btn);
+    /* 背景影片一律自動播放（含系統「減少動態」），右下角暫停按鈕讓訪客隨時停止，符合 WCAG 2.2.2 */
+    tryPlay();
+    /* 瀏覽器擋自動播放（例如低耗電模式）時，訪客第一次觸碰或捲動就開始播放 */
+    ["pointerdown", "touchstart", "scroll", "keydown"].forEach(function (ev) { window.addEventListener(ev, function once() { if (v.paused) tryPlay(); window.removeEventListener(ev, once); }, { passive: true }); });
     watch(hero);
-    setInterval(function () { if (!hero.classList.contains("has-video")) return; if (live(hero)) { if (v.paused) v.play().catch(function () {}); } else if (!v.paused) v.pause(); }, 800);
+    setInterval(function () { if (!hero.classList.contains("has-video") || userPaused) return; if (live(hero)) { if (v.paused) tryPlay(); } else if (!v.paused) v.pause(); }, 800);
   });
 
   /* ---------- 照片輪播 ---------- */
