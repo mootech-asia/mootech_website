@@ -1008,7 +1008,7 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
 .ve-hero.has-poster canvas { display: none; }
 .ve-hero .ve-poster { object-position: 60% center; }
 /* 桌機：底圖與影片稍微放大並往右下移，讓盾牌靠右下 */
-@media (min-width: 901px) { .ve-hero .ve-poster, .ve-hero video { object-position: 40% 50%; transform: scale(1.14) translate(5.5%, 5.5%); transform-origin: center; } }
+@media (min-width: 901px) { .ve-hero .ve-poster, .ve-hero video { object-position: 40% 50%; transform: scale(1.07) translate(3.2%, 3.2%); transform-origin: center; } }
 @media (max-width: 900px) {
   .ve-hero.has-poster .ve-poster { inset: 0 0 auto 0; height: auto; aspect-ratio: 4 / 3; object-position: 63% 50%; }
   .ve-hero.has-poster::after { background: linear-gradient(180deg, rgba(7,9,14,.45) 0, transparent 70px, transparent calc(75vw - 110px), var(--e-bg) 75vw); }
@@ -1632,7 +1632,7 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
   </header>
 
   <!-- 首屏影片：生成後放到 assets/video/，再把 data-video 設成 "assets/video/e-hero"（不含副檔名）、data-poster 設成第一格靜態圖 -->
-  <section class="ve-hero has-poster" id="ve-top" data-video="" data-poster="assets/video/e-hero-poster.jpg">
+  <section class="ve-hero has-poster" id="ve-top" data-video="assets/video/e-hero" data-poster="assets/video/e-hero-poster.jpg">
     <canvas class="fill" data-art="shield" aria-hidden="true"></canvas>
     <img class="ve-poster" src="assets/video/e-hero-poster-1440.webp" srcset="assets/video/e-hero-poster-960.webp 960w, assets/video/e-hero-poster-1440.webp 1440w, assets/video/e-hero-poster-1920.webp 1920w" sizes="100vw" alt="" loading="lazy" decoding="async" fetchpriority="high" width="2000" height="1125">
     <div class="ve-corners" aria-hidden="true">
@@ -2313,7 +2313,9 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
   /* ---------- E：首屏影片（設定 data-video 後才載入；手機、省流量、減少動態時改用靜態圖） ---------- */
   document.querySelectorAll(".ve-hero").forEach(function (hero) {
     var src = hero.getAttribute("data-video"), poster = hero.getAttribute("data-poster");
-    var canPlay = src && !reduce && !LOW && matchMedia("(min-width: 900px)").matches;
+    /* 影片由顯示卡硬體解碼，不受 CPU 核心數影響；只在省流量、減少動態或手機尺寸時不播 */
+    var saveData = !!(navigator.connection && navigator.connection.saveData);
+    var canPlay = src && !reduce && !saveData && matchMedia("(min-width: 900px)").matches;
     if (poster && !canPlay && !hero.querySelector(".ve-poster")) {
       var im = new Image(); im.className = "ve-poster"; im.alt = ""; im.decoding = "async"; im.src = poster;
       im.onload = function () { hero.classList.add("has-poster"); }; hero.insertBefore(im, hero.firstChild);
