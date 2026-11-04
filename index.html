@@ -40,8 +40,8 @@
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Manrope:wght@700;800&family=Inter:wght@300;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Manrope:wght@700;800&family=Inter:wght@300;500;600;700&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Manrope:wght@700;800&family=Inter:wght@300;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Manrope:wght@700;800&family=Inter:wght@300;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"></noscript>
 <!-- 思源黑體只下載頁面用到的字（內容改動後請重新產生 text 參數），使用者輸入的其他字會退回系統字型 -->
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&display=swap&text=Fcdefnoru%E5%9B%9B%E7%B7%9A%E9%81%93%E9%98%B2ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.%2C" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&display=swap&text=Fcdefnoru%E5%9B%9B%E7%B7%9A%E9%81%93%E9%98%B2ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.%2C"></noscript>
@@ -825,6 +825,7 @@ canvas.fill { contain: strict; }
   --e-bg: #07090e; --e-panel: #0d1119; --e-line: #1f2737; --e-ink: #e8edf5; --e-muted: #8d98ab;
   --e-safe: #3ddc97; --e-warn: #f5b84a; --e-threat: #ff5d6c;
   --e-serif: "Noto Serif TC", "Songti TC", serif;
+  --e-display: "Space Grotesk", "Noto Sans TC", "PingFang TC", system-ui, sans-serif;
   --e-sans: "IBM Plex Sans", "Noto Sans TC", "PingFang TC", system-ui, sans-serif;
 }
 .ve { background: var(--e-bg); color: var(--e-ink); font: 400 16px/1.75 var(--e-sans); }
@@ -986,6 +987,13 @@ canvas.fill { contain: strict; }
   .ve-form { padding: 20px; }
   .ve-foot .brand + .foot-legal::before { display: none; } .ve-foot .wrap { row-gap: 12px; } .ve-foot .foot-legal { flex-basis: 100%; }
 }
+/* ---- E：標題字體（英文用 Space Grotesk，強調字維持同字體只加品牌漸層；中文維持思源黑體＋思源宋體） ---- */
+.ve-hero h1, .ve-head2 h2, .ve-step h3 { font-family: var(--e-display); }
+html[lang="en"] .ve .serif { font-family: var(--e-display); font-weight: inherit; letter-spacing: inherit; }
+html[lang="en"] .ve-copy { max-width: 720px; }
+html[lang="en"] .ve-hero h1 { font-size: clamp(38px, 4.4vw, 72px); font-weight: 600; line-height: 1.04; letter-spacing: -.03em; }
+html[lang="en"] .ve-head2 h2 { font-weight: 600; letter-spacing: -.03em; line-height: 1.06; }
+html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
 </style>
 </head>
 <body data-v="a">
