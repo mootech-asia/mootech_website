@@ -1009,9 +1009,11 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
 .ve-hero.has-poster canvas { display: none; }
 .ve-hero .ve-poster { object-position: 60% center; }
 /* 桌機：底圖與影片稍微放大並往右下移，讓盾牌靠右下 */
-@media (min-width: 901px) { .ve-hero .ve-poster, .ve-hero video { object-position: 40% 50%; transform: scale(1.07) translate(3.2%, 3.2%); transform-origin: center; } }
+/* 桌機：影片固定 16:9 靠右，盾牌（位於影片中央）落在畫面約 73%，四周柔和淡出 */
+@media (min-width: 901px) { .ve-hero .ve-poster, .ve-hero video { inset: auto; left: 33%; top: 52%; width: 80%; height: auto; aspect-ratio: 16 / 9; transform: translateY(-50%);
+  -webkit-mask-image: radial-gradient(55% 62% at 50% 50%, #000 60%, transparent 100%); mask-image: radial-gradient(55% 62% at 50% 50%, #000 60%, transparent 100%); } }
 @media (max-width: 900px) {
-  .ve-hero.has-poster .ve-poster, .ve-hero.has-poster video { inset: 0 0 auto 0; height: auto; aspect-ratio: 4 / 3; object-position: 63% 50%; }
+  .ve-hero.has-poster .ve-poster, .ve-hero.has-poster video { inset: 0 0 auto 0; height: auto; aspect-ratio: 4 / 3; object-position: 0% 50%; }
   .ve-hero.has-poster::after { background: linear-gradient(180deg, rgba(7,9,14,.45) 0, transparent 70px, transparent calc(75vw - 110px), var(--e-bg) 75vw); }
   .ve-hero.has-poster .wrap { padding-block: calc(75vw - 36px) 56px; }
   .ve-hero.has-poster { align-items: flex-start; min-height: 0; }
@@ -1697,8 +1699,8 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
   <section class="ve-hero has-poster" id="ve-top" data-video="assets/video/e-hero" data-poster="assets/video/e-hero-poster.jpg">
     <canvas class="fill" data-art="shield" aria-hidden="true"></canvas>
     <video class="ve-video" autoplay muted loop playsinline preload="none" aria-hidden="true">
-      <source data-src="assets/video/e-hero.webm?v=4" type="video/webm">
-      <source data-src="assets/video/e-hero.mp4?v=4" type="video/mp4">
+      <source data-src="assets/video/e-hero.webm?v=5" type="video/webm">
+      <source data-src="assets/video/e-hero.mp4?v=5" type="video/mp4">
     </video>
     <img class="ve-poster" src="assets/video/e-hero-poster-1440.webp" srcset="assets/video/e-hero-poster-960.webp 960w, assets/video/e-hero-poster-1440.webp 1440w, assets/video/e-hero-poster-1920.webp 1920w" sizes="100vw" alt="" decoding="async" fetchpriority="high" width="2000" height="1125">
     <div class="ve-corners" aria-hidden="true">
