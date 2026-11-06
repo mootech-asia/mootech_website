@@ -11,7 +11,7 @@ s = src.replace('<html lang="zh-Hant">', '<html lang="en">', 1)
 
 meta = {
     "title": "MOOTECH | Driving business through innovation",
-    "desc": "Live streaming, connectivity, network architecture, system integration and threat intelligence. Since 2016 MOOTECH has built stable, secure IT foundations for businesses, with offices in Singapore and Taiwan.",
+    "desc": "Since 2016 MOOTECH has provided live streaming, IP Transit, IPLC private lines, CDN, L3–L7 DDoS protection, network optimisation and system integration, with offices in Singapore and Taiwan.",
 }
 s = re.sub(r"<title>.*?</title>", f"<title>{meta['title']}</title>", s, count=1)
 s = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{meta["desc"]}">', s, count=1)
