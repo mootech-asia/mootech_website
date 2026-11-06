@@ -1013,16 +1013,17 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
 @media (min-width: 901px) { .ve-hero .ve-poster, .ve-hero video { inset: auto; left: 33%; top: 52%; width: 80%; height: auto; aspect-ratio: 16 / 9; transform: translateY(-50%);
   -webkit-mask-image: radial-gradient(55% 62% at 50% 50%, #000 60%, transparent 100%); mask-image: radial-gradient(55% 62% at 50% 50%, #000 60%, transparent 100%); } }
 @media (max-width: 900px) {
-  .ve-hero.has-poster .ve-poster, .ve-hero.has-poster video { inset: 0 0 auto 0; height: auto; aspect-ratio: 4 / 3; object-position: 0% 50%; }
-  .ve-hero.has-poster::after { background: linear-gradient(180deg, rgba(7,9,14,.45) 0, transparent 70px, transparent calc(75vw - 110px), var(--e-bg) 75vw); }
-  .ve-hero.has-poster .wrap { padding-block: calc(75vw - 36px) 56px; }
+  .ve-hero.has-poster .ve-poster, .ve-hero.has-poster video { inset: 56px 0 auto 0; height: auto; aspect-ratio: 4 / 3; object-position: 50% 50%; }
+  .ve-corners .tl { display: none; }
+  .ve-hero.has-poster::after { background: linear-gradient(180deg, var(--e-bg) 0, var(--e-bg) 56px, transparent 96px, transparent calc(75vw - 54px), var(--e-bg) calc(75vw + 56px)); }
+  .ve-hero.has-poster .wrap { padding-block: calc(75vw + 20px) 56px; }
   .ve-hero.has-poster { align-items: flex-start; min-height: 0; }
 }
 .ve-vbtn { position: absolute; z-index: 3; right: calc(var(--gutter-r) + 64px); bottom: 20px; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: rgba(13,17,25,.7); border: 1px solid rgba(232,237,245,.25); color: var(--e-ink); cursor: pointer; transition: border-color .3s; }
 .ve-vbtn:hover { border-color: var(--d-g1); }
 .ve-vbtn svg { width: 13px; height: 13px; fill: currentColor; }
 @media (min-width: 1312px) { .ve-vbtn { right: calc((100vw - 1280px) / 2 + 80px); } }
-@media (max-width: 900px) { .ve-vbtn { top: calc(75vw - 52px); bottom: auto; right: var(--gutter-r); } }
+@media (max-width: 900px) { .ve-vbtn { top: 68px; bottom: auto; right: var(--gutter-r); } }
 /* ---- E v2：主控台、服務分頁 ---- */
 .ve-console { gap: 12px; }
 .ve-ctop { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
