@@ -1214,6 +1214,7 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
 @keyframes illPulse { 50% { opacity: .25; } }
 @keyframes illBlink { 50% { opacity: .15; } }
 @keyframes illGrow { 0%, 100% { transform: scaleY(.35); } 50% { transform: scaleY(1); } }
+@keyframes illGrowX { 0%, 100% { transform: scaleX(.35); } 50% { transform: scaleX(1); } }
 @keyframes illDraw { 0% { stroke-dashoffset: 260; } 55%, 100% { stroke-dashoffset: 0; } }
 @keyframes illSway { from { transform: rotate(-38deg); } to { transform: rotate(22deg); } }
 @keyframes illBob { from { transform: translateY(-3px); } to { transform: translateY(3px); } }
@@ -2013,35 +2014,35 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
           <h3>網際網路接取與 CDN</h3>
           <p class="ve-role">流量進入的第一道門。</p>
           <p>低延遲線路與中國、東南亞區域優化線路，為您傳輸受歡迎的應用與內容；CDN 加快網站載入、降低頻寬成本，並強化內容備援。</p>
-          <figure><div class="ill" data-ill="network" role="img" aria-label="網際網路接取與 CDN示意圖"></div></figure>
+          <figure><div class="ill" data-ill="cdn" role="img" aria-label="網際網路接取與 CDN示意圖"></div></figure>
           <a href="#ve-contact" data-scroll>諮詢此方案 →</a>
         </article><article class="ve-step" data-step="1">
           <span class="ve-lt"><b>L2</b> TRANSIT · 線路</span>
           <h3>IP Transit 全球線路</h3>
           <p class="ve-role">把流量送往全球各地。</p>
           <p>涵蓋全球、支援 IPv4 與 IPv6，與中國頂尖電信供應商合作，並提供中國與東南亞區域專有的優化線路。</p>
-          <figure><div class="ill" data-ill="transit" role="img" aria-label="IP Transit 示意圖"></div></figure>
+          <figure><div class="ill" data-ill="globe" role="img" aria-label="IP Transit 示意圖"></div></figure>
           <a href="#ve-contact" data-scroll>諮詢此方案 →</a>
         </article><article class="ve-step" data-step="2">
           <span class="ve-lt"><b>L3</b> BACKBONE · 骨幹</span>
           <h3>IPLC 國際專線</h3>
           <p class="ve-role">總部與分行之間的專屬通道。</p>
           <p>國際點對點專線，在總部與全球分行之間提供專用、可靠、安全的連接；兼具高可用性與低延遲，並與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯。</p>
-          <figure><div class="ill" data-ill="integrate" role="img" aria-label="IPLC 國際專線示意圖"></div></figure>
+          <figure><div class="ill" data-ill="tunnel" role="img" aria-label="IPLC 國際專線示意圖"></div></figure>
           <a href="#ve-contact" data-scroll>諮詢此方案 →</a>
         </article><article class="ve-step" data-step="3">
           <span class="ve-lt"><b>L4</b> OPS · 維運</span>
           <h3>架構優化與系統整合</h3>
           <p class="ve-role">讓整套網路持續最佳化。</p>
           <p>盤點網路使用狀態、負荷量、限制與安全漏洞，提出優化方案；整合雲端與機房環境，並由專業技術人員到場代客操作與排查。</p>
-          <figure><div class="ill" data-ill="optimise" role="img" aria-label="架構優化與系統整合示意圖"></div></figure>
+          <figure><div class="ill" data-ill="ops" role="img" aria-label="架構優化與系統整合示意圖"></div></figure>
           <a href="#ve-contact" data-scroll>諮詢此方案 →</a>
         </article><article class="ve-step" data-step="4">
           <span class="ve-lt"><b>+</b> DELIVERY · 傳遞</span>
           <h3>直播串流</h3>
           <p class="ve-role">在同一套防線上，把內容送到全球。</p>
           <p>隨心所欲地呈現您的內容：即時串流、低延遲畫面，以及不間斷的直播服務與容錯機制。</p>
-          <figure><div class="ill" data-ill="live" role="img" aria-label="直播串流示意圖"></div></figure>
+          <figure><div class="ill" data-ill="broadcast" role="img" aria-label="直播串流示意圖"></div></figure>
           <a href="#ve-contact" data-scroll>諮詢此方案 →</a>
         </article>
         </div>
@@ -2835,6 +2836,67 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
         [["M56 104 C56 76 110 56 130 56", -.2], ["M264 104 C264 76 210 56 196 56", -1.1], ["M82 142 L144 132", -.6], ["M238 142 L176 132", -1.6], ["M160 68 L160 112", -.9]].forEach(function (d) { o += '<path class="ln" d="' + d[0] + '"/>' + mover(d[0], "fa", 2.2, d[1]); });
         o += '<text class="tx" x="18" y="194">ON-PREM</text><text class="tx" x="262" y="194">ON-PREM</text>';
         return o;
+      },
+      /* ---- E 版四層防線專屬 ---- */
+      cdn: function () {
+        var o = grid(), C0 = [160, 100], R = 62, pops = [];
+        for (var i = 0; i < 6; i++) { var an = -Math.PI / 2 + i * Math.PI / 3; pops.push([C0[0] + Math.cos(an) * R, C0[1] + Math.sin(an) * R * .82]); }
+        o += '<polygon class="ln" points="' + pops.map(function (q) { return q[0].toFixed(1) + "," + q[1].toFixed(1); }).join(" ") + '" stroke-dasharray="3 4"/>';
+        pops.forEach(function (q, i) {
+          var d = "M160 100 L" + q[0].toFixed(1) + " " + q[1].toFixed(1);
+          o += '<path class="ln" d="' + d + '"/>' + mover(d, "fa", 1.8, -i * .3);
+          var ex = C0[0] + (q[0] - C0[0]) * 1.55, ey = C0[1] + (q[1] - C0[1]) * 1.55, d2 = "M" + q[0].toFixed(1) + " " + q[1].toFixed(1) + " L" + ex.toFixed(1) + " " + ey.toFixed(1);
+          o += '<path class="lnB" d="' + d2 + '"/>' + mover(d2, "fb", 1.4, -i * .23 - .5) + '<circle cx="' + ex.toFixed(1) + '" cy="' + ey.toFixed(1) + '" r="3" class="fb"/>';
+          o += '<rect class="card" x="' + (q[0] - 11).toFixed(1) + '" y="' + (q[1] - 8).toFixed(1) + '" width="22" height="16" rx="3"/><rect x="' + (q[0] - 6).toFixed(1) + '" y="' + (q[1] - 3).toFixed(1) + '" width="12" height="6" rx="1" class="fa pulse" style="animation-delay:' + (i * .25) + 's"/>';
+        });
+        o += '<circle class="ring" cx="160" cy="100" r="16"/><rect class="card" x="146" y="88" width="28" height="24" rx="4"/><text class="txA" x="150" y="103">ORIGIN</text>';
+        return o + '<text class="tx" x="14" y="192">CDN · EDGE CACHE · LOW LATENCY</text>';
+      },
+      globe: function () {
+        var o = grid() + '<defs><clipPath id="gbc"><circle cx="160" cy="98" r="70"/></clipPath></defs><circle cx="160" cy="98" r="70" class="card"/>';
+        o += '<g clip-path="url(#gbc)">';
+        for (var i = -2; i <= 2; i++) o += '<ellipse cx="160" cy="' + (98 + i * 26) + '" rx="' + (70 * Math.sqrt(1 - Math.pow(i * 26 / 70, 2))).toFixed(1) + '" ry="5" class="ln" opacity=".5"/>';
+        for (var k = 0; k < 4; k++) o += '<ellipse cx="160" cy="98" rx="' + (12 + k * 18) + '" ry="70" class="ln" opacity=".45"><animate attributeName="rx" values="' + (12 + k * 18) + ";" + (72 - k * 18) + ";" + (12 + k * 18) + '" dur="' + (7 + k) + 's" repeatCount="indefinite"/></ellipse>';
+        o += "</g>";
+        [["M104 70 Q160 20 222 74", "lnA", "IPv4", 108, 60], ["M100 128 Q160 176 226 118", "lnB", "IPv6", 196, 166]].forEach(function (r, i) {
+          o += '<path d="' + r[0] + '" class="' + r[1] + ' draw" style="stroke-width:2;animation-delay:' + (i * 1.2) + 's"/><text class="txA" x="' + r[3] + '" y="' + r[4] + '">' + r[2] + "</text>" + mover(r[0], i ? "fb" : "fa", 2.6, -i);
+        });
+        [[104, 70], [222, 74], [100, 128], [226, 118]].forEach(function (q, i) { o += '<circle cx="' + q[0] + '" cy="' + q[1] + '" r="4" class="' + (i < 2 ? "fa" : "fb") + '"/>'; });
+        return o + '<text class="tx" x="14" y="192">IP TRANSIT · GLOBAL COVERAGE</text>';
+      },
+      tunnel: function () {
+        var o = grid();
+        for (var i = 0; i < 7; i++) { var f = 1 - i * .13; o += '<rect x="' + (160 - 120 * f).toFixed(1) + '" y="' + (98 - 66 * f).toFixed(1) + '" width="' + (240 * f).toFixed(1) + '" height="' + (132 * f).toFixed(1) + '" rx="' + (14 * f).toFixed(1) + '" fill="none" stroke="var(--ill-a)" stroke-width="1" opacity="' + (.12 + i * .1).toFixed(2) + '"/>'; }
+        for (var r = 0; r < 3; r++) o += '<rect class="ring" x="40" y="32" width="240" height="132" rx="14" style="animation-duration:3s;animation-delay:-' + r + 's;animation-direction:reverse"/>';
+        [[-1, -1], [1, -1], [-1, 1], [1, 1]].forEach(function (c, k) {
+          var d = "M" + (160 + c[0] * 118) + " " + (98 + c[1] * 64) + " L" + (160 + c[0] * 26) + " " + (98 + c[1] * 14);
+          o += '<path class="ln" d="' + d + '" opacity=".5"/>' + mover(d, "fa", 1.6, -k * .4);
+        });
+        o += '<rect class="card" x="141" y="83" width="38" height="30" rx="5"/><path d="M152 92 v-4 a8 8 0 0 1 16 0 v4" fill="none" stroke="var(--ill-a)" stroke-width="2"/><rect x="149" y="92" width="22" height="15" rx="2" class="fa"/>';
+        o += '<text class="txA" x="14" y="18">HQ</text><text class="txA" x="268" y="18">BRANCH</text>';
+        return o + '<text class="tx" x="14" y="192">IPLC · PRIVATE · POINT-TO-POINT</text>';
+      },
+      ops: function () {
+        var o = grid() + '<rect class="card" x="14" y="22" width="292" height="150" rx="8"/>';
+        o += '<circle cx="74" cy="92" r="38" fill="none" stroke="var(--ill-line)" stroke-width="7"/><circle cx="74" cy="92" r="38" fill="none" stroke="var(--ill-b)" stroke-width="7" stroke-linecap="round" stroke-dasharray="239" stroke-dashoffset="239" transform="rotate(-90 74 92)" class="draw" style="stroke-dasharray:239;animation-duration:5s"/>';
+        o += '<text class="txA" x="56" y="96" style="font-size:11px">99.9</text><text class="tx" x="58" y="108">UPTIME</text>';
+        o += '<defs><clipPath id="hbc"><rect x="130" y="40" width="160" height="60"/></clipPath></defs><g clip-path="url(#hbc)"><g><animateTransform attributeName="transform" type="translate" from="0 0" to="-80 0" dur="2.4s" repeatCount="indefinite"/>';
+        var hb = "M130 70"; for (var x = 130; x < 380; x += 40) hb += " L" + (x + 14) + " 70 L" + (x + 18) + " 54 L" + (x + 22) + " 86 L" + (x + 26) + " 66 L" + (x + 30) + " 70 L" + (x + 40) + " 70";
+        o += '<path d="' + hb + '" class="lnA"/></g></g><text class="tx" x="132" y="36">HEARTBEAT</text>';
+        ["LINK", "ROUTING", "BACKUP"].forEach(function (t, i) { var y = 120 + i * 16; o += '<circle cx="136" cy="' + y + '" r="3.5" class="fb pulse" style="animation-delay:' + (i * .4) + 's"/><text class="tx" x="146" y="' + (y + 2.5) + '">' + t + '</text><rect x="210" y="' + (y - 2) + '" width="' + (70 - i * 14) + '" height="4" rx="2" class="fa grow" style="transform-origin:left;animation-name:illGrowX;animation-delay:-' + i + 's"/>'; });
+        return o + '<text class="tx" x="14" y="192">24/7 MONITORING · OPTIMISATION</text>';
+      },
+      broadcast: function () {
+        var o = grid();
+        o += '<path d="M150 170 L160 92 L170 170 M154 140 L166 140 M152 156 L168 156" class="lnA" fill="none"/><circle cx="160" cy="88" r="6" class="fr pulse"/>';
+        for (var i = 0; i < 4; i++) o += '<path d="M134 70 A34 34 0 0 1 186 70" class="ring" style="animation-delay:' + (i * .7) + 's;transform-origin:160px 88px;transform-box:view-box"/>';
+        var V = [[42, 52], [76, 128], [36, 152], [258, 44], [286, 114], [244, 156], [104, 34], [216, 30]];
+        V.forEach(function (q, k) {
+          var d = "M160 88 Q" + ((160 + q[0]) / 2) + " " + (Math.min(88, q[1]) - 28) + " " + q[0] + " " + q[1];
+          o += '<path class="lnB" d="' + d + '" opacity=".6"/>' + mover(d, "fa", 2 + k * .15, -k * .35);
+          o += '<rect class="card" x="' + (q[0] - 12) + '" y="' + (q[1] - 8) + '" width="24" height="16" rx="3"/><rect x="' + (q[0] - 8) + '" y="' + (q[1] - 4) + '" width="16" height="8" rx="1" class="fb blink" style="animation-delay:-' + (k * .5) + 's"/>';
+        });
+        return o + '<text class="tx" x="14" y="192">LIVE · GLOBAL AUDIENCE · FAILOVER</text>';
       },
       /* 等角 3D 資料中心：3×3 伺服器方塊、中央核心光柱、走道上流動的光點 */
       datacenter: function () {
