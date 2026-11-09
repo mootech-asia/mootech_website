@@ -2495,6 +2495,13 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
         hp = HB.map(function (x) { return P(x[2], x[3]); }); up = UM.map(function (x) { return P(x[1], x[2]); });
         function arc(a, b) { return { a: a, b: b, m: [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2 - Math.hypot(a[0] - b[0], a[1] - b[1]) * .24] }; }
         L = HL.map(function (l) { return arc(hp[l[0]], hp[l[1]]); }).concat(UL.map(function (l) { var x = arc(up[l[0]], hp[l[1]]); x.u = 1; return x; }));
+        /* 線路底光（靜態，預先畫好，不佔每格效能） */
+        o.lineCap = "round";
+        L.forEach(function (l) {
+          o.beginPath(); o.moveTo(l.a[0], l.a[1]); o.quadraticCurveTo(l.m[0], l.m[1], l.b[0], l.b[1]);
+          o.strokeStyle = l.u ? C.ulink : C.link; o.lineWidth = (l.u ? 1 : 1.8) * dpr;
+          o.shadowColor = l.u ? C.user : C.hub; o.shadowBlur = (l.u ? 4 : 10) * dpr; o.stroke(); o.shadowBlur = 0;
+        });
         pk = [];
         if (reduce) for (var i = 0; i < 10; i++) { spawn(); pk[i].t = .15 + Math.random() * .6; }
       }
@@ -2505,7 +2512,17 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
         if (kk !== key) { key = kk; lay(w, h, dpr); }
         dt = Math.min(dt || 16, 80);
         ctx.clearRect(0, 0, w, h); ctx.drawImage(off, 0, 0);
-        L.forEach(function (l) { ctx.beginPath(); ctx.moveTo(l.a[0], l.a[1]); ctx.quadraticCurveTo(l.m[0], l.m[1], l.b[0], l.b[1]); ctx.strokeStyle = l.u ? C.ulink : C.link; ctx.lineWidth = (l.u ? 1 : 1.6) * dpr; ctx.stroke(); });
+        /* 沿線流動的光點虛線（參考折線圖的流光） */
+        ctx.lineCap = "round";
+        [0, 1].forEach(function (u) {
+          ctx.setLineDash(u ? [1 * dpr, 9 * dpr] : [1.5 * dpr, 7 * dpr]);
+          ctx.lineDashOffset = reduce ? 0 : -(now || 0) * (u ? .012 : .028) * dpr;
+          ctx.strokeStyle = u ? C.user : C.pk; ctx.globalAlpha = u ? .45 : .8; ctx.lineWidth = (u ? 1.2 : 1.8) * dpr;
+          ctx.beginPath();
+          L.forEach(function (l) { if (!!l.u !== !!u) return; ctx.moveTo(l.a[0], l.a[1]); ctx.quadraticCurveTo(l.m[0], l.m[1], l.b[0], l.b[1]); });
+          ctx.stroke();
+        });
+        ctx.setLineDash([]); ctx.globalAlpha = 1;
         if (!reduce) { acc += dt; while (acc > 420) { acc -= 420; spawn(); } }
         pk.forEach(function (p) {
           if (!reduce) p.t += p.s * dt * p.d;
@@ -2516,8 +2533,18 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
             ctx.beginPath(); ctx.arc(q[0], q[1], (6 + p.bu * 30) * dpr, 0, 6.283); ctx.stroke(); ctx.globalAlpha = 1;
             if (p.bu >= 1) p.x = 1; return;
           }
-          ctx.fillStyle = p.bad ? C.bad : C.pk; ctx.shadowColor = p.bad ? C.bad : C.hub; ctx.shadowBlur = 10 * dpr;
-          ctx.beginPath(); ctx.arc(q[0], q[1], (p.bad ? 3.4 : 2.8) * dpr, 0, 6.283); ctx.fill(); ctx.shadowBlur = 0;
+          /* 光束拖尾：沿弧線往回取樣，越後越淡越細 */
+          var col = p.bad ? C.bad : C.pk, prev = q, TL = p.l.u ? 9 : 12;
+          ctx.strokeStyle = col;
+          for (var j = 1; j <= TL; j++) {
+            var tt = p.t - p.d * j * .014; if (tt < 0 || tt > 1) break;
+            var qq = bz(p.l, tt); ctx.globalAlpha = (1 - j / (TL + 1)) * .85; ctx.lineWidth = (2.6 - j * 1.8 / TL) * dpr;
+            ctx.beginPath(); ctx.moveTo(prev[0], prev[1]); ctx.lineTo(qq[0], qq[1]); ctx.stroke(); prev = qq;
+          }
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = col; ctx.shadowColor = p.bad ? C.bad : C.hub; ctx.shadowBlur = 12 * dpr;
+          ctx.beginPath(); ctx.arc(q[0], q[1], (p.bad ? 3.6 : 3.2) * dpr, 0, 6.283); ctx.fill(); ctx.shadowBlur = 0;
+          ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.arc(q[0], q[1], 1.3 * dpr, 0, 6.283); ctx.fill();
           if (p.t >= 1 || p.t <= 0) p.x = 1;
         });
         pk = pk.filter(function (p) { return !p.x; });
@@ -2533,7 +2560,9 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
           if (reduce) ph = .35;
           ctx.strokeStyle = C.hub; ctx.globalAlpha = 1 - ph; ctx.lineWidth = 1.5 * dpr;
           ctx.beginPath(); ctx.arc(q[0], q[1], (6 + ph * 20) * dpr, 0, 6.283); ctx.stroke(); ctx.globalAlpha = 1;
-          ctx.fillStyle = C.hub; ctx.beginPath(); ctx.arc(q[0], q[1], 5 * dpr, 0, 6.283); ctx.fill();
+          ctx.globalAlpha = .35; ctx.lineWidth = 1 * dpr; ctx.beginPath(); ctx.arc(q[0], q[1], 9 * dpr, 0, 6.283); ctx.stroke(); ctx.globalAlpha = 1;
+          ctx.fillStyle = C.hub; ctx.shadowColor = C.hub; ctx.shadowBlur = 12 * dpr; ctx.beginPath(); ctx.arc(q[0], q[1], 5 * dpr, 0, 6.283); ctx.fill(); ctx.shadowBlur = 0;
+          ctx.fillStyle = "#fff"; ctx.globalAlpha = .85; ctx.beginPath(); ctx.arc(q[0], q[1], 2 * dpr, 0, 6.283); ctx.fill(); ctx.globalAlpha = 1;
           ctx.font = "700 " + (nar ? 11.5 : 13.5) * dpr + 'px "Noto Sans TC", system-ui, sans-serif'; ctx.fillStyle = C.tx;
           var left = HB[i][4] === "l" || (nar && i === 3); ctx.textAlign = left ? "right" : "left";
           ctx.fillText(HB[i][0] + " " + nm(HB[i][1]), q[0] + (left ? -12 : 12) * dpr, q[1] + (i === 1 ? -4 : i === 2 ? 12 : i === 3 && nar ? 20 : 4) * dpr);
