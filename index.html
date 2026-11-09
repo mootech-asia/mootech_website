@@ -2004,25 +2004,19 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   </header>
 
   <!-- 首屏影片：生成後放到 assets/video/，再把 data-video 設成 "assets/video/e-hero"（不含副檔名）、data-poster 設成第一格靜態圖 -->
-  <section class="ve-hero has-poster" id="ve-top" data-slide="1" aria-roledescription="carousel" aria-label="首屏輪播">
+  <section class="ve-hero has-poster" id="ve-top" data-slide="1">
     <canvas class="fill" data-art="shield" aria-hidden="true"></canvas>
     <video class="ve-video s1" autoplay muted loop playsinline preload="none" aria-hidden="true">
       <source data-src="assets/video/e-hero.webm?v=7" type="video/webm">
       <source data-src="assets/video/e-hero.mp4?v=7" type="video/mp4">
     </video>
     <img class="ve-poster s1" src="assets/video/e-hero-poster-1440.webp" srcset="assets/video/e-hero-poster-960.webp 960w, assets/video/e-hero-poster-1440.webp 1440w, assets/video/e-hero-poster-1920.webp 1920w" sizes="100vw" alt="" decoding="async" fetchpriority="high" width="2000" height="1125">
-    <!-- 第 2 張招聘影片：放好 assets/video/e-hero-2.webm / .mp4 後，把 data-ready 改成 "1" -->
-    <video class="ve-video ve-v2 s2" muted loop playsinline preload="none" aria-hidden="true" data-ready="0">
-      <source data-src="assets/video/e-hero-2.webm?v=1" type="video/webm">
-      <source data-src="assets/video/e-hero-2.mp4?v=1" type="video/mp4">
-    </video>
-    <div class="ill ve-ph2 s2" data-ill="broadcast" aria-hidden="true"></div>
     <div class="ve-corners" aria-hidden="true">
       <span class="tl">SIN 1.35°N 103.82°E</span><span class="tr">TPE 25.03°N 121.56°E</span>
       <span class="bl">SINCE 2016 · IPLC · IP TRANSIT · IPv4 / IPv6</span><span class="br">SCROLL ↓</span>
     </div>
     <div class="wrap ve-hwrap">
-      <div class="ve-copy s1" aria-roledescription="slide" aria-label="1 / 2">
+      <div class="ve-copy s1">
         <span class="ve-kicker">NETWORK SECURITY · DEFENCE IN DEPTH</span>
         <h1 data-en="Always-on protection,&lt;br&gt;keeping your business &lt;span class=&quot;serif&quot;&gt;online&lt;/span&gt;.">全天候守護，<br>讓業務<span class="serif">持續在線</span>。</h1>
         <p class="ve-sub">從網路接取、IPLC 國際專線到直播串流，MOOTECH 為企業打造低延遲、不中斷的網路。</p>
@@ -2037,6 +2031,14 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
         </div>
         <div class="ve-actions"><a class="ve-btn" href="#ve-contact" data-scroll>預約諮詢</a><a class="ve-link" href="#ve-services" data-scroll>查看服務</a></div>
       </div>
+    </div>
+    <!-- 輪播暫緩：第 2 張招聘主視覺保留在 template（不載入、不顯示）。恢復時把內容移回原位並把影片 data-ready 改成 "1" -->
+    <template id="ve-slide2">
+    <video class="ve-video ve-v2 s2" muted loop playsinline preload="none" aria-hidden="true" data-ready="0">
+      <source data-src="assets/video/e-hero-2.webm?v=1" type="video/webm">
+      <source data-src="assets/video/e-hero-2.mp4?v=1" type="video/mp4">
+    </video>
+    <div class="ill ve-ph2 s2" data-ill="broadcast" aria-hidden="true"></div>
       <div class="ve-copy ve-copy2 s2" aria-roledescription="slide" aria-label="2 / 2">
         <span class="ve-kicker">CAREERS · JOIN MOOTECH</span>
         <h2 class="ve-h1" data-en="Join us in keeping&lt;br&gt;Asia-Pacific &lt;span class=&quot;serif&quot;&gt;connected&lt;/span&gt;.">和我們一起，<br>守護亞太的<span class="serif">連線</span>。</h2>
@@ -2044,7 +2046,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
         <div class="ve-actions"><a class="ve-btn" href="#ve-contact" data-scroll data-need="加入我們（應徵）">投遞履歷</a><a class="ve-link" href="#ve-services" data-scroll>了解我們的工作</a></div>
       </div>
       <div class="ve-dots" role="group" aria-label="切換首屏"><button type="button" class="on" aria-label="1" aria-current="true"><i></i></button><button type="button" aria-label="2"><i></i></button></div>
-    </div>
+    </template>
   </section>
 
   <section class="ve-band" aria-label="MOOTECH 概況">
@@ -2161,7 +2163,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
       <form class="ve-form" data-form>
         <label for="e-name">姓名<input id="e-name" name="name" required autocomplete="name"></label>
         <label for="e-email">電子郵件<input id="e-email" name="email" type="email" required autocomplete="email"></label>
-        <label class="full" for="e-need">需求類型<select id="e-need" name="need"><option>直播串流</option><option>網際網路接取 / IP Transit</option><option>IPLC 國際專線</option><option>CDN 服務</option><option>網路架構優化</option><option>系統整合 / 代客操作</option><option>加入我們（應徵）</option><option>其他</option></select></label>
+        <label class="full" for="e-need">需求類型<select id="e-need" name="need"><option>直播串流</option><option>網際網路接取 / IP Transit</option><option>IPLC 國際專線</option><option>CDN 服務</option><option>網路架構優化</option><option>系統整合 / 代客操作</option><option>其他</option></select></label>
         <label class="full" for="e-msg">訊息<textarea id="e-msg" name="message" required></textarea></label>
         <div class="full row"><button class="ve-btn" type="submit">發送訊息</button><span class="form-note" role="status"></span></div>
       </form>
@@ -2836,7 +2838,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
       vids.forEach(function (v, k) { if (v && k !== cur) v.pause(); });
       load(act()); tryPlay(); arm();
     }
-    function arm() { clearTimeout(timer); if (!userPaused && !reduce) timer = setTimeout(function () { if (!hero.closest(".v[hidden]") && live(hero)) go(cur + 1); else arm(); }, DUR); }
+    function arm() { clearTimeout(timer); if (!dots.length) return; if (!userPaused && !reduce) timer = setTimeout(function () { if (!hero.closest(".v[hidden]") && live(hero)) go(cur + 1); else arm(); }, DUR); }
     function start() { if (started) return; started = true; load(v1); if (vids[1]) setTimeout(function () { load(vids[1]); }, 2500); tryPlay(); }
     dots.forEach(function (d, k) { d.addEventListener("click", function () { go(k, true); }); });
     btn.type = "button"; btn.className = "ve-vbtn";
