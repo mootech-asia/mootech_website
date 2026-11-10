@@ -1218,8 +1218,9 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
 .ve-vbtn svg { width: 13px; height: 13px; fill: currentColor; }
 @media (min-width: 1312px) { .ve-vbtn { right: calc((100vw - 1280px) / 2 + 80px); } }
 /* 桌機：暫停鈕移到輪播進度條右側，避開右下角的客服視窗 */
-@media (min-width: 901px) { .ve-vbtn { right: auto; left: calc(50% + 68px); bottom: 13px; } }
-@media (max-width: 900px) { .ve-vbtn { top: 68px; bottom: auto; right: var(--gutter-r); } }
+/* 暫停／播放鈕固定在影片可見範圍的右下角（位置由 JS 依影片實際大小計算） */
+.ve-hero > .ve-vbtn { right: auto; bottom: auto; left: var(--vb-x, auto); top: var(--vb-y, auto); }
+.ve-hero video::-webkit-media-controls-start-playback-button, .ve-hero video::-webkit-media-controls { display: none !important; -webkit-appearance: none; }
 /* ---- E v2：主控台、服務分頁 ---- */
 .ve-console { gap: 12px; }
 .ve-ctop { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
@@ -1505,7 +1506,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   .ve-hero .ve-copy2 { align-self: start; margin-top: calc(56.25vw - 75vw + 52px); }
   .ve-copy2 .ve-h1 { font-size: clamp(28px, 8vw, 36px); }
 }
-.ve-dots { grid-area: 2 / 1; display: flex; align-items: center; gap: 8px; margin-top: 34px; }
+.ve-dots { grid-area: 2 / 1; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 34px; }
 .ve-dots .ve-vbtn { position: static; inset: auto; transform: none; flex: 0 0 auto; width: 28px; height: 28px; margin-left: 6px; padding: 0; background: rgba(13,17,25,.55); border-color: rgba(232,237,245,.22); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
 .ve-dots .ve-vbtn svg { width: 10px; height: 10px; }
 .ve-dots button { appearance: none; border: 0; background: none; padding: 10px 0; cursor: pointer; }
@@ -3208,7 +3209,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
       dots.forEach(function (d, k) { d.classList.toggle("on", k === cur); if (k === cur) d.setAttribute("aria-current", "true"); else d.removeAttribute("aria-current"); });
       vids.forEach(function (v, k) { if (v && k !== cur) v.pause(); });
       if (cur === 1 && vids[1] && vids[1]._loaded) { try { vids[1].currentTime = 0; } catch (e) {} }
-      load(act()); tryPlay(); arm();
+      load(act()); tryPlay(); arm(); place();
     }
     function arm() { clearTimeout(timer); if (!dots.length) return; if (!userPaused && !reduce) timer = setTimeout(function () { if (!hero.closest(".v[hidden]") && live(hero)) go(cur + 1); else arm(); }, dur()); }
     function start() { if (started) return; started = true; load(v1); if (vids[1]) setTimeout(function () { load(vids[1]); }, 2500); tryPlay(); }
@@ -3216,7 +3217,11 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
     btn.type = "button"; btn.className = "ve-vbtn";
     btn.addEventListener("click", function () { userPaused = !userPaused; if (userPaused) { var v = act(); if (v) v.pause(); clearTimeout(timer); } else { tryPlay(); arm(); } label(); });
     /* 暫停鈕併入輪播進度列，成為同一組控制，不再浮在畫面上與其他元素打架 */
-    (hero.querySelector(".ve-dots") || hero).appendChild(btn); label();
+    hero.appendChild(btn); label();
+    function place() { var v = act() || v1; if (!v) return; var h = hero.getBoundingClientRect(), r = v.getBoundingClientRect(), pad = innerWidth > 900 ? 22 : 12;
+      var right = Math.min(r.right, h.right, document.documentElement.clientWidth), bottom = Math.min(r.bottom, h.bottom);
+      hero.style.setProperty("--vb-x", (right - h.left - 36 - pad) + "px"); hero.style.setProperty("--vb-y", (bottom - h.top - 36 - pad) + "px"); }
+    place(); window.addEventListener("resize", place, { passive: true }); window.addEventListener("load", place);
     if (document.readyState === "complete") setTimeout(start, 300); else window.addEventListener("load", function () { setTimeout(start, 300); });
     ["pointerdown", "touchstart", "scroll", "keydown", "click"].forEach(function (ev) { window.addEventListener(ev, function () { var v = act(); if (v && v.paused) tryPlay(); }, { passive: true }); });
     setInterval(function () { var v = act(); if (v && v.paused && !userPaused && !hero.closest(".v[hidden]")) tryPlay(); }, 1000);
