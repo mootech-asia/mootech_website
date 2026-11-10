@@ -29,6 +29,13 @@ jobs:
       - name: Build English page
         run: python3 tools/build-en.py
 
+      # 只上傳網站用得到的檔案：品牌素材資料夾與壓縮檔、原始照片與工具不發布，部署包從 117 MB 降到約 30 MB，避免發布逾時
+      - name: Stage site files
+        run: |
+          mkdir _site
+          tar --exclude='./.git' --exclude='./.github' --exclude='./_site' --exclude='./tools' \
+            --exclude='./assets/photos-src' --exclude='./brand/熊北-吉祥物' --exclude='./brand/熊北-吉祥物.zip' -cf - . | tar -xf - -C _site
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
@@ -37,7 +44,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
