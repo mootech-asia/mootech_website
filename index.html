@@ -2267,10 +2267,10 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
     </video>
     <img class="ve-poster s1" src="assets/video/e-hero-poster-1440.webp" srcset="assets/video/e-hero-poster-960.webp 960w, assets/video/e-hero-poster-1440.webp 1440w, assets/video/e-hero-poster-1920.webp 1920w" sizes="100vw" alt="" decoding="async" fetchpriority="high" width="2000" height="1125">
     <video class="ve-video ve-v2 s2" muted loop playsinline preload="none" aria-hidden="true" data-ready="1">
-      <source data-src="assets/video/e-hero-2.webm?v=6" type="video/webm">
-      <source data-src="assets/video/e-hero-2.mp4?v=6" type="video/mp4">
+      <source data-src="assets/video/e-hero-2.webm?v=7" type="video/webm">
+      <source data-src="assets/video/e-hero-2.mp4?v=7" type="video/mp4">
     </video>
-    <img class="ve-poster ve-poster2 s2" src="assets/video/e-hero-2-poster-1440.webp?v=6" srcset="assets/video/e-hero-2-poster-960.webp?v=6 960w, assets/video/e-hero-2-poster-1440.webp?v=6 1440w" sizes="100vw" alt="" loading="lazy" decoding="async" width="1280" height="720">
+    <img class="ve-poster ve-poster2 s2" src="assets/video/e-hero-2-poster-1440.webp?v=7" srcset="assets/video/e-hero-2-poster-960.webp?v=7 960w, assets/video/e-hero-2-poster-1440.webp?v=7 1440w" sizes="100vw" alt="" loading="lazy" decoding="async" width="1280" height="720">
     <div class="ve-corners" aria-hidden="true">
       <span class="tl">SIN 1.35°N 103.82°E</span><span class="tr">TPE 25.03°N 121.56°E</span>
       <span class="bl">SINCE 2016 · IPLC · IP TRANSIT · IPv4 / IPv6</span><span class="br">SCROLL ↓</span>
@@ -3186,7 +3186,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   /* ---------- E：首屏輪播（第 1 張品牌影片、第 2 張招聘；影片預設一定播放，右下角可暫停） ---------- */
   document.querySelectorAll(".ve-hero").forEach(function (hero) {
     var v1 = hero.querySelector("video.s1"), v2 = hero.querySelector("video.s2"), dots = hero.querySelectorAll(".ve-dots button");
-    var vids = [v1, v2 && v2.getAttribute("data-ready") === "1" ? v2 : null], cur = 0, userPaused = false, started = false, timer, DURS = [9000, 14200];
+    var vids = [v1, v2 && v2.getAttribute("data-ready") === "1" ? v2 : null], cur = 0, userPaused = false, started = false, timer, DURS = [9000, 14300];
     /* 每張停留時間：第 2 張招聘影片播完一整輪才切換 */
     function dur() { return DURS[cur] || DURS[0]; }
     if (!vids[1]) hero.classList.remove("v2ok"); else hero.classList.add("v2ok");
