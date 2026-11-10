@@ -252,6 +252,19 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
   .mtc-video { flex-basis: 200px; }
 }
 @media (prefers-reduced-motion: reduce) { .mtc.ringin .mtc-call, .mtc.ringin .mtc-holo, .mtc.open .mtc-panel, .mtc.open .mtc-panel::after, .mtc.buzz .mtc-call, .mtc.buzz .mtc-fab, .mtc-call::before, .mtc-accept, .mtc-cam img, .mtc-cam video, .mtc-face img, .mtc-fab::before, .mtc-fab > i, .mtc-top span i, .mtc-typing i, .mtc-msg { animation: none; } }
+/* ===== E：熊北吉祥物點綴（只在桌機，依版面留白放置，局部呈現，下緣淡出像從版面後方探出） ===== */
+.ve-bear { display: none; pointer-events: none; -webkit-user-select: none; user-select: none; }
+@media (min-width: 1100px) {
+  .ve-bear { display: block; height: auto; animation: veBearFloat 6s ease-in-out infinite; }
+  .ve-bear-guard { position: absolute; z-index: 0; right: max(var(--gutter-r), calc((100% - 1248px) / 2)); top: 18px; width: clamp(240px, 24vw, 330px);
+    -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 98%); mask-image: linear-gradient(180deg, #000 70%, transparent 98%); }
+  #ve-layers .wrap { position: relative; }
+  #ve-layers .ve-head2 { position: relative; z-index: 1; }
+  .ve-bear-laptop { width: min(92%, 250px); margin: 26px auto 0; animation-delay: -2s; }
+  .ve-bear-wave { width: 220px; margin-top: 26px; -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%); mask-image: linear-gradient(180deg, #000 72%, transparent 100%); animation-delay: -4s; }
+}
+@keyframes veBearFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@media (prefers-reduced-motion: reduce) { .ve-bear { animation: none; } }
 /* 畫面外的區塊先不排版、不繪製，捲到附近才計算（首屏與英雄區除外），大幅減少長頁面初次載入的排版時間 */
 .v section:not([class*="-hero"]) { content-visibility: auto; contain-intrinsic-size: auto 900px; }
 /* 選擇題式對話 */
@@ -2293,7 +2306,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
     <div class="wrap">
       <div class="ve-head2"><span class="ve-kicker">SERVICES</span><h2 data-en="Five services. &lt;span class=&quot;serif&quot;&gt;One&lt;/span&gt; network.">五大服務，<span class="serif">一套</span>網路。</h2><p>直播串流、網路連線、線路類型、架構優化與系統整合，可以單獨導入，也能組合成完整的企業網路基礎。</p></div>
       <div class="ve-svc-track"><div class="ve-svc" data-etabs data-hint="往下滑動，依序瀏覽 5 項服務" data-hint-en="Keep scrolling to browse all 5 services">
-        <div class="ve-svc-tabs" role="tablist" aria-label="服務項目"><button type="button" role="tab" id="vs-tab-live" aria-controls="vs-live" aria-selected="true" class="on"><small>01</small><span>直播串流</span></button><button type="button" role="tab" id="vs-tab-net" aria-controls="vs-net" aria-selected="false"><small>02</small><span>網路連線</span></button><button type="button" role="tab" id="vs-tab-lines" aria-controls="vs-lines" aria-selected="false"><small>03</small><span>線路類型</span></button><button type="button" role="tab" id="vs-tab-opt" aria-controls="vs-opt" aria-selected="false"><small>04</small><span>網路架構優化</span></button><button type="button" role="tab" id="vs-tab-si" aria-controls="vs-si" aria-selected="false"><small>05</small><span>系統整合</span></button></div>
+        <div class="ve-svc-tabs" role="tablist" aria-label="服務項目"><button type="button" role="tab" id="vs-tab-live" aria-controls="vs-live" aria-selected="true" class="on"><small>01</small><span>直播串流</span></button><button type="button" role="tab" id="vs-tab-net" aria-controls="vs-net" aria-selected="false"><small>02</small><span>網路連線</span></button><button type="button" role="tab" id="vs-tab-lines" aria-controls="vs-lines" aria-selected="false"><small>03</small><span>線路類型</span></button><button type="button" role="tab" id="vs-tab-opt" aria-controls="vs-opt" aria-selected="false"><small>04</small><span>網路架構優化</span></button><button type="button" role="tab" id="vs-tab-si" aria-controls="vs-si" aria-selected="false"><small>05</small><span>系統整合</span></button><img class="ve-bear ve-bear-laptop" src="assets/mascot/bear-laptop.webp" alt="" role="presentation" width="520" height="615" loading="lazy" decoding="async"></div>
         <div class="ve-svc-panels"><div class="ve-panel on" role="tabpanel" id="vs-live" aria-labelledby="vs-tab-live"><figure><div class="ill" data-ill="live" aria-hidden="true"></div></figure><h3>直播串流</h3><p class="ve-plead">隨心所欲地呈現您的內容。</p><dl class="ve-items"><div><dt>即時串流</dt><dd>畫面即時送達觀眾，活動、發表會與賽事都能同步呈現。</dd></div><div><dt>低延遲</dt><dd>縮短從拍攝到觀看的時間差，互動更即時。</dd></div><div><dt>不間斷與容錯</dt><dd>備援線路與容錯機制，讓直播服務不中斷。</dd></div></dl><a class="ve-plink" href="#ve-contact" data-scroll>諮詢此方案 →</a></div><div class="ve-panel" role="tabpanel" id="vs-net" aria-labelledby="vs-tab-net"><figure><div class="ill" data-ill="network" aria-hidden="true"></div></figure><h3>網路連線</h3><p class="ve-plead">從接取、專線到加速，一次到位。</p><dl class="ve-items"><div><dt>網際網路接取</dt><dd>使用低延遲線路或中國及東南亞區域優化線路，為客戶傳輸受歡迎的應用或內容。</dd></div><div><dt>IPLC 國際私人租用線路</dt><dd>為跨國企業提供國際點對點專線，在總部與全球各地分行之間提供專用、可靠、安全的連接。</dd></div><div><dt>CDN 服務</dt><dd>立即提升網站效能，改善載入時間與安全性、減少頻寬成本並強化內容備援。</dd></div></dl><a class="ve-plink" href="#ve-contact" data-scroll>諮詢此方案 →</a></div><div class="ve-panel" role="tabpanel" id="vs-lines" aria-labelledby="vs-tab-lines"><figure><div class="ill" data-ill="transit" aria-hidden="true"></div></figure><h3>線路類型</h3><p class="ve-plead">IP Transit、IPLC 與 Security 防護，依需求組合。</p><div class="ve-lines"><div class="ve-line"><h4>IP Transit</h4><ul><li>涵蓋率遍佈全球</li><li>支援 IPv6 與 IPv4</li><li>優良的國際流量線路規劃</li><li>與中國頂尖電信供應商合作</li><li>中國與東南亞區域專有的優化線路</li></ul></div><div class="ve-line"><h4>IPLC</h4><ul><li>安全性高的點對點資料傳輸</li><li>兼具高可用性與低延遲</li><li>與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯</li><li>網際網路交換中心對等互聯</li></ul></div><div class="ve-line"><h4>Security</h4><ul><li>服務安全性與可靠性</li><li>兼具靈活性與擴展性</li></ul></div></div><a class="ve-plink" href="#ve-contact" data-scroll>諮詢此方案 →</a></div><div class="ve-panel" role="tabpanel" id="vs-opt" aria-labelledby="vs-tab-opt"><figure><div class="ill" data-ill="optimise" aria-hidden="true"></div></figure><h3>網路架構優化</h3><p class="ve-plead">協助取得您的網路使用狀態、負荷量、限制和安全性漏洞，發掘更多優化的可能性。</p><dl class="ve-items"><div><dt>網路配置與品質優化</dt><dd>調整網路配置，提升連線品質。</dd></div><div><dt>網路架構設計</dt><dd>網路架構設計與拓樸圖審核。</dd></div><div><dt>庫存管理</dt><dd>設備庫存管理。</dd></div><div><dt>網路流量監控</dt><dd>網路流量表現分析。</dd></div><div><dt>網路優化</dt><dd>網路優化方案、網路漏洞測試與驗證。</dd></div></dl><a class="ve-plink" href="#ve-contact" data-scroll>諮詢此方案 →</a></div><div class="ve-panel" role="tabpanel" id="vs-si" aria-labelledby="vs-tab-si"><figure><div class="ill" data-ill="integrate" aria-hidden="true"></div></figure><h3>系統整合</h3><p class="ve-plead">從諮詢、部署到建置後支援，整合雲端與機房環境。</p><dl class="ve-items"><div><dt>諮詢服務</dt><dd>IT 系統整合諮詢服務。</dd></div><div><dt>部署與遷移</dt><dd>IT 解決方案的建置與資料遷移。</dd></div><div><dt>客製化需求</dt><dd>客製化測試情境、驗收條件與文件紀錄。</dd></div><div><dt>建置後支援</dt><dd>建置完成後的支援服務。</dd></div><div><dt>雲端與機房整合</dt><dd>整合雲端與在地系統。</dd></div><div><dt>代客操作服務</dt><dd>受過專業訓練的技術人員到場代客操作、安裝，並為您的機房設備排查問題，快速且可靠。</dd></div></dl><a class="ve-plink" href="#ve-contact" data-scroll>諮詢此方案 →</a></div></div>
       </div></div>
     </div>
@@ -2301,6 +2314,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
 
   <section class="ve-sec" id="ve-layers">
     <div class="wrap">
+      <img class="ve-bear ve-bear-guard" src="assets/mascot/bear-guard.webp" alt="" aria-hidden="true" width="503" height="380" loading="lazy" decoding="async">
       <div class="ve-head2">
         <span class="ve-kicker">DEFENCE IN DEPTH</span>
         <h2 data-en="One request, &lt;span class=&quot;serif&quot;&gt;four&lt;/span&gt; layers to reach the world.">一個請求，經過<span class="serif">四層</span>網路送達全球。</h2>
@@ -2390,6 +2404,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
     <div class="wrap ve-contact">
       <div class="ve-head2"><span class="ve-kicker">CONTACT</span><h2>聯絡我們</h2><p>告訴我們您的需求，工程團隊會盡快回覆。</p>
         <dl class="ve-info"><div><dt>電子郵件</dt><dd>contact@mootech.asia</dd></div><div><dt>地點</dt><dd>新加坡 · 台灣</dd></div></dl>
+        <img class="ve-bear ve-bear-wave" src="assets/mascot/bear-wave.webp" alt="" aria-hidden="true" width="460" height="456" loading="lazy" decoding="async">
       </div>
       <form class="ve-form" data-form>
         <label for="e-name">姓名<input id="e-name" name="name" required autocomplete="name"></label>
