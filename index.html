@@ -107,24 +107,26 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
   position: fixed; z-index: 120; right: calc(24px + env(safe-area-inset-right, 0px)); bottom: calc(24px + env(safe-area-inset-bottom, 0px)); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", var(--sans); color: var(--c-ink); }
 .mtc button { font-family: inherit; }
 /* 來電小窗（像 FaceTime 的子母畫面） */
-.mtc-call { position: relative; width: 150px; height: 200px; border-radius: 22px; overflow: hidden; cursor: pointer; background: #000;
+.mtc-call { position: relative; width: 116px; height: 154px; border-radius: 18px; overflow: hidden; cursor: pointer; background: #000;
   box-shadow: 0 16px 40px rgba(3,8,18,.55), 0 0 0 1px rgba(255,255,255,.14); transition: transform .3s ease, opacity .3s ease; }
 .mtc-call:hover { transform: translateY(-3px); }
-.mtc-call::before { content: ""; position: absolute; inset: -3px; border-radius: 25px; border: 3px solid var(--c-ok); opacity: 0; pointer-events: none; animation: mtcRing 2s ease-out infinite; z-index: 3; }
+.mtc-call::before { content: ""; position: absolute; inset: -3px; border-radius: 21px; border: 3px solid var(--c-ok); opacity: 0; pointer-events: none; animation: mtcRing 2s ease-out infinite; z-index: 3; }
 @keyframes mtcRing { 0% { opacity: .9; transform: scale(1); } 100% { opacity: 0; transform: scale(1.12); } }
 .mtc-cam { position: absolute; inset: 0; overflow: hidden; }
 .mtc-cam img, .mtc-cam video { position: absolute; inset: -4%; width: 108%; height: 108%; object-fit: cover; object-position: 50% 30%; animation: mtcLive 7s ease-in-out infinite alternate; }
 /* 讓靜態畫面有「即時視訊」的細微晃動 */
 @keyframes mtcLive { 0% { transform: translate(0, 0) scale(1); } 35% { transform: translate(-1.2%, .6%) scale(1.02); } 70% { transform: translate(.8%, -.8%) scale(1.035); } 100% { transform: translate(-.4%, .4%) scale(1.015); } }
 .mtc-call .mtc-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 55%, rgba(0,0,0,.75) 100%); }
-.mtc-top { position: absolute; left: 10px; right: 10px; top: 9px; z-index: 2; }
-.mtc-top b { display: block; font-size: 13px; font-weight: 600; letter-spacing: .01em; }
-.mtc-top span { display: flex; align-items: center; gap: 5px; font-size: 11px; color: rgba(255,255,255,.82); }
+.mtc-top { position: absolute; left: 8px; right: 8px; top: 7px; z-index: 2; }
+.mtc-top b { display: block; font-size: 11.5px; font-weight: 600; letter-spacing: .01em; }
+.mtc-top span { display: flex; align-items: center; gap: 4px; font-size: 9.5px; color: rgba(255,255,255,.82); }
 .mtc-top span i { width: 6px; height: 6px; border-radius: 50%; background: var(--c-ok); box-shadow: 0 0 6px var(--c-ok); animation: mtcBlink 1.2s ease-in-out infinite; }
 @keyframes mtcBlink { 50% { opacity: .3; } }
-.mtc-min { position: absolute; right: 7px; top: 7px; z-index: 4; width: 24px; height: 24px; border: 0; border-radius: 50%; background: rgba(0,0,0,.45); color: #fff; font-size: 14px; line-height: 1; cursor: pointer; }
-.mtc-btns { position: absolute; left: 0; right: 0; bottom: 12px; z-index: 2; display: flex; justify-content: center; }
-.mtc-accept { width: 46px; height: 46px; border: 0; border-radius: 50%; background: var(--c-ok); color: #fff; display: grid; place-items: center; cursor: pointer; box-shadow: 0 6px 16px rgba(52,199,89,.5); animation: mtcShake 2s ease-in-out infinite; }
+.mtc-min { position: absolute; right: 5px; top: 5px; z-index: 4; width: 24px; height: 24px; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; background: rgba(0,0,0,.55); color: #fff; display: grid; place-items: center; cursor: pointer; transition: background .2s; }
+.mtc-min:hover { background: rgba(0,0,0,.8); }
+.mtc-min svg { width: 13px; height: 13px; }
+.mtc-btns { position: absolute; left: 0; right: 0; bottom: 9px; z-index: 2; display: flex; justify-content: center; }
+.mtc-accept { width: 38px; height: 38px; border: 0; border-radius: 50%; background: var(--c-ok); color: #fff; display: grid; place-items: center; cursor: pointer; box-shadow: 0 6px 16px rgba(52,199,89,.5); animation: mtcShake 2s ease-in-out infinite; }
 .mtc-accept svg, .mtc-end svg, .mtc-ctl svg, .mtc-send svg { width: 22px; height: 22px; }
 @keyframes mtcShake { 0%, 60%, 100% { transform: none; } 65% { transform: rotate(-12deg); } 70% { transform: rotate(12deg); } 75% { transform: rotate(-8deg); } 80% { transform: rotate(8deg); } 85% { transform: none; } }
 /* 接通中 */
@@ -137,10 +139,22 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .mtc.connecting .mtc-conn i::after { animation: mtcBar 1.3s ease-in-out forwards; }
 @keyframes mtcBar { to { transform: scaleX(1); } }
 /* 縮小後的圓形頭像 */
-.mtc-fab { display: none; position: relative; width: 62px; height: 62px; border: 0; padding: 0; border-radius: 50%; cursor: pointer; background: #000; box-shadow: 0 10px 26px rgba(3,8,18,.5), 0 0 0 2px var(--c-ok); }
-.mtc-fab img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
-.mtc-fab i { position: absolute; right: 1px; bottom: 3px; width: 14px; height: 14px; border-radius: 50%; background: var(--c-ok); border: 2px solid #0b1220; }
+.mtc-fab { display: none; position: relative; width: 58px; height: 58px; border: 0; padding: 0; border-radius: 50%; cursor: pointer; background: #000; box-shadow: 0 10px 26px rgba(3,8,18,.5), 0 0 0 2px var(--c-ok); }
+/* 縮小後頭像仍保留動態：畫面持續微晃＋呼吸光環 */
+.mtc-face { position: absolute; inset: 0; border-radius: 50%; overflow: hidden; }
+.mtc-face img, .mtc-face video { position: absolute; inset: -8%; width: 116%; height: 116%; object-fit: cover; animation: mtcLive 6s ease-in-out infinite alternate; }
+.mtc-fab::before { content: ""; position: absolute; inset: -3px; border-radius: 50%; border: 3px solid var(--c-ok); pointer-events: none; animation: mtcRing 2s ease-out infinite; }
+.mtc-fab > i { position: absolute; right: 1px; bottom: 3px; width: 14px; height: 14px; border-radius: 50%; background: var(--c-ok); border: 2px solid #0b1220; animation: mtcBlink 1.2s ease-in-out infinite; }
+.mtc-pill { display: none; position: absolute; left: 50%; bottom: -9px; transform: translateX(-50%); padding: 2px 7px; border-radius: 999px; background: var(--c-ok); color: #fff; font-size: 10.5px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; box-shadow: 0 3px 8px rgba(0,0,0,.35); }
+.mtc.incall .mtc-pill { display: block; }
+.mtc.incall .mtc-fab > i { display: none; }
 .mtc.mini .mtc-call { display: none; } .mtc.mini .mtc-fab { display: block; }
+/* 縮小後的頭像可拖曳，放開時吸附到最近的左右邊緣 */
+.mtc.mini:not(.open) { transition: left .28s cubic-bezier(.2,.8,.2,1), top .28s cubic-bezier(.2,.8,.2,1); }
+.mtc.dragging { transition: none !important; }
+.mtc.mini .mtc-fab { touch-action: none; cursor: grab; -webkit-user-select: none; user-select: none; }
+.mtc.dragging .mtc-fab { cursor: grabbing; transform: scale(1.08); }
+.mtc-fab img { -webkit-user-drag: none; pointer-events: none; }
 .mtc.open .mtc-call, .mtc.open .mtc-fab { opacity: 0; pointer-events: none; transform: scale(.9); }
 /* 通話視窗 */
 .mtc-panel { position: absolute; right: 0; bottom: 0; width: 380px; height: min(640px, calc(100svh - 48px)); display: flex; flex-direction: column; overflow: hidden; border-radius: 26px; background: var(--c-panel);
@@ -152,6 +166,10 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .mtc-vtop { position: absolute; left: 16px; right: 16px; top: 14px; z-index: 2; display: flex; align-items: flex-start; justify-content: space-between; }
 .mtc-vtop b { display: block; font-size: 17px; font-weight: 600; }
 .mtc-vtop span { font-size: 12.5px; color: rgba(255,255,255,.8); font-variant-numeric: tabular-nums; }
+.mtc-vr { display: flex; align-items: center; gap: 8px; }
+.mtc-top-min { width: 30px; height: 30px; border: 0; border-radius: 50%; background: rgba(0,0,0,.45); color: #fff; display: grid; place-items: center; cursor: pointer; }
+.mtc-top-min:hover { background: rgba(0,0,0,.65); }
+.mtc-top-min svg { width: 18px; height: 18px; }
 .mtc-badge { display: inline-flex; align-items: center; gap: 5px; padding: 4px 9px; border-radius: 999px; background: rgba(0,0,0,.45); font-size: 11px; color: #fff; }
 .mtc-badge i { width: 6px; height: 6px; border-radius: 50%; background: var(--c-ok); box-shadow: 0 0 6px var(--c-ok); }
 .mtc-ctls { position: absolute; left: 0; right: 0; bottom: 12px; z-index: 2; display: flex; justify-content: center; gap: 14px; }
@@ -188,12 +206,12 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
   .mtc-call::before { border-radius: 19px; }
   .mtc-top { left: 7px; top: 6px; } .mtc-top b { font-size: 10.5px; } .mtc-top span { font-size: 9px; } .mtc-top span em { display: none; }
   .mtc-accept { width: 32px; height: 32px; } .mtc-accept svg { width: 17px; height: 17px; } .mtc-btns { bottom: 7px; }
-  .mtc-min { width: 20px; height: 20px; right: 4px; top: 4px; font-size: 12px; }
-  .mtc-fab { width: 54px; height: 54px; }
+  .mtc-min { width: 22px; height: 22px; right: 4px; top: 4px; } .mtc-min svg { width: 12px; height: 12px; }
+  .mtc-fab { width: 52px; height: 52px; }
   .mtc-panel { position: fixed; left: 8px; right: 8px; bottom: calc(8px + env(safe-area-inset-bottom, 0px)); width: auto; height: min(600px, calc(100svh - 70px)); border-radius: 22px; }
   .mtc-video { flex-basis: 200px; }
 }
-@media (prefers-reduced-motion: reduce) { .mtc-call::before, .mtc-accept, .mtc-cam img, .mtc-cam video, .mtc-top span i, .mtc-typing i, .mtc-msg { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .mtc-call::before, .mtc-accept, .mtc-cam img, .mtc-cam video, .mtc-face img, .mtc-fab::before, .mtc-fab > i, .mtc-top span i, .mtc-typing i, .mtc-msg { animation: none; } }
 /* ============ 版型切換器 ============ */
 .switcher {
   position: fixed; z-index: 100;
@@ -3384,15 +3402,15 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   <div class="mtc-call" id="mtc-call" role="button" tabindex="0">
     <div class="mtc-cam"><img src="assets/chat/bear-cam.webp" alt="" width="360" height="480" decoding="async"></div><div class="mtc-shade"></div>
     <div class="mtc-top"><b id="mtc-cname"></b><span><i></i><em id="mtc-cstat" style="font-style:normal"></em></span></div>
-    <button type="button" class="mtc-min" id="mtc-min">×</button>
+    <button type="button" class="mtc-min" id="mtc-min"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg></button>
     <div class="mtc-btns"><span class="mtc-accept" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5h8A2.5 2.5 0 0 1 16 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-8A2.5 2.5 0 0 1 3 16.5zM17.5 9.6l3.1-2.2c.6-.4 1.4 0 1.4.8v7.6c0 .8-.8 1.2-1.4.8l-3.1-2.2z"/></svg></span></div>
     <div class="mtc-conn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-1.5 2.5-4 2.5h-2"/></svg><b>Connecting…</b><i></i></div>
   </div>
-  <button type="button" class="mtc-fab" id="mtc-fab"><img src="assets/chat/bear-avatar.webp" alt="" width="62" height="62" decoding="async"><i></i></button>
+  <button type="button" class="mtc-fab" id="mtc-fab"><span class="mtc-face"><img src="assets/chat/bear-avatar.webp" alt="" width="62" height="62" decoding="async"></span><i></i><span class="mtc-pill" id="mtc-pill">00:00</span></button>
   <div class="mtc-panel" role="dialog" aria-modal="false" aria-labelledby="mtc-name" id="mtc-panel">
     <div class="mtc-video">
       <div class="mtc-cam"><img src="assets/chat/bear-cam.webp" alt="" width="360" height="480" decoding="async"></div>
-      <div class="mtc-vtop"><div><b id="mtc-name"></b><span id="mtc-timer">00:00</span></div><span class="mtc-badge"><i></i><em id="mtc-live" style="font-style:normal"></em></span></div>
+      <div class="mtc-vtop"><div><b id="mtc-name"></b><span id="mtc-timer">00:00</span></div><div class="mtc-vr"><span class="mtc-badge"><i></i><em id="mtc-live" style="font-style:normal"></em></span><button type="button" class="mtc-top-min" id="mtc-top-min"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg></button></div></div>
       <div class="mtc-ctls"><button type="button" class="mtc-ctl" id="mtc-mute" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button><button type="button" class="mtc-end" id="mtc-end"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 9c-3.2 0-6.1.9-8.4 2.5-.8.5-1 1.6-.5 2.4l1 1.5c.5.7 1.4 1 2.2.6l2.2-1c.6-.3 1-.9 1-1.6v-1.3a12 12 0 0 1 5 0v1.3c0 .7.4 1.3 1 1.6l2.2 1c.8.4 1.7.1 2.2-.6l1-1.5c.5-.8.3-1.9-.5-2.4A14.8 14.8 0 0 0 12 9z"/></svg></button><button type="button" class="mtc-ctl" id="mtc-hide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></div>
     </div>
     <div class="mtc-log" id="mtc-log" aria-live="polite"></div>
@@ -3471,17 +3489,17 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
     $("mtc-cname").textContent = t("name"); $("mtc-cstat").textContent = t("calling");
     $("mtc-name").textContent = t("name") + " · " + t("role"); $("mtc-live").textContent = t("live");
     call.setAttribute("aria-label", t("accept")); $("mtc-min").setAttribute("aria-label", t("min")); fab.setAttribute("aria-label", t("reopen"));
-    $("mtc-end").setAttribute("aria-label", t("end")); $("mtc-mute").setAttribute("aria-label", t("mute")); $("mtc-hide").setAttribute("aria-label", t("hide"));
+    $("mtc-end").setAttribute("aria-label", t("end")); $("mtc-mute").setAttribute("aria-label", t("mute")); $("mtc-hide").setAttribute("aria-label", t("hide")); $("mtc-top-min").setAttribute("aria-label", t("hide"));
     $("mtc-send").setAttribute("aria-label", t("send")); input.placeholder = t("ph"); input.setAttribute("aria-label", t("ph")); $("mtc-note").textContent = t("note");
     chips.innerHTML = "";
     CHIPS.forEach(function (c) { var b = document.createElement("button"); b.type = "button"; b.textContent = c[en() ? 2 : 1]; b.addEventListener("click", function () { reply(c[0], b.textContent); }); chips.appendChild(b); });
   }
-  function tick() { var s = Math.floor((Date.now() - t0) / 1000); $("mtc-timer").textContent = ("0" + Math.floor(s / 60)).slice(-2) + ":" + ("0" + s % 60).slice(-2); }
+  function tick() { var s = Math.floor((Date.now() - t0) / 1000), txt = ("0" + Math.floor(s / 60)).slice(-2) + ":" + ("0" + s % 60).slice(-2); $("mtc-timer").textContent = txt; $("mtc-pill").textContent = txt; }
   /* 接聽：先顯示 Connecting… 再展開通話視窗 */
   function answer() {
     if (root.classList.contains("open") || root.classList.contains("connecting")) return;
     var go = function () {
-      root.classList.remove("connecting"); root.classList.add("open"); root.classList.remove("mini");
+      root.classList.remove("connecting"); root.classList.add("open", "incall"); root.classList.remove("mini");
       if (!t0) t0 = Date.now(); tick(); clearInterval(timer); timer = setInterval(tick, 1000);
       if (!started) { started = true; add("bot", t("hello")); }
       if (matchMedia("(min-width: 721px)").matches) setTimeout(function () { input.focus(); }, 250);
@@ -3492,13 +3510,43 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   /* 縮小：保留對話與通話時間 */
   function hide() { root.classList.remove("open"); root.classList.add("mini"); fab.focus({ preventScroll: true }); }
   /* 掛斷：清空對話，回到來電小窗 */
-  function end() { root.classList.remove("open"); root.classList.add("mini"); clearInterval(timer); t0 = 0; started = false; log.innerHTML = ""; fab.focus({ preventScroll: true }); }
+  function end() { root.classList.remove("open", "incall"); root.classList.add("mini"); clearInterval(timer); t0 = 0; started = false; log.innerHTML = ""; fab.focus({ preventScroll: true }); }
+  /* 縮小頭像拖曳：移動超過 6px 才算拖曳，否則視為點擊打開 */
+  var pos = null, drag = null, justDragged = false;
+  try { pos = JSON.parse(localStorage.getItem("mtc-pos") || "null"); } catch (e) {}
+  function applyPos() {
+    if (!pos || !root.classList.contains("mini") || root.classList.contains("open")) { root.style.left = root.style.top = root.style.right = root.style.bottom = ""; return; }
+    var w = fab.offsetWidth || 58, h = fab.offsetHeight || 58;
+    var x = Math.min(Math.max(8, pos.x), innerWidth - w - 8), y = Math.min(Math.max(8, pos.y), innerHeight - h - 16);
+    root.style.left = x + "px"; root.style.top = y + "px"; root.style.right = "auto"; root.style.bottom = "auto";
+  }
+  new MutationObserver(applyPos).observe(root, { attributes: true, attributeFilter: ["class"] });
+  addEventListener("resize", applyPos);
+  fab.addEventListener("pointerdown", function (e) {
+    if (!root.classList.contains("mini") || root.classList.contains("open") || e.button > 0) return;
+    var r = fab.getBoundingClientRect(); drag = { sx: e.clientX, sy: e.clientY, ox: e.clientX - r.left, oy: e.clientY - r.top, on: false, id: e.pointerId };
+  });
+  addEventListener("pointermove", function (e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    if (!drag.on) { if (Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) < 6) return; drag.on = true; root.classList.add("dragging"); try { fab.setPointerCapture(e.pointerId); } catch (er) {} }
+    pos = { x: e.clientX - drag.ox, y: e.clientY - drag.oy }; applyPos(); e.preventDefault();
+  }, { passive: false });
+  function dropFab(e) {
+    if (!drag || (e && e.pointerId !== drag.id)) return;
+    var was = drag.on; drag = null; if (!was) return;
+    root.classList.remove("dragging");
+    var w = fab.offsetWidth; pos.x = pos.x + w / 2 < innerWidth / 2 ? 12 : innerWidth - w - 12; applyPos();
+    try { localStorage.setItem("mtc-pos", JSON.stringify(pos)); } catch (er) {}
+    justDragged = true; setTimeout(function () { justDragged = false; }, 0);
+  }
+  addEventListener("pointerup", dropFab); addEventListener("pointercancel", dropFab);
   call.addEventListener("click", function (e) { if (e.target.closest(".mtc-min")) return; answer(); });
   call.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); answer(); } });
   $("mtc-min").addEventListener("click", function (e) { e.stopPropagation(); root.classList.add("mini"); });
-  fab.addEventListener("click", answer);
+  fab.addEventListener("click", function () { if (justDragged) return; answer(); });
   $("mtc-end").addEventListener("click", end);
   $("mtc-hide").addEventListener("click", hide);
+  $("mtc-top-min").addEventListener("click", hide);
   $("mtc-mute").addEventListener("click", function () { var b = $("mtc-mute"); b.setAttribute("aria-pressed", String(b.getAttribute("aria-pressed") !== "true")); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && root.classList.contains("open")) hide(); });
   form.addEventListener("submit", function (e) {
