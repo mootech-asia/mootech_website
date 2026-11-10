@@ -3517,7 +3517,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   </div>
 </div>
 <script>
-/* 右下角 熊北（FaceTime 風格）：選擇題式對話，分求職者／需求方／其他三條路線，2～3 輪問答後
+/* 右下角 MOO 小熊（FaceTime 風格）：選擇題式對話，分求職者／需求方／其他三條路線，2～3 輪問答後
    整理成已填好內容的郵件（網站沒有後端，使用訪客自己的郵件程式寄出）。 */
 (function () {
   var root = document.getElementById("mt-chat"); if (!root) return;
@@ -3529,9 +3529,9 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   function en() { return document.documentElement.lang === "en"; }
   function L(zh, enS) { return en() ? enS : zh; }
   var T = {
-    name: ["熊北", "Mootech Bear"], role: ["MOOTECH 線上客服", "MOOTECH Assistant"],
+    name: ["MOO 小熊", "MOO Bear"], role: ["MOOTECH 線上客服", "MOOTECH Assistant"],
     calling: ["接線中…", "Connecting…"], live: ["通話中", "Live"],
-    accept: ["接聽 熊北的客服來電", "Answer Mootech Bear's call"], min: ["縮小", "Minimise"], reopen: ["開啟線上客服", "Open chat"],
+    accept: ["接聽 MOO 小熊的客服來電", "Answer MOO Bear's call"], min: ["縮小", "Minimise"], reopen: ["開啟線上客服", "Open chat"],
     end: ["結束通話", "End call"], mic: ["按下說話，用語音選擇", "Tap to answer by voice"], hide: ["縮小視窗", "Minimise"],
     note: ["點選選項回覆 · 約 1 分鐘完成", "Tap an option · takes about a minute"], restart: ["重新開始", "Start over"],
     listening: ["聆聽中…", "Listening…"],
@@ -3564,7 +3564,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
 
   function start() {
     log.innerHTML = ""; state = {}; sticker("wave");
-    say(L("嗨，我是熊北！👋 請問今天想做什麼呢？", "Hi, I'm Mootech Bear! 👋 What brings you here today?"), function () {
+    say(L("嗨，我是 MOO 小熊！👋 請問今天想做什麼呢？", "Hi, I'm MOO Bear! 👋 What brings you here today?"), function () {
       ask([
         { label: L("🙋 我想應徵工作", "🙋 I'd like to apply for a job"), k: /應徵|工作|求職|職缺|履歷|apply|job|career|hiring/i, go: job1 },
         { label: L("🏢 我有網路／直播服務需求", "🏢 I need network or streaming services"), k: /需求|服務|網路|直播|報價|專線|service|network|stream|quote|business/i, go: biz1 },
