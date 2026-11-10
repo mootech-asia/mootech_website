@@ -248,6 +248,9 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
   .mtc-accept { width: 32px; height: 32px; } .mtc-accept svg { width: 17px; height: 17px; } .mtc-btns { bottom: 7px; }
   .mtc-min { width: 24px; height: 24px; right: 3px; top: 3px; } .mtc-min svg { width: 12px; height: 12px; }
   .mtc-fab { width: 52px; height: 52px; }
+  /* 小窗只有 84px 寬：接通中的圖示、文字、進度條跟著縮小，不被切掉 */
+  .mtc-conn { gap: 6px; padding: 0 6px; } .mtc-conn svg { width: 22px; height: 22px; }
+  .mtc-conn b { font-size: 10.5px; white-space: nowrap; letter-spacing: 0; } .mtc-conn i { width: 56px; height: 3px; }
   .mtc-panel { position: fixed; left: 8px; right: 8px; bottom: calc(8px + env(safe-area-inset-bottom, 0px)); width: auto; height: min(600px, calc(100svh - 70px)); border-radius: 22px; }
   .mtc-video { flex-basis: 200px; }
 }
