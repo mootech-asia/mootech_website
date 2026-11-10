@@ -254,6 +254,25 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 @media (prefers-reduced-motion: reduce) { .mtc.ringin .mtc-call, .mtc.ringin .mtc-holo, .mtc.open .mtc-panel, .mtc.open .mtc-panel::after, .mtc.buzz .mtc-call, .mtc.buzz .mtc-fab, .mtc-call::before, .mtc-accept, .mtc-cam img, .mtc-cam video, .mtc-face img, .mtc-fab::before, .mtc-fab > i, .mtc-top span i, .mtc-typing i, .mtc-msg { animation: none; } }
 /* 畫面外的區塊先不排版、不繪製，捲到附近才計算（首屏與英雄區除外），大幅減少長頁面初次載入的排版時間 */
 .v section:not([class*="-hero"]) { content-visibility: auto; contain-intrinsic-size: auto 900px; }
+/* 選擇題式對話 */
+.mtc-opts { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; animation: mtcIn .3s ease both; }
+.mtc-opt { border: 1px solid rgba(41,182,232,.55); background: rgba(41,182,232,.1); color: var(--c-ink); border-radius: 14px; padding: 9px 14px; font-size: 13.5px; line-height: 1.35; text-align: left; cursor: pointer; transition: background .2s, transform .2s; }
+.mtc-opt:hover { background: rgba(41,182,232,.24); transform: translateX(2px); }
+.mtc-opts.done .mtc-opt { display: none; }
+.mtc-mini { align-self: stretch; display: grid; gap: 8px; padding: 12px; border-radius: 16px; background: #182335; border: 1px solid var(--c-line); animation: mtcIn .3s ease both; }
+.mtc-mini label { display: grid; gap: 4px; font-size: 11.5px; color: var(--c-mut); }
+.mtc-mini input, .mtc-mini select, .mtc-mini textarea { width: 100%; box-sizing: border-box; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--c-line); background: rgba(255,255,255,.05); color: var(--c-ink); font: 13.5px/1.4 inherit; font-family: inherit; }
+.mtc-mini textarea { min-height: 58px; resize: vertical; }
+.mtc-mini input:focus, .mtc-mini select:focus, .mtc-mini textarea:focus { outline: none; border-color: var(--c-acc); }
+.mtc-mini select option { color: #0b1220; }
+.mtc-mini .mtc-err { color: #ff8a80; font-size: 12px; min-height: 0; }
+.mtc-mini button[type="submit"] { justify-self: start; border: 0; border-radius: 999px; padding: 9px 18px; background: var(--c-hot); color: #1d0b00; font-weight: 700; font-size: 13.5px; cursor: pointer; }
+.mtc-mini.sent { opacity: .55; pointer-events: none; }
+.mtc-links { display: flex; flex-wrap: wrap; gap: 7px; animation: mtcIn .3s ease both; }
+.mtc-links a, .mtc-links button { border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 600; text-decoration: none; color: var(--c-ink); background: rgba(255,255,255,.06); cursor: pointer; }
+.mtc-links .hot { background: var(--c-hot); border-color: var(--c-hot); color: #1d0b00; }
+.mtc-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 9px 14px 11px; border-top: 1px solid var(--c-line); background: var(--c-bg); font-size: 11px; color: var(--c-mut); }
+.mtc-foot button { flex: 0 0 auto; border: 1px solid var(--c-line); background: transparent; color: var(--c-ink); border-radius: 999px; padding: 5px 11px; font-size: 12px; cursor: pointer; }
 /* ============ 版型切換器 ============ */
 .switcher {
   position: fixed; z-index: 100;
@@ -3459,119 +3478,314 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
     <div class="mtc-cam"><img src="assets/chat/bear-cam.webp" alt="" width="360" height="480" decoding="async"></div><div class="mtc-shade"></div>
     <div class="mtc-top"><b id="mtc-cname"></b><span><i></i><em id="mtc-cstat" style="font-style:normal"></em></span></div>
     <button type="button" class="mtc-min" id="mtc-min"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg></button>
-    <div class="mtc-btns"><span class="mtc-accept" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5h8A2.5 2.5 0 0 1 16 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-8A2.5 2.5 0 0 1 3 16.5zM17.5 9.6l3.1-2.2c.6-.4 1.4 0 1.4.8v7.6c0 .8-.8 1.2-1.4.8l-3.1-2.2z"/></svg></span></div>
+    <div class="mtc-btns"><span class="mtc-accept" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span></div>
     <div class="mtc-holo" aria-hidden="true"></div><div class="mtc-conn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-1.5 2.5-4 2.5h-2"/></svg><b>Connecting…</b><i></i></div>
   </div>
   <button type="button" class="mtc-fab" id="mtc-fab"><span class="mtc-face"><img src="assets/chat/bear-avatar.webp" alt="" width="62" height="62" decoding="async"></span><i></i><span class="mtc-pill" id="mtc-pill">00:00</span></button>
   <div class="mtc-panel" role="dialog" aria-modal="false" aria-labelledby="mtc-name" id="mtc-panel">
     <div class="mtc-video">
       <div class="mtc-cam"><img src="assets/chat/bear-cam.webp" alt="" width="360" height="480" decoding="async"></div>
-      <div class="mtc-vtop"><div><b id="mtc-name"></b><span id="mtc-timer">00:00</span></div><div class="mtc-vr"><span class="mtc-badge"><i></i><em id="mtc-live" style="font-style:normal"></em></span><button type="button" class="mtc-top-min" id="mtc-top-min"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg></button></div></div>
+      <div class="mtc-vtop"><div><b id="mtc-name"></b><span id="mtc-timer"></span></div><div class="mtc-vr"><span class="mtc-badge"><i></i><em id="mtc-live" style="font-style:normal"></em></span><button type="button" class="mtc-top-min" id="mtc-top-min"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg></button></div></div>
       <div class="mtc-ctls"><button type="button" class="mtc-ctl" id="mtc-mic" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button><button type="button" class="mtc-end" id="mtc-end"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 9c-3.2 0-6.1.9-8.4 2.5-.8.5-1 1.6-.5 2.4l1 1.5c.5.7 1.4 1 2.2.6l2.2-1c.6-.3 1-.9 1-1.6v-1.3a12 12 0 0 1 5 0v1.3c0 .7.4 1.3 1 1.6l2.2 1c.8.4 1.7.1 2.2-.6l1-1.5c.5-.8.3-1.9-.5-2.4A14.8 14.8 0 0 0 12 9z"/></svg></button><button type="button" class="mtc-ctl" id="mtc-hide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></div>
     </div>
     <div class="mtc-log" id="mtc-log" aria-live="polite"></div>
-    <div class="mtc-chips" id="mtc-chips"></div>
-    <form class="mtc-form" id="mtc-form" autocomplete="off"><input id="mtc-in" type="text" maxlength="200"><button type="submit" class="mtc-send" id="mtc-send"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l7 7h-4.5v9h-5v-9H5z"/></svg></button></form>
-    <div class="mtc-note" id="mtc-note"></div>
+    <div class="mtc-foot"><span id="mtc-note"></span><button type="button" id="mtc-restart"></button></div>
   </div>
 </div>
 <script>
-/* 右下角智能客服（FaceTime 風格）：網站內建的關鍵字問答，不連外部 AI 服務；答不出來時引導到聯絡表單 */
+/* 右下角 MOO 小熊（FaceTime 風格）：選擇題式對話，分求職者／需求方／其他三條路線，2～3 輪問答後
+   整理成已填好內容的郵件（網站沒有後端，使用訪客自己的郵件程式寄出）。 */
 (function () {
   var root = document.getElementById("mt-chat"); if (!root) return;
+  /* 收件信箱：HR_EMAIL 請改成公司正式的人資信箱 */
+  var SALES_EMAIL = "contact@mootech.asia", HR_EMAIL = "contact@mootech.asia";
   var $ = function (id) { return document.getElementById(id); };
-  var call = $("mtc-call"), fab = $("mtc-fab"), log = $("mtc-log"), chips = $("mtc-chips"), form = $("mtc-form"), input = $("mtc-in");
+  var call = $("mtc-call"), fab = $("mtc-fab"), log = $("mtc-log");
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   function en() { return document.documentElement.lang === "en"; }
+  function L(zh, enS) { return en() ? enS : zh; }
   var T = {
     name: ["MOO 小熊", "MOO Bear"], role: ["MOOTECH 線上客服", "MOOTECH Assistant"],
-    calling: ["視訊來電中…", "Incoming video…"], live: ["通話中", "Live"],
-    accept: ["接聽 MOO 小熊的視訊客服", "Answer MOO Bear's video chat"], min: ["縮小", "Minimise"], reopen: ["開啟線上客服", "Open chat"],
-    end: ["結束通話", "End call"], mic: ["按下說話（語音提問）", "Tap to speak"],
-    listening: ["聆聽中…請直接說出您的問題", "Listening… go ahead and ask"],
-    noMic: ["您的瀏覽器不支援語音輸入，請改用 Chrome、Edge 或 Safari，或直接打字問我 🐻", "Voice input isn\u2019t supported in this browser. Try Chrome, Edge or Safari, or just type 🐻"],
-    denied: ["沒有取得麥克風權限。請在瀏覽器網址列旁允許使用麥克風，或直接打字問我。", "Microphone access was blocked. Allow it from the address bar, or just type your question."],
-    noSpeech: ["我沒有聽清楚，可以再說一次嗎？", "I didn\u2019t catch that. Could you say it again?"], hide: ["縮小視窗", "Minimise"], send: ["送出", "Send"],
-    ph: ["傳訊息給 MOO 小熊…", "Message MOO Bear…"],
-    note: ["自動回覆小幫手 · 專人會在表單送出後與您聯繫", "Automated assistant · our team follows up after you submit the form"],
-    hello: ["嗨，我是 MOO 小熊！👋\n可以為您介紹 MOOTECH 的服務、線路與據點，也能協助您聯絡業務或應徵職缺。想了解什麼呢？", "Hi, I'm MOO Bear! 👋\nI can walk you through MOOTECH's services, lines and locations, or help you reach our team or apply for a job. What would you like to know?"],
-    fallback: ["這個問題我先記下來了！比較細節的需求，建議留下聯絡方式，我們的專人會盡快回覆您。", "Good question! For anything detailed, leave your contact details and our team will get back to you shortly."],
-    form: ["填寫聯絡表單 →", "Open the contact form →"], apply: ["我要應徵 →", "Apply now →"]
+    calling: ["來電中…", "Incoming call…"], live: ["通話中", "Live"],
+    accept: ["接聽 MOO 小熊的客服來電", "Answer MOO Bear's call"], min: ["縮小", "Minimise"], reopen: ["開啟線上客服", "Open chat"],
+    end: ["結束通話", "End call"], mic: ["按下說話，用語音選擇", "Tap to answer by voice"], hide: ["縮小視窗", "Minimise"],
+    note: ["點選選項回覆 · 約 1 分鐘完成", "Tap an option · takes about a minute"], restart: ["重新開始", "Start over"],
+    listening: ["聆聽中…", "Listening…"],
+    noMic: ["您的瀏覽器不支援語音輸入，請直接點選選項 🐻", "Voice input isn’t supported in this browser. Just tap an option 🐻"],
+    denied: ["沒有取得麥克風權限，請直接點選選項。", "Microphone access was blocked. Just tap an option."],
+    noMatch: ["我沒聽清楚，請直接點選上面的選項 🐻", "I didn’t catch that. Please tap one of the options 🐻"]
   };
   function t(k) { return T[k][en() ? 1 : 0]; }
-  var CHIPS = [["svc", "服務總覽", "All services"], ["live", "直播串流", "Live streaming"], ["iplc", "IPLC 專線", "IPLC"], ["cdn", "CDN", "CDN"], ["loc", "據點與互聯", "Locations"], ["job", "加入我們", "Careers"], ["sales", "聯絡業務", "Talk to sales"]];
-  var KB = {
-    svc: { k: /服務|業務內容|做什麼|提供|service|offer|what do you/i, a: ["MOOTECH 提供五大服務：\n① 直播串流：即時、低延遲、不中斷\n② 網路連線：網際網路接取、IPLC 國際專線、CDN\n③ 線路類型：IP Transit、IPLC、Security\n④ 網路架構優化：配置、設計、監控與優化\n⑤ 系統整合：諮詢、部署遷移、代客操作\n想深入了解哪一項呢？", "MOOTECH offers five services:\n① Live streaming: real-time, low-latency, always on\n② Connectivity: internet access, IPLC private lines, CDN\n③ Line types: IP Transit, IPLC, Security\n④ Network optimisation: configuration, design, monitoring\n⑤ System integration: consulting, deployment, remote hands\nWhich one would you like to explore?"] },
-    live: { k: /直播|串流|live|stream|obs|賽事|活動/i, a: ["直播串流是我們的強項：\n• 即時串流，活動、發表會、賽事同步呈現\n• 低延遲，縮短拍攝到觀看的時間差\n• 備援線路與容錯機制，直播不中斷\n要不要留下需求，讓我們為您規劃？", "Live streaming is one of our strengths:\n• Real-time delivery for events, launches and matches\n• Low latency from camera to viewer\n• Backup routes and failover so the stream never drops\nShall we plan it for you?"], f: "直播串流" },
-    iplc: { k: /iplc|專線|國際|點對點|分行|總部|private|leased|point/i, a: ["IPLC 國際私人租用線路：\n• 總部與海外分行之間的專用點對點連線\n• 高安全性、高可用性、低延遲\n• 與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯\n適合需要穩定跨國傳輸的企業。", "IPLC (international private leased circuits):\n• Dedicated point-to-point links between HQ and branches\n• Secure, highly available and low-latency\n• Peering with HKIX, MYIX, SGIX and Equinix JPIX\nIdeal for companies that need steady cross-border traffic."], f: "IPLC 國際專線" },
-    transit: { k: /transit|接取|上網|頻寬|ipv6|ipv4|中國|東南亞|china|bandwidth|internet/i, a: ["網際網路接取與 IP Transit：\n• 全球涵蓋、支援 IPv4 與 IPv6\n• 與中國頂尖電信供應商合作\n• 中國與東南亞區域專屬優化線路\n讓您的應用和內容更快送達使用者。", "Internet access & IP Transit:\n• Global reach with IPv4 and IPv6\n• Partnerships with leading Chinese carriers\n• Optimised routes for China and Southeast Asia\nGetting your apps and content to users faster."], f: "網際網路接取 / IP Transit" },
-    cdn: { k: /cdn|加速|快取|網站慢|載入|cache|accelerat/i, a: ["CDN 服務可以立即提升網站效能：\n• 加快載入時間\n• 降低頻寬成本\n• 強化內容備援與安全性", "Our CDN instantly lifts site performance:\n• Faster load times\n• Lower bandwidth costs\n• Stronger content redundancy and security"], f: "CDN 服務" },
-    opt: { k: /優化|架構|監控|拓樸|流量|漏洞|optimi|monitor|architecture|topology/i, a: ["網路架構優化：\n• 網路配置與品質優化\n• 架構設計與拓樸圖審核\n• 設備庫存管理、流量監控\n• 優化方案與漏洞測試驗證\n我們會先了解您的使用狀態與瓶頸，再提出建議。", "Network optimisation:\n• Configuration and quality tuning\n• Architecture design and topology review\n• Inventory management and traffic monitoring\n• Optimisation plans and vulnerability testing\nWe start by understanding your usage and bottlenecks."], f: "網路架構優化" },
-    si: { k: /整合|部署|遷移|雲端|機房|代客|安裝|integrat|deploy|migrat|cloud|data ?cent|remote hands/i, a: ["系統整合服務：\n• IT 系統整合諮詢\n• 解決方案建置與資料遷移\n• 客製化測試與驗收\n• 建置後支援、雲端與機房整合\n• 代客操作：專業技術人員到場安裝與排查", "System integration:\n• IT integration consulting\n• Deployment and data migration\n• Custom testing and acceptance\n• Post-launch support, cloud and data-centre integration\n• Remote hands: on-site engineers for installs and troubleshooting"], f: "系統整合 / 代客操作" },
-    loc: { k: /據點|地址|在哪|新加坡|台灣|台北|香港|東京|location|where|singapore|taiwan|office|互聯|peering/i, a: ["MOOTECH 成立於 2016 年，據點在新加坡與台灣，服務全球客戶。\n我們與 HKIX、MYIX、SGIX、JPIX 對等互聯，並提供中國與東南亞的優化線路。", "Founded in 2016, MOOTECH is based in Singapore and Taiwan and serves customers worldwide.\nWe peer at HKIX, MYIX, SGIX and JPIX, with optimised routes for China and Southeast Asia."] },
-    job: { k: /應徵|招聘|職缺|工作|加入|履歷|工程師|hiring|job|career|apply|join|engineer|resume|cv/i, a: ["我們正在招募網路工程師！🙌\n工作地點在新加坡與台北，如果你熱愛網路與直播技術，歡迎投遞履歷，和我們一起守護亞太的連線。", "We're hiring network engineers! 🙌\nBased in Singapore and Taipei. If you love networks and live-streaming tech, send us your CV and help keep Asia-Pacific connected."], f: "加入我們（應徵）", job: 1 },
-    sales: { k: /報價|價格|多少錢|費用|收費|計價|業務|聯絡|聯繫|電話|email|信箱|諮詢|price|pricing|quote|cost|contact|sales|call/i, a: ["報價會依您的需求、頻寬與據點而定。\n留下聯絡方式與需求，我們的專人會盡快與您聯繫；也可以直接寫信到 contact@mootech.asia。", "Pricing depends on your requirements, bandwidth and locations.\nLeave your details and our team will reach out shortly, or email contact@mootech.asia."] },
-    hi: { k: /^(hi|hello|hey|嗨|你好|哈囉|您好)/i, a: ["嗨！很高興見到你 🐻 想了解我們的哪項服務呢？", "Hi there! 🐻 Which of our services can I tell you about?"] },
-    thx: { k: /謝|感謝|thank/i, a: ["不客氣！還有其他問題隨時問我 🐻", "You're welcome! Ask me anything else anytime 🐻"] }
-  };
-  var started = false, busy = false, timer = 0, t0 = 0;
-  function add(cls, text) { var d = document.createElement("div"); d.className = "mtc-msg " + cls; d.textContent = text; log.appendChild(d); log.scrollTop = log.scrollHeight; return d; }
-  function action(label, need) {
-    var b = document.createElement("button"); b.type = "button"; b.className = "mtc-act"; b.textContent = label;
-    b.addEventListener("click", function () { goContact(need); });
-    log.appendChild(b); log.scrollTop = log.scrollHeight;
+
+  /* ---------- 對話流程 ---------- */
+  var state = {}, busy = false, voiceReply = false, curOpts = [];
+  function scroll() { log.scrollTop = log.scrollHeight; }
+  function bubble(cls, text) { var d = document.createElement("div"); d.className = "mtc-msg " + cls; d.textContent = text; log.appendChild(d); scroll(); return d; }
+  function say(text, next) {
+    busy = true;
+    var typing = document.createElement("div"); typing.className = "mtc-msg bot mtc-typing"; typing.innerHTML = "<i></i><i></i><i></i>"; log.appendChild(typing); scroll();
+    setTimeout(function () { typing.remove(); bubble("bot", text); speak(text); busy = false; if (next) next(); }, reduce ? 120 : 550 + Math.min(text.length * 6, 500));
   }
-  function goContact(need) {
+  /* 顯示選項；點選後收起選項並把選擇顯示成使用者訊息 */
+  function ask(opts) {
+    var box = document.createElement("div"); box.className = "mtc-opts"; curOpts = [];
+    opts.forEach(function (o) {
+      var b = document.createElement("button"); b.type = "button"; b.className = "mtc-opt"; b.textContent = o.label;
+      b.addEventListener("click", function () { pick(box, o); });
+      box.appendChild(b); curOpts.push({ box: box, o: o });
+    });
+    log.appendChild(box); scroll();
+  }
+  function pick(box, o) { if (busy || box.classList.contains("done")) return; box.classList.add("done"); curOpts = []; bubble("me", o.label.replace(/^\S+\s/, "")); o.go(); }
+
+  function start() {
+    log.innerHTML = ""; state = {};
+    say(L("嗨，我是 MOO 小熊！👋 請問今天想做什麼呢？", "Hi, I'm MOO Bear! 👋 What brings you here today?"), function () {
+      ask([
+        { label: L("🙋 我想應徵工作", "🙋 I'd like to apply for a job"), k: /應徵|工作|求職|職缺|履歷|apply|job|career|hiring/i, go: job1 },
+        { label: L("🏢 我有網路／直播服務需求", "🏢 I need network or streaming services"), k: /需求|服務|網路|直播|報價|專線|service|network|stream|quote|business/i, go: biz1 },
+        { label: L("💬 其他問題", "💬 Something else"), k: /其他|別的|問題|other|else|question/i, go: other1 }
+      ]);
+    });
+  }
+  /* 求職者：職位 → 地點 → 簡單資料 → 寄履歷到 HR */
+  function job1() {
+    say(L("太好了！我們正在找熱愛網路與直播技術的夥伴。你想應徵哪個方向？", "Great! We're looking for people who love networks and live-streaming tech. Which role interests you?"), function () {
+      ask([
+        { label: L("🌐 網路工程師", "🌐 Network engineer"), k: /網路|network/i, go: function () { state.role = L("網路工程師", "Network engineer"); job2(); } },
+        { label: L("📡 直播技術工程師", "📡 Live-streaming engineer"), k: /直播|串流|stream|live/i, go: function () { state.role = L("直播技術工程師", "Live-streaming engineer"); job2(); } },
+        { label: L("🧩 系統整合工程師", "🧩 Systems integration engineer"), k: /系統|整合|system|integration/i, go: function () { state.role = L("系統整合工程師", "Systems integration engineer"); job2(); } },
+        { label: L("✨ 其他職位", "✨ Another role"), k: /其他|別的|other/i, go: function () { state.role = L("其他職位", "Other role"); job2(); } }
+      ]);
+    });
+  }
+  function job2() {
+    say(L("希望的工作地點是？", "Where would you like to work?"), function () {
+      ask([
+        { label: L("🇸🇬 新加坡", "🇸🇬 Singapore"), k: /新加坡|singapore/i, go: function () { state.loc = L("新加坡", "Singapore"); job3(); } },
+        { label: L("🇹🇼 台北", "🇹🇼 Taipei"), k: /台北|台灣|臺北|taipei|taiwan/i, go: function () { state.loc = L("台北", "Taipei"); job3(); } },
+        { label: L("🌏 都可以", "🌏 Either is fine"), k: /都可以|都行|皆可|either|both|any/i, go: function () { state.loc = L("新加坡或台北皆可", "Singapore or Taipei"); job3(); } }
+      ]);
+    });
+  }
+  function job3() {
+    say(L("最後留下簡單的資料，我幫你整理成應徵信，再請你把履歷寄給我們的人資團隊 📄", "Last step: leave a few details and I'll draft your application email, then send your CV to our HR team 📄"), function () {
+      form([
+        { n: "name", l: L("姓名", "Name"), req: 1, ac: "name" },
+        { n: "email", l: L("電子郵件", "Email"), req: 1, type: "email", ac: "email" },
+        { n: "phone", l: L("聯絡電話（選填）", "Phone (optional)"), type: "tel", ac: "tel" },
+        { n: "exp", l: L("相關工作經驗", "Relevant experience"), sel: [L("應屆畢業", "New graduate"), L("1 年以下", "Under 1 year"), L("1–3 年", "1–3 years"), L("3–5 年", "3–5 years"), L("5 年以上", "5+ years")] }
+      ], L("整理應徵信", "Draft my application"), function (v) {
+        var subj = L("【應徵】", "[Application] ") + state.role + " - " + v.name + " - " + state.loc;
+        var body = [L("您好，我想應徵 MOOTECH 的職缺：", "Hello, I'd like to apply to MOOTECH:"), "",
+          L("應徵職位：", "Role: ") + state.role, L("希望地點：", "Location: ") + state.loc, L("姓名：", "Name: ") + v.name,
+          L("電子郵件：", "Email: ") + v.email, L("電話：", "Phone: ") + (v.phone || "-"), L("相關經驗：", "Experience: ") + v.exp, "",
+          L("履歷已附在這封信中，謝謝！", "My CV is attached. Thank you!")].join("\n");
+        say(L("謝謝你，" + v.name + "！🙌 請按下方按鈕開啟郵件，內容我已幫你填好，記得附上履歷（PDF）再寄到人資信箱 " + HR_EMAIL + "。", "Thanks, " + v.name + "! 🙌 Tap below to open the email I've drafted, attach your CV (PDF) and send it to our HR inbox at " + HR_EMAIL + "."), function () {
+          links([{ hot: 1, label: L("📧 開啟郵件並附上履歷", "📧 Open email and attach CV"), href: mail(HR_EMAIL, subj, body) }, { label: L("複製人資信箱", "Copy HR email"), copy: HR_EMAIL }]);
+        });
+      });
+    });
+  }
+  /* 需求方：服務 → 地區 → 聯絡資料 → 寄需求信／填網站表單 */
+  var SVC = [
+    { zh: "直播串流", en: "Live streaming", need: "直播串流", ic: "📡", k: /直播|串流|live|stream/i, dzh: "即時、低延遲的直播傳輸，搭配備援線路與容錯機制，活動、發表會、賽事都不中斷。", den: "Real-time, low-latency streaming with backup routes and failover, so events and matches never drop." },
+    { zh: "網路連線（IP Transit・IPLC・CDN）", en: "Connectivity (IP Transit, IPLC, CDN)", need: "IPLC 國際專線", ic: "🌐", k: /連線|網路|transit|iplc|cdn|專線|頻寬|connect/i, dzh: "全球 IP Transit、總部與分行之間的 IPLC 國際專線，以及加速網站的 CDN；並提供中國與東南亞優化線路。", den: "Global IP Transit, IPLC private lines between HQ and branches, and CDN acceleration, with optimised China and SE Asia routes." },
+    { zh: "網路架構優化", en: "Network optimisation", need: "網路架構優化", ic: "🛠", k: /優化|架構|監控|optimi|architecture|monitor/i, dzh: "先了解您的使用狀態與瓶頸，再提供配置調整、架構設計、流量監控與漏洞測試。", den: "We map your usage and bottlenecks, then tune configuration, design architecture, monitor traffic and test for weak spots." },
+    { zh: "系統整合・代客操作", en: "System integration & remote hands", need: "系統整合 / 代客操作", ic: "🧩", k: /系統|整合|代客|機房|雲端|integration|remote|data/i, dzh: "從諮詢、部署遷移到建置後支援，整合雲端與機房，也有技術人員到場安裝與排查。", den: "From consulting and migration to post-launch support, joining cloud and data centres, with on-site engineers when needed." },
+    { zh: "還不確定，想先諮詢", en: "Not sure yet, I'd like advice", need: "其他", ic: "🤔", k: /不確定|諮詢|不知道|not sure|advice|unsure/i, dzh: "沒問題！告訴我們您的情況，我們會幫您找出最適合的組合。", den: "No problem. Tell us about your situation and we'll suggest the right mix." }
+  ];
+  function biz1() {
+    say(L("了解！您想了解哪一類服務呢？", "Got it! Which kind of service are you interested in?"), function () {
+      ask(SVC.map(function (x) { return { label: x.ic + " " + (en() ? x.en : x.zh), k: x.k, go: function () { state.svc = x; say(en() ? x.den : x.dzh, biz2); } }; }));
+    });
+  }
+  function biz2() {
+    say(L("需求大概在哪個地區？", "Where is the requirement?"), function () {
+      var R = [[L("台灣", "Taiwan"), /台灣|台北|taiwan|taipei/i], [L("新加坡・東南亞", "Singapore & SE Asia"), /新加坡|東南亞|singapore|asia|sea/i], [L("中國", "China"), /中國|大陸|china/i], [L("跨國多地", "Multiple countries"), /跨國|多地|全球|multi|global|countries/i]];
+      ask(R.map(function (r) { return { label: "📍 " + r[0], k: r[1], go: function () { state.region = r[0]; biz3(); } }; }));
+    });
+  }
+  function biz3() {
+    say(L("請留下聯絡方式，我們的業務會盡快與您聯繫 🤝", "Leave your contact details and our team will get back to you shortly 🤝"), function () {
+      form([
+        { n: "company", l: L("公司名稱（選填）", "Company (optional)"), ac: "organization" },
+        { n: "name", l: L("聯絡人", "Your name"), req: 1, ac: "name" },
+        { n: "email", l: L("電子郵件", "Email"), req: 1, type: "email", ac: "email" },
+        { n: "phone", l: L("聯絡電話（選填）", "Phone (optional)"), type: "tel", ac: "tel" },
+        { n: "note", l: L("簡單描述需求（選填）", "Anything else? (optional)"), area: 1 }
+      ], L("送出需求", "Send my request"), function (v) {
+        var svc = en() ? state.svc.en : state.svc.zh;
+        var subj = L("【服務諮詢】", "[Enquiry] ") + svc + " - " + (v.company || v.name);
+        var body = [L("您好，我想了解 MOOTECH 的服務：", "Hello, I'd like to know more about MOOTECH's services:"), "",
+          L("服務類型：", "Service: ") + svc, L("地區：", "Region: ") + state.region, L("公司：", "Company: ") + (v.company || "-"),
+          L("聯絡人：", "Name: ") + v.name, L("電子郵件：", "Email: ") + v.email, L("電話：", "Phone: ") + (v.phone || "-"), "", L("需求說明：", "Details: ") + (v.note || "-")].join("\n");
+        say(L("收到，" + v.name + "！我已把您的需求整理好，按下方按鈕寄出，業務會盡快回覆您。", "Thanks, " + v.name + "! I've summarised your request. Send it below and our team will reply soon."), function () {
+          links([{ hot: 1, label: L("📧 寄出需求信", "📧 Send request email"), href: mail(SALES_EMAIL, subj, body) }, { label: L("改填網站聯絡表單", "Use the contact form"), fill: { name: v.name, email: v.email, need: state.svc.need, msg: L("公司：", "Company: ") + (v.company || "-") + "\n" + L("地區：", "Region: ") + state.region + "\n" + (v.note || "") } }]);
+        });
+      });
+    });
+  }
+  /* 其他：公司介紹／據點／合作夥伴／留言，之後可轉到另外兩條路線 */
+  function other1() {
+    say(L("沒問題，想了解什麼呢？", "Sure, what would you like to know?"), function () {
+      ask([
+        { label: L("🏛 公司介紹", "🏛 About MOOTECH"), k: /公司|介紹|關於|about|company/i, go: function () { say(L("MOOTECH 成立於 2016 年，專注網路連線、IPLC 國際專線、CDN 與直播串流，為企業打造低延遲、不中斷的網路。", "Founded in 2016, MOOTECH specialises in connectivity, IPLC private lines, CDN and live streaming, building low-latency, always-on networks for businesses."), other2); } },
+        { label: L("📍 據點與聯絡方式", "📍 Locations & contact"), k: /據點|地址|聯絡|在哪|location|contact|where/i, go: function () { say(L("我們的據點在新加坡與台灣，並與 HKIX、MYIX、SGIX、JPIX 對等互聯。業務信箱：" + SALES_EMAIL, "We're in Singapore and Taiwan, peering at HKIX, MYIX, SGIX and JPIX. Email: " + SALES_EMAIL), other2); } },
+        { label: L("🤝 合作夥伴", "🤝 Partners"), k: /合作|夥伴|partner/i, go: function () { say(L("我們與中華電信、中國移動、中國電信、中國聯通、PCCW、Telstra、AWS、Cloudflare、Cisco、Juniper 等夥伴合作。", "We work with partners including Chunghwa Telecom, China Mobile, China Telecom, China Unicom, PCCW, Telstra, AWS, Cloudflare, Cisco and Juniper."), other2); } },
+        { label: L("✉️ 我想留言", "✉️ Leave a message"), k: /留言|訊息|message/i, go: otherMsg }
+      ]);
+    });
+  }
+  function other2() {
+    say(L("還有什麼我可以幫忙的嗎？", "Anything else I can help with?"), function () {
+      ask([
+        { label: L("🙋 我也想應徵工作", "🙋 I'd like to apply for a job"), k: /應徵|工作|job|apply/i, go: job1 },
+        { label: L("🏢 我有服務需求", "🏢 I need a service"), k: /需求|服務|service/i, go: biz1 },
+        { label: L("✉️ 留言給我們", "✉️ Leave a message"), k: /留言|message/i, go: otherMsg },
+        { label: L("👍 沒有了，謝謝", "👍 That's all, thanks"), k: /沒有|謝謝|不用|no|thanks|that's all/i, go: function () { say(L("不客氣！有需要隨時再找我 🐻", "You're welcome! Call me anytime 🐻")); } }
+      ]);
+    });
+  }
+  function otherMsg() {
+    say(L("請留下您的聯絡方式與想說的話：", "Leave your details and message:"), function () {
+      form([
+        { n: "name", l: L("姓名", "Name"), req: 1, ac: "name" },
+        { n: "email", l: L("電子郵件", "Email"), req: 1, type: "email", ac: "email" },
+        { n: "note", l: L("留言內容", "Message"), req: 1, area: 1 }
+      ], L("送出留言", "Send message"), function (v) {
+        var body = [L("姓名：", "Name: ") + v.name, L("電子郵件：", "Email: ") + v.email, "", v.note].join("\n");
+        say(L("謝謝您的留言！按下方按鈕寄出，我們會盡快回覆。", "Thanks! Send it below and we'll reply soon."), function () {
+          links([{ hot: 1, label: L("📧 寄出留言", "📧 Send message"), href: mail(SALES_EMAIL, L("【網站留言】", "[Website message] ") + v.name, body) }]);
+        });
+      });
+    });
+  }
+
+  /* ---------- 迷你表單、郵件連結 ---------- */
+  function mail(to, subj, body) { return "mailto:" + to + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body); }
+  function form(fields, submitLabel, done) {
+    var f = document.createElement("form"); f.className = "mtc-mini"; f.noValidate = true;
+    fields.forEach(function (x) {
+      var lab = document.createElement("label"); lab.textContent = x.l;
+      var el;
+      if (x.sel) { el = document.createElement("select"); x.sel.forEach(function (o) { var op = document.createElement("option"); op.textContent = o; el.appendChild(op); }); }
+      else if (x.area) el = document.createElement("textarea");
+      else { el = document.createElement("input"); el.type = x.type || "text"; }
+      el.name = x.n; if (x.ac) el.autocomplete = x.ac; if (x.req) el.required = true; el.maxLength = x.area ? 600 : 120;
+      lab.appendChild(el); f.appendChild(lab);
+    });
+    var err = document.createElement("div"); err.className = "mtc-err"; err.setAttribute("role", "alert"); f.appendChild(err);
+    var btn = document.createElement("button"); btn.type = "submit"; btn.textContent = submitLabel; f.appendChild(btn);
+    f.addEventListener("submit", function (e) {
+      e.preventDefault(); var v = {}, bad = "";
+      fields.forEach(function (x) { var el = f.elements[x.n]; v[x.n] = el.value.trim(); if (!bad && x.req && !v[x.n]) bad = L("請填寫「" + x.l + "」", "Please fill in " + x.l); });
+      if (!bad && v.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)) bad = L("電子郵件格式不正確", "That email doesn't look right");
+      if (bad) { err.textContent = bad; return; }
+      err.textContent = ""; f.classList.add("sent"); done(v);
+    });
+    log.appendChild(f); scroll();
+    var first = f.querySelector("input,select,textarea"); if (first && matchMedia("(min-width: 721px)").matches) first.focus({ preventScroll: true });
+  }
+  function links(items) {
+    var box = document.createElement("div"); box.className = "mtc-links";
+    items.forEach(function (x) {
+      var el;
+      if (x.href) { el = document.createElement("a"); el.href = x.href; }
+      else { el = document.createElement("button"); el.type = "button"; }
+      el.textContent = x.label; if (x.hot) el.className = "hot";
+      if (x.copy) el.addEventListener("click", function () { var done = function () { el.textContent = L("已複製 ✓", "Copied ✓"); }; if (navigator.clipboard) navigator.clipboard.writeText(x.copy).then(done, done); else done(); });
+      if (x.fill) el.addEventListener("click", function () { fillSiteForm(x.fill); });
+      box.appendChild(el);
+    });
+    log.appendChild(box); scroll();
+  }
+  /* 把資料帶入目前版型的聯絡表單並捲過去 */
+  function fillSiteForm(d) {
     var v = document.querySelector(".v:not([hidden])"); if (!v) return;
-    var id = v.id + "-contact"; if (!document.getElementById(id)) return;
-    var sel = v.querySelector("#" + id + " select");
-    if (sel && need) [].forEach.call(sel.options, function (o) { if (o.textContent === need || (window.EN && o.textContent === EN[need])) sel.value = o.value; });
+    var id = v.id + "-contact", sec = document.getElementById(id); if (!sec) return;
+    var f = sec.querySelector("form");
+    if (f) {
+      var set = function (sel, val) { var el = f.querySelector(sel); if (el && val) el.value = val; };
+      set('[name="name"], input[type="text"]', d.name); set('[name="email"], input[type="email"]', d.email); set("textarea", d.msg);
+      var s = f.querySelector("select"); if (s && d.need) [].forEach.call(s.options, function (o) { if (o.textContent === d.need || (window.EN && o.textContent === EN[d.need])) s.value = o.value; });
+    }
     hide();
-    var a = document.createElement("a"); a.href = "#" + id; a.setAttribute("data-scroll", ""); a.style.display = "none";
-    v.appendChild(a); a.click(); a.remove();
+    var a = document.createElement("a"); a.href = "#" + id; a.setAttribute("data-scroll", ""); a.style.display = "none"; v.appendChild(a); a.click(); a.remove();
   }
-  function reply(key, userText) {
-    if (busy) return; busy = true;
-    if (userText) add("me", userText);
-    var typing = document.createElement("div"); typing.className = "mtc-msg bot mtc-typing"; typing.innerHTML = "<i></i><i></i><i></i>"; log.appendChild(typing); log.scrollTop = log.scrollHeight;
-    setTimeout(function () {
-      typing.remove(); busy = false;
-      var k = KB[key];
-      if (!k) { add("bot", t("fallback")); speak(t("fallback")); voiceReply = false; action(t("form")); return; }
-      add("bot", k.a[en() ? 1 : 0]); speak(k.a[en() ? 1 : 0]); voiceReply = false;
-      if (k.job) action(t("apply"), k.f);
-      else if (k.f || key === "sales") action(t("form"), k.f);
-    }, reduce ? 150 : 650 + Math.random() * 450);
+
+  /* ---------- 語音：用說的選擇選項；用語音互動時，小熊也用語音回覆 ---------- */
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition, rec = null, listening = false, mic = $("mtc-mic");
+  function speak(text) {
+    if (!voiceReply || !window.speechSynthesis) return;
+    try {
+      speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(text.replace(/[\u{1F300}-\u{1FAFF}☀-➿]/gu, " "));
+      u.lang = en() ? "en-US" : "zh-TW"; u.rate = en() ? 1 : 1.05; u.pitch = .9;
+      var vs = speechSynthesis.getVoices().filter(function (x) { return x.lang.replace("_", "-").indexOf(u.lang) === 0; }); if (vs.length) u.voice = vs[0];
+      u.onstart = function () { root.classList.add("speaking"); }; u.onend = u.onerror = function () { root.classList.remove("speaking"); };
+      speechSynthesis.speak(u);
+    } catch (e) {}
   }
-  /* 詢價、聯絡類的問題優先，其次才是各服務介紹 */
-  function match(text) { if (KB.sales.k.test(text)) return "sales"; for (var key in KB) if (KB[key].k.test(text)) return key; return null; }
+  function stopListen() { listening = false; mic.classList.remove("listening"); mic.setAttribute("aria-pressed", "false"); $("mtc-note").textContent = t("note"); }
+  function shutUp() { try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (e) {} root.classList.remove("speaking"); if (rec && listening) { try { rec.abort(); } catch (e) {} stopListen(); } }
+  mic.addEventListener("click", function () {
+    if (!SR) { bubble("bot", t("noMic")); return; }
+    if (listening) { try { rec.stop(); } catch (e) {} return; }
+    if (busy) return;
+    try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (e) {}
+    rec = new SR(); rec.lang = en() ? "en-US" : "zh-TW"; rec.interimResults = true; rec.continuous = false;
+    var said = "";
+    rec.onstart = function () { listening = true; mic.classList.add("listening"); mic.setAttribute("aria-pressed", "true"); $("mtc-note").textContent = t("listening"); };
+    rec.onresult = function (ev) { said = ""; for (var i = 0; i < ev.results.length; i++) said += ev.results[i][0].transcript; $("mtc-note").textContent = "🎙 " + said; };
+    rec.onerror = function (ev) { stopListen(); if (ev.error === "not-allowed" || ev.error === "service-not-allowed") bubble("bot", t("denied")); };
+    rec.onend = function () {
+      stopListen(); said = said.trim(); if (!said) return;
+      voiceReply = true;
+      var hit = null; curOpts.forEach(function (c) { if (!hit && c.o.k && c.o.k.test(said)) hit = c; });
+      if (hit) pick(hit.box, hit.o); else { bubble("me", said); say(t("noMatch")); }
+    };
+    try { rec.start(); } catch (e) { stopListen(); }
+  });
+
+  /* ---------- 通話外觀：來電、接通、縮小、掛斷 ---------- */
+  var timer = 0, t0 = 0, started = false;
   function renderStatic() {
     $("mtc-cname").textContent = t("name"); $("mtc-cstat").textContent = t("calling");
     $("mtc-name").textContent = t("name"); if (!t0) $("mtc-timer").textContent = t("role") + " · 00:00"; $("mtc-live").textContent = t("live");
     call.setAttribute("aria-label", t("accept")); $("mtc-min").setAttribute("aria-label", t("min")); fab.setAttribute("aria-label", t("reopen"));
-    $("mtc-end").setAttribute("aria-label", t("end")); $("mtc-mic").setAttribute("aria-label", t("mic")); $("mtc-hide").setAttribute("aria-label", t("hide")); $("mtc-top-min").setAttribute("aria-label", t("hide"));
-    $("mtc-send").setAttribute("aria-label", t("send")); input.placeholder = t("ph"); input.setAttribute("aria-label", t("ph")); $("mtc-note").textContent = t("note");
-    chips.innerHTML = "";
-    CHIPS.forEach(function (c) { var b = document.createElement("button"); b.type = "button"; b.textContent = c[en() ? 2 : 1]; b.addEventListener("click", function () { reply(c[0], b.textContent); }); chips.appendChild(b); });
+    $("mtc-end").setAttribute("aria-label", t("end")); mic.setAttribute("aria-label", t("mic")); $("mtc-hide").setAttribute("aria-label", t("hide")); $("mtc-top-min").setAttribute("aria-label", t("hide"));
+    $("mtc-note").textContent = t("note"); $("mtc-restart").textContent = t("restart");
   }
   function tick() { var s = Math.floor((Date.now() - t0) / 1000), txt = ("0" + Math.floor(s / 60)).slice(-2) + ":" + ("0" + s % 60).slice(-2); $("mtc-timer").textContent = t("role") + " · " + txt; $("mtc-pill").textContent = txt; }
-  /* 接聽：先顯示 Connecting… 再展開通話視窗 */
   function answer() {
     if (root.classList.contains("open") || root.classList.contains("connecting")) return;
     var go = function () {
       root.classList.remove("connecting"); root.classList.add("open", "incall"); root.classList.remove("mini");
       if (!t0) t0 = Date.now(); tick(); clearInterval(timer); timer = setInterval(tick, 1000);
-      if (!started) { started = true; add("bot", t("hello")); }
-      if (matchMedia("(min-width: 721px)").matches) setTimeout(function () { input.focus(); }, 250);
+      if (!started) { started = true; start(); }
     };
     if (root.classList.contains("mini") || reduce) { go(); return; }
     root.classList.add("connecting"); setTimeout(go, 1300);
   }
-  /* 縮小：保留對話與通話時間 */
   function hide() { shutUp(); root.classList.remove("open"); root.classList.add("mini"); fab.focus({ preventScroll: true }); }
-  /* 掛斷：清空對話，回到來電小窗 */
-  function end() { shutUp(); root.classList.remove("open", "incall"); root.classList.add("mini"); clearInterval(timer); t0 = 0; started = false; log.innerHTML = ""; fab.focus({ preventScroll: true }); }
-  /* 縮小頭像拖曳：移動超過 6px 才算拖曳，否則視為點擊打開 */
+  function end() { shutUp(); root.classList.remove("open", "incall"); root.classList.add("mini"); clearInterval(timer); t0 = 0; started = false; voiceReply = false; log.innerHTML = ""; fab.focus({ preventScroll: true }); }
+  $("mtc-restart").addEventListener("click", function () { if (!busy) { shutUp(); start(); } });
+
+  /* 來電進場：頁面載入後約 2.5 秒，以全像投影效果彈出 */
+  function ringIn() { root.classList.remove("pre"); if (reduce || root.classList.contains("mini")) return; root.classList.add("ringin"); setTimeout(function () { root.classList.remove("ringin"); }, 1600); }
+  if (document.readyState === "complete") setTimeout(ringIn, 2500); else addEventListener("load", function () { setTimeout(ringIn, 2500); });
+  /* 不定時震動：每隔 4～10 秒隨機震一下；通話視窗打開、拖曳中、分頁在背景時不震 */
+  (function buzzLoop() {
+    setTimeout(function () {
+      if (!reduce && !document.hidden && !root.classList.contains("pre") && !root.classList.contains("ringin") && !root.classList.contains("open") && !root.classList.contains("dragging") && !root.classList.contains("connecting")) {
+        root.classList.remove("buzz"); void root.offsetWidth; root.classList.add("buzz");
+        setTimeout(function () { root.classList.remove("buzz"); }, 750);
+      }
+      buzzLoop();
+    }, 4000 + Math.random() * 6000);
+  })();
+  /* 縮小頭像拖曳：移動超過 6px 才算拖曳，否則視為點擊打開；放開時吸附到最近的左右邊緣 */
   var pos = null, drag = null, justDragged = false;
   try { pos = JSON.parse(localStorage.getItem("mtc-pos") || "null"); } catch (e) {}
   function applyPos() {
@@ -3600,19 +3814,6 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
     justDragged = true; setTimeout(function () { justDragged = false; }, 0);
   }
   addEventListener("pointerup", dropFab); addEventListener("pointercancel", dropFab);
-  /* 來電進場：頁面載入後約 2.5 秒，以全像投影效果彈出 */
-  function ringIn() { root.classList.remove("pre"); if (reduce || root.classList.contains("mini")) return; root.classList.add("ringin"); setTimeout(function () { root.classList.remove("ringin"); }, 1600); }
-  if (document.readyState === "complete") setTimeout(ringIn, 2500); else addEventListener("load", function () { setTimeout(ringIn, 2500); });
-  /* 不定時震動：每隔 4～10 秒隨機震一下；通話視窗打開、拖曳中、分頁在背景時不震 */
-  (function buzzLoop() {
-    setTimeout(function () {
-      if (!reduce && !document.hidden && !root.classList.contains("pre") && !root.classList.contains("ringin") && !root.classList.contains("open") && !root.classList.contains("dragging") && !root.classList.contains("connecting")) {
-        root.classList.remove("buzz"); void root.offsetWidth; root.classList.add("buzz");
-        setTimeout(function () { root.classList.remove("buzz"); }, 750);
-      }
-      buzzLoop();
-    }, 4000 + Math.random() * 6000);
-  })();
   call.addEventListener("click", function (e) { if (e.target.closest(".mtc-min")) return; answer(); });
   call.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); answer(); } });
   $("mtc-min").addEventListener("click", function (e) { e.stopPropagation(); root.classList.add("mini"); });
@@ -3620,49 +3821,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   $("mtc-end").addEventListener("click", end);
   $("mtc-hide").addEventListener("click", hide);
   $("mtc-top-min").addEventListener("click", hide);
-  /* 語音提問：瀏覽器內建語音辨識（Chrome／Edge／Safari），辨識結果當成文字問題送出；
-     用語音問的問題，北極熊也用語音回答（speechSynthesis） */
-  var SR = window.SpeechRecognition || window.webkitSpeechRecognition, rec = null, listening = false, voiceReply = false;
-  var mic = $("mtc-mic");
-  function stopListen() { listening = false; mic.classList.remove("listening"); mic.setAttribute("aria-pressed", "false"); input.classList.remove("listening"); input.placeholder = t("ph"); }
-  function speak(text) {
-    if (!voiceReply || !window.speechSynthesis) return;
-    try {
-      speechSynthesis.cancel();
-      var u = new SpeechSynthesisUtterance(text.replace(/[•①②③④⑤🐻🙌👋→]/g, " "));
-      u.lang = en() ? "en-US" : "zh-TW"; u.rate = en() ? 1 : 1.05; u.pitch = .9;
-      var vs = speechSynthesis.getVoices().filter(function (v) { return v.lang.replace("_", "-").indexOf(u.lang) === 0; });
-      if (vs.length) u.voice = vs[0];
-      u.onstart = function () { root.classList.add("speaking"); }; u.onend = u.onerror = function () { root.classList.remove("speaking"); };
-      speechSynthesis.speak(u);
-    } catch (e) {}
-  }
-  function shutUp() { try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (e) {} root.classList.remove("speaking"); if (rec && listening) { try { rec.abort(); } catch (e) {} stopListen(); } }
-  mic.addEventListener("click", function () {
-    if (!SR) { add("bot", t("noMic")); return; }
-    if (listening) { try { rec.stop(); } catch (e) {} return; }
-    if (busy) return;
-    try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (e) {}
-    rec = new SR(); rec.lang = en() ? "en-US" : "zh-TW"; rec.interimResults = true; rec.maxAlternatives = 1; rec.continuous = false;
-    var finalText = "";
-    rec.onstart = function () { listening = true; mic.classList.add("listening"); mic.setAttribute("aria-pressed", "true"); input.classList.add("listening"); input.value = ""; input.placeholder = t("listening"); };
-    rec.onresult = function (ev) {
-      var interim = ""; finalText = "";
-      for (var i = 0; i < ev.results.length; i++) { if (ev.results[i].isFinal) finalText += ev.results[i][0].transcript; else interim += ev.results[i][0].transcript; }
-      input.value = finalText || interim;
-    };
-    rec.onerror = function (ev) { stopListen(); if (ev.error === "not-allowed" || ev.error === "service-not-allowed") add("bot", t("denied")); else if (ev.error === "no-speech") add("bot", t("noSpeech")); };
-    rec.onend = function () {
-      var said = (finalText || input.value).trim(); stopListen(); input.value = "";
-      if (said) { voiceReply = true; reply(match(said), said); }
-    };
-    try { rec.start(); } catch (e) { stopListen(); }
-  });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && root.classList.contains("open")) hide(); });
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); var v = input.value.trim(); if (!v || busy) return; input.value = "";
-    reply(match(v), v);
-  });
   new MutationObserver(renderStatic).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
   renderStatic();
 })();
