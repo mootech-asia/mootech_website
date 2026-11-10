@@ -1501,7 +1501,9 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   .ve-hero .ve-copy2 { align-self: start; margin-top: calc(56.25vw - 75vw + 52px); }
   .ve-copy2 .ve-h1 { font-size: clamp(28px, 8vw, 36px); }
 }
-.ve-dots { grid-area: 2 / 1; display: flex; gap: 8px; margin-top: 34px; }
+.ve-dots { grid-area: 2 / 1; display: flex; align-items: center; gap: 8px; margin-top: 34px; }
+.ve-dots .ve-vbtn { position: static; inset: auto; transform: none; flex: 0 0 auto; width: 28px; height: 28px; margin-left: 6px; padding: 0; background: rgba(13,17,25,.55); border-color: rgba(232,237,245,.22); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.ve-dots .ve-vbtn svg { width: 10px; height: 10px; }
 .ve-dots button { appearance: none; border: 0; background: none; padding: 10px 0; cursor: pointer; }
 .ve-dots i { display: block; width: 46px; height: 3px; border-radius: 2px; background: rgba(232,237,245,.22); overflow: hidden; position: relative; }
 .ve-dots i::after { content: ""; position: absolute; inset: 0; background: var(--d-g1); transform-origin: left; transform: scaleX(0); }
@@ -3206,7 +3208,8 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
     dots.forEach(function (d, k) { d.addEventListener("click", function () { go(k, true); }); });
     btn.type = "button"; btn.className = "ve-vbtn";
     btn.addEventListener("click", function () { userPaused = !userPaused; if (userPaused) { var v = act(); if (v) v.pause(); clearTimeout(timer); } else { tryPlay(); arm(); } label(); });
-    hero.appendChild(btn); label();
+    /* 暫停鈕併入輪播進度列，成為同一組控制，不再浮在畫面上與其他元素打架 */
+    (hero.querySelector(".ve-dots") || hero).appendChild(btn); label();
     if (document.readyState === "complete") setTimeout(start, 300); else window.addEventListener("load", function () { setTimeout(start, 300); });
     ["pointerdown", "touchstart", "scroll", "keydown", "click"].forEach(function (ev) { window.addEventListener(ev, function () { var v = act(); if (v && v.paused) tryPlay(); }, { passive: true }); });
     setInterval(function () { var v = act(); if (v && v.paused && !userPaused && !hero.closest(".v[hidden]")) tryPlay(); }, 1000);
