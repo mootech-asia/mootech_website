@@ -1280,7 +1280,17 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
 .ve-hero::after { transition: opacity .9s ease; }
 .ve-hero[data-slide="2"] .ve-corners { opacity: 0; transition: opacity .6s; }
 @media (min-width: 901px) { .ve-copy2 > :not(.ve-actions) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } }
-.ve-copy2 .ve-btn { background: var(--d-g1); color: #00131c; box-shadow: 0 8px 28px rgba(41,182,232,.35); }
+/* 招聘按鈕：與影片中 NOW HIRING 同色的橘色，外圈脈衝光環＋週期性掃光，吸引點擊 */
+.ve-copy2 .ve-btn { position: relative; isolation: isolate; padding: 14px 26px; font-weight: 700; color: #1d0b00;
+  background: linear-gradient(110deg, #ff7a1a 0%, #ff7a1a 40%, #ffd2a8 50%, #ff7a1a 60%, #ff7a1a 100%) 0 0 / 300% 100%;
+  box-shadow: 0 8px 28px rgba(255,122,26,.45); animation: veHireShine 2.8s ease-in-out infinite; }
+.ve-copy2 .ve-btn::before { content: ""; position: absolute; inset: -2px; z-index: -1; border-radius: 8px; border: 2px solid #ff9a4a; pointer-events: none;
+  animation: veHirePulse 1.6s cubic-bezier(.2,.7,.3,1) infinite; }
+.ve-copy2 .ve-btn:hover { background: #ff8f3d; color: #1d0b00; animation: none; }
+@keyframes veHireShine { 0%, 45% { background-position: 100% 0; } 75%, 100% { background-position: 0 0; } }
+@keyframes veHirePulse { 0% { transform: scale(1); opacity: .9; } 100% { transform: scale(1.35, 1.7); opacity: 0; } }
+.ve-hero.off .ve-copy2 .ve-btn, .ve-hero.off .ve-copy2 .ve-btn::before, .ve-hero[data-slide="1"] .ve-copy2 .ve-btn, .ve-hero[data-slide="1"] .ve-copy2 .ve-btn::before { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .ve-copy2 .ve-btn, .ve-copy2 .ve-btn::before { animation: none; } .ve-copy2 .ve-btn::before { opacity: 0; } }
 .ve-copy2 .ve-link { color: #fff; }
 @media (min-width: 901px) {
   .ve-hero .ve-copy2 { position: absolute; left: var(--gutter-l); bottom: 7%; }
