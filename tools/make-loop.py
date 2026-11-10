@@ -4,7 +4,7 @@
 輸出長度 = 原長度 - FADE；最後一格與第一格相同，循環播放時不會跳格。
 
 用法：python3 tools/make-loop.py 原始影片.mp4 [--fade 1.0] [--width 1920] [--name e-hero] [--vf 額外濾鏡]
-輸出：assets/video/<name>.mp4、<name>.webm、<name>-poster.jpg、<name>-poster-{960,1440,1920}.webp
+輸出：assets/video/<name>.mp4、<name>.webm、<name>-poster-{960,1440}.webp（原片寬 1920 以上時另有 -1920）
 --vf 會在縮放前套用，例如用 delogo 遮掉生成錯的小字：--vf "delogo=x=1182:y=48:w=62:h=18"
 """
 import argparse, json, os, subprocess, sys
@@ -60,10 +60,15 @@ def main():
          "-row-mt", "1", "-deadline", "good", "-cpu-used", "2",
          os.path.join(OUT, a.name + ".webm")])
     # 第一格當靜態底圖（與影片完全對齊）
-    run(["ffmpeg", "-y", "-i", loop, "-frames:v", "1", "-q:v", "3", os.path.join(OUT, a.name + "-poster.jpg")])
+    # 1920 只在原片夠寬時才產生（放大沒有意義）；JPG 只是中間檔，網站用 WebP
+    jpg = os.path.join(OUT, "_poster.jpg")
+    run(["ffmpeg", "-y", "-i", loop, "-frames:v", "1", "-q:v", "3", jpg])
     for w in (960, 1440, 1920):
-        run(["ffmpeg", "-y", "-i", os.path.join(OUT, a.name + "-poster.jpg"), "-vf", f"scale={w}:-2:flags=lanczos",
+        if w == 1920 and width < 1920:
+            continue
+        run(["ffmpeg", "-y", "-i", jpg, "-vf", f"scale={w}:-2:flags=lanczos",
              "-c:v", "libwebp", "-quality", "78", os.path.join(OUT, f"{a.name}-poster-{w}.webp")])
+    os.remove(jpg)
     os.remove(loop)
     for name in sorted(os.listdir(OUT)):
         if name.startswith(a.name + ".") or name.startswith(a.name + "-poster"):
