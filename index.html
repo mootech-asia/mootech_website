@@ -1016,10 +1016,12 @@ canvas.fill { contain: strict; }
 .ve .serif { font-family: var(--e-display); font-weight: 900; background: linear-gradient(90deg, var(--d-g1), var(--d-g2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .ve-head { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 50; border-bottom: 1px solid transparent; transition: background .3s, border-color .3s; }
 /* 捲離首屏後：微透毛玻璃（半透明底＋背景模糊加飽和＋頂部高光與細邊框） */
-.ve:has(.ve-hero.off) .ve-head { background: linear-gradient(180deg, rgba(30,38,54,.55), rgba(12,16,24,.48)); border-bottom-color: rgba(160,190,230,.14);
+.ve:has(.ve-hero.off) .ve-head, .ve.scrolled .ve-head { background: linear-gradient(180deg, rgba(30,38,54,.55), rgba(12,16,24,.48)); border-bottom-color: rgba(160,190,230,.14);
   -webkit-backdrop-filter: blur(18px) saturate(1.6); backdrop-filter: blur(18px) saturate(1.6);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 8px 24px rgba(0,0,0,.28); }
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .ve:has(.ve-hero.off) .ve-head { background: rgba(7,9,14,.94); } }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .ve:has(.ve-hero.off) .ve-head, .ve.scrolled .ve-head { background: rgba(7,9,14,.94); } }
+/* 手機：一開始往下捲就加毛玻璃，底色更不透明，避免導覽列和下方文字疊在一起看不清 */
+@media (max-width: 900px) { .ve:has(.ve-hero.off) .ve-head, .ve.scrolled .ve-head { background: linear-gradient(180deg, rgba(16,21,31,.9), rgba(9,12,19,.86)); } }
 .ve-head .wrap { display: flex; align-items: center; gap: 28px; height: 76px; max-width: 1280px; }
 .ve .brand img { height: 30px; }
 .ve-nav { display: flex; gap: 26px; margin-left: auto; font: 500 14px/1 var(--e-sans); }
@@ -1039,6 +1041,8 @@ canvas.fill { contain: strict; }
 .ve-hero video, .ve-hero .ve-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .ve-hero video { z-index: -1 !important; opacity: 0; transition: opacity .8s; }
 .ve-hero video.on { opacity: 1; }
+/* 影片開始播放後就隱藏墊底圖：超寬螢幕的左右淡出邊緣不會透出底圖造成重影 */
+.ve-hero .ve-poster.vgone { visibility: hidden; }
 .ve-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, rgba(7,9,14,.92) 0%, rgba(7,9,14,.55) 45%, rgba(7,9,14,0) 75%), linear-gradient(180deg, rgba(7,9,14,.5), transparent 25%, transparent 75%, var(--e-bg)); }
 .ve-hero .wrap { width: 100%; max-width: 1280px; padding-block: 120px 96px; }
 .ve-copy { max-width: 600px; display: grid; gap: 22px; }
@@ -3192,7 +3196,10 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
     if (!vids[1]) hero.classList.remove("v2ok"); else hero.classList.add("v2ok");
     hero.style.setProperty("--ve-dur", dur() / 1000 + "s");
     var btn = document.createElement("button");
-    function load(v) { if (!v || v._loaded) return; v._loaded = true; v.querySelectorAll("source[data-src]").forEach(function (so) { so.src = so.getAttribute("data-src"); }); v.preload = "auto"; v.load(); v.addEventListener("playing", function () { v.classList.add("on"); }); }
+    (function () { var ve = hero.closest(".ve"), on = null, tk = false; if (!ve) return;
+      function upd() { tk = false; var v = (window.scrollY || 0) > 8; if (v !== on) { on = v; ve.classList.toggle("scrolled", v); } }
+      addEventListener("scroll", function () { if (!tk) { tk = true; requestAnimationFrame(upd); } }, { passive: true }); upd(); })();
+    function load(v) { if (!v || v._loaded) return; v._loaded = true; v.querySelectorAll("source[data-src]").forEach(function (so) { so.src = so.getAttribute("data-src"); }); v.preload = "auto"; v.load(); v.addEventListener("playing", function () { v.classList.add("on"); var ps = v.parentNode.querySelector(".ve-poster." + (v.classList.contains("s2") ? "s2" : "s1")); if (ps) ps.classList.add("vgone"); }); }
     function act() { return vids[cur]; }
     function tryPlay() { var v = act(); if (userPaused || !started || !v) return; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
     function label() { var p = userPaused; btn.setAttribute("aria-label", p ? "播放背景影片" : "暫停背景影片"); btn.innerHTML = p ? '<svg viewBox="0 0 16 16"><path d="M5 3l8 5-8 5z"/></svg>' : '<svg viewBox="0 0 16 16"><path d="M4 3h3v10H4zM9 3h3v10H9z"/></svg>'; hero.classList.toggle("paused", p); }
