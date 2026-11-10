@@ -3,8 +3,9 @@
 做法：把影片最後 FADE 秒和開頭 FADE 秒交叉淡化，結尾會自然融回開頭（不用倒播，攻擊方向不會反過來）。
 輸出長度 = 原長度 - FADE；最後一格與第一格相同，循環播放時不會跳格。
 
-用法：python3 tools/make-loop.py 原始影片.mp4 [--fade 1.0] [--width 1920]
-輸出：assets/video/e-hero.mp4、e-hero.webm、e-hero-poster.jpg、e-hero-poster-{960,1440,1920}.webp
+用法：python3 tools/make-loop.py 原始影片.mp4 [--fade 1.0] [--width 1920] [--name e-hero] [--vf 額外濾鏡]
+輸出：assets/video/<name>.mp4、<name>.webm、<name>-poster.jpg、<name>-poster-{960,1440,1920}.webp
+--vf 會在縮放前套用，例如用 delogo 遮掉生成錯的小字：--vf "delogo=x=1182:y=48:w=62:h=18"
 """
 import argparse, json, os, subprocess, sys
 
@@ -33,6 +34,8 @@ def main():
     ap.add_argument("src")
     ap.add_argument("--fade", type=float, default=1.0, help="交叉淡化秒數")
     ap.add_argument("--width", type=int, default=1920)
+    ap.add_argument("--name", default="e-hero")
+    ap.add_argument("--vf", default="")
     a = ap.parse_args()
     dur, fps, src_w = probe(a.src)
     fps = round(fps) or 24          # 用實際平均幀率，避免標示 60fps 的檔案被複製出重複格
@@ -43,7 +46,8 @@ def main():
     loop = os.path.join(OUT, "_loop.mov")
     # main = [fade, end]；head = [0, fade]；main 的最後 fade 秒與 head 交叉淡化
     f = a.fade
-    graph = (f"[0:v]fps={fps},scale={width}:-2:flags=lanczos,setsar=1,split[a][b];"
+    pre = (a.vf + ",") if a.vf else ""
+    graph = (f"[0:v]{pre}fps={fps},scale={width}:-2:flags=lanczos,setsar=1,split[a][b];"
              f"[a]trim=start={f},setpts=PTS-STARTPTS[main];"
              f"[b]trim=0:{f},setpts=PTS-STARTPTS[head];"
              f"[main][head]xfade=transition=fade:duration={f}:offset={dur - 2 * f:.3f},format=yuv420p[v]")
@@ -51,20 +55,20 @@ def main():
          "-c:v", "libx264", "-crf", "12", "-preset", "medium", loop])
     run(["ffmpeg", "-y", "-i", loop, "-an", "-c:v", "libx264", "-preset", "slow", "-crf", "28",
          "-maxrate", "1.1M", "-bufsize", "2.2M", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
-         os.path.join(OUT, "e-hero.mp4")])
+         os.path.join(OUT, a.name + ".mp4")])
     run(["ffmpeg", "-y", "-i", loop, "-an", "-c:v", "libvpx-vp9", "-b:v", "0.85M", "-crf", "38",
          "-row-mt", "1", "-deadline", "good", "-cpu-used", "2",
-         os.path.join(OUT, "e-hero.webm")])
+         os.path.join(OUT, a.name + ".webm")])
     # 第一格當靜態底圖（與影片完全對齊）
-    run(["ffmpeg", "-y", "-i", loop, "-frames:v", "1", "-q:v", "3", os.path.join(OUT, "e-hero-poster.jpg")])
+    run(["ffmpeg", "-y", "-i", loop, "-frames:v", "1", "-q:v", "3", os.path.join(OUT, a.name + "-poster.jpg")])
     for w in (960, 1440, 1920):
-        run(["ffmpeg", "-y", "-i", os.path.join(OUT, "e-hero-poster.jpg"), "-vf", f"scale={w}:-2:flags=lanczos",
-             "-c:v", "libwebp", "-quality", "78", os.path.join(OUT, f"e-hero-poster-{w}.webp")])
+        run(["ffmpeg", "-y", "-i", os.path.join(OUT, a.name + "-poster.jpg"), "-vf", f"scale={w}:-2:flags=lanczos",
+             "-c:v", "libwebp", "-quality", "78", os.path.join(OUT, f"{a.name}-poster-{w}.webp")])
     os.remove(loop)
     for name in sorted(os.listdir(OUT)):
-        if name.startswith("e-hero"):
+        if name.startswith(a.name + ".") or name.startswith(a.name + "-poster"):
             print(f"{name:28s} {os.path.getsize(os.path.join(OUT, name)) // 1024:6d} KB")
-    print(f"完成：{width}px、{fps}fps，循環長度 {dur - f:.1f} 秒。把 index.html 的 ve-hero 設定 data-video=\"assets/video/e-hero\" 即可啟用。")
+    print(f"完成：{width}px、{fps}fps，循環長度 {dur - f:.1f} 秒。")
 
 
 if __name__ == "__main__":
