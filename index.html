@@ -241,7 +241,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .mtc-note { padding: 0 14px 9px; font-size: 10.5px; color: var(--c-mut); text-align: center; background: var(--c-bg); }
 @media (max-width: 720px) {
   /* 手機右下角已有版型切換鈕，客服放在它上方 */
-  .mtc { right: calc(12px + env(safe-area-inset-right, 0px)); bottom: calc(66px + env(safe-area-inset-bottom, 0px)); }
+  .mtc { right: calc(12px + env(safe-area-inset-right, 0px)); bottom: calc(82px + env(safe-area-inset-bottom, 0px)); }
   .mtc-call { width: 84px; height: 112px; border-radius: 16px; }
   .mtc-call::before { border-radius: 19px; }
   .mtc-top { left: 7px; top: 6px; } .mtc-top b { font-size: 10.5px; } .mtc-top span { font-size: 9px; } .mtc-top span em { display: none; }
@@ -315,17 +315,22 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .switcher .sw-tip strong { display: block; font-size: 13.5px; margin-bottom: 2px; }
 .switcher:hover .sw-tip, .switcher:focus-within .sw-tip { opacity: 1; }
 @media (max-width: 720px) {
-  .switcher { top: auto; transform: none; right: calc(12px + env(safe-area-inset-right, 0px)); bottom: calc(12px + env(safe-area-inset-bottom, 0px)); flex-direction: column-reverse; align-items: stretch; padding: 4px; gap: 4px; border-radius: 14px; }
-  .switcher .sw-label { display: none; }
-  .switcher button { width: 48px; }
-  .switcher [data-set] { display: none; }
-  .switcher.open [data-set] { display: grid; }
-  .switcher .sw-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 2px; height: 40px; background: #ffffff; color: #0f1724; border-radius: 10px; }
-  .switcher .sw-toggle b, .switcher .sw-cur { font: 800 17px/1 var(--latin-a); }
-  .switcher .sw-toggle svg { width: 12px; height: 12px; transition: transform .2s; }
-  .switcher.open .sw-toggle svg { transform: rotate(180deg); }
-  .v > footer { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
-  .switcher .sw-tip { display: none; }
+  /* 手機：貼右緣的抽屜。收合時只露出把手，點開後版型橫向滑出 */
+  .switcher { top: auto; right: 0; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); flex-direction: row; align-items: center; gap: 4px;
+    padding: 4px calc(6px + env(safe-area-inset-right, 0px)) 4px 4px; border-radius: 14px 0 0 14px;
+    transform: translateX(calc(100% - 40px)); transition: transform .32s cubic-bezier(.2,.8,.2,1); }
+  .switcher.open { transform: none; }
+  /* 客服對話視窗打開時，抽屜暫時隱藏，兩個介面絕不重疊 */
+  body:has(.mtc.open) .switcher { opacity: 0; visibility: hidden; pointer-events: none; }
+  .switcher .sw-label, .switcher .sw-tip { display: none; }
+  .switcher [data-set] { width: 44px; padding: 7px 0 6px; transition: background .2s, color .2s, visibility 0s .32s; visibility: hidden; }
+  .switcher.open [data-set] { visibility: visible; transition: background .2s, color .2s; }
+  .switcher button b { font-size: 16px; } .switcher button span { font-size: 10px; }
+  .switcher .sw-toggle { display: grid; justify-items: center; align-content: center; gap: 3px; width: 32px; height: 46px; padding: 0; border-radius: 10px; background: rgba(255,255,255,.08); color: #e6edf6; }
+  .switcher .sw-cur { font: 800 14px/1 var(--latin-a); }
+  .switcher .sw-toggle svg { width: 12px; height: 12px; transform: rotate(90deg); transition: transform .3s; }
+  .switcher.open .sw-toggle svg { transform: rotate(-90deg); }
+  .v > footer { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* ===================================================== */
@@ -2943,6 +2948,8 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   var shown = false;
   var sw = document.querySelector(".switcher"), swBtn = sw.querySelector(".sw-toggle");
   swBtn.addEventListener("click", function () { var o = sw.classList.toggle("open"); swBtn.setAttribute("aria-expanded", String(o)); });
+  /* 點抽屜以外的地方自動收合 */
+  document.addEventListener("pointerdown", function (e) { if (sw.classList.contains("open") && !sw.contains(e.target)) { sw.classList.remove("open"); swBtn.setAttribute("aria-expanded", "false"); } }, { passive: true });
   document.querySelectorAll(".switcher [data-set]").forEach(function (b) {
     b.addEventListener("click", function () { show(b.getAttribute("data-set")); sw.classList.remove("open"); swBtn.setAttribute("aria-expanded", "false"); });
   });
