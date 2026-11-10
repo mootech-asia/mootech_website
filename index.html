@@ -268,6 +268,8 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .mtc-mini .mtc-err { color: #ff8a80; font-size: 12px; min-height: 0; }
 .mtc-mini button[type="submit"] { justify-self: start; border: 0; border-radius: 999px; padding: 9px 18px; background: var(--c-hot); color: #1d0b00; font-weight: 700; font-size: 13.5px; cursor: pointer; }
 .mtc-mini.sent { opacity: .55; pointer-events: none; }
+.mtc-sticker { align-self: flex-start; width: 132px; height: auto; animation: mtcPop .5s cubic-bezier(.2,1.4,.4,1) both; filter: drop-shadow(0 8px 18px rgba(41,182,232,.35)); }
+@keyframes mtcPop { from { opacity: 0; transform: scale(.6) translateY(10px); } }
 .mtc-links { display: flex; flex-wrap: wrap; gap: 7px; animation: mtcIn .3s ease both; }
 .mtc-links a, .mtc-links button { border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 600; text-decoration: none; color: var(--c-ink); background: rgba(255,255,255,.06); cursor: pointer; }
 .mtc-links .hot { background: var(--c-hot); border-color: var(--c-hot); color: #1d0b00; }
@@ -3582,7 +3584,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
           L("電子郵件：", "Email: ") + v.email, L("電話：", "Phone: ") + (v.phone || "-"), L("相關經驗：", "Experience: ") + v.exp, "",
           L("履歷已附在這封信中，謝謝！", "My CV is attached. Thank you!")].join("\n");
         say(L("謝謝你，" + v.name + "！🙌 請按下方按鈕開啟郵件，內容我已幫你填好，記得附上履歷（PDF）再寄到人資信箱 " + HR_EMAIL + "。", "Thanks, " + v.name + "! 🙌 Tap below to open the email I've drafted, attach your CV (PDF) and send it to our HR inbox at " + HR_EMAIL + "."), function () {
-          links([{ hot: 1, label: L("📧 開啟郵件並附上履歷", "📧 Open email and attach CV"), href: mail(HR_EMAIL, subj, body) }, { label: L("複製人資信箱", "Copy HR email"), copy: HR_EMAIL }]);
+          sticker(); links([{ hot: 1, label: L("📧 開啟郵件並附上履歷", "📧 Open email and attach CV"), href: mail(HR_EMAIL, subj, body) }, { label: L("複製人資信箱", "Copy HR email"), copy: HR_EMAIL }]);
         });
       });
     });
@@ -3621,7 +3623,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
           L("服務類型：", "Service: ") + svc, L("地區：", "Region: ") + state.region, L("公司：", "Company: ") + (v.company || "-"),
           L("聯絡人：", "Name: ") + v.name, L("電子郵件：", "Email: ") + v.email, L("電話：", "Phone: ") + (v.phone || "-"), "", L("需求說明：", "Details: ") + (v.note || "-")].join("\n");
         say(L("收到，" + v.name + "！我已把您的需求整理好，按下方按鈕寄出，業務會盡快回覆您。", "Thanks, " + v.name + "! I've summarised your request. Send it below and our team will reply soon."), function () {
-          links([{ hot: 1, label: L("📧 寄出需求信", "📧 Send request email"), href: mail(SALES_EMAIL, subj, body) }, { label: L("改填網站聯絡表單", "Use the contact form"), fill: { name: v.name, email: v.email, need: state.svc.need, msg: L("公司：", "Company: ") + (v.company || "-") + "\n" + L("地區：", "Region: ") + state.region + "\n" + (v.note || "") } }]);
+          sticker(); links([{ hot: 1, label: L("📧 寄出需求信", "📧 Send request email"), href: mail(SALES_EMAIL, subj, body) }, { label: L("改填網站聯絡表單", "Use the contact form"), fill: { name: v.name, email: v.email, need: state.svc.need, msg: L("公司：", "Company: ") + (v.company || "-") + "\n" + L("地區：", "Region: ") + state.region + "\n" + (v.note || "") } }]);
         });
       });
     });
@@ -3656,7 +3658,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
       ], L("送出留言", "Send message"), function (v) {
         var body = [L("姓名：", "Name: ") + v.name, L("電子郵件：", "Email: ") + v.email, "", v.note].join("\n");
         say(L("謝謝您的留言！按下方按鈕寄出，我們會盡快回覆。", "Thanks! Send it below and we'll reply soon."), function () {
-          links([{ hot: 1, label: L("📧 寄出留言", "📧 Send message"), href: mail(SALES_EMAIL, L("【網站留言】", "[Website message] ") + v.name, body) }]);
+          sticker(); links([{ hot: 1, label: L("📧 寄出留言", "📧 Send message"), href: mail(SALES_EMAIL, L("【網站留言】", "[Website message] ") + v.name, body) }]);
         });
       });
     });
@@ -3687,6 +3689,8 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
     log.appendChild(f); scroll();
     var first = f.querySelector("input,select,textarea"); if (first && matchMedia("(min-width: 721px)").matches) first.focus({ preventScroll: true });
   }
+  /* 送出資料後的感謝貼圖 */
+  function sticker() { var im = new Image(); im.className = "mtc-sticker"; im.src = "assets/chat/bear-thanks.webp"; im.alt = ""; im.width = 132; im.decoding = "async"; log.appendChild(im); im.onload = scroll; }
   function links(items) {
     var box = document.createElement("div"); box.className = "mtc-links";
     items.forEach(function (x) {
