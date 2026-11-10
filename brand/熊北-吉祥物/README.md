@@ -53,7 +53,7 @@
 | 客服對話貼圖 | `assets/chat/sticker-wave／wink／handshake／think／heart.webp` | S08 揮手、S09 眨眼比讚、S11 握手、S10 思考、S12 比愛心 | 開場揮手；求職送出比讚；需求送出握手；「還不確定」思考；道謝與留言比愛心 |
 | E 版「四層防線」標題右側 | `assets/mascot/bear-shield.webp` | S03 守護盾牌 | 下緣淡出 |
 | E 版「服務」左側選單下方 | `assets/mascot/bear-tablet.webp` | P05 平板比讚 | 全身 |
-| E 版「聯絡我們」聯絡資訊下方 | `assets/mascot/bear-call.webp` | S07 接聽揮手 | 下緣淡出 |
+| E 版「聯絡我們」聯絡資訊下方 | `assets/mascot/bear-heart.webp` | E8 愛心感謝（抱著發光愛心） | 下緣淡出 |
 | 網址分享預覽 | `assets/og.jpg` | C5 分享預覽 | 1200×630 |
 
 三處版面點綴只在桌機（寬 1100px 以上）顯示。品牌資料夾與壓縮檔 `brand/熊北-吉祥物.zip` 只放在 GitHub，不會發布到網站。
