@@ -13,7 +13,7 @@
 - 切換方式：右側按鈕、鍵盤 `1`～`5`，或網址 `#design-a` ～ `#design-e`
 - 照片：只剩 A、B、C 首屏主視覺使用，原始檔在 `assets/photos-src/`，網站使用 `assets/photos/` 的 WebP；不再使用的原檔歸檔在 `archive/`
 - 右下角客服「MOO 小熊」：五個版型共用，選擇題式對話（求職者／需求方／其他），可語音回答，最後整理成郵件寄出
-- 吉祥物熊北：所有素材、設定與生成提示詞在 `brand/熊北-吉祥物/`（另有壓縮檔），不發布到網站
+- 吉祥物熊北：所有素材、設定與生成提示詞在 `brand/moo-bear/`（另有壓縮檔 `brand/moo-bear.zip`），不發布到網站
 - 中英切換：中文版 `/`、英文版 `/en/`（部署時由 `tools/build-en.py` 自動產生），翻譯字典在 `index.html` 的 `EN` 物件
 - 響應式：桌機、平板、手機皆支援，手機版有漢堡選單
 - 首頁動態視覺（走廊、節點網路、直播波形、地圖）為程式繪製
@@ -24,7 +24,7 @@
 
 部署於 GitHub Pages：https://mootech-asia.github.io/mootech_website/
 
-推送到 `main` 或 `claude/inspiring-hypatia-rpjq0j` 後，GitHub Actions（`.github/workflows/deploy-pages.yml`）會自動部署。部署時只上傳網站用到的檔案（約 10 MB）：`brand/熊北-吉祥物/`、`archive/`、`assets/photos-src/`、`tools/` 不發布。
+推送到 `main` 或 `claude/inspiring-hypatia-rpjq0j` 後，GitHub Actions（`.github/workflows/deploy-pages.yml`）會自動部署。部署時只上傳網站用到的檔案（約 10 MB）：`brand/moo-bear/`、`brand/moo-bear.zip`、`archive/`、`assets/photos-src/`、`tools/` 不發布。
 
 ## 效能
 
