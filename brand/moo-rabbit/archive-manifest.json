@@ -1,0 +1,27 @@
+{
+  "source_repo": "mootech-asia/cms_system",
+  "source_commit": "219d4e8",
+  "status": "character-settings-submitted-for-review",
+  "files": [
+    {
+      "path": "01_character/turnaround-sheet.png",
+      "sha256": "c7bf0029d9900b49552d38e509a8e700b1107c0b3a5ad0fe6caa4ce3c894ba4c"
+    },
+    {
+      "path": "01_character/views/01-front.png",
+      "sha256": "65eaf364ed161a764e23a9667181631123fbe3c3103903563e47a0078cea9368"
+    },
+    {
+      "path": "01_character/views/02-three-quarter.png",
+      "sha256": "643ec8c3032e9899c3b8198025a9bf5c3ad7ed965b9292bfaa26012667dcd861"
+    },
+    {
+      "path": "01_character/views/03-side.png",
+      "sha256": "3f22a2151fb7691084fdd0a2fbafe42ca85803aaba3038f80b7fc3311b6699b2"
+    },
+    {
+      "path": "01_character/views/04-back.png",
+      "sha256": "3c1608c1bc7f0fbda69c6fa0362842a9728532f281ccb6f94db7b249f4424393"
+    }
+  ]
+}
