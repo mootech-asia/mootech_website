@@ -1,17 +1,20 @@
 # Moo Rabbit（兔比）｜CMS 事業部吉祥物
 
-目前 19／36 項素材已歸檔，待人工審核；15 秒影片不列製作範圍。
+[最新性格與表演方向](01_character/personality.md)：智慧型官方客服，聰明、機靈、帶點狡黠幽默；既有素材保留。
+
+目前 36／36 項素材已歸檔，待人工審核；15 秒影片不列製作範圍。
 
 | 分類 | 內容 | 已歸檔 |
 |---|---|---|
 | [01_character](01_character/) | 設定圖與四視圖 | 5 張／段 |
-| [02_poses](02_poses/) | 全身姿勢 | 0 張／段 |
+| [02_poses](02_poses/) | 全身姿勢 | 10 張／段 |
 | [03_stickers](03_stickers/) | 半身貼圖 | 11 張／段 |
-| [04_key-visual](04_key-visual/) | 事業部主視覺 | 0 張／段 |
-| [05_support](05_support/) | 客服形象 | 1 張／段 |
-| [06_social](06_social/) | 社群分享 | 0 張／段 |
+| [04_key-visual](04_key-visual/) | 事業部主視覺 | 1 張／段 |
+| [05_support](05_support/) | 客服形象 | 3 張／段 |
+| [06_social](06_social/) | 社群分享 | 3 張／段 |
 | [main-image.png](main-image.png) | 代表素材 | 已歸檔 |
 | [profile.jpg](profile.jpg) | 代表素材 | 已歸檔 |
+| [video-call.gif](video-call.gif) | 代表素材 | 已歸檔 |
 
 [下載素材 ZIP](../moo-rabbit.zip) · [活動動態索引](07_motion/README.md)
 

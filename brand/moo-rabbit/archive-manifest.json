@@ -28,6 +28,56 @@
       "source_commit": "219d4e8"
     },
     {
+      "path": "02_poses/p01-intro.png",
+      "sha256": "964b7ff58f239d7fdaf61ecbe76616bd1f31cd2140b0833666480f70050859b2",
+      "source_commit": "a77c1a3"
+    },
+    {
+      "path": "02_poses/p02-templates.png",
+      "sha256": "987fa7877ffb72a9ad9ad199f95f9ca62204126fa52f09937c610e4f6d011ecd",
+      "source_commit": "a77c1a3"
+    },
+    {
+      "path": "02_poses/p03-globe-languages.png",
+      "sha256": "2cf1f25772c9d60f9565c195c4dbf0155b50366d2d9b257d792a0f1ab2a387a8",
+      "source_commit": "a77c1a3"
+    },
+    {
+      "path": "02_poses/p04-tablet-thumbsup.png",
+      "sha256": "176fb10e3e52cbe46e40850173708dca22668708c5d21f432e3fca89bdc42ec8",
+      "source_commit": "a77c1a3"
+    },
+    {
+      "path": "02_poses/p05-call-wave.png",
+      "sha256": "3995bf1b2fd9f2cbd878e159135fc50ec6e2f5e2d135f3f20582bf1beae04860",
+      "source_commit": "a77c1a3"
+    },
+    {
+      "path": "02_poses/p06-wave.png",
+      "sha256": "27385889b2c3ba80f90aa96c047463b0cdc2241bec291f9b69dda938366125fa",
+      "source_commit": "a77c1a3"
+    },
+    {
+      "path": "02_poses/p07-thinking.png",
+      "sha256": "aa10b87bdc80999926a925d58291bde983f12dbdee8b9a942bb2bb48a58e5305",
+      "source_commit": "a77c1a3"
+    },
+    {
+      "path": "02_poses/p08-wink-thumbsup.png",
+      "sha256": "91e1c7f15bd1736a9a054d4c779116dc5bee763747d409cda072458b4c534817",
+      "source_commit": "a77c1a3"
+    },
+    {
+      "path": "02_poses/p09-handshake.png",
+      "sha256": "d939fa092dc821b978f602c3639d0eb4324bb6ac10547c1399fd0ced3951dcc9",
+      "source_commit": "a77c1a3"
+    },
+    {
+      "path": "02_poses/p10-heart-hands.png",
+      "sha256": "0d2696114e31bc26b09cc7a55020cda1d978d8ccbaa0ba4e781db30fbb078d0b",
+      "source_commit": "a77c1a3"
+    },
+    {
       "path": "03_stickers/s01-intro.png",
       "sha256": "4dccfd374cef1eab9ecad858e2cc20f3d1cb414d1340a79c17f205a275414a32",
       "source_commit": "d2890a9"
@@ -83,9 +133,39 @@
       "source_commit": "d2890a9"
     },
     {
+      "path": "04_key-visual/k01-key-visual.jpg",
+      "sha256": "2576b9dd37f26bb284bbb56e49d0aea4572a9dedad5fc64d4fa9688d2412d029",
+      "source_commit": "7a0faf0"
+    },
+    {
       "path": "05_support/c01-avatar-round.png",
       "sha256": "5a1979dd3b76d0c20b1c04206465b9a8f0d64c2891566b1f5b83d0ca287041fc",
       "source_commit": "d2890a9"
+    },
+    {
+      "path": "05_support/c02-support-portrait.png",
+      "sha256": "7de6c344a5b26b7f3e88e2274ccb0c435203528c49078b5d73e6bfa109b43adc",
+      "source_commit": "7a0faf0"
+    },
+    {
+      "path": "05_support/c03-video-call-vertical.png",
+      "sha256": "e15ebd70475a696064ed17c4ee81852c4fe7f7ff9f1a332cee9be4b2b6ca05b0",
+      "source_commit": "7a0faf0"
+    },
+    {
+      "path": "06_social/m01-banner-long.png",
+      "sha256": "cd5b087428f10471bae0f72a452d9171680fbfd89f4ccbfb457a74011a43cde4",
+      "source_commit": "7a0faf0"
+    },
+    {
+      "path": "06_social/m02-banner-copyspace.png",
+      "sha256": "82b1f26639a1248ede680036c89ca3f69e522d4f0c67742473b9656b52698c0d",
+      "source_commit": "7a0faf0"
+    },
+    {
+      "path": "06_social/m03-share-preview.jpg",
+      "sha256": "276f97dd9f56da326f84f5d6e182bbbedb4706cfe6aeadee3b3b02e58d28ff0f",
+      "source_commit": "7a0faf0"
     },
     {
       "path": "main-image.png",
@@ -96,6 +176,11 @@
       "path": "profile.jpg",
       "sha256": "52d0ecaf627529b121ecd34bc91009bea95d2c6551634dcb6891ccb1567a6e2f",
       "source_commit": "d2890a9"
+    },
+    {
+      "path": "video-call.gif",
+      "sha256": "9bc874d45ea8e096080b6e7b4613da133b83983b0dc8bf79a00b6b5e84daa7b1",
+      "source_commit": "7a0faf0"
     }
   ]
 }
