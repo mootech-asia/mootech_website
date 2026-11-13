@@ -1,18 +1,18 @@
 # Moo Rabbit（兔比）｜CMS 事業部吉祥物
 
-與 `moo-bear` 並列的品牌素材分類。**目前為第一階段設定與主要形象素材，待審；不是完整品牌包。**
+目前 19／36 項素材已歸檔，待人工審核；15 秒影片不列製作範圍。
 
-| 分類 | 內容 | 狀態 |
+| 分類 | 內容 | 已歸檔 |
 |---|---|---|
-| [01_character](01_character/README.md) | 設定圖、高清透明四視圖 | 5 張已歸檔，待審 |
-| [main-image.png](main-image.png) | 主要形象，1024×1536 透明 PNG | 已歸檔，待審 |
-| 02_poses | 全身姿勢 | 尚未製作 |
-| 03_stickers | 半身貼圖 | 尚未製作 |
-| 04_key-visual | 事業部主視覺 | 尚未製作；15 秒影片不做 |
-| 05_support | 客服形象 | 尚未製作 |
-| 06_social | 社群分享 | 尚未製作 |
-| [07_motion](07_motion/README.md) | 活動動態 | 索引至活動專案 |
+| [01_character](01_character/) | 設定圖與四視圖 | 5 張／段 |
+| [02_poses](02_poses/) | 全身姿勢 | 0 張／段 |
+| [03_stickers](03_stickers/) | 半身貼圖 | 11 張／段 |
+| [04_key-visual](04_key-visual/) | 事業部主視覺 | 0 張／段 |
+| [05_support](05_support/) | 客服形象 | 1 張／段 |
+| [06_social](06_social/) | 社群分享 | 0 張／段 |
+| [main-image.png](main-image.png) | 代表素材 | 已歸檔 |
+| [profile.jpg](profile.jpg) | 代表素材 | 已歸檔 |
 
-[下載目前素材 ZIP](../moo-rabbit.zip)。ZIP 內容與本資料夾一致，不含未完成素材。
+[下載素材 ZIP](../moo-rabbit.zip) · [活動動態索引](07_motion/README.md)
 
-來源：[cms_system 角色設定](https://github.com/mootech-asia/cms_system/tree/219d4e8/brand/moo-rabbit/01_character)，來源 commit `219d4e8`。製作與驗收表仍在 [cms_system 品牌專案](https://github.com/mootech-asia/cms_system/tree/main/brand/moo-rabbit)。歸檔不代表人工審核通過。原檔雜湊見 `archive-manifest.json`。
+製作與驗收以 [cms_system 交付表](https://github.com/mootech-asia/cms_system/blob/main/brand/moo-rabbit/DELIVERY_CHECKLIST.md) 為準。原始生成檔、尺寸處理與檢查紀錄保留於該專案的 `source/`；這裡提供分類後交付檔。

@@ -1,32 +1,101 @@
 {
   "source_repo": "mootech-asia/cms_system",
-  "source_commit": "219d4e8",
-  "status": "character-settings-submitted-for-review",
+  "status": "submitted-for-review",
   "files": [
     {
       "path": "01_character/turnaround-sheet.png",
-      "sha256": "c7bf0029d9900b49552d38e509a8e700b1107c0b3a5ad0fe6caa4ce3c894ba4c"
+      "sha256": "c7bf0029d9900b49552d38e509a8e700b1107c0b3a5ad0fe6caa4ce3c894ba4c",
+      "source_commit": "219d4e8"
     },
     {
       "path": "01_character/views/01-front.png",
-      "sha256": "65eaf364ed161a764e23a9667181631123fbe3c3103903563e47a0078cea9368"
+      "sha256": "65eaf364ed161a764e23a9667181631123fbe3c3103903563e47a0078cea9368",
+      "source_commit": "219d4e8"
     },
     {
       "path": "01_character/views/02-three-quarter.png",
-      "sha256": "643ec8c3032e9899c3b8198025a9bf5c3ad7ed965b9292bfaa26012667dcd861"
+      "sha256": "643ec8c3032e9899c3b8198025a9bf5c3ad7ed965b9292bfaa26012667dcd861",
+      "source_commit": "219d4e8"
     },
     {
       "path": "01_character/views/03-side.png",
-      "sha256": "3f22a2151fb7691084fdd0a2fbafe42ca85803aaba3038f80b7fc3311b6699b2"
+      "sha256": "3f22a2151fb7691084fdd0a2fbafe42ca85803aaba3038f80b7fc3311b6699b2",
+      "source_commit": "219d4e8"
     },
     {
       "path": "01_character/views/04-back.png",
-      "sha256": "3c1608c1bc7f0fbda69c6fa0362842a9728532f281ccb6f94db7b249f4424393"
+      "sha256": "3c1608c1bc7f0fbda69c6fa0362842a9728532f281ccb6f94db7b249f4424393",
+      "source_commit": "219d4e8"
+    },
+    {
+      "path": "03_stickers/s01-intro.png",
+      "sha256": "4dccfd374cef1eab9ecad858e2cc20f3d1cb414d1340a79c17f205a275414a32",
+      "source_commit": "d2890a9"
+    },
+    {
+      "path": "03_stickers/s02-templates.png",
+      "sha256": "6e49b0039102a7cd7c05db9446819959b85117c5f27dc6f3941cea5c8c3ceae1",
+      "source_commit": "d2890a9"
+    },
+    {
+      "path": "03_stickers/s03-globe-languages.png",
+      "sha256": "7f8b25abd81b77078bd8b06535d91cd852ec78f1a0a4e8fb4c16ada15ad46ac7",
+      "source_commit": "d2890a9"
+    },
+    {
+      "path": "03_stickers/s04-tablet-thumbsup.png",
+      "sha256": "20b18d6cc31e74a61beef0fb30f41f11ad0f7695e560c408e02b031058b095a6",
+      "source_commit": "d2890a9"
+    },
+    {
+      "path": "03_stickers/s05-call-wave.png",
+      "sha256": "db3aa210c3c16666cdf64e38c452f9197d7289f63778b9d3eb410c49f6b1c3a1",
+      "source_commit": "d2890a9"
+    },
+    {
+      "path": "03_stickers/s06-wave.png",
+      "sha256": "9de16205b7e64732cdb100f68535fd390fc29c2e733ec2053ee86cd1b41a2efd",
+      "source_commit": "d2890a9"
+    },
+    {
+      "path": "03_stickers/s07-wink-thumbsup.png",
+      "sha256": "1d1da1c12bee16d8714e8aa84a33a69d26751a49112842c76572cfc2b7e83aad",
+      "source_commit": "d2890a9"
+    },
+    {
+      "path": "03_stickers/s08-thinking.png",
+      "sha256": "70b8c11cfcce84773449cda4cf84dbde255ab692999998d2b62d943e45681593",
+      "source_commit": "d2890a9"
+    },
+    {
+      "path": "03_stickers/s09-handshake.png",
+      "sha256": "d6c0e9d90dbe5a29de1674c4f574916e3903c3e2d3c6fdb84b2c1e2f0519a43a",
+      "source_commit": "d2890a9"
+    },
+    {
+      "path": "03_stickers/s10-heart-hands.png",
+      "sha256": "8a4f0ccfee939803764c0cfe91c79ca15890e713f5bd0651e247d99395d952a7",
+      "source_commit": "d2890a9"
+    },
+    {
+      "path": "03_stickers/s11-hug-palette.png",
+      "sha256": "f46a8ffabc5f0a0aceb103c054ce48a4467d53a4e3202ac496e8269e813f27ef",
+      "source_commit": "d2890a9"
+    },
+    {
+      "path": "05_support/c01-avatar-round.png",
+      "sha256": "5a1979dd3b76d0c20b1c04206465b9a8f0d64c2891566b1f5b83d0ca287041fc",
+      "source_commit": "d2890a9"
     },
     {
       "path": "main-image.png",
       "sha256": "e6101720cfa884f7ad42cb22b47369d47332d597ae2c4ffdbd2b4cb5619399b0",
       "source_commit": "7431d9f"
+    },
+    {
+      "path": "profile.jpg",
+      "sha256": "52d0ecaf627529b121ecd34bc91009bea95d2c6551634dcb6891ccb1567a6e2f",
+      "source_commit": "d2890a9"
     }
   ]
 }

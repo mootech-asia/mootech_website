@@ -1,3 +1,5 @@
 # 客服形象
 
-尚未製作，後續完成後歸檔於此。
+- [c01-avatar-round.png](c01-avatar-round.png)
+
+已歸檔素材仍待人工審核。
