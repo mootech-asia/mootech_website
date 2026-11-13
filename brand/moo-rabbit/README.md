@@ -19,3 +19,5 @@
 [下載素材 ZIP](../moo-rabbit.zip) · [活動動態索引](07_motion/README.md)
 
 製作與驗收以 [cms_system 交付表](https://github.com/mootech-asia/cms_system/blob/main/brand/moo-rabbit/DELIVERY_CHECKLIST.md) 為準。原始生成檔、尺寸處理與檢查紀錄保留於該專案的 `source/`；這裡提供分類後交付檔。
+
+- [生成提示詞：角色鎖定、設定圖、四段動態與各類素材](GENERATION_PROMPTS.md)
