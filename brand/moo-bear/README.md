@@ -52,3 +52,7 @@
 | 網址分享預覽 | `assets/og.jpg` | C3 分享預覽 | 1200×630 |
 
 三處版面點綴只在桌機（寬 1100px 以上）顯示。品牌資料夾與壓縮檔 `brand/moo-bear.zip` 只放在 GitHub，不會發布到網站。
+
+## 高清四視圖
+
+[正面、四分之三側面、側面、背面](01_character/views/)已更新為原生 1024×1536 透明 PNG。[下載四視圖 ZIP](../moo-bear-views-hd.zip)。

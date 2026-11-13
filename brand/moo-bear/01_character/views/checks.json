@@ -1,0 +1,110 @@
+[
+  {
+    "file": "01-front.png",
+    "previous_size": [
+      295,
+      415
+    ],
+    "native_size": [
+      1024,
+      1536
+    ],
+    "delivery_size": [
+      1024,
+      1536
+    ],
+    "alpha_range": [
+      0,
+      254
+    ],
+    "silhouette_bbox_alpha128": [
+      17,
+      38,
+      1008,
+      1493
+    ],
+    "sha256": "d8f1a775c44b3bd9c54ac50a34111e105862a486a9fb0979d13b92e32a93b187",
+    "upscaled": false
+  },
+  {
+    "file": "02-three-quarter.png",
+    "previous_size": [
+      275,
+      417
+    ],
+    "native_size": [
+      1024,
+      1536
+    ],
+    "delivery_size": [
+      1024,
+      1536
+    ],
+    "alpha_range": [
+      0,
+      254
+    ],
+    "silhouette_bbox_alpha128": [
+      35,
+      44,
+      977,
+      1503
+    ],
+    "sha256": "b9d9273eb570b53cc8a0c120d57bf1791f4ad5585d64d6b87e95524b8ff87978",
+    "upscaled": false
+  },
+  {
+    "file": "03-side.png",
+    "previous_size": [
+      198,
+      424
+    ],
+    "native_size": [
+      1024,
+      1536
+    ],
+    "delivery_size": [
+      1024,
+      1536
+    ],
+    "alpha_range": [
+      0,
+      254
+    ],
+    "silhouette_bbox_alpha128": [
+      155,
+      20,
+      869,
+      1509
+    ],
+    "sha256": "d01375fd96e2183c7b7764189d100410f8a920fa1c9b4db0ad6b6bc9b0ca2dd0",
+    "upscaled": false
+  },
+  {
+    "file": "04-back.png",
+    "previous_size": [
+      298,
+      420
+    ],
+    "native_size": [
+      1024,
+      1536
+    ],
+    "delivery_size": [
+      1024,
+      1536
+    ],
+    "alpha_range": [
+      0,
+      254
+    ],
+    "silhouette_bbox_alpha128": [
+      12,
+      35,
+      1012,
+      1501
+    ],
+    "sha256": "1c5d0ad986093f61a9b66a77387e497b1c2b4d4fe329536b6ef9a0d4a256ca4d",
+    "upscaled": false
+  }
+]
