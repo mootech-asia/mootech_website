@@ -22,6 +22,11 @@
     {
       "path": "01_character/views/04-back.png",
       "sha256": "3c1608c1bc7f0fbda69c6fa0362842a9728532f281ccb6f94db7b249f4424393"
+    },
+    {
+      "path": "main-image.png",
+      "sha256": "e6101720cfa884f7ad42cb22b47369d47332d597ae2c4ffdbd2b4cb5619399b0",
+      "source_commit": "7431d9f"
     }
   ]
 }
