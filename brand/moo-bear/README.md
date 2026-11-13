@@ -55,4 +55,4 @@
 
 ## 高清四視圖
 
-[正面、四分之三側面、側面、背面](01_character/views/)已更新為原生 1024×1536 透明 PNG。[下載四視圖 ZIP](../moo-bear-views-hd.zip)。
+[正面、四分之三側面、側面、背面](01_character/views/)已更新為原生 1024×1536 透明 PNG。[下載完整素材 ZIP](../moo-bear.zip)。
