@@ -9,7 +9,7 @@
 
 | 資料夾 | 內容 | 用途 |
 |---|---|---|
-| `01_character/` | 角色設定 `character.md`、生成提示詞 `prompts.md`、角色設定總表 `character-sheet.webp`；`views/` 正面、四分之三側面、側面、背面 | 生圖、設計、外包時的唯一依據 |
+| `01_character/` | 角色設定 `character.md`、生成提示詞 `prompts.md`、角色設定總表 `character-sheet.png`／`character-sheet.webp`；`views/` 正面、四分之三側面、側面、背面 | 生圖、設計、外包時的唯一依據 |
 | `02_poses/` | P01 介紹、P02 守護盾牌、P03 捧地球、P04 平板比讚、P05 接聽揮手、P06 揮手打招呼、P07 思考、P08 眨眼比讚、P09 握手、P10 比愛心（透明背景） | 網站版面點綴、簡報、海報、活動物料 |
 | `03_stickers/` | S01～S10 同上十種姿勢的半身版，S11 抱著發光愛心（透明背景） | 客服對話、社群貼文、即時通訊貼圖 |
 | `04_key-visual/` | 最新版招聘影片（裸眼 3D 破窗，15 秒循環）與「指向觀眾」截圖，只保留最新版 | 官網首屏、招聘活動、社群影片 |
@@ -24,10 +24,10 @@
 | 項目 | 設定 |
 |---|---|
 | 名稱 | 熊北（英文 Mootech Bear） |
-| 風格 | 科技 × 親和 × 專業 |
+| 風格 | Chibi-realistic 3D |
 | 比例 | Q 版偏寫實，高大圓潤（身高約 200 cm，比一般人高一個頭） |
-| 性格 | 穩重、自信、友善、專注 |
-| 用途 | 品牌吉祥物／網站 UI／動態影片／3D |
+| 性格 | 靈巧、細心、有活力、友善（Nimble / Attentive / Energetic / Friendly） |
+| 用途 | Digital mascot |
 
 詳細設定見 [`01_character/character.md`](01_character/character.md)，所有生成提示詞見 [`01_character/prompts.md`](01_character/prompts.md)。
 

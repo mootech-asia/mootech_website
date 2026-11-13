@@ -4,7 +4,7 @@
 
 ## 共同設定（每張都先貼這段）
 ```
-以參考圖的北極熊「熊北」為準，角色造型必須完全一致：高大圓潤可愛的北極熊，蓬鬆細緻的白色毛髮，戴橘到洋紅到紫藍漸層的科技感太陽眼鏡（鏡片上有 HUD 圖形），頭戴有青藍與橘色發光圓環的耳機，左側有細長麥克風臂；穿深海軍藍色一格一格鼓起的泡泡背心，左胸有 MOOTECH 標誌，內搭深灰色連帽衣。高擬真 3D 角色渲染、C4D 質感、柔和攝影棚光。不要國旗、其他標誌或任何多餘文字。
+以參考圖的北極熊「熊北」為準，角色造型必須完全一致：高大圓潤可愛的北極熊，蓬鬆細緻的白色毛髮，戴橘到洋紅到紫藍漸層的科技感太陽眼鏡（鏡片上有 HUD 圖形），頭戴有青藍與橘色發光圓環的耳機，左側有細長麥克風臂；穿深海軍藍色一格一格鼓起的泡泡背心，左胸使用官方藍綠至黃綠漸層「不可能 M」圖形＋白色 MOOTECH 字標（參考官方原檔，不採用舊圖的變形標誌），內搭深灰色連帽衣。高擬真 3D 角色渲染、C4D 質感、柔和攝影棚光。不要國旗、其他標誌或任何多餘文字。
 ```
 
 ## 三視圖
@@ -47,3 +47,15 @@
 - 8.5～11 秒熊掌突出畫框直指觀眾；11～13.5 秒勾手做兩次「來吧！」，可愛又自信的笑容
 - 13.5～15 秒碎片倒轉飛回、裂痕癒合，回到第一格
 - 環繞面板有開有關：舊面板收合成光線消失、新面板從光點展開，隨時約 5～7 個，每個面板有各自的動態（折線、儀表、拓撲、地圖光弧、長條、雷達、清單打勾、進度條），呈現忙碌但從容
+
+## Character setting sheet
+
+1536×1024，深藍背景。版面與 Moo Rabbit 設定圖一致：Character Profile、Color Palette、五視圖、六表情、六細節與 Scale。全部標註使用英文。
+
+Profile: Name: Mootech Bear / Style: Chibi-realistic 3D / Proportion: 1:3 / Personality: Nimble / Attentive / Energetic / Friendly / Usage: Digital mascot.
+
+Views: FRONT / 3/4 VIEW / SIDE / BACK / 3/4 REAR.
+Expressions: SMILE / LAUGH / FOCUSED / LISTENING / THINKING / THUMBS UP.
+Details: HUD GLASSES / HEADPHONES / EMBROIDERED LOGO / ZIPPER / FUR TEXTURE / PAW PAD.
+
+保留熊北的小圓耳、黑鼻、深色熊掌肉墊與 200 cm 身高；兔比 150 cm（耳朵另計）及成人 175 cm 作比例對照。頁首、胸前與標誌特寫均依官方 logo；背面無標誌。
