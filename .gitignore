@@ -1,3 +1,7 @@
 en/
 downloads/
 mootech-assets.zip
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db

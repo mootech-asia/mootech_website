@@ -4,12 +4,12 @@
 輸出長度 = 原長度 - FADE；最後一格與第一格相同，循環播放時不會跳格。
 
 用法：python3 tools/make-loop.py 原始影片.mp4 [--fade 1.0] [--width 1920] [--name e-hero] [--vf 額外濾鏡]
-輸出：assets/video/<name>.mp4、<name>.webm、<name>-poster-{960,1440}.webp（原片寬 1920 以上時另有 -1920）
+輸出：依 ASSET_MANIFEST.json 登錄的影片與 poster 槽位寫入前綴編號檔案；未登錄新槽位時拒絕輸出。
 --vf 會在縮放前套用，例如用 delogo 遮掉生成錯的小字：--vf "delogo=x=1182:y=48:w=62:h=18"
 """
-import argparse, json, os, subprocess, sys
+import argparse, json, os, subprocess, sys, tempfile
+from asset_paths import registered_path
 
-OUT = "assets/video"
 
 
 def run(cmd):
@@ -40,10 +40,14 @@ def main():
     dur, fps, src_w = probe(a.src)
     fps = round(fps) or 24          # 用實際平均幀率，避免標示 60fps 的檔案被複製出重複格
     width = min(a.width, src_w)     # 不放大，放大只會變糊又變大
+    targets=["assets/video/"+a.name+ext for ext in (".mp4", ".webm")]
+    targets += [f"assets/video/{a.name}-poster-{w}.webp" for w in (960,1440,1920) if w != 1920 or width >= 1920]
+    for target in targets:
+        registered_path(target)
     if dur < a.fade * 3:
         sys.exit(f"影片太短（{dur:.1f} 秒），至少要 {a.fade * 3:.1f} 秒")
-    os.makedirs(OUT, exist_ok=True)
-    loop = os.path.join(OUT, "_loop.mov")
+    work = tempfile.TemporaryDirectory()
+    loop = os.path.join(work.name, "_loop.mov")
     # main = [fade, end]；head = [0, fade]；main 的最後 fade 秒與 head 交叉淡化
     f = a.fade
     pre = (a.vf + ",") if a.vf else ""
@@ -55,24 +59,22 @@ def main():
          "-c:v", "libx264", "-crf", "12", "-preset", "medium", loop])
     run(["ffmpeg", "-y", "-i", loop, "-an", "-c:v", "libx264", "-preset", "slow", "-crf", "28",
          "-maxrate", "1.1M", "-bufsize", "2.2M", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
-         os.path.join(OUT, a.name + ".mp4")])
+         str(registered_path("assets/video/" + a.name + ".mp4"))])
     run(["ffmpeg", "-y", "-i", loop, "-an", "-c:v", "libvpx-vp9", "-b:v", "0.85M", "-crf", "38",
          "-row-mt", "1", "-deadline", "good", "-cpu-used", "2",
-         os.path.join(OUT, a.name + ".webm")])
+         str(registered_path("assets/video/" + a.name + ".webm"))])
     # 第一格當靜態底圖（與影片完全對齊）
     # 1920 只在原片夠寬時才產生（放大沒有意義）；JPG 只是中間檔，網站用 WebP
-    jpg = os.path.join(OUT, "_poster.jpg")
+    jpg = os.path.join(work.name, "_poster.jpg")
     run(["ffmpeg", "-y", "-i", loop, "-frames:v", "1", "-q:v", "3", jpg])
     for w in (960, 1440, 1920):
         if w == 1920 and width < 1920:
             continue
         run(["ffmpeg", "-y", "-i", jpg, "-vf", f"scale={w}:-2:flags=lanczos",
-             "-c:v", "libwebp", "-quality", "78", os.path.join(OUT, f"{a.name}-poster-{w}.webp")])
+             "-c:v", "libwebp", "-quality", "78", str(registered_path(f"assets/video/{a.name}-poster-{w}.webp"))])
     os.remove(jpg)
     os.remove(loop)
-    for name in sorted(os.listdir(OUT)):
-        if name.startswith(a.name + ".") or name.startswith(a.name + "-poster"):
-            print(f"{name:28s} {os.path.getsize(os.path.join(OUT, name)) // 1024:6d} KB")
+    work.cleanup()
     print(f"完成：{width}px、{fps}fps，循環長度 {dur - f:.1f} 秒。")
 
 

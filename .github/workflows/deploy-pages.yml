@@ -34,7 +34,7 @@ jobs:
         run: |
           mkdir _site
           tar --exclude='./.git' --exclude='./.github' --exclude='./_site' --exclude='./tools' \
-            --exclude='./assets/photos-src' --exclude='./archive' --exclude='./brand/moo-bear' --exclude='./brand/moo-bear.zip' -cf - . | tar -xf - -C _site
+            --exclude='./source' --exclude='./brand' --exclude='./docs' --exclude='./ASSET_MANIFEST.json' -cf - . | tar -xf - -C _site
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

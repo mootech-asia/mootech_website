@@ -44,15 +44,15 @@
 | 網站位置 | 網站檔案 | 來源 | 呈現方式 |
 |---|---|---|---|
 | 首屏第 2 張（招聘） | `assets/video/e-hero-2.*` | 04 招聘影片 | 滿版影片 |
-| 右下角客服 | `assets/chat/bear-cam.webp`、`bear-avatar.webp` | 05 視訊畫面、圓形頭像 | 視訊畫面、圓形頭像 |
+| 右下角客服 | `assets/images/mootech_website_IMG008_chat_bear-cam.webp`、`bear-avatar.webp` | 05 視訊畫面、圓形頭像 | 視訊畫面、圓形頭像 |
 | 客服對話貼圖 | `assets/chat/sticker-wave／wink／handshake／think／heart.webp` | S06 揮手、S07 眨眼比讚、S09 握手、S08 思考、S10 比愛心 | 開場揮手；求職送出比讚；需求送出握手；「還不確定」思考；道謝與留言比愛心 |
-| E 版「四層防線」標題右側 | `assets/mascot/bear-shield.webp` | S02 守護盾牌 | 下緣淡出 |
-| E 版「服務」左側選單下方 | `assets/mascot/bear-tablet.webp` | P04 平板比讚 | 全身 |
-| E 版「聯絡我們」聯絡資訊下方 | `assets/mascot/bear-heart.webp` | S11 抱愛心 | 下緣淡出 |
+| E 版「四層防線」標題右側 | `assets/images/mootech_website_IMG015_mascot_bear-shield.webp` | S02 守護盾牌 | 下緣淡出 |
+| E 版「服務」左側選單下方 | `assets/images/mootech_website_IMG016_mascot_bear-tablet.webp` | P04 平板比讚 | 全身 |
+| E 版「聯絡我們」聯絡資訊下方 | `assets/images/mootech_website_IMG014_mascot_bear-heart.webp` | S11 抱愛心 | 下緣淡出 |
 | 網址分享預覽 | `assets/og.jpg` | C3 分享預覽 | 1200×630 |
 
-三處版面點綴只在桌機（寬 1100px 以上）顯示。品牌資料夾與壓縮檔 `brand/moo-bear.zip` 只放在 GitHub，不會發布到網站。
+三處版面點綴只在桌機（寬 1100px 以上）顯示。品牌原稿包只放在 GitHub，不會發布到網站；重複 ZIP 已移除。
 
 ## 高清四視圖
 
-[正面、四分之三側面、側面、背面](01_character/views/)已更新為原生 1024×1536 透明 PNG。[下載完整素材 ZIP](../moo-bear.zip)。
+[正面、四分之三側面、側面、背面](01_character/views/)已更新為原生 1024×1536 透明 PNG。完整素材直接使用本資料夾。
