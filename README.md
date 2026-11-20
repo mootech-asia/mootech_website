@@ -66,3 +66,7 @@ GitHub Pages 的快取時間固定為 10 分鐘，若要更長需另外接 CDN�
 - 檢查：`python3 tools/assets.py check`；更新清單：`python3 tools/assets.py catalog`。
 - 新功能製作清單：`python3 tools/assets.py brief --name 功能英文名稱`，有既有玩法範本時優先沿用範本。
 網站正式圖片位於 assets/images/，影片位於 assets/videos/；現行照片和首屏影片原稿位於 source/images/、source/videos/。品牌原稿包保留 brand/ 的跨 repo 引用路徑，重複 ZIP 已移除。網站發布包不含 source、brand 或製作工具。換照片／影片時工具依 ASSET_MANIFEST.json 查出對應編號檔名，交付後核對規格並更新指紋。
+
+## 協作與交接
+
+Codex／Claude 接手請先讀 [CLAUDE.md](CLAUDE.md)、[AGENTS.md](AGENTS.md) 與 [HANDOFF.md](HANDOFF.md)。每次工作完成後更新交接紀錄、驗證範圍、發布狀態及待辦，避免依賴個別對話記憶。
