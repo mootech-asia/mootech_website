@@ -1591,11 +1591,12 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   .ve-process li { padding: 18px 12px 0 0; } .ve-process p { display: none; } .ve-process h3 { font-size: 16px; }
   .ve-contact { gap: 24px; } .ve-info { display: none; }
 }
-/* 104 人力銀行徵才徽章（五個版型共用，顏色隨各區塊文字色自動套用） */
-.m104 { display: inline-flex; align-items: center; text-decoration: none; border: 0 !important; color: inherit; vertical-align: middle; transition: opacity .2s ease, transform .2s ease; }
-.m104 svg { display: block; width: 44px; height: 24px; }
-.m104:hover { opacity: .74; transform: translateY(-1px); }
-.m104:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 7px; }
+/* 104 人力銀行徵才徽章（五個版型共用；白底 logo chip，於深／淺主題皆清晰） */
+.m104 { display: inline-flex; align-items: center; text-decoration: none; border: 0 !important; vertical-align: middle; transition: opacity .2s ease, transform .2s ease; }
+.m104 svg { display: block; width: 48px; height: 24px; filter: drop-shadow(0 1px 2px rgba(0,0,0,.18)); }
+.m104:hover { transform: translateY(-1px); }
+.m104:hover svg { filter: drop-shadow(0 2px 5px rgba(0,0,0,.28)); }
+.m104:focus-visible { outline: 2px solid #FF7800; outline-offset: 3px; border-radius: 7px; }
 </style>
 </head>
 <body data-v="a">
@@ -1612,7 +1613,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   <symbol id="i-menu" viewBox="0 0 32 32"><path d="M5 9h22M5 16h22M5 23h22"/></symbol>
   <symbol id="i-fb" viewBox="0 0 24 24"><path d="M13.5 21v-7.5H16l.5-3h-3V8.6c0-.9.3-1.6 1.6-1.6h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4V10.5H8v3h2.5V21z"/></symbol>
   <symbol id="i-in" viewBox="0 0 24 24"><path d="M4.5 9h3.2v11H4.5zM6.1 3.8a1.9 1.9 0 110 3.8 1.9 1.9 0 010-3.8zM10 9h3.1v1.5h.1c.4-.8 1.5-1.7 3.1-1.7 3.3 0 3.9 2.2 3.9 5V20H17v-5.4c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V20H10z"/></symbol>
-  <symbol id="i-104" viewBox="0 0 44 24"><mask id="m104"><rect width="44" height="24" fill="#fff"/><text x="22" y="17.6" text-anchor="middle" font-family="Arial,'Helvetica Neue',Helvetica,sans-serif" font-size="14.5" font-weight="900" letter-spacing=".5" fill="#000">104</text></mask><rect x="1" y="1" width="42" height="22" rx="7" fill="currentColor" mask="url(#m104)"/></symbol>
+  <symbol id="i-104" viewBox="0 0 48 24"><rect x=".6" y=".6" width="46.8" height="22.8" rx="5.2" fill="#fff" stroke="#E3E3E3" stroke-width="1"/><text x="24" y="17.4" text-anchor="middle" font-family="Arial,'Helvetica Neue',Helvetica,sans-serif" font-size="15" font-weight="800" letter-spacing=".6"><tspan fill="#555555">1</tspan><tspan fill="#FF7800">0</tspan><tspan fill="#555555">4</tspan></text></symbol>
 </svg>
 
 <!-- ======================= 版型 A 企業信賴 ======================= -->
