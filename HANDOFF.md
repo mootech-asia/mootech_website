@@ -134,3 +134,4 @@ python3 tools/build-en.py
 - 正式 IMG119–132 現為 360×360，GIF 各 40 幀／2 秒、每幀 50ms（20 fps）。逐檔驗證相鄰及循環接點有變化，原稿與正式輸出均更新登錄及指紋；素材檢查通過 151 項、英文生成、JS 語法及 diff check 通過。
 - 已目視核對六情境黑底對照，身體輪廓與道具接觸不同、無球形關節；D 版圖片載入、動畫暫停、英文減少動態靜態圖與無吉祥物客服以 Chromium 回歸。HTML 圖片加版本查詢，避免舊 GIF 快取。
 - 回到頂端避開客服修正 `98e36f9` 已部署成功：[run 45363658238](https://github.com/mootech-asia/mootech_website/actions/runs/45363658238)，本輪保留。角色新版本發布結果以下方追記為準。
+- 已發布：runtime `5794e96`；[Pages run 45365740012](https://github.com/mootech-asia/mootech_website/actions/runs/45365740012) 成功。正式 HTML 已使用 `?v=poses2` 新資源查詢，避免瀏覽器沿用先前揮手圖。正式素材逐檔比對指紋與前端回歸結果另由執行紀錄確認。
