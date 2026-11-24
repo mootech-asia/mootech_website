@@ -1,43 +1,46 @@
-<!doctype html><meta charset="utf-8"><style>body{margin:0;background:transparent}canvas{display:block}</style><canvas id="out" width="320" height="320"></canvas><script>
+<!doctype html><meta charset="utf-8"><style>body{margin:0;background:transparent}canvas{display:block}</style><canvas id="out" width="360" height="360"></canvas><script>
 const names=['vision','team','ideas','learning','workspace','coffee','fitness'];
-const out=document.querySelector('canvas'),ctx=out.getContext('2d');
-const surface=document.createElement('canvas');surface.width=surface.height=320;
-const gl=surface.getContext('webgl',{alpha:true,preserveDrawingBuffer:true,premultipliedAlpha:false,antialias:true});
-const vs=`attribute vec2 p; varying vec2 uv;uniform float t;uniform float mode;
-float smoothWeight(float a,float b,float v){return smoothstep(a,b,v);}
-vec2 rotateAt(vec2 v,vec2 pivot,float a){float c=cos(a),s=sin(a);v-=pivot;return pivot+vec2(c*v.x-s*v.y,s*v.x+c*v.y);}
-void main(){uv=p;vec2 v=p;float wave=sin(t*6.2831853);float ease=.5-.5*cos(t*6.2831853);
-// Pin the blank spherical head; separate shoulders and hips give continuous limb motion.
-float head=1.-smoothstep(.45,.54,p.y);
-float right=smoothstep(.60,.72,p.x)*smoothstep(.43,.53,p.y)*(1.-smoothstep(.62,.72,p.y));
-float left=(1.-smoothstep(.30,.39,p.x))*smoothstep(.51,.62,p.y)*(1.-smoothstep(.73,.81,p.y));
-float ar=wave*.16,al=wave*.06;
-if(mode==0.)ar=-.12+wave*.22;
-if(mode==1.){ar=wave*.30;al=-.12+wave*.12;}
-if(mode==2.){ar=.24-ease*.40;al=-.10;}
-if(mode==3.){ar=.65+sin(t*12.566)*.07;al=-.40+sin(t*12.566+1.5)*.06;}
-if(mode==4.){ar=.18+wave*.16;al=wave*.20;}
-if(mode==5.){ar=.60-ease*.42;al=-.08;}
-if(mode==6.){ar=.7-ease*.55;al=-.45+ease*.48;}
-v=mix(v,rotateAt(v,vec2(.64,.53),ar),right);v=mix(v,rotateAt(v,vec2(.34,.57),al),left);
-float leg=smoothstep(.75,.88,p.y);float side=p.x<.46?-1.:1.;float gait=(mode==4.? .12:.018)*wave*side;
-v=mix(v,rotateAt(v,vec2(side<0.?.39:.56,.76),gait),leg);
-v=mix(v,rotateAt(v,vec2(.46,.48),wave*(mode==2.?.035:.012)),head);
-v.y+=sin(t*6.2831853)*.006;vec2 clip=vec2((v.x-.5)*1.65,(.5-v.y)*1.82);gl_Position=vec4(clip,0.,1.);}`;
+const canvas=document.querySelector('canvas'),gl=canvas.getContext('webgl',{alpha:true,preserveDrawingBuffer:true,premultipliedAlpha:false,antialias:true});
+const vs=`attribute vec2 p;varying vec2 uv;uniform float t;uniform float mode;
+vec2 turn(vec2 v,vec2 c,float a){float s=sin(a),co=cos(a);v-=c;return c+vec2(co*v.x-s*v.y,s*v.x+co*v.y);}
+float band(float v,float a,float b,float c,float d){return smoothstep(a,b,v)*(1.-smoothstep(c,d,v));}
+void main(){uv=p;vec2 v=p;float w=sin(t*6.2831853),e=.5-.5*cos(t*6.2831853);
+if(mode==0.){float hand=smoothstep(.57,.74,p.x)*band(p.y,.30,.39,.67,.74);v=mix(v,turn(v,vec2(.63,.53),w*.14),hand);}
+if(mode==1.){
+// Bodies lean in and release around a fixed palm-contact anchor.
+ float side=p.x<.5?-1.:1.;v=turn(v,vec2(.5,.32),side*(1.-e)*.065);v.y+=.006*w*band(p.y,.55,.75,.98,1.);
+}
+if(mode==2.){
+// Lecturer's pointing forearm sweeps toward the board, feet and board stay anchored.
+ float arm=band(p.y,.31,.38,.55,.63)*band(p.x,.33,.45,.68,.73)*smoothstep(1.,1.15,length((p-vec2(.30,.28))/vec2(.23,.23)));v=mix(v,turn(v,vec2(.42,.54),w*.08),arm);
+ float head=band(p.y,.08,.16,.40,.45)*(1.-smoothstep(.50,.60,p.x));v=mix(v,turn(v,vec2(.35,.42),w*.025),head);
+}
+if(mode==3.){
+// Seated left profile: two keyboard-hand regions alternate their keystrokes.
+ float hands=band(p.y,.50,.54,.60,.625)*band(p.x,.27,.34,.64,.70);v.y+=hands*.012*sin(t*25.1327+p.x*18.);
+ float head=band(p.y,.08,.16,.42,.49)*band(p.x,.32,.42,.73,.82);v=mix(v,turn(v,vec2(.57,.46),w*.02),head);
+}
+if(mode==4.){
+// Walking guide: alternating leg swing below the hips; doorway remains stationary.
+ float leg=smoothstep(.63,.75,p.y)*(1.-smoothstep(.60,.70,p.x));float side=p.x<.39?-1.:1.;v=mix(v,turn(v,vec2(.39,.69),side*w*.10),leg);
+ float torso=band(p.y,.30,.40,.64,.73)*(1.-smoothstep(.61,.72,p.x));v.x+=torso*.012*w;
+}
+if(mode==5.){
+// Seated drinker: cup and holding forearm follow the same arc to the blank face.
+ float cupArm=band(p.y,.44,.48,.62,.66)*band(p.x,.27,.32,.58,.63);v=mix(v,turn(v,vec2(.34,.62),-.14*e),cupArm);
+}
+if(mode==6.){
+// Symmetrical dumbbell curls, with both weights inside their corresponding hand regions.
+ float arms=band(p.y,.50,.54,.69,.74);float side=p.x<.5?-1.:1.;float outer=1.-band(p.x,.35,.43,.57,.65);float amount=arms*outer;
+ v=mix(v,turn(v,vec2(side<0.?.32:.68,.60),-side*e*.28),amount);
+}
+gl_Position=vec4((v.x-.5)*2.,(.5-v.y)*2.,0.,1.);}`;
 const fs=`precision mediump float;varying vec2 uv;uniform sampler2D image;void main(){gl_FragColor=texture2D(image,uv);}`;
-function shader(type,src){let s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s;}
-const prog=gl.createProgram();gl.attachShader(prog,shader(gl.VERTEX_SHADER,vs));gl.attachShader(prog,shader(gl.FRAGMENT_SHADER,fs));gl.linkProgram(prog);gl.useProgram(prog);
-let verts=[];const nx=70,ny=90;for(let y=0;y<ny;y++)for(let x=0;x<nx;x++){let a=x/nx,b=y/ny,c=(x+1)/nx,d=(y+1)/ny;verts.push(a,b,c,b,c,d,a,b,c,d,a,d);}
-let buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(verts),gl.STATIC_DRAW);let loc=gl.getAttribLocation(prog,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
-let im=new Image();window.ready=new Promise(resolve=>{im.onload=()=>{let tex=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,tex);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,im);resolve();};});im.src='../source/images/mootech_website_SRCIMG007_gradient-character.png';
-function rounded(x,y,w,h,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill();}
-window.draw=(mode,frame)=>{let t=frame/40,w=Math.sin(t*Math.PI*2),e=(1-Math.cos(t*Math.PI*2))/2;gl.uniform1f(gl.getUniformLocation(prog,'t'),t);gl.uniform1f(gl.getUniformLocation(prog,'mode'),mode);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLES,0,verts.length/2);ctx.clearRect(0,0,320,320);ctx.drawImage(surface,0,0);ctx.strokeStyle='#a9d765';ctx.lineWidth=3;ctx.lineCap='round';
-if(mode==0){ctx.save();ctx.translate(277,52+w*4);ctx.rotate(w*.12);ctx.fillStyle='#acd65e';ctx.beginPath();for(let i=0;i<10;i++){let a=i*Math.PI/5-Math.PI/2,r=i%2?7:16;ctx.lineTo(Math.cos(a)*r,Math.sin(a)*r);}ctx.closePath();ctx.fill();ctx.restore();}
-if(mode==1){ctx.strokeStyle='#25bad3';ctx.beginPath();ctx.arc(270,65,13,0,Math.PI*2);ctx.stroke();ctx.beginPath();ctx.arc(285,65,13,0,Math.PI*2);ctx.stroke();}
-if(mode==2){ctx.globalAlpha=.4+.6*e;ctx.fillStyle='#acd65e';ctx.beginPath();ctx.arc(273,49,13,0,7);ctx.fill();rounded(267,64,12,5,2,'#61c5ae');ctx.globalAlpha=1;}
-if(mode==3){rounded(110,206,126,11,4,'#62c5ae');ctx.save();ctx.translate(164,190);ctx.rotate(-.08);rounded(-44,-39,90,51,5,'#1b8fa4');rounded(-38,-33,78,38,3,'#71d2c5');ctx.restore();for(let i=0;i<3;i++)rounded(151+i*14,183,8,3,1, i==Math.floor(e*3)?'#d5eead':'#35aebc');}
-if(mode==4){ctx.strokeStyle='#5ec5b2';ctx.strokeRect(253,77,42,62);ctx.beginPath();ctx.moveTo(274,77);ctx.lineTo(274,139);ctx.moveTo(253,108);ctx.lineTo(295,108);ctx.stroke();}
-if(mode==5){let y=202-e*22;rounded(221,y,27,28,5,'#d2e9c5');ctx.strokeStyle='#d2e9c5';ctx.beginPath();ctx.arc(248,y+12,8,-Math.PI/2,Math.PI/2);ctx.stroke();}
-if(mode==6){for(const x of [92,252]){let y=201-e*26;rounded(x-15,y-3,30,6,3,'#64c8b0');rounded(x-18,y-10,9,21,4,'#25b9d5');rounded(x+9,y-10,9,21,4,'#abd65e');}}
-};
+function shader(type,source){const s=gl.createShader(type);gl.shaderSource(s,source);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s;}
+const program=gl.createProgram();gl.attachShader(program,shader(gl.VERTEX_SHADER,vs));gl.attachShader(program,shader(gl.FRAGMENT_SHADER,fs));gl.linkProgram(program);gl.useProgram(program);
+let points=[];for(let y=0;y<100;y++)for(let x=0;x<100;x++){let a=x/100,b=y/100,c=(x+1)/100,d=(y+1)/100;points.push(a,b,c,b,c,d,a,b,c,d,a,d);}
+const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(points),gl.STATIC_DRAW);let p=gl.getAttribLocation(program,'p');gl.enableVertexAttribArray(p);gl.vertexAttribPointer(p,2,gl.FLOAT,false,0,0);
+const texture=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,texture);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+let current=-1;
+window.draw=async(mode,frame)=>{if(current!==mode){const image=new Image();await new Promise((resolve,reject)=>{image.onload=resolve;image.onerror=reject;image.src=names[mode]+'.png';});gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,image);current=mode;}gl.uniform1f(gl.getUniformLocation(program,'mode'),mode);gl.uniform1f(gl.getUniformLocation(program,'t'),frame/40);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLES,0,points.length/2);};
 </script>

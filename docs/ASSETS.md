@@ -131,22 +131,28 @@
 | SRCIMG003 | 可編輯素材來源：source/images/mootech_website_SRCIMG003_photos-src_b_hero-datacenter.jpg（source） | [source/images/mootech_website_SRCIMG003_photos-src_b_hero-datacenter.jpg](../source/images/mootech_website_SRCIMG003_photos-src_b_hero-datacenter.jpg) | 1664×936；不透明 | 標準前綴編號 |
 | SRCIMG004 | 可編輯素材來源：source/images/mootech_website_SRCIMG004_photos-src_c_hero-datacenter.jpg（source） | [source/images/mootech_website_SRCIMG004_photos-src_c_hero-datacenter.jpg](../source/images/mootech_website_SRCIMG004_photos-src_c_hero-datacenter.jpg) | 1664×936；不透明 | 標準前綴編號 |
 | SRCIMG005 | E 版黑曜石盾影片原始首幀圖（source） | [source/videos/mootech_website_SRCIMG005_E版首屏_黑曜石盾_首格.jpg](../source/videos/mootech_website_SRCIMG005_E版首屏_黑曜石盾_首格.jpg) | 2000×1125；不透明 | 標準前綴編號 |
-| IMG119 | D 版品牌小綠人／vision（runtime） | [assets/images/mootech_website_IMG119_green-vision.gif](../assets/images/mootech_website_IMG119_green-vision.gif) | 320×320；40 幀；2 秒；透明背景 | 標準前綴編號 |
-| IMG120 | D 版品牌小綠人／vision-still（runtime） | [assets/images/mootech_website_IMG120_green-vision-still.png](../assets/images/mootech_website_IMG120_green-vision-still.png) | 320×320；透明背景 | 標準前綴編號 |
-| IMG121 | D 版品牌小綠人／team（runtime） | [assets/images/mootech_website_IMG121_green-team.gif](../assets/images/mootech_website_IMG121_green-team.gif) | 320×320；40 幀；2 秒；透明背景 | 標準前綴編號 |
-| IMG122 | D 版品牌小綠人／team-still（runtime） | [assets/images/mootech_website_IMG122_green-team-still.png](../assets/images/mootech_website_IMG122_green-team-still.png) | 320×320；透明背景 | 標準前綴編號 |
-| IMG123 | D 版品牌小綠人／ideas（runtime） | [assets/images/mootech_website_IMG123_green-ideas.gif](../assets/images/mootech_website_IMG123_green-ideas.gif) | 320×320；40 幀；2 秒；透明背景 | 標準前綴編號 |
-| IMG124 | D 版品牌小綠人／ideas-still（runtime） | [assets/images/mootech_website_IMG124_green-ideas-still.png](../assets/images/mootech_website_IMG124_green-ideas-still.png) | 320×320；透明背景 | 標準前綴編號 |
-| IMG125 | D 版品牌小綠人／learning（runtime） | [assets/images/mootech_website_IMG125_green-learning.gif](../assets/images/mootech_website_IMG125_green-learning.gif) | 320×320；40 幀；2 秒；透明背景 | 標準前綴編號 |
-| IMG126 | D 版品牌小綠人／learning-still（runtime） | [assets/images/mootech_website_IMG126_green-learning-still.png](../assets/images/mootech_website_IMG126_green-learning-still.png) | 320×320；透明背景 | 標準前綴編號 |
-| IMG127 | D 版品牌小綠人／workspace（runtime） | [assets/images/mootech_website_IMG127_green-workspace.gif](../assets/images/mootech_website_IMG127_green-workspace.gif) | 320×320；40 幀；2 秒；透明背景 | 標準前綴編號 |
-| IMG128 | D 版品牌小綠人／workspace-still（runtime） | [assets/images/mootech_website_IMG128_green-workspace-still.png](../assets/images/mootech_website_IMG128_green-workspace-still.png) | 320×320；透明背景 | 標準前綴編號 |
-| IMG129 | D 版品牌小綠人／coffee（runtime） | [assets/images/mootech_website_IMG129_green-coffee.gif](../assets/images/mootech_website_IMG129_green-coffee.gif) | 320×320；40 幀；2 秒；透明背景 | 標準前綴編號 |
-| IMG130 | D 版品牌小綠人／coffee-still（runtime） | [assets/images/mootech_website_IMG130_green-coffee-still.png](../assets/images/mootech_website_IMG130_green-coffee-still.png) | 320×320；透明背景 | 標準前綴編號 |
-| IMG131 | D 版品牌小綠人／fitness（runtime） | [assets/images/mootech_website_IMG131_green-fitness.gif](../assets/images/mootech_website_IMG131_green-fitness.gif) | 320×320；40 幀；2 秒；透明背景 | 標準前綴編號 |
-| IMG132 | D 版品牌小綠人／fitness-still（runtime） | [assets/images/mootech_website_IMG132_green-fitness-still.png](../assets/images/mootech_website_IMG132_green-fitness-still.png) | 320×320；透明背景 | 標準前綴編號 |
+| IMG119 | D 版品牌小綠人／vision（runtime） | [assets/images/mootech_website_IMG119_green-vision.gif](../assets/images/mootech_website_IMG119_green-vision.gif) | 360×360；40 幀；2 秒；透明背景 | 標準前綴編號 |
+| IMG120 | D 版品牌小綠人／vision-still（runtime） | [assets/images/mootech_website_IMG120_green-vision-still.png](../assets/images/mootech_website_IMG120_green-vision-still.png) | 360×360；透明背景 | 標準前綴編號 |
+| IMG121 | D 版品牌小綠人／team（runtime） | [assets/images/mootech_website_IMG121_green-team.gif](../assets/images/mootech_website_IMG121_green-team.gif) | 360×360；40 幀；2 秒；透明背景 | 標準前綴編號 |
+| IMG122 | D 版品牌小綠人／team-still（runtime） | [assets/images/mootech_website_IMG122_green-team-still.png](../assets/images/mootech_website_IMG122_green-team-still.png) | 360×360；透明背景 | 標準前綴編號 |
+| IMG123 | D 版品牌小綠人／ideas（runtime） | [assets/images/mootech_website_IMG123_green-ideas.gif](../assets/images/mootech_website_IMG123_green-ideas.gif) | 360×360；40 幀；2 秒；透明背景 | 標準前綴編號 |
+| IMG124 | D 版品牌小綠人／ideas-still（runtime） | [assets/images/mootech_website_IMG124_green-ideas-still.png](../assets/images/mootech_website_IMG124_green-ideas-still.png) | 360×360；透明背景 | 標準前綴編號 |
+| IMG125 | D 版品牌小綠人／learning（runtime） | [assets/images/mootech_website_IMG125_green-learning.gif](../assets/images/mootech_website_IMG125_green-learning.gif) | 360×360；40 幀；2 秒；透明背景 | 標準前綴編號 |
+| IMG126 | D 版品牌小綠人／learning-still（runtime） | [assets/images/mootech_website_IMG126_green-learning-still.png](../assets/images/mootech_website_IMG126_green-learning-still.png) | 360×360；透明背景 | 標準前綴編號 |
+| IMG127 | D 版品牌小綠人／workspace（runtime） | [assets/images/mootech_website_IMG127_green-workspace.gif](../assets/images/mootech_website_IMG127_green-workspace.gif) | 360×360；40 幀；2 秒；透明背景 | 標準前綴編號 |
+| IMG128 | D 版品牌小綠人／workspace-still（runtime） | [assets/images/mootech_website_IMG128_green-workspace-still.png](../assets/images/mootech_website_IMG128_green-workspace-still.png) | 360×360；透明背景 | 標準前綴編號 |
+| IMG129 | D 版品牌小綠人／coffee（runtime） | [assets/images/mootech_website_IMG129_green-coffee.gif](../assets/images/mootech_website_IMG129_green-coffee.gif) | 360×360；40 幀；2 秒；透明背景 | 標準前綴編號 |
+| IMG130 | D 版品牌小綠人／coffee-still（runtime） | [assets/images/mootech_website_IMG130_green-coffee-still.png](../assets/images/mootech_website_IMG130_green-coffee-still.png) | 360×360；透明背景 | 標準前綴編號 |
+| IMG131 | D 版品牌小綠人／fitness（runtime） | [assets/images/mootech_website_IMG131_green-fitness.gif](../assets/images/mootech_website_IMG131_green-fitness.gif) | 360×360；40 幀；2 秒；透明背景 | 標準前綴編號 |
+| IMG132 | D 版品牌小綠人／fitness-still（runtime） | [assets/images/mootech_website_IMG132_green-fitness-still.png](../assets/images/mootech_website_IMG132_green-fitness-still.png) | 360×360；透明背景 | 標準前綴編號 |
 | SRCIMG006 | 品牌小綠人七情境動作原稿（4×7 關鍵幀）（source） | [source/images/mootech_website_SRCIMG006_green-motion-sheet.png](../source/images/mootech_website_SRCIMG006_green-motion-sheet.png) | 985×1596；透明背景 | 標準前綴編號 |
 | SRCIMG007 | 使用者選定的無五官青藍／薄荷／黃綠漸層角色，單獨原稿（source） | [source/images/mootech_website_SRCIMG007_gradient-character.png](../source/images/mootech_website_SRCIMG007_gradient-character.png) | 1106×1422；透明背景 | 標準前綴編號 |
+| SRCIMG008 | 固定核准角色、無可見關節之獨立情境原稿：team（source） | [source/images/mootech_website_SRCIMG008_pose-team.png](../source/images/mootech_website_SRCIMG008_pose-team.png) | 1254×1254；保留 alpha | 標準前綴編號 |
+| SRCIMG009 | 固定核准角色、無可見關節之獨立情境原稿：ideas（source） | [source/images/mootech_website_SRCIMG009_pose-ideas.png](../source/images/mootech_website_SRCIMG009_pose-ideas.png) | 1254×1254；保留 alpha | 標準前綴編號 |
+| SRCIMG010 | 固定核准角色、無可見關節之獨立情境原稿：learning（source） | [source/images/mootech_website_SRCIMG010_pose-learning.png](../source/images/mootech_website_SRCIMG010_pose-learning.png) | 1254×1254；保留 alpha | 標準前綴編號 |
+| SRCIMG011 | 固定核准角色、無可見關節之獨立情境原稿：workspace（source） | [source/images/mootech_website_SRCIMG011_pose-workspace.png](../source/images/mootech_website_SRCIMG011_pose-workspace.png) | 1254×1254；保留 alpha | 標準前綴編號 |
+| SRCIMG012 | 固定核准角色、無可見關節之獨立情境原稿：coffee（source） | [source/images/mootech_website_SRCIMG012_pose-coffee.png](../source/images/mootech_website_SRCIMG012_pose-coffee.png) | 1254×1254；保留 alpha | 標準前綴編號 |
+| SRCIMG013 | 固定核准角色、無可見關節之獨立情境原稿：fitness（source） | [source/images/mootech_website_SRCIMG013_pose-fitness.png](../source/images/mootech_website_SRCIMG013_pose-fitness.png) | 1254×1254；保留 alpha | 標準前綴編號 |
 
 ## 背景音樂
 
@@ -199,7 +205,7 @@
 | 程式來源 | 用途 |
 |---|---|
 | [index.html](../index.html) | A～E 版型的 Canvas／CSS 場景、節點、粒子、地圖與客服動態；沒有獨立模型檔 |
-| [tools/gradient-motion.html](../tools/gradient-motion.html) | 七情境連續骨架網格動作，40 幀／2 秒，20 fps；保留單一已核准角色 |
+| [tools/gradient-motion.html](../tools/gradient-motion.html) | 七張獨立情境原稿的局部連續網格動畫，40 幀／2 秒，20 fps；不添加可見關節，不套用單一揮手姿勢 |
 
 ## 專案說明
 
