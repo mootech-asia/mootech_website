@@ -117,7 +117,7 @@
       "usage": "runtime",
       "category": "images",
       "id": "IMG007",
-      "purpose": "網站顯示素材：assets/images/mootech_website_IMG007_chat_bear-avatar.webp",
+      "purpose": "E 版客服縮小入口：北極熊頭像",
       "prefix": "mootech_website",
       "format": "webp",
       "bytes": 9060,
@@ -127,7 +127,13 @@
       "width": 192,
       "height": 192,
       "frames": 1,
-      "transparency": "不透明"
+      "transparency": "不透明",
+      "variants": [
+        "e"
+      ],
+      "references": [
+        "index.html"
+      ]
     },
     {
       "previousPath": "assets/chat/bear-cam.webp",
@@ -135,7 +141,7 @@
       "usage": "runtime",
       "category": "images",
       "id": "IMG008",
-      "purpose": "網站顯示素材：assets/images/mootech_website_IMG008_chat_bear-cam.webp",
+      "purpose": "E 版客服來電與展開主視覺：北極熊",
       "prefix": "mootech_website",
       "format": "webp",
       "bytes": 30214,
@@ -145,7 +151,13 @@
       "width": 360,
       "height": 480,
       "frames": 1,
-      "transparency": "不透明"
+      "transparency": "不透明",
+      "variants": [
+        "e"
+      ],
+      "references": [
+        "index.html"
+      ]
     },
     {
       "previousPath": "assets/chat/sticker-handshake.webp",
@@ -171,7 +183,7 @@
       "usage": "runtime",
       "category": "images",
       "id": "IMG010",
-      "purpose": "網站顯示素材：assets/images/mootech_website_IMG010_chat_sticker-heart.webp",
+      "purpose": "E 版客服完成對話：愛心北極熊貼圖",
       "prefix": "mootech_website",
       "format": "webp",
       "bytes": 16700,
@@ -181,7 +193,13 @@
       "width": 227,
       "height": 264,
       "frames": 1,
-      "transparency": "保留 alpha"
+      "transparency": "保留 alpha",
+      "variants": [
+        "e"
+      ],
+      "references": [
+        "index.html"
+      ]
     },
     {
       "previousPath": "assets/chat/sticker-think.webp",
@@ -207,7 +225,7 @@
       "usage": "runtime",
       "category": "images",
       "id": "IMG012",
-      "purpose": "網站顯示素材：assets/images/mootech_website_IMG012_chat_sticker-wave.webp",
+      "purpose": "E 版客服問候：揮手北極熊貼圖",
       "prefix": "mootech_website",
       "format": "webp",
       "bytes": 17328,
@@ -217,7 +235,13 @@
       "width": 264,
       "height": 250,
       "frames": 1,
-      "transparency": "保留 alpha"
+      "transparency": "保留 alpha",
+      "variants": [
+        "e"
+      ],
+      "references": [
+        "index.html"
+      ]
     },
     {
       "previousPath": "assets/chat/sticker-wink.webp",

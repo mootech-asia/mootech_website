@@ -165,7 +165,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .mtc-holo { position: absolute; inset: 0; z-index: 6; pointer-events: none; border-radius: inherit; opacity: 0; }
 .mtc-holo::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: conic-gradient(from var(--mtc-a, 0deg), transparent 0 70%, #6ff3ff 85%, #fff 90%, transparent 95%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
-.mtc-holo::after { content: ""; position: absolute; left: 0; right: 0; height: 30%; top: -30%; background: linear-gradient(180deg, transparent, rgba(111,243,255,.55) 60%, rgba(255,255,255,.85) 62%, transparent 66%); mix-blend-mode: screen; }
+.mtc-holo::after { content: ""; position: absolute; left: 0; right: 0; height: 30%; top: -30%; background: linear-gradient(180deg, transparent, rgba(var(--support-rgb),.55) 60%, rgba(255,255,255,.85) 62%, transparent 66%); mix-blend-mode: screen; }
 .mtc.ringin .mtc-holo { animation: mtcHoloFx 1.5s ease-out both; }
 .mtc.ringin .mtc-holo::before { animation: mtcTrace 1.1s linear .35s both; }
 .mtc.ringin .mtc-holo::after { animation: mtcScan .9s ease-in-out .45s both; }
@@ -180,9 +180,9 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
   55% { filter: brightness(1.3); }
   100% { clip-path: inset(0 0 0 0 round 26px); filter: none; }
 }
-.mtc-panel::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; box-shadow: inset 0 0 0 1.5px rgba(111,243,255,.0); transition: box-shadow .6s; }
+.mtc-panel::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; box-shadow: inset 0 0 0 1.5px rgba(var(--support-rgb),.0); transition: box-shadow .6s; }
 .mtc.open .mtc-panel::after { animation: mtcEdge 1.2s ease-out both; }
-@keyframes mtcEdge { 0% { box-shadow: inset 0 0 0 2px rgba(111,243,255,.95), 0 0 28px rgba(41,182,232,.6); } 100% { box-shadow: inset 0 0 0 1px rgba(111,243,255,0), 0 0 0 rgba(41,182,232,0); } }
+@keyframes mtcEdge { 0% { box-shadow: inset 0 0 0 2px rgba(var(--support-rgb),.95), 0 0 28px rgba(41,182,232,.6); } 100% { box-shadow: inset 0 0 0 1px rgba(var(--support-rgb),0), 0 0 0 rgba(41,182,232,0); } }
 /* 不定時的來電震動 */
 .mtc.buzz:not(.open):not(.dragging) .mtc-call, .mtc.buzz:not(.open):not(.dragging) .mtc-fab { animation: mtcBuzz .7s linear; }
 @keyframes mtcBuzz { 0%, 100% { transform: none; } 8%, 40%, 72% { transform: translate(-3px, 0) rotate(-2.5deg); } 16%, 48%, 80% { transform: translate(3px, 0) rotate(2.5deg); } 24%, 56%, 88% { transform: translate(-2px, 0) rotate(-1.5deg); } 32%, 64%, 96% { transform: translate(2px, 0) rotate(1.5deg); } }
@@ -1645,20 +1645,57 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
 .mtc-video .mtc-service-icon { display: none; }
 .mtc-video::after { display: none; }
 
-/* Support controls share the approved character's cyan–mint–lime palette. */
-.mtc { --support-gradient: linear-gradient(90deg, #22b5d6, #62c5ae 50%, #acd65e); }
+/* Support identity follows the active page variant. Variables live on body so SVG stops inherit them too. */
+body[data-v="a"] { --support-start: #0b6bcb; --support-mid: #1684d4; --support-end: #2999df; --support-surface: #f2f5f9; --support-panel: #ffffff; --support-ink: #142033; --support-muted: #5a6779; --support-bubble: #e9f1fa; --support-rgb: 11,107,203; --support-radius: 18px; --support-button-ink: #fff; }
+body[data-v="b"] { --support-start: #3ad0e6; --support-mid: #3bb1ed; --support-end: #3b82f6; --support-surface: #0b1626; --support-panel: #0b1626; --support-ink: #e3ecf7; --support-muted: #8193ab; --support-bubble: #182a40; --support-rgb: 58,208,230; --support-radius: 14px; --support-button-ink: #031c2b; }
+body[data-v="c"] { --support-start: #00a19a; --support-mid: #00a19a; --support-end: #00a19a; --support-surface: #f3f6f5; --support-panel: #ffffff; --support-ink: #0e1116; --support-muted: #5d636b; --support-bubble: #e5f1f0; --support-rgb: 0,161,154; --support-radius: 8px; --support-button-ink: #031b19; }
+body[data-v="d"] { --support-start: #29b6e8; --support-mid: #62c5ae; --support-end: #b9d85a; --support-surface: #0c1010; --support-panel: #101414; --support-ink: #ffffff; --support-muted: #a0b0ac; --support-bubble: #1c2422; --support-rgb: 98,197,174; --support-radius: 26px; --support-button-ink: #082d34; }
+body[data-v="e"] { --support-start: #29b6e8; --support-mid: #36c9c0; --support-end: #3ddc97; --support-surface: #07090e; --support-panel: #0d1119; --support-ink: #e8edf5; --support-muted: #8d98ab; --support-bubble: #182335; --support-rgb: 61,220,151; --support-radius: 26px; --support-button-ink: #052828; }
+.mtc { --support-gradient: linear-gradient(90deg, var(--support-start), var(--support-mid) 50%, var(--support-end)); --c-bg: var(--support-surface); --c-panel: var(--support-panel); --c-ink: var(--support-ink); --c-mut: var(--support-muted); --c-acc: var(--support-start); --c-hot: var(--support-start); --c-ok: var(--support-end); --c-line: rgba(var(--support-rgb),.25); }
+.mtc-call, .mtc-panel { border-radius: var(--support-radius); background: var(--support-panel); }
+.mtc-top b { max-width: calc(100% - 20px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mtc-call::before { border-radius: calc(var(--support-radius) + 3px); }
+.mtc-service-icon { background: linear-gradient(145deg, var(--support-surface), var(--support-panel)); }
 .mtc-service-icon svg, .mtc-conn svg { stroke: url(#mtc-brand-gradient); }
-.mtc-accept { background: var(--support-gradient); color: #082d34; box-shadow: 0 6px 18px rgba(34,181,214,.32); }
-.mtc-fab { box-shadow: 0 10px 26px rgba(3,8,18,.5), 0 0 18px rgba(98,197,174,.20); }
+.mtc-accept { background: var(--support-gradient); color: var(--support-button-ink); box-shadow: 0 6px 18px rgba(var(--support-rgb),.32); }
+.mtc-fab { box-shadow: 0 10px 26px rgba(3,8,18,.5), 0 0 18px rgba(var(--support-rgb),.20); }
 .mtc-fab::before { border: 0; padding: 3px; background: var(--support-gradient); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
 .mtc-fab > i { background: var(--support-gradient); }
+.mtc-top span i, .mtc-badge i { box-shadow: 0 0 6px rgba(var(--support-rgb),.6); }
+.mtc-msg.me, .mtc-send, .mtc-mini-submit, .mtc-links .hot, .mtc-act { background: var(--support-start); border-color: var(--support-start); color: var(--support-button-ink); }
+.mtc-opt, .mtc-chips button { border-color: rgba(var(--support-rgb),.55); background: rgba(var(--support-rgb),.10); }
+.mtc-opt:hover, .mtc-chips button:hover { background: rgba(var(--support-rgb),.24); }
+.mtc-mini { background: var(--support-panel); }
+.mtc { color-scheme: dark; }
+body:is([data-v="a"], [data-v="c"]) .mtc { color-scheme: light; }
+.mtc-msg.bot { background: var(--support-bubble); }
+.mtc-video { background: var(--support-panel); }
+body:is([data-v="a"], [data-v="c"]) .mtc-vtop .mtc-badge { color: var(--c-ink); background: rgba(var(--support-rgb),.12); }
+.mtc-call .mtc-shade { display: none; }
+body[data-v="e"] .mtc-call .mtc-shade { display: block; }
+body:is([data-v="a"], [data-v="c"]) .mtc-top span, body:is([data-v="a"], [data-v="c"]) .mtc-vtop span { color: var(--c-mut); }
+body:is([data-v="a"], [data-v="c"]) .mtc-min, body:is([data-v="a"], [data-v="c"]) .mtc-top-min { color: var(--c-ink); background: rgba(var(--support-rgb),.12); border-color: var(--c-line); }
+body:is([data-v="a"], [data-v="c"]) .mtc-ctl:not(.listening) { background: rgba(var(--support-rgb),.12); color: var(--c-ink); }
+body:is([data-v="a"], [data-v="c"]) .mtc-ctl:not(.listening):hover { background: rgba(var(--support-rgb),.22); }
+.mtc-conn { color: #eef3fa; }
+.mtc-links .hot:hover, .mtc-mini-submit:hover, .mtc-act:hover { background: var(--support-start); border-color: var(--support-start); filter: brightness(1.08); }
+.mtc-form input:focus { border-color: var(--support-start); }
+.mtc-holo::before { background: conic-gradient(from var(--mtc-a, 0deg), transparent 0 70%, var(--support-start) 85%, #fff 90%, transparent 95%); }
+.mtc-conn svg { filter: drop-shadow(0 0 6px rgba(var(--support-rgb),.6)); }
+.mtc-mascot { display: none; }
+body[data-v="e"] .mtc-mascot { display: block; }
+body[data-v="e"] .mtc-service-icon { display: none; }
+body[data-v="e"] .mtc-video { flex-basis: 236px; }
+body[data-v="e"] .mtc-video::after { display: block; }
+body:not([data-v="e"]) .mtc-sticker { display: none; }
+@media(max-width:720px) { body[data-v="e"] .mtc-video { flex-basis: 200px; } }
 </style>
 </head>
 <body data-v="a">
 
 <!-- 共用圖示 -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs><linearGradient id="mtc-brand-gradient" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#22B5D6"/><stop offset="50%" stop-color="#62C5AE"/><stop offset="100%" stop-color="#ACD65E"/></linearGradient></defs>
+  <defs><linearGradient id="mtc-brand-gradient" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="var(--support-start)"/><stop offset="50%" stop-color="var(--support-mid)"/><stop offset="100%" stop-color="var(--support-end)"/></linearGradient></defs>
   <symbol id="i-live" viewBox="0 0 32 32"><rect x="3" y="9" width="18" height="14" rx="2"/><path d="M21 14l8-4v12l-8-4"/><circle cx="9" cy="16" r="2.5"/></symbol>
   <symbol id="i-net" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M4 16h24M16 4c4 3.5 5 8 5 12s-1 8.5-5 12M16 4c-4 3.5-5 8-5 12s1 8.5 5 12"/></symbol>
   <symbol id="i-arch" viewBox="0 0 32 32"><path d="M16 4l12 6-12 6-12-6z"/><path d="M4 16l12 6 12-6M4 22l12 6 12-6"/></symbol>
@@ -3635,16 +3672,16 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
 </script>
 <div class="mtc pre" id="mt-chat">
   <div class="mtc-call" id="mtc-call" role="button" tabindex="0">
-    <div class="mtc-service-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 18v-4a10 10 0 0 1 20 0v4"/><rect x="4" y="15" width="5" height="10" rx="2"/><rect x="23" y="15" width="5" height="10" rx="2"/><path d="M25 25c0 3-4 4-9 4"/></svg></div><div class="mtc-shade"></div>
+    <div class="mtc-service-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 18v-4a10 10 0 0 1 20 0v4"/><rect x="4" y="15" width="5" height="10" rx="2"/><rect x="23" y="15" width="5" height="10" rx="2"/><path d="M25 25c0 3-4 4-9 4"/></svg></div><div class="mtc-mascot mtc-cam" data-mascot-src="assets/images/mootech_website_IMG008_chat_bear-cam.webp"></div><div class="mtc-shade"></div>
     <div class="mtc-top"><b id="mtc-cname"></b><span><i></i><em id="mtc-cstat" style="font-style:normal"></em></span></div>
     <button type="button" class="mtc-min" id="mtc-min"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg></button>
     <div class="mtc-btns"><span class="mtc-accept" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span></div>
     <div class="mtc-holo" aria-hidden="true"></div><div class="mtc-conn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-1.5 2.5-4 2.5h-2"/></svg><b>Connecting…</b><i></i></div>
   </div>
-  <button type="button" class="mtc-fab" id="mtc-fab"><span class="mtc-service-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 18v-4a10 10 0 0 1 20 0v4"/><rect x="4" y="15" width="5" height="10" rx="2"/><rect x="23" y="15" width="5" height="10" rx="2"/><path d="M25 25c0 3-4 4-9 4"/></svg></span><i></i><span class="mtc-pill" id="mtc-pill">00:00</span></button>
+  <button type="button" class="mtc-fab" id="mtc-fab"><span class="mtc-service-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 18v-4a10 10 0 0 1 20 0v4"/><rect x="4" y="15" width="5" height="10" rx="2"/><rect x="23" y="15" width="5" height="10" rx="2"/><path d="M25 25c0 3-4 4-9 4"/></svg></span><span class="mtc-mascot mtc-face" data-mascot-src="assets/images/mootech_website_IMG007_chat_bear-avatar.webp"></span><i></i><span class="mtc-pill" id="mtc-pill">00:00</span></button>
   <div class="mtc-panel" role="dialog" aria-modal="false" aria-labelledby="mtc-name" id="mtc-panel">
     <div class="mtc-video">
-      <div class="mtc-service-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 18v-4a10 10 0 0 1 20 0v4"/><rect x="4" y="15" width="5" height="10" rx="2"/><rect x="23" y="15" width="5" height="10" rx="2"/><path d="M25 25c0 3-4 4-9 4"/></svg></div>
+      <div class="mtc-service-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 18v-4a10 10 0 0 1 20 0v4"/><rect x="4" y="15" width="5" height="10" rx="2"/><rect x="23" y="15" width="5" height="10" rx="2"/><path d="M25 25c0 3-4 4-9 4"/></svg></div><div class="mtc-mascot mtc-cam" data-mascot-src="assets/images/mootech_website_IMG008_chat_bear-cam.webp"></div>
       <div class="mtc-vtop"><div><b id="mtc-name"></b><span id="mtc-timer"></span></div><div class="mtc-vr"><span class="mtc-badge"><i></i><em id="mtc-live" style="font-style:normal"></em></span><button type="button" class="mtc-top-min" id="mtc-top-min"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg></button></div></div>
       <div class="mtc-ctls"><button type="button" class="mtc-ctl" id="mtc-mic" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button><button type="button" class="mtc-end" id="mtc-end"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 9c-3.2 0-6.1.9-8.4 2.5-.8.5-1 1.6-.5 2.4l1 1.5c.5.7 1.4 1 2.2.6l2.2-1c.6-.3 1-.9 1-1.6v-1.3a12 12 0 0 1 5 0v1.3c0 .7.4 1.3 1 1.6l2.2 1c.8.4 1.7.1 2.2-.6l1-1.5c.5-.8.3-1.9-.5-2.4A14.8 14.8 0 0 0 12 9z"/></svg></button><button type="button" class="mtc-ctl" id="mtc-hide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></div>
     </div>
@@ -3653,7 +3690,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   </div>
 </div>
 <script>
-/* 右下角 MOOTECH 客服（無吉祥物）：選擇題式對話，分求職者／需求方／其他三條路線，2～3 輪問答後
+/* 客服依版型換色，僅 E 使用既有北極熊角色：選擇題式對話，分求職者／需求方／其他三條路線，2～3 輪問答後
    整理成已填好內容的郵件（網站沒有後端，使用訪客自己的郵件程式寄出）。 */
 (function () {
   var root = document.getElementById("mt-chat"); if (!root) return;
@@ -3675,7 +3712,23 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
     denied: ["沒有取得麥克風權限，請直接點選選項。", "Microphone access was blocked. Just tap an option."],
     noMatch: ["我沒聽清楚，請直接點選上面的選項", "I didn’t catch that. Please tap one of the options"]
   };
-  function t(k) { return T[k][en() ? 1 : 0]; }
+  function isBear() { return document.body.dataset.v === "e"; }
+  function t(k) { if (k === "name" && isBear()) return en() ? "MOO Assistant" : "MOO 助手"; return T[k][en() ? 1 : 0]; }
+  function sticker(name) {
+    if (!isBear()) return;
+    var sources = { wave: "assets/images/mootech_website_IMG012_chat_sticker-wave.webp", heart: "assets/images/mootech_website_IMG010_chat_sticker-heart.webp" };
+    var image = new Image(); image.className = "mtc-sticker"; image.src = sources[name]; image.alt = ""; image.width = 132; image.decoding = "async"; image.onload = scroll; log.appendChild(image);
+  }
+  function syncMascot() {
+    root.querySelectorAll('[data-mascot-src]').forEach(function (box) {
+      if (!isBear()) { box.replaceChildren(); return; }
+      if (box.firstChild) return;
+      var image = new Image(); image.src = box.dataset.mascotSrc; image.alt = ""; image.decoding = "async"; box.appendChild(image);
+    });
+    if (!isBear()) log.querySelectorAll('.mtc-sticker').forEach(function (image) { image.remove(); });
+    else if (started && !log.querySelector('.mtc-sticker')) sticker('wave');
+    renderStatic();
+  }
 
   /* ---------- 對話流程 ---------- */
   var state = {}, busy = false, voiceReply = false, curOpts = [];
@@ -3699,7 +3752,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   function pick(box, o) { if (busy || box.classList.contains("done")) return; box.classList.add("done"); curOpts = []; bubble("me", o.label.replace(/^\S+\s/, "")); o.go(); }
 
   function start() {
-    log.innerHTML = ""; state = {}; say(L("您好，歡迎聯絡 MOOTECH！ 請問今天想做什麼呢？", "Welcome to MOOTECH! What brings you here today?"), function () {
+    log.innerHTML = ""; state = {}; sticker("wave"); say(L("您好，歡迎聯絡 MOOTECH！ 請問今天想做什麼呢？", "Welcome to MOOTECH! What brings you here today?"), function () {
       ask([
         { label: L("🙋 我想應徵工作", "🙋 I'd like to apply for a job"), k: /應徵|工作|求職|職缺|履歷|apply|job|career|hiring/i, go: job1 },
         { label: L("🏢 我有網路／直播服務需求", "🏢 I need network or streaming services"), k: /需求|服務|網路|直播|報價|專線|service|network|stream|quote|business/i, go: biz1 },
@@ -3847,6 +3900,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
     var first = f.querySelector("input,select,textarea"); if (first && matchMedia("(min-width: 721px)").matches) first.focus({ preventScroll: true });
   }
   function links(items) {
+    sticker("heart");
     var box = document.createElement("div"); box.className = "mtc-links";
     items.forEach(function (x) {
       var el;
@@ -3910,7 +3964,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   /* ---------- 通話外觀：來電、接通、縮小、掛斷 ---------- */
   var timer = 0, t0 = 0, started = false;
   function renderStatic() {
-    $("mtc-cname").textContent = t("name"); $("mtc-cstat").textContent = t("calling");
+    $("mtc-cname").textContent = t("name"); $("mtc-cname").title = t("name"); $("mtc-cstat").textContent = t("calling");
     $("mtc-name").textContent = t("name"); if (!t0) $("mtc-timer").textContent = t("role") + " · 00:00"; $("mtc-live").textContent = t("live");
     call.setAttribute("aria-label", t("accept")); $("mtc-min").setAttribute("aria-label", t("min")); fab.setAttribute("aria-label", t("reopen"));
     $("mtc-end").setAttribute("aria-label", t("end")); mic.setAttribute("aria-label", t("mic")); $("mtc-hide").setAttribute("aria-label", t("hide")); $("mtc-top-min").setAttribute("aria-label", t("hide"));
@@ -3995,7 +4049,8 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   $("mtc-top-min").addEventListener("click", hide);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && root.classList.contains("open")) hide(); });
   new MutationObserver(renderStatic).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
-  renderStatic();
+  new MutationObserver(syncMascot).observe(document.body, { attributes: true, attributeFilter: ["data-v"] });
+  syncMascot();
 })();
 </script>
 <script>
@@ -4020,7 +4075,8 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   window.addEventListener('scroll', position, { passive: true });
   window.addEventListener('resize', position);
   new MutationObserver(position).observe(chat, { attributes: true, attributeFilter: ['class', 'style'] });
-  new ResizeObserver(position).observe(chat);
+  var sizeObserver = new ResizeObserver(position);
+  sizeObserver.observe(chat); sizeObserver.observe(document.getElementById('mtc-panel'));
   document.getElementById('mtc-panel').addEventListener('transitionend', position);
   document.getElementById('mtc-panel').addEventListener('animationend', position);
   position();
