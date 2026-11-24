@@ -926,6 +926,35 @@ canvas.fill { contain: strict; }
 .vd-top-btn:hover { box-shadow: 0 14px 30px rgba(0,0,0,.6); filter: brightness(1.08); }
 .vd-top-btn svg { width: 22px; height: 22px; }
 @media (max-width: 640px) { .vd-top-btn { right: 16px; bottom: 96px; width: 42px; height: 42px; } }
+/* ===== 徵才文化區塊 + 原創向量人系列 ===== */
+.vd-vision { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); gap: 30px; align-items: center; }
+.vd-vision-text { padding: 28px 32px; }
+.vd-vision-text p { font-size: 17px; line-height: 1.95; color: rgba(255,255,255,.84); margin: 0; }
+.vd-team-intro { padding: 28px 32px; }
+.vd-team-intro p { font-size: 15.5px; line-height: 2.05; color: rgba(255,255,255,.8); margin: 0; }
+.vd-joingrid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+.vd-joincard { padding: 26px 22px 22px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; }
+.vd-joincard h3 { font-size: 16px; font-weight: 700; margin: 10px 0 0; }
+.vd-joincard .en { font: 600 11px/1.4 var(--inter); letter-spacing: .12em; color: rgba(255,255,255,.42); text-transform: uppercase; }
+.vd-welfaregrid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+.vd-welfaregrid .vd-glass { padding: 26px 28px; display: flex; flex-direction: column; gap: 10px; }
+.vd-welfaregrid b { font-size: 20px; }
+.vd-welfaregrid p { color: rgba(255,255,255,.76); line-height: 1.8; margin: 0; }
+.vp-scene { width: 136px; height: 120px; }
+.vp-scene svg { width: 100%; height: 100%; overflow: visible; display: block; }
+.vp-scene-lg { width: 100%; max-width: 320px; height: 230px; justify-self: center; }
+@keyframes vpFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+@keyframes vpSpin { to { transform: rotate(360deg); } }
+@keyframes vpPulse { 0%,100%{opacity:.5;transform:scale(1)} 50%{opacity:1;transform:scale(1.14)} }
+@keyframes vpTwinkle { 0%,100%{opacity:.55;transform:scale(.88)} 50%{opacity:1;transform:scale(1.16)} }
+.vp-person { animation: vpFloat 3.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.vp-person.d2 { animation-delay: -1.8s; }
+.vp-gear { animation: vpSpin 7s linear infinite; transform-box: fill-box; transform-origin: center; }
+.vp-glow { animation: vpPulse 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.vp-star { animation: vpTwinkle 2.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@media (prefers-reduced-motion: reduce) { .vp-person, .vp-gear, .vp-glow, .vp-star { animation: none !important; } }
+@media (max-width: 860px) { .vd-vision { grid-template-columns: minmax(0,1fr); } .vd-joingrid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 560px) { .vd-joingrid, .vd-welfaregrid { grid-template-columns: minmax(0,1fr); } }
 .vd-trust b { font-weight: 600; font-size: 16px; margin-top: 8px; }
 .vd-trust small { font: 500 11px/1 var(--inter); letter-spacing: .18em; color: rgba(255,255,255,.5); }
 .vd-sec { position: relative; padding-block: 110px; }
@@ -1622,6 +1651,12 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   <symbol id="i-fb" viewBox="0 0 24 24"><path d="M13.5 21v-7.5H16l.5-3h-3V8.6c0-.9.3-1.6 1.6-1.6h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4V10.5H8v3h2.5V21z"/></symbol>
   <symbol id="i-in" viewBox="0 0 24 24"><path d="M4.5 9h3.2v11H4.5zM6.1 3.8a1.9 1.9 0 110 3.8 1.9 1.9 0 010-3.8zM10 9h3.1v1.5h.1c.4-.8 1.5-1.7 3.1-1.7 3.3 0 3.9 2.2 3.9 5V20H17v-5.4c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V20H10z"/></symbol>
   <symbol id="i-104" viewBox="0 0 48 24"><rect x=".6" y=".6" width="46.8" height="22.8" rx="5.2" fill="#fff" stroke="#E3E3E3" stroke-width="1"/><text x="24" y="17.4" text-anchor="middle" font-family="Arial,'Helvetica Neue',Helvetica,sans-serif" font-size="15" font-weight="800" letter-spacing=".6"><tspan fill="#555555">1</tspan><tspan fill="#FF7800">0</tspan><tspan fill="#555555">4</tspan></text></symbol>
+  <!-- 原創向量人角色（MOOTECH 徵才系列）：極簡幾何人形，供願景／為什麼加入／員工福利共用 -->
+  <radialGradient id="vpH" cx=".36" cy=".26" r=".9"><stop offset="0" stop-color="#f3fcd9"/><stop offset=".42" stop-color="#a9db59"/><stop offset=".8" stop-color="#5aa636"/><stop offset="1" stop-color="#3f8128"/></radialGradient>
+  <radialGradient id="vpB" cx=".38" cy=".18" r="1.05"><stop offset="0" stop-color="#c9ea80"/><stop offset=".5" stop-color="#74ba3c"/><stop offset="1" stop-color="#357322"/></radialGradient>
+  <radialGradient id="vpL" cx=".4" cy=".2" r="1"><stop offset="0" stop-color="#b6e06a"/><stop offset="1" stop-color="#357322"/></radialGradient>
+  <radialGradient id="vpSh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#05140a" stop-opacity=".45"/><stop offset="1" stop-color="#05140a" stop-opacity="0"/></radialGradient>
+  <symbol id="vp-base" viewBox="0 0 80 150"><ellipse cx="40" cy="143" rx="25" ry="6" fill="url(#vpSh)"/><ellipse cx="31" cy="128" rx="10" ry="6" fill="url(#vpL)"/><ellipse cx="49" cy="128" rx="10" ry="6" fill="url(#vpL)"/><path d="M40 50c-12 0-19.5 8-19.5 19 0 5 1.5 9.2 4.2 12.6-2.6 3-4.2 7-4.2 11.9v26.5c0 8 12.5 8 13 0l1.5-24.5h2l1.5 24.5c.5 8 13 8 13 0V93.5c0-4.9-1.6-8.9-4.2-11.9 2.7-3.4 4.2-7.6 4.2-12.6 0-11-7.5-19-19.5-19z" fill="url(#vpB)"/><path d="M23.5 57.5c-6.5 1.8-10 7-11 14.4l-1.6 16.2c-.5 5.2 7 5.8 7.6.6l2-15.4c.6-4.2 2.8-7.8 6.2-10z" fill="url(#vpL)"/><path d="M56.5 57.5c6.5 1.8 10 7 11 14.4l1.6 16.2c.5 5.2-7 5.8-7.6.6l-2-15.4c-.6-4.2-2.8-7.8-6.2-10z" fill="url(#vpL)"/><ellipse cx="12.5" cy="90" rx="5.8" ry="6.4" fill="url(#vpL)"/><ellipse cx="67.5" cy="90" rx="5.8" ry="6.4" fill="url(#vpL)"/><circle cx="40" cy="30" r="23.5" fill="url(#vpH)"/><path d="M61 34a23.5 23.5 0 0 1-13 19" fill="none" stroke="#45cde8" stroke-width="2.2" stroke-linecap="round" opacity=".5"/><ellipse cx="32" cy="18" rx="8" ry="5.4" fill="#fff" opacity=".62" transform="rotate(-24 32 18)"/><circle cx="47" cy="15" r="2.3" fill="#fff" opacity=".5"/><ellipse cx="31" cy="62" rx="5" ry="8" fill="#fff" opacity=".16"/></symbol>
 </svg>
 
 <!-- ======================= 版型 A 企業信賴 ======================= -->
@@ -2254,6 +2289,52 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
     </div>
   </section>
 
+  <section class="vd-sec" id="vd-vision">
+    <div class="wrap">
+      <div class="vd-head2"><span class="vd-kicker">HR VISION · INNOVATION</span><h2 class="vd-h2" data-en="MOOTECH HR Vision">MOOTECH 願景</h2></div>
+      <div class="vd-vision">
+        <div class="vd-glass vd-vision-text">
+          <p data-en="We create an innovative, flexible and inclusive experience in an MNC working environment, developing fullest potentials through learning, development and teamwork to strive for goals and achievement.">我們致力於創造一個創新、靈活和具有包容性的工作環境，鼓勵每個人發揮自己的才華和潛能，並透過團隊合作來實現共同目標。</p>
+        </div>
+        <div class="vp-scene vp-scene-lg" role="img" aria-label="向量形象人與星光願景動畫">
+          <svg viewBox="0 0 220 150">
+            <use class="vp-person" href="#vp-base" x="48" y="12" width="68" height="132"/>
+            <g class="vp-star"><path d="M170 34l3.7 7.5 8.3 1.2-6 5.7 1.4 8.2-7.4-3.9-7.4 3.9 1.4-8.2-6-5.7 8.3-1.2z" fill="#b9d85a"/></g>
+            <g class="vp-star" stroke="#45cde8" stroke-width="2.4" stroke-linecap="round"><path d="M190 66l1.5 3.6M198 50l3.6 1.3M150 26l1.3 3.2"/></g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vd-sec" id="vd-team">
+    <div class="wrap">
+      <div class="vd-head2"><span class="vd-kicker">ABOUT US</span><h2 class="vd-h2" data-en="About Us">一起來認識我們</h2></div>
+      <div class="vd-glass vd-team-intro">
+        <p data-en="We are a team of engineers who keep the company running, solving and maintaining IT infrastructure with creative, practical methods. At Mootech every day is full of challenges and brainstorming, and our constant theme is to learn, learn and learn again. Join us to work in an energetic, challenging environment while keeping up with the latest IT industry knowledge. If you are creative, love solving problems and crave learning and challenges, you are very welcome to join us and build a fun, innovative working life together.">我們是一群由 7 年級與 8 年級工程師組成的團隊，是公司的中流砥柱，主要用創新又實用的方法解決與維護 IT 基礎設施。在 Mootech，我們可以保證每一天都充滿挑戰和腦力激盪；團隊的主旋律就是學習、學習、再學習。加入我們，除了能在充滿活力與挑戰的環境裡工作，也能隨時掌握最新的資訊科技產業知識。如果你有創意、喜歡思考解決問題、渴望學習與挑戰，非常歡迎你加入我們，一起創造有趣又充滿創新的工作生活。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="vd-sec" id="vd-join">
+    <div class="wrap">
+      <div class="vd-head2"><span class="vd-kicker">WHY JOIN · TEAM</span><h2 class="vd-h2" data-en="Why Join MOOTECH">為什麼加入 MOOTECH</h2></div>
+      <div class="vd-joingrid"><div class="vd-glass vd-joincard"><div class="vp-scene" role="img" aria-label="兩位向量形象人並肩合作動畫"><svg viewBox="0 0 140 124"><use class="vp-person" href="#vp-base" x="14" y="20" width="52" height="98"/><use class="vp-person d2" href="#vp-base" x="72" y="20" width="52" height="98"/></svg></div><h3 data-en="Together we go further">一起，我們可以走得更長更遠</h3><span class="en" data-en=" ">Team Collaboration</span></div><div class="vd-glass vd-joincard"><div class="vp-scene" role="img" aria-label="向量形象人與靈感燈泡動畫"><svg viewBox="0 0 140 124"><use class="vp-person" href="#vp-base" x="42" y="12" width="56" height="104"/><g class="vp-glow"><circle cx="113" cy="26" r="9" fill="none" stroke="#b9d85a" stroke-width="2.6"/><path d="M109 34.5h8" stroke="#b9d85a" stroke-width="2.6" stroke-linecap="round"/><path d="M110 37.5h6" stroke="#b9d85a" stroke-width="2.2" stroke-linecap="round"/><g stroke="#45cde8" stroke-width="2.2" stroke-linecap="round"><path d="M113 10v4"/><path d="M98 18l3 2.5"/><path d="M128 18l-3 2.5"/></g></g></svg></div><h3 data-en="We share knowledge openly">知識分享絕不藏私</h3><span class="en" data-en=" ">Brainstorming Ideas</span></div><div class="vd-glass vd-joincard"><div class="vp-scene" role="img" aria-label="向量形象人與旋轉齒輪動畫"><svg viewBox="0 0 140 124"><use class="vp-person" href="#vp-base" x="42" y="12" width="56" height="104"/><g class="vp-gear"><circle cx="113" cy="28" r="11" fill="none" stroke="#45cde8" stroke-width="3"/><circle cx="113" cy="28" r="3.5" fill="#45cde8"/><g stroke="#45cde8" stroke-width="3" stroke-linecap="round"><path d="M113 14v4"/><path d="M113 38v4"/><path d="M99 28h4"/><path d="M123 28h4"/><path d="M103 18l3 3"/><path d="M120 35l3 3"/><path d="M123 18l-3 3"/><path d="M106 35l-3 3"/></g></g></svg></div><h3 data-en="Always on the latest tech">嶄新技術在線掌握</h3><span class="en" data-en=" ">Learning New Technologies</span></div><div class="vd-glass vd-joincard"><div class="vp-scene" role="img" aria-label="向量形象人與明亮窗景動畫"><svg viewBox="0 0 140 124"><use class="vp-person" href="#vp-base" x="42" y="12" width="56" height="104"/><g fill="none" stroke="#45cde8" stroke-width="2.4" stroke-linejoin="round"><rect x="98" y="12" width="30" height="32" rx="3"/><path d="M113 12v32M98 28h30"/></g><circle class="vp-glow" cx="105.5" cy="21" r="4.5" fill="#b9d85a"/></svg></div><h3 data-en="A bright, open workspace">明亮開放寬敞的辦公環境</h3><span class="en" data-en=" ">Conducive Environment</span></div><div class="vd-glass vd-joincard"><div class="vp-scene" role="img" aria-label="向量形象人與咖啡愛心動畫"><svg viewBox="0 0 140 124"><use class="vp-person" href="#vp-base" x="42" y="12" width="56" height="104"/><g fill="none" stroke="#b9d85a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M100 34h20v9a9 9 0 0 1-9 9h-2a9 9 0 0 1-9-9z"/><path d="M120 37h3.5a4.5 4.5 0 0 1 0 9H120"/></g><g stroke="#45cde8" stroke-width="2.3" stroke-linecap="round"><path d="M105 24c0 3-2 3-2 6M113 24c0 3-2 3-2 6"/></g><path class="vp-glow" d="M127 12c-2.2-2.8-7.5-1.8-7.5 2.2 0 3 7.5 7 7.5 7s7.5-4 7.5-7c0-4-5.3-5-7.5-2.2z" fill="#b9d85a"/></svg></div><h3 data-en="Good food, great company">美食當前，減肥都是明天的事</h3><span class="en" data-en=" ">Team Bonding</span></div><div class="vd-glass vd-joincard"><div class="vp-scene" role="img" aria-label="向量形象人與啞鈴動畫"><svg viewBox="0 0 140 124"><use class="vp-person" href="#vp-base" x="42" y="12" width="56" height="104"/><g stroke="#45cde8" stroke-width="3" fill="none" stroke-linecap="round"><path d="M98 40h28"/><path d="M98 33v14M126 33v14"/></g><g stroke="#b9d85a" stroke-width="3" fill="none" stroke-linecap="round"><path d="M93 35v10M131 35v10"/></g></svg></div><h3 data-en="Work hard, stay healthy">要打拼也要健康，跟著 Mootech 動吃動</h3><span class="en" data-en=" ">Promote A Healthy Lifestyle</span></div></div>
+    </div>
+  </section>
+
+  <section class="vd-sec" id="vd-welfare">
+    <div class="wrap">
+      <div class="vd-head2"><span class="vd-kicker">WELFARE · BENEFITS</span><h2 class="vd-h2" data-en="Benefits of MOOTECH">員工福利</h2><p data-en="Everything you want to know about working here.">關於你想知道的，我們都準備好了。</p></div>
+      <div class="vd-welfaregrid">
+        <div class="vd-glass"><b class="vd-grad" data-en="Healthcare">健康第一大禮包</b><p data-en="Annual full health checks, supplement subsidies and comprehensive group insurance.">每年度全方位健檢、保健食品補助，以及保障多多的團體保險。</p></div>
+        <div class="vd-glass"><b class="vd-grad" data-en="Better-than-statutory leave">優於勞基法的休假</b><p data-en="Annual leave above the labor-law minimum, plus 3 days of fully-paid sick leave.">特別休假日數優於勞基法，另有 3 天全薪病假，讓你安心休息。</p></div>
+        <div class="vd-glass"><b class="vd-grad" data-en="Upgrading & Training">進修補助</b><p data-en="The company invests in you — learn and grow with no financial burden.">公司幫你投資你自己，進修學習無負擔，持續精進專業能力。</p></div>
+        <div class="vd-glass"><b class="vd-grad" data-en="Flexibility & team life">彈性與團隊生活</b><p data-en="Flexible hours, regular meals and tea breaks, team events and local / overseas trips.">彈性上下班、不定期聚餐與下午茶，還有團隊活動與國內外員工旅遊。</p></div>
+      </div>
+    </div>
+  </section>
+
   <section class="vd-sec" id="vd-contact">
     <div class="wrap">
       <div class="vd-head2"><span class="vd-kicker">CONTACT</span><h2 class="vd-h2">聯絡我們</h2><p>告訴我們您的需求，工程團隊會盡快回覆。</p></div>
@@ -2268,7 +2349,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
           <div class="vd-glass"><span class="vd-kicker">電子郵件</span><p>contact@mootech.asia</p></div>
           <div class="vd-glass"><span class="vd-kicker">地點</span><p>新加坡 · 台灣</p></div>
           <div class="vd-glass"><span class="vd-kicker">社群</span><p><a href="https://www.linkedin.com/">LinkedIn</a></p></div>
-          <div class="vd-glass"><span class="vd-kicker">人才招募</span><p><a href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener">104 人力銀行職缺</a></p></div>
+          <div class="vd-glass"><span class="vd-kicker">人才招募</span><p><a href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener" data-en="View jobs">查看職缺</a></p></div>
         </aside>
       </div>
     </div>
