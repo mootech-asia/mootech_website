@@ -922,11 +922,12 @@ canvas.fill { contain: strict; }
 .vd-chip:nth-child(n+4) i { color: var(--d-g2); }
 .vd-chips .ico { width: 20px; height: 20px; }
 .vd-chip em { font-style: normal; font: 500 11.5px/1 var(--inter); letter-spacing: .04em; color: rgba(255,255,255,.72); white-space: nowrap; }
-.vd-top-btn { position: fixed; right: 22px; bottom: 104px; z-index: 40; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--d-g1), var(--d-g2)); color: #05070c; box-shadow: 0 10px 26px rgba(0,0,0,.5); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity .25s ease, transform .25s ease, box-shadow .2s ease, filter .2s ease; }
+.vd-top-btn { position: fixed; left: calc(24px + env(safe-area-inset-left, 0px)); bottom: calc(24px + env(safe-area-inset-bottom, 0px)); z-index: 40; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--d-g1), var(--d-g2)); color: #05070c; box-shadow: 0 10px 26px rgba(0,0,0,.5); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity .25s ease, transform .25s ease, box-shadow .2s ease, filter .2s ease; }
+body:has(.mtc.open) .vd-top-btn { opacity: 0; visibility: hidden; pointer-events: none; }
 .vd-top-btn.show { opacity: 1; visibility: visible; transform: none; }
 .vd-top-btn:hover { box-shadow: 0 14px 30px rgba(0,0,0,.6); filter: brightness(1.08); }
 .vd-top-btn svg { width: 22px; height: 22px; }
-@media (max-width: 640px) { .vd-top-btn { right: 16px; bottom: 96px; width: 42px; height: 42px; } }
+@media (max-width: 640px) { .vd-top-btn { left: calc(16px + env(safe-area-inset-left, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); width: 42px; height: 42px; } }
 /* ===== 徵才文化區塊 + 原創向量人系列 ===== */
 .vd-vision { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); gap: 30px; align-items: center; }
 .vd-vision-text { padding: 28px 32px; }
@@ -3991,7 +3992,28 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   renderStatic();
 })();
 </script>
-<script>(function(){var b=document.querySelector('[data-top-btn]');if(!b)return;var on=function(){if(window.scrollY>480)b.classList.add('show');else b.classList.remove('show');};window.addEventListener('scroll',on,{passive:true});on();})();</script>
+<script>
+(function () {
+  var button = document.querySelector('[data-top-btn]'), chat = document.getElementById('mt-chat');
+  if (!button || !chat) return;
+  function position() {
+    button.classList.toggle('show', window.scrollY > 480);
+    button.style.left = ''; button.style.right = '';
+    // Default to the opposite corner; a dragged support launcher may occupy it.
+    if (chat.classList.contains('open')) return;
+    var a = button.getBoundingClientRect(), b = chat.getBoundingClientRect(), gap = 12;
+    if (a.right + gap > b.left && a.left - gap < b.right && a.bottom + gap > b.top && a.top - gap < b.bottom) {
+      button.style.left = 'auto';
+      button.style.right = 'calc(16px + env(safe-area-inset-right, 0px))';
+    }
+  }
+  window.addEventListener('scroll', position, { passive: true });
+  window.addEventListener('resize', position);
+  new MutationObserver(position).observe(chat, { attributes: true, attributeFilter: ['class', 'style'] });
+  new ResizeObserver(position).observe(chat);
+  position();
+})();
+</script>
 <script>
 (function () {
   var button = document.getElementById('green-motion-toggle');

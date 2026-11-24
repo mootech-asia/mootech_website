@@ -121,3 +121,8 @@ python3 tools/build-en.py
 - 工具 `tools/build-green-gifs.py`、`tools/gradient-motion.html` 可獨立重製；原稿、正式圖及規格已登錄。素材 check 通過 145 項、英文生成與 diff check 通過；D 版載入與暫停／reduced-motion／客服回歸另以 Chromium 驗證。
 - 本輪使用者已選定造型，沿用本聊天上線授權發布；部署結果以下方追記為準。
 - 發布完成：runtime `0d46667`；[Pages run 45363074494](https://github.com/mootech-asia/mootech_website/actions/runs/45363074494) 首次成功。正式站七支 GIF 與七張獨立 PNG 均逐檔下載比對指紋。使用者可於 D 版查看新造型與 20 fps 動畫。
+
+### 回到頂端避開客服
+
+- 將 D 版回到頂端移至左下安全區，與預設右下客服分開；客服展開時隱藏，縮小客服拖到左下時，回頂按鈕自動改到右側。監聽客服狀態／位置／尺寸與視窗變化。
+- Chromium 回歸：390／1440 × 中英文，驗證來電小窗、左側已拖曳縮小入口、開啟／縮小客服與回頂點擊，無重疊、無 pageerror。英文頁生成與 diff check 通過。沿用上線授權發布。
