@@ -113,3 +113,10 @@ python3 tools/build-en.py
 - GitHub Pages 首次部署因上傳後 artifact metadata 暫時回傳 0 件而失敗；重跑同一 run 的失敗工作，第 2 次成功：[部署紀錄](https://github.com/mootech-asia/mootech_website/actions/runs/45361403197)。未修改環境保護或發布允許分支。
 - 正式站 HTML 已含新功能，七支 GIF 下載指紋逐一符合 manifest。正式站 Chromium 驗證七組圖片載入、暫停切換、客服開啟及 3 個初始選項、無吉祥物圖片／人物引用、英文 reduced-motion PNG；無 pageerror。
 - 已上線：https://mootech-asia.github.io/mootech_website/#design-d 。下一步：使用者檢視正式動畫效果；無待解部署阻塞。
+
+### 漸層角色與動畫流暢度修正
+
+- 使用者要求至少 12 fps、每個角色獨立出圖，並選定新青藍→薄荷→黃綠漸層、無五官造型。已改用單一核准原稿 SRCIMG007 與連續網格骨架動畫；不再裁切四關鍵幀拼圖。
+- 七組 GIF 各 320×320、40 幀、2 秒，全部幀間隔 50ms（20 fps）。驗證每對相鄰幀含循環接點均不同；週期往返會重訪相同姿勢，不宣稱所有循環姿勢唯一。各情境另輸出獨立 PNG，沿用正式 IMG119–132 路徑並更新指紋。
+- 工具 `tools/build-green-gifs.py`、`tools/gradient-motion.html` 可獨立重製；原稿、正式圖及規格已登錄。素材 check 通過 145 項、英文生成與 diff check 通過；D 版載入與暫停／reduced-motion／客服回歸另以 Chromium 驗證。
+- 本輪使用者已選定造型，沿用本聊天上線授權發布；部署結果以下方追記為準。

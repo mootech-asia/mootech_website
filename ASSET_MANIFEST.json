@@ -2299,21 +2299,22 @@
       "purpose": "D 版品牌小綠人／vision",
       "prefix": "mootech_website",
       "format": "gif",
-      "bytes": 40090,
-      "sha256": "c0fd1fb7e2964e27bf6c7aaf240c73f5b0eb9145e162757f9cd691b1a58c9775",
+      "bytes": 805402,
+      "sha256": "be0921e6bb66cdc36c3308564e129ca7570c148a2bf93b07ee01d046a4dc16bf",
       "status": "delivered",
       "pathPolicy": "standard",
-      "width": 237,
-      "height": 237,
-      "frames": 4,
+      "width": 320,
+      "height": 320,
+      "frames": 40,
       "transparency": "透明背景",
-      "source": "source/images/mootech_website_SRCIMG006_green-motion-sheet.png",
+      "source": "source/images/mootech_website_SRCIMG007_gradient-character.png",
       "references": [
         "index.html"
       ],
-      "anchor": "完整 237×237 格子；不逐幀裁邊",
-      "durationSeconds": 1.4,
-      "loop": 0
+      "anchor": "320×320 透明畫布；連續網格骨架變形",
+      "durationSeconds": 2,
+      "loop": 0,
+      "frameRate": 20
     },
     {
       "path": "assets/images/mootech_website_IMG120_green-vision-still.png",
@@ -2323,19 +2324,19 @@
       "purpose": "D 版品牌小綠人／vision-still",
       "prefix": "mootech_website",
       "format": "png",
-      "bytes": 38614,
-      "sha256": "892a1059b543165e7e75ebe2c57bd00ff5463b399ae05dd3a6d1809d10e97f7d",
+      "bytes": 62271,
+      "sha256": "56b816dd7d546be60858e983e334e655cf55e243b90aa849ef5c9817ba62c52d",
       "status": "delivered",
       "pathPolicy": "standard",
-      "width": 237,
-      "height": 237,
+      "width": 320,
+      "height": 320,
       "frames": 1,
       "transparency": "透明背景",
-      "source": "source/images/mootech_website_SRCIMG006_green-motion-sheet.png",
+      "source": "source/images/mootech_website_SRCIMG007_gradient-character.png",
       "references": [
         "index.html"
       ],
-      "anchor": "完整 237×237 格子；不逐幀裁邊"
+      "anchor": "320×320 透明畫布；連續網格骨架變形"
     },
     {
       "path": "assets/images/mootech_website_IMG121_green-team.gif",
@@ -2345,21 +2346,22 @@
       "purpose": "D 版品牌小綠人／team",
       "prefix": "mootech_website",
       "format": "gif",
-      "bytes": 58053,
-      "sha256": "4320188845d6861f4593f8a1e41d914bedabf6844234c83388543372674268ba",
+      "bytes": 810432,
+      "sha256": "ba17097ca4994fa4adcec3bb266e4987ff33796771f02eb35c3517ecb45f7bb9",
       "status": "delivered",
       "pathPolicy": "standard",
-      "width": 237,
-      "height": 237,
-      "frames": 4,
+      "width": 320,
+      "height": 320,
+      "frames": 40,
       "transparency": "透明背景",
-      "source": "source/images/mootech_website_SRCIMG006_green-motion-sheet.png",
+      "source": "source/images/mootech_website_SRCIMG007_gradient-character.png",
       "references": [
         "index.html"
       ],
-      "anchor": "完整 237×237 格子；不逐幀裁邊",
-      "durationSeconds": 1.4,
-      "loop": 0
+      "anchor": "320×320 透明畫布；連續網格骨架變形",
+      "durationSeconds": 2,
+      "loop": 0,
+      "frameRate": 20
     },
     {
       "path": "assets/images/mootech_website_IMG122_green-team-still.png",
@@ -2369,19 +2371,19 @@
       "purpose": "D 版品牌小綠人／team-still",
       "prefix": "mootech_website",
       "format": "png",
-      "bytes": 56223,
-      "sha256": "c96b76622fe41612d927196e1aa8cd52d78e96d9de873c15dfb14c2e32ecca26",
+      "bytes": 62676,
+      "sha256": "77f76e8f2d019a6dc0ceb8427bcccd9a60deed7e292a50cd1253928798a4ee05",
       "status": "delivered",
       "pathPolicy": "standard",
-      "width": 237,
-      "height": 237,
+      "width": 320,
+      "height": 320,
       "frames": 1,
       "transparency": "透明背景",
-      "source": "source/images/mootech_website_SRCIMG006_green-motion-sheet.png",
+      "source": "source/images/mootech_website_SRCIMG007_gradient-character.png",
       "references": [
         "index.html"
       ],
-      "anchor": "完整 237×237 格子；不逐幀裁邊"
+      "anchor": "320×320 透明畫布；連續網格骨架變形"
     },
     {
       "path": "assets/images/mootech_website_IMG123_green-ideas.gif",
@@ -2391,21 +2393,22 @@
       "purpose": "D 版品牌小綠人／ideas",
       "prefix": "mootech_website",
       "format": "gif",
-      "bytes": 40873,
-      "sha256": "ff40a7f1952d5cb7e376767d7f0c7b072af9de771ae34232dfc7820fd7f18d70",
+      "bytes": 806410,
+      "sha256": "1169fd473e55bb045921b621bab9011ef07e5599bb056dc76177c64544558043",
       "status": "delivered",
       "pathPolicy": "standard",
-      "width": 237,
-      "height": 237,
-      "frames": 4,
+      "width": 320,
+      "height": 320,
+      "frames": 40,
       "transparency": "透明背景",
-      "source": "source/images/mootech_website_SRCIMG006_green-motion-sheet.png",
+      "source": "source/images/mootech_website_SRCIMG007_gradient-character.png",
       "references": [
         "index.html"
       ],
-      "anchor": "完整 237×237 格子；不逐幀裁邊",
-      "durationSeconds": 1.4,
-      "loop": 0
+      "anchor": "320×320 透明畫布；連續網格骨架變形",
+      "durationSeconds": 2,
+      "loop": 0,
+      "frameRate": 20
     },
     {
       "path": "assets/images/mootech_website_IMG124_green-ideas-still.png",
@@ -2415,19 +2418,19 @@
       "purpose": "D 版品牌小綠人／ideas-still",
       "prefix": "mootech_website",
       "format": "png",
-      "bytes": 43237,
-      "sha256": "dcca555b804d0cba7cba8e816df4e9bc62d50ab0cd5e95f3fba870088e0cebcc",
+      "bytes": 61759,
+      "sha256": "c96ee3e02f0880ee403c216cbced9371ccdbc7c33e6125e233b12708bc197f81",
       "status": "delivered",
       "pathPolicy": "standard",
-      "width": 237,
-      "height": 237,
+      "width": 320,
+      "height": 320,
       "frames": 1,
       "transparency": "透明背景",
-      "source": "source/images/mootech_website_SRCIMG006_green-motion-sheet.png",
+      "source": "source/images/mootech_website_SRCIMG007_gradient-character.png",
       "references": [
         "index.html"
       ],
-      "anchor": "完整 237×237 格子；不逐幀裁邊"
+      "anchor": "320×320 透明畫布；連續網格骨架變形"
     },
     {
       "path": "assets/images/mootech_website_IMG125_green-learning.gif",
@@ -2437,21 +2440,22 @@
       "purpose": "D 版品牌小綠人／learning",
       "prefix": "mootech_website",
       "format": "gif",
-      "bytes": 56276,
-      "sha256": "5c159f1e1df03d6f44ee175f9f70d21bd6b53743c9d8062c27b301ff1a6f7c59",
+      "bytes": 730369,
+      "sha256": "0905b6bddb0925bec8055812b26293544d2498df9f9175379e12e2fbc50f3be8",
       "status": "delivered",
       "pathPolicy": "standard",
-      "width": 237,
-      "height": 237,
-      "frames": 4,
+      "width": 320,
+      "height": 320,
+      "frames": 40,
       "transparency": "透明背景",
-      "source": "source/images/mootech_website_SRCIMG006_green-motion-sheet.png",
+      "source": "source/images/mootech_website_SRCIMG007_gradient-character.png",
       "references": [
         "index.html"
       ],
-      "anchor": "完整 237×237 格子；不逐幀裁邊",
-      "durationSeconds": 1.4,
-      "loop": 0
+      "anchor": "320×320 透明畫布；連續網格骨架變形",
+      "durationSeconds": 2,
+      "loop": 0,
+      "frameRate": 20
     },
     {
       "path": "assets/images/mootech_website_IMG126_green-learning-still.png",
@@ -2461,19 +2465,19 @@
       "purpose": "D 版品牌小綠人／learning-still",
       "prefix": "mootech_website",
       "format": "png",
-      "bytes": 54899,
-      "sha256": "327be4b7f6ed55b9f9ba92cd4419cbe7cf8e76df2d5b5257f40a48cb9ab45df7",
+      "bytes": 55004,
+      "sha256": "b6567e4c0a1bf20d4c028890fccab93b18851bc32f07e918e37f70bea93ece21",
       "status": "delivered",
       "pathPolicy": "standard",
-      "width": 237,
-      "height": 237,
+      "width": 320,
+      "height": 320,
       "frames": 1,
       "transparency": "透明背景",
-      "source": "source/images/mootech_website_SRCIMG006_green-motion-sheet.png",
+      "source": "source/images/mootech_website_SRCIMG007_gradient-character.png",
       "references": [
         "index.html"
       ],
-      "anchor": "完整 237×237 格子；不逐幀裁邊"
+      "anchor": "320×320 透明畫布；連續網格骨架變形"
     },
     {
       "path": "assets/images/mootech_website_IMG127_green-workspace.gif",
@@ -2483,21 +2487,22 @@
       "purpose": "D 版品牌小綠人／workspace",
       "prefix": "mootech_website",
       "format": "gif",
-      "bytes": 52745,
-      "sha256": "ea6fe777bacaeddb9bdeeb3effe5d8b837f1aaa148210fa6fd4003f125463a4f",
+      "bytes": 823648,
+      "sha256": "a0e7adc7ba19addd442b52131e208a0629065f35974a288b969d90ef3397e877",
       "status": "delivered",
       "pathPolicy": "standard",
-      "width": 237,
-      "height": 237,
-      "frames": 4,
+      "width": 320,
+      "height": 320,
+      "frames": 40,
       "transparency": "透明背景",
-      "source": "source/images/mootech_website_SRCIMG006_green-motion-sheet.png",
+      "source": "source/images/mootech_website_SRCIMG007_gradient-character.png",
       "references": [
         "index.html"
       ],
-      "anchor": "完整 237×237 格子；不逐幀裁邊",
-      "durationSeconds": 1.4,
-      "loop": 0
+      "anchor": "320×320 透明畫布；連續網格骨架變形",
+      "durationSeconds": 2,
+      "loop": 0,
+      "frameRate": 20
     },
     {
       "path": "assets/images/mootech_website_IMG128_green-workspace-still.png",
@@ -2507,19 +2512,19 @@
       "purpose": "D 版品牌小綠人／workspace-still",
       "prefix": "mootech_website",
       "format": "png",
-      "bytes": 55978,
-      "sha256": "5cd943e21be8e99daa22a374e875e69fc1cf458c44a50696fd6e36afc0a4d729",
+      "bytes": 63323,
+      "sha256": "a5f301d05a8a32d6fb7672567e55a79a16840a4e40e4d21479006a75f522f992",
       "status": "delivered",
       "pathPolicy": "standard",
-      "width": 237,
-      "height": 237,
+      "width": 320,
+      "height": 320,
       "frames": 1,
       "transparency": "透明背景",
-      "source": "source/images/mootech_website_SRCIMG006_green-motion-sheet.png",
+      "source": "source/images/mootech_website_SRCIMG007_gradient-character.png",
       "references": [
         "index.html"
       ],
-      "anchor": "完整 237×237 格子；不逐幀裁邊"
+      "anchor": "320×320 透明畫布；連續網格骨架變形"
     },
     {
       "path": "assets/images/mootech_website_IMG129_green-coffee.gif",
@@ -2529,21 +2534,22 @@
       "purpose": "D 版品牌小綠人／coffee",
       "prefix": "mootech_website",
       "format": "gif",
-      "bytes": 51157,
-      "sha256": "69815f14d4c1ea546823d29a1fe98b4407ab1c845490d0fcfb2b6196e709c48c",
+      "bytes": 810856,
+      "sha256": "2c606de58db620e99aa7a60d9d3a8a4b7ee4ceceb7627f83039268a6c0901b46",
       "status": "delivered",
       "pathPolicy": "standard",
-      "width": 237,
-      "height": 237,
-      "frames": 4,
+      "width": 320,
+      "height": 320,
+      "frames": 40,
       "transparency": "透明背景",
-      "source": "source/images/mootech_website_SRCIMG006_green-motion-sheet.png",
+      "source": "source/images/mootech_website_SRCIMG007_gradient-character.png",
       "references": [
         "index.html"
       ],
-      "anchor": "完整 237×237 格子；不逐幀裁邊",
-      "durationSeconds": 1.4,
-      "loop": 0
+      "anchor": "320×320 透明畫布；連續網格骨架變形",
+      "durationSeconds": 2,
+      "loop": 0,
+      "frameRate": 20
     },
     {
       "path": "assets/images/mootech_website_IMG130_green-coffee-still.png",
@@ -2553,19 +2559,19 @@
       "purpose": "D 版品牌小綠人／coffee-still",
       "prefix": "mootech_website",
       "format": "png",
-      "bytes": 41451,
-      "sha256": "12c8e6a70812d12a7897e16e93404540b0a25a47d9c01fe58510e3f55a678227",
+      "bytes": 62520,
+      "sha256": "3dd9d3303fae2cfea05ad7a74d5f72192506da27e221df5e6ea166f310820918",
       "status": "delivered",
       "pathPolicy": "standard",
-      "width": 237,
-      "height": 237,
+      "width": 320,
+      "height": 320,
       "frames": 1,
       "transparency": "透明背景",
-      "source": "source/images/mootech_website_SRCIMG006_green-motion-sheet.png",
+      "source": "source/images/mootech_website_SRCIMG007_gradient-character.png",
       "references": [
         "index.html"
       ],
-      "anchor": "完整 237×237 格子；不逐幀裁邊"
+      "anchor": "320×320 透明畫布；連續網格骨架變形"
     },
     {
       "path": "assets/images/mootech_website_IMG131_green-fitness.gif",
@@ -2575,21 +2581,22 @@
       "purpose": "D 版品牌小綠人／fitness",
       "prefix": "mootech_website",
       "format": "gif",
-      "bytes": 44177,
-      "sha256": "2e6b23ba99c3c51b20f7a256754633c59490a2a431c593c27bcf252d464d416d",
+      "bytes": 812281,
+      "sha256": "f94013137c14b30299a300e0a822ca5257e2b98b876598b1f022f0e6927439ca",
       "status": "delivered",
       "pathPolicy": "standard",
-      "width": 237,
-      "height": 237,
-      "frames": 4,
+      "width": 320,
+      "height": 320,
+      "frames": 40,
       "transparency": "透明背景",
-      "source": "source/images/mootech_website_SRCIMG006_green-motion-sheet.png",
+      "source": "source/images/mootech_website_SRCIMG007_gradient-character.png",
       "references": [
         "index.html"
       ],
-      "anchor": "完整 237×237 格子；不逐幀裁邊",
-      "durationSeconds": 1.4,
-      "loop": 0
+      "anchor": "320×320 透明畫布；連續網格骨架變形",
+      "durationSeconds": 2,
+      "loop": 0,
+      "frameRate": 20
     },
     {
       "path": "assets/images/mootech_website_IMG132_green-fitness-still.png",
@@ -2599,19 +2606,19 @@
       "purpose": "D 版品牌小綠人／fitness-still",
       "prefix": "mootech_website",
       "format": "png",
-      "bytes": 35339,
-      "sha256": "8fc8043c08179bf653618a4987b885eb193bc21347ef9be37edfed044a575127",
+      "bytes": 61759,
+      "sha256": "648c7beb61f4be3d4b530ceb7038edb1bee57e23b684da43cac49d153efa7228",
       "status": "delivered",
       "pathPolicy": "standard",
-      "width": 237,
-      "height": 237,
+      "width": 320,
+      "height": 320,
       "frames": 1,
       "transparency": "透明背景",
-      "source": "source/images/mootech_website_SRCIMG006_green-motion-sheet.png",
+      "source": "source/images/mootech_website_SRCIMG007_gradient-character.png",
       "references": [
         "index.html"
       ],
-      "anchor": "完整 237×237 格子；不逐幀裁邊"
+      "anchor": "320×320 透明畫布；連續網格骨架變形"
     },
     {
       "path": "source/images/mootech_website_SRCIMG006_green-motion-sheet.png",
@@ -2629,6 +2636,23 @@
       "height": 1596,
       "frames": 1,
       "transparency": "透明背景"
+    },
+    {
+      "path": "source/images/mootech_website_SRCIMG007_gradient-character.png",
+      "usage": "source",
+      "category": "images",
+      "id": "SRCIMG007",
+      "purpose": "使用者選定的無五官青藍／薄荷／黃綠漸層角色，單獨原稿",
+      "prefix": "mootech_website",
+      "format": "png",
+      "bytes": 1123052,
+      "sha256": "7d6718a3a9ac414acc0de16911e38ceabd21acadd03d6244c24ac5c4c48cab98",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "width": 1106,
+      "height": 1422,
+      "frames": 1,
+      "transparency": "透明背景"
     }
   ],
   "delegates": [],
@@ -2640,6 +2664,10 @@
     {
       "path": "index.html",
       "purpose": "A～E 版型的 Canvas／CSS 場景、節點、粒子、地圖與客服動態；沒有獨立模型檔"
+    },
+    {
+      "path": "tools/gradient-motion.html",
+      "purpose": "七情境連續骨架網格動作，40 幀／2 秒，20 fps；保留單一已核准角色"
     }
   ]
 }
