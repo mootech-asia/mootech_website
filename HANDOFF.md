@@ -106,3 +106,10 @@ python3 tools/build-en.py
 - 驗證：`python3 tools/assets.py check` 通過 144 項素材；`python3 tools/build-en.py` 通過；`git diff --check` 通過。所有 inline JS 經 Node 語法檢查。
 - Playwright／Chromium：A–E × 中英文 × 1440 桌機／390 手機（20 組）確認客服開啟、縮小與重開；客服內圖片與 SVG use 引用為 0，無 pageerror。D 版七組圖載入成功；暫停切換靜態、英文減少動態偏好使用 PNG 均通過。已目視核對無五官原稿、透明黑底合成與 GIF 幀裁切。
 - 發布狀態：本次交付工作分支／PR，尚未合併或部署正式 GitHub Pages。下一步由使用者檢視角色風格及四關鍵幀循環節奏後合併；未以素材檢查宣稱已正式上線。客服沿用 mailto，未新增寄信後端。
+
+#### 發布追記（使用者已授權上線）
+
+- PR #1 已合併，正式 runtime 提交 `393cd3eaf6c0656e2915c7433c17d901d6482e9c`；分支 `claude/inspiring-hypatia-rpjq0j`。
+- GitHub Pages 首次部署因上傳後 artifact metadata 暫時回傳 0 件而失敗；重跑同一 run 的失敗工作，第 2 次成功：[部署紀錄](https://github.com/mootech-asia/mootech_website/actions/runs/45361403197)。未修改環境保護或發布允許分支。
+- 正式站 HTML 已含新功能，七支 GIF 下載指紋逐一符合 manifest。正式站 Chromium 驗證七組圖片載入、暫停切換、客服開啟及 3 個初始選項、無吉祥物圖片／人物引用、英文 reduced-motion PNG；無 pageerror。
+- 已上線：https://mootech-asia.github.io/mootech_website/#design-d 。下一步：使用者檢視正式動畫效果；無待解部署阻塞。
