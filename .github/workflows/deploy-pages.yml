@@ -8,6 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: read
   pages: write
   id-token: write
@@ -45,6 +46,27 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+
+      # Artifact uploads can precede their visibility in the Actions listing API.
+      - name: Wait for Pages artifact metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for attempt in $(seq 1 18); do
+            count=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts" --jq '[.artifacts[] | select(.name == "github-pages" and .expired == false)] | length')
+            if [ "$count" = "1" ]; then
+              echo "Pages artifact is readable."
+              exit 0
+            fi
+            if [ "$count" -gt 1 ]; then
+              echo "Multiple Pages artifacts found; start a fresh workflow run."
+              exit 1
+            fi
+            echo "Waiting for uploaded Pages artifact ($attempt/18)."
+            sleep 5
+          done
+          echo "Pages artifact did not become readable."
+          exit 1
 
       - name: Deploy to GitHub Pages
         id: deployment
