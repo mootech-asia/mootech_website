@@ -942,7 +942,7 @@ canvas.fill { contain: strict; }
 .vd-welfaregrid b { font-size: 20px; }
 .vd-welfaregrid p { color: rgba(255,255,255,.76); line-height: 1.8; margin: 0; }
 .vp-scene { width: 136px; height: 120px; }
-.vp-scene svg { width: 100%; height: 100%; overflow: visible; display: block; }
+.vp-scene picture, .vp-scene img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .vp-scene-lg { width: 100%; max-width: 320px; height: 230px; justify-self: center; }
 @keyframes vpFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
 @keyframes vpSpin { to { transform: rotate(360deg); } }
@@ -1635,6 +1635,16 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
 .m104:hover { transform: translateY(-1px); }
 .m104:hover svg { filter: drop-shadow(0 2px 5px rgba(0,0,0,.28)); }
 .m104:focus-visible { outline: 2px solid #FF7800; outline-offset: 3px; border-radius: 7px; }
+
+/* Neutral support identity, shared across A–E and both languages. */
+.mtc-service-icon { position: absolute; inset: 0; display: grid; place-items: center; color: #b6d24b; background: linear-gradient(145deg, #19251c, #0d1513); }
+.mtc-service-icon svg { width: 44px; height: 44px; }
+.mtc-fab .mtc-service-icon { border-radius: 50%; }
+.mtc-fab .mtc-service-icon svg { width: 28px; height: 28px; }
+.mtc-video { flex-basis: 116px; }
+.mtc-video .mtc-service-icon { display: none; }
+.mtc-video::after { display: none; }
+.motion-toggle { border: 1px solid #596531; border-radius: 999px; color: #d8e79b; background: transparent; padding: 8px 16px; margin-bottom: 24px; cursor: pointer; font: inherit; }
 </style>
 </head>
 <body data-v="a">
@@ -1652,12 +1662,6 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   <symbol id="i-fb" viewBox="0 0 24 24"><path d="M13.5 21v-7.5H16l.5-3h-3V8.6c0-.9.3-1.6 1.6-1.6h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4V10.5H8v3h2.5V21z"/></symbol>
   <symbol id="i-in" viewBox="0 0 24 24"><path d="M4.5 9h3.2v11H4.5zM6.1 3.8a1.9 1.9 0 110 3.8 1.9 1.9 0 010-3.8zM10 9h3.1v1.5h.1c.4-.8 1.5-1.7 3.1-1.7 3.3 0 3.9 2.2 3.9 5V20H17v-5.4c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V20H10z"/></symbol>
   <symbol id="i-104" viewBox="0 0 48 24"><rect x=".6" y=".6" width="46.8" height="22.8" rx="5.2" fill="#fff" stroke="#E3E3E3" stroke-width="1"/><text x="24" y="17.4" text-anchor="middle" font-family="Arial,'Helvetica Neue',Helvetica,sans-serif" font-size="15" font-weight="800" letter-spacing=".6"><tspan fill="#555555">1</tspan><tspan fill="#FF7800">0</tspan><tspan fill="#555555">4</tspan></text></symbol>
-  <!-- 原創向量人角色（MOOTECH 徵才系列）：極簡幾何人形，供願景／為什麼加入／員工福利共用 -->
-  <radialGradient id="vpH" cx=".36" cy=".26" r=".9"><stop offset="0" stop-color="#f3fcd9"/><stop offset=".42" stop-color="#a9db59"/><stop offset=".8" stop-color="#5aa636"/><stop offset="1" stop-color="#3f8128"/></radialGradient>
-  <radialGradient id="vpB" cx=".38" cy=".18" r="1.05"><stop offset="0" stop-color="#c9ea80"/><stop offset=".5" stop-color="#74ba3c"/><stop offset="1" stop-color="#357322"/></radialGradient>
-  <radialGradient id="vpL" cx=".4" cy=".2" r="1"><stop offset="0" stop-color="#b6e06a"/><stop offset="1" stop-color="#357322"/></radialGradient>
-  <radialGradient id="vpSh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#05140a" stop-opacity=".45"/><stop offset="1" stop-color="#05140a" stop-opacity="0"/></radialGradient>
-  <symbol id="vp-base" viewBox="0 0 80 150"><ellipse cx="40" cy="143" rx="25" ry="6" fill="url(#vpSh)"/><ellipse cx="31" cy="128" rx="10" ry="6" fill="url(#vpL)"/><ellipse cx="49" cy="128" rx="10" ry="6" fill="url(#vpL)"/><path d="M40 50c-12 0-19.5 8-19.5 19 0 5 1.5 9.2 4.2 12.6-2.6 3-4.2 7-4.2 11.9v26.5c0 8 12.5 8 13 0l1.5-24.5h2l1.5 24.5c.5 8 13 8 13 0V93.5c0-4.9-1.6-8.9-4.2-11.9 2.7-3.4 4.2-7.6 4.2-12.6 0-11-7.5-19-19.5-19z" fill="url(#vpB)"/><path d="M23.5 57.5c-6.5 1.8-10 7-11 14.4l-1.6 16.2c-.5 5.2 7 5.8 7.6.6l2-15.4c.6-4.2 2.8-7.8 6.2-10z" fill="url(#vpL)"/><path d="M56.5 57.5c6.5 1.8 10 7 11 14.4l1.6 16.2c.5 5.2-7 5.8-7.6.6l-2-15.4c-.6-4.2-2.8-7.8-6.2-10z" fill="url(#vpL)"/><ellipse cx="12.5" cy="90" rx="5.8" ry="6.4" fill="url(#vpL)"/><ellipse cx="67.5" cy="90" rx="5.8" ry="6.4" fill="url(#vpL)"/><circle cx="40" cy="30" r="23.5" fill="url(#vpH)"/><path d="M61 34a23.5 23.5 0 0 1-13 19" fill="none" stroke="#45cde8" stroke-width="2.2" stroke-linecap="round" opacity=".5"/><ellipse cx="32" cy="18" rx="8" ry="5.4" fill="#fff" opacity=".62" transform="rotate(-24 32 18)"/><circle cx="47" cy="15" r="2.3" fill="#fff" opacity=".5"/><ellipse cx="31" cy="62" rx="5" ry="8" fill="#fff" opacity=".16"/></symbol>
 </svg>
 
 <!-- ======================= 版型 A 企業信賴 ======================= -->
@@ -2297,13 +2301,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
         <div class="vd-glass vd-vision-text">
           <p data-en="We create an innovative, flexible and inclusive experience in an MNC working environment, developing fullest potentials through learning, development and teamwork to strive for goals and achievement.">我們致力於創造一個創新、靈活和具有包容性的工作環境，鼓勵每個人發揮自己的才華和潛能，並透過團隊合作來實現共同目標。</p>
         </div>
-        <div class="vp-scene vp-scene-lg" role="img" aria-label="向量形象人與星光願景動畫">
-          <svg viewBox="0 0 220 150">
-            <use class="vp-person" href="#vp-base" x="48" y="12" width="68" height="132"/>
-            <g class="vp-star"><path d="M170 34l3.7 7.5 8.3 1.2-6 5.7 1.4 8.2-7.4-3.9-7.4 3.9 1.4-8.2-6-5.7 8.3-1.2z" fill="#b9d85a"/></g>
-            <g class="vp-star" stroke="#45cde8" stroke-width="2.4" stroke-linecap="round"><path d="M190 66l1.5 3.6M198 50l3.6 1.3M150 26l1.3 3.2"/></g>
-          </svg>
-        </div>
+        <div class="vp-scene vp-scene-lg"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/images/mootech_website_IMG120_green-vision-still.png"><img src="assets/images/mootech_website_IMG119_green-vision.gif" alt="" width="237" height="237" loading="lazy" decoding="async"></picture></div>
       </div>
     </div>
   </section>
@@ -2320,7 +2318,8 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   <section class="vd-sec" id="vd-join">
     <div class="wrap">
       <div class="vd-head2"><span class="vd-kicker">WHY JOIN · TEAM</span><h2 class="vd-h2" data-en="Why Join MOOTECH">為什麼加入 MOOTECH</h2></div>
-      <div class="vd-joingrid"><div class="vd-glass vd-joincard"><div class="vp-scene" role="img" aria-label="兩位向量形象人並肩合作動畫"><svg viewBox="0 0 140 124"><use class="vp-person" href="#vp-base" x="14" y="20" width="52" height="98"/><use class="vp-person d2" href="#vp-base" x="72" y="20" width="52" height="98"/></svg></div><h3 data-en="Together we go further">一起，我們可以走得更長更遠</h3><span class="en" data-en=" ">Team Collaboration</span></div><div class="vd-glass vd-joincard"><div class="vp-scene" role="img" aria-label="向量形象人與靈感燈泡動畫"><svg viewBox="0 0 140 124"><use class="vp-person" href="#vp-base" x="42" y="12" width="56" height="104"/><g class="vp-glow"><circle cx="113" cy="26" r="9" fill="none" stroke="#b9d85a" stroke-width="2.6"/><path d="M109 34.5h8" stroke="#b9d85a" stroke-width="2.6" stroke-linecap="round"/><path d="M110 37.5h6" stroke="#b9d85a" stroke-width="2.2" stroke-linecap="round"/><g stroke="#45cde8" stroke-width="2.2" stroke-linecap="round"><path d="M113 10v4"/><path d="M98 18l3 2.5"/><path d="M128 18l-3 2.5"/></g></g></svg></div><h3 data-en="We share knowledge openly">知識分享絕不藏私</h3><span class="en" data-en=" ">Brainstorming Ideas</span></div><div class="vd-glass vd-joincard"><div class="vp-scene" role="img" aria-label="向量形象人與旋轉齒輪動畫"><svg viewBox="0 0 140 124"><use class="vp-person" href="#vp-base" x="42" y="12" width="56" height="104"/><g class="vp-gear"><circle cx="113" cy="28" r="11" fill="none" stroke="#45cde8" stroke-width="3"/><circle cx="113" cy="28" r="3.5" fill="#45cde8"/><g stroke="#45cde8" stroke-width="3" stroke-linecap="round"><path d="M113 14v4"/><path d="M113 38v4"/><path d="M99 28h4"/><path d="M123 28h4"/><path d="M103 18l3 3"/><path d="M120 35l3 3"/><path d="M123 18l-3 3"/><path d="M106 35l-3 3"/></g></g></svg></div><h3 data-en="Always on the latest tech">嶄新技術在線掌握</h3><span class="en" data-en=" ">Learning New Technologies</span></div><div class="vd-glass vd-joincard"><div class="vp-scene" role="img" aria-label="向量形象人與明亮窗景動畫"><svg viewBox="0 0 140 124"><use class="vp-person" href="#vp-base" x="42" y="12" width="56" height="104"/><g fill="none" stroke="#45cde8" stroke-width="2.4" stroke-linejoin="round"><rect x="98" y="12" width="30" height="32" rx="3"/><path d="M113 12v32M98 28h30"/></g><circle class="vp-glow" cx="105.5" cy="21" r="4.5" fill="#b9d85a"/></svg></div><h3 data-en="A bright, open workspace">明亮開放寬敞的辦公環境</h3><span class="en" data-en=" ">Conducive Environment</span></div><div class="vd-glass vd-joincard"><div class="vp-scene" role="img" aria-label="向量形象人與咖啡愛心動畫"><svg viewBox="0 0 140 124"><use class="vp-person" href="#vp-base" x="42" y="12" width="56" height="104"/><g fill="none" stroke="#b9d85a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M100 34h20v9a9 9 0 0 1-9 9h-2a9 9 0 0 1-9-9z"/><path d="M120 37h3.5a4.5 4.5 0 0 1 0 9H120"/></g><g stroke="#45cde8" stroke-width="2.3" stroke-linecap="round"><path d="M105 24c0 3-2 3-2 6M113 24c0 3-2 3-2 6"/></g><path class="vp-glow" d="M127 12c-2.2-2.8-7.5-1.8-7.5 2.2 0 3 7.5 7 7.5 7s7.5-4 7.5-7c0-4-5.3-5-7.5-2.2z" fill="#b9d85a"/></svg></div><h3 data-en="Good food, great company">美食當前，減肥都是明天的事</h3><span class="en" data-en=" ">Team Bonding</span></div><div class="vd-glass vd-joincard"><div class="vp-scene" role="img" aria-label="向量形象人與啞鈴動畫"><svg viewBox="0 0 140 124"><use class="vp-person" href="#vp-base" x="42" y="12" width="56" height="104"/><g stroke="#45cde8" stroke-width="3" fill="none" stroke-linecap="round"><path d="M98 40h28"/><path d="M98 33v14M126 33v14"/></g><g stroke="#b9d85a" stroke-width="3" fill="none" stroke-linecap="round"><path d="M93 35v10M131 35v10"/></g></svg></div><h3 data-en="Work hard, stay healthy">要打拼也要健康，跟著 Mootech 動吃動</h3><span class="en" data-en=" ">Promote A Healthy Lifestyle</span></div></div>
+      <button type="button" class="motion-toggle" id="green-motion-toggle" aria-pressed="false" data-en="Pause character animations">暫停角色動畫</button>
+      <div class="vd-joingrid"><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/images/mootech_website_IMG122_green-team-still.png"><img src="assets/images/mootech_website_IMG121_green-team.gif" alt="" width="237" height="237" loading="lazy" decoding="async"></picture></div><h3 data-en="Together we go further">一起，我們可以走得更長更遠</h3><span class="en" data-en=" ">Team Collaboration</span></div><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/images/mootech_website_IMG124_green-ideas-still.png"><img src="assets/images/mootech_website_IMG123_green-ideas.gif" alt="" width="237" height="237" loading="lazy" decoding="async"></picture></div><h3 data-en="We share knowledge openly">知識分享絕不藏私</h3><span class="en" data-en=" ">Brainstorming Ideas</span></div><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/images/mootech_website_IMG126_green-learning-still.png"><img src="assets/images/mootech_website_IMG125_green-learning.gif" alt="" width="237" height="237" loading="lazy" decoding="async"></picture></div><h3 data-en="Always on the latest tech">嶄新技術在線掌握</h3><span class="en" data-en=" ">Learning New Technologies</span></div><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/images/mootech_website_IMG128_green-workspace-still.png"><img src="assets/images/mootech_website_IMG127_green-workspace.gif" alt="" width="237" height="237" loading="lazy" decoding="async"></picture></div><h3 data-en="A bright, open workspace">明亮開放寬敞的辦公環境</h3><span class="en" data-en=" ">Conducive Environment</span></div><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/images/mootech_website_IMG130_green-coffee-still.png"><img src="assets/images/mootech_website_IMG129_green-coffee.gif" alt="" width="237" height="237" loading="lazy" decoding="async"></picture></div><h3 data-en="Good food, great company">美食當前，減肥都是明天的事</h3><span class="en" data-en=" ">Team Bonding</span></div><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/images/mootech_website_IMG132_green-fitness-still.png"><img src="assets/images/mootech_website_IMG131_green-fitness.gif" alt="" width="237" height="237" loading="lazy" decoding="async"></picture></div><h3 data-en="Work hard, stay healthy">要打拼也要健康，跟著 Mootech 動吃動</h3><span class="en" data-en=" ">Promote A Healthy Lifestyle</span></div></div>
     </div>
   </section>
 
@@ -3629,16 +3628,16 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
 </script>
 <div class="mtc pre" id="mt-chat">
   <div class="mtc-call" id="mtc-call" role="button" tabindex="0">
-    <div class="mtc-cam"><svg class="mtc-av" viewBox="5 4 70 98" preserveAspectRatio="xMidYMid slice"><rect width="80" height="150" fill="#0c2a16"/><use href="#vp-base"/></svg></div><div class="mtc-shade"></div>
+    <div class="mtc-service-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 18v-4a10 10 0 0 1 20 0v4"/><rect x="4" y="15" width="5" height="10" rx="2"/><rect x="23" y="15" width="5" height="10" rx="2"/><path d="M25 25c0 3-4 4-9 4"/></svg></div><div class="mtc-shade"></div>
     <div class="mtc-top"><b id="mtc-cname"></b><span><i></i><em id="mtc-cstat" style="font-style:normal"></em></span></div>
     <button type="button" class="mtc-min" id="mtc-min"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg></button>
     <div class="mtc-btns"><span class="mtc-accept" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span></div>
     <div class="mtc-holo" aria-hidden="true"></div><div class="mtc-conn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-1.5 2.5-4 2.5h-2"/></svg><b>Connecting…</b><i></i></div>
   </div>
-  <button type="button" class="mtc-fab" id="mtc-fab"><span class="mtc-face"><svg class="mtc-av" viewBox="12 5 56 56" preserveAspectRatio="xMidYMid slice"><rect width="80" height="150" fill="#0c2a16"/><use href="#vp-base"/></svg></span><i></i><span class="mtc-pill" id="mtc-pill">00:00</span></button>
+  <button type="button" class="mtc-fab" id="mtc-fab"><span class="mtc-service-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 18v-4a10 10 0 0 1 20 0v4"/><rect x="4" y="15" width="5" height="10" rx="2"/><rect x="23" y="15" width="5" height="10" rx="2"/><path d="M25 25c0 3-4 4-9 4"/></svg></span><i></i><span class="mtc-pill" id="mtc-pill">00:00</span></button>
   <div class="mtc-panel" role="dialog" aria-modal="false" aria-labelledby="mtc-name" id="mtc-panel">
     <div class="mtc-video">
-      <div class="mtc-cam"><svg class="mtc-av" viewBox="5 4 70 98" preserveAspectRatio="xMidYMid slice"><rect width="80" height="150" fill="#0c2a16"/><use href="#vp-base"/></svg></div>
+      <div class="mtc-service-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 18v-4a10 10 0 0 1 20 0v4"/><rect x="4" y="15" width="5" height="10" rx="2"/><rect x="23" y="15" width="5" height="10" rx="2"/><path d="M25 25c0 3-4 4-9 4"/></svg></div>
       <div class="mtc-vtop"><div><b id="mtc-name"></b><span id="mtc-timer"></span></div><div class="mtc-vr"><span class="mtc-badge"><i></i><em id="mtc-live" style="font-style:normal"></em></span><button type="button" class="mtc-top-min" id="mtc-top-min"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg></button></div></div>
       <div class="mtc-ctls"><button type="button" class="mtc-ctl" id="mtc-mic" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button><button type="button" class="mtc-end" id="mtc-end"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 9c-3.2 0-6.1.9-8.4 2.5-.8.5-1 1.6-.5 2.4l1 1.5c.5.7 1.4 1 2.2.6l2.2-1c.6-.3 1-.9 1-1.6v-1.3a12 12 0 0 1 5 0v1.3c0 .7.4 1.3 1 1.6l2.2 1c.8.4 1.7.1 2.2-.6l1-1.5c.5-.8.3-1.9-.5-2.4A14.8 14.8 0 0 0 12 9z"/></svg></button><button type="button" class="mtc-ctl" id="mtc-hide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></div>
     </div>
@@ -3647,7 +3646,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   </div>
 </div>
 <script>
-/* 右下角 MOO 小熊（FaceTime 風格）：選擇題式對話，分求職者／需求方／其他三條路線，2～3 輪問答後
+/* 右下角 MOOTECH 客服（無吉祥物）：選擇題式對話，分求職者／需求方／其他三條路線，2～3 輪問答後
    整理成已填好內容的郵件（網站沒有後端，使用訪客自己的郵件程式寄出）。 */
 (function () {
   var root = document.getElementById("mt-chat"); if (!root) return;
@@ -3659,15 +3658,15 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   function en() { return document.documentElement.lang === "en"; }
   function L(zh, enS) { return en() ? enS : zh; }
   var T = {
-    name: ["MOO 助手", "MOO Assistant"], role: ["MOOTECH 線上客服", "MOOTECH Assistant"],
+    name: ["MOOTECH 客服", "MOOTECH Support"], role: ["MOOTECH 線上客服", "MOOTECH Assistant"],
     calling: ["接線中…", "Connecting…"], live: ["通話中", "Live"],
-    accept: ["接聽 MOO 助手的客服來電", "Answer MOO Assistant's call"], min: ["縮小", "Minimise"], reopen: ["開啟線上客服", "Open chat"],
+    accept: ["開啟 MOOTECH 客服對話", "Open MOOTECH support"], min: ["縮小", "Minimise"], reopen: ["開啟線上客服", "Open chat"],
     end: ["結束通話", "End call"], mic: ["按下說話，用語音選擇", "Tap to answer by voice"], hide: ["縮小視窗", "Minimise"],
     note: ["點選選項回覆 · 約 1 分鐘完成", "Tap an option · takes about a minute"], restart: ["重新開始", "Start over"],
     listening: ["聆聽中…", "Listening…"],
-    noMic: ["您的瀏覽器不支援語音輸入，請直接點選選項 🐻", "Voice input isn’t supported in this browser. Just tap an option 🐻"],
+    noMic: ["您的瀏覽器不支援語音輸入，請直接點選選項", "Voice input isn’t supported in this browser. Just tap an option"],
     denied: ["沒有取得麥克風權限，請直接點選選項。", "Microphone access was blocked. Just tap an option."],
-    noMatch: ["我沒聽清楚，請直接點選上面的選項 🐻", "I didn’t catch that. Please tap one of the options 🐻"]
+    noMatch: ["我沒聽清楚，請直接點選上面的選項", "I didn’t catch that. Please tap one of the options"]
   };
   function t(k) { return T[k][en() ? 1 : 0]; }
 
@@ -3693,8 +3692,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   function pick(box, o) { if (busy || box.classList.contains("done")) return; box.classList.add("done"); curOpts = []; bubble("me", o.label.replace(/^\S+\s/, "")); o.go(); }
 
   function start() {
-    log.innerHTML = ""; state = {}; sticker("wave");
-    say(L("嗨，我是 MOO 助手！👋 請問今天想做什麼呢？", "Hi, I'm MOO Assistant! 👋 What brings you here today?"), function () {
+    log.innerHTML = ""; state = {}; say(L("您好，歡迎聯絡 MOOTECH！ 請問今天想做什麼呢？", "Welcome to MOOTECH! What brings you here today?"), function () {
       ask([
         { label: L("🙋 我想應徵工作", "🙋 I'd like to apply for a job"), k: /應徵|工作|求職|職缺|履歷|apply|job|career|hiring/i, go: job1 },
         { label: L("🏢 我有網路／直播服務需求", "🏢 I need network or streaming services"), k: /需求|服務|網路|直播|報價|專線|service|network|stream|quote|business/i, go: biz1 },
@@ -3736,7 +3734,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
           L("電子郵件：", "Email: ") + v.email, L("電話：", "Phone: ") + (v.phone || "-"), L("相關經驗：", "Experience: ") + v.exp, "",
           L("履歷已附在這封信中，謝謝！", "My CV is attached. Thank you!")].join("\n");
         say(L("謝謝你，" + v.name + "！🙌 請按下方按鈕開啟郵件，內容我已幫你填好，記得附上履歷（PDF）再寄到人資信箱 " + HR_EMAIL + "。", "Thanks, " + v.name + "! 🙌 Tap below to open the email I've drafted, attach your CV (PDF) and send it to our HR inbox at " + HR_EMAIL + "."), function () {
-          sticker("wink"); links([{ hot: 1, label: L("📧 開啟郵件並附上履歷", "📧 Open email and attach CV"), href: mail(HR_EMAIL, subj, body) }, { label: L("複製人資信箱", "Copy HR email"), copy: HR_EMAIL }]);
+          links([{ hot: 1, label: L("📧 開啟郵件並附上履歷", "📧 Open email and attach CV"), href: mail(HR_EMAIL, subj, body) }, { label: L("複製人資信箱", "Copy HR email"), copy: HR_EMAIL }]);
         });
       });
     });
@@ -3751,7 +3749,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   ];
   function biz1() {
     say(L("了解！您想了解哪一類服務呢？", "Got it! Which kind of service are you interested in?"), function () {
-      ask(SVC.map(function (x) { return { label: x.ic + " " + (en() ? x.en : x.zh), k: x.k, go: function () { state.svc = x; if (x.need === "其他") sticker("think"); say(en() ? x.den : x.dzh, biz2); } }; }));
+      ask(SVC.map(function (x) { return { label: x.ic + " " + (en() ? x.en : x.zh), k: x.k, go: function () { state.svc = x; say(en() ? x.den : x.dzh, biz2); } }; }));
     });
   }
   function biz2() {
@@ -3775,7 +3773,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
           L("服務類型：", "Service: ") + svc, L("地區：", "Region: ") + state.region, L("公司：", "Company: ") + (v.company || "-"),
           L("聯絡人：", "Name: ") + v.name, L("電子郵件：", "Email: ") + v.email, L("電話：", "Phone: ") + (v.phone || "-"), "", L("需求說明：", "Details: ") + (v.note || "-")].join("\n");
         say(L("收到，" + v.name + "！我已把您的需求整理好，按下方按鈕寄出，業務會盡快回覆您。", "Thanks, " + v.name + "! I've summarised your request. Send it below and our team will reply soon."), function () {
-          sticker("handshake"); links([{ hot: 1, label: L("📧 寄出需求信", "📧 Send request email"), href: mail(SALES_EMAIL, subj, body) }, { label: L("改填網站聯絡表單", "Use the contact form"), fill: { name: v.name, email: v.email, need: state.svc.need, msg: L("公司：", "Company: ") + (v.company || "-") + "\n" + L("地區：", "Region: ") + state.region + "\n" + (v.note || "") } }]);
+          links([{ hot: 1, label: L("📧 寄出需求信", "📧 Send request email"), href: mail(SALES_EMAIL, subj, body) }, { label: L("改填網站聯絡表單", "Use the contact form"), fill: { name: v.name, email: v.email, need: state.svc.need, msg: L("公司：", "Company: ") + (v.company || "-") + "\n" + L("地區：", "Region: ") + state.region + "\n" + (v.note || "") } }]);
         });
       });
     });
@@ -3797,7 +3795,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
         { label: L("🙋 我也想應徵工作", "🙋 I'd like to apply for a job"), k: /應徵|工作|job|apply/i, go: job1 },
         { label: L("🏢 我有服務需求", "🏢 I need a service"), k: /需求|服務|service/i, go: biz1 },
         { label: L("✉️ 留言給我們", "✉️ Leave a message"), k: /留言|message/i, go: otherMsg },
-        { label: L("👍 沒有了，謝謝", "👍 That's all, thanks"), k: /沒有|謝謝|不用|no|thanks|that's all/i, go: function () { say(L("不客氣！有需要隨時再找我 🐻", "You're welcome! Call me anytime 🐻"), function () { sticker("heart"); }); } }
+        { label: L("👍 沒有了，謝謝", "👍 That's all, thanks"), k: /沒有|謝謝|不用|no|thanks|that's all/i, go: function () { say(L("不客氣！有需要隨時再找我", "You're welcome! Call me anytime"), function () { }); } }
       ]);
     });
   }
@@ -3810,7 +3808,7 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
       ], L("送出留言", "Send message"), function (v) {
         var body = [L("姓名：", "Name: ") + v.name, L("電子郵件：", "Email: ") + v.email, "", v.note].join("\n");
         say(L("謝謝您的留言！按下方按鈕寄出，我們會盡快回覆。", "Thanks! Send it below and we'll reply soon."), function () {
-          sticker(); links([{ hot: 1, label: L("📧 寄出留言", "📧 Send message"), href: mail(SALES_EMAIL, L("【網站留言】", "[Website message] ") + v.name, body) }]);
+          links([{ hot: 1, label: L("📧 寄出留言", "📧 Send message"), href: mail(SALES_EMAIL, L("【網站留言】", "[Website message] ") + v.name, body) }]);
         });
       });
     });
@@ -3841,8 +3839,6 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
     log.appendChild(f); scroll();
     var first = f.querySelector("input,select,textarea"); if (first && matchMedia("(min-width: 721px)").matches) first.focus({ preventScroll: true });
   }
-  /* 送出資料後的感謝貼圖 */
-  function sticker(n) { var im = new Image(); im.className = "mtc-sticker"; im.src = ({"handshake": "assets/images/mootech_website_IMG009_chat_sticker-handshake.webp", "heart": "assets/images/mootech_website_IMG010_chat_sticker-heart.webp", "think": "assets/images/mootech_website_IMG011_chat_sticker-think.webp", "wave": "assets/images/mootech_website_IMG012_chat_sticker-wave.webp", "wink": "assets/images/mootech_website_IMG013_chat_sticker-wink.webp"})[n || "heart"]; im.alt = ""; im.width = 132; im.decoding = "async"; log.appendChild(im); im.onload = scroll; }
   function links(items) {
     var box = document.createElement("div"); box.className = "mtc-links";
     items.forEach(function (x) {
@@ -3996,5 +3992,25 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
 })();
 </script>
 <script>(function(){var b=document.querySelector('[data-top-btn]');if(!b)return;var on=function(){if(window.scrollY>480)b.classList.add('show');else b.classList.remove('show');};window.addEventListener('scroll',on,{passive:true});on();})();</script>
+<script>
+(function () {
+  var button = document.getElementById('green-motion-toggle');
+  var paused = false;
+  function label() {
+    var en = document.documentElement.lang === 'en';
+    button.textContent = en ? (paused ? 'Play character animations' : 'Pause character animations') : (paused ? '播放角色動畫' : '暫停角色動畫');
+  }
+  button.addEventListener('click', function () {
+    paused = !paused;
+    document.querySelectorAll('.vp-scene picture').forEach(function (picture) {
+      var image = picture.querySelector('img');
+      if (!image.dataset.motionSrc) image.dataset.motionSrc = image.getAttribute('src');
+      image.src = paused ? picture.querySelector('source').getAttribute('srcset') : image.dataset.motionSrc;
+    });
+    button.setAttribute('aria-pressed', String(paused)); label();
+  });
+  new MutationObserver(label).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+})();
+</script>
 </body>
 </html>

@@ -131,6 +131,21 @@
 | SRCIMG003 | 可編輯素材來源：source/images/mootech_website_SRCIMG003_photos-src_b_hero-datacenter.jpg（source） | [source/images/mootech_website_SRCIMG003_photos-src_b_hero-datacenter.jpg](../source/images/mootech_website_SRCIMG003_photos-src_b_hero-datacenter.jpg) | 1664×936；不透明 | 標準前綴編號 |
 | SRCIMG004 | 可編輯素材來源：source/images/mootech_website_SRCIMG004_photos-src_c_hero-datacenter.jpg（source） | [source/images/mootech_website_SRCIMG004_photos-src_c_hero-datacenter.jpg](../source/images/mootech_website_SRCIMG004_photos-src_c_hero-datacenter.jpg) | 1664×936；不透明 | 標準前綴編號 |
 | SRCIMG005 | E 版黑曜石盾影片原始首幀圖（source） | [source/videos/mootech_website_SRCIMG005_E版首屏_黑曜石盾_首格.jpg](../source/videos/mootech_website_SRCIMG005_E版首屏_黑曜石盾_首格.jpg) | 2000×1125；不透明 | 標準前綴編號 |
+| IMG119 | D 版品牌小綠人／vision（runtime） | [assets/images/mootech_website_IMG119_green-vision.gif](../assets/images/mootech_website_IMG119_green-vision.gif) | 237×237；4 幀；1.4 秒；透明背景 | 標準前綴編號 |
+| IMG120 | D 版品牌小綠人／vision-still（runtime） | [assets/images/mootech_website_IMG120_green-vision-still.png](../assets/images/mootech_website_IMG120_green-vision-still.png) | 237×237；透明背景 | 標準前綴編號 |
+| IMG121 | D 版品牌小綠人／team（runtime） | [assets/images/mootech_website_IMG121_green-team.gif](../assets/images/mootech_website_IMG121_green-team.gif) | 237×237；4 幀；1.4 秒；透明背景 | 標準前綴編號 |
+| IMG122 | D 版品牌小綠人／team-still（runtime） | [assets/images/mootech_website_IMG122_green-team-still.png](../assets/images/mootech_website_IMG122_green-team-still.png) | 237×237；透明背景 | 標準前綴編號 |
+| IMG123 | D 版品牌小綠人／ideas（runtime） | [assets/images/mootech_website_IMG123_green-ideas.gif](../assets/images/mootech_website_IMG123_green-ideas.gif) | 237×237；4 幀；1.4 秒；透明背景 | 標準前綴編號 |
+| IMG124 | D 版品牌小綠人／ideas-still（runtime） | [assets/images/mootech_website_IMG124_green-ideas-still.png](../assets/images/mootech_website_IMG124_green-ideas-still.png) | 237×237；透明背景 | 標準前綴編號 |
+| IMG125 | D 版品牌小綠人／learning（runtime） | [assets/images/mootech_website_IMG125_green-learning.gif](../assets/images/mootech_website_IMG125_green-learning.gif) | 237×237；4 幀；1.4 秒；透明背景 | 標準前綴編號 |
+| IMG126 | D 版品牌小綠人／learning-still（runtime） | [assets/images/mootech_website_IMG126_green-learning-still.png](../assets/images/mootech_website_IMG126_green-learning-still.png) | 237×237；透明背景 | 標準前綴編號 |
+| IMG127 | D 版品牌小綠人／workspace（runtime） | [assets/images/mootech_website_IMG127_green-workspace.gif](../assets/images/mootech_website_IMG127_green-workspace.gif) | 237×237；4 幀；1.4 秒；透明背景 | 標準前綴編號 |
+| IMG128 | D 版品牌小綠人／workspace-still（runtime） | [assets/images/mootech_website_IMG128_green-workspace-still.png](../assets/images/mootech_website_IMG128_green-workspace-still.png) | 237×237；透明背景 | 標準前綴編號 |
+| IMG129 | D 版品牌小綠人／coffee（runtime） | [assets/images/mootech_website_IMG129_green-coffee.gif](../assets/images/mootech_website_IMG129_green-coffee.gif) | 237×237；4 幀；1.4 秒；透明背景 | 標準前綴編號 |
+| IMG130 | D 版品牌小綠人／coffee-still（runtime） | [assets/images/mootech_website_IMG130_green-coffee-still.png](../assets/images/mootech_website_IMG130_green-coffee-still.png) | 237×237；透明背景 | 標準前綴編號 |
+| IMG131 | D 版品牌小綠人／fitness（runtime） | [assets/images/mootech_website_IMG131_green-fitness.gif](../assets/images/mootech_website_IMG131_green-fitness.gif) | 237×237；4 幀；1.4 秒；透明背景 | 標準前綴編號 |
+| IMG132 | D 版品牌小綠人／fitness-still（runtime） | [assets/images/mootech_website_IMG132_green-fitness-still.png](../assets/images/mootech_website_IMG132_green-fitness-still.png) | 237×237；透明背景 | 標準前綴編號 |
+| SRCIMG006 | 品牌小綠人七情境動作原稿（4×7 關鍵幀）（source） | [source/images/mootech_website_SRCIMG006_green-motion-sheet.png](../source/images/mootech_website_SRCIMG006_green-motion-sheet.png) | 985×1596；透明背景 | 標準前綴編號 |
 
 ## 背景音樂
 
