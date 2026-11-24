@@ -166,3 +166,4 @@ python3 tools/build-en.py
 - 素材目的與 E 範圍登錄已更新，未改素材檔案指紋。素材 check 通過 153 項、英文生成、JS 語法與 diff check 通過。
 - Chromium：A–E × 中英文 × 390／1440（20 組），驗證主題、E 圖片載入、問候貼圖、客服開啟／縮小重開，無 pageerror；驗證對話中 E→D→A→C→B→E 切換，熊圖片／貼圖僅留在 E。另目視各版來電卡片及 A／C／E 面板，回頂顯示／不重疊／點擊回頁首四組回歸通過。
 - 發布追蹤：run 45372974948、45373394467 均在 CLI 初次讀到 artifact 後，部署 action 的下一次讀取仍得到 0。原有等待閘門改為連續 3 次（每次間隔 5 秒）可讀，再等待 5 秒才發布，以涵蓋不同 API 節點的同步；仍保留重名／逾時失敗，未變更環境保護。
+- 已發布：客服 runtime `cf7e028`，發布穩定等待 `3f01a9c`；[Pages run 45373584158](https://github.com/mootech-asia/mootech_website/actions/runs/45373584158) 成功。正式站驗證 A–E 五套配色切換、E 專屬熊圖片與問候貼圖、切回 A–D 清除圖片，英文 E 圖片路徑亦通過，無 pageerror。
