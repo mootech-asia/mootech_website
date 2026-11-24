@@ -120,3 +120,4 @@ python3 tools/build-en.py
 - 七組 GIF 各 320×320、40 幀、2 秒，全部幀間隔 50ms（20 fps）。驗證每對相鄰幀含循環接點均不同；週期往返會重訪相同姿勢，不宣稱所有循環姿勢唯一。各情境另輸出獨立 PNG，沿用正式 IMG119–132 路徑並更新指紋。
 - 工具 `tools/build-green-gifs.py`、`tools/gradient-motion.html` 可獨立重製；原稿、正式圖及規格已登錄。素材 check 通過 145 項、英文生成與 diff check 通過；D 版載入與暫停／reduced-motion／客服回歸另以 Chromium 驗證。
 - 本輪使用者已選定造型，沿用本聊天上線授權發布；部署結果以下方追記為準。
+- 發布完成：runtime `0d46667`；[Pages run 45363074494](https://github.com/mootech-asia/mootech_website/actions/runs/45363074494) 首次成功。正式站七支 GIF 與七張獨立 PNG 均逐檔下載比對指紋。使用者可於 D 版查看新造型與 20 fps 動畫。
