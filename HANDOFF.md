@@ -143,3 +143,8 @@ python3 tools/build-en.py
 - Chromium 390／1440 × 中英文：來電、左側縮小入口、客服展開／收起、回頂持續可見且無重疊、點擊可回頁首均通過，無 pageerror。截圖核對漸層耳機與圓形入口，computed style 確認 SVG gradient 與三色接聽按鈕。英文生成與 diff check 通過；本輪未修改素材檔案。
 - 發布完成：runtime `171e167`；[Pages run 45367376978](https://github.com/mootech-asia/mootech_website/actions/runs/45367376978) 成功。先前 run 45366988546 首次讀取 artifact 為 0 件，重跑後同名 artifact 變成 2 件而失敗，故以原有 workflow_dispatch 新開一次完整發布，未更動環境保護或工作流設定。正式 HTML 已核對新漸層與移除暫停按鈕。
 - 補驗 390×640、844×390 短視窗／橫向視窗：客服展開時回頂在可視區且不重疊。
+
+### 靜態圖效果檢視
+
+- 依使用者要求，D 版願景與六張文化卡共七處人物，均改為直接載入既有獨立靜態 PNG（IMG120／122／124／126／128／130／132），加 `?v=static1`。不再於這些槽位載入 GIF；不修改角色、姿勢或原稿。
+- 中英文、390／1440 寬度以 Chromium 驗證七張 PNG 全部載入且無 pageerror；英文頁生成與 diff check 通過。未改動素材檔案，不需更新素材指紋。
