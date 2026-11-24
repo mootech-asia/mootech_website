@@ -52,11 +52,18 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          visible_reads=0
           for attempt in $(seq 1 18); do
             count=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts" --jq '[.artifacts[] | select(.name == "github-pages" and .expired == false)] | length')
             if [ "$count" = "1" ]; then
-              echo "Pages artifact is readable."
-              exit 0
+              visible_reads=$((visible_reads + 1))
+              if [ "$visible_reads" -ge 3 ]; then
+                echo "Pages artifact is consistently readable."
+                sleep 5
+                exit 0
+              fi
+            else
+              visible_reads=0
             fi
             if [ "$count" -gt 1 ]; then
               echo "Multiple Pages artifacts found; start a fresh workflow run."
