@@ -153,6 +153,8 @@
 | SRCIMG011 | 固定核准角色、無可見關節之獨立情境原稿：workspace（source） | [source/images/mootech_website_SRCIMG011_pose-workspace.png](../source/images/mootech_website_SRCIMG011_pose-workspace.png) | 1254×1254；保留 alpha | 標準前綴編號 |
 | SRCIMG012 | 固定核准角色、無可見關節之獨立情境原稿：coffee（source） | [source/images/mootech_website_SRCIMG012_pose-coffee.png](../source/images/mootech_website_SRCIMG012_pose-coffee.png) | 1254×1254；保留 alpha | 標準前綴編號 |
 | SRCIMG013 | 固定核准角色、無可見關節之獨立情境原稿：fitness（source） | [source/images/mootech_website_SRCIMG013_pose-fitness.png](../source/images/mootech_website_SRCIMG013_pose-fitness.png) | 1254×1254；保留 alpha | 標準前綴編號 |
+| SRCIMG014 | 願景系列情境原稿：夥伴互助登階、共同前進（source） | [source/images/mootech_website_SRCIMG014_pose-vision-together.png](../source/images/mootech_website_SRCIMG014_pose-vision-together.png) | 1312×1199；保留 alpha | 標準前綴編號 |
+| IMG133 | D 版願景：同文化卡系列之夥伴互助登階靜態情境圖（runtime） | [assets/images/mootech_website_IMG133_vision-together.png](../assets/images/mootech_website_IMG133_vision-together.png) | 640×640；保留 alpha | 標準前綴編號 |
 
 ## 背景音樂
 

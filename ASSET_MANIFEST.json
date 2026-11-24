@@ -2755,6 +2755,44 @@
       "height": 1254,
       "frames": 1,
       "transparency": "保留 alpha"
+    },
+    {
+      "id": "SRCIMG014",
+      "path": "source/images/mootech_website_SRCIMG014_pose-vision-together.png",
+      "usage": "source",
+      "purpose": "願景系列情境原稿：夥伴互助登階、共同前進",
+      "category": "images",
+      "prefix": "mootech_website",
+      "format": "png",
+      "bytes": 1137647,
+      "sha256": "ce8570eaa57e73e892dc6692f6e407757f20395dd29c3065dbb43060c46d397e",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "width": 1312,
+      "height": 1199,
+      "frames": 1,
+      "transparency": "保留 alpha"
+    },
+    {
+      "id": "IMG133",
+      "path": "assets/images/mootech_website_IMG133_vision-together.png",
+      "usage": "runtime",
+      "purpose": "D 版願景：同文化卡系列之夥伴互助登階靜態情境圖",
+      "category": "images",
+      "prefix": "mootech_website",
+      "format": "png",
+      "bytes": 248206,
+      "sha256": "daece080b1f38b735cae30955bf30652f9e5c383aa2264cc07ae1838124d5390",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "width": 640,
+      "height": 640,
+      "frames": 1,
+      "transparency": "保留 alpha",
+      "source": "source/images/mootech_website_SRCIMG014_pose-vision-together.png",
+      "references": [
+        "index.html"
+      ]
     }
   ],
   "delegates": [],
