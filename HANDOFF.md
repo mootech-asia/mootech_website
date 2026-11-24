@@ -149,3 +149,4 @@ python3 tools/build-en.py
 - 依使用者要求，D 版願景與六張文化卡共七處人物，均改為直接載入既有獨立靜態 PNG（IMG120／122／124／126／128／130／132），加 `?v=static1`。不再於這些槽位載入 GIF；不修改角色、姿勢或原稿。
 - 中英文、390／1440 寬度以 Chromium 驗證七張 PNG 全部載入且無 pageerror；英文頁生成與 diff check 通過。未改動素材檔案，不需更新素材指紋。
 - 發布阻塞修正：兩次新 run 45368776285、45368912912 均在上傳成功後立刻讀到 0 件 artifact。工作流增加唯讀 Actions 權限，並在發布前每 5 秒檢查同一 run 的 github-pages artifact 是否可讀（最多 18 次），遇重名或逾時明確失敗；不調整環境保護。YAML 已解析核對。
+- 已發布靜態展示：`b4d6b09`；發布等待修正 `be61495`。[Pages run 45369169514](https://github.com/mootech-asia/mootech_website/actions/runs/45369169514) 已成功，正式中英文 HTML 七處人物全部為靜態 PNG。
