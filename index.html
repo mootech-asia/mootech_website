@@ -923,7 +923,6 @@ canvas.fill { contain: strict; }
 .vd-chips .ico { width: 20px; height: 20px; }
 .vd-chip em { font-style: normal; font: 500 11.5px/1 var(--inter); letter-spacing: .04em; color: rgba(255,255,255,.72); white-space: nowrap; }
 .vd-top-btn { position: fixed; left: calc(24px + env(safe-area-inset-left, 0px)); bottom: calc(24px + env(safe-area-inset-bottom, 0px)); z-index: 40; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--d-g1), var(--d-g2)); color: #05070c; box-shadow: 0 10px 26px rgba(0,0,0,.5); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity .25s ease, transform .25s ease, box-shadow .2s ease, filter .2s ease; }
-body:has(.mtc.open) .vd-top-btn { opacity: 0; visibility: hidden; pointer-events: none; }
 .vd-top-btn.show { opacity: 1; visibility: visible; transform: none; }
 .vd-top-btn:hover { box-shadow: 0 14px 30px rgba(0,0,0,.6); filter: brightness(1.08); }
 .vd-top-btn svg { width: 22px; height: 22px; }
@@ -1645,13 +1644,21 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
 .mtc-video { flex-basis: 116px; }
 .mtc-video .mtc-service-icon { display: none; }
 .mtc-video::after { display: none; }
-.motion-toggle { border: 1px solid #596531; border-radius: 999px; color: #d8e79b; background: transparent; padding: 8px 16px; margin-bottom: 24px; cursor: pointer; font: inherit; }
+
+/* Support controls share the approved character's cyan–mint–lime palette. */
+.mtc { --support-gradient: linear-gradient(90deg, #22b5d6, #62c5ae 50%, #acd65e); }
+.mtc-service-icon svg, .mtc-conn svg { stroke: url(#mtc-brand-gradient); }
+.mtc-accept { background: var(--support-gradient); color: #082d34; box-shadow: 0 6px 18px rgba(34,181,214,.32); }
+.mtc-fab { box-shadow: 0 10px 26px rgba(3,8,18,.5), 0 0 18px rgba(98,197,174,.20); }
+.mtc-fab::before { border: 0; padding: 3px; background: var(--support-gradient); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+.mtc-fab > i { background: var(--support-gradient); }
 </style>
 </head>
 <body data-v="a">
 
 <!-- 共用圖示 -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><linearGradient id="mtc-brand-gradient" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#22B5D6"/><stop offset="50%" stop-color="#62C5AE"/><stop offset="100%" stop-color="#ACD65E"/></linearGradient></defs>
   <symbol id="i-live" viewBox="0 0 32 32"><rect x="3" y="9" width="18" height="14" rx="2"/><path d="M21 14l8-4v12l-8-4"/><circle cx="9" cy="16" r="2.5"/></symbol>
   <symbol id="i-net" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M4 16h24M16 4c4 3.5 5 8 5 12s-1 8.5-5 12M16 4c-4 3.5-5 8-5 12s1 8.5 5 12"/></symbol>
   <symbol id="i-arch" viewBox="0 0 32 32"><path d="M16 4l12 6-12 6-12-6z"/><path d="M4 16l12 6 12-6M4 22l12 6 12-6"/></symbol>
@@ -2319,7 +2326,6 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   <section class="vd-sec" id="vd-join">
     <div class="wrap">
       <div class="vd-head2"><span class="vd-kicker">WHY JOIN · TEAM</span><h2 class="vd-h2" data-en="Why Join MOOTECH">為什麼加入 MOOTECH</h2></div>
-      <button type="button" class="motion-toggle" id="green-motion-toggle" aria-pressed="false" data-en="Pause character animations">暫停角色動畫</button>
       <div class="vd-joingrid"><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/images/mootech_website_IMG122_green-team-still.png?v=poses2"><img src="assets/images/mootech_website_IMG121_green-team.gif?v=poses2" alt="" width="360" height="360" loading="lazy" decoding="async"></picture></div><h3 data-en="Together we go further">一起，我們可以走得更長更遠</h3><span class="en" data-en=" ">Team Collaboration</span></div><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/images/mootech_website_IMG124_green-ideas-still.png?v=poses2"><img src="assets/images/mootech_website_IMG123_green-ideas.gif?v=poses2" alt="" width="360" height="360" loading="lazy" decoding="async"></picture></div><h3 data-en="We share knowledge openly">知識分享絕不藏私</h3><span class="en" data-en=" ">Brainstorming Ideas</span></div><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/images/mootech_website_IMG126_green-learning-still.png?v=poses2"><img src="assets/images/mootech_website_IMG125_green-learning.gif?v=poses2" alt="" width="360" height="360" loading="lazy" decoding="async"></picture></div><h3 data-en="Always on the latest tech">嶄新技術在線掌握</h3><span class="en" data-en=" ">Learning New Technologies</span></div><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/images/mootech_website_IMG128_green-workspace-still.png?v=poses2"><img src="assets/images/mootech_website_IMG127_green-workspace.gif?v=poses2" alt="" width="360" height="360" loading="lazy" decoding="async"></picture></div><h3 data-en="A bright, open workspace">明亮開放寬敞的辦公環境</h3><span class="en" data-en=" ">Conducive Environment</span></div><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/images/mootech_website_IMG130_green-coffee-still.png?v=poses2"><img src="assets/images/mootech_website_IMG129_green-coffee.gif?v=poses2" alt="" width="360" height="360" loading="lazy" decoding="async"></picture></div><h3 data-en="Good food, great company">美食當前，減肥都是明天的事</h3><span class="en" data-en=" ">Team Bonding</span></div><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/images/mootech_website_IMG132_green-fitness-still.png?v=poses2"><img src="assets/images/mootech_website_IMG131_green-fitness.gif?v=poses2" alt="" width="360" height="360" loading="lazy" decoding="async"></picture></div><h3 data-en="Work hard, stay healthy">要打拼也要健康，跟著 Mootech 動吃動</h3><span class="en" data-en=" ">Promote A Healthy Lifestyle</span></div></div>
     </div>
   </section>
@@ -3998,40 +4004,26 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   if (!button || !chat) return;
   function position() {
     button.classList.toggle('show', window.scrollY > 480);
-    button.style.left = ''; button.style.right = '';
-    // Default to the opposite corner; a dragged support launcher may occupy it.
-    if (chat.classList.contains('open')) return;
-    var a = button.getBoundingClientRect(), b = chat.getBoundingClientRect(), gap = 12;
-    if (a.right + gap > b.left && a.left - gap < b.right && a.bottom + gap > b.top && a.top - gap < b.bottom) {
+    button.style.left = ''; button.style.right = ''; button.style.bottom = '';
+    // Prefer the opposite corner, then lift above a full-width support panel.
+    var target = chat.classList.contains('open') ? document.getElementById('mtc-panel') : chat;
+    var a = button.getBoundingClientRect(), b = target.getBoundingClientRect(), gap = 16;
+    function overlaps(rect) { return rect.right + gap > b.left && rect.left - gap < b.right && rect.bottom + gap > b.top && rect.top - gap < b.bottom; }
+    if (overlaps(a)) {
       button.style.left = 'auto';
       button.style.right = 'calc(16px + env(safe-area-inset-right, 0px))';
+      if (overlaps(button.getBoundingClientRect())) {
+        button.style.bottom = Math.min(window.innerHeight - a.height - 8, Math.max(16, window.innerHeight - b.top + gap + 24)) + 'px';
+      }
     }
   }
   window.addEventListener('scroll', position, { passive: true });
   window.addEventListener('resize', position);
   new MutationObserver(position).observe(chat, { attributes: true, attributeFilter: ['class', 'style'] });
   new ResizeObserver(position).observe(chat);
+  document.getElementById('mtc-panel').addEventListener('transitionend', position);
+  document.getElementById('mtc-panel').addEventListener('animationend', position);
   position();
-})();
-</script>
-<script>
-(function () {
-  var button = document.getElementById('green-motion-toggle');
-  var paused = false;
-  function label() {
-    var en = document.documentElement.lang === 'en';
-    button.textContent = en ? (paused ? 'Play character animations' : 'Pause character animations') : (paused ? '播放角色動畫' : '暫停角色動畫');
-  }
-  button.addEventListener('click', function () {
-    paused = !paused;
-    document.querySelectorAll('.vp-scene picture').forEach(function (picture) {
-      var image = picture.querySelector('img');
-      if (!image.dataset.motionSrc) image.dataset.motionSrc = image.getAttribute('src');
-      image.src = paused ? picture.querySelector('source').getAttribute('srcset') : image.dataset.motionSrc;
-    });
-    button.setAttribute('aria-pressed', String(paused)); label();
-  });
-  new MutationObserver(label).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 })();
 </script>
 </body>
