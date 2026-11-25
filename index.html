@@ -1724,21 +1724,22 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
 
 /* D careers: compact panoramic team banner with centered copy. */
 .vd-careers > .wrap > .vd-head2 { text-align: center; margin-inline: auto; }
-.vd-careers-banner { position: relative; isolation: isolate; overflow: hidden; border: 1px solid var(--d-line); border-radius: 16px; height: clamp(240px, 22vw, 280px); display: grid; place-items: center; padding: 24px; background: #0b1418; }
-.vd-careers-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.vd-careers-banner { position: relative; isolation: isolate; overflow: hidden; border: 1px solid var(--d-line); border-radius: 16px; height: clamp(240px, 22vw, 280px); display: grid; place-items: center; padding: 24px; background: #080e10; }
+.vd-careers-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .vd-careers-banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.15), rgba(0,0,0,.55) 38%, rgba(0,0,0,.55) 62%, rgba(0,0,0,.15)); }
-.vd-careers-copy { position: relative; z-index: 1; text-align: center; max-width: 100%; }
-.vd-careers-copy h3 { margin: 0 0 8px; color: #fff; font-size: clamp(27px, 3vw, 40px); font-weight: 700; line-height: 1.3; text-shadow: 0 2px 14px #000; }
+.vd-careers-copy { position: relative; z-index: 1; text-align: center; max-width: 48%; }
+.vd-careers-copy h3 { margin: 0 0 8px; color: #fff; font-size: clamp(25px, 2.6vw, 36px); font-weight: 700; line-height: 1.3; text-shadow: 0 2px 14px #000; }
 .vd-careers-copy p { color: #fff; margin: 0; font-size: clamp(15px, 1.5vw, 20px); line-height: 1.5; text-shadow: 0 2px 10px #000; }
 .vd-careers-cta { display: inline-flex; align-items: center; justify-content: center; margin-top: 24px; min-width: 160px; padding: 10px 28px; border: 1.5px solid #fff; border-radius: 999px; color: #fff; text-decoration: none; font-size: 18px; font-weight: 600; background: rgba(255,255,255,.06); transition: background .2s, color .2s; }
 .vd-careers-cta:hover { background: #fff; color: #0b1418; }
 .vd-careers-cta:focus-visible { outline: 3px solid var(--d-g1); outline-offset: 5px; }
 @media (min-width: 901px) and (max-width: 1100px) { .vd-nav a { padding-inline: 12px; font-size: 13px; } }
 @media (max-width: 600px) {
-  .vd-careers-banner { height: 240px; padding: 20px 16px; }
-  .vd-careers-image { object-position: 12% center; }
-  .vd-careers-banner::after { background: rgba(0,0,0,.55); }
-  .vd-careers-copy h3 { font-size: 27px; }
+  .vd-careers-banner { height: auto; padding: 0; display: flex; flex-direction: column; }
+  .vd-careers-image { position: relative; height: auto; object-fit: contain; }
+  .vd-careers-banner::after { display: none; }
+  .vd-careers-copy { max-width: 100%; padding: 18px 16px 22px; }
+  .vd-careers-copy h3 { font-size: 25px; }
   .vd-careers-cta { margin-top: 20px; padding-block: 9px; font-size: 16px; }
 }
 </style>
@@ -2405,11 +2406,11 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     <div class="wrap">
       <div class="vd-head2"><span class="vd-kicker">CAREERS</span><h2 class="vd-h2" id="vd-careers-title" data-en="Careers">人才招募</h2></div>
       <div class="vd-careers-banner">
-        <img class="vd-careers-image" src="assets/images/mootech_website_IMG143_careers-team-banner.webp" alt="" width="1600" height="450" loading="lazy" decoding="async">
+        <img class="vd-careers-image" src="assets/images/mootech_website_IMG143_careers-team-banner.webp?v=panorama2" alt="" width="1600" height="533" loading="lazy" decoding="async">
         <div class="vd-careers-copy">
           <h3 data-en="Give yourself an opportunity">給自己一個機會</h3>
           <p data-en="Unlock your potential. Shape your future.">解鎖自己，成就未來</p>
-          <a class="vd-careers-cta" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener" aria-label="查看 MOOTECH 職缺" data-en="Let's Go ↗︎">Let's Go ↗︎</a>
+          <a class="vd-careers-cta" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener" aria-label="查看 MOOTECH 職缺" data-en="Let's Go">Let's Go</a>
         </div>
       </div>
     </div>
