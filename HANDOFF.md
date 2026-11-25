@@ -354,3 +354,5 @@ python3 tools/build-en.py
 
 - 依使用者截圖移除A–D六張服務卡片上的諮詢此方案連結，共24處。C原整卡a改article並移除href／data-scroll，避免留下不可見導向。六卡與單一查看詳情及網站原聯絡區保留；E原始碼逐字一致。
 - 驗證：中英文與D中英入口生成、diff check通過；Chromium中英文×390／1440逐一驗A–D六卡、無CTA／隱形服務卡連結、單一詳情可開合、無JS錯誤或水平溢出。沒有變更媒體。
+- 檢查時發現初次片段解析將巢狀spec section截斷而補出多餘結尾標籤，造成輪播不在variant祖先內；已改從已驗證938a158原碼只移除24個CTA並精確轉換C六個外層a，不再重解析整個巢狀section。修正後再次驗證variant祖先、輪播切換／進度及詳情正常；前一錯誤部署run45588571713已被後續提交自動取消，未發布成功。
+- 修正版runtime `08d978c`已發布，[Pages run45588705846](https://github.com/mootech-asia/mootech_website/actions/runs/45588705846)與素材CI成功；正式中英文×手機／桌機逐版確認CTA與隱形卡片連結移除、六卡／詳情／輪播／進度正常、無JS錯誤／橫向溢出，E不變。
