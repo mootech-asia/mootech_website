@@ -211,6 +211,26 @@
 | IMG159 | E版熊北品牌角色／banner正式圖（runtime） | [assets/images/mootech_website_IMG159_e-banner.webp](../assets/images/mootech_website_IMG159_e-banner.webp) | 1600×533；不透明 | 標準前綴編號 |
 | SRCIMG043 | E人才招募滿版橫幅原稿，青藍主色與完整熊北安全構圖（source） | [source/images/mootech_website_SRCIMG043_e-banner-wide.png](../source/images/mootech_website_SRCIMG043_e-banner-wide.png) | 2172×724；不透明 | 標準前綴編號 |
 | IMG160 | E人才招募左右滿版4.5:1扁長橫幅，完整熊北與青藍主色（runtime） | [assets/images/mootech_website_IMG160_e-banner-wide.webp](../assets/images/mootech_website_IMG160_e-banner-wide.webp) | 1800×400；不透明 | 標準前綴編號 |
+| SRCIMG044 | D無人物光感科技／vision原稿（source） | [source/images/mootech_website_SRCIMG044_d-tech-vision.png](../source/images/mootech_website_SRCIMG044_d-tech-vision.png) | 1312×1199；透明 | 標準前綴編號 |
+| IMG161 | D無人物光感科技／vision正式圖（runtime） | [assets/images/mootech_website_IMG161_d-tech-vision.png](../assets/images/mootech_website_IMG161_d-tech-vision.png) | 640×640；透明 | 標準前綴編號 |
+| SRCIMG045 | D無人物光感科技／team原稿（source） | [source/images/mootech_website_SRCIMG045_d-tech-team.png](../source/images/mootech_website_SRCIMG045_d-tech-team.png) | 1536×1024；透明 | 標準前綴編號 |
+| IMG162 | D無人物光感科技／team正式圖（runtime） | [assets/images/mootech_website_IMG162_d-tech-team.png](../assets/images/mootech_website_IMG162_d-tech-team.png) | 640×640；透明 | 標準前綴編號 |
+| SRCIMG046 | D無人物光感科技／ideas原稿（source） | [source/images/mootech_website_SRCIMG046_d-tech-ideas.png](../source/images/mootech_website_SRCIMG046_d-tech-ideas.png) | 1312×1199；透明 | 標準前綴編號 |
+| IMG163 | D無人物光感科技／ideas正式圖（runtime） | [assets/images/mootech_website_IMG163_d-tech-ideas.png](../assets/images/mootech_website_IMG163_d-tech-ideas.png) | 640×640；透明 | 標準前綴編號 |
+| SRCIMG047 | D無人物光感科技／learning原稿（source） | [source/images/mootech_website_SRCIMG047_d-tech-learning.png](../source/images/mootech_website_SRCIMG047_d-tech-learning.png) | 1448×1086；透明 | 標準前綴編號 |
+| IMG164 | D無人物光感科技／learning正式圖（runtime） | [assets/images/mootech_website_IMG164_d-tech-learning.png](../assets/images/mootech_website_IMG164_d-tech-learning.png) | 640×640；透明 | 標準前綴編號 |
+| SRCIMG048 | D無人物光感科技／workspace原稿（source） | [source/images/mootech_website_SRCIMG048_d-tech-workspace.png](../source/images/mootech_website_SRCIMG048_d-tech-workspace.png) | 1536×1024；透明 | 標準前綴編號 |
+| IMG165 | D無人物光感科技／workspace正式圖（runtime） | [assets/images/mootech_website_IMG165_d-tech-workspace.png](../assets/images/mootech_website_IMG165_d-tech-workspace.png) | 640×640；透明 | 標準前綴編號 |
+| SRCIMG049 | D無人物光感科技／coffee原稿（source） | [source/images/mootech_website_SRCIMG049_d-tech-coffee.png](../source/images/mootech_website_SRCIMG049_d-tech-coffee.png) | 1312×1199；透明 | 標準前綴編號 |
+| IMG166 | D無人物光感科技／coffee正式圖（runtime） | [assets/images/mootech_website_IMG166_d-tech-coffee.png](../assets/images/mootech_website_IMG166_d-tech-coffee.png) | 640×640；透明 | 標準前綴編號 |
+| SRCIMG050 | D無人物光感科技／fitness原稿（source） | [source/images/mootech_website_SRCIMG050_d-tech-fitness.png](../source/images/mootech_website_SRCIMG050_d-tech-fitness.png) | 1312×1199；透明 | 標準前綴編號 |
+| IMG167 | D無人物光感科技／fitness正式圖（runtime） | [assets/images/mootech_website_IMG167_d-tech-fitness.png](../assets/images/mootech_website_IMG167_d-tech-fitness.png) | 640×640；透明 | 標準前綴編號 |
+| SRCIMG051 | D無人物光感科技／banner原稿（source） | [source/images/mootech_website_SRCIMG051_d-tech-banner.png](../source/images/mootech_website_SRCIMG051_d-tech-banner.png) | 2172×724；不透明 | 標準前綴編號 |
+| IMG168 | D無人物光感科技／banner正式圖（runtime） | [assets/images/mootech_website_IMG168_d-tech-banner.webp](../assets/images/mootech_website_IMG168_d-tech-banner.webp) | 1800×400；不透明 | 標準前綴編號 |
+| IMG169 | D無人物科技分享預覽圖／zh（runtime） | [assets/images/mootech_website_IMG169_d-tech-social-zh.jpg](../assets/images/mootech_website_IMG169_d-tech-social-zh.jpg) | 1200×630；不透明 | 標準前綴編號 |
+| IMG170 | D無人物科技分享預覽圖／en（runtime） | [assets/images/mootech_website_IMG170_d-tech-social-en.jpg](../assets/images/mootech_website_IMG170_d-tech-social-en.jpg) | 1200×630；不透明 | 標準前綴編號 |
+| SRCIMG052 | A–E軟體開發示意圖：玻璃程式視窗、代碼、齒輪與模組，內容待確認（source） | [source/images/mootech_website_SRCIMG052_software-development.png](../source/images/mootech_website_SRCIMG052_software-development.png) | 1536×1024；透明 | 標準前綴編號 |
+| IMG171 | A–E軟體開發示意圖：玻璃程式視窗、代碼、齒輪與模組，內容待確認（runtime） | [assets/images/mootech_website_IMG171_software-development.png](../assets/images/mootech_website_IMG171_software-development.png) | 640×640；透明 | 標準前綴編號 |
 
 ## 背景音樂
 

@@ -3,8 +3,8 @@
 ## 範圍
 
 - 每版選單都有明確人才招募入口，指向同版 #v[a-e]-careers。
-- 招募 Banner：B／C／D沿用IMG143、A用IMG158、E用IMG160（皆不裁切全景），Let's Go 頁內前往同版 #v[a-e]-vision；外部職缺仍留在聯絡區。
-- 願景／團隊文化／為什麼加入 MOOTECH／員工福利共用 D 版核准文案；B／C／D願景IMG134、六張情境卡IMG135–140；A使用全身同藍極簡插畫IMG144–150，E使用熊北IMG151–157。詳見a-e-character-redesign.md。
+- 招募 Banner：B／C沿用IMG143、D用IMG168、A用IMG158、E用IMG160（皆不裁切全景），Let's Go 頁內前往同版 #v[a-e]-vision；外部職缺仍留在聯絡區。
+- 願景／團隊文化／為什麼加入 MOOTECH／員工福利共用 D 版核准文案；B／C願景IMG134、六張情境卡IMG135–140；D改無人物科技圖示IMG161–167；A使用全身同藍極簡插畫IMG144–150，E使用熊北IMG151–157。詳見a-e-character-redesign.md。
 - E 補上獨立關於我們區，保留原網路防線、熊北客服與首屏影片。
 
 ## 視覺
