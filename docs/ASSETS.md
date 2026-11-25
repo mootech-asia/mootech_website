@@ -209,6 +209,8 @@
 | IMG157 | E版熊北品牌角色／fitness正式圖（runtime） | [assets/images/mootech_website_IMG157_e-fitness.png](../assets/images/mootech_website_IMG157_e-fitness.png) | 640×640；保留alpha | 標準前綴編號 |
 | SRCIMG042 | E版熊北品牌角色／banner獨立原稿（source） | [source/images/mootech_website_SRCIMG042_e-banner.png](../source/images/mootech_website_SRCIMG042_e-banner.png) | 2172×724；不透明 | 標準前綴編號 |
 | IMG159 | E版熊北品牌角色／banner正式圖（runtime） | [assets/images/mootech_website_IMG159_e-banner.webp](../assets/images/mootech_website_IMG159_e-banner.webp) | 1600×533；不透明 | 標準前綴編號 |
+| SRCIMG043 | E人才招募滿版橫幅原稿，青藍主色與完整熊北安全構圖（source） | [source/images/mootech_website_SRCIMG043_e-banner-wide.png](../source/images/mootech_website_SRCIMG043_e-banner-wide.png) | 2172×724；不透明 | 標準前綴編號 |
+| IMG160 | E人才招募左右滿版4.5:1扁長橫幅，完整熊北與青藍主色（runtime） | [assets/images/mootech_website_IMG160_e-banner-wide.webp](../assets/images/mootech_website_IMG160_e-banner-wide.webp) | 1800×400；不透明 | 標準前綴編號 |
 
 ## 背景音樂
 

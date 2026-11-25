@@ -1791,6 +1791,15 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #29b6e8; border: 1p
 .vb .hr-banner-cta { color: var(--b-cyan); font-family: var(--mono); }
 .vc .hr-banner-cta { background: var(--c-accent); color: #071b19; border-radius: 0; }
 .ve .hr-banner-cta { border-radius: 999px; }
+/* E native shallow panorama fills both edges without cropping the bears. */
+@media (min-width: 901px) {
+  .ve .hr-banner { height: auto; aspect-ratio: 4.5; padding: 16px; }
+  .ve .hr-banner-image { object-fit: cover; }
+  .ve .hr-banner-copy h3 { font-size: clamp(22px,2.6vw,36px); }
+  .ve .hr-banner-copy p { font-size: clamp(14px,1.5vw,20px); }
+  .ve .hr-banner-cta { margin-top: 16px; padding: 8px 28px; }
+}
+
 .ve-band-title { grid-column: 1 / -1; margin: 0; color: var(--e-ink); font: 600 18px/1.4 var(--e-sans); }
 .va-nav a, .vb-nav a, .vc-nav a, .ve-nav a { white-space: nowrap; }
 @media (min-width:901px) {
@@ -2915,7 +2924,7 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #29b6e8; border: 1p
     <div class="wrap">
       <div class="hr-head"><span class="hr-kicker">CAREERS</span><h2 class="hr-h2" id="ve-careers-title" data-en="Careers">人才招募</h2></div>
       <div class="hr-banner">
-        <img class="hr-banner-image" src="assets/images/mootech_website_IMG159_e-banner.webp?v=ae1" alt="" width="1600" height="533" loading="lazy" decoding="async">
+        <img class="hr-banner-image" src="assets/images/mootech_website_IMG160_e-banner-wide.webp?v=wide1" alt="" width="1800" height="400" loading="lazy" decoding="async">
         <div class="hr-banner-copy">
           <h3 data-en="Give yourself an opportunity">給自己一個機會</h3>
           <p data-en="Unlock your potential. Shape your future.">解鎖自己，成就未來</p>
@@ -3180,7 +3189,7 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #29b6e8; border: 1p
         ctx.fillStyle = "#4ade80"; ctx.fill(hot);
       };
     },
-    /* 黑曜石盾：多面體盾牌、邊緣藍光，紅色光束擊中後迸出黃綠火花；有影片時停止 */
+    /* 黑曜石盾：多面體盾牌、邊緣藍光，紅色光束擊中後迸出青藍火花；有影片時停止 */
     shield: function (cv) {
       var ctx = cv.getContext("2d"), rnd = seeded(9), sparks = [], beam = null, next = 900;
       var hero = cv.parentNode;
@@ -3251,7 +3260,7 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #29b6e8; border: 1p
             beam = null;
           }
         }
-        ctx.fillStyle = "#c9e86e";
+        ctx.fillStyle = "#29b6e8";
         for (var j = sparks.length - 1; j >= 0; j--) {
           var sp2 = sparks[j]; sp2.life += dt;
           if (sp2.life > sp2.max) { sparks.splice(j, 1); continue; }

@@ -3897,6 +3897,46 @@
       "references": [
         "index.html"
       ]
+    },
+    {
+      "id": "SRCIMG043",
+      "path": "source/images/mootech_website_SRCIMG043_e-banner-wide.png",
+      "usage": "source",
+      "purpose": "E人才招募滿版橫幅原稿，青藍主色與完整熊北安全構圖",
+      "category": "images",
+      "prefix": "mootech_website",
+      "format": "png",
+      "bytes": 2050402,
+      "sha256": "4d5695c49eb0e009280a05746342a21431ce712c32e6ec9cfa273584b9ce6df1",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "width": 2172,
+      "height": 724,
+      "frames": 1,
+      "transparency": "不透明",
+      "characterReference": "assets/images/mootech_website_IMG016_mascot_bear-tablet.webp"
+    },
+    {
+      "id": "IMG160",
+      "path": "assets/images/mootech_website_IMG160_e-banner-wide.webp",
+      "usage": "runtime",
+      "purpose": "E人才招募左右滿版4.5:1扁長橫幅，完整熊北與青藍主色",
+      "category": "images",
+      "prefix": "mootech_website",
+      "format": "webp",
+      "bytes": 104646,
+      "sha256": "90eea6181cffefab535b8c60cc296e99b578d8b3213f3e95889402a9e255d25a",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "width": 1800,
+      "height": 400,
+      "frames": 1,
+      "transparency": "不透明",
+      "characterReference": "assets/images/mootech_website_IMG016_mascot_bear-tablet.webp",
+      "source": "source/images/mootech_website_SRCIMG043_e-banner-wide.png",
+      "references": [
+        "index.html"
+      ]
     }
   ],
   "delegates": [],
