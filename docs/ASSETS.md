@@ -25,9 +25,9 @@
 | IMG015 | 網站顯示素材：assets/images/mootech_website_IMG015_mascot_bear-shield.webp（runtime） | [assets/images/mootech_website_IMG015_mascot_bear-shield.webp](../assets/images/mootech_website_IMG015_mascot_bear-shield.webp) | 571×660；保留 alpha | 標準前綴編號 |
 | IMG016 | 網站顯示素材：assets/images/mootech_website_IMG016_mascot_bear-tablet.webp（runtime） | [assets/images/mootech_website_IMG016_mascot_bear-tablet.webp](../assets/images/mootech_website_IMG016_mascot_bear-tablet.webp) | 400×579；保留 alpha | 標準前綴編號 |
 | IMG017 | 網站顯示素材：assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg（runtime） | [assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg](../assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg) | 256×83；保留向量透明區 | 標準前綴編號 |
-| IMG018 | 網站顯示素材：assets/images/mootech_website_IMG018_partners_02-china-mobile.svg（runtime） | [assets/images/mootech_website_IMG018_partners_02-china-mobile.svg](../assets/images/mootech_website_IMG018_partners_02-china-mobile.svg) | 1000×308；保留向量透明區 | 標準前綴編號 |
-| IMG019 | 網站顯示素材：assets/images/mootech_website_IMG019_partners_03-china-telecom.svg（runtime） | [assets/images/mootech_website_IMG019_partners_03-china-telecom.svg](../assets/images/mootech_website_IMG019_partners_03-china-telecom.svg) | 591×169；保留向量透明區 | 標準前綴編號 |
-| IMG020 | 網站顯示素材：assets/images/mootech_website_IMG020_partners_04-china-unicom.svg（runtime） | [assets/images/mootech_website_IMG020_partners_04-china-unicom.svg](../assets/images/mootech_website_IMG020_partners_04-china-unicom.svg) | svg；保留向量透明區 | 標準前綴編號 |
+| IMG018 | 已停用網站展示之合作夥伴標誌，保留既有資源路徑：IMG018（runtime） | [assets/images/mootech_website_IMG018_partners_02-china-mobile.svg](../assets/images/mootech_website_IMG018_partners_02-china-mobile.svg) | 1000×308；保留向量透明區 | 標準前綴編號 |
+| IMG019 | 已停用網站展示之合作夥伴標誌，保留既有資源路徑：IMG019（runtime） | [assets/images/mootech_website_IMG019_partners_03-china-telecom.svg](../assets/images/mootech_website_IMG019_partners_03-china-telecom.svg) | 591×169；保留向量透明區 | 標準前綴編號 |
+| IMG020 | 已停用網站展示之合作夥伴標誌，保留既有資源路徑：IMG020（runtime） | [assets/images/mootech_website_IMG020_partners_04-china-unicom.svg](../assets/images/mootech_website_IMG020_partners_04-china-unicom.svg) | svg；保留向量透明區 | 標準前綴編號 |
 | IMG021 | 網站顯示素材：assets/images/mootech_website_IMG021_partners_05-easpnet.svg（runtime） | [assets/images/mootech_website_IMG021_partners_05-easpnet.svg](../assets/images/mootech_website_IMG021_partners_05-easpnet.svg) | svg；保留向量透明區 | 標準前綴編號 |
 | IMG022 | 網站顯示素材：assets/images/mootech_website_IMG022_partners_06-pccw.svg（runtime） | [assets/images/mootech_website_IMG022_partners_06-pccw.svg](../assets/images/mootech_website_IMG022_partners_06-pccw.svg) | 200×65；保留向量透明區 | 標準前綴編號 |
 | IMG023 | 網站顯示素材：assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg（runtime） | [assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg](../assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg) | 102×28；保留向量透明區 | 標準前綴編號 |
@@ -155,6 +155,7 @@
 | SRCIMG013 | 固定核准角色、無可見關節之獨立情境原稿：fitness（source） | [source/images/mootech_website_SRCIMG013_pose-fitness.png](../source/images/mootech_website_SRCIMG013_pose-fitness.png) | 1254×1254；保留 alpha | 標準前綴編號 |
 | SRCIMG014 | 願景系列情境原稿：夥伴互助登階、共同前進（source） | [source/images/mootech_website_SRCIMG014_pose-vision-together.png](../source/images/mootech_website_SRCIMG014_pose-vision-together.png) | 1312×1199；保留 alpha | 標準前綴編號 |
 | IMG133 | D 版願景：同文化卡系列之夥伴互助登階靜態情境圖（runtime） | [assets/images/mootech_website_IMG133_vision-together.png](../assets/images/mootech_website_IMG133_vision-together.png) | 640×640；保留 alpha | 標準前綴編號 |
+| SRCIMG015 | 修長、中性偏男性、無五官漸層人物設計稿；尚未替換網站情境圖（source） | [source/images/mootech_website_SRCIMG015_neutral-character-concept.png](../source/images/mootech_website_SRCIMG015_neutral-character-concept.png) | 1024×1536；保留 alpha | 標準前綴編號 |
 
 ## 背景音樂
 

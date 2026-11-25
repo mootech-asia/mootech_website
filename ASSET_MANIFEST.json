@@ -338,7 +338,7 @@
       "usage": "runtime",
       "category": "images",
       "id": "IMG018",
-      "purpose": "網站顯示素材：assets/images/mootech_website_IMG018_partners_02-china-mobile.svg",
+      "purpose": "已停用網站展示之合作夥伴標誌，保留既有資源路徑：IMG018",
       "prefix": "mootech_website",
       "format": "svg",
       "bytes": 11203,
@@ -347,7 +347,8 @@
       "pathPolicy": "standard",
       "width": 1000,
       "height": 308,
-      "transparency": "保留向量透明區"
+      "transparency": "保留向量透明區",
+      "displayStatus": "removed-from-website"
     },
     {
       "previousPath": "assets/partners/03-china-telecom.svg",
@@ -355,7 +356,7 @@
       "usage": "runtime",
       "category": "images",
       "id": "IMG019",
-      "purpose": "網站顯示素材：assets/images/mootech_website_IMG019_partners_03-china-telecom.svg",
+      "purpose": "已停用網站展示之合作夥伴標誌，保留既有資源路徑：IMG019",
       "prefix": "mootech_website",
       "format": "svg",
       "bytes": 9306,
@@ -364,7 +365,8 @@
       "pathPolicy": "standard",
       "width": 591,
       "height": 169,
-      "transparency": "保留向量透明區"
+      "transparency": "保留向量透明區",
+      "displayStatus": "removed-from-website"
     },
     {
       "previousPath": "assets/partners/04-china-unicom.svg",
@@ -372,14 +374,15 @@
       "usage": "runtime",
       "category": "images",
       "id": "IMG020",
-      "purpose": "網站顯示素材：assets/images/mootech_website_IMG020_partners_04-china-unicom.svg",
+      "purpose": "已停用網站展示之合作夥伴標誌，保留既有資源路徑：IMG020",
       "prefix": "mootech_website",
       "format": "svg",
       "bytes": 5468,
       "sha256": "a920748e61ed0505f764c1f83499072d2c00a0b837a9ff690a65cad5b91d1f95",
       "status": "delivered",
       "pathPolicy": "standard",
-      "transparency": "保留向量透明區"
+      "transparency": "保留向量透明區",
+      "displayStatus": "removed-from-website"
     },
     {
       "previousPath": "assets/partners/05-easpnet.svg",
@@ -2817,6 +2820,23 @@
       "references": [
         "index.html"
       ]
+    },
+    {
+      "id": "SRCIMG015",
+      "path": "source/images/mootech_website_SRCIMG015_neutral-character-concept.png",
+      "usage": "source",
+      "category": "images",
+      "prefix": "mootech_website",
+      "purpose": "修長、中性偏男性、無五官漸層人物設計稿；尚未替換網站情境圖",
+      "format": "png",
+      "bytes": 1351127,
+      "sha256": "5230959d42b6d6220136747c6d1c3c39eb731a711a7b352066f7bcdbee59b191",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "width": 1024,
+      "height": 1536,
+      "frames": 1,
+      "transparency": "保留 alpha"
     }
   ],
   "delegates": [],
