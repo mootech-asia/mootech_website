@@ -2,7 +2,7 @@
 
 定稿日期：2026 年 11 月 25 日（台北時間）。本文件將今天調整合併成最新版規格，供 Figma 助理更新既有 A–E 設計、中英文及響應式畫面。請按以下最終狀態製作，不必重演中途版本。
 
-線上基準：https://mootech-asia.github.io/mootech_website/?v=ee5a887#design-e
+線上基準：https://mootech-asia.github.io/mootech_website/?v=ea91907#design-e
 
 ## 1 同步範圍與優先順序
 
@@ -90,7 +90,7 @@ Banner 下方五版皆放四個職缺卡片，桌機四欄、平板兩欄、手�
 - Work hard, share good food — Make time for a good meal together. Team gatherings and everyday conversations help us connect and recharge.
 - Share knowledge, grow together — Exchange ideas and experience, solve problems together, and turn every conversation into shared growth.
 
-願景區原本的單段長文與右側角色圖已由照片輪播取代；不要加回。團隊文化與員工福利保留；「為什麼加入」六卡僅 D 移除，A／B／C／E 保留。
+願景標題下方恢復完整願景文字，照片輪播移到該段文字下方；原右側角色圖不恢復。願景定稿文字：「我們致力於創造一個創新、靈活和具有包容性的工作環境，鼓勵每個人發揮自己的才華和潛能，並透過團隊合作來實現共同目標。」英文：「We are committed to creating an innovative, flexible and inclusive work environment where everyone can develop their talents and potential, and achieve shared goals through teamwork.」團隊文化與員工福利保留；「為什麼加入」六卡僅 D 移除，A／B／C／E 保留。
 
 ## 6 全球據點與服務場景
 
@@ -134,9 +134,9 @@ Banner 下方五版皆放四個職缺卡片，桌機四欄、平板兩欄、手�
 
 圖片可依畫框比例顯示，但不要將原始素材重新壓成低畫質。辦公室原尺寸 PNG 保留。其他素材名稱與用途可查 repo 的 ASSET_MANIFEST.json、docs/ASSETS.md。
 
-中文版：https://mootech-asia.github.io/mootech_website/?v=ee5a887#design-a
+中文版：https://mootech-asia.github.io/mootech_website/?v=ea91907#design-a
 
-英文版：https://mootech-asia.github.io/mootech_website/en/?v=ee5a887#design-a
+英文版：https://mootech-asia.github.io/mootech_website/en/?v=ea91907#design-a
 
 網址最後的 design-a 可改為 design-b／design-c／design-d／design-e。D 專用分享入口 /d/、/en/d/ 保留，分享圖採無人物科技版本。
 
