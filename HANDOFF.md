@@ -368,3 +368,7 @@ python3 tools/build-en.py
 - 驗證：素材240項、英文／D入口生成、inline JS語法、diff check通過。中英文×390／1024／1440×A–D共24組驗JPEG載入、無頁碼或主題按鈕、職稱只有一個子標題且單行無裁字、連結、六方案與E一致、無溢出／pageerror；另驗6秒自動播放。此輪保留新辦公TIF替換為明確阻塞項。
 - 上輪文件提交acd15b0本機commit成功但push時Git credential helper缺失失敗，已以現有gh登入執行gh auth setup-git修復憑證helper，沒有輸出token；本輪推送將一併帶上該交接提交。
 - 已發布可完成部分runtime `7c3344e`，[Pages run45590023689](https://github.com/mootech-asia/mootech_website/actions/runs/45590023689)與素材CI成功。正式四入口HTTP200，3張JPG指紋吻合；中英文手機／桌機逐版確認單行職稱、無頁碼／切換按鈕、6大方案、E不變，另驗無控制項仍自動換頁。新辦公室TIF替換仍阻塞，尚未完成，不可回報已換上。
+
+### 2026-11-25：六大方案用語精簡
+
+- 依使用者最新文字，D首屏摘要由「6 大解決方案」精簡為「6 大方案」，六個圖示維持；英文仍6 core solutions。僅改文字，建置中英／D入口與diff check通過。新辦公室TIF仍待可讀原檔，狀態不變。
