@@ -372,3 +372,4 @@ python3 tools/build-en.py
 ### 2026-11-25：六大方案用語精簡
 
 - 依使用者最新文字，D首屏摘要由「6 大解決方案」精簡為「6 大方案」，六個圖示維持；英文仍6 core solutions。僅改文字，建置中英／D入口與diff check通過。新辦公室TIF仍待可讀原檔，狀態不變。
+- 已發布runtime `72dd252`，[Pages run45590592051](https://github.com/mootech-asia/mootech_website/actions/runs/45590592051)及素材CI成功，正式根頁HTTP200並含新文字「6 大方案」。
