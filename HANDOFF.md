@@ -319,3 +319,4 @@ python3 tools/build-en.py
 - 依使用者修正，A–E整個服務區各只保留一個查看詳情按鈕，位於六卡下方。移除逐卡與巢狀summary，完整服務細項集中於單一原生details，開啟後一次呈現，亦可鍵盤收合；A–D原spec section id仍保留於內部。完整清單與軟體暫定內容未刪除。
 - 六卡統一圖片180px、標題區、簡短大綱與底部諮詢連結。移除首卡wide／big跨欄跨列，桌機三欄兩列，平板701–1100px兩欄，手機單欄；各版原主色與邊框風格保留，軟體卡並排進第二列。B原首卡後備canvas改既有直播SVG示意，沒有新媒體。
 - 驗證：英文與D中英入口生成、diff check通過。Chromium中英文×390／1024／1440×五版30組，六卡、單一summary、同行等高同寬、圖解碼、鍵盤開合完整內容、暫定文案、無溢出與pageerror通過；目視核對D整齊六卡與單一按鈕。規格docs/service-overviews.md覆蓋前輪逐卡展開設計。
+- 已發布runtime `fad4328`，[Pages run45583572764](https://github.com/mootech-asia/mootech_website/actions/runs/45583572764)與素材CI成功；正式中英文桌機五版10組確認三欄六卡等高等寬、每版單一按鈕、鍵盤展開／收合全部內容及暫定文案。Word Figma交接文件已追加本次覆蓋規格。
