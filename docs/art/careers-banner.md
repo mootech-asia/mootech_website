@@ -1,6 +1,6 @@
 # D 版人才招募 Banner（全景重設定稿）
 
-用途：#vd-careers，位於 MOOTECH 願景前；選單人才招募捲動至本區，CTA 連既有 MOOTECH 104 公司頁。
+用途：#vd-careers，位於 MOOTECH 願景前；選單人才招募捲動至本區，Banner CTA 頁內捲動至 #vd-vision 願景區塊；聯絡區「查看職缺」仍連既有 MOOTECH 104 公司頁。
 
 - IMG143：1600×533，不透明 WebP，靜態單幀。由 SRCIMG026 等比縮放，未裁切任何邊界。
 - SRCIMG026：2172×724 全新全景構圖，四名核准無五官漸層形象人完整入鏡，含頭、手、腳及桌椅。中央留給文案，兩側團隊辦公情境，image generation 參考 SRCIMG015。

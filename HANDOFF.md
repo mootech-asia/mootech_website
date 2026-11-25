@@ -245,3 +245,8 @@ python3 tools/build-en.py
 - 全球標題、人才招募選單定位及既有 Banner 文案／104 職缺連結保留。
 - 驗證：素材 check175項、英文與D中英入口生成、diff check通過。Chromium 中英文 ×390／768／1024／1440八組確認圖片載入、contain／手機原始長寬比、桌機高度不超過280px、無溢出與pageerror；另固定實際截圖位置後目視核對手機與桌機全景，四位人物完整可見無截斷。
 - 已發布：runtime `a4ca8d0`；[Pages run45566515062](https://github.com/mootech-asia/mootech_website/actions/runs/45566515062) 與素材CI成功。正式D中英入口×手機／桌機四組確認panorama2新圖與contain完整顯示；IMG143線上指紋吻合。Word交接文件已補上全景定稿覆蓋舊cover／裁切規格。
+
+### 2026-11-25：Let's Go 引導至願景
+
+- 依使用者最新指示，D 人才招募 Banner 的 Let's Go 改為 #vd-vision 頁內捲動，移除 data-recruit／外部104網址／新分頁屬性；中英無障礙名稱同步為認識願景。聯絡區「查看職缺」外連保留。Banner 全景圖片及排版保持。
+- 驗證：英文與D中英入口生成、diff check通過；Chromium 根頁／英文／D中英入口×390／1440共八組，實際點擊導向願景、落點避開固定頁首、未開新分頁、聯絡區職缺外連保留、無pageerror。
