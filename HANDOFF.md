@@ -197,3 +197,4 @@ python3 tools/build-en.py
 - 求職、服務諮詢、其他留言三條流程皆直接讀取目前版型的官網聯絡表單，統一五欄的順序、標籤、必填／選填、輸入類型、autocomplete、長度設定及送出按鈕，中英文同步。僅聯絡人／email 必填；原求職經驗選單改為共用的選填需求文字。
 - 三條流程產生的郵件均保留公司、聯絡人、email、電話、需求；職位／地點及服務／地區等先前選項仍保留。服務需求帶入官網的五欄映射同步更新。email 使用原生有效性檢查，與官網規則一致。未新增後端或實際寄信。
 - 驗證：英文生成、inline JS 語法、diff check 通過；Chromium A–E × 中英文 × 390／1440 × 三條流程共 60 組，逐欄與官網設定比對、空白與無效 email 驗證、選填留空、郵件內容及服務轉填通過，無 pageerror；另測原生 email 規則一致。手機客服表單截圖核對五欄均完整可見。未改動媒體素材。
+- 已發布：runtime `0c0fdf3`；[Pages run 45535808178](https://github.com/mootech-asia/mootech_website/actions/runs/45535808178) 與素材 CI 均成功。正式中英文手機客服表單已走到最後並逐欄對照官網，五欄順序、標籤、僅 name／email 必填及無 pageerror 均通過。
