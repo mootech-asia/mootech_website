@@ -182,3 +182,4 @@ python3 tools/build-en.py
 - 新原稿 SRCIMG016–022、正式 IMG134–140，各情境有獨立姿勢／角度／道具互動：互助登階、雙人擊掌、白板講解、側坐打字、行走帶位、坐姿舉杯搭配點心、正面雙手啞鈴。均為 640×640 透明靜態 PNG，未新增可見機械或球形關節。製作清單 `docs/art/slender-character-series.md`；原稿包裝工具 `tools/prepare-slender-scenes.py`。
 - 已實際替換 D 版七個人物圖片槽位，加入版本查詢。卡片圖片區調為 176×164、願景上限 360×280，配合修長人物辨識；其餘內容、E 版北極熊及各版客服配色保留。舊圖片維持既有相容路徑，未恢復已移除的三個合作夥伴。
 - 驗證：素材 check 通過 168 項；英文生成、inline JS 語法、diff check 與三品牌移除回歸通過。Chromium 中英文 × 390／768／1440 六組：七張新 PNG 皆載入、七個不同新引用、卡片圖片不超界、無 pageerror；E 北極熊三張客服圖仍正常。目視核對七張原稿、黑底六情境合圖與桌機實際願景／卡片截圖。圖片 decode 完成後截圖，避免將非同步解碼的短暫空白當成圖片缺漏。
+- 已發布完整七圖替換：runtime `b61bdf7`；[Pages run 45533997402](https://github.com/mootech-asia/mootech_website/actions/runs/45533997402) 成功。正式中英文均為七個新系列引用；七張線上 PNG 逐檔指紋符合 manifest。正式手機寬度頁面七張新圖已解碼並載入，無 pageerror。
