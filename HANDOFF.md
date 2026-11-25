@@ -285,3 +285,4 @@ python3 tools/build-en.py
 - 正式IMG144–159／原稿SRCIMG027–042皆登錄；新增包裝工具tools/prepare-variant-characters.py與規格docs/art/a-e-character-redesign.md。Banner完整contain不裁切，A採淺底藍字；E既有客服、首屏影片保留。
 - C地圖僅取消黑色訪客路徑shadowBlur，保留青綠節點及流量。驗證黑色陰影stroke計數為0。
 - 驗證：素材check207項、英文與D中英入口建置、JS語法與diff check通過；14PNG均640×640含透明且留邊。Chromium中英文×390／1440×五版20組，圖片解碼／ID順序、Banner、人才招募選單→Banner→願景、E客服與無pageerror通過，並目視核對A／E整套情境圖及Banner。
+- 已發布：runtime `1f8e51f`；[Pages run45575329202](https://github.com/mootech-asia/mootech_website/actions/runs/45575329202)與素材CI成功。正式根頁／英文／D中英入口皆HTTP200且含新A／E素材與C路徑修正；16張素材線上指紋完全吻合；正式中英文手機A／E四組確認七圖、Banner與選單→願景導引。Word Figma交接文件已追加最新覆蓋規格。
