@@ -41,6 +41,9 @@
   html[data-init] #va { display: none; }
   html[data-init="b"] #vb, html[data-init="c"] #vc, html[data-init="d"] #vd, html[data-init="e"] #ve { display: block; }
   html[data-init="b"] body { --page-bg: #060d18; } html[data-init="c"] body { --page-bg: #ffffff; } html[data-init="d"] body { --page-bg: #000000; } html[data-init="e"] body { --page-bg: #07090e; }
+/* Shared A–D recruitment block, matching the approved daytime skyline layout. */
+.vd-careers { background: var(--d-bg); color: var(--d-ink); font-family: var(--inter); font-size: 16px; line-height: 1.7; }
+
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1930,7 +1933,7 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #29b6e8; border: 1p
 .vision-progress span { display: block; width: 100%; height: 100%; background: var(--hr-accent); transform: scaleX(0); transform-origin: left center; }
 
 
-.vd .career-jobs { --hr-accent: var(--d-g1); --hr-ink: var(--d-ink); --hr-muted: rgba(255,255,255,.65); --hr-line: var(--d-line); --hr-card: var(--d-glass); --hr-radius: 16px; }
+.vd-careers .career-jobs { --hr-accent: var(--d-g1); --hr-ink: var(--d-ink); --hr-muted: rgba(255,255,255,.65); --hr-line: var(--d-line); --hr-card: var(--d-glass); --hr-radius: 16px; }
 .career-jobs { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; margin-top: 24px; }
 .career-role { display: flex; flex-direction: column; gap: 14px; min-width: 0; min-height: 180px; padding: 24px; border: 1px solid var(--hr-line); border-radius: var(--hr-radius); background: var(--hr-card); color: var(--hr-ink); text-decoration: none; transition: border-color .2s, transform .2s; }
 .career-role:hover { border-color: var(--hr-accent); transform: translateY(-3px); }
@@ -2109,15 +2112,15 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
     </div>
   </section>
 
-  <section class="va-sec hr-section hr-recruit" id="va-careers" aria-labelledby="va-careers-title">
+  <section class="vd-sec vd-careers" id="va-careers" aria-labelledby="va-careers-title">
     <div class="wrap">
-      <div class="hr-head"><span class="hr-kicker">CAREERS</span><h2 class="hr-h2" id="va-careers-title" data-en="Careers">人才招募</h2></div>
-      <div class="hr-banner">
-        <img class="hr-banner-image" src="assets/images/mootech_website_IMG158_a-banner.webp?v=ae1" alt="" width="1600" height="533" loading="lazy" decoding="async">
-        <div class="hr-banner-copy">
+      <div class="vd-head2"><span class="vd-kicker">CAREERS</span><h2 class="vd-h2" id="va-careers-title" data-en="Careers">人才招募</h2></div>
+      <div class="vd-careers-banner">
+        <img class="vd-careers-image" src="assets/images/mootech_website_IMG175_d-city-banner.webp?v=city1" alt="" width="1800" height="400" loading="lazy" decoding="async">
+        <div class="vd-careers-copy">
           <h3 data-en="Give yourself an opportunity">給自己一個機會</h3>
           <p data-en="Unlock your potential. Shape your future.">解鎖自己，成就未來</p>
-          <a class="hr-banner-cta" href="#va-vision" data-scroll aria-label="認識 MOOTECH 願景" data-en="Let's Go">Let's Go</a>
+          <a class="vd-careers-cta" href="#va-vision" data-scroll aria-label="認識 MOOTECH 願景" data-en="Let's Go">Let's Go</a>
         </div>
       </div>
     <div class="career-jobs" role="group" aria-label="招募職缺" data-jobs><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="Infrastructure Engineer">基礎架構工程師</h3></a><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="NOC/DevOps">維運工程師</h3></a><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="Software Developer">軟體開發工程師</h3></a><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="Technical Project Manager">技術專案經理</h3></a></div></div>
@@ -2351,15 +2354,15 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
     </div>
   </section>
 
-  <section class="vb-sec hr-section hr-recruit" id="vb-careers" aria-labelledby="vb-careers-title">
+  <section class="vd-sec vd-careers" id="vb-careers" aria-labelledby="vb-careers-title">
     <div class="wrap">
-      <div class="hr-head"><span class="hr-kicker">CAREERS</span><h2 class="hr-h2" id="vb-careers-title" data-en="Careers">人才招募</h2></div>
-      <div class="hr-banner">
-        <img class="hr-banner-image" src="assets/images/mootech_website_IMG143_careers-team-banner.webp?v=panorama2" alt="" width="1600" height="533" loading="lazy" decoding="async">
-        <div class="hr-banner-copy">
+      <div class="vd-head2"><span class="vd-kicker">CAREERS</span><h2 class="vd-h2" id="vb-careers-title" data-en="Careers">人才招募</h2></div>
+      <div class="vd-careers-banner">
+        <img class="vd-careers-image" src="assets/images/mootech_website_IMG175_d-city-banner.webp?v=city1" alt="" width="1800" height="400" loading="lazy" decoding="async">
+        <div class="vd-careers-copy">
           <h3 data-en="Give yourself an opportunity">給自己一個機會</h3>
           <p data-en="Unlock your potential. Shape your future.">解鎖自己，成就未來</p>
-          <a class="hr-banner-cta" href="#vb-vision" data-scroll aria-label="認識 MOOTECH 願景" data-en="Let's Go">Let's Go</a>
+          <a class="vd-careers-cta" href="#vb-vision" data-scroll aria-label="認識 MOOTECH 願景" data-en="Let's Go">Let's Go</a>
         </div>
       </div>
     <div class="career-jobs" role="group" aria-label="招募職缺" data-jobs><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="Infrastructure Engineer">基礎架構工程師</h3></a><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="NOC/DevOps">維運工程師</h3></a><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="Software Developer">軟體開發工程師</h3></a><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="Technical Project Manager">技術專案經理</h3></a></div></div>
@@ -2558,15 +2561,15 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
     </div>
   </section>
 
-  <section class="vc-sec hr-section hr-recruit" id="vc-careers" aria-labelledby="vc-careers-title">
+  <section class="vd-sec vd-careers" id="vc-careers" aria-labelledby="vc-careers-title">
     <div class="wrap">
-      <div class="hr-head"><span class="hr-kicker">CAREERS</span><h2 class="hr-h2" id="vc-careers-title" data-en="Careers">人才招募</h2></div>
-      <div class="hr-banner">
-        <img class="hr-banner-image" src="assets/images/mootech_website_IMG143_careers-team-banner.webp?v=panorama2" alt="" width="1600" height="533" loading="lazy" decoding="async">
-        <div class="hr-banner-copy">
+      <div class="vd-head2"><span class="vd-kicker">CAREERS</span><h2 class="vd-h2" id="vc-careers-title" data-en="Careers">人才招募</h2></div>
+      <div class="vd-careers-banner">
+        <img class="vd-careers-image" src="assets/images/mootech_website_IMG175_d-city-banner.webp?v=city1" alt="" width="1800" height="400" loading="lazy" decoding="async">
+        <div class="vd-careers-copy">
           <h3 data-en="Give yourself an opportunity">給自己一個機會</h3>
           <p data-en="Unlock your potential. Shape your future.">解鎖自己，成就未來</p>
-          <a class="hr-banner-cta" href="#vc-vision" data-scroll aria-label="認識 MOOTECH 願景" data-en="Let's Go">Let's Go</a>
+          <a class="vd-careers-cta" href="#vc-vision" data-scroll aria-label="認識 MOOTECH 願景" data-en="Let's Go">Let's Go</a>
         </div>
       </div>
     <div class="career-jobs" role="group" aria-label="招募職缺" data-jobs><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="Infrastructure Engineer">基礎架構工程師</h3></a><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="NOC/DevOps">維運工程師</h3></a><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="Software Developer">軟體開發工程師</h3></a><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="Technical Project Manager">技術專案經理</h3></a></div></div>
@@ -3013,6 +3016,7 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
           <a class="hr-banner-cta" href="#ve-vision" data-scroll aria-label="認識 MOOTECH 願景" data-en="Let's Go">Let's Go</a>
         </div>
       </div>
+      <div class="career-jobs" role="group" aria-label="招募職缺" data-jobs><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="Infrastructure Engineer">基礎架構工程師</h3></a><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="NOC/DevOps">維運工程師</h3></a><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="Software Developer">軟體開發工程師</h3></a><a class="career-role" data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener"><h3 data-en="Technical Project Manager">技術專案經理</h3></a></div>
     </div>
   </section>
 
