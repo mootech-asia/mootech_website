@@ -286,3 +286,10 @@ python3 tools/build-en.py
 - C地圖僅取消黑色訪客路徑shadowBlur，保留青綠節點及流量。驗證黑色陰影stroke計數為0。
 - 驗證：素材check207項、英文與D中英入口建置、JS語法與diff check通過；14PNG均640×640含透明且留邊。Chromium中英文×390／1440×五版20組，圖片解碼／ID順序、Banner、人才招募選單→Banner→願景、E客服與無pageerror通過，並目視核對A／E整套情境圖及Banner。
 - 已發布：runtime `1f8e51f`；[Pages run45575329202](https://github.com/mootech-asia/mootech_website/actions/runs/45575329202)與素材CI成功。正式根頁／英文／D中英入口皆HTTP200且含新A／E素材與C路徑修正；16張素材線上指紋完全吻合；正式中英文手機A／E四組確認七圖、Banner與選單→願景導引。Word Figma交接文件已追加最新覆蓋規格。
+
+
+### 2026-11-25：E主色改為圖2亮青藍
+
+- 依最新參考，E主色統一為#29B6E8，新增--e-accent；原綠色重點／光效改青藍。關於我們數字、標籤、招募區、按鈕、方案連結、防線封包、地圖正常流量、客服及回頂按鈕同步；招募首屏原橘色CTA改同青藍掃光。
+- 深色底、文字灰階、風險紅／警示黃與既有熊北媒體保留。未修改A–D樣式或圖片；媒體未重新製作或配色。
+- 驗證：英文與D中英入口建置及diff check通過；Chromium中英文×390／1440px四組確認E主要重點顏色、按鈕、Banner、客服主色、地圖色票、熊北六卡、無水平溢出及pageerror，目視核對關於我們桌機與手機。
