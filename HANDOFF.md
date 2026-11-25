@@ -330,3 +330,4 @@ python3 tools/build-en.py
 - 驗證：素材235項、建置英文／D中英、JS語法、diff check通過。Chromium中英文×390／768／1440×四版24組確認移除六卡、三張照片與文案配對、控制／循環、響應式位置等高及無pageerror／橫向溢出；正常動態另驗6秒自動切換與暫停保持。E HTML區塊與修改前逐字一致，E六卡與原願景仍存在。目視核對D桌機與手機。
 
 - 發布期間使用者修正：A／B／C六卡加回，保留新輪播；僅D移除六卡，E不變。已從前輪f55dca2精確恢復ABC原join section與各版對應圖片，未新增媒體。此項覆蓋本段開頭的A–D全移除記錄。
+- 最新修正已發布runtime `957ec11`，[Pages run45584995703](https://github.com/mootech-asia/mootech_website/actions/runs/45584995703)與素材CI成功。正式四入口HTTP200，ABC六卡存在／D六卡移除／E保留；三張照片指紋相符。正式中英文×390／1440×A–D共16組確認同步圖文與控制、響應式、E不變；ABC恢復的join section與f55dca2原碼精確一致。Word交接文件補上最新修正。
