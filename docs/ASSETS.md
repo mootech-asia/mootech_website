@@ -231,6 +231,12 @@
 | IMG170 | D無人物科技分享預覽圖／en（runtime） | [assets/images/mootech_website_IMG170_d-tech-social-en.jpg](../assets/images/mootech_website_IMG170_d-tech-social-en.jpg) | 1200×630；不透明 | 標準前綴編號 |
 | SRCIMG052 | A–E軟體開發示意圖：玻璃程式視窗、代碼、齒輪與模組，內容待確認（source） | [source/images/mootech_website_SRCIMG052_software-development.png](../source/images/mootech_website_SRCIMG052_software-development.png) | 1536×1024；透明 | 標準前綴編號 |
 | IMG171 | A–E軟體開發示意圖：玻璃程式視窗、代碼、齒輪與模組，內容待確認（runtime） | [assets/images/mootech_website_IMG171_software-development.png](../assets/images/mootech_website_IMG171_software-development.png) | 640×640；透明 | 標準前綴編號 |
+| SRCIMG053 | A–D願景輪播／office使用者提供照片（暫用辦公室，待使用者更換）（source） | [source/images/mootech_website_SRCIMG053_culture-office.webp](../source/images/mootech_website_SRCIMG053_culture-office.webp) | 900×506；不透明 | 標準前綴編號 |
+| IMG172 | A–D願景輪播／office使用者提供照片（暫用辦公室，待使用者更換）（runtime） | [assets/images/mootech_website_IMG172_culture-office.webp](../assets/images/mootech_website_IMG172_culture-office.webp) | 900×506；不透明 | 標準前綴編號 |
+| SRCIMG054 | A–D願景輪播／dining使用者提供照片（source） | [source/images/mootech_website_SRCIMG054_culture-dining.webp](../source/images/mootech_website_SRCIMG054_culture-dining.webp) | 900×500；不透明 | 標準前綴編號 |
+| IMG173 | A–D願景輪播／dining使用者提供照片（runtime） | [assets/images/mootech_website_IMG173_culture-dining.webp](../assets/images/mootech_website_IMG173_culture-dining.webp) | 900×500；不透明 | 標準前綴編號 |
+| SRCIMG055 | A–D願景輪播／learning使用者提供照片（source） | [source/images/mootech_website_SRCIMG055_culture-learning.webp](../source/images/mootech_website_SRCIMG055_culture-learning.webp) | 900×506；不透明 | 標準前綴編號 |
+| IMG174 | A–D願景輪播／learning使用者提供照片（runtime） | [assets/images/mootech_website_IMG174_culture-learning.webp](../assets/images/mootech_website_IMG174_culture-learning.webp) | 900×506；不透明 | 標準前綴編號 |
 
 ## 背景音樂
 
