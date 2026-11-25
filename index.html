@@ -999,7 +999,7 @@ canvas.fill { contain: strict; }
 .vd-ctasec .wrap { position: relative; display: grid; justify-items: center; gap: 22px; }
 .vd-ctasec h2 { display: grid; font-size: clamp(38px, 6vw, 76px); font-weight: 700; line-height: 1.12; letter-spacing: -.02em; }
 .vd-ctasec p { color: var(--d-muted); max-width: 36em; }
-.vd-global { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 20px; align-items: center; }
+.vd-global { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 20px; align-items: stretch; }
 .vd-mapbox { padding: 24px; }
 .vd-global .map .dot { fill: #1d3450; }
 .vd-global .map .arc { fill: none; stroke: var(--d-g1); stroke-width: .3; stroke-dasharray: 1.2 1; animation: vbDash 1.6s ease-in-out infinite alternate; }
@@ -1007,9 +1007,16 @@ canvas.fill { contain: strict; }
 .vd-global .map .pin-office { fill: var(--d-g1); } .vd-global .map .pin-dc { fill: var(--d-g2); }
 .vd-global .map .halo { fill: none; stroke-width: .3; } .vd-global .map .halo.pin-office { stroke: var(--d-g1); } .vd-global .map .halo.pin-dc { stroke: var(--d-g2); }
 .vd-global .map text { fill: #ffffff; font: 600 2.2px var(--inter); }
-.vd-loc { display: grid; gap: 20px; }
-.vd-loc > div { padding: 24px 26px; display: grid; gap: 8px; }
-.vd-loc b { font-size: 18px; font-weight: 600; }
+.vd-loc { display: grid; grid-template-rows: 2fr 3fr; gap: 20px; min-width: 0; }
+.vd-loc > div { padding: 24px 26px; display: flex; flex-direction: column; gap: 18px; }
+.vd-loc-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.vd-loc-count { color: var(--d-muted); font: 500 12px var(--mono); letter-spacing: .08em; }
+.vd-loc dl { margin: 0; display: grid; flex: 1; }
+.vd-loc dl > div { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; border-top: 1px solid var(--d-line); }
+.vd-loc dt { font-size: 17px; font-weight: 600; line-height: 1.4; }
+.vd-loc dd { margin: 0; color: var(--d-muted); font-size: 14px; text-align: right; }
+.vd-loc .vd-office dt { font-size: 22px; }
+.vd-loc .vd-office dd { font: 400 11px var(--mono); letter-spacing: .06em; }
 .vd-contact { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 20px; }
 .vd-form { padding: 32px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
 .vd-form label { display: grid; gap: 8px; font-size: 13px; font-weight: 500; color: var(--d-muted); }
@@ -1037,6 +1044,7 @@ canvas.fill { contain: strict; }
   .vd .brand img { height: 28px; }
   .vd-hero .wrap { padding-block: 120px 64px; gap: 22px; }
   .vd-about, .vd-global, .vd-contact { grid-template-columns: minmax(0, 1fr); }
+  .vd-loc { grid-template-rows: auto auto; }
   .vd-sol { grid-template-columns: minmax(0, 1fr); } .vd-card.wide { grid-column: auto; } .vd-card.wide .thumb { aspect-ratio: 16 / 9; }
   .vd-why, .vd-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .vd-sec { padding-block: 72px; }
@@ -2315,8 +2323,14 @@ form[data-form] input { min-height: 48px; }
       <div class="vd-global">
         <div class="vd-glass vd-mapbox"><div class="imap-box"><canvas class="imap" data-art="interconnect" role="img" aria-label="亞太互連示意圖：新加坡、台灣、香港、東京節點，與泰國、越南、馬來西亞、斯里蘭卡、印度、印尼、韓國、菲律賓之間的連線動畫"></canvas><span class="imap-cap">亞太互連示意圖 · 動畫示意，非即時數據</span><div class="imap-lgd"><span><i class="h"></i>MOOTECH 節點</span><span><i class="u"></i>主要訪客市場（示意）</span><span><i class="n"></i>正常流量</span><span><i class="b"></i>被攔截的可疑流量</span></div></div></div>
         <div class="vd-loc">
-          <div class="vd-glass"><span class="vd-kicker">辦公室</span><b>新加坡、台灣</b></div>
-          <div class="vd-glass"><span class="vd-kicker">對等互聯</span><b>HKIX 香港、MYIX 吉隆坡、SGIX 新加坡、Equinix JPIX 東京</b></div>
+          <div class="vd-glass vd-office">
+            <div class="vd-loc-head"><span class="vd-kicker">辦公室</span><span class="vd-loc-count" aria-hidden="true">02 / OFFICES</span></div>
+            <dl><div><dt data-en="Singapore">新加坡</dt><dd>SINGAPORE</dd></div><div><dt data-en="Taiwan">台灣</dt><dd>TAIWAN</dd></div></dl>
+          </div>
+          <div class="vd-glass">
+            <div class="vd-loc-head"><span class="vd-kicker">對等互聯</span><span class="vd-loc-count" aria-hidden="true">04 / PEERING</span></div>
+            <dl><div><dt>HKIX</dt><dd data-en="Hong Kong">香港</dd></div><div><dt>MYIX</dt><dd data-en="Kuala Lumpur">吉隆坡</dd></div><div><dt>SGIX</dt><dd data-en="Singapore">新加坡</dd></div><div><dt>Equinix JPIX</dt><dd data-en="Tokyo">東京</dd></div></dl>
+          </div>
         </div>
       </div>
     </div>
