@@ -78,3 +78,5 @@ GitHub Pages 的快取時間固定為 10 分鐘，若要更長需另外接 CDN�
 ## 協作與交接
 
 Codex／Claude 接手請先讀 [CLAUDE.md](CLAUDE.md)、[AGENTS.md](AGENTS.md) 與 [HANDOFF.md](HANDOFF.md)。每次工作完成後更新交接紀錄、驗證範圍、發布狀態及待辦，避免依賴個別對話記憶。
+
+A 招募形象圖採全身同藍極簡平面插畫，E 採熊北立體情境圖，兩版各有七個獨立場景與專屬全景 Banner；B／C／D 保留既有核准人物圖。製作與素材規格見 docs/art/a-e-character-redesign.md。

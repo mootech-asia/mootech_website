@@ -276,3 +276,12 @@ python3 tools/build-en.py
 - 驗證：素材check175項、英文與D中英入口生成、inline JS語法、diff check及重複id檢查通過。Chromium中英文×390／1024／1440×A–E共30組：選單到招募、手機收合、Let's Go到同版願景且落點避開頁首、七張圖解碼、福利四卡、明確全球標題、職缺連結、無橫向溢出與pageerror均通過。另驗901px中英五版導覽不重疊、英文D專用入口切E後新圖路徑與熊北客服保留；目視核對A／B／C／E手機與桌機Banner。
 - 另已確認正式Pages站台恢復has_pages=true、根頁HTTP200，本輪可按既有流程發布；不再沿用前輪404阻塞結論。
 - 已發布：runtime `c23476f`；[Pages run45571032856](https://github.com/mootech-asia/mootech_website/actions/runs/45571032856) 與素材CI成功。正式根頁／英文／D中英入口皆HTTP200且含全五版招募區；正式中英文手機逐版操作選單→Banner→願景、核對文化六卡／福利標題與無pageerror共10組通過。Word Figma交接文件已追加全版本規格。
+
+
+### 2026-11-25：A極簡同藍人物、E熊北情境重設與C地圖黑暈移除
+
+- 依使用者最新修正，只更換A／E人物系列。A所有頭身手腳均同鈷藍，以極簡平面向量／剪紙方式重設；E沿用核准熊北3D白熊、墨鏡耳機與深藍背心。B／C／D人物不變。
+- A／E各七張獨立透明情境PNG及一張原生全景Banner。A拼橋、機櫃協作、白板、互動螢幕、帶位、咖啡點心、側弓步；E協助登階、碰拳、白板、筆電、開門、咖啡、啞鈴。姿勢、角度及場景各異，沒有統一套用揮手圖或新增球形關節。A早期白頭草稿未使用。
+- 正式IMG144–159／原稿SRCIMG027–042皆登錄；新增包裝工具tools/prepare-variant-characters.py與規格docs/art/a-e-character-redesign.md。Banner完整contain不裁切，A採淺底藍字；E既有客服、首屏影片保留。
+- C地圖僅取消黑色訪客路徑shadowBlur，保留青綠節點及流量。驗證黑色陰影stroke計數為0。
+- 驗證：素材check207項、英文與D中英入口建置、JS語法與diff check通過；14PNG均640×640含透明且留邊。Chromium中英文×390／1440×五版20組，圖片解碼／ID順序、Banner、人才招募選單→Banner→願景、E客服與無pageerror通過，並目視核對A／E整套情境圖及Banner。

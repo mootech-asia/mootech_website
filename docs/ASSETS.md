@@ -177,6 +177,38 @@
 | SRCIMG025 | D 版人才招募初版背景原稿（已由 SRCIMG026 全景重設稿取代，不再展示）（source） | [source/images/mootech_website_SRCIMG025_careers-team-banner.png](../source/images/mootech_website_SRCIMG025_careers-team-banner.png) | 1983×793；不透明 | 標準前綴編號 |
 | IMG143 | A–E 全版本人才招募扁長 Banner 共用背景；四位完整入鏡無五官形象人全景，等比完整顯示（runtime） | [assets/images/mootech_website_IMG143_careers-team-banner.webp](../assets/images/mootech_website_IMG143_careers-team-banner.webp) | 1600×533；不透明 | 標準前綴編號 |
 | SRCIMG026 | D 版人才招募全新全景構圖：人物、四肢、桌椅完整入鏡，取代初版裁切構圖（source） | [source/images/mootech_website_SRCIMG026_careers-panoramic-team.png](../source/images/mootech_website_SRCIMG026_careers-panoramic-team.png) | 2172×724；不透明 | 標準前綴編號 |
+| SRCIMG027 | A版全身同色鈷藍極簡插畫／vision獨立原稿（source） | [source/images/mootech_website_SRCIMG027_a-vision.png](../source/images/mootech_website_SRCIMG027_a-vision.png) | 1254×1254；保留alpha | 標準前綴編號 |
+| IMG144 | A版全身同色鈷藍極簡插畫／vision正式圖（runtime） | [assets/images/mootech_website_IMG144_a-vision.png](../assets/images/mootech_website_IMG144_a-vision.png) | 640×640；保留alpha | 標準前綴編號 |
+| SRCIMG028 | A版全身同色鈷藍極簡插畫／team獨立原稿（source） | [source/images/mootech_website_SRCIMG028_a-team.png](../source/images/mootech_website_SRCIMG028_a-team.png) | 1254×1254；保留alpha | 標準前綴編號 |
+| IMG145 | A版全身同色鈷藍極簡插畫／team正式圖（runtime） | [assets/images/mootech_website_IMG145_a-team.png](../assets/images/mootech_website_IMG145_a-team.png) | 640×640；保留alpha | 標準前綴編號 |
+| SRCIMG029 | A版全身同色鈷藍極簡插畫／ideas獨立原稿（source） | [source/images/mootech_website_SRCIMG029_a-ideas.png](../source/images/mootech_website_SRCIMG029_a-ideas.png) | 1254×1254；保留alpha | 標準前綴編號 |
+| IMG146 | A版全身同色鈷藍極簡插畫／ideas正式圖（runtime） | [assets/images/mootech_website_IMG146_a-ideas.png](../assets/images/mootech_website_IMG146_a-ideas.png) | 640×640；保留alpha | 標準前綴編號 |
+| SRCIMG030 | A版全身同色鈷藍極簡插畫／learning獨立原稿（source） | [source/images/mootech_website_SRCIMG030_a-learning.png](../source/images/mootech_website_SRCIMG030_a-learning.png) | 1254×1254；保留alpha | 標準前綴編號 |
+| IMG147 | A版全身同色鈷藍極簡插畫／learning正式圖（runtime） | [assets/images/mootech_website_IMG147_a-learning.png](../assets/images/mootech_website_IMG147_a-learning.png) | 640×640；保留alpha | 標準前綴編號 |
+| SRCIMG031 | A版全身同色鈷藍極簡插畫／workspace獨立原稿（source） | [source/images/mootech_website_SRCIMG031_a-workspace.png](../source/images/mootech_website_SRCIMG031_a-workspace.png) | 1254×1254；保留alpha | 標準前綴編號 |
+| IMG148 | A版全身同色鈷藍極簡插畫／workspace正式圖（runtime） | [assets/images/mootech_website_IMG148_a-workspace.png](../assets/images/mootech_website_IMG148_a-workspace.png) | 640×640；保留alpha | 標準前綴編號 |
+| SRCIMG032 | A版全身同色鈷藍極簡插畫／coffee獨立原稿（source） | [source/images/mootech_website_SRCIMG032_a-coffee.png](../source/images/mootech_website_SRCIMG032_a-coffee.png) | 1254×1254；保留alpha | 標準前綴編號 |
+| IMG149 | A版全身同色鈷藍極簡插畫／coffee正式圖（runtime） | [assets/images/mootech_website_IMG149_a-coffee.png](../assets/images/mootech_website_IMG149_a-coffee.png) | 640×640；保留alpha | 標準前綴編號 |
+| SRCIMG033 | A版全身同色鈷藍極簡插畫／fitness獨立原稿（source） | [source/images/mootech_website_SRCIMG033_a-fitness.png](../source/images/mootech_website_SRCIMG033_a-fitness.png) | 1254×1254；保留alpha | 標準前綴編號 |
+| IMG150 | A版全身同色鈷藍極簡插畫／fitness正式圖（runtime） | [assets/images/mootech_website_IMG150_a-fitness.png](../assets/images/mootech_website_IMG150_a-fitness.png) | 640×640；保留alpha | 標準前綴編號 |
+| SRCIMG041 | A版全身同色鈷藍極簡插畫／banner獨立原稿（source） | [source/images/mootech_website_SRCIMG041_a-banner.png](../source/images/mootech_website_SRCIMG041_a-banner.png) | 2172×724；不透明 | 標準前綴編號 |
+| IMG158 | A版全身同色鈷藍極簡插畫／banner正式圖（runtime） | [assets/images/mootech_website_IMG158_a-banner.webp](../assets/images/mootech_website_IMG158_a-banner.webp) | 1600×533；不透明 | 標準前綴編號 |
+| SRCIMG034 | E版熊北品牌角色／vision獨立原稿（source） | [source/images/mootech_website_SRCIMG034_e-vision.png](../source/images/mootech_website_SRCIMG034_e-vision.png) | 1254×1254；保留alpha | 標準前綴編號 |
+| IMG151 | E版熊北品牌角色／vision正式圖（runtime） | [assets/images/mootech_website_IMG151_e-vision.png](../assets/images/mootech_website_IMG151_e-vision.png) | 640×640；保留alpha | 標準前綴編號 |
+| SRCIMG035 | E版熊北品牌角色／team獨立原稿（source） | [source/images/mootech_website_SRCIMG035_e-team.png](../source/images/mootech_website_SRCIMG035_e-team.png) | 1254×1254；保留alpha | 標準前綴編號 |
+| IMG152 | E版熊北品牌角色／team正式圖（runtime） | [assets/images/mootech_website_IMG152_e-team.png](../assets/images/mootech_website_IMG152_e-team.png) | 640×640；保留alpha | 標準前綴編號 |
+| SRCIMG036 | E版熊北品牌角色／ideas獨立原稿（source） | [source/images/mootech_website_SRCIMG036_e-ideas.png](../source/images/mootech_website_SRCIMG036_e-ideas.png) | 1254×1254；保留alpha | 標準前綴編號 |
+| IMG153 | E版熊北品牌角色／ideas正式圖（runtime） | [assets/images/mootech_website_IMG153_e-ideas.png](../assets/images/mootech_website_IMG153_e-ideas.png) | 640×640；保留alpha | 標準前綴編號 |
+| SRCIMG037 | E版熊北品牌角色／learning獨立原稿（source） | [source/images/mootech_website_SRCIMG037_e-learning.png](../source/images/mootech_website_SRCIMG037_e-learning.png) | 1254×1254；保留alpha | 標準前綴編號 |
+| IMG154 | E版熊北品牌角色／learning正式圖（runtime） | [assets/images/mootech_website_IMG154_e-learning.png](../assets/images/mootech_website_IMG154_e-learning.png) | 640×640；保留alpha | 標準前綴編號 |
+| SRCIMG038 | E版熊北品牌角色／workspace獨立原稿（source） | [source/images/mootech_website_SRCIMG038_e-workspace.png](../source/images/mootech_website_SRCIMG038_e-workspace.png) | 1254×1254；保留alpha | 標準前綴編號 |
+| IMG155 | E版熊北品牌角色／workspace正式圖（runtime） | [assets/images/mootech_website_IMG155_e-workspace.png](../assets/images/mootech_website_IMG155_e-workspace.png) | 640×640；保留alpha | 標準前綴編號 |
+| SRCIMG039 | E版熊北品牌角色／coffee獨立原稿（source） | [source/images/mootech_website_SRCIMG039_e-coffee.png](../source/images/mootech_website_SRCIMG039_e-coffee.png) | 1254×1254；保留alpha | 標準前綴編號 |
+| IMG156 | E版熊北品牌角色／coffee正式圖（runtime） | [assets/images/mootech_website_IMG156_e-coffee.png](../assets/images/mootech_website_IMG156_e-coffee.png) | 640×640；保留alpha | 標準前綴編號 |
+| SRCIMG040 | E版熊北品牌角色／fitness獨立原稿（source） | [source/images/mootech_website_SRCIMG040_e-fitness.png](../source/images/mootech_website_SRCIMG040_e-fitness.png) | 1254×1254；保留alpha | 標準前綴編號 |
+| IMG157 | E版熊北品牌角色／fitness正式圖（runtime） | [assets/images/mootech_website_IMG157_e-fitness.png](../assets/images/mootech_website_IMG157_e-fitness.png) | 640×640；保留alpha | 標準前綴編號 |
+| SRCIMG042 | E版熊北品牌角色／banner獨立原稿（source） | [source/images/mootech_website_SRCIMG042_e-banner.png](../source/images/mootech_website_SRCIMG042_e-banner.png) | 2172×724；不透明 | 標準前綴編號 |
+| IMG159 | E版熊北品牌角色／banner正式圖（runtime） | [assets/images/mootech_website_IMG159_e-banner.webp](../assets/images/mootech_website_IMG159_e-banner.webp) | 1600×533；不透明 | 標準前綴編號 |
 
 ## 背景音樂
 
