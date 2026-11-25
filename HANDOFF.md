@@ -415,3 +415,9 @@ python3 tools/build-en.py
 - 驗證：中英×390／768／1440×五版共30組，確認箭頭中心與內容中心誤差小於1px、分別位於卡片左右緣、前後切換圖文與循環正常、無橫向溢出或JS錯誤。英文與D入口建置、diff check通過，E桌機最新截圖已存交接artifacts。使用者要求先上傳，先發布此修正，Figma今日定稿文件待完成。
 - 已發布runtime `6bf1ad9`，[Pages run45597316847](https://github.com/mootech-asia/mootech_website/actions/runs/45597316847)成功，正式中英文×390／768／1440×五版30組確認左右側箭頭置中及切換正常，無溢出／JS錯誤。
 - 完成今日最終定稿文件docs/FIGMA_SYNC_2026-11-25.md，並重建Word交付/workspace/artifacts/MOOTECH_Figma_Update_Tasks_2026-11-25.docx，取代舊版逐輪追加歷史。文件包含五版差異、六服務／單一詳情、招募與四職缺、願景三主題完整文案與側箭頭、地圖／角色／表單與頁尾、素材網址、驗收及唯一待定軟體內容；附最新E箭頭位置截圖。以6bf1ad9已發布網站為基準，未直接編輯Figma檔案。
+
+
+### 2026-11-25：D首屏移除地區與年份小字
+
+- 依截圖移除D首屏六大方案摘要下方SINGAPORE · TAIWAN · SINCE 2016一行small，保留6大方案與六個服務圖示。不改其他版本或關於我們成立年份。Figma任務文件同處同步更新。
+- 英文及D分享入口建置、文字存在性與diff check確認通過；純文字節點移除，未新增測試或媒體。
