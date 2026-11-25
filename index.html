@@ -83,7 +83,9 @@
 /* E vision: obsidian panels, cyan detail and soft rounded edges. */
 .ve .vision-carousel { --hr-accent: var(--e-safe); --hr-card: var(--e-panel); --hr-line: var(--e-line); --hr-ink: var(--e-ink); --hr-muted: var(--e-muted); --hr-radius: 18px; }
 .ve .vision-copy h3 { font-family: var(--e-display); letter-spacing: -.02em; }
-.ve .vision-progress { border-radius: 0 0 18px 18px; }
+
+/* Anchor navigation needs actual heights throughout the active variant. */
+.v.anchor-ready section { content-visibility: visible !important; }
 
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1336,7 +1338,7 @@ html[lang="en"] .ve-step h3 { font-weight: 600; letter-spacing: -.02em; }
 .ve-ctabs button { appearance: none; background: #06080c; border: 1px solid var(--e-line); color: var(--e-muted); border-radius: 6px; padding: 8px 12px; font: 600 13px/1 var(--e-sans); cursor: pointer; transition: color .25s, border-color .25s; }
 .ve-ctabs button:hover { color: var(--e-ink); }
 .ve-ctabs button.on { color: var(--e-ink); border-color: var(--e-accent); box-shadow: 0 0 0 1px rgba(41,182,232,.25) inset; }
-.ve-console .ve-result { min-height: 156px; }
+.ve-console .ve-result { min-height: 12.6em; } /* Reserve all seven console lines before typing. */
 .ve-svc { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 8fr); gap: 28px; align-items: start; }
 .ve-svc-tabs { display: grid; gap: 6px; position: sticky; top: 100px; }
 .ve-svc-tabs button { appearance: none; text-align: left; background: none; border: 0; border-left: 2px solid var(--e-line); padding: 12px 16px; color: var(--e-muted); cursor: pointer; display: grid; gap: 4px; transition: color .25s, border-color .25s, background .25s; }
@@ -1967,11 +1969,9 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #29b6e8; border: 1p
 .vision-controls button:hover { border-color: var(--hr-accent); }
 .vision-controls button:focus-visible { outline: 3px solid var(--hr-accent); outline-offset: 4px; }
 @media(max-width:900px) { .vision-slide { grid-template-columns: 1fr; } .vision-copy { min-height: 240px; } .vision-photo img { height: auto; aspect-ratio: 900/506; } }
-@media(max-width:520px) { .vision-controls { flex-direction: column; align-items: stretch; gap: 12px; } .vision-pages { justify-content: center; } .vision-copy { padding: 24px; min-height: 260px; } }
+@media(max-width:520px) { .vision-controls { gap: 12px; } .vision-pages { justify-content: center; } .vision-copy { padding: 24px; min-height: 260px; } }
 
 
-.vision-progress { position: relative; z-index: 1; height: 3px; margin: -3px 1px 0; overflow: hidden; background: var(--hr-line); }
-.vision-progress span { display: block; width: 100%; height: 100%; background: var(--hr-accent); transform: scaleX(0); transform-origin: left center; }
 
 
 .vd-careers .career-jobs { --hr-accent: var(--d-g1); --hr-ink: var(--d-ink); --hr-muted: rgba(255,255,255,.65); --hr-line: var(--d-line); --hr-card: var(--d-glass); --hr-radius: 16px; }
@@ -2175,8 +2175,8 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
 <figure class="vision-photo"><img src="assets/images/mootech_website_IMG177_culture-dining.jpg?v=jpeg1" alt="團隊一起聚餐分享美食" width="900" height="500" loading="lazy" decoding="async"></figure></div><div class="vision-slide" data-vision-slide role="group" aria-label="3 / 3" hidden>
 <div class="vision-copy"><h3 data-en="Share knowledge, grow together">知識分享與共同成長</h3><p data-en="Exchange ideas and experience, solve problems together, and turn every conversation into shared growth.">把經驗與想法拿出來交流，一起討論、解決問題，讓每一次分享都成為共同成長的養分。</p></div>
 <figure class="vision-photo"><img src="assets/images/mootech_website_IMG178_culture-learning.jpg?v=jpeg1" alt="團隊共同討論網路架構與分享知識" width="900" height="506" loading="lazy" decoding="async"></figure></div></div>
-<div class="vision-progress" aria-hidden="true"><span></span></div>
-</div></div></section>
+
+<div class="vision-controls"><button type="button" data-vision-prev aria-label="上一個主題"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-vision-next aria-label="下一個主題"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div></div></div></section>
 
   <section class="va-sec hr-section" id="va-team" aria-labelledby="va-team-heading">
     <div class="wrap">
@@ -2417,8 +2417,8 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
 <figure class="vision-photo"><img src="assets/images/mootech_website_IMG177_culture-dining.jpg?v=jpeg1" alt="團隊一起聚餐分享美食" width="900" height="500" loading="lazy" decoding="async"></figure></div><div class="vision-slide" data-vision-slide role="group" aria-label="3 / 3" hidden>
 <div class="vision-copy"><h3 data-en="Share knowledge, grow together">知識分享與共同成長</h3><p data-en="Exchange ideas and experience, solve problems together, and turn every conversation into shared growth.">把經驗與想法拿出來交流，一起討論、解決問題，讓每一次分享都成為共同成長的養分。</p></div>
 <figure class="vision-photo"><img src="assets/images/mootech_website_IMG178_culture-learning.jpg?v=jpeg1" alt="團隊共同討論網路架構與分享知識" width="900" height="506" loading="lazy" decoding="async"></figure></div></div>
-<div class="vision-progress" aria-hidden="true"><span></span></div>
-</div></div></section>
+
+<div class="vision-controls"><button type="button" data-vision-prev aria-label="上一個主題"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-vision-next aria-label="下一個主題"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div></div></div></section>
 
   <section class="vb-sec hr-section" id="vb-team" aria-labelledby="vb-team-heading">
     <div class="wrap">
@@ -2624,8 +2624,8 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
 <figure class="vision-photo"><img src="assets/images/mootech_website_IMG177_culture-dining.jpg?v=jpeg1" alt="團隊一起聚餐分享美食" width="900" height="500" loading="lazy" decoding="async"></figure></div><div class="vision-slide" data-vision-slide role="group" aria-label="3 / 3" hidden>
 <div class="vision-copy"><h3 data-en="Share knowledge, grow together">知識分享與共同成長</h3><p data-en="Exchange ideas and experience, solve problems together, and turn every conversation into shared growth.">把經驗與想法拿出來交流，一起討論、解決問題，讓每一次分享都成為共同成長的養分。</p></div>
 <figure class="vision-photo"><img src="assets/images/mootech_website_IMG178_culture-learning.jpg?v=jpeg1" alt="團隊共同討論網路架構與分享知識" width="900" height="506" loading="lazy" decoding="async"></figure></div></div>
-<div class="vision-progress" aria-hidden="true"><span></span></div>
-</div></div></section>
+
+<div class="vision-controls"><button type="button" data-vision-prev aria-label="上一個主題"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-vision-next aria-label="下一個主題"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div></div></div></section>
 
   <section class="vc-sec hr-section" id="vc-team" aria-labelledby="vc-team-heading">
     <div class="wrap">
@@ -2817,8 +2817,8 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
 <figure class="vision-photo"><img src="assets/images/mootech_website_IMG177_culture-dining.jpg?v=jpeg1" alt="團隊一起聚餐分享美食" width="900" height="500" loading="lazy" decoding="async"></figure></div><div class="vision-slide" data-vision-slide role="group" aria-label="3 / 3" hidden>
 <div class="vision-copy"><h3 data-en="Share knowledge, grow together">知識分享與共同成長</h3><p data-en="Exchange ideas and experience, solve problems together, and turn every conversation into shared growth.">把經驗與想法拿出來交流，一起討論、解決問題，讓每一次分享都成為共同成長的養分。</p></div>
 <figure class="vision-photo"><img src="assets/images/mootech_website_IMG178_culture-learning.jpg?v=jpeg1" alt="團隊共同討論網路架構與分享知識" width="900" height="506" loading="lazy" decoding="async"></figure></div></div>
-<div class="vision-progress" aria-hidden="true"><span></span></div>
-</div></div></section>
+
+<div class="vision-controls"><button type="button" data-vision-prev aria-label="上一個主題"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-vision-next aria-label="下一個主題"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div></div></div></section>
 
   <section class="vd-sec" id="vd-team" aria-labelledby="vd-team-heading">
     <div class="wrap">
@@ -3069,8 +3069,8 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
 <figure class="vision-photo"><img src="assets/images/mootech_website_IMG177_culture-dining.jpg?v=jpeg1" alt="團隊一起聚餐分享美食" width="900" height="500" loading="lazy" decoding="async"></figure></div><div class="vision-slide" data-vision-slide role="group" aria-label="3 / 3" hidden>
 <div class="vision-copy"><h3 data-en="Share knowledge, grow together">知識分享與共同成長</h3><p data-en="Exchange ideas and experience, solve problems together, and turn every conversation into shared growth.">把經驗與想法拿出來交流，一起討論、解決問題，讓每一次分享都成為共同成長的養分。</p></div>
 <figure class="vision-photo"><img src="assets/images/mootech_website_IMG178_culture-learning.jpg?v=jpeg1" alt="團隊共同討論網路架構與分享知識" width="900" height="506" loading="lazy" decoding="async"></figure></div></div>
-<div class="vision-progress" aria-hidden="true"><span></span></div>
-</div></div></section>
+
+<div class="vision-controls"><button type="button" data-vision-prev aria-label="上一個主題"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-vision-next aria-label="下一個主題"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div></div></div></section>
 
   <section class="ve-sec hr-section" id="ve-team" aria-labelledby="ve-team-heading">
     <div class="wrap">
@@ -3647,6 +3647,7 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
     var m = location.hash.match(/^#design-([a-e])$/); if (m) show(m[1]);
   });
 
+  var anchorNavigation = 0;
   /* 區塊捲動不改動網址 hash，避免與版型切換衝突 */
   document.addEventListener("click", function (e) {
     var a = e.target.closest("a[data-scroll]"); if (!a) return;
@@ -3654,17 +3655,18 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
     e.preventDefault();
     var head = document.querySelector(".v:not([hidden]) header");
     function target() { return Math.max(0, Math.round(t.getBoundingClientRect().top + window.scrollY - (head ? head.offsetHeight : 0) + 1)); }
-    window.scrollTo({ top: target(), behavior: reduce ? "auto" : "smooth" });
-    /* 延後渲染的區塊在捲動途中才算出實際高度，捲動停下後再校正到正確位置 */
-    var lastY = -1, tries = 0;
-    (function settle() {
-      setTimeout(function () {
-        if (window.scrollY !== lastY) { lastY = window.scrollY; return settle(); }
-        var max = document.documentElement.scrollHeight - innerHeight;
-        var want = Math.min(target(), max);
-        if (Math.abs(want - window.scrollY) > 2 && tries++ < 4) { window.scrollTo({ top: want, behavior: "auto" }); lastY = -1; settle(); }
-      }, 120);
-    })();
+    /* Resolve deferred section heights before measuring; scroll only once. */
+    var variant = t.closest('.v');
+    if (variant) variant.classList.add('anchor-ready');
+    var navigation = ++anchorNavigation;
+    target(); // Flush layout so newly needed fonts are included in fonts.ready.
+    var fontsReady = document.fonts ? document.fonts.ready : Promise.resolve();
+    fontsReady.then(function () {
+      requestAnimationFrame(function () {
+        if (navigation !== anchorNavigation || (variant && variant.hidden)) return;
+        window.scrollTo({ top: target(), behavior: reduce ? "instant" : "smooth" });
+      });
+    });
   });
 
   document.querySelectorAll("form[data-form]").forEach(function (f) {
@@ -4706,7 +4708,6 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
   document.querySelectorAll('[data-vision-carousel]').forEach(function (box) {
     var slides = box.querySelectorAll('[data-vision-slide]');
     var current = 0, paused = reduced.matches, hovered = false, focused = false, visible = false, cycle;
-    var progress = box.querySelector('.vision-progress span');
     function schedule() {
       if (!cycle) return;
       if (!paused && !hovered && !focused && visible && !document.hidden && !box.closest('.v[hidden]')) cycle.play(); else cycle.pause();
@@ -4715,10 +4716,12 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
       if (cycle) cycle.cancel();
       current = (index + slides.length) % slides.length;
       slides.forEach(function (slide, i) { slide.hidden = i !== current; });
-      cycle = progress.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: 6000, fill: 'forwards', easing: 'linear' });
+      cycle = new Animation(new KeyframeEffect(null, [], { duration: 6000 }), document.timeline);
       cycle.pause(); cycle.onfinish = function () { show(current + 1); };
       schedule();
     }
+    box.querySelector('[data-vision-prev]').addEventListener('click', function () { show(current - 1); });
+    box.querySelector('[data-vision-next]').addEventListener('click', function () { show(current + 1); });
     box.addEventListener('mouseenter', function () { hovered = true; schedule(); });
     box.addEventListener('mouseleave', function () { hovered = false; schedule(); });
     box.addEventListener('focusin', function () { focused = true; schedule(); });
