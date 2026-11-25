@@ -251,3 +251,11 @@ python3 tools/build-en.py
 - 依使用者最新指示，D 人才招募 Banner 的 Let's Go 改為 #vd-vision 頁內捲動，移除 data-recruit／外部104網址／新分頁屬性；中英無障礙名稱同步為認識願景。聯絡區「查看職缺」外連保留。Banner 全景圖片及排版保持。
 - 驗證：英文與D中英入口生成、diff check通過；Chromium 根頁／英文／D中英入口×390／1440共八組，實際點擊導向願景、落點避開固定頁首、未開新分頁、聯絡區職缺外連保留、無pageerror。
 - 已發布：runtime `b025f26`；[Pages run45567110850](https://github.com/mootech-asia/mootech_website/actions/runs/45567110850) 與素材CI成功；正式D中英入口手機點擊 Let's Go 確認捲至願景並避開頁首。Word交接文件已補本項覆蓋規格。
+
+### 2026-11-25：正式 GitHub Pages 404 排查（外部設定阻塞）
+
+- 使用者提供完整 GitHub Pages 404 截圖。已於未登入 HTTP 請求重現根目錄、帶版本查詢、/d/、/en/、/index.html 全部404，不屬於 Let's Go 前端點擊問題。原始碼仍在，最後成功發布 b025f26／run45567110850；未為此改動網站程式。
+- gh repo view 現在回報 isPrivate=true（早期公開狀態不可假定持續不變）；不可擅自把原始碼庫改公開。此狀態與404關聯仍須由有權限者檢查Pages設定，不能單憑private宣稱方案不足。
+- 已依既有設定重新執行 workflow_dispatch run45567661044：Checkout、Build localized pages and D share entries、Stage site files全部成功；Setup Pages失敗，Get Pages site: Not Found；Create Pages site: Resource not accessible by integration。人工GitHub連線讀Pages／deployments API亦403。未改部署環境保護或繞過權限。
+- Browser技能已讀；目前無對應Browser js工具可用，CUA fallback回報Browser runtime unavailable，無法代使用者操作設定。需要有權限者至 https://github.com/mootech-asia/mootech_website/settings/pages 恢復Pages站台／GitHub Actions來源，確認組織的private repo Pages方案支援。恢復後可重新執行既有Deploy to GitHub Pages，再驗原網址與中英D入口HTTP200。
+- 阻塞：GitHub Pages站台／建立權限。網站來源與建置仍完整；尚未恢復線上網站，不能回報已修復。
