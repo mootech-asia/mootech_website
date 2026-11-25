@@ -227,3 +227,4 @@ python3 tools/build-en.py
 - 原 D 專屬回頂移出隱藏版型容器成共用按鈕，A 藍色圓角方、B 深底青色描邊、C 青綠直角黑框、D 品牌漸層圓形、E 黑底青綠圓形。依目前版型更新錨點與語系；保留客服開啟／縮小時的位置避讓及鍵盤焦點。
 - 移除全部 Facebook 連結與 104 圖示／SVG symbols／徽章樣式，LinkedIn 保留。A–E 統一「查看職缺／View jobs」連到既有 D 版 MOOTECH 104 公司頁 https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac ，共享 RECRUIT_URL；E 手機亦顯示職缺文字連結。未移除招募入口。
 - 驗證：英文及 D 中英入口生成、inline JS 語法、diff check、素材 check 172 項通過；中英文 × 手機／桌機 × A–E 共 20 組，回頂顯示／正確錨點／客服開啟後不重疊／點擊回頁首、Facebook 與圖示移除、職缺文字及網址通過。A／E 桌機上下等高、截圖已核對。C 中英文 × 390×844／1440×1000／1440×720 六組，起點／中段／終點橫向進度、固定高度完整可見、最後釋放續捲均通過，另驗原生橫向操作正反向同步。五版手機職缺文字皆可見。未改動媒體檔案。
+- 已發布：runtime `ccc0d75`；[Pages run 45556619026](https://github.com/mootech-asia/mootech_website/actions/runs/45556619026) 與素材 CI 成功。正式中英文 A／E 等高、A–E 回頂錨點與招募文字連結、Facebook／圖示移除及 C 場景橫向起終點已核對。
