@@ -293,3 +293,4 @@ python3 tools/build-en.py
 - 依最新參考，E主色統一為#29B6E8，新增--e-accent；原綠色重點／光效改青藍。關於我們數字、標籤、招募區、按鈕、方案連結、防線封包、地圖正常流量、客服及回頂按鈕同步；招募首屏原橘色CTA改同青藍掃光。
 - 深色底、文字灰階、風險紅／警示黃與既有熊北媒體保留。未修改A–D樣式或圖片；媒體未重新製作或配色。
 - 驗證：英文與D中英入口建置及diff check通過；Chromium中英文×390／1440px四組確認E主要重點顏色、按鈕、Banner、客服主色、地圖色票、熊北六卡、無水平溢出及pageerror，目視核對關於我們桌機與手機。
+- 已發布runtime `1331609`，[Pages run45576360343](https://github.com/mootech-asia/mootech_website/actions/runs/45576360343)與素材CI成功；正式中英文手機E版檢查主色、關於我們數字、按鈕、客服／地圖色票、熊北卡與無pageerror通過。Word交接文件同步追加本項。
