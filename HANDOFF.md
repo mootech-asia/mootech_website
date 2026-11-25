@@ -259,3 +259,9 @@ python3 tools/build-en.py
 - 已依既有設定重新執行 workflow_dispatch run45567661044：Checkout、Build localized pages and D share entries、Stage site files全部成功；Setup Pages失敗，Get Pages site: Not Found；Create Pages site: Resource not accessible by integration。人工GitHub連線讀Pages／deployments API亦403。未改部署環境保護或繞過權限。
 - Browser技能已讀；目前無對應Browser js工具可用，CUA fallback回報Browser runtime unavailable，無法代使用者操作設定。需要有權限者至 https://github.com/mootech-asia/mootech_website/settings/pages 恢復Pages站台／GitHub Actions來源，確認組織的private repo Pages方案支援。恢復後可重新執行既有Deploy to GitHub Pages，再驗原網址與中英D入口HTTP200。
 - 阻塞：GitHub Pages站台／建立權限。網站來源與建置仍完整；尚未恢復線上網站，不能回報已修復。
+
+### 2026-11-25：Pages 404 再次確認（儲存庫已公開，站台仍未啟用）
+
+- 本輪 GitHub repo API 已回報 private=false、visibility=public、has_pages=false；GET Pages為404。故不能把持續404簡化為repo仍private。確定當前阻塞為Pages站台未建立／未啟用。
+- 已嘗試POST Pages build_type=workflow，GitHub回403 Resource not accessible by integration；未更動原始碼或環境保護。dispatch run45568788844因另一位管理者重跑run45567661044被併發取消，未干預對方操作。後者第2次（triggering_actor terrylin-tech）仍在Setup Pages失敗：Get site Not Found、Create site Resource not accessible by integration。
+- CUA設定頁fallback亦受工具沙箱阻塞，不能操作GitHub設定。需要有權限者於 Settings→Pages 啟用站台並以GitHub Actions為Source，設定完成後重跑現有部署，再驗根目錄／D中英入口。未恢復，不可回報已修復。
