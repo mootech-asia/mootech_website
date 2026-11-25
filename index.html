@@ -16,19 +16,22 @@
 <meta property="og:title" content="MOOTECH｜透過創新推動企業發展">
 <meta property="og:description" content="直播串流、IPLC 國際專線、IP Transit、CDN、網路架構優化與系統整合。MOOTECH 自 2016 年起為企業打造低延遲、不中斷的網路，據點位於新加坡與台灣。">
 <meta property="og:url" content="https://mootech-asia.github.io/mootech_website/">
-<meta property="og:image" content="https://mootech-asia.github.io/mootech_website/assets/og.jpg">
+<meta property="og:image" content="https://mootech-asia.github.io/mootech_website/assets/images/mootech_website_IMG141_design-d-social-zh.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="MOOTECH D 版：黑底品牌漸層與無五官形象人，透過創新推動企業發展">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mootech-asia.github.io/mootech_website/assets/images/mootech_website_IMG141_design-d-social-zh.jpg">
 <meta name="theme-color" content="#0b6bcb">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"MOOTECH","legalName":"Mootech Pte. Ltd.","url":"https://mootech-asia.github.io/mootech_website/","logo":"https://mootech-asia.github.io/mootech_website/assets/images/mootech_website_IMG006_brand_logo-stacked.png","email":"contact@mootech.asia","foundingDate":"2016","address":[{"@type":"PostalAddress","addressCountry":"SG"},{"@type":"PostalAddress","addressCountry":"TW"}],"knowsAbout":["Live streaming","IP Transit","IPLC international private lines","CDN","Network optimisation","System integration"]}</script>
 <link rel="icon" type="image/png" href="assets/images/mootech_website_IMG002_brand_favicon.png">
 <link rel="apple-touch-icon" href="assets/images/mootech_website_IMG001_brand_apple-touch-icon.png">
 <script>
   (function () {
-    var m = location.hash.match(/^#design-([a-e])$/), v = m && m[1];
+    var m = location.hash.match(/^#design-([a-e])$/), v = (m && m[1]) || (document.querySelector('meta[name="mootech-default-variant"]') || {}).content;
     if (!v) { try { v = localStorage.getItem("mootech-variant"); } catch (e) {} }
     if (!v) v = "d";
     if (/^[bcde]$/.test(v)) document.documentElement.setAttribute("data-init", v);
@@ -3164,7 +3167,7 @@ form[data-form] input { min-height: 48px; }
     });
   });
 
-  var init = (location.hash.match(/^#design-([a-e])$/) || [])[1];
+  var init = (location.hash.match(/^#design-([a-e])$/) || [])[1] || (document.querySelector('meta[name="mootech-default-variant"]') || {}).content;
   if (!init) { try { init = localStorage.getItem("mootech-variant"); } catch (e) {} }
   show(init || "d");
 

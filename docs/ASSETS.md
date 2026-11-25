@@ -53,7 +53,7 @@
 | IMG043 | 網站顯示素材：assets/images/mootech_website_IMG043_video_e-hero-poster-1440.webp（runtime） | [assets/images/mootech_website_IMG043_video_e-hero-poster-1440.webp](../assets/images/mootech_website_IMG043_video_e-hero-poster-1440.webp) | 1440×810；不透明 | 標準前綴編號 |
 | IMG044 | 網站顯示素材：assets/images/mootech_website_IMG044_video_e-hero-poster-1920.webp（runtime） | [assets/images/mootech_website_IMG044_video_e-hero-poster-1920.webp](../assets/images/mootech_website_IMG044_video_e-hero-poster-1920.webp) | 1920×1080；不透明 | 標準前綴編號 |
 | IMG045 | 網站顯示素材：assets/images/mootech_website_IMG045_video_e-hero-poster-960.webp（runtime） | [assets/images/mootech_website_IMG045_video_e-hero-poster-960.webp](../assets/images/mootech_website_IMG045_video_e-hero-poster-960.webp) | 960×540；不透明 | 標準前綴編號 |
-| IMG046 | 社群分享預覽圖（固定公開網址）（runtime） | [assets/og.jpg](../assets/og.jpg) | 1200×630；不透明 | 相容路徑：既有社群分享網址，相容公開引用 |
+| IMG046 | 舊版熊北社群分享圖（保留固定公開網址相容引用，預設分享已改 D 版）（runtime） | [assets/og.jpg](../assets/og.jpg) | 1200×630；不透明 | 相容路徑：既有社群分享網址，相容公開引用 |
 | IMG047 | 品牌角色設定／姿勢原稿：brand/moo-bear/01_character/character-sheet.png（source） | [brand/moo-bear/01_character/character-sheet.png](../brand/moo-bear/01_character/character-sheet.png) | 1536×1024；不透明 | 相容路徑：品牌原稿包內部關聯命名及跨 repo 正式引用 |
 | IMG048 | 品牌角色設定／姿勢原稿：brand/moo-bear/01_character/character-sheet.webp（source） | [brand/moo-bear/01_character/character-sheet.webp](../brand/moo-bear/01_character/character-sheet.webp) | 1536×1024；不透明 | 相容路徑：品牌原稿包內部關聯命名及跨 repo 正式引用 |
 | IMG049 | 品牌角色設定／姿勢原稿：brand/moo-bear/01_character/views-review.png（source） | [brand/moo-bear/01_character/views-review.png](../brand/moo-bear/01_character/views-review.png) | 1200×900；不透明 | 相容路徑：品牌原稿包內部關聯命名及跨 repo 正式引用 |
@@ -170,6 +170,10 @@
 | IMG139 | 新版修長中性偏男性形象人／coffee網站靜態情境圖（runtime） | [assets/images/mootech_website_IMG139_slender-coffee.png](../assets/images/mootech_website_IMG139_slender-coffee.png) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG022 | 新版修長中性偏男性形象人／fitness獨立原稿（source） | [source/images/mootech_website_SRCIMG022_slender-fitness.png](../source/images/mootech_website_SRCIMG022_slender-fitness.png) | 1254×1254；保留 alpha | 標準前綴編號 |
 | IMG140 | 新版修長中性偏男性形象人／fitness網站靜態情境圖（runtime） | [assets/images/mootech_website_IMG140_slender-fitness.png](../assets/images/mootech_website_IMG140_slender-fitness.png) | 640×640；保留 alpha | 標準前綴編號 |
+| SRCIMG023 | D 版專屬分享宣傳圖／zh原稿（source） | [source/images/mootech_website_SRCIMG023_design-d-social-zh.png](../source/images/mootech_website_SRCIMG023_design-d-social-zh.png) | 1731×908；不透明 | 標準前綴編號 |
+| IMG141 | D 版專屬分享宣傳圖／zh社群連結預覽（runtime） | [assets/images/mootech_website_IMG141_design-d-social-zh.jpg](../assets/images/mootech_website_IMG141_design-d-social-zh.jpg) | 1200×630；不透明 | 標準前綴編號 |
+| SRCIMG024 | D 版專屬分享宣傳圖／en原稿（source） | [source/images/mootech_website_SRCIMG024_design-d-social-en.png](../source/images/mootech_website_SRCIMG024_design-d-social-en.png) | 1731×908；不透明 | 標準前綴編號 |
+| IMG142 | D 版專屬分享宣傳圖／en社群連結預覽（runtime） | [assets/images/mootech_website_IMG142_design-d-social-en.jpg](../assets/images/mootech_website_IMG142_design-d-social-en.jpg) | 1200×630；不透明 | 標準前綴編號 |
 
 ## 背景音樂
 

@@ -47,7 +47,9 @@ GitHub Pages 的快取時間固定為 10 分鐘，若要更長需另外接 CDN�
 
 ## SEO 與分享
 
-- 社群分享縮圖：`assets/og.jpg`（1200×630）
+- 預設 D 版社群分享縮圖：`assets/images/mootech_website_IMG141_design-d-social-zh.jpg`，英文版 IMG142（皆 1200×630）；舊 `assets/og.jpg` 保留相容網址。
+- D 版專屬分享網址：`https://mootech-asia.github.io/mootech_website/d/`（英文 `/en/d/`），點開優先顯示 D 版，不受舊的版型偏好影響。分享平台無法依 `#design-d` 辨別版本，請使用專屬網址；平台已快取的舊連結預覽可能需重新分享或刷新。
+- `python3 tools/build-en.py` 同時生成英文版與中英文 D 版專屬入口，三個生成頁面均不手動維護。
 - 結構化資料（Organization）、canonical、hreflang、`sitemap.xml`、`robots.txt`
 - 正式網域上線時，把 `index.html`、`tools/build-en.py`、`sitemap.xml`、`robots.txt` 中的 `https://mootech-asia.github.io/mootech_website/` 換成正式網址
 
