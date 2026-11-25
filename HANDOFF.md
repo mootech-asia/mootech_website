@@ -422,3 +422,8 @@ python3 tools/build-en.py
 - 依截圖移除D首屏六大方案摘要下方SINGAPORE · TAIWAN · SINCE 2016一行small，保留6大方案與六個服務圖示。不改其他版本或關於我們成立年份。Figma任務文件同處同步更新。
 - 英文及D分享入口建置、文字存在性與diff check確認通過；純文字節點移除，未新增測試或媒體。
 - 已發布runtime `ee5a887`，[Pages run45598679865](https://github.com/mootech-asia/mootech_website/actions/runs/45598679865)成功。正式根頁HTTP200，地區年份small已移除且6大方案保留。Word Figma文件已重建並同步最新線上基準網址。
+
+
+### 2026-11-25：D浮動客服暫時隱藏
+
+- 依使用者截圖暫時隱藏D版整個mtc浮動客服，包含來電卡／縮小入口／展開面板；以data-v作用域CSS控制，保留元件與對話資料方便恢復。A／B／C／E不變，回頂按鈕保留。Figma任務文件同步標記D暫不顯示客服。

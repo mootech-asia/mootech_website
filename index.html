@@ -84,6 +84,9 @@
 .ve .vision-carousel { --hr-accent: var(--e-safe); --hr-card: var(--e-panel); --hr-line: var(--e-line); --hr-ink: var(--e-ink); --hr-muted: var(--e-muted); --hr-radius: 18px; }
 .ve .vision-copy h3 { font-family: var(--e-display); letter-spacing: -.02em; }
 
+/* D support widget is temporarily hidden; other variants keep their widget. */
+body[data-v="d"] .mtc { display: none !important; }
+
 /* Anchor navigation needs actual heights throughout the active variant. */
 .v.anchor-ready section { content-visibility: visible !important; }
 
