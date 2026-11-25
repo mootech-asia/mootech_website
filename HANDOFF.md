@@ -190,3 +190,4 @@ python3 tools/build-en.py
 - 中英文翻譯同步；聯絡人、公司與電話均使用正確 autocomplete。客服「改填網站聯絡表單」新增公司／電話帶入，改以精確 name 選擇器填入聯絡人，避免新增第一個公司文字欄後誤填；服務類型與地區併入需求文字，避免移除 E 選單後遺失客服已選內容。
 - 表單仍沿用設計預覽送出提示，未宣稱寄信成功或新增後端；README 已區分官網預覽表單與客服 mailto 流程。
 - 驗證：英文生成、inline JS 語法、diff check 通過；Chromium A–E × 中英文 × 390／1440（20 組）驗證五欄順序、必填／選填、無效 email 阻擋、只有必填欄即可通過、單欄排列、預覽送出提示、無 pageerror。中英文客服服務需求完整走到帶入官網，五欄對應及服務／地區／備註均通過；桌機 D 版表單已截圖核對。未改動媒體素材。
+- 已發布：runtime `33a254e`；[Pages run 45534747775](https://github.com/mootech-asia/mootech_website/actions/runs/45534747775) 成功。正式中英文 HTML 的五份聯絡表單均已核對欄位順序 company／name／email／phone／message，以及僅 name／email 必填。
