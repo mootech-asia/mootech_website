@@ -4483,6 +4483,69 @@
       "references": [
         "index.html"
       ]
+    },
+    {
+      "id": "IMG176",
+      "path": "assets/images/mootech_website_IMG176_culture-office.jpg",
+      "usage": "runtime",
+      "purpose": "A–D輪播照片JPG最高品質／office（辦公室待新TIF可讀後替換）",
+      "category": "images",
+      "prefix": "mootech_website",
+      "format": "jpg",
+      "bytes": 402863,
+      "sha256": "480018587230d6fd6864ead79dd3955f82eb2108a458a0869d950948b3efa629",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "width": 900,
+      "height": 506,
+      "frames": 1,
+      "transparency": "不透明",
+      "source": "source/images/mootech_website_SRCIMG053_culture-office.webp",
+      "references": [
+        "index.html"
+      ]
+    },
+    {
+      "id": "IMG177",
+      "path": "assets/images/mootech_website_IMG177_culture-dining.jpg",
+      "usage": "runtime",
+      "purpose": "A–D輪播照片JPG最高品質／dining",
+      "category": "images",
+      "prefix": "mootech_website",
+      "format": "jpg",
+      "bytes": 524034,
+      "sha256": "07f890a80e1920b32564ad3c89c312176f8b255aef3ebd068aa942bf572a48a2",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "width": 900,
+      "height": 500,
+      "frames": 1,
+      "transparency": "不透明",
+      "source": "source/images/mootech_website_SRCIMG054_culture-dining.webp",
+      "references": [
+        "index.html"
+      ]
+    },
+    {
+      "id": "IMG178",
+      "path": "assets/images/mootech_website_IMG178_culture-learning.jpg",
+      "usage": "runtime",
+      "purpose": "A–D輪播照片JPG最高品質／learning",
+      "category": "images",
+      "prefix": "mootech_website",
+      "format": "jpg",
+      "bytes": 363499,
+      "sha256": "43febb1c22de451446ec0a76703637ec932447bc976cf66d4015a3f244bd8017",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "width": 900,
+      "height": 506,
+      "frames": 1,
+      "transparency": "不透明",
+      "source": "source/images/mootech_website_SRCIMG055_culture-learning.webp",
+      "references": [
+        "index.html"
+      ]
     }
   ],
   "delegates": [],
