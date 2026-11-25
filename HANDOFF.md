@@ -250,3 +250,4 @@ python3 tools/build-en.py
 
 - 依使用者最新指示，D 人才招募 Banner 的 Let's Go 改為 #vd-vision 頁內捲動，移除 data-recruit／外部104網址／新分頁屬性；中英無障礙名稱同步為認識願景。聯絡區「查看職缺」外連保留。Banner 全景圖片及排版保持。
 - 驗證：英文與D中英入口生成、diff check通過；Chromium 根頁／英文／D中英入口×390／1440共八組，實際點擊導向願景、落點避開固定頁首、未開新分頁、聯絡區職缺外連保留、無pageerror。
+- 已發布：runtime `b025f26`；[Pages run45567110850](https://github.com/mootech-asia/mootech_website/actions/runs/45567110850) 與素材CI成功；正式D中英入口手機點擊 Let's Go 確認捲至願景並避開頁首。Word交接文件已補本項覆蓋規格。
