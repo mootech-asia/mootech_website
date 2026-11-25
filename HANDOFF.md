@@ -440,3 +440,4 @@ python3 tools/build-en.py
 
 - 依最新指示，A–E整個人才招募section（標題／Banner／四職缺）從願景前移到員工福利section正下方，保留各版樣式、素材與既有id及menu錨點。移除五個Let's Go按鈕，不留空白或隱形導向；四個104職缺連結保留。Figma文件更新最終順序與移除按鈕規格。
 - 驗證：中英×390／1440×五版20組確認員工福利後緊接人才招募、四職缺保留、無Let's Go／隱形data-scroll連結、圖片解碼、手機選單操作及新位置落點正確、無水平溢出或JS錯誤。英文及D分享入口建置、diff check通過；Word交接文件已重建。
+- 已發布runtime `4e0a0af`，[Pages run45600607606](https://github.com/mootech-asia/mootech_website/actions/runs/45600607606)成功。正式中英文五版確認人才招募緊接福利、無Let's Go且四職缺保留。Word文件與基準網址已同步最新順序。
