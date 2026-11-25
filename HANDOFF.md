@@ -337,3 +337,4 @@ python3 tools/build-en.py
 
 - 依使用者截圖移除A–D輪播前後箭頭、頁數與暫停／播放按鈕，只保留三個主題選擇點及6秒自動播放；E不變。相關DOM、CSS與事件監聽同步移除，懸停／焦點／背景／離開畫面暫停與減少動作偏好維持。
 - 驗證：中英文與D入口建置、diff check通過。Chromium中英文×390／1440，逐一檢查A–D移除操作列、三個主題選擇可同步切換圖文、無溢出與JS錯誤；正常動態確認6秒自動播放仍運作。
+- 已發布runtime `a947421`，[Pages run45585555077](https://github.com/mootech-asia/mootech_website/actions/runs/45585555077)與素材CI成功；正式中英文手機／桌機A–D逐一確認操作列移除、主題切換正常、無JS錯誤，另驗自動輪播仍運作。
