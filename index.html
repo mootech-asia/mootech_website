@@ -1962,9 +1962,10 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #29b6e8; border: 1p
 .vision-copy p { margin: 0; color: var(--hr-muted); font-size: 16px; line-height: 1.9; }
 .vision-photo { margin: 0; min-width: 0; aspect-ratio: 900/506; align-self: stretch; }
 .vision-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.vision-controls { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 20px; color: var(--hr-ink); }
+.vision-carousel { position: relative; padding-inline: 28px; }
+.vision-controls { position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; margin: 0; color: var(--hr-ink); pointer-events: none; }
 .vision-pages { display: flex; align-items: center; gap: 10px; }
-.vision-controls button { appearance: none; display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border: 1px solid var(--hr-line); border-radius: var(--hr-radius); background: var(--hr-card); color: inherit; padding: 8px 12px; font: 600 13px/1.3 var(--sans); cursor: pointer; }
+.vision-controls button { pointer-events: auto; flex: 0 0 44px; width: 44px; appearance: none; display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border: 1px solid var(--hr-line); border-radius: var(--hr-radius); background: var(--hr-card); color: inherit; padding: 8px 0; font: 600 13px/1.3 var(--sans); cursor: pointer; }
 .vision-pages button[aria-current="true"] { color: var(--hr-accent); border-color: var(--hr-accent); box-shadow: inset 0 -2px var(--hr-accent); }
 .vision-controls button:hover { border-color: var(--hr-accent); }
 .vision-controls button:focus-visible { outline: 3px solid var(--hr-accent); outline-offset: 4px; }
