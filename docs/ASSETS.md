@@ -174,6 +174,8 @@
 | IMG141 | D 版專屬分享宣傳圖／zh社群連結預覽（runtime） | [assets/images/mootech_website_IMG141_design-d-social-zh.jpg](../assets/images/mootech_website_IMG141_design-d-social-zh.jpg) | 1200×630；不透明 | 標準前綴編號 |
 | SRCIMG024 | D 版專屬分享宣傳圖／en原稿（source） | [source/images/mootech_website_SRCIMG024_design-d-social-en.png](../source/images/mootech_website_SRCIMG024_design-d-social-en.png) | 1731×908；不透明 | 標準前綴編號 |
 | IMG142 | D 版專屬分享宣傳圖／en社群連結預覽（runtime） | [assets/images/mootech_website_IMG142_design-d-social-en.jpg](../assets/images/mootech_website_IMG142_design-d-social-en.jpg) | 1200×630；不透明 | 標準前綴編號 |
+| SRCIMG025 | D 版人才招募扁長 Banner：四位無五官漸層形象人的辦公室團隊情境原稿（source） | [source/images/mootech_website_SRCIMG025_careers-team-banner.png](../source/images/mootech_website_SRCIMG025_careers-team-banner.png) | 1983×793；不透明 | 標準前綴編號 |
+| IMG143 | D 版人才招募扁長 Banner：四位無五官漸層形象人的辦公室團隊情境背景圖（runtime） | [assets/images/mootech_website_IMG143_careers-team-banner.webp](../assets/images/mootech_website_IMG143_careers-team-banner.webp) | 1600×450；不透明 | 標準前綴編號 |
 
 ## 背景音樂
 

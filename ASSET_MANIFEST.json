@@ -3199,6 +3199,46 @@
         "index.html",
         "tools/build-en.py"
       ]
+    },
+    {
+      "id": "SRCIMG025",
+      "path": "source/images/mootech_website_SRCIMG025_careers-team-banner.png",
+      "usage": "source",
+      "purpose": "D 版人才招募扁長 Banner：四位無五官漸層形象人的辦公室團隊情境原稿",
+      "category": "images",
+      "prefix": "mootech_website",
+      "format": "png",
+      "bytes": 1849938,
+      "sha256": "e1cd93297bc33f5bd357e1cdbaecb693590e953c1b59b35968d57f79a35fad5e",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "width": 1983,
+      "height": 793,
+      "frames": 1,
+      "transparency": "不透明",
+      "characterReference": "source/images/mootech_website_SRCIMG015_neutral-character-concept.png"
+    },
+    {
+      "id": "IMG143",
+      "path": "assets/images/mootech_website_IMG143_careers-team-banner.webp",
+      "usage": "runtime",
+      "purpose": "D 版人才招募扁長 Banner：四位無五官漸層形象人的辦公室團隊情境背景圖",
+      "category": "images",
+      "prefix": "mootech_website",
+      "format": "webp",
+      "bytes": 102608,
+      "sha256": "e632dcc1c7e6ca85495a68cbc5b75b81bcf7775f996eb0d6498e6f19b24f9579",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "width": 1600,
+      "height": 450,
+      "frames": 1,
+      "transparency": "不透明",
+      "characterReference": "source/images/mootech_website_SRCIMG015_neutral-character-concept.png",
+      "source": "source/images/mootech_website_SRCIMG025_careers-team-banner.png",
+      "references": [
+        "index.html"
+      ]
     }
   ],
   "delegates": [],

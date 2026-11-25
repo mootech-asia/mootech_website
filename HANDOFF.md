@@ -228,3 +228,11 @@ python3 tools/build-en.py
 - 移除全部 Facebook 連結與 104 圖示／SVG symbols／徽章樣式，LinkedIn 保留。A–E 統一「查看職缺／View jobs」連到既有 D 版 MOOTECH 104 公司頁 https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac ，共享 RECRUIT_URL；E 手機亦顯示職缺文字連結。未移除招募入口。
 - 驗證：英文及 D 中英入口生成、inline JS 語法、diff check、素材 check 172 項通過；中英文 × 手機／桌機 × A–E 共 20 組，回頂顯示／正確錨點／客服開啟後不重疊／點擊回頁首、Facebook 與圖示移除、職缺文字及網址通過。A／E 桌機上下等高、截圖已核對。C 中英文 × 390×844／1440×1000／1440×720 六組，起點／中段／終點橫向進度、固定高度完整可見、最後釋放續捲均通過，另驗原生橫向操作正反向同步。五版手機職缺文字皆可見。未改動媒體檔案。
 - 已發布：runtime `ccc0d75`；[Pages run 45556619026](https://github.com/mootech-asia/mootech_website/actions/runs/45556619026) 與素材 CI 成功。正式中英文 A／E 等高、A–E 回頂錨點與招募文字連結、Facebook／圖示移除及 C 場景橫向起終點已核對。
+
+### 2026-11-25：D 全球據點標題、人才招募 Banner 與選單
+
+- 全球據點補上明確 h2「全球據點／Global Presence」，原「立足新加坡與台灣，服務全球客戶」保留為副文案。
+- 在 #vd-vision 願景前新增 #vd-careers 人才招募區，置中區塊標題「人才招募／Careers」。依使用者提供構圖製作團隊辦公室背景，四名核准無五官漸層形象人分置兩側、中央疊 HTML 文案「給自己一個機會」「解鎖自己，成就未來」與 Let's Go 按鈕；按鈕連既有 MOOTECH 104 公司頁。
+- 使用者補充要求扁長型，故 Banner 桌機高 240–280px、手機高 240px；正式 IMG143 1600×450 WebP，SRCIMG025 原稿保留，製作規格 docs/art/careers-banner.md。人物球形頭無五官／耳鼻，漸層維持原角色；未更換既有願景與文化七圖。
+- D 桌機／手機選單新增「人才招募／Careers」，使用頁內平滑捲動連到 Banner 區，並保留 104 外連於 Banner 按鈕。窄桌機縮整導覽間距與字體，手機點選後收合選單。
+- 驗證：素材 check 通過174項、素材清單／指紋／英文與 D 中英入口生成、inline JS 語法及 diff check 通過。Chromium 根頁／英文／D 中英入口 × 390／1024／1440 共12組：全球標題、招募位於願景前、選單捲動落點避開頁首、手機選單收合、Banner 圖片載入、240–280px 高度、CTA／英文無障礙名稱、無水平溢出／pageerror 均通過；已目視核對人物無五官及實際 Banner 截圖。
