@@ -218,3 +218,4 @@ python3 tools/build-en.py
 
 - 依使用者最新 B 版英文截圖，將 .vb-global 改為 stretch 對齊，.vb-nodes 六列平均分配高度，使第一張卡頂端與最後一張卡底端分別對齊地圖。窄螢幕單欄恢復自然列高，保留六項據點文字及版型設計。只調整 CSS，未改媒體或其他版型。
 - 驗證：中英文與 D 分享入口生成、diff check 通過；Chromium 中英文 × 390／768／1024／1440／2048 共十組，桌機右欄與地圖頂底誤差不超過 0.016px、六卡等高、無水平溢出及 pageerror。英文桌機截圖已目視核對。
+- 已發布：runtime `498de5f`；[Pages run 45555607485](https://github.com/mootech-asia/mootech_website/actions/runs/45555607485) 與素材 CI 成功；正式中英文 B 版桌機已確認右側六卡頂底與左側地圖一致。
