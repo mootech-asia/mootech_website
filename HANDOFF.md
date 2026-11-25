@@ -302,3 +302,4 @@ python3 tools/build-en.py
 - 原3:1圖在固定淺容器contain造成兩側空間，不能直接cover裁人物。新原稿2172×724將人物置於中段安全區，取2172×483（0,120）僅去多餘天花板與地板，再等比縮放1800×400；目視確認四熊耳朵／腳掌與家具保留。IMG159保留歷史。
 - 檢查E所有元素文字／背景／邊框／SVG fill與stroke，無舊綠色；後備Canvas盾牌火花發現殘留黃綠#c9e86e，已改#29b6e8。自然植物與品牌Logo原色保留。
 - 驗證：素材check209項、英文與D中英入口建置與diff check通過；Chromium中英文×390／901／1024／1440／2048共10組，Banner滿寬且比例一致、文案未溢出、Let's Go到願景、無舊綠樣式／橫向溢出／pageerror；目視確認完整熊北與滿版效果。
+- 已發布runtime `9d477e4`，[Pages run45577215087](https://github.com/mootech-asia/mootech_website/actions/runs/45577215087)與素材CI成功；四個正式入口HTTP200、新橫幅指紋一致。正式中英文×手機／桌機四組滿寬比例、CTA與無綠色樣式檢查通過；Word交接文件同步。
