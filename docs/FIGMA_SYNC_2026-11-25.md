@@ -2,7 +2,7 @@
 
 定稿日期：2026 年 11 月 25 日（台北時間）。本文件將今天調整合併成最新版規格，供 Figma 助理更新既有 A–E 設計、中英文及響應式畫面。請按以下最終狀態製作，不必重演中途版本。
 
-線上基準：https://mootech-asia.github.io/mootech_website/?v=6bf1ad9#design-e
+線上基準：https://mootech-asia.github.io/mootech_website/?v=ee5a887#design-e
 
 ## 1 同步範圍與優先順序
 
@@ -134,9 +134,9 @@ Banner 下方五版皆放四個職缺卡片，桌機四欄、平板兩欄、手�
 
 圖片可依畫框比例顯示，但不要將原始素材重新壓成低畫質。辦公室原尺寸 PNG 保留。其他素材名稱與用途可查 repo 的 ASSET_MANIFEST.json、docs/ASSETS.md。
 
-中文版：https://mootech-asia.github.io/mootech_website/?v=6bf1ad9#design-a
+中文版：https://mootech-asia.github.io/mootech_website/?v=ee5a887#design-a
 
-英文版：https://mootech-asia.github.io/mootech_website/en/?v=6bf1ad9#design-a
+英文版：https://mootech-asia.github.io/mootech_website/en/?v=ee5a887#design-a
 
 網址最後的 design-a 可改為 design-b／design-c／design-d／design-e。D 專用分享入口 /d/、/en/d/ 保留，分享圖採無人物科技版本。
 
