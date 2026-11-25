@@ -212,3 +212,4 @@ python3 tools/build-en.py
 - 根頁預設為 D，故中英文預設 og:image／twitter:image 改用各語系 D 宣傳圖；保留舊 assets/og.jpg 的公開相容路徑及圖檔。Hash 不會送給預覽爬蟲，新增真正的 /d/ 與 /en/d/ 專用分享入口；靜態 HTML 即含正確 metadata，不依賴 JS 改標籤。進站優先 D、可正常切版，中英切換留在專用入口。原根頁版型記憶行為保留。
 - tools/build-en.py 及 Pages 建置同步生成三個衍生入口；相對資源、canonical／hreflang／og:url／語系切換連結皆依深度修正。生成頁面加入 ignore，未複製維護完整網站來源。README 已記錄專用分享網址及平台舊預覽快取限制。
 - 驗證：素材 check 通過 172 項、英文與 D 入口生成、inline JS 語法及 diff check 通過。Chromium 根頁／英文根頁／D 中英文入口 × 390／1440 共八組：爬蟲停用 JS 仍讀到正確分享圖 metadata；D 入口覆蓋舊 E 版偏好、根頁保留舊偏好、切 D、人物與其他圖片載入、D 入口中英切換均通過，無本機資源 404 或 pageerror。已目視核對中英文宣傳圖字樣、角色與構圖；未向任何社群平台發送訊息。
+- 已發布：runtime `7c1bfd2`；[Pages run 45539128893](https://github.com/mootech-asia/mootech_website/actions/runs/45539128893) 與素材 CI 成功。正式中英文 /d/ 入口、固定 D 初始版型與 og metadata 已核對；IMG141／142 線上 JPEG 指紋與清單一致。聊天平台的既有預覽快取未直接刷新，以新專用網址分享。
