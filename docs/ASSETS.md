@@ -157,25 +157,25 @@
 | IMG133 | D 版願景：同文化卡系列之夥伴互助登階靜態情境圖（runtime） | [assets/images/mootech_website_IMG133_vision-together.png](../assets/images/mootech_website_IMG133_vision-together.png) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG015 | 修長、中性偏男性、無五官漸層人物設計稿；尚未替換網站情境圖（source） | [source/images/mootech_website_SRCIMG015_neutral-character-concept.png](../source/images/mootech_website_SRCIMG015_neutral-character-concept.png) | 1024×1536；保留 alpha | 標準前綴編號 |
 | SRCIMG016 | 新版修長中性偏男性形象人／vision獨立原稿（source） | [source/images/mootech_website_SRCIMG016_slender-vision.png](../source/images/mootech_website_SRCIMG016_slender-vision.png) | 1254×1254；保留 alpha | 標準前綴編號 |
-| IMG134 | 新版修長中性偏男性形象人／vision網站靜態情境圖（runtime） | [assets/images/mootech_website_IMG134_slender-vision.png](../assets/images/mootech_website_IMG134_slender-vision.png) | 640×640；保留 alpha | 標準前綴編號 |
+| IMG134 | 新版修長中性偏男性形象人／visionA–E 人才招募共用靜態情境圖（runtime） | [assets/images/mootech_website_IMG134_slender-vision.png](../assets/images/mootech_website_IMG134_slender-vision.png) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG017 | 新版修長中性偏男性形象人／team獨立原稿（source） | [source/images/mootech_website_SRCIMG017_slender-team.png](../source/images/mootech_website_SRCIMG017_slender-team.png) | 1254×1254；保留 alpha | 標準前綴編號 |
-| IMG135 | 新版修長中性偏男性形象人／team網站靜態情境圖（runtime） | [assets/images/mootech_website_IMG135_slender-team.png](../assets/images/mootech_website_IMG135_slender-team.png) | 640×640；保留 alpha | 標準前綴編號 |
+| IMG135 | 新版修長中性偏男性形象人／teamA–E 人才招募共用靜態情境圖（runtime） | [assets/images/mootech_website_IMG135_slender-team.png](../assets/images/mootech_website_IMG135_slender-team.png) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG018 | 新版修長中性偏男性形象人／ideas獨立原稿（source） | [source/images/mootech_website_SRCIMG018_slender-ideas.png](../source/images/mootech_website_SRCIMG018_slender-ideas.png) | 1254×1254；保留 alpha | 標準前綴編號 |
-| IMG136 | 新版修長中性偏男性形象人／ideas網站靜態情境圖（runtime） | [assets/images/mootech_website_IMG136_slender-ideas.png](../assets/images/mootech_website_IMG136_slender-ideas.png) | 640×640；保留 alpha | 標準前綴編號 |
+| IMG136 | 新版修長中性偏男性形象人／ideasA–E 人才招募共用靜態情境圖（runtime） | [assets/images/mootech_website_IMG136_slender-ideas.png](../assets/images/mootech_website_IMG136_slender-ideas.png) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG019 | 新版修長中性偏男性形象人／learning獨立原稿（source） | [source/images/mootech_website_SRCIMG019_slender-learning.png](../source/images/mootech_website_SRCIMG019_slender-learning.png) | 1254×1254；保留 alpha | 標準前綴編號 |
-| IMG137 | 新版修長中性偏男性形象人／learning網站靜態情境圖（runtime） | [assets/images/mootech_website_IMG137_slender-learning.png](../assets/images/mootech_website_IMG137_slender-learning.png) | 640×640；保留 alpha | 標準前綴編號 |
+| IMG137 | 新版修長中性偏男性形象人／learningA–E 人才招募共用靜態情境圖（runtime） | [assets/images/mootech_website_IMG137_slender-learning.png](../assets/images/mootech_website_IMG137_slender-learning.png) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG020 | 新版修長中性偏男性形象人／workspace獨立原稿（source） | [source/images/mootech_website_SRCIMG020_slender-workspace.png](../source/images/mootech_website_SRCIMG020_slender-workspace.png) | 1254×1254；保留 alpha | 標準前綴編號 |
-| IMG138 | 新版修長中性偏男性形象人／workspace網站靜態情境圖（runtime） | [assets/images/mootech_website_IMG138_slender-workspace.png](../assets/images/mootech_website_IMG138_slender-workspace.png) | 640×640；保留 alpha | 標準前綴編號 |
+| IMG138 | 新版修長中性偏男性形象人／workspaceA–E 人才招募共用靜態情境圖（runtime） | [assets/images/mootech_website_IMG138_slender-workspace.png](../assets/images/mootech_website_IMG138_slender-workspace.png) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG021 | 新版修長中性偏男性形象人／coffee獨立原稿（source） | [source/images/mootech_website_SRCIMG021_slender-coffee.png](../source/images/mootech_website_SRCIMG021_slender-coffee.png) | 1254×1254；保留 alpha | 標準前綴編號 |
-| IMG139 | 新版修長中性偏男性形象人／coffee網站靜態情境圖（runtime） | [assets/images/mootech_website_IMG139_slender-coffee.png](../assets/images/mootech_website_IMG139_slender-coffee.png) | 640×640；保留 alpha | 標準前綴編號 |
+| IMG139 | 新版修長中性偏男性形象人／coffeeA–E 人才招募共用靜態情境圖（runtime） | [assets/images/mootech_website_IMG139_slender-coffee.png](../assets/images/mootech_website_IMG139_slender-coffee.png) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG022 | 新版修長中性偏男性形象人／fitness獨立原稿（source） | [source/images/mootech_website_SRCIMG022_slender-fitness.png](../source/images/mootech_website_SRCIMG022_slender-fitness.png) | 1254×1254；保留 alpha | 標準前綴編號 |
-| IMG140 | 新版修長中性偏男性形象人／fitness網站靜態情境圖（runtime） | [assets/images/mootech_website_IMG140_slender-fitness.png](../assets/images/mootech_website_IMG140_slender-fitness.png) | 640×640；保留 alpha | 標準前綴編號 |
+| IMG140 | 新版修長中性偏男性形象人／fitnessA–E 人才招募共用靜態情境圖（runtime） | [assets/images/mootech_website_IMG140_slender-fitness.png](../assets/images/mootech_website_IMG140_slender-fitness.png) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG023 | D 版專屬分享宣傳圖／zh原稿（source） | [source/images/mootech_website_SRCIMG023_design-d-social-zh.png](../source/images/mootech_website_SRCIMG023_design-d-social-zh.png) | 1731×908；不透明 | 標準前綴編號 |
 | IMG141 | D 版專屬分享宣傳圖／zh社群連結預覽（runtime） | [assets/images/mootech_website_IMG141_design-d-social-zh.jpg](../assets/images/mootech_website_IMG141_design-d-social-zh.jpg) | 1200×630；不透明 | 標準前綴編號 |
 | SRCIMG024 | D 版專屬分享宣傳圖／en原稿（source） | [source/images/mootech_website_SRCIMG024_design-d-social-en.png](../source/images/mootech_website_SRCIMG024_design-d-social-en.png) | 1731×908；不透明 | 標準前綴編號 |
 | IMG142 | D 版專屬分享宣傳圖／en社群連結預覽（runtime） | [assets/images/mootech_website_IMG142_design-d-social-en.jpg](../assets/images/mootech_website_IMG142_design-d-social-en.jpg) | 1200×630；不透明 | 標準前綴編號 |
 | SRCIMG025 | D 版人才招募初版背景原稿（已由 SRCIMG026 全景重設稿取代，不再展示）（source） | [source/images/mootech_website_SRCIMG025_careers-team-banner.png](../source/images/mootech_website_SRCIMG025_careers-team-banner.png) | 1983×793；不透明 | 標準前綴編號 |
-| IMG143 | D 版人才招募扁長 Banner：四位完整入鏡無五官形象人原生全景圖，等比縮放且完整顯示（runtime） | [assets/images/mootech_website_IMG143_careers-team-banner.webp](../assets/images/mootech_website_IMG143_careers-team-banner.webp) | 1600×533；不透明 | 標準前綴編號 |
+| IMG143 | A–E 全版本人才招募扁長 Banner 共用背景；四位完整入鏡無五官形象人全景，等比完整顯示（runtime） | [assets/images/mootech_website_IMG143_careers-team-banner.webp](../assets/images/mootech_website_IMG143_careers-team-banner.webp) | 1600×533；不透明 | 標準前綴編號 |
 | SRCIMG026 | D 版人才招募全新全景構圖：人物、四肢、桌椅完整入鏡，取代初版裁切構圖（source） | [source/images/mootech_website_SRCIMG026_careers-panoramic-team.png](../source/images/mootech_website_SRCIMG026_careers-panoramic-team.png) | 2172×724；不透明 | 標準前綴編號 |
 
 ## 背景音樂

@@ -265,3 +265,13 @@ python3 tools/build-en.py
 - 本輪 GitHub repo API 已回報 private=false、visibility=public、has_pages=false；GET Pages為404。故不能把持續404簡化為repo仍private。確定當前阻塞為Pages站台未建立／未啟用。
 - 已嘗試POST Pages build_type=workflow，GitHub回403 Resource not accessible by integration；未更動原始碼或環境保護。dispatch run45568788844因另一位管理者重跑run45567661044被併發取消，未干預對方操作。後者第2次（triggering_actor terrylin-tech）仍在Setup Pages失敗：Get site Not Found、Create site Resource not accessible by integration。
 - CUA設定頁fallback亦受工具沙箱阻塞，不能操作GitHub設定。需要有權限者於 Settings→Pages 啟用站台並以GitHub Actions為Source，設定完成後重跑現有部署，再驗根目錄／D中英入口。未恢復，不可回報已修復。
+
+### 2026-11-25：D 新增內容同步 A–E，完整人才招募、選單與明確標題
+
+- 依使用者要求，將 D 新增的完整人才招募內容套用到 A／B／C／E：招募 Banner→Let's Go→該版願景→團隊文化→為什麼加入 MOOTECH 六卡→員工福利四卡；共用核准文案、IMG134–140 七張靜態圖及 IMG143 全景背景，不重複素材檔案。Banner 沿用桌機240–280px contain完整顯示、手機完整圖與文案上下排；聯絡區查看職缺仍外連104。
+- 共用 hr-* 呈現分別套用 A企業藍白、B深底青藍與等寬標籤、C黑框青綠直角、E黑曜石青綠；D原視覺保留。E原熊北客服與首屏影片／防線不變，並新增獨立關於我們區供選單導引。
+- A–E 選單統一主要項目：首頁、解決方案、全球據點、關於我們、人才招募、聯絡我們；E另保留網路防線。B保留斜線終端機風格，中英文皆有清楚標籤。調整901–1200px導覽間距並於窄桌機隱藏B輔助狀態文字，避免項目與Logo／語系按鈕重疊。
+- 各版全球據點皆補明確主標題，原定位文案保留為副文案；團隊文化、員工福利、方案諮詢及E網路防線／合作流程／MOOTECH概況標題明確化。非首屏section均有可見h2，有id者以aria-labelledby關聯；新增標題與文案中英同步。
+- 素材用途清單更新為跨版本共用；docs/art/careers-all-variants.md記錄區塊／主題規格，README同步。未新增或變動媒體檔案指紋。
+- 驗證：素材check175項、英文與D中英入口生成、inline JS語法、diff check及重複id檢查通過。Chromium中英文×390／1024／1440×A–E共30組：選單到招募、手機收合、Let's Go到同版願景且落點避開頁首、七張圖解碼、福利四卡、明確全球標題、職缺連結、無橫向溢出與pageerror均通過。另驗901px中英五版導覽不重疊、英文D專用入口切E後新圖路徑與熊北客服保留；目視核對A／B／C／E手機與桌機Banner。
+- 另已確認正式Pages站台恢復has_pages=true、根頁HTTP200，本輪可按既有流程發布；不再沿用前輪404阻塞結論。

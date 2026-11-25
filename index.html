@@ -1742,6 +1742,85 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
   .vd-careers-copy h3 { font-size: 25px; }
   .vd-careers-cta { margin-top: 20px; padding-block: 9px; font-size: 16px; }
 }
+
+/* Shared recruitment content, adapted to each variant's design language. */
+.va { --hr-accent: var(--a-blue); --hr-ink: var(--a-ink); --hr-muted: var(--a-muted); --hr-line: var(--a-line); --hr-card: #fff; --hr-radius: 12px; }
+.vb { --hr-accent: var(--b-cyan); --hr-ink: var(--b-ink); --hr-muted: var(--b-muted); --hr-line: var(--b-line); --hr-card: var(--b-panel); --hr-radius: 6px; }
+.vc { --hr-accent: var(--c-accent); --hr-ink: var(--c-ink); --hr-muted: var(--c-muted); --hr-line: var(--c-line); --hr-card: #fff; --hr-radius: 0px; }
+.ve { --hr-accent: var(--e-safe); --hr-ink: var(--e-ink); --hr-muted: var(--e-muted); --hr-line: var(--e-line); --hr-card: var(--e-panel); --hr-radius: 16px; }
+.hr-head { margin-bottom: 36px; display: grid; gap: 12px; max-width: 760px; }
+.hr-kicker { color: var(--hr-accent); font: 600 11px/1.5 var(--mono); letter-spacing: .15em; text-transform: uppercase; }
+.hr-head h2 { margin: 0; color: var(--hr-ink); font-size: clamp(28px, 3.6vw, 44px); line-height: 1.25; font-weight: 700; }
+.hr-head > p, .global-intro { color: var(--hr-muted, inherit); }
+.va .hr-head h2 { color: var(--a-blue); font-size: clamp(26px, 3.2vw, 34px); }
+.vb .hr-kicker::before { content: '~/mootech/'; letter-spacing: 0; }
+.vc .hr-head { border-left: 4px solid var(--c-accent); padding-left: 20px; }
+.ve .hr-head h2 { font-family: var(--e-display); }
+.hr-card { border: 1px solid var(--hr-line); border-radius: var(--hr-radius); background: var(--hr-card); }
+.hr-prose { padding: clamp(22px, 3vw, 32px); }
+.hr-prose p { color: var(--hr-ink); font-size: 16px; line-height: 1.95; margin: 0; }
+.hr-prose p + p { margin-top: 16px; }
+.hr-vision, .hr-about { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: center; gap: 30px; }
+.hr-facts { display: grid; gap: 14px; }
+.hr-facts .hr-card { padding: 20px 24px; display: grid; gap: 5px; }
+.hr-facts b { font-size: 24px; }
+.hr-facts span { color: var(--hr-muted); }
+.hr-emphasis { color: var(--hr-accent); }
+.hr-joingrid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.hr-joincard { padding: 26px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.hr-joincard h3 { margin: 18px 0 8px; color: var(--hr-ink); font-size: 17px; line-height: 1.6; }
+.hr-joincard .en { color: var(--hr-muted); font: 500 11px/1.6 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.hr-welfaregrid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.hr-welfaregrid .hr-card { padding: 28px; display: grid; gap: 12px; align-content: start; }
+.hr-welfaregrid b { font-size: 21px; }
+.hr-welfaregrid p { color: var(--hr-muted); font-size: 15px; line-height: 1.85; margin: 0; }
+.vc .hr-card { border-width: 0 0 2px; }
+.vc .hr-joingrid, .vc .hr-welfaregrid { gap: 0 24px; }
+.vc .hr-joincard { border-top: 1px solid var(--hr-line); }
+.hr-recruit > .wrap > .hr-head { margin-inline: auto; text-align: center; border-left: 0; padding-left: 0; }
+.hr-banner { position: relative; isolation: isolate; overflow: hidden; border: 1px solid var(--hr-line); border-radius: var(--hr-radius); height: clamp(240px,22vw,280px); display: grid; place-items: center; padding: 24px; background: #080e10; }
+.hr-banner-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.hr-banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, #0005 38%, #0005 62%, transparent); }
+.hr-banner-copy { position: relative; z-index: 1; max-width: 48%; text-align: center; color: #fff; }
+.hr-banner-copy h3 { margin: 0 0 8px; font-size: clamp(25px,2.6vw,36px); line-height: 1.3; font-weight: 700; }
+.hr-banner-copy p { margin: 0; font-size: clamp(15px,1.5vw,20px); line-height: 1.5; }
+.hr-banner-cta { display: inline-flex; justify-content: center; margin-top: 24px; padding: 10px 28px; min-width: 150px; border: 1.5px solid var(--hr-accent); border-radius: var(--hr-radius); color: #fff; text-decoration: none; font-size: 17px; font-weight: 600; background: #080e10cc; transition: background .2s; }
+.hr-banner-cta:hover { background: var(--hr-accent); color: #061a20; }
+.hr-banner-cta:focus-visible { outline: 3px solid var(--hr-accent); outline-offset: 5px; }
+.va .hr-banner-cta { background: var(--a-blue); border-color: var(--a-blue); border-radius: 6px; }
+.vb .hr-banner-cta { color: var(--b-cyan); font-family: var(--mono); }
+.vc .hr-banner-cta { background: var(--c-accent); color: #071b19; border-radius: 0; }
+.ve .hr-banner-cta { border-radius: 999px; }
+.ve-band-title { grid-column: 1 / -1; margin: 0; color: var(--e-ink); font: 600 18px/1.4 var(--e-sans); }
+.va-nav a, .vb-nav a, .vc-nav a, .ve-nav a { white-space: nowrap; }
+@media (min-width:901px) {
+  .va-nav { gap: 18px; }
+  .vc-nav { gap: 18px; }
+  .ve-nav { gap: 18px; font-size: 13px; }
+}
+@media (min-width:901px) and (max-width:1200px) {
+  .vb-status { display: none; }
+  .vb-nav a { padding-inline: 8px; font-size: 12px; }
+  .ve-head .wrap { gap: 16px; }
+  .ve-nav { gap: 12px; font-size: 12px; }
+  .va-head .wrap { gap: 20px; }
+  .va-nav { gap: 14px; font-size: 14px; }
+  .vc-nav { gap: 14px; font-size: 13px; }
+}
+@media (max-width:900px) {
+  .hr-vision, .hr-about { grid-template-columns: minmax(0,1fr); }
+  .hr-joingrid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:600px) {
+  .hr-joingrid, .hr-welfaregrid { grid-template-columns: minmax(0,1fr); }
+  .hr-banner { height: auto; padding: 0; display: flex; flex-direction: column; }
+  .hr-banner-image { position: relative; height: auto; }
+  .hr-banner::after { display: none; }
+  .hr-banner-copy { max-width: 100%; padding: 18px 16px 22px; }
+  .hr-banner-copy h3 { font-size: 25px; }
+  .hr-banner-cta { margin-top: 20px; font-size: 16px; }
+}
+
 </style>
 </head>
 <body data-v="a">
@@ -1766,7 +1845,7 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     <div class="wrap">
       <a class="va-logo brand" href="#va-top" data-scroll><img src="assets/images/mootech_website_IMG004_brand_logo-h.png" alt="MOOTECH" width="189" height="41"></a>
       <nav class="va-nav" aria-label="主選單">
-        <a href="#va-about" data-scroll>關於我們</a><a href="#va-solutions" data-scroll>解決方案</a><a href="#va-global" data-scroll>全球據點</a><a href="#va-contact" data-scroll>聯絡我們</a>
+        <a href="#va-top" data-scroll data-en="Home">首頁</a><a href="#va-solutions" data-scroll data-en="Solutions">解決方案</a><a href="#va-global" data-scroll data-en="Global Presence">全球據點</a><a href="#va-about" data-scroll data-en="About">關於我們</a><a href="#va-careers" data-scroll data-en="Careers">人才招募</a><a href="#va-contact" data-scroll data-en="Contact">聯絡我們</a>
       </nav>
       <button class="va-lang" type="button" aria-label="EN 切換為英文" data-lang-toggle>EN</button>
       <button class="menu-btn" type="button" aria-label="開啟選單" aria-expanded="false" data-menu><svg class="ico"><use href="#i-menu"/></svg></button>
@@ -1791,7 +1870,7 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
   </section>
   <div class="va-strip-wrap"><div class="wrap"><nav class="va-strip" aria-label="解決方案捷徑"><a href="#va-solutions" data-scroll><svg class="ico"><use href="#i-live"/></svg><span>直播串流</span></a><a href="#va-solutions" data-scroll><svg class="ico"><use href="#i-net"/></svg><span>網路連線</span></a><a href="#va-solutions" data-scroll><svg class="ico"><use href="#i-arch"/></svg><span>網路架構優化</span></a><a href="#va-solutions" data-scroll><svg class="ico"><use href="#i-int"/></svg><span>系統整合</span></a><a href="#va-solutions" data-scroll><svg class="ico"><use href="#i-shield"/></svg><span>國際線路</span></a></nav></div></div>
 
-  <section class="va-sec soft" id="va-about">
+  <section class="va-sec soft" id="va-about" aria-labelledby="va-about-heading">
     <div class="wrap va-about">
       <div class="va-about-side"><div class="ill va-about-img" data-ill="datacenter" role="img" aria-label="資料中心機房"></div>
       <div class="va-facts">
@@ -1801,7 +1880,7 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
       </div></div>
       <div class="text">
         <span class="va-kicker">ABOUT US</span>
-        <h2 class="va-h2">關於我們</h2>
+        <h2 class="va-h2" id="va-about-heading">關於我們</h2>
         <p>MOOTECH 成立於 2016 年，據點位於新加坡與台灣，提供直播串流、網路連線、國際線路、網路架構優化與系統整合服務，為企業打造低延遲、不中斷的網路。</p>
         <p>我們提供低延遲線路與中國、東南亞區域優化線路，並與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯，讓企業的關鍵服務穩定、安全地運作。</p>
         <p>從需求諮詢、架構設計、部署導入到建置後支援，我們採取靈活、反應迅速的方式，並可由專業技術人員到場代客操作。</p>
@@ -1809,11 +1888,11 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="va-sec" id="va-solutions">
+  <section class="va-sec" id="va-solutions" aria-labelledby="va-solutions-heading">
     <div class="wrap">
       <div class="va-sol-head">
         <span class="va-kicker">SOLUTIONS</span>
-        <h2 class="va-h2">解決方案</h2>
+        <h2 class="va-h2" id="va-solutions-heading">解決方案</h2>
         <p>從內容傳遞到基礎架構與資安防護，為企業打造穩定、可擴展的 IT 環境。</p>
       </div>
       <div class="va-sol">
@@ -1851,18 +1930,18 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="sp sp-a" id="va-spec">
+  <section class="sp sp-a" id="va-spec" aria-labelledby="va-spec-heading">
     <div class="wrap">
-      <div class="sp-head"><span class="sp-k">SPECIFICATIONS</span><h2>服務細項與線路類型</h2><p>IP Transit、IPLC 與 Security 防護可以依需求組合；下方列出每項服務的完整內容。</p></div>
+      <div class="sp-head"><span class="sp-k">SPECIFICATIONS</span><h2 id="va-spec-heading">服務細項與線路類型</h2><p>IP Transit、IPLC 與 Security 防護可以依需求組合；下方列出每項服務的完整內容。</p></div>
       <span class="sp-sub">線路類型</span>
       <div class="sp-lines"><div class="sp-line"><h3>IP Transit</h3><ul><li>涵蓋率遍佈全球</li><li>支援 IPv6 與 IPv4</li><li>優良的國際流量線路規劃</li><li>與中國頂尖電信供應商合作</li><li>中國與東南亞區域專有的優化線路</li></ul></div><div class="sp-line"><h3>IPLC</h3><ul><li>安全性高的點對點資料傳輸</li><li>兼具高可用性與低延遲</li><li>與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯</li><li>網際網路交換中心對等互聯</li></ul></div><div class="sp-line"><h3>Security</h3><ul><li>服務安全性與可靠性</li><li>兼具靈活性與擴展性</li></ul></div></div>
       <div class="sp-groups"><div class="sp-group"><h3>直播串流</h3><dl><div><dt>即時串流</dt><dd>畫面即時送達觀眾，活動、發表會與賽事都能同步呈現。</dd></div><div><dt>低延遲</dt><dd>縮短從拍攝到觀看的時間差，互動更即時。</dd></div><div><dt>不間斷與容錯</dt><dd>備援線路與容錯機制，讓直播服務不中斷。</dd></div></dl></div><div class="sp-group"><h3>網路連線</h3><dl><div><dt>網際網路接取</dt><dd>使用低延遲線路或中國及東南亞區域優化線路，為客戶傳輸受歡迎的應用或內容。</dd></div><div><dt>IPLC 國際私人租用線路</dt><dd>為跨國企業提供國際點對點專線，在總部與全球各地分行之間提供專用、可靠、安全的連接。</dd></div><div><dt>CDN 服務</dt><dd>立即提升網站效能，改善載入時間與安全性、減少頻寬成本並強化內容備援。</dd></div></dl></div><div class="sp-group"><h3>網路架構優化</h3><dl><div><dt>網路配置與品質優化</dt><dd>調整網路配置，提升連線品質。</dd></div><div><dt>網路架構設計</dt><dd>網路架構設計與拓樸圖審核。</dd></div><div><dt>庫存管理</dt><dd>設備庫存管理。</dd></div><div><dt>網路流量監控</dt><dd>網路流量表現分析。</dd></div><div><dt>網路優化</dt><dd>網路優化方案、網路漏洞測試與驗證。</dd></div></dl></div><div class="sp-group"><h3>系統整合</h3><dl><div><dt>諮詢服務</dt><dd>IT 系統整合諮詢服務。</dd></div><div><dt>部署與遷移</dt><dd>IT 解決方案的建置與資料遷移。</dd></div><div><dt>客製化需求</dt><dd>客製化測試情境、驗收條件與文件紀錄。</dd></div><div><dt>建置後支援</dt><dd>建置完成後的支援服務。</dd></div><div><dt>雲端與機房整合</dt><dd>整合雲端與在地系統。</dd></div><div><dt>代客操作服務</dt><dd>受過專業訓練的技術人員到場代客操作、安裝，並為您的機房設備排查問題，快速且可靠。</dd></div></dl></div></div>
     </div>
   </section>
 
-  <section class="va-sec soft" id="va-why">
+  <section class="va-sec soft" id="va-why" aria-labelledby="va-why-heading">
     <div class="wrap">
-      <div class="va-sol-head"><span class="va-kicker">WHY MOOTECH</span><h2 class="va-h2">為什麼選擇 MOOTECH</h2></div>
+      <div class="va-sol-head"><span class="va-kicker">WHY MOOTECH</span><h2 class="va-h2" id="va-why-heading">為什麼選擇 MOOTECH</h2></div>
       <div class="va-why"><div class="va-why-item"><div class="ic"><svg class="ico"><use href="#i-shield"/></svg></div><h3>全球線路</h3><p>IP Transit 涵蓋全球、支援 IPv4 與 IPv6，並與中國頂尖電信供應商合作。</p></div><div class="va-why-item"><div class="ic"><svg class="ico"><use href="#i-pulse"/></svg></div><h3>高可用性</h3><p>IPLC 專線兼具高可用性與低延遲，直播服務具備不間斷的容錯機制。</p></div><div class="va-why-item"><div class="ic"><svg class="ico"><use href="#i-bolt"/></svg></div><h3>靈活迅速</h3><p>從核心解決方案到加值功能，以靈活、反應迅速的方式交付。</p></div><div class="va-why-item"><div class="ic"><svg class="ico"><use href="#i-net"/></svg></div><h3>全球視野</h3><p>與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯，並提供中國與東南亞區域優化線路。</p></div></div>
       <div class="va-steps">
         <h3 class="va-steps-title">合作流程</h3>
@@ -1871,25 +1950,25 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="va-sec" id="va-field">
+  <section class="va-sec" id="va-field" aria-labelledby="va-field-heading">
     <div class="wrap">
-      <div class="va-sol-head"><span class="va-kicker">IN ACTION</span><h2 class="va-h2">服務場景</h2><p>從機房、會議室到活動現場，看看 MOOTECH 的解決方案如何運作。</p></div>
+      <div class="va-sol-head"><span class="va-kicker">IN ACTION</span><h2 class="va-h2" id="va-field-heading">服務場景</h2><p>從機房、會議室到活動現場，看看 MOOTECH 的解決方案如何運作。</p></div>
       <div class="va-mosaic"><figure><div class="ill" data-ill="network" role="img" aria-label="機房佈線"></div><figcaption><b>機房佈線</b><span>網路連線</span></figcaption></figure><figure><div class="ill" data-ill="optimise" role="img" aria-label="架構規劃"></div><figcaption><b>架構規劃</b><span>網路架構優化</span></figcaption></figure><figure><div class="ill" data-ill="integrate" role="img" aria-label="系統整合"></div><figcaption><b>系統整合</b><span>系統整合</span></figcaption></figure><figure><div class="ill" data-ill="transit" role="img" aria-label="資安監控"></div><figcaption><b>資安監控</b><span>國際線路</span></figcaption></figure><figure><div class="ill" data-ill="live" role="img" aria-label="活動直播"></div><figcaption><b>活動直播</b><span>直播串流</span></figcaption></figure></div>
     </div>
   </section>
 
-  <section class="va-cta">
+  <section id="va-consultation" class="va-cta" aria-labelledby="va-consultation-heading">
     <div class="wrap">
-      <div><h2>穩定，從架構開始。</h2><p>從架構規劃到上線維運，MOOTECH 與您一起打造穩定、安全的 IT 基礎。</p></div>
+      <div><h2 data-en="Solution Consultation" id="va-consultation-heading">方案諮詢</h2><p data-en="Stability starts with architecture.">穩定，從架構開始。</p><p>從架構規劃到上線維運，MOOTECH 與您一起打造穩定、安全的 IT 基礎。</p></div>
       <a class="va-btn" href="#va-contact" data-scroll>預約諮詢 →</a>
     </div>
   </section>
 
-  <section class="va-sec soft" id="va-global">
+  <section class="va-sec soft" id="va-global" aria-labelledby="va-global-heading">
     <div class="wrap">
       <div class="va-sol-head">
         <span class="va-kicker">GLOBAL PRESENCE</span>
-        <h2 class="va-h2">立足新加坡與台灣，服務全球客戶。</h2>
+        <h2 class="va-h2" data-en="Global Presence" id="va-global-heading">全球據點</h2><p class="global-intro" data-en="Based in Singapore and Taiwan, serving clients worldwide.">立足新加坡與台灣，服務全球客戶。</p>
       </div>
       <div class="va-global">
         <div class="imap-box"><canvas class="imap" data-art="interconnect" role="img" aria-label="亞太互連示意圖：新加坡、台灣、香港、東京節點，與泰國、越南、馬來西亞、斯里蘭卡、印度、印尼、韓國、菲律賓之間的連線動畫"></canvas><span class="imap-cap">亞太互連示意圖 · 動畫示意，非即時數據</span><div class="imap-lgd"><span><i class="h"></i>MOOTECH 節點</span><span><i class="u"></i>主要訪客市場（示意）</span><span><i class="n"></i>正常流量</span><span><i class="b"></i>被攔截的可疑流量</span></div></div>
@@ -1903,18 +1982,72 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="pt pt-a" id="va-partners">
+  <section class="pt pt-a" id="va-partners" aria-labelledby="va-partners-heading">
     <div class="wrap">
-      <div class="pt-head"><span class="pt-k">PARTNERS</span><h2>合作夥伴</h2><p>與亞太主要電信營運商、雲端與資安平台及網路設備品牌合作，為您提供穩定的線路與完整的服務。</p></div>
+      <div class="pt-head"><span class="pt-k">PARTNERS</span><h2 id="va-partners-heading">合作夥伴</h2><p>與亞太主要電信營運商、雲端與資安平台及網路設備品牌合作，為您提供穩定的線路與完整的服務。</p></div>
       <div class="pt-marquee"><ul class="sr"><li>中華電信</li><li>電訊盈科 PCCW</li><li>EASPNet</li><li>SGGS</li><li>AWS</li><li>Cloudflare</li><li>Imperva</li><li>Juniper Networks</li><li>Cisco</li><li>Telstra</li></ul><div class="pt-row"><ul class="pt-logos pt-track" aria-hidden="true"><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG025_partners_08-telstra.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG025_partners_08-telstra.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG025_partners_08-telstra.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG025_partners_08-telstra.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li></ul></div><div class="pt-row pt-rev"><ul class="pt-logos pt-track" aria-hidden="true"><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li></ul></div></div>
     </div>
   </section>
 
-  <section class="va-sec" id="va-contact">
+  <section class="va-sec hr-section hr-recruit" id="va-careers" aria-labelledby="va-careers-title">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">CAREERS</span><h2 class="hr-h2" id="va-careers-title" data-en="Careers">人才招募</h2></div>
+      <div class="hr-banner">
+        <img class="hr-banner-image" src="assets/images/mootech_website_IMG143_careers-team-banner.webp?v=panorama2" alt="" width="1600" height="533" loading="lazy" decoding="async">
+        <div class="hr-banner-copy">
+          <h3 data-en="Give yourself an opportunity">給自己一個機會</h3>
+          <p data-en="Unlock your potential. Shape your future.">解鎖自己，成就未來</p>
+          <a class="hr-banner-cta" href="#va-vision" data-scroll aria-label="認識 MOOTECH 願景" data-en="Let's Go">Let's Go</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="va-sec hr-section" id="va-vision" aria-labelledby="va-vision-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">HR VISION · INNOVATION</span><h2 class="hr-h2" data-en="MOOTECH HR Vision" id="va-vision-heading">MOOTECH 願景</h2></div>
+      <div class="hr-vision">
+        <div class="hr-card hr-prose">
+          <p data-en="We create an innovative, flexible and inclusive experience in an MNC working environment, developing fullest potentials through learning, development and teamwork to strive for goals and achievement.">我們致力於創造一個創新、靈活和具有包容性的工作環境，鼓勵每個人發揮自己的才華和潛能，並透過團隊合作來實現共同目標。</p>
+        </div>
+        <div class="vp-scene vp-scene-lg"><picture><img src="assets/images/mootech_website_IMG134_slender-vision.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="va-sec hr-section" id="va-team" aria-labelledby="va-team-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">ABOUT US</span><h2 class="hr-h2" data-en="Team Culture" id="va-team-heading">團隊文化</h2></div>
+      <div class="hr-card hr-prose">
+        <p data-en="We are a team of engineers who keep the company running, solving and maintaining IT infrastructure with creative, practical methods. At Mootech every day is full of challenges and brainstorming, and our constant theme is to learn, learn and learn again. Join us to work in an energetic, challenging environment while keeping up with the latest IT industry knowledge. If you are creative, love solving problems and crave learning and challenges, you are very welcome to join us and build a fun, innovative working life together.">我們是一群由 7 年級與 8 年級工程師組成的團隊，是公司的中流砥柱，主要用創新又實用的方法解決與維護 IT 基礎設施。在 Mootech，我們可以保證每一天都充滿挑戰和腦力激盪；團隊的主旋律就是學習、學習、再學習。加入我們，除了能在充滿活力與挑戰的環境裡工作，也能隨時掌握最新的資訊科技產業知識。如果你有創意、喜歡思考解決問題、渴望學習與挑戰，非常歡迎你加入我們，一起創造有趣又充滿創新的工作生活。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="va-sec hr-section" id="va-join" aria-labelledby="va-join-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">WHY JOIN · TEAM</span><h2 class="hr-h2" data-en="Why Join MOOTECH" id="va-join-heading">為什麼加入 MOOTECH</h2></div>
+      <div class="hr-joingrid"><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG135_slender-team.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Together we go further">一起，我們可以走得更長更遠</h3><span class="en" data-en=" ">Team Collaboration</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG136_slender-ideas.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="We share knowledge openly">知識分享絕不藏私</h3><span class="en" data-en=" ">Brainstorming Ideas</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG137_slender-learning.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Always on the latest tech">嶄新技術在線掌握</h3><span class="en" data-en=" ">Learning New Technologies</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG138_slender-workspace.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="A bright, open workspace">明亮開放寬敞的辦公環境</h3><span class="en" data-en=" ">Conducive Environment</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG139_slender-coffee.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Good food, great company">美食當前，減肥都是明天的事</h3><span class="en" data-en=" ">Team Bonding</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG140_slender-fitness.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Work hard, stay healthy">要打拼也要健康，跟著 Mootech 動吃動</h3><span class="en" data-en=" ">Promote A Healthy Lifestyle</span></div></div>
+    </div>
+  </section>
+
+  <section class="va-sec hr-section" id="va-welfare" aria-labelledby="va-welfare-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">WELFARE · BENEFITS</span><h2 class="hr-h2" data-en="Employee Benefits" id="va-welfare-heading">員工福利</h2><p data-en="Everything you want to know about working here.">關於你想知道的，我們都準備好了。</p></div>
+      <div class="hr-welfaregrid">
+        <div class="hr-card"><b class="hr-emphasis" data-en="Healthcare">健康第一大禮包</b><p data-en="Annual full health checks, supplement subsidies and comprehensive group insurance.">每年度全方位健檢、保健食品補助，以及保障多多的團體保險。</p></div>
+        <div class="hr-card"><b class="hr-emphasis" data-en="Better-than-statutory leave">優於勞基法的休假</b><p data-en="Annual leave above the labor-law minimum, plus 3 days of fully-paid sick leave.">特別休假日數優於勞基法，另有 3 天全薪病假，讓你安心休息。</p></div>
+        <div class="hr-card"><b class="hr-emphasis" data-en="Upgrading & Training">進修補助</b><p data-en="The company invests in you — learn and grow with no financial burden.">公司幫你投資你自己，進修學習無負擔，持續精進專業能力。</p></div>
+        <div class="hr-card"><b class="hr-emphasis" data-en="Flexibility & team life">彈性與團隊生活</b><p data-en="Flexible hours, regular meals and tea breaks, team events and local / overseas trips.">彈性上下班、不定期聚餐與下午茶，還有團隊活動與國內外員工旅遊。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="va-sec" id="va-contact" aria-labelledby="va-contact-heading">
     <div class="wrap va-contact">
       <div>
         <span class="va-kicker">CONTACT</span>
-        <h2 class="va-h2">聯絡我們</h2>
+        <h2 class="va-h2" id="va-contact-heading">聯絡我們</h2>
         <form class="va-form" data-form>
           <label for="a-company">公司名稱（選填）<input id="a-company" name="company" type="text" autocomplete="organization"></label>
           <label for="a-name">聯絡人<input id="a-name" name="name" type="text" required autocomplete="name"></label>
@@ -1945,7 +2078,7 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
       <a class="vb-logo brand" href="#vb-top" data-scroll><img src="assets/images/mootech_website_IMG003_brand_logo-h-white.png" alt="MOOTECH" width="189" height="41"></a>
       <span class="vb-status"><i></i>ALL SYSTEMS OPERATIONAL</span>
       <nav class="vb-nav" aria-label="主選單">
-        <a href="#vb-about" data-scroll>/about</a><a href="#vb-solutions" data-scroll>/solutions</a><a href="#vb-global" data-scroll>/network</a><a href="#vb-contact" data-scroll>/contact</a>
+        <a href="#vb-top" data-scroll data-en="/home">/首頁</a><a href="#vb-solutions" data-scroll data-en="/solutions">/解決方案</a><a href="#vb-global" data-scroll data-en="/global-presence">/全球據點</a><a href="#vb-about" data-scroll data-en="/about">/關於我們</a><a href="#vb-careers" data-scroll data-en="/careers">/人才招募</a><a href="#vb-contact" data-scroll data-en="/contact">/聯絡我們</a>
       </nav>
       <button class="vb-btn line vb-lang" type="button" aria-label="EN 切換為英文" data-lang-toggle>EN</button>
       <button class="menu-btn" type="button" aria-label="開啟選單" aria-expanded="false" data-menu><svg class="ico"><use href="#i-menu"/></svg></button>
@@ -1977,9 +2110,9 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="vb-sec" id="vb-about">
+  <section class="vb-sec" id="vb-about" aria-labelledby="vb-about-heading">
     <div class="wrap">
-      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/about</span><h2 class="vb-h2">關於我們</h2></div></div>
+      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/about</span><h2 class="vb-h2" id="vb-about-heading">關於我們</h2></div></div>
       <div class="vb-about"><div class="vb-about-side">
         <div class="vb-spec">
           <div class="bar"><i></i><i></i><i></i><span>company.yaml</span></div>
@@ -2003,9 +2136,9 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="vb-sec" id="vb-solutions">
+  <section class="vb-sec" id="vb-solutions" aria-labelledby="vb-solutions-heading">
     <div class="wrap">
-      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/solutions</span><h2 class="vb-h2">解決方案</h2></div><p>五個服務模組，可獨立導入，也能組合成完整的企業 IT 基礎。</p></div>
+      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/solutions</span><h2 class="vb-h2" id="vb-solutions-heading">解決方案</h2></div><p>五個服務模組，可獨立導入，也能組合成完整的企業 IT 基礎。</p></div>
       <div class="vb-bento">
         <article class="vb-cell big">
           
@@ -2049,18 +2182,18 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="sp sp-b" id="vb-spec">
+  <section class="sp sp-b" id="vb-spec" aria-labelledby="vb-spec-heading">
     <div class="wrap">
-      <div class="sp-head"><span class="sp-k">SPECIFICATIONS</span><h2>服務細項與線路類型</h2><p>IP Transit、IPLC 與 Security 防護可以依需求組合；下方列出每項服務的完整內容。</p></div>
+      <div class="sp-head"><span class="sp-k">SPECIFICATIONS</span><h2 id="vb-spec-heading">服務細項與線路類型</h2><p>IP Transit、IPLC 與 Security 防護可以依需求組合；下方列出每項服務的完整內容。</p></div>
       <span class="sp-sub">線路類型</span>
       <div class="sp-lines"><div class="sp-line"><h3>IP Transit</h3><ul><li>涵蓋率遍佈全球</li><li>支援 IPv6 與 IPv4</li><li>優良的國際流量線路規劃</li><li>與中國頂尖電信供應商合作</li><li>中國與東南亞區域專有的優化線路</li></ul></div><div class="sp-line"><h3>IPLC</h3><ul><li>安全性高的點對點資料傳輸</li><li>兼具高可用性與低延遲</li><li>與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯</li><li>網際網路交換中心對等互聯</li></ul></div><div class="sp-line"><h3>Security</h3><ul><li>服務安全性與可靠性</li><li>兼具靈活性與擴展性</li></ul></div></div>
       <div class="sp-groups"><div class="sp-group"><h3>直播串流</h3><dl><div><dt>即時串流</dt><dd>畫面即時送達觀眾，活動、發表會與賽事都能同步呈現。</dd></div><div><dt>低延遲</dt><dd>縮短從拍攝到觀看的時間差，互動更即時。</dd></div><div><dt>不間斷與容錯</dt><dd>備援線路與容錯機制，讓直播服務不中斷。</dd></div></dl></div><div class="sp-group"><h3>網路連線</h3><dl><div><dt>網際網路接取</dt><dd>使用低延遲線路或中國及東南亞區域優化線路，為客戶傳輸受歡迎的應用或內容。</dd></div><div><dt>IPLC 國際私人租用線路</dt><dd>為跨國企業提供國際點對點專線，在總部與全球各地分行之間提供專用、可靠、安全的連接。</dd></div><div><dt>CDN 服務</dt><dd>立即提升網站效能，改善載入時間與安全性、減少頻寬成本並強化內容備援。</dd></div></dl></div><div class="sp-group"><h3>網路架構優化</h3><dl><div><dt>網路配置與品質優化</dt><dd>調整網路配置，提升連線品質。</dd></div><div><dt>網路架構設計</dt><dd>網路架構設計與拓樸圖審核。</dd></div><div><dt>庫存管理</dt><dd>設備庫存管理。</dd></div><div><dt>網路流量監控</dt><dd>網路流量表現分析。</dd></div><div><dt>網路優化</dt><dd>網路優化方案、網路漏洞測試與驗證。</dd></div></dl></div><div class="sp-group"><h3>系統整合</h3><dl><div><dt>諮詢服務</dt><dd>IT 系統整合諮詢服務。</dd></div><div><dt>部署與遷移</dt><dd>IT 解決方案的建置與資料遷移。</dd></div><div><dt>客製化需求</dt><dd>客製化測試情境、驗收條件與文件紀錄。</dd></div><div><dt>建置後支援</dt><dd>建置完成後的支援服務。</dd></div><div><dt>雲端與機房整合</dt><dd>整合雲端與在地系統。</dd></div><div><dt>代客操作服務</dt><dd>受過專業訓練的技術人員到場代客操作、安裝，並為您的機房設備排查問題，快速且可靠。</dd></div></dl></div></div>
     </div>
   </section>
 
-  <section class="vb-sec" id="vb-overview">
+  <section class="vb-sec" id="vb-overview" aria-labelledby="vb-overview-heading">
     <div class="wrap">
-      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/overview</span><h2 class="vb-h2">解決方案全景</h2></div><p>點選服務，查看它在企業環境中的樣貌。</p></div>
+      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/overview</span><h2 class="vb-h2" id="vb-overview-heading">解決方案全景</h2></div><p>點選服務，查看它在企業環境中的樣貌。</p></div>
       <div class="vb-tabs" data-tabs>
         <div class="vb-tablist" role="tablist" aria-label="解決方案全景"><button type="button" role="tab" aria-selected="true" class="on"><small>svc/connectivity</small><span>網路連線</span></button><button type="button" role="tab" aria-selected="false"><small>svc/optimisation</small><span>網路架構優化</span></button><button type="button" role="tab" aria-selected="false"><small>svc/integration</small><span>系統整合</span></button><button type="button" role="tab" aria-selected="false"><small>svc/international-lines</small><span>國際線路</span></button><button type="button" role="tab" aria-selected="false"><small>svc/live-streaming</small><span>直播串流</span></button></div>
         <div class="vb-stage"><div role="tabpanel" class="on"><div class="ill" data-ill="network" role="img" aria-label="網路連線"></div><div class="cap"><span class="slug">svc/connectivity</span><p>網際網路接取與 CDN 服務：使用低延遲線路及中國、東南亞區域優化線路傳輸您的應用與內容，並提升網站效能、降低頻寬成本。</p></div></div><div role="tabpanel"><div class="ill" data-ill="optimise" role="img" aria-label="網路架構"></div><div class="cap"><span class="slug">svc/optimisation</span><p>協助取得您的網路使用狀態、負荷量、限制和安全性漏洞，從配置、架構設計、流量監控到漏洞測試，發掘更多優化的可能性。</p></div></div><div role="tabpanel"><div class="ill" data-ill="integrate" role="img" aria-label="系統整合"></div><div class="cap"><span class="slug">svc/integration</span><p>從諮詢、部署與資料遷移到建置後支援，整合雲端與機房環境，並由專業技術人員到場代客操作與排查。</p></div></div><div role="tabpanel"><div class="ill" data-ill="transit" role="img" aria-label="國際線路"></div><div class="cap"><span class="slug">svc/international-lines</span><p>IP Transit 涵蓋全球、支援 IPv4 與 IPv6，與中國頂尖電信供應商合作；IPLC 國際點對點專線兼具高可用性與低延遲，並與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯。</p></div></div><div role="tabpanel"><div class="ill" data-ill="live" role="img" aria-label="直播"></div><div class="cap"><span class="slug">svc/live-streaming</span><p>隨心所欲地呈現您的內容：即時串流、低延遲畫面，以及不間斷的直播服務與容錯機制。</p></div></div></div>
@@ -2068,9 +2201,9 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="vb-sec" id="vb-why">
+  <section class="vb-sec" id="vb-why" aria-labelledby="vb-why-heading">
     <div class="wrap">
-      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/why</span><h2 class="vb-h2">為什麼選擇 MOOTECH</h2></div></div>
+      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/why</span><h2 class="vb-h2" id="vb-why-heading">為什麼選擇 MOOTECH</h2></div></div>
       <div class="vb-why"><div class="vb-check"><span class="ok">[✓] global_transit</span><h3>全球線路</h3><p>IP Transit 涵蓋全球、支援 IPv4 與 IPv6，並與中國頂尖電信供應商合作。</p></div><div class="vb-check"><span class="ok">[✓] high_availability</span><h3>高可用性</h3><p>IPLC 專線兼具高可用性與低延遲，直播服務具備不間斷的容錯機制。</p></div><div class="vb-check"><span class="ok">[✓] fast_delivery</span><h3>靈活迅速</h3><p>從核心解決方案到加值功能，以靈活、反應迅速的方式交付。</p></div><div class="vb-check"><span class="ok">[✓] global_reach</span><h3>全球視野</h3><p>與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯，並提供中國與東南亞區域優化線路。</p></div></div>
       <div class="vb-pipe">
         <span class="vb-path">~/mootech/pipeline</span>
@@ -2080,18 +2213,18 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="vb-sec vb-cta">
+  <section id="vb-consultation" class="vb-sec vb-cta" aria-labelledby="vb-consultation-heading">
     <div class="wrap">
       <span class="vb-path">~/next</span>
-      <h2>穩定，從架構開始。</h2>
+      <h2 data-en="Solution Consultation" id="vb-consultation-heading">方案諮詢</h2><p data-en="Stability starts with architecture.">穩定，從架構開始。</p>
       <p>從架構規劃到上線維運，MOOTECH 與您一起打造穩定、安全的 IT 基礎。</p>
       <a class="vb-btn" href="#vb-contact" data-scroll>預約諮詢 →</a>
     </div>
   </section>
 
-  <section class="vb-sec" id="vb-global">
+  <section class="vb-sec" id="vb-global" aria-labelledby="vb-global-heading">
     <div class="wrap">
-      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/network</span><h2 class="vb-h2">立足新加坡與台灣，<br>服務全球客戶。</h2></div></div>
+      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/network</span><h2 class="vb-h2" data-en="Global Presence" id="vb-global-heading">全球據點</h2><p class="global-intro" data-en="Based in Singapore and Taiwan, serving clients worldwide.">立足新加坡與台灣，服務全球客戶。</p></div></div>
       <div class="vb-global">
         <div class="vb-mapbox"><div class="imap-box"><canvas class="imap" data-art="interconnect" role="img" aria-label="亞太互連示意圖：新加坡、台灣、香港、東京節點，與泰國、越南、馬來西亞、斯里蘭卡、印度、印尼、韓國、菲律賓之間的連線動畫"></canvas><span class="imap-cap">亞太互連示意圖 · 動畫示意，非即時數據</span><div class="imap-lgd"><span><i class="h"></i>MOOTECH 節點</span><span><i class="u"></i>主要訪客市場（示意）</span><span><i class="n"></i>正常流量</span><span><i class="b"></i>被攔截的可疑流量</span></div></div></div>
         <div class="vb-nodes">
@@ -2106,16 +2239,70 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="pt pt-b" id="vb-partners">
+  <section class="pt pt-b" id="vb-partners" aria-labelledby="vb-partners-heading">
     <div class="wrap">
-      <div class="pt-head"><span class="pt-k">PARTNERS</span><h2>合作夥伴</h2><p>與亞太主要電信營運商、雲端與資安平台及網路設備品牌合作，為您提供穩定的線路與完整的服務。</p></div>
+      <div class="pt-head"><span class="pt-k">PARTNERS</span><h2 id="vb-partners-heading">合作夥伴</h2><p>與亞太主要電信營運商、雲端與資安平台及網路設備品牌合作，為您提供穩定的線路與完整的服務。</p></div>
       <div class="pt-marquee"><ul class="sr"><li>中華電信</li><li>電訊盈科 PCCW</li><li>EASPNet</li><li>SGGS</li><li>AWS</li><li>Cloudflare</li><li>Imperva</li><li>Juniper Networks</li><li>Cisco</li><li>Telstra</li></ul><div class="pt-row"><ul class="pt-logos pt-track" aria-hidden="true"><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG024_partners_08-telstra-mono.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG024_partners_08-telstra-mono.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG024_partners_08-telstra-mono.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG024_partners_08-telstra-mono.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li></ul></div><div class="pt-row pt-rev"><ul class="pt-logos pt-track" aria-hidden="true"><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li></ul></div></div>
     </div>
   </section>
 
-  <section class="vb-sec" id="vb-contact">
+  <section class="vb-sec hr-section hr-recruit" id="vb-careers" aria-labelledby="vb-careers-title">
     <div class="wrap">
-      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/contact</span><h2 class="vb-h2">聯絡我們</h2></div><p>告訴我們您的需求，工程團隊會盡快回覆。</p></div>
+      <div class="hr-head"><span class="hr-kicker">CAREERS</span><h2 class="hr-h2" id="vb-careers-title" data-en="Careers">人才招募</h2></div>
+      <div class="hr-banner">
+        <img class="hr-banner-image" src="assets/images/mootech_website_IMG143_careers-team-banner.webp?v=panorama2" alt="" width="1600" height="533" loading="lazy" decoding="async">
+        <div class="hr-banner-copy">
+          <h3 data-en="Give yourself an opportunity">給自己一個機會</h3>
+          <p data-en="Unlock your potential. Shape your future.">解鎖自己，成就未來</p>
+          <a class="hr-banner-cta" href="#vb-vision" data-scroll aria-label="認識 MOOTECH 願景" data-en="Let's Go">Let's Go</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vb-sec hr-section" id="vb-vision" aria-labelledby="vb-vision-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">HR VISION · INNOVATION</span><h2 class="hr-h2" data-en="MOOTECH HR Vision" id="vb-vision-heading">MOOTECH 願景</h2></div>
+      <div class="hr-vision">
+        <div class="hr-card hr-prose">
+          <p data-en="We create an innovative, flexible and inclusive experience in an MNC working environment, developing fullest potentials through learning, development and teamwork to strive for goals and achievement.">我們致力於創造一個創新、靈活和具有包容性的工作環境，鼓勵每個人發揮自己的才華和潛能，並透過團隊合作來實現共同目標。</p>
+        </div>
+        <div class="vp-scene vp-scene-lg"><picture><img src="assets/images/mootech_website_IMG134_slender-vision.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vb-sec hr-section" id="vb-team" aria-labelledby="vb-team-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">ABOUT US</span><h2 class="hr-h2" data-en="Team Culture" id="vb-team-heading">團隊文化</h2></div>
+      <div class="hr-card hr-prose">
+        <p data-en="We are a team of engineers who keep the company running, solving and maintaining IT infrastructure with creative, practical methods. At Mootech every day is full of challenges and brainstorming, and our constant theme is to learn, learn and learn again. Join us to work in an energetic, challenging environment while keeping up with the latest IT industry knowledge. If you are creative, love solving problems and crave learning and challenges, you are very welcome to join us and build a fun, innovative working life together.">我們是一群由 7 年級與 8 年級工程師組成的團隊，是公司的中流砥柱，主要用創新又實用的方法解決與維護 IT 基礎設施。在 Mootech，我們可以保證每一天都充滿挑戰和腦力激盪；團隊的主旋律就是學習、學習、再學習。加入我們，除了能在充滿活力與挑戰的環境裡工作，也能隨時掌握最新的資訊科技產業知識。如果你有創意、喜歡思考解決問題、渴望學習與挑戰，非常歡迎你加入我們，一起創造有趣又充滿創新的工作生活。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="vb-sec hr-section" id="vb-join" aria-labelledby="vb-join-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">WHY JOIN · TEAM</span><h2 class="hr-h2" data-en="Why Join MOOTECH" id="vb-join-heading">為什麼加入 MOOTECH</h2></div>
+      <div class="hr-joingrid"><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG135_slender-team.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Together we go further">一起，我們可以走得更長更遠</h3><span class="en" data-en=" ">Team Collaboration</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG136_slender-ideas.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="We share knowledge openly">知識分享絕不藏私</h3><span class="en" data-en=" ">Brainstorming Ideas</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG137_slender-learning.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Always on the latest tech">嶄新技術在線掌握</h3><span class="en" data-en=" ">Learning New Technologies</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG138_slender-workspace.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="A bright, open workspace">明亮開放寬敞的辦公環境</h3><span class="en" data-en=" ">Conducive Environment</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG139_slender-coffee.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Good food, great company">美食當前，減肥都是明天的事</h3><span class="en" data-en=" ">Team Bonding</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG140_slender-fitness.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Work hard, stay healthy">要打拼也要健康，跟著 Mootech 動吃動</h3><span class="en" data-en=" ">Promote A Healthy Lifestyle</span></div></div>
+    </div>
+  </section>
+
+  <section class="vb-sec hr-section" id="vb-welfare" aria-labelledby="vb-welfare-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">WELFARE · BENEFITS</span><h2 class="hr-h2" data-en="Employee Benefits" id="vb-welfare-heading">員工福利</h2><p data-en="Everything you want to know about working here.">關於你想知道的，我們都準備好了。</p></div>
+      <div class="hr-welfaregrid">
+        <div class="hr-card"><b class="hr-emphasis" data-en="Healthcare">健康第一大禮包</b><p data-en="Annual full health checks, supplement subsidies and comprehensive group insurance.">每年度全方位健檢、保健食品補助，以及保障多多的團體保險。</p></div>
+        <div class="hr-card"><b class="hr-emphasis" data-en="Better-than-statutory leave">優於勞基法的休假</b><p data-en="Annual leave above the labor-law minimum, plus 3 days of fully-paid sick leave.">特別休假日數優於勞基法，另有 3 天全薪病假，讓你安心休息。</p></div>
+        <div class="hr-card"><b class="hr-emphasis" data-en="Upgrading & Training">進修補助</b><p data-en="The company invests in you — learn and grow with no financial burden.">公司幫你投資你自己，進修學習無負擔，持續精進專業能力。</p></div>
+        <div class="hr-card"><b class="hr-emphasis" data-en="Flexibility & team life">彈性與團隊生活</b><p data-en="Flexible hours, regular meals and tea breaks, team events and local / overseas trips.">彈性上下班、不定期聚餐與下午茶，還有團隊活動與國內外員工旅遊。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vb-sec" id="vb-contact" aria-labelledby="vb-contact-heading">
+    <div class="wrap">
+      <div class="vb-sec-head"><div><span class="vb-path">~/mootech/contact</span><h2 class="vb-h2" id="vb-contact-heading">聯絡我們</h2></div><p>告訴我們您的需求，工程團隊會盡快回覆。</p></div>
       <div class="vb-contact">
         <form class="vb-form" data-form>
           <label for="b-company">公司名稱（選填）<input id="b-company" name="company" type="text" autocomplete="organization"></label>
@@ -2146,7 +2333,7 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     <div class="wrap">
       <a class="vc-logo brand" href="#vc-top" data-scroll><img src="assets/images/mootech_website_IMG004_brand_logo-h.png" alt="MOOTECH" width="189" height="41"></a>
       <nav class="vc-nav" aria-label="主選單">
-        <a href="#vc-about" data-scroll>關於</a><a href="#vc-solutions" data-scroll>解決方案</a><a href="#vc-global" data-scroll>據點</a><a href="#vc-contact" data-scroll>聯絡</a>
+        <a href="#vc-top" data-scroll data-en="Home">首頁</a><a href="#vc-solutions" data-scroll data-en="Solutions">解決方案</a><a href="#vc-global" data-scroll data-en="Global Presence">全球據點</a><a href="#vc-about" data-scroll data-en="About">關於我們</a><a href="#vc-careers" data-scroll data-en="Careers">人才招募</a><a href="#vc-contact" data-scroll data-en="Contact">聯絡我們</a>
       </nav>
       <button class="vc-lang" type="button" aria-label="EN 切換為英文" data-lang-toggle>EN</button>
       <button class="menu-btn" type="button" aria-label="開啟選單" aria-expanded="false" data-menu><svg class="ico"><use href="#i-menu"/></svg></button>
@@ -2170,9 +2357,9 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
   </section>
   <div class="vc-marquee" aria-hidden="true"><div class="track"><div><span>直播串流</span><i></i><span>網路連線</span><i></i><span>網路架構優化</span><i></i><span>系統整合</span><i></i><span>國際線路</span><i></i></div><div><span>直播串流</span><i></i><span>網路連線</span><i></i><span>網路架構優化</span><i></i><span>系統整合</span><i></i><span>國際線路</span><i></i></div></div></div>
 
-  <section class="vc-sec" id="vc-about">
+  <section class="vc-sec" id="vc-about" aria-labelledby="vc-about-heading">
     <div class="wrap vc-grid">
-      <div class="vc-sidehead"><span class="vc-label">About</span><h2>關於我們</h2></div>
+      <div class="vc-sidehead"><span class="vc-label">About</span><h2 id="vc-about-heading">關於我們</h2></div>
       <div class="vc-main">
         <p class="vc-lead" data-en="A network services company founded in 2016, focused on live streaming, &lt;mark&gt;international private lines&lt;/mark&gt; and network integration.">成立於 2016 年，專注直播串流、<mark>國際專線</mark>與網路整合的網路服務公司。</p>
         <div class="vc-cols">
@@ -2184,9 +2371,9 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="vc-sec" id="vc-solutions">
+  <section class="vc-sec" id="vc-solutions" aria-labelledby="vc-solutions-heading">
     <div class="wrap vc-grid">
-      <div class="vc-sidehead"><span class="vc-label">Solutions</span><h2>解決方案</h2></div>
+      <div class="vc-sidehead"><span class="vc-label">Solutions</span><h2 id="vc-solutions-heading">解決方案</h2></div>
       <div class="vc-main">
         <div class="vc-sol">
           <a class="vc-row" href="#vc-contact" data-scroll><div class="ill thumb" data-ill="live" role="img" aria-label="直播示意圖"></div><h3><small>Live Streaming</small>直播串流</h3><p>隨心所欲地呈現您的內容：即時串流、低延遲畫面，以及不間斷的直播服務與容錯機制。</p><span class="arr">→</span></a>
@@ -2199,49 +2386,49 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="sp sp-c" id="vc-spec">
+  <section class="sp sp-c" id="vc-spec" aria-labelledby="vc-spec-heading">
     <div class="wrap">
-      <div class="sp-head"><span class="sp-k">SPECIFICATIONS</span><h2>服務細項與線路類型</h2><p>IP Transit、IPLC 與 Security 防護可以依需求組合；下方列出每項服務的完整內容。</p></div>
+      <div class="sp-head"><span class="sp-k">SPECIFICATIONS</span><h2 id="vc-spec-heading">服務細項與線路類型</h2><p>IP Transit、IPLC 與 Security 防護可以依需求組合；下方列出每項服務的完整內容。</p></div>
       <span class="sp-sub">線路類型</span>
       <div class="sp-lines"><div class="sp-line"><h3>IP Transit</h3><ul><li>涵蓋率遍佈全球</li><li>支援 IPv6 與 IPv4</li><li>優良的國際流量線路規劃</li><li>與中國頂尖電信供應商合作</li><li>中國與東南亞區域專有的優化線路</li></ul></div><div class="sp-line"><h3>IPLC</h3><ul><li>安全性高的點對點資料傳輸</li><li>兼具高可用性與低延遲</li><li>與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯</li><li>網際網路交換中心對等互聯</li></ul></div><div class="sp-line"><h3>Security</h3><ul><li>服務安全性與可靠性</li><li>兼具靈活性與擴展性</li></ul></div></div>
       <div class="sp-groups"><div class="sp-group"><h3>直播串流</h3><dl><div><dt>即時串流</dt><dd>畫面即時送達觀眾，活動、發表會與賽事都能同步呈現。</dd></div><div><dt>低延遲</dt><dd>縮短從拍攝到觀看的時間差，互動更即時。</dd></div><div><dt>不間斷與容錯</dt><dd>備援線路與容錯機制，讓直播服務不中斷。</dd></div></dl></div><div class="sp-group"><h3>網路連線</h3><dl><div><dt>網際網路接取</dt><dd>使用低延遲線路或中國及東南亞區域優化線路，為客戶傳輸受歡迎的應用或內容。</dd></div><div><dt>IPLC 國際私人租用線路</dt><dd>為跨國企業提供國際點對點專線，在總部與全球各地分行之間提供專用、可靠、安全的連接。</dd></div><div><dt>CDN 服務</dt><dd>立即提升網站效能，改善載入時間與安全性、減少頻寬成本並強化內容備援。</dd></div></dl></div><div class="sp-group"><h3>網路架構優化</h3><dl><div><dt>網路配置與品質優化</dt><dd>調整網路配置，提升連線品質。</dd></div><div><dt>網路架構設計</dt><dd>網路架構設計與拓樸圖審核。</dd></div><div><dt>庫存管理</dt><dd>設備庫存管理。</dd></div><div><dt>網路流量監控</dt><dd>網路流量表現分析。</dd></div><div><dt>網路優化</dt><dd>網路優化方案、網路漏洞測試與驗證。</dd></div></dl></div><div class="sp-group"><h3>系統整合</h3><dl><div><dt>諮詢服務</dt><dd>IT 系統整合諮詢服務。</dd></div><div><dt>部署與遷移</dt><dd>IT 解決方案的建置與資料遷移。</dd></div><div><dt>客製化需求</dt><dd>客製化測試情境、驗收條件與文件紀錄。</dd></div><div><dt>建置後支援</dt><dd>建置完成後的支援服務。</dd></div><div><dt>雲端與機房整合</dt><dd>整合雲端與在地系統。</dd></div><div><dt>代客操作服務</dt><dd>受過專業訓練的技術人員到場代客操作、安裝，並為您的機房設備排查問題，快速且可靠。</dd></div></dl></div></div>
     </div>
   </section>
 
-  <section class="vc-sec" id="vc-field">
+  <section class="vc-sec" id="vc-field" aria-labelledby="vc-field-heading">
     <div class="wrap vc-grid">
-      <div class="vc-sidehead"><span class="vc-label">In Action</span><h2>服務場景</h2></div>
+      <div class="vc-sidehead"><span class="vc-label">In Action</span><h2 id="vc-field-heading">服務場景</h2></div>
       <div class="vc-main"><p class="vc-field-intro">從機房、會議室到活動現場，看看 MOOTECH 的解決方案如何運作。</p></div>
     </div>
     <div class="vc-strip" tabindex="0" aria-label="服務場景"><figure><div class="ill" data-ill="network" role="img" aria-label="機房佈線"></div><figcaption><span class="vc-label">01 / 05</span><b>機房佈線</b></figcaption></figure><figure><div class="ill" data-ill="optimise" role="img" aria-label="架構規劃"></div><figcaption><span class="vc-label">02 / 05</span><b>架構規劃</b></figcaption></figure><figure><div class="ill" data-ill="integrate" role="img" aria-label="系統整合"></div><figcaption><span class="vc-label">03 / 05</span><b>系統整合</b></figcaption></figure><figure><div class="ill" data-ill="transit" role="img" aria-label="資安監控"></div><figcaption><span class="vc-label">04 / 05</span><b>資安監控</b></figcaption></figure><figure><div class="ill" data-ill="live" role="img" aria-label="活動直播"></div><figcaption><span class="vc-label">05 / 05</span><b>活動直播</b></figcaption></figure></div>
   </section>
 
-  <section class="vc-sec" id="vc-why">
+  <section class="vc-sec" id="vc-why" aria-labelledby="vc-why-heading">
     <div class="wrap vc-grid">
-      <div class="vc-sidehead"><span class="vc-label">Why</span><h2>為什麼選擇 MOOTECH</h2></div>
+      <div class="vc-sidehead"><span class="vc-label">Why</span><h2 id="vc-why-heading">為什麼選擇 MOOTECH</h2></div>
       <div class="vc-main"><div class="vc-why"><div><span class="vc-label">Coverage</span><h3>全球線路</h3><p>IP Transit 涵蓋全球、支援 IPv4 與 IPv6，並與中國頂尖電信供應商合作。</p></div><div><span class="vc-label">Availability</span><h3>高可用性</h3><p>IPLC 專線兼具高可用性與低延遲，直播服務具備不間斷的容錯機制。</p></div><div><span class="vc-label">Agility</span><h3>靈活迅速</h3><p>從核心解決方案到加值功能，以靈活、反應迅速的方式交付。</p></div><div><span class="vc-label">Reach</span><h3>全球視野</h3><p>與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯，並提供中國與東南亞區域優化線路。</p></div></div></div>
     </div>
   </section>
 
-  <section class="vc-sec" id="vc-process">
+  <section class="vc-sec" id="vc-process" aria-labelledby="vc-process-heading">
     <div class="wrap vc-grid">
-      <div class="vc-sidehead"><span class="vc-label">Process</span><h2>合作流程</h2></div>
+      <div class="vc-sidehead"><span class="vc-label">Process</span><h2 id="vc-process-heading">合作流程</h2></div>
       <div class="vc-main"><ol class="vc-steps"><li><b>01</b><h3>需求諮詢</h3><p>了解您的業務目標、現有系統與預算。</p></li><li><b>02</b><h3>架構設計</h3><p>規劃網路與系統架構，選出最適合的解決方案。</p></li><li><b>03</b><h3>部署導入</h3><p>實施核心解決方案，完成系統整合與測試。</p></li><li><b>04</b><h3>維運支援</h3><p>提供專業支援與優化，並依需求擴充加值功能。</p></li></ol></div>
     </div>
   </section>
 
-  <section class="vc-cta">
+  <section id="vc-consultation" class="vc-cta" aria-labelledby="vc-consultation-heading">
     <div class="wrap">
-      <h2>穩定，從架構開始。</h2>
+      <h2 data-en="Solution Consultation" id="vc-consultation-heading">方案諮詢</h2><p data-en="Stability starts with architecture.">穩定，從架構開始。</p>
       <p>從架構規劃到上線維運，MOOTECH 與您一起打造穩定、安全的 IT 基礎。</p>
       <a class="vc-btn" href="#vc-contact" data-scroll>預約諮詢 <span class="arr">→</span></a>
       <div class="ill vc-cta-img" data-ill="network" role="img" aria-label="團隊合作"></div>
     </div>
   </section>
 
-  <section class="vc-sec vc-global" id="vc-global">
+  <section class="vc-sec vc-global" id="vc-global" aria-labelledby="vc-global-heading">
     <div class="wrap vc-grid">
-      <div class="vc-sidehead"><span class="vc-label">Global</span><h2>立足新加坡與台灣，服務全球客戶。</h2></div>
+      <div class="vc-sidehead"><span class="vc-label">Global</span><h2 data-en="Global Presence" id="vc-global-heading">全球據點</h2><p class="global-intro" data-en="Based in Singapore and Taiwan, serving clients worldwide.">立足新加坡與台灣，服務全球客戶。</p></div>
       <div class="vc-main">
         <div class="imap-box"><canvas class="imap" data-art="interconnect" role="img" aria-label="亞太互連示意圖：新加坡、台灣、香港、東京節點，與泰國、越南、馬來西亞、斯里蘭卡、印度、印尼、韓國、菲律賓之間的連線動畫"></canvas><span class="imap-cap">亞太互連示意圖 · 動畫示意，非即時數據</span><div class="imap-lgd"><span><i class="h"></i>MOOTECH 節點</span><span><i class="u"></i>主要訪客市場（示意）</span><span><i class="n"></i>正常流量</span><span><i class="b"></i>被攔截的可疑流量</span></div></div>
         <div class="vc-legend"><span><i></i>辦公室</span><span><i class="o"></i>IX 對等互聯</span></div>
@@ -2257,16 +2444,70 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="pt pt-c" id="vc-partners">
+  <section class="pt pt-c" id="vc-partners" aria-labelledby="vc-partners-heading">
     <div class="wrap">
-      <div class="pt-head"><span class="pt-k">PARTNERS</span><h2>合作夥伴</h2><p>與亞太主要電信營運商、雲端與資安平台及網路設備品牌合作，為您提供穩定的線路與完整的服務。</p></div>
+      <div class="pt-head"><span class="pt-k">PARTNERS</span><h2 id="vc-partners-heading">合作夥伴</h2><p>與亞太主要電信營運商、雲端與資安平台及網路設備品牌合作，為您提供穩定的線路與完整的服務。</p></div>
       <div class="pt-marquee"><ul class="sr"><li>中華電信</li><li>電訊盈科 PCCW</li><li>EASPNet</li><li>SGGS</li><li>AWS</li><li>Cloudflare</li><li>Imperva</li><li>Juniper Networks</li><li>Cisco</li><li>Telstra</li></ul><div class="pt-row"><ul class="pt-logos pt-track" aria-hidden="true"><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG025_partners_08-telstra.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG025_partners_08-telstra.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG025_partners_08-telstra.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG025_partners_08-telstra.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li></ul></div><div class="pt-row pt-rev"><ul class="pt-logos pt-track" aria-hidden="true"><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li></ul></div></div>
     </div>
   </section>
 
-  <section class="vc-sec" id="vc-contact">
+  <section class="vc-sec hr-section hr-recruit" id="vc-careers" aria-labelledby="vc-careers-title">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">CAREERS</span><h2 class="hr-h2" id="vc-careers-title" data-en="Careers">人才招募</h2></div>
+      <div class="hr-banner">
+        <img class="hr-banner-image" src="assets/images/mootech_website_IMG143_careers-team-banner.webp?v=panorama2" alt="" width="1600" height="533" loading="lazy" decoding="async">
+        <div class="hr-banner-copy">
+          <h3 data-en="Give yourself an opportunity">給自己一個機會</h3>
+          <p data-en="Unlock your potential. Shape your future.">解鎖自己，成就未來</p>
+          <a class="hr-banner-cta" href="#vc-vision" data-scroll aria-label="認識 MOOTECH 願景" data-en="Let's Go">Let's Go</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vc-sec hr-section" id="vc-vision" aria-labelledby="vc-vision-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">HR VISION · INNOVATION</span><h2 class="hr-h2" data-en="MOOTECH HR Vision" id="vc-vision-heading">MOOTECH 願景</h2></div>
+      <div class="hr-vision">
+        <div class="hr-card hr-prose">
+          <p data-en="We create an innovative, flexible and inclusive experience in an MNC working environment, developing fullest potentials through learning, development and teamwork to strive for goals and achievement.">我們致力於創造一個創新、靈活和具有包容性的工作環境，鼓勵每個人發揮自己的才華和潛能，並透過團隊合作來實現共同目標。</p>
+        </div>
+        <div class="vp-scene vp-scene-lg"><picture><img src="assets/images/mootech_website_IMG134_slender-vision.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vc-sec hr-section" id="vc-team" aria-labelledby="vc-team-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">ABOUT US</span><h2 class="hr-h2" data-en="Team Culture" id="vc-team-heading">團隊文化</h2></div>
+      <div class="hr-card hr-prose">
+        <p data-en="We are a team of engineers who keep the company running, solving and maintaining IT infrastructure with creative, practical methods. At Mootech every day is full of challenges and brainstorming, and our constant theme is to learn, learn and learn again. Join us to work in an energetic, challenging environment while keeping up with the latest IT industry knowledge. If you are creative, love solving problems and crave learning and challenges, you are very welcome to join us and build a fun, innovative working life together.">我們是一群由 7 年級與 8 年級工程師組成的團隊，是公司的中流砥柱，主要用創新又實用的方法解決與維護 IT 基礎設施。在 Mootech，我們可以保證每一天都充滿挑戰和腦力激盪；團隊的主旋律就是學習、學習、再學習。加入我們，除了能在充滿活力與挑戰的環境裡工作，也能隨時掌握最新的資訊科技產業知識。如果你有創意、喜歡思考解決問題、渴望學習與挑戰，非常歡迎你加入我們，一起創造有趣又充滿創新的工作生活。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="vc-sec hr-section" id="vc-join" aria-labelledby="vc-join-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">WHY JOIN · TEAM</span><h2 class="hr-h2" data-en="Why Join MOOTECH" id="vc-join-heading">為什麼加入 MOOTECH</h2></div>
+      <div class="hr-joingrid"><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG135_slender-team.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Together we go further">一起，我們可以走得更長更遠</h3><span class="en" data-en=" ">Team Collaboration</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG136_slender-ideas.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="We share knowledge openly">知識分享絕不藏私</h3><span class="en" data-en=" ">Brainstorming Ideas</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG137_slender-learning.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Always on the latest tech">嶄新技術在線掌握</h3><span class="en" data-en=" ">Learning New Technologies</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG138_slender-workspace.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="A bright, open workspace">明亮開放寬敞的辦公環境</h3><span class="en" data-en=" ">Conducive Environment</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG139_slender-coffee.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Good food, great company">美食當前，減肥都是明天的事</h3><span class="en" data-en=" ">Team Bonding</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG140_slender-fitness.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Work hard, stay healthy">要打拼也要健康，跟著 Mootech 動吃動</h3><span class="en" data-en=" ">Promote A Healthy Lifestyle</span></div></div>
+    </div>
+  </section>
+
+  <section class="vc-sec hr-section" id="vc-welfare" aria-labelledby="vc-welfare-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">WELFARE · BENEFITS</span><h2 class="hr-h2" data-en="Employee Benefits" id="vc-welfare-heading">員工福利</h2><p data-en="Everything you want to know about working here.">關於你想知道的，我們都準備好了。</p></div>
+      <div class="hr-welfaregrid">
+        <div class="hr-card"><b class="hr-emphasis" data-en="Healthcare">健康第一大禮包</b><p data-en="Annual full health checks, supplement subsidies and comprehensive group insurance.">每年度全方位健檢、保健食品補助，以及保障多多的團體保險。</p></div>
+        <div class="hr-card"><b class="hr-emphasis" data-en="Better-than-statutory leave">優於勞基法的休假</b><p data-en="Annual leave above the labor-law minimum, plus 3 days of fully-paid sick leave.">特別休假日數優於勞基法，另有 3 天全薪病假，讓你安心休息。</p></div>
+        <div class="hr-card"><b class="hr-emphasis" data-en="Upgrading & Training">進修補助</b><p data-en="The company invests in you — learn and grow with no financial burden.">公司幫你投資你自己，進修學習無負擔，持續精進專業能力。</p></div>
+        <div class="hr-card"><b class="hr-emphasis" data-en="Flexibility & team life">彈性與團隊生活</b><p data-en="Flexible hours, regular meals and tea breaks, team events and local / overseas trips.">彈性上下班、不定期聚餐與下午茶，還有團隊活動與國內外員工旅遊。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vc-sec" id="vc-contact" aria-labelledby="vc-contact-heading">
     <div class="wrap vc-grid">
-      <div class="vc-sidehead"><span class="vc-label">Contact</span><h2>聯絡我們</h2></div>
+      <div class="vc-sidehead"><span class="vc-label">Contact</span><h2 id="vc-contact-heading">聯絡我們</h2></div>
       <div class="vc-main">
         <form class="vc-form" data-form>
           <label for="c-company"><span class="vc-label">公司名稱（選填）</span><input id="c-company" name="company" type="text" autocomplete="organization"></label>
@@ -2300,7 +2541,7 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     <div class="wrap">
       <a class="brand" href="#vd-top" data-scroll><img src="assets/images/mootech_website_IMG003_brand_logo-h-white.png" alt="MOOTECH" width="189" height="41"></a>
       <nav class="vd-nav" aria-label="主選單">
-        <a href="#vd-top" data-scroll class="on">首頁</a><a href="#vd-solutions" data-scroll>解決方案</a><a href="#vd-global" data-scroll>全球據點</a><a href="#vd-about" data-scroll>關於我們</a><a href="#vd-careers" data-scroll data-en="Careers">人才招募</a><a href="#vd-contact" data-scroll>聯絡我們</a>
+        <a href="#vd-top" data-scroll data-en="Home">首頁</a><a href="#vd-solutions" data-scroll data-en="Solutions">解決方案</a><a href="#vd-global" data-scroll data-en="Global Presence">全球據點</a><a href="#vd-about" data-scroll data-en="About">關於我們</a><a href="#vd-careers" data-scroll data-en="Careers">人才招募</a><a href="#vd-contact" data-scroll data-en="Contact">聯絡我們</a>
       </nav>
       <button class="vd-pill vd-lang" type="button" aria-label="EN 切換為英文" data-lang-toggle>EN</button>
       <button class="menu-btn" type="button" aria-label="開啟選單" aria-expanded="false" data-menu><svg class="ico"><use href="#i-menu"/></svg></button>
@@ -2326,42 +2567,42 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
   </section>
 
 
-  <section class="vd-sec" id="vd-solutions">
+  <section class="vd-sec" id="vd-solutions" aria-labelledby="vd-solutions-heading">
     <div class="wrap">
-      <div class="vd-head2"><span class="vd-kicker">SOLUTIONS</span><h2 class="vd-h2">解決方案</h2><p>五個服務模組，可獨立導入，也能組合成完整的企業 IT 基礎。</p></div>
+      <div class="vd-head2"><span class="vd-kicker">SOLUTIONS</span><h2 class="vd-h2" id="vd-solutions-heading">解決方案</h2><p>五個服務模組，可獨立導入，也能組合成完整的企業 IT 基礎。</p></div>
       <div class="vd-sol"><article class="vd-card wide"><div class="ill thumb" data-ill="live" role="img" aria-label="直播示意圖"></div><div class="body"><svg class="ico"><use href="#i-live"/></svg><h3>直播串流</h3><p>隨心所欲地呈現您的內容：即時串流、低延遲畫面，以及不間斷的直播服務與容錯機制。</p><a href="#vd-contact" data-scroll>諮詢此方案 →</a></div></article><article class="vd-card"><div class="ill thumb" data-ill="network" role="img" aria-label="網路連線示意圖"></div><div class="body"><svg class="ico"><use href="#i-net"/></svg><h3>網路連線</h3><p>網際網路接取與 CDN 服務：使用低延遲線路及中國、東南亞區域優化線路傳輸您的應用與內容，並提升網站效能、降低頻寬成本。</p><a href="#vd-contact" data-scroll>諮詢此方案 →</a></div></article><article class="vd-card"><div class="ill thumb" data-ill="optimise" role="img" aria-label="網路架構示意圖"></div><div class="body"><svg class="ico"><use href="#i-arch"/></svg><h3>網路架構優化</h3><p>協助取得您的網路使用狀態、負荷量、限制和安全性漏洞，從配置、架構設計、流量監控到漏洞測試，發掘更多優化的可能性。</p><a href="#vd-contact" data-scroll>諮詢此方案 →</a></div></article><article class="vd-card"><div class="ill thumb" data-ill="integrate" role="img" aria-label="系統整合示意圖"></div><div class="body"><svg class="ico"><use href="#i-int"/></svg><h3>系統整合</h3><p>從諮詢、部署與資料遷移到建置後支援，整合雲端與機房環境，並由專業技術人員到場代客操作與排查。</p><a href="#vd-contact" data-scroll>諮詢此方案 →</a></div></article><article class="vd-card"><div class="ill thumb" data-ill="transit" role="img" aria-label="國際線路示意圖"></div><div class="body"><svg class="ico"><use href="#i-shield"/></svg><h3>國際線路</h3><p>IP Transit 涵蓋全球、支援 IPv4 與 IPv6，與中國頂尖電信供應商合作；IPLC 國際點對點專線兼具高可用性與低延遲，並與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯。</p><a href="#vd-contact" data-scroll>諮詢此方案 →</a></div></article></div>
     </div>
   </section>
 
-  <section class="sp sp-d" id="vd-spec">
+  <section class="sp sp-d" id="vd-spec" aria-labelledby="vd-spec-heading">
     <div class="wrap">
-      <div class="sp-head"><span class="sp-k">SPECIFICATIONS</span><h2>服務細項與線路類型</h2><p>IP Transit、IPLC 與 Security 防護可以依需求組合；下方列出每項服務的完整內容。</p></div>
+      <div class="sp-head"><span class="sp-k">SPECIFICATIONS</span><h2 id="vd-spec-heading">服務細項與線路類型</h2><p>IP Transit、IPLC 與 Security 防護可以依需求組合；下方列出每項服務的完整內容。</p></div>
       <span class="sp-sub">線路類型</span>
       <div class="sp-lines"><div class="sp-line"><h3>IP Transit</h3><ul><li>涵蓋率遍佈全球</li><li>支援 IPv6 與 IPv4</li><li>優良的國際流量線路規劃</li><li>與中國頂尖電信供應商合作</li><li>中國與東南亞區域專有的優化線路</li></ul></div><div class="sp-line"><h3>IPLC</h3><ul><li>安全性高的點對點資料傳輸</li><li>兼具高可用性與低延遲</li><li>與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯</li><li>網際網路交換中心對等互聯</li></ul></div><div class="sp-line"><h3>Security</h3><ul><li>服務安全性與可靠性</li><li>兼具靈活性與擴展性</li></ul></div></div>
       <div class="sp-groups"><div class="sp-group"><h3>直播串流</h3><dl><div><dt>即時串流</dt><dd>畫面即時送達觀眾，活動、發表會與賽事都能同步呈現。</dd></div><div><dt>低延遲</dt><dd>縮短從拍攝到觀看的時間差，互動更即時。</dd></div><div><dt>不間斷與容錯</dt><dd>備援線路與容錯機制，讓直播服務不中斷。</dd></div></dl></div><div class="sp-group"><h3>網路連線</h3><dl><div><dt>網際網路接取</dt><dd>使用低延遲線路或中國及東南亞區域優化線路，為客戶傳輸受歡迎的應用或內容。</dd></div><div><dt>IPLC 國際私人租用線路</dt><dd>為跨國企業提供國際點對點專線，在總部與全球各地分行之間提供專用、可靠、安全的連接。</dd></div><div><dt>CDN 服務</dt><dd>立即提升網站效能，改善載入時間與安全性、減少頻寬成本並強化內容備援。</dd></div></dl></div><div class="sp-group"><h3>網路架構優化</h3><dl><div><dt>網路配置與品質優化</dt><dd>調整網路配置，提升連線品質。</dd></div><div><dt>網路架構設計</dt><dd>網路架構設計與拓樸圖審核。</dd></div><div><dt>庫存管理</dt><dd>設備庫存管理。</dd></div><div><dt>網路流量監控</dt><dd>網路流量表現分析。</dd></div><div><dt>網路優化</dt><dd>網路優化方案、網路漏洞測試與驗證。</dd></div></dl></div><div class="sp-group"><h3>系統整合</h3><dl><div><dt>諮詢服務</dt><dd>IT 系統整合諮詢服務。</dd></div><div><dt>部署與遷移</dt><dd>IT 解決方案的建置與資料遷移。</dd></div><div><dt>客製化需求</dt><dd>客製化測試情境、驗收條件與文件紀錄。</dd></div><div><dt>建置後支援</dt><dd>建置完成後的支援服務。</dd></div><div><dt>雲端與機房整合</dt><dd>整合雲端與在地系統。</dd></div><div><dt>代客操作服務</dt><dd>受過專業訓練的技術人員到場代客操作、安裝，並為您的機房設備排查問題，快速且可靠。</dd></div></dl></div></div>
     </div>
   </section>
 
-  <section class="vd-sec" id="vd-why">
+  <section class="vd-sec" id="vd-why" aria-labelledby="vd-why-heading">
     <div class="wrap">
-      <div class="vd-head2"><span class="vd-kicker">WHY MOOTECH</span><h2 class="vd-h2">為什麼選擇 MOOTECH</h2></div>
+      <div class="vd-head2"><span class="vd-kicker">WHY MOOTECH</span><h2 class="vd-h2" id="vd-why-heading">為什麼選擇 MOOTECH</h2></div>
       <div class="vd-why"><div class="vd-glass"><i><svg class="ico"><use href="#i-shield"/></svg></i><h3>全球線路</h3><p>IP Transit 涵蓋全球、支援 IPv4 與 IPv6，並與中國頂尖電信供應商合作。</p></div><div class="vd-glass"><i><svg class="ico"><use href="#i-pulse"/></svg></i><h3>高可用性</h3><p>IPLC 專線兼具高可用性與低延遲，直播服務具備不間斷的容錯機制。</p></div><div class="vd-glass"><i><svg class="ico"><use href="#i-bolt"/></svg></i><h3>靈活迅速</h3><p>從核心解決方案到加值功能，以靈活、反應迅速的方式交付。</p></div><div class="vd-glass"><i><svg class="ico"><use href="#i-net"/></svg></i><h3>全球視野</h3><p>與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯，並提供中國與東南亞區域優化線路。</p></div></div>
       <h3 class="vd-h3">合作流程</h3>
       <ol class="vd-steps"><li><b class="vd-grad">01</b><h4>需求諮詢</h4><p>了解您的業務目標、現有系統與預算。</p></li><li><b class="vd-grad">02</b><h4>架構設計</h4><p>規劃網路與系統架構，選出最適合的解決方案。</p></li><li><b class="vd-grad">03</b><h4>部署導入</h4><p>實施核心解決方案，完成系統整合與測試。</p></li><li><b class="vd-grad">04</b><h4>維運支援</h4><p>提供專業支援與優化，並依需求擴充加值功能。</p></li></ol>
     </div>
   </section>
 
-  <section class="vd-sec vd-ctasec">
+  <section id="vd-consultation" class="vd-sec vd-ctasec" aria-labelledby="vd-consultation-heading">
     <div class="wrap">
-      <h2><span class="l1">穩定，</span><span class="l2">從架構開始。</span></h2>
+      <h2 data-en="Solution Consultation" id="vd-consultation-heading">方案諮詢</h2><p data-en="Stability starts with architecture.">穩定，從架構開始。</p>
       <p>從架構規劃到上線維運，MOOTECH 與您一起打造穩定、安全的 IT 基礎。</p>
       <a class="vd-cta" href="#vd-contact" data-scroll><span>預約諮詢</span><span class="vd-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </div>
   </section>
 
-  <section class="vd-sec" id="vd-global">
+  <section class="vd-sec" id="vd-global" aria-labelledby="vd-global-heading">
     <div class="wrap">
-      <div class="vd-head2"><span class="vd-kicker">GLOBAL</span><h2 class="vd-h2" data-en="Global Presence">全球據點</h2><p>立足新加坡與台灣，服務全球客戶。</p></div>
+      <div class="vd-head2"><span class="vd-kicker">GLOBAL</span><h2 class="vd-h2" data-en="Global Presence" id="vd-global-heading">全球據點</h2><p>立足新加坡與台灣，服務全球客戶。</p></div>
       <div class="vd-global">
         <div class="vd-glass vd-mapbox"><div class="imap-box"><canvas class="imap" data-art="interconnect" role="img" aria-label="亞太互連示意圖：新加坡、台灣、香港、東京節點，與泰國、越南、馬來西亞、斯里蘭卡、印度、印尼、韓國、菲律賓之間的連線動畫"></canvas><span class="imap-cap">亞太互連示意圖 · 動畫示意，非即時數據</span><div class="imap-lgd"><span><i class="h"></i>MOOTECH 節點</span><span><i class="u"></i>主要訪客市場（示意）</span><span><i class="n"></i>正常流量</span><span><i class="b"></i>被攔截的可疑流量</span></div></div></div>
         <div class="vd-loc">
@@ -2378,16 +2619,16 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="pt pt-d" id="vd-partners">
+  <section class="pt pt-d" id="vd-partners" aria-labelledby="vd-partners-heading">
     <div class="wrap">
-      <div class="pt-head"><span class="pt-k">PARTNERS</span><h2>合作夥伴</h2><p>與亞太主要電信營運商、雲端與資安平台及網路設備品牌合作，為您提供穩定的線路與完整的服務。</p></div>
+      <div class="pt-head"><span class="pt-k">PARTNERS</span><h2 id="vd-partners-heading">合作夥伴</h2><p>與亞太主要電信營運商、雲端與資安平台及網路設備品牌合作，為您提供穩定的線路與完整的服務。</p></div>
       <div class="pt-marquee"><ul class="sr"><li>中華電信</li><li>電訊盈科 PCCW</li><li>EASPNet</li><li>SGGS</li><li>AWS</li><li>Cloudflare</li><li>Imperva</li><li>Juniper Networks</li><li>Cisco</li><li>Telstra</li></ul><div class="pt-row"><ul class="pt-logos pt-track" aria-hidden="true"><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG024_partners_08-telstra-mono.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG024_partners_08-telstra-mono.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG024_partners_08-telstra-mono.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG024_partners_08-telstra-mono.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li></ul></div><div class="pt-row pt-rev"><ul class="pt-logos pt-track" aria-hidden="true"><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li></ul></div></div>
     </div>
   </section>
 
-  <section class="vd-sec" id="vd-about">
+  <section class="vd-sec" id="vd-about" aria-labelledby="vd-about-heading">
     <div class="wrap">
-      <div class="vd-head2"><span class="vd-kicker">ABOUT US</span><h2 class="vd-h2">關於我們</h2></div>
+      <div class="vd-head2"><span class="vd-kicker">ABOUT US</span><h2 class="vd-h2" id="vd-about-heading">關於我們</h2></div>
       <div class="vd-about">
         <div class="vd-glass vd-about-text">
           <p>MOOTECH 成立於 2016 年，據點位於新加坡與台灣，提供直播串流、網路連線、國際線路、網路架構優化與系統整合服務，為企業打造低延遲、不中斷的網路。</p>
@@ -2416,9 +2657,9 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="vd-sec" id="vd-vision">
+  <section class="vd-sec" id="vd-vision" aria-labelledby="vd-vision-heading">
     <div class="wrap">
-      <div class="vd-head2"><span class="vd-kicker">HR VISION · INNOVATION</span><h2 class="vd-h2" data-en="MOOTECH HR Vision">MOOTECH 願景</h2></div>
+      <div class="vd-head2"><span class="vd-kicker">HR VISION · INNOVATION</span><h2 class="vd-h2" data-en="MOOTECH HR Vision" id="vd-vision-heading">MOOTECH 願景</h2></div>
       <div class="vd-vision">
         <div class="vd-glass vd-vision-text">
           <p data-en="We create an innovative, flexible and inclusive experience in an MNC working environment, developing fullest potentials through learning, development and teamwork to strive for goals and achievement.">我們致力於創造一個創新、靈活和具有包容性的工作環境，鼓勵每個人發揮自己的才華和潛能，並透過團隊合作來實現共同目標。</p>
@@ -2428,25 +2669,25 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="vd-sec" id="vd-team">
+  <section class="vd-sec" id="vd-team" aria-labelledby="vd-team-heading">
     <div class="wrap">
-      <div class="vd-head2"><span class="vd-kicker">ABOUT US</span><h2 class="vd-h2" data-en="About Us">一起來認識我們</h2></div>
+      <div class="vd-head2"><span class="vd-kicker">ABOUT US</span><h2 class="vd-h2" data-en="Team Culture" id="vd-team-heading">團隊文化</h2></div>
       <div class="vd-glass vd-team-intro">
         <p data-en="We are a team of engineers who keep the company running, solving and maintaining IT infrastructure with creative, practical methods. At Mootech every day is full of challenges and brainstorming, and our constant theme is to learn, learn and learn again. Join us to work in an energetic, challenging environment while keeping up with the latest IT industry knowledge. If you are creative, love solving problems and crave learning and challenges, you are very welcome to join us and build a fun, innovative working life together.">我們是一群由 7 年級與 8 年級工程師組成的團隊，是公司的中流砥柱，主要用創新又實用的方法解決與維護 IT 基礎設施。在 Mootech，我們可以保證每一天都充滿挑戰和腦力激盪；團隊的主旋律就是學習、學習、再學習。加入我們，除了能在充滿活力與挑戰的環境裡工作，也能隨時掌握最新的資訊科技產業知識。如果你有創意、喜歡思考解決問題、渴望學習與挑戰，非常歡迎你加入我們，一起創造有趣又充滿創新的工作生活。</p>
       </div>
     </div>
   </section>
 
-  <section class="vd-sec" id="vd-join">
+  <section class="vd-sec" id="vd-join" aria-labelledby="vd-join-heading">
     <div class="wrap">
-      <div class="vd-head2"><span class="vd-kicker">WHY JOIN · TEAM</span><h2 class="vd-h2" data-en="Why Join MOOTECH">為什麼加入 MOOTECH</h2></div>
+      <div class="vd-head2"><span class="vd-kicker">WHY JOIN · TEAM</span><h2 class="vd-h2" data-en="Why Join MOOTECH" id="vd-join-heading">為什麼加入 MOOTECH</h2></div>
       <div class="vd-joingrid"><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG135_slender-team.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Together we go further">一起，我們可以走得更長更遠</h3><span class="en" data-en=" ">Team Collaboration</span></div><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG136_slender-ideas.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="We share knowledge openly">知識分享絕不藏私</h3><span class="en" data-en=" ">Brainstorming Ideas</span></div><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG137_slender-learning.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Always on the latest tech">嶄新技術在線掌握</h3><span class="en" data-en=" ">Learning New Technologies</span></div><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG138_slender-workspace.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="A bright, open workspace">明亮開放寬敞的辦公環境</h3><span class="en" data-en=" ">Conducive Environment</span></div><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG139_slender-coffee.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Good food, great company">美食當前，減肥都是明天的事</h3><span class="en" data-en=" ">Team Bonding</span></div><div class="vd-glass vd-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG140_slender-fitness.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Work hard, stay healthy">要打拼也要健康，跟著 Mootech 動吃動</h3><span class="en" data-en=" ">Promote A Healthy Lifestyle</span></div></div>
     </div>
   </section>
 
-  <section class="vd-sec" id="vd-welfare">
+  <section class="vd-sec" id="vd-welfare" aria-labelledby="vd-welfare-heading">
     <div class="wrap">
-      <div class="vd-head2"><span class="vd-kicker">WELFARE · BENEFITS</span><h2 class="vd-h2" data-en="Benefits of MOOTECH">員工福利</h2><p data-en="Everything you want to know about working here.">關於你想知道的，我們都準備好了。</p></div>
+      <div class="vd-head2"><span class="vd-kicker">WELFARE · BENEFITS</span><h2 class="vd-h2" data-en="Employee Benefits" id="vd-welfare-heading">員工福利</h2><p data-en="Everything you want to know about working here.">關於你想知道的，我們都準備好了。</p></div>
       <div class="vd-welfaregrid">
         <div class="vd-glass"><b class="vd-grad" data-en="Healthcare">健康第一大禮包</b><p data-en="Annual full health checks, supplement subsidies and comprehensive group insurance.">每年度全方位健檢、保健食品補助，以及保障多多的團體保險。</p></div>
         <div class="vd-glass"><b class="vd-grad" data-en="Better-than-statutory leave">優於勞基法的休假</b><p data-en="Annual leave above the labor-law minimum, plus 3 days of fully-paid sick leave.">特別休假日數優於勞基法，另有 3 天全薪病假，讓你安心休息。</p></div>
@@ -2456,9 +2697,9 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="vd-sec" id="vd-contact">
+  <section class="vd-sec" id="vd-contact" aria-labelledby="vd-contact-heading">
     <div class="wrap">
-      <div class="vd-head2"><span class="vd-kicker">CONTACT</span><h2 class="vd-h2">聯絡我們</h2><p>告訴我們您的需求，工程團隊會盡快回覆。</p></div>
+      <div class="vd-head2"><span class="vd-kicker">CONTACT</span><h2 class="vd-h2" id="vd-contact-heading">聯絡我們</h2><p>告訴我們您的需求，工程團隊會盡快回覆。</p></div>
       <div class="vd-contact">
         <form class="vd-glass vd-form" data-form>
           <label for="d-company">公司名稱（選填）<input id="d-company" name="company" type="text" autocomplete="organization"></label>
@@ -2489,7 +2730,7 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     <div class="wrap">
       <a class="brand" href="#ve-top" data-scroll><img src="assets/images/mootech_website_IMG003_brand_logo-h-white.png" alt="MOOTECH" width="189" height="41"></a>
       <nav class="ve-nav" aria-label="主選單">
-        <a href="#ve-services" data-scroll>服務</a><a href="#ve-layers" data-scroll>防線</a><a href="#ve-global" data-scroll>網路</a><a href="#ve-contact" data-scroll>聯絡我們</a>
+        <a href="#ve-top" data-scroll data-en="Home">首頁</a><a href="#ve-services" data-scroll data-en="Solutions">解決方案</a><a href="#ve-layers" data-scroll data-en="Network Defence">網路防線</a><a href="#ve-global" data-scroll data-en="Global Presence">全球據點</a><a href="#ve-about" data-scroll data-en="About">關於我們</a><a href="#ve-careers" data-scroll data-en="Careers">人才招募</a><a href="#ve-contact" data-scroll data-en="Contact">聯絡我們</a>
       </nav>
       <button class="ve-lang" type="button" aria-label="EN 切換為英文" data-lang-toggle>EN</button>
       <a class="ve-btn ve-head-cta" href="#ve-contact" data-scroll>預約諮詢</a>
@@ -2539,8 +2780,8 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="ve-band" aria-label="MOOTECH 概況">
-    <div class="wrap">
+  <section id="ve-summary" class="ve-band" aria-label="MOOTECH 概況" aria-labelledby="ve-summary-heading">
+    <div class="wrap"><h2 class="ve-band-title" data-en="MOOTECH at a Glance" id="ve-summary-heading">MOOTECH 概況</h2>
       <div><b>2016</b><span>成立</span></div>
       <div><b>CN · SEA</b><span>中國與東南亞優化線路</span></div>
       <div><b>4 IX</b><span>HKIX · MYIX · SGIX · JPIX 對等互聯</span></div>
@@ -2548,9 +2789,9 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="ve-sec" id="ve-services">
+  <section class="ve-sec" id="ve-services" aria-labelledby="ve-services-heading">
     <div class="wrap">
-      <div class="ve-head2"><span class="ve-kicker">SERVICES</span><h2 data-en="Five services. &lt;span class=&quot;serif&quot;&gt;One&lt;/span&gt; network.">五大服務，<span class="serif">一套</span>網路。</h2><p>直播串流、網路連線、線路類型、架構優化與系統整合，可以單獨導入，也能組合成完整的企業網路基礎。</p></div>
+      <div class="ve-head2"><span class="ve-kicker">SERVICES</span><h2 data-en="Solutions" id="ve-services-heading">解決方案</h2><p>直播串流、網路連線、線路類型、架構優化與系統整合，可以單獨導入，也能組合成完整的企業網路基礎。</p></div>
       <div class="ve-svc-track"><div class="ve-svc" data-etabs data-hint="往下滑動，依序瀏覽 5 項服務" data-hint-en="Keep scrolling to browse all 5 services">
         <div class="ve-svc-tabs" role="tablist" aria-label="服務項目"><button type="button" role="tab" id="vs-tab-live" aria-controls="vs-live" aria-selected="true" class="on"><small>01</small><span>直播串流</span></button><button type="button" role="tab" id="vs-tab-net" aria-controls="vs-net" aria-selected="false"><small>02</small><span>網路連線</span></button><button type="button" role="tab" id="vs-tab-lines" aria-controls="vs-lines" aria-selected="false"><small>03</small><span>線路類型</span></button><button type="button" role="tab" id="vs-tab-opt" aria-controls="vs-opt" aria-selected="false"><small>04</small><span>網路架構優化</span></button><button type="button" role="tab" id="vs-tab-si" aria-controls="vs-si" aria-selected="false"><small>05</small><span>系統整合</span></button><img class="ve-bear ve-bear-laptop" src="assets/images/mootech_website_IMG016_mascot_bear-tablet.webp" alt="" role="presentation" width="400" height="579" loading="lazy" decoding="async"></div>
         <div class="ve-svc-panels"><div class="ve-panel on" role="tabpanel" id="vs-live" aria-labelledby="vs-tab-live"><figure><div class="ill" data-ill="live" aria-hidden="true"></div></figure><h3>直播串流</h3><p class="ve-plead">隨心所欲地呈現您的內容。</p><dl class="ve-items"><div><dt>即時串流</dt><dd>畫面即時送達觀眾，活動、發表會與賽事都能同步呈現。</dd></div><div><dt>低延遲</dt><dd>縮短從拍攝到觀看的時間差，互動更即時。</dd></div><div><dt>不間斷與容錯</dt><dd>備援線路與容錯機制，讓直播服務不中斷。</dd></div></dl><a class="ve-plink" href="#ve-contact" data-scroll>諮詢此方案 →</a></div><div class="ve-panel" role="tabpanel" id="vs-net" aria-labelledby="vs-tab-net"><figure><div class="ill" data-ill="network" aria-hidden="true"></div></figure><h3>網路連線</h3><p class="ve-plead">從接取、專線到加速，一次到位。</p><dl class="ve-items"><div><dt>網際網路接取</dt><dd>使用低延遲線路或中國及東南亞區域優化線路，為客戶傳輸受歡迎的應用或內容。</dd></div><div><dt>IPLC 國際私人租用線路</dt><dd>為跨國企業提供國際點對點專線，在總部與全球各地分行之間提供專用、可靠、安全的連接。</dd></div><div><dt>CDN 服務</dt><dd>立即提升網站效能，改善載入時間與安全性、減少頻寬成本並強化內容備援。</dd></div></dl><a class="ve-plink" href="#ve-contact" data-scroll>諮詢此方案 →</a></div><div class="ve-panel" role="tabpanel" id="vs-lines" aria-labelledby="vs-tab-lines"><figure><div class="ill" data-ill="transit" aria-hidden="true"></div></figure><h3>線路類型</h3><p class="ve-plead">IP Transit、IPLC 與 Security 防護，依需求組合。</p><div class="ve-lines"><div class="ve-line"><h4>IP Transit</h4><ul><li>涵蓋率遍佈全球</li><li>支援 IPv6 與 IPv4</li><li>優良的國際流量線路規劃</li><li>與中國頂尖電信供應商合作</li><li>中國與東南亞區域專有的優化線路</li></ul></div><div class="ve-line"><h4>IPLC</h4><ul><li>安全性高的點對點資料傳輸</li><li>兼具高可用性與低延遲</li><li>與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯</li><li>網際網路交換中心對等互聯</li></ul></div><div class="ve-line"><h4>Security</h4><ul><li>服務安全性與可靠性</li><li>兼具靈活性與擴展性</li></ul></div></div><a class="ve-plink" href="#ve-contact" data-scroll>諮詢此方案 →</a></div><div class="ve-panel" role="tabpanel" id="vs-opt" aria-labelledby="vs-tab-opt"><figure><div class="ill" data-ill="optimise" aria-hidden="true"></div></figure><h3>網路架構優化</h3><p class="ve-plead">協助取得您的網路使用狀態、負荷量、限制和安全性漏洞，發掘更多優化的可能性。</p><dl class="ve-items"><div><dt>網路配置與品質優化</dt><dd>調整網路配置，提升連線品質。</dd></div><div><dt>網路架構設計</dt><dd>網路架構設計與拓樸圖審核。</dd></div><div><dt>庫存管理</dt><dd>設備庫存管理。</dd></div><div><dt>網路流量監控</dt><dd>網路流量表現分析。</dd></div><div><dt>網路優化</dt><dd>網路優化方案、網路漏洞測試與驗證。</dd></div></dl><a class="ve-plink" href="#ve-contact" data-scroll>諮詢此方案 →</a></div><div class="ve-panel" role="tabpanel" id="vs-si" aria-labelledby="vs-tab-si"><figure><div class="ill" data-ill="integrate" aria-hidden="true"></div></figure><h3>系統整合</h3><p class="ve-plead">從諮詢、部署到建置後支援，整合雲端與機房環境。</p><dl class="ve-items"><div><dt>諮詢服務</dt><dd>IT 系統整合諮詢服務。</dd></div><div><dt>部署與遷移</dt><dd>IT 解決方案的建置與資料遷移。</dd></div><div><dt>客製化需求</dt><dd>客製化測試情境、驗收條件與文件紀錄。</dd></div><div><dt>建置後支援</dt><dd>建置完成後的支援服務。</dd></div><div><dt>雲端與機房整合</dt><dd>整合雲端與在地系統。</dd></div><div><dt>代客操作服務</dt><dd>受過專業訓練的技術人員到場代客操作、安裝，並為您的機房設備排查問題，快速且可靠。</dd></div></dl><a class="ve-plink" href="#ve-contact" data-scroll>諮詢此方案 →</a></div></div>
@@ -2558,12 +2799,12 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="ve-sec" id="ve-layers">
+  <section class="ve-sec" id="ve-layers" aria-labelledby="ve-layers-heading">
     <div class="wrap">
       <img class="ve-bear ve-bear-guard" src="assets/images/mootech_website_IMG015_mascot_bear-shield.webp" alt="" aria-hidden="true" width="571" height="660" loading="lazy" decoding="async">
       <div class="ve-head2">
         <span class="ve-kicker">DEFENCE IN DEPTH</span>
-        <h2 data-en="One request, &lt;span class=&quot;serif&quot;&gt;four&lt;/span&gt; layers to reach the world.">一個請求，經過<span class="serif">四層</span>網路送達全球。</h2>
+        <h2 data-en="Network Defence" id="ve-layers-heading">網路防線</h2>
         <p>往下捲動，看流量如何一層一層通過 MOOTECH 的網路：從接取、全球線路、國際專線到維運，最後送達全球觀眾。</p>
       </div>
       <div class="ve-depth">
@@ -2618,9 +2859,9 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="ve-sec" id="ve-global">
+  <section class="ve-sec" id="ve-global" aria-labelledby="ve-global-heading">
     <div class="wrap">
-      <div class="ve-head2"><span class="ve-kicker">NETWORK</span><h2>立足新加坡與台灣，服務全球客戶。</h2><p>與亞太主要網際網路交換中心對等互聯，並提供中國與東南亞區域優化線路，讓連線穩定、不中斷。</p></div>
+      <div class="ve-head2"><span class="ve-kicker">NETWORK</span><h2 data-en="Global Presence" id="ve-global-heading">全球據點</h2><p class="global-intro" data-en="Based in Singapore and Taiwan, serving clients worldwide.">立足新加坡與台灣，服務全球客戶。</p><p>與亞太主要網際網路交換中心對等互聯，並提供中國與東南亞區域優化線路，讓連線穩定、不中斷。</p></div>
       <div class="ve-global">
         <div class="ve-mapbox"><div class="imap-box"><canvas class="imap" data-art="interconnect" role="img" aria-label="亞太互連示意圖：新加坡、台灣、香港、東京節點，與泰國、越南、馬來西亞、斯里蘭卡、印度、印尼、韓國、菲律賓之間的連線動畫"></canvas><span class="imap-cap">亞太互連示意圖 · 動畫示意，非即時數據</span><div class="imap-lgd"><span><i class="h"></i>MOOTECH 節點</span><span><i class="u"></i>主要訪客市場（示意）</span><span><i class="n"></i>正常流量</span><span><i class="b"></i>被攔截的可疑流量</span></div></div></div>
         <div class="ve-loc">
@@ -2632,23 +2873,94 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1p
     </div>
   </section>
 
-  <section class="ve-sec" id="ve-process">
+  <section class="ve-sec" id="ve-process" aria-labelledby="ve-process-heading">
     <div class="wrap">
-      <div class="ve-head2"><span class="ve-kicker">HOW WE WORK</span><h2 data-en="Build your &lt;span class=&quot;serif&quot;&gt;defence&lt;/span&gt;, starting with one conversation.">從一次諮詢開始，建立您的<span class="serif">防線</span>。</h2></div>
+      <div class="ve-head2"><span class="ve-kicker">HOW WE WORK</span><h2 data-en="How We Work" id="ve-process-heading">合作流程</h2></div>
       <ol class="ve-process"><li><span class="ve-lt"><b>01</b></span><h3>需求諮詢</h3><p>了解您的業務目標、現有系統與預算。</p></li><li><span class="ve-lt"><b>02</b></span><h3>架構設計</h3><p>規劃網路與系統架構，選出最適合的解決方案。</p></li><li><span class="ve-lt"><b>03</b></span><h3>部署導入</h3><p>實施核心解決方案，完成系統整合與測試。</p></li><li><span class="ve-lt"><b>04</b></span><h3>維運支援</h3><p>提供專業支援與優化，並依需求擴充加值功能。</p></li></ol>
     </div>
   </section>
 
-  <section class="pt pt-e" id="ve-partners">
+  <section class="pt pt-e" id="ve-partners" aria-labelledby="ve-partners-heading">
     <div class="wrap">
-      <div class="pt-head"><span class="pt-k">PARTNERS</span><h2>合作夥伴</h2><p>與亞太主要電信營運商、雲端與資安平台及網路設備品牌合作，為您提供穩定的線路與完整的服務。</p></div>
+      <div class="pt-head"><span class="pt-k">PARTNERS</span><h2 id="ve-partners-heading">合作夥伴</h2><p>與亞太主要電信營運商、雲端與資安平台及網路設備品牌合作，為您提供穩定的線路與完整的服務。</p></div>
       <div class="pt-marquee"><ul class="sr"><li>中華電信</li><li>電訊盈科 PCCW</li><li>EASPNet</li><li>SGGS</li><li>AWS</li><li>Cloudflare</li><li>Imperva</li><li>Juniper Networks</li><li>Cisco</li><li>Telstra</li></ul><div class="pt-row"><ul class="pt-logos pt-track" aria-hidden="true"><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG024_partners_08-telstra-mono.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG024_partners_08-telstra-mono.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG024_partners_08-telstra-mono.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG017_partners_01-chunghwa-telecom.svg" alt="中華電信" decoding="async"></li><li><img src="assets/images/mootech_website_IMG022_partners_06-pccw.svg" alt="電訊盈科 PCCW" decoding="async"></li><li class="pt-icon"><img src="assets/images/mootech_website_IMG024_partners_08-telstra-mono.svg" alt="" decoding="async"><span class="pt-name">Telstra</span></li><li><img src="assets/images/mootech_website_IMG021_partners_05-easpnet.svg" alt="EASPNet" decoding="async"></li><li><img src="assets/images/mootech_website_IMG023_partners_07-sggs-dark.svg" alt="SGGS" decoding="async"></li></ul></div><div class="pt-row pt-rev"><ul class="pt-logos pt-track" aria-hidden="true"><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li><li><img src="assets/images/mootech_website_IMG026_partners_09-aws.svg" alt="AWS" decoding="async"></li><li><img src="assets/images/mootech_website_IMG027_partners_10-cloudflare.svg" alt="Cloudflare" decoding="async"></li><li><img src="assets/images/mootech_website_IMG028_partners_11-imperva.svg" alt="Imperva" decoding="async"></li><li><img src="assets/images/mootech_website_IMG029_partners_12-juniper-networks.svg" alt="Juniper Networks" decoding="async"></li><li><img src="assets/images/mootech_website_IMG030_partners_13-cisco.svg" alt="Cisco" decoding="async"></li></ul></div></div>
     </div>
   </section>
 
-  <section class="ve-sec" id="ve-contact">
+  <section class="ve-sec hr-section" id="ve-about" aria-labelledby="ve-about-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">ABOUT US</span><h2 class="hr-h2" id="ve-about-heading">關於我們</h2></div>
+      <div class="hr-about">
+        <div class="hr-card hr-prose">
+          <p>MOOTECH 成立於 2016 年，據點位於新加坡與台灣，提供直播串流、網路連線、國際線路、網路架構優化與系統整合服務，為企業打造低延遲、不中斷的網路。</p>
+          <p>我們提供低延遲線路與中國、東南亞區域優化線路，並與 HKIX、MYIX、SGIX、Equinix JPIX 對等互聯，讓企業的關鍵服務穩定、安全地運作。</p>
+        </div>
+        <div class="hr-facts">
+          <div class="hr-card"><b class="hr-emphasis">2016</b><span>成立年份，深耕企業 IT 服務</span></div>
+          <div class="hr-card"><b class="hr-emphasis">5 大</b><span>解決方案：直播串流、網路連線、國際線路、架構優化、系統整合</span></div>
+          <div class="hr-card"><b class="hr-emphasis">新加坡 · 台灣</b><span>雙據點，服務全球客戶</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ve-sec hr-section hr-recruit" id="ve-careers" aria-labelledby="ve-careers-title">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">CAREERS</span><h2 class="hr-h2" id="ve-careers-title" data-en="Careers">人才招募</h2></div>
+      <div class="hr-banner">
+        <img class="hr-banner-image" src="assets/images/mootech_website_IMG143_careers-team-banner.webp?v=panorama2" alt="" width="1600" height="533" loading="lazy" decoding="async">
+        <div class="hr-banner-copy">
+          <h3 data-en="Give yourself an opportunity">給自己一個機會</h3>
+          <p data-en="Unlock your potential. Shape your future.">解鎖自己，成就未來</p>
+          <a class="hr-banner-cta" href="#ve-vision" data-scroll aria-label="認識 MOOTECH 願景" data-en="Let's Go">Let's Go</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ve-sec hr-section" id="ve-vision" aria-labelledby="ve-vision-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">HR VISION · INNOVATION</span><h2 class="hr-h2" data-en="MOOTECH HR Vision" id="ve-vision-heading">MOOTECH 願景</h2></div>
+      <div class="hr-vision">
+        <div class="hr-card hr-prose">
+          <p data-en="We create an innovative, flexible and inclusive experience in an MNC working environment, developing fullest potentials through learning, development and teamwork to strive for goals and achievement.">我們致力於創造一個創新、靈活和具有包容性的工作環境，鼓勵每個人發揮自己的才華和潛能，並透過團隊合作來實現共同目標。</p>
+        </div>
+        <div class="vp-scene vp-scene-lg"><picture><img src="assets/images/mootech_website_IMG134_slender-vision.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ve-sec hr-section" id="ve-team" aria-labelledby="ve-team-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">ABOUT US</span><h2 class="hr-h2" data-en="Team Culture" id="ve-team-heading">團隊文化</h2></div>
+      <div class="hr-card hr-prose">
+        <p data-en="We are a team of engineers who keep the company running, solving and maintaining IT infrastructure with creative, practical methods. At Mootech every day is full of challenges and brainstorming, and our constant theme is to learn, learn and learn again. Join us to work in an energetic, challenging environment while keeping up with the latest IT industry knowledge. If you are creative, love solving problems and crave learning and challenges, you are very welcome to join us and build a fun, innovative working life together.">我們是一群由 7 年級與 8 年級工程師組成的團隊，是公司的中流砥柱，主要用創新又實用的方法解決與維護 IT 基礎設施。在 Mootech，我們可以保證每一天都充滿挑戰和腦力激盪；團隊的主旋律就是學習、學習、再學習。加入我們，除了能在充滿活力與挑戰的環境裡工作，也能隨時掌握最新的資訊科技產業知識。如果你有創意、喜歡思考解決問題、渴望學習與挑戰，非常歡迎你加入我們，一起創造有趣又充滿創新的工作生活。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ve-sec hr-section" id="ve-join" aria-labelledby="ve-join-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">WHY JOIN · TEAM</span><h2 class="hr-h2" data-en="Why Join MOOTECH" id="ve-join-heading">為什麼加入 MOOTECH</h2></div>
+      <div class="hr-joingrid"><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG135_slender-team.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Together we go further">一起，我們可以走得更長更遠</h3><span class="en" data-en=" ">Team Collaboration</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG136_slender-ideas.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="We share knowledge openly">知識分享絕不藏私</h3><span class="en" data-en=" ">Brainstorming Ideas</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG137_slender-learning.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Always on the latest tech">嶄新技術在線掌握</h3><span class="en" data-en=" ">Learning New Technologies</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG138_slender-workspace.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="A bright, open workspace">明亮開放寬敞的辦公環境</h3><span class="en" data-en=" ">Conducive Environment</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG139_slender-coffee.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Good food, great company">美食當前，減肥都是明天的事</h3><span class="en" data-en=" ">Team Bonding</span></div><div class="hr-card hr-joincard"><div class="vp-scene"><picture><img src="assets/images/mootech_website_IMG140_slender-fitness.png?v=slender1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div><h3 data-en="Work hard, stay healthy">要打拼也要健康，跟著 Mootech 動吃動</h3><span class="en" data-en=" ">Promote A Healthy Lifestyle</span></div></div>
+    </div>
+  </section>
+
+  <section class="ve-sec hr-section" id="ve-welfare" aria-labelledby="ve-welfare-heading">
+    <div class="wrap">
+      <div class="hr-head"><span class="hr-kicker">WELFARE · BENEFITS</span><h2 class="hr-h2" data-en="Employee Benefits" id="ve-welfare-heading">員工福利</h2><p data-en="Everything you want to know about working here.">關於你想知道的，我們都準備好了。</p></div>
+      <div class="hr-welfaregrid">
+        <div class="hr-card"><b class="hr-emphasis" data-en="Healthcare">健康第一大禮包</b><p data-en="Annual full health checks, supplement subsidies and comprehensive group insurance.">每年度全方位健檢、保健食品補助，以及保障多多的團體保險。</p></div>
+        <div class="hr-card"><b class="hr-emphasis" data-en="Better-than-statutory leave">優於勞基法的休假</b><p data-en="Annual leave above the labor-law minimum, plus 3 days of fully-paid sick leave.">特別休假日數優於勞基法，另有 3 天全薪病假，讓你安心休息。</p></div>
+        <div class="hr-card"><b class="hr-emphasis" data-en="Upgrading & Training">進修補助</b><p data-en="The company invests in you — learn and grow with no financial burden.">公司幫你投資你自己，進修學習無負擔，持續精進專業能力。</p></div>
+        <div class="hr-card"><b class="hr-emphasis" data-en="Flexibility & team life">彈性與團隊生活</b><p data-en="Flexible hours, regular meals and tea breaks, team events and local / overseas trips.">彈性上下班、不定期聚餐與下午茶，還有團隊活動與國內外員工旅遊。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ve-sec" id="ve-contact" aria-labelledby="ve-contact-heading">
     <div class="wrap ve-contact">
-      <div class="ve-head2"><span class="ve-kicker">CONTACT</span><h2>聯絡我們</h2><p>告訴我們您的需求，工程團隊會盡快回覆。</p>
+      <div class="ve-head2"><span class="ve-kicker">CONTACT</span><h2 id="ve-contact-heading">聯絡我們</h2><p>告訴我們您的需求，工程團隊會盡快回覆。</p>
         <dl class="ve-info"><div><dt>電子郵件</dt><dd>contact@mootech.asia</dd></div><div><dt>地點</dt><dd>新加坡 · 台灣</dd></div><div><dt>人才招募</dt><dd><a data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener" data-en="View jobs">查看職缺</a></dd></div></dl>
         <img class="ve-bear ve-bear-wave" src="assets/images/mootech_website_IMG014_mascot_bear-heart.webp" alt="" aria-hidden="true" width="460" height="483" loading="lazy" decoding="async">
       </div>
