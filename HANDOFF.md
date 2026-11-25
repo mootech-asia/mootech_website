@@ -236,3 +236,4 @@ python3 tools/build-en.py
 - 使用者補充要求扁長型，故 Banner 桌機高 240–280px、手機高 240px；正式 IMG143 1600×450 WebP，SRCIMG025 原稿保留，製作規格 docs/art/careers-banner.md。人物球形頭無五官／耳鼻，漸層維持原角色；未更換既有願景與文化七圖。
 - D 桌機／手機選單新增「人才招募／Careers」，使用頁內平滑捲動連到 Banner 區，並保留 104 外連於 Banner 按鈕。窄桌機縮整導覽間距與字體，手機點選後收合選單。
 - 驗證：素材 check 通過174項、素材清單／指紋／英文與 D 中英入口生成、inline JS 語法及 diff check 通過。Chromium 根頁／英文／D 中英入口 × 390／1024／1440 共12組：全球標題、招募位於願景前、選單捲動落點避開頁首、手機選單收合、Banner 圖片載入、240–280px 高度、CTA／英文無障礙名稱、無水平溢出／pageerror 均通過；已目視核對人物無五官及實際 Banner 截圖。
+- 已發布：runtime `c053977`；[Pages run 45565833339](https://github.com/mootech-asia/mootech_website/actions/runs/45565833339) 與素材 CI 成功。正式 D 中英入口 × 手機／桌機四組確認人才招募選單定位、扁長 Banner 高度與圖片載入、全球據點標題；IMG143 線上指紋相符。另已將本輪追加規格附入交付給使用者的 Word Figma 任務文件。
