@@ -347,3 +347,4 @@ python3 tools/build-en.py
 - A–D招募Banner下方新增四職缺：Infrastructure Engineer（修正使用者英文拼字）基礎架構工程師、NOC/DevOps維運工程師、Software Developer軟體開發工程師、Technical Project Manager技術專案經理。桌機4欄、平板2欄、手機1欄；以查看招募資訊連既有104公司頁，未捏造個別職缺ID。中英同步，E不新增。
 - D Banner改高樓景觀，使用者再修正為白天，故定稿IMG175／SRCIMG056為日光藍天玻璃高樓合成示意，非實際辦公地址；保留1800×400滿版、原HTML文字及Let's Go。原稿2172×724取2172×483（0,120）去上下留白後等比縮放，主要高樓屋頂保留；夜景草稿未發布。其他版本Banner維持。
 - 驗證：素材237項、英文與D中英入口生成、JS語法／diff check通過。中英文×390／1440檢查A–D進度條寬度、手動重置／減少動作暫停及A／C地圖sprite數0；真實計時驗進度前進／懸停暫停／恢復及自動換頁重置。四職缺中英文×390／1024／1440×A–D共24組驗名稱、連結、Banner圖、位於Banner下方、排版無溢出／pageerror；E HTML與修改前逐字一致。目視D日景／職缺桌機與手機、B進度條及A乾淨地圖。
+- 已發布runtime `93070f1`，[Pages run45587356562](https://github.com/mootech-asia/mootech_website/actions/runs/45587356562)與素材CI成功。四正式入口HTTP200，D白天Banner指紋相符；正式中英文手機確認A–D四職缺／招募連結／Banner及E不變，中英文桌機確認進度條與A／C無sprite光暈，並驗實際計時進度暫停接續與換頁重置。Word Figma文件已同步本輪定稿。
