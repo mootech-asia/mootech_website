@@ -237,6 +237,8 @@
 | IMG173 | A–D願景輪播／dining使用者提供照片（runtime） | [assets/images/mootech_website_IMG173_culture-dining.webp](../assets/images/mootech_website_IMG173_culture-dining.webp) | 900×500；不透明 | 標準前綴編號 |
 | SRCIMG055 | A–D願景輪播／learning使用者提供照片（source） | [source/images/mootech_website_SRCIMG055_culture-learning.webp](../source/images/mootech_website_SRCIMG055_culture-learning.webp) | 900×506；不透明 | 標準前綴編號 |
 | IMG174 | A–D願景輪播／learning使用者提供照片（runtime） | [assets/images/mootech_website_IMG174_culture-learning.webp](../assets/images/mootech_website_IMG174_culture-learning.webp) | 900×506；不透明 | 標準前綴編號 |
+| SRCIMG056 | D招募Banner白天都會高樓景觀示意，非實際辦公地址（source） | [source/images/mootech_website_SRCIMG056_d-city-banner.png](../source/images/mootech_website_SRCIMG056_d-city-banner.png) | 2172×724；不透明 | 標準前綴編號 |
+| IMG175 | D招募Banner白天都會高樓景觀示意，非實際辦公地址（runtime） | [assets/images/mootech_website_IMG175_d-city-banner.webp](../assets/images/mootech_website_IMG175_d-city-banner.webp) | 1799×400；不透明 | 標準前綴編號 |
 
 ## 背景音樂
 

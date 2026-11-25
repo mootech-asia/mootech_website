@@ -4445,6 +4445,44 @@
       "references": [
         "index.html"
       ]
+    },
+    {
+      "id": "SRCIMG056",
+      "path": "source/images/mootech_website_SRCIMG056_d-city-banner.png",
+      "usage": "source",
+      "purpose": "D招募Banner白天都會高樓景觀示意，非實際辦公地址",
+      "category": "images",
+      "prefix": "mootech_website",
+      "format": "png",
+      "bytes": 1665313,
+      "sha256": "08434a64923f851e28a8af030bf80706f09589dcc54fb351799ab36ddfb85c44",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "frames": 1,
+      "transparency": "不透明",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "IMG175",
+      "path": "assets/images/mootech_website_IMG175_d-city-banner.webp",
+      "usage": "runtime",
+      "purpose": "D招募Banner白天都會高樓景觀示意，非實際辦公地址",
+      "category": "images",
+      "prefix": "mootech_website",
+      "format": "webp",
+      "bytes": 105784,
+      "sha256": "a201924596e3ba4c92d832419196061a21219ade046dfa77e2776df7b8e999da",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "frames": 1,
+      "transparency": "不透明",
+      "width": 1799,
+      "height": 400,
+      "source": "source/images/mootech_website_SRCIMG056_d-city-banner.png",
+      "references": [
+        "index.html"
+      ]
     }
   ],
   "delegates": [],
