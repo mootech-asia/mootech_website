@@ -275,3 +275,4 @@ python3 tools/build-en.py
 - 素材用途清單更新為跨版本共用；docs/art/careers-all-variants.md記錄區塊／主題規格，README同步。未新增或變動媒體檔案指紋。
 - 驗證：素材check175項、英文與D中英入口生成、inline JS語法、diff check及重複id檢查通過。Chromium中英文×390／1024／1440×A–E共30組：選單到招募、手機收合、Let's Go到同版願景且落點避開頁首、七張圖解碼、福利四卡、明確全球標題、職缺連結、無橫向溢出與pageerror均通過。另驗901px中英五版導覽不重疊、英文D專用入口切E後新圖路徑與熊北客服保留；目視核對A／B／C／E手機與桌機Banner。
 - 另已確認正式Pages站台恢復has_pages=true、根頁HTTP200，本輪可按既有流程發布；不再沿用前輪404阻塞結論。
+- 已發布：runtime `c23476f`；[Pages run45571032856](https://github.com/mootech-asia/mootech_website/actions/runs/45571032856) 與素材CI成功。正式根頁／英文／D中英入口皆HTTP200且含全五版招募區；正式中英文手機逐版操作選單→Banner→願景、核對文化六卡／福利標題與無pageerror共10組通過。Word Figma交接文件已追加全版本規格。
