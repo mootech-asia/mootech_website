@@ -394,7 +394,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .va-cta p { color: #d8e7f7; margin-top: 6px; font-size: 18px; }
 .va-cta .va-btn { background: #fff; color: var(--a-blue-deep); }
 .va-cta .va-btn:hover { background: #e8f1fb; }
-.va-global { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 48px; align-items: center; }
+.va-global { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 48px; align-items: stretch; }
 .va-global .map .dot { fill: #a9c4e8; }
 .va-global .map .pin-office { fill: #e23b3b; }
 .va-global .map .pin-dc { fill: var(--a-blue); }
@@ -402,8 +402,8 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .va-global .map .halo.pin-office { stroke: #e23b3b; }
 .va-global .map .halo.pin-dc { stroke: var(--a-blue); }
 .va-loc { display: grid; gap: 14px; }
-.va-loc li { list-style: none; display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; border: 1px solid var(--a-line); border-radius: 10px; }
-.va-loc ul { padding: 0; margin: 0; display: grid; gap: 12px; }
+.va-loc li { list-style: none; display: flex; gap: 14px; align-items: center; padding: 16px 18px; border: 1px solid var(--a-line); border-radius: 10px; }
+.va-loc ul { padding: 0; margin: 0; display: grid; grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .va-loc .mk { width: 12px; height: 12px; border-radius: 50%; margin-top: 7px; flex: none; }
 .va-loc b { display: block; }
 .va-loc span { color: var(--a-muted); font-size: 14.5px; }
@@ -428,6 +428,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
   .va-nav { display: none; }
   .va-head .wrap { justify-content: space-between; }
   .va-about, .va-global, .va-contact { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .va-loc ul { grid-template-rows: none; }
   .va-sol { grid-template-columns: minmax(0, 1fr); }
   .va-card.wide { grid-column: auto; }
   .va-info { border-left: 0; padding-left: 0; margin-top: 0; }
@@ -926,11 +927,11 @@ canvas.fill { contain: strict; }
 .vd-chip:nth-child(n+4) i { color: var(--d-g2); }
 .vd-chips .ico { width: 20px; height: 20px; }
 .vd-chip em { font-style: normal; font: 500 11.5px/1 var(--inter); letter-spacing: .04em; color: rgba(255,255,255,.72); white-space: nowrap; }
-.vd-top-btn { position: fixed; left: calc(24px + env(safe-area-inset-left, 0px)); bottom: calc(24px + env(safe-area-inset-bottom, 0px)); z-index: 40; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--d-g1), var(--d-g2)); color: #05070c; box-shadow: 0 10px 26px rgba(0,0,0,.5); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity .25s ease, transform .25s ease, box-shadow .2s ease, filter .2s ease; }
-.vd-top-btn.show { opacity: 1; visibility: visible; transform: none; }
-.vd-top-btn:hover { box-shadow: 0 14px 30px rgba(0,0,0,.6); filter: brightness(1.08); }
-.vd-top-btn svg { width: 22px; height: 22px; }
-@media (max-width: 640px) { .vd-top-btn { left: calc(16px + env(safe-area-inset-left, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); width: 42px; height: 42px; } }
+.site-top-btn { position: fixed; left: calc(24px + env(safe-area-inset-left, 0px)); bottom: calc(24px + env(safe-area-inset-bottom, 0px)); z-index: 40; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--d-g1), var(--d-g2)); color: #05070c; box-shadow: 0 10px 26px rgba(0,0,0,.5); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity .25s ease, transform .25s ease, box-shadow .2s ease, filter .2s ease; }
+.site-top-btn.show { opacity: 1; visibility: visible; transform: none; }
+.site-top-btn:hover { box-shadow: 0 14px 30px rgba(0,0,0,.6); filter: brightness(1.08); }
+.site-top-btn svg { width: 22px; height: 22px; }
+@media (max-width: 640px) { .site-top-btn { left: calc(16px + env(safe-area-inset-left, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); width: 42px; height: 42px; } }
 /* ===== 徵才文化區塊 + 原創向量人系列 ===== */
 .vd-vision { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); gap: 30px; align-items: center; }
 .vd-vision-text { padding: 28px 32px; }
@@ -1641,12 +1642,6 @@ html[lang="en"] .ve-h1 { font-weight: 600; font-size: clamp(38px, 4.4vw, 72px); 
   .ve-process li { padding: 18px 12px 0 0; } .ve-process p { display: none; } .ve-process h3 { font-size: 16px; }
   .ve-contact { gap: 24px; } .ve-info { display: none; }
 }
-/* 104 人力銀行徵才徽章（五個版型共用；白底 logo chip，於深／淺主題皆清晰） */
-.m104 { display: inline-flex; align-items: center; text-decoration: none; border: 0 !important; vertical-align: middle; transition: opacity .2s ease, transform .2s ease; }
-.m104 svg { display: block; width: 48px; height: 24px; filter: drop-shadow(0 1px 2px rgba(0,0,0,.18)); }
-.m104:hover { transform: translateY(-1px); }
-.m104:hover svg { filter: drop-shadow(0 2px 5px rgba(0,0,0,.28)); }
-.m104:focus-visible { outline: 2px solid #FF7800; outline-offset: 3px; border-radius: 7px; }
 
 /* Neutral support identity, shared across A–E and both languages. */
 .mtc-service-icon { position: absolute; inset: 0; display: grid; place-items: center; color: #b6d24b; background: linear-gradient(145deg, #19251c, #0d1513); }
@@ -1702,6 +1697,30 @@ body[data-v="e"] .mtc-video::after { display: block; }
 body:not([data-v="e"]) .mtc-sticker { display: none; }
 @media(max-width:720px) { body[data-v="e"] .mtc-video { flex-basis: 200px; } }
 form[data-form] input { min-height: 48px; }
+
+@media (min-width: 901px) {
+  .ve-global { align-items: stretch; }
+  .ve-global .ve-mapbox { position: relative; min-height: 320px; }
+  .ve-global .imap-box { position: absolute; inset: 0; height: 100%; }
+  .ve-global .imap { height: 100%; aspect-ratio: auto; }
+}
+/* Pinned C gallery: ordinary vertical scrolling reveals the full horizontal strip first. */
+#vc-field.field-scroll { content-visibility: visible; padding-block: 0; height: var(--field-height); }
+.vc-field-pin { position: sticky; top: var(--field-top, 80px); padding-block: 20px; background: var(--c-bg); }
+.field-scroll .vc-strip { margin-top: 24px; scroll-snap-type: none; overflow-y: hidden; }
+.field-scroll .vc-strip figure { flex-basis: var(--field-card, 360px); }
+.field-scroll .vc-strip .ill { aspect-ratio: auto; height: var(--field-art-height, 400px); }
+.vc-field-hint { margin-top: 16px; color: var(--c-muted); font: 600 12px/1.5 var(--latin-c); }
+body[data-v="a"] .site-top-btn { background: #0b6bcb; color: #fff; border-radius: 8px; box-shadow: 0 6px 20px #0b6bcb30; }
+body[data-v="b"] .site-top-btn { background: #0b1626; color: #3ad0e6; border: 1px solid #3ad0e6; border-radius: 6px; box-shadow: 0 0 18px #3ad0e622; }
+body[data-v="c"] .site-top-btn { background: #00a19a; color: #0e1116; border: 2px solid #0e1116; border-radius: 0; box-shadow: 4px 4px 0 #0e1116; }
+body[data-v="e"] .site-top-btn { background: #0d1119; color: #3ddc97; border: 1px solid #3ddc97; box-shadow: 0 0 20px #3ddc9726; }
+@media (max-width: 900px) {
+  .ve-info { display: block; }
+  .ve-info > div:not(:last-child) { display: none; }
+}
+.site-top-btn:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+
 </style>
 </head>
 <body data-v="a">
@@ -1717,9 +1736,7 @@ form[data-form] input { min-height: 48px; }
   <symbol id="i-pulse" viewBox="0 0 32 32"><path d="M3 17h6l3-8 5 15 4-11 2 4h6"/></symbol>
   <symbol id="i-bolt" viewBox="0 0 32 32"><path d="M18 3L6 18h9l-2 11 13-16h-9z"/></symbol>
   <symbol id="i-menu" viewBox="0 0 32 32"><path d="M5 9h22M5 16h22M5 23h22"/></symbol>
-  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M13.5 21v-7.5H16l.5-3h-3V8.6c0-.9.3-1.6 1.6-1.6h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4V10.5H8v3h2.5V21z"/></symbol>
   <symbol id="i-in" viewBox="0 0 24 24"><path d="M4.5 9h3.2v11H4.5zM6.1 3.8a1.9 1.9 0 110 3.8 1.9 1.9 0 010-3.8zM10 9h3.1v1.5h.1c.4-.8 1.5-1.7 3.1-1.7 3.3 0 3.9 2.2 3.9 5V20H17v-5.4c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V20H10z"/></symbol>
-  <symbol id="i-104" viewBox="0 0 48 24"><rect x=".6" y=".6" width="46.8" height="22.8" rx="5.2" fill="#fff" stroke="#E3E3E3" stroke-width="1"/><text x="24" y="17.4" text-anchor="middle" font-family="Arial,'Helvetica Neue',Helvetica,sans-serif" font-size="15" font-weight="800" letter-spacing=".6"><tspan fill="#555555">1</tspan><tspan fill="#FF7800">0</tspan><tspan fill="#555555">4</tspan></text></symbol>
 </svg>
 
 <!-- ======================= 版型 A 企業信賴 ======================= -->
@@ -1889,8 +1906,8 @@ form[data-form] input { min-height: 48px; }
       <aside class="va-info">
         <div><h3>電子郵件</h3><p>contact@mootech.asia</p></div>
         <div><h3>地點</h3><p>新加坡<br>台灣</p></div>
-        <div><h3>社群</h3><div class="va-social"><a href="https://www.facebook.com/" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a><a href="https://www.linkedin.com/" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a></div></div>
-        <div><h3>人才招募</h3><a class="m104" data-recruit href="https://www.104.com.tw/" target="_blank" rel="noopener" aria-label="104 人力銀行 人才招募"><svg><use href="#i-104"/></svg></a></div>
+        <div><h3>社群</h3><div class="va-social"><a href="https://www.linkedin.com/" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a></div></div>
+        <div><h3>人才招募</h3><a data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener" data-en="View jobs">查看職缺</a></div>
       </aside>
     </div>
   </section>
@@ -2090,8 +2107,8 @@ form[data-form] input { min-height: 48px; }
         <aside class="vb-info">
           <div><small>EMAIL</small><span>contact@mootech.asia</span></div>
           <div><small>LOCATIONS</small><span>新加坡 · 台灣</span></div>
-          <div><small>SOCIAL</small><span><a href="https://www.facebook.com/">Facebook</a> · <a href="https://www.linkedin.com/">LinkedIn</a></span></div>
-          <div><small>CAREERS</small><span><a class="m104" data-recruit href="https://www.104.com.tw/" target="_blank" rel="noopener" aria-label="104 人力銀行 人才招募"><svg><use href="#i-104"/></svg></a></span></div>
+          <div><small>SOCIAL</small><span><a href="https://www.linkedin.com/">LinkedIn</a></span></div>
+          <div><small>CAREERS</small><span><a data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener" data-en="View jobs">查看職缺</a></span></div>
         </aside>
       </div>
     </div>
@@ -2241,8 +2258,8 @@ form[data-form] input { min-height: 48px; }
         <div class="vc-info">
           <div><span class="vc-label">Email</span><p>contact@mootech.asia</p></div>
           <div><span class="vc-label">Locations</span><p>新加坡 · 台灣</p></div>
-          <div><span class="vc-label">Social</span><p><a href="https://www.facebook.com/">Facebook</a>　<a href="https://www.linkedin.com/">LinkedIn</a></p></div>
-          <div><span class="vc-label">Careers</span><p><a class="m104" data-recruit href="https://www.104.com.tw/" target="_blank" rel="noopener" aria-label="104 人力銀行 人才招募"><svg><use href="#i-104"/></svg></a></p></div>
+          <div><span class="vc-label">Social</span><p><a href="https://www.linkedin.com/">LinkedIn</a></p></div>
+          <div><span class="vc-label">Careers</span><p><a data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener" data-en="View jobs">查看職缺</a></p></div>
         </div>
       </div>
     </div>
@@ -2420,7 +2437,7 @@ form[data-form] input { min-height: 48px; }
           <div class="vd-glass"><span class="vd-kicker">電子郵件</span><p>contact@mootech.asia</p></div>
           <div class="vd-glass"><span class="vd-kicker">地點</span><p>新加坡 · 台灣</p></div>
           <div class="vd-glass"><span class="vd-kicker">社群</span><p><a href="https://www.linkedin.com/">LinkedIn</a></p></div>
-          <div class="vd-glass"><span class="vd-kicker">人才招募</span><p><a href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener" data-en="View jobs">查看職缺</a></p></div>
+          <div class="vd-glass"><span class="vd-kicker">人才招募</span><p><a data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener" data-en="View jobs">查看職缺</a></p></div>
         </aside>
       </div>
     </div>
@@ -2429,7 +2446,6 @@ form[data-form] input { min-height: 48px; }
   <footer class="vd-foot">
     <div class="wrap"><span class="brand"><img src="assets/images/mootech_website_IMG003_brand_logo-h-white.png" alt="MOOTECH" width="189" height="41" loading="lazy"></span><span class="foot-legal"><span>Mootech 私人有限公司</span><span>© 2026 版權所有</span></span></div>
   </footer>
-  <a class="vd-top-btn" href="#vd-top" data-scroll aria-label="回到頂端" data-top-btn><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6M6 12l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
 
 <!-- ======================= 版型 E 縱深 ======================= -->
@@ -2598,7 +2614,7 @@ form[data-form] input { min-height: 48px; }
   <section class="ve-sec" id="ve-contact">
     <div class="wrap ve-contact">
       <div class="ve-head2"><span class="ve-kicker">CONTACT</span><h2>聯絡我們</h2><p>告訴我們您的需求，工程團隊會盡快回覆。</p>
-        <dl class="ve-info"><div><dt>電子郵件</dt><dd>contact@mootech.asia</dd></div><div><dt>地點</dt><dd>新加坡 · 台灣</dd></div><div><dt>人才招募</dt><dd><a class="m104" data-recruit href="https://www.104.com.tw/" target="_blank" rel="noopener" aria-label="104 人力銀行 人才招募"><svg><use href="#i-104"/></svg></a></dd></div></dl>
+        <dl class="ve-info"><div><dt>電子郵件</dt><dd>contact@mootech.asia</dd></div><div><dt>地點</dt><dd>新加坡 · 台灣</dd></div><div><dt>人才招募</dt><dd><a data-recruit href="https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac" target="_blank" rel="noopener" data-en="View jobs">查看職缺</a></dd></div></dl>
         <img class="ve-bear ve-bear-wave" src="assets/images/mootech_website_IMG014_mascot_bear-heart.webp" alt="" aria-hidden="true" width="460" height="483" loading="lazy" decoding="async">
       </div>
       <form class="ve-form" data-form>
@@ -2631,8 +2647,8 @@ form[data-form] input { min-height: 48px; }
 
 <script>
 (function () {
-  /* 招聘連結：改這一行即可套用到全部五個版型的 104 徵才徽章；請換成 MOOTECH 實際的 104 公司／徵才頁網址（留空則保留 href 預設值 104 首頁） */
-  var RECRUIT_URL = "https://www.104.com.tw/";
+  /* All variants share the MOOTECH company careers destination. */
+  var RECRUIT_URL = "https://www.104.com.tw/company/1a2x6bjqez?jobsource=index_s_ac";
   document.querySelectorAll("a[data-recruit]").forEach(function (a) { if (RECRUIT_URL) a.href = RECRUIT_URL; });
 
   var NOTES = {
@@ -2983,7 +2999,7 @@ form[data-form] input { min-height: 48px; }
         up.forEach(function (q, i) {
           ctx.strokeStyle = C.user; ctx.fillStyle = C.bg; ctx.lineWidth = 2 * dpr;
           ctx.beginPath(); ctx.arc(q[0], q[1], 3.6 * dpr, 0, 6.283); ctx.fill(); ctx.stroke();
-          if (UM[i][0]) { ctx.font = "500 " + fs + 'px "Noto Sans TC", system-ui, sans-serif'; ctx.fillStyle = C.tx2; ctx.fillText(nm(UM[i][0]), q[0], q[1] - 9 * dpr); }
+          if (UM[i][0] && !(cv.closest(".ve-global") && h / dpr < 380)) { ctx.font = "500 " + fs + 'px "Noto Sans TC", system-ui, sans-serif'; ctx.fillStyle = C.tx2; ctx.fillText(nm(UM[i][0]), q[0], q[1] - 9 * dpr); }
         });
         hp.forEach(function (q, i) {
           var ph = ((now || 0) / 1000 + i * .5) % 2 / 2;
@@ -4079,12 +4095,15 @@ form[data-form] input { min-height: 48px; }
   syncMascot();
 })();
 </script>
+  <a class="site-top-btn" href="#vd-top" data-scroll aria-label="回到頂端" data-top-btn><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6M6 12l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 <script>
 (function () {
   var button = document.querySelector('[data-top-btn]'), chat = document.getElementById('mt-chat');
   if (!button || !chat) return;
   function position() {
     button.classList.toggle('show', window.scrollY > 480);
+    button.setAttribute('href', '#v' + (document.body.dataset.v || 'd') + '-top');
+    button.setAttribute('aria-label', document.documentElement.lang === 'en' ? 'Back to top' : '回到頂端');
     button.style.left = ''; button.style.right = ''; button.style.bottom = '';
     // Prefer the opposite corner, then lift above a full-width support panel.
     var target = chat.classList.contains('open') ? document.getElementById('mtc-panel') : chat;
@@ -4105,8 +4124,58 @@ form[data-form] input { min-height: 48px; }
   sizeObserver.observe(chat); sizeObserver.observe(document.getElementById('mtc-panel'));
   document.getElementById('mtc-panel').addEventListener('transitionend', position);
   document.getElementById('mtc-panel').addEventListener('animationend', position);
+  new MutationObserver(position).observe(document.body, { attributes: true, attributeFilter: ['data-v'] });
+  new MutationObserver(position).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   position();
 })();
 </script>
+<script>
+(function () {
+  var section = document.getElementById('vc-field'), strip = section.querySelector('.vc-strip');
+  var pin = document.createElement('div'); pin.className = 'vc-field-pin';
+  while (section.firstChild) pin.appendChild(section.firstChild);
+  section.appendChild(pin);
+  var hint = document.createElement('p'); hint.className = 'wrap vc-field-hint';
+  hint.textContent = document.documentElement.lang === 'en' ? 'Scroll to explore all 5 scenes, then continue down.' : '往下捲動，依序看完 5 個場景後繼續瀏覽。';
+  pin.appendChild(hint);
+  var max = 0, top = 0, tick = false, syncing = false;
+  function active() { return document.body.dataset.v === 'c'; }
+  function layout() {
+    if (!active()) return;
+    section.classList.add('field-scroll');
+    top = document.querySelector('#vc header').offsetHeight + 12;
+    section.style.setProperty('--field-top', top + 'px');
+    var intro = pin.querySelector('.vc-grid').offsetHeight;
+    var width = Math.min(420, innerWidth * .78);
+    section.style.setProperty('--field-card', width + 'px');
+    var artHeight = Math.max(100, Math.min(width * 1.25, innerHeight - top - intro - 200));
+    section.style.setProperty('--field-art-height', artHeight + 'px');
+    var overflow = pin.offsetHeight + top + 24 - innerHeight;
+    if (overflow > 0) section.style.setProperty('--field-art-height', Math.max(80, artHeight - overflow) + 'px');
+    max = Math.max(0, strip.scrollWidth - strip.clientWidth);
+    section.style.setProperty('--field-height', (pin.offsetHeight + max + 48) + 'px');
+    update();
+  }
+  function update() {
+    tick = false; if (!active()) return;
+    var passed = top - section.getBoundingClientRect().top;
+    var x = Math.max(0, Math.min(max, passed));
+    if (Math.abs(strip.scrollLeft - x) > 1) { syncing = true; strip.scrollLeft = x; requestAnimationFrame(function () { syncing = false; }); }
+  }
+  function schedule() { if (!tick) { tick = true; requestAnimationFrame(update); } }
+  strip.addEventListener('scroll', function () {
+    if (syncing || !active()) return;
+    var r = section.getBoundingClientRect();
+    if (r.top <= top + 1 && r.bottom > pin.offsetHeight + top - 1) window.scrollTo({ top: scrollY + r.top - top + strip.scrollLeft, behavior: 'instant' });
+  }, { passive: true });
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', layout);
+  window.addEventListener('load', layout);
+  new MutationObserver(function () { requestAnimationFrame(layout); }).observe(document.body, { attributes: true, attributeFilter: ['data-v'] });
+  if (document.fonts) document.fonts.ready.then(layout);
+  requestAnimationFrame(layout);
+})();
+</script>
+
 </body>
 </html>
