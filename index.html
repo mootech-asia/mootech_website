@@ -505,7 +505,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .vb-cta h2 { font-weight: 900; font-size: clamp(36px, 6vw, 68px); line-height: 1.1; }
 .vb-cta p { color: var(--b-muted); font-size: 18px; }
 .vb-cta::before { content: ""; position: absolute; width: 720px; height: 720px; right: -200px; top: -260px; border-radius: 50%; background: radial-gradient(circle, rgba(59,130,246,.28), transparent 65%); }
-.vb-global { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 32px; align-items: center; }
+.vb-global { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 32px; align-items: stretch; }
 .vb-mapbox { border: 1px solid var(--b-line); border-radius: 6px; background: var(--b-panel); padding: 20px; }
 .vb-global .map .dot { fill: #2b4466; }
 .vb-global .map .arc { fill: none; stroke: var(--b-cyan); stroke-width: .3; stroke-dasharray: 1.2 1; opacity: .8; animation: vbDash 1.6s ease-in-out infinite alternate; }
@@ -517,7 +517,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .vb-global .map .halo.pin-office { stroke: var(--b-cyan); }
 .vb-global .map .halo.pin-dc { stroke: var(--b-ok); }
 .vb-global .map text { fill: var(--b-ink); font: 2.2px var(--mono); }
-.vb-nodes { display: grid; gap: 10px; font-family: var(--mono); font-size: 13.5px; }
+.vb-nodes { display: grid; grid-template-rows: repeat(6, minmax(0, 1fr)); gap: 10px; font-family: var(--mono); font-size: 13.5px; }
 .vb-nodes div { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 12px; align-items: center; border: 1px solid var(--b-line); border-radius: 6px; padding: 14px 16px; background: var(--b-panel); }
 .vb-nodes i { width: 10px; height: 10px; border-radius: 2px; }
 .vb-nodes small { color: var(--b-muted); }
@@ -541,6 +541,7 @@ canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: 
   .vb-nav, .vb-status { display: none; }
   .vb-head .wrap { justify-content: space-between; }
   .vb-about, .vb-global, .vb-contact { grid-template-columns: minmax(0, 1fr); }
+  .vb-nodes { grid-template-rows: none; }
   .vb-bento { grid-template-columns: minmax(0, 1fr); }
   .vb-cell, .vb-cell.big, .vb-cell.half { grid-column: auto; grid-row: auto; }
   .vb-cell.big { min-height: 320px; }
