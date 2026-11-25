@@ -80,6 +80,11 @@
  .vc .vd-careers-copy h3, .vc .vd-careers-copy p { color: var(--c-ink); text-shadow: none; }
 }
 
+/* E vision: obsidian panels, cyan detail and soft rounded edges. */
+.ve .vision-carousel { --hr-accent: var(--e-safe); --hr-card: var(--e-panel); --hr-line: var(--e-line); --hr-ink: var(--e-ink); --hr-muted: var(--e-muted); --hr-radius: 18px; }
+.ve .vision-copy h3 { font-family: var(--e-display); letter-spacing: -.02em; }
+.ve .vision-progress { border-radius: 0 0 18px 18px; }
+
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1945,7 +1950,7 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #29b6e8; border: 1p
 @media (max-width:700px) { .v .service-grid,.service-full-grid { grid-template-columns: 1fr; } .v .service-card-art,.v .service-card-art > .ill { height: 170px; flex-basis: 170px; } }
 
 
-/* A–D vision: three real-photo topics with synchronised text. E stays unchanged. */
+/* Shared vision content; each variant supplies its own visual tokens. */
 .vd .vision-carousel { --hr-accent: var(--d-g1); --hr-ink: var(--d-ink); --hr-muted: rgba(255,255,255,.65); --hr-line: var(--d-line); --hr-card: var(--d-glass); --hr-radius: 16px; }
 .vision-slide { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.2fr); border: 1px solid var(--hr-line); border-radius: var(--hr-radius); overflow: hidden; background: var(--hr-card); color: var(--hr-ink); }
 .vision-slide[hidden] { display: none; }
@@ -3057,16 +3062,15 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
   </section>
 
   <section class="ve-sec hr-section" id="ve-vision" aria-labelledby="ve-vision-heading">
-    <div class="wrap">
-      <div class="hr-head"><span class="hr-kicker">HR VISION · INNOVATION</span><h2 class="hr-h2" data-en="MOOTECH HR Vision" id="ve-vision-heading">MOOTECH 願景</h2></div>
-      <div class="hr-vision">
-        <div class="hr-card hr-prose">
-          <p data-en="We create an innovative, flexible and inclusive experience in an MNC working environment, developing fullest potentials through learning, development and teamwork to strive for goals and achievement.">我們致力於創造一個創新、靈活和具有包容性的工作環境，鼓勵每個人發揮自己的才華和潛能，並透過團隊合作來實現共同目標。</p>
-        </div>
-        <div class="vp-scene vp-scene-lg"><picture><img src="assets/images/mootech_website_IMG151_e-vision.png?v=ae1" alt="" width="640" height="640" loading="lazy" decoding="async"></picture></div>
-      </div>
-    </div>
-  </section>
+<div class="wrap"><div class="hr-head"><span class="hr-kicker">HR VISION · INNOVATION</span><h2 class="hr-h2" data-en="MOOTECH HR Vision" id="ve-vision-heading">MOOTECH 願景</h2></div><div class="vision-carousel" data-vision-carousel role="region" aria-roledescription="carousel" aria-label="團隊生活照片輪播"><div class="vision-slides"><div class="vision-slide" data-vision-slide role="group" aria-label="1 / 3" >
+<div class="vision-copy"><h3 data-en="A bright, open workspace">明亮的辦公空間</h3><p data-en="A bright, open space for focused work and easy everyday conversations.">在明亮、開放的空間裡，保有專注工作的節奏，也讓彼此的交流更自然。</p></div>
+<figure class="vision-photo"><img src="assets/images/mootech_website_IMG179_culture-office.png?v=lossless1" alt="明亮開放的辦公空間、綠色座椅與植栽" width="2282" height="1514" loading="lazy" decoding="async"></figure></div><div class="vision-slide" data-vision-slide role="group" aria-label="2 / 3" hidden>
+<div class="vision-copy"><h3 data-en="Work hard, share good food">大家工作努力辛苦之餘，也是要吃吃喝喝</h3><p data-en="Make time for a good meal together. Team gatherings and everyday conversations help us connect and recharge.">認真工作的日子，也要留點時間一起好好吃飯。透過聚餐與日常交流，分享生活，補充能量。</p></div>
+<figure class="vision-photo"><img src="assets/images/mootech_website_IMG177_culture-dining.jpg?v=jpeg1" alt="團隊一起聚餐分享美食" width="900" height="500" loading="lazy" decoding="async"></figure></div><div class="vision-slide" data-vision-slide role="group" aria-label="3 / 3" hidden>
+<div class="vision-copy"><h3 data-en="Share knowledge, grow together">知識分享與共同成長</h3><p data-en="Exchange ideas and experience, solve problems together, and turn every conversation into shared growth.">把經驗與想法拿出來交流，一起討論、解決問題，讓每一次分享都成為共同成長的養分。</p></div>
+<figure class="vision-photo"><img src="assets/images/mootech_website_IMG178_culture-learning.jpg?v=jpeg1" alt="團隊共同討論網路架構與分享知識" width="900" height="506" loading="lazy" decoding="async"></figure></div></div>
+<div class="vision-progress" aria-hidden="true"><span></span></div>
+</div></div></section>
 
   <section class="ve-sec hr-section" id="ve-team" aria-labelledby="ve-team-heading">
     <div class="wrap">
