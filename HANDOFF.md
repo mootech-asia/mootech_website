@@ -244,3 +244,4 @@ python3 tools/build-en.py
 - IMG143 更新為1600×533 WebP，由2172×724原稿僅等比縮放，未裁切邊界；桌機容器仍240–280px，以 object-fit:contain 完整顯示，兩側留深色空間。手機完整全景圖在上、文字按鈕在下，避免為滿版而裁掉人物。圖片引用加 panorama2 查詢避免舊快取。
 - 全球標題、人才招募選單定位及既有 Banner 文案／104 職缺連結保留。
 - 驗證：素材 check175項、英文與D中英入口生成、diff check通過。Chromium 中英文 ×390／768／1024／1440八組確認圖片載入、contain／手機原始長寬比、桌機高度不超過280px、無溢出與pageerror；另固定實際截圖位置後目視核對手機與桌機全景，四位人物完整可見無截斷。
+- 已發布：runtime `a4ca8d0`；[Pages run45566515062](https://github.com/mootech-asia/mootech_website/actions/runs/45566515062) 與素材CI成功。正式D中英入口×手機／桌機四組確認panorama2新圖與contain完整顯示；IMG143線上指紋吻合。Word交接文件已補上全景定稿覆蓋舊cover／裁切規格。
