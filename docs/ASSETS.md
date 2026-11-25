@@ -239,9 +239,11 @@
 | IMG174 | A–D願景輪播／learning使用者提供照片（runtime） | [assets/images/mootech_website_IMG174_culture-learning.webp](../assets/images/mootech_website_IMG174_culture-learning.webp) | 900×506；不透明 | 標準前綴編號 |
 | SRCIMG056 | D招募Banner白天都會高樓景觀示意，非實際辦公地址（source） | [source/images/mootech_website_SRCIMG056_d-city-banner.png](../source/images/mootech_website_SRCIMG056_d-city-banner.png) | 2172×724；不透明 | 標準前綴編號 |
 | IMG175 | A–D共用招募Banner白天都會高樓景觀示意，非實際辦公地址（runtime） | [assets/images/mootech_website_IMG175_d-city-banner.webp](../assets/images/mootech_website_IMG175_d-city-banner.webp) | 1799×400；不透明 | 標準前綴編號 |
-| IMG176 | A–D輪播照片JPG最高品質／office（辦公室待新TIF可讀後替換）（runtime） | [assets/images/mootech_website_IMG176_culture-office.jpg](../assets/images/mootech_website_IMG176_culture-office.jpg) | 900×506；不透明 | 標準前綴編號 |
+| IMG176 | 舊辦公室照片JPG歷史交付；現由IMG179使用者正式照片取代（runtime） | [assets/images/mootech_website_IMG176_culture-office.jpg](../assets/images/mootech_website_IMG176_culture-office.jpg) | 900×506；不透明 | 標準前綴編號 |
 | IMG177 | A–D輪播照片JPG最高品質／dining（runtime） | [assets/images/mootech_website_IMG177_culture-dining.jpg](../assets/images/mootech_website_IMG177_culture-dining.jpg) | 900×500；不透明 | 標準前綴編號 |
 | IMG178 | A–D輪播照片JPG最高品質／learning（runtime） | [assets/images/mootech_website_IMG178_culture-learning.jpg](../assets/images/mootech_website_IMG178_culture-learning.jpg) | 900×506；不透明 | 標準前綴編號 |
+| SRCIMG057 | 使用者ZIP提供的正式辦公室原始PNG，2282×1514，原檔保留（source） | [source/images/mootech_website_SRCIMG057_culture-office.png](../source/images/mootech_website_SRCIMG057_culture-office.png) | 2282×1514；不透明 | 標準前綴編號 |
+| IMG179 | A–D辦公空間輪播正式照片，無損PNG、原尺寸、不調色不重繪（runtime） | [assets/images/mootech_website_IMG179_culture-office.png](../assets/images/mootech_website_IMG179_culture-office.png) | 2282×1514；不透明 | 標準前綴編號 |
 
 ## 背景音樂
 

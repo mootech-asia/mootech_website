@@ -4488,7 +4488,7 @@
       "id": "IMG176",
       "path": "assets/images/mootech_website_IMG176_culture-office.jpg",
       "usage": "runtime",
-      "purpose": "A–D輪播照片JPG最高品質／office（辦公室待新TIF可讀後替換）",
+      "purpose": "舊辦公室照片JPG歷史交付；現由IMG179使用者正式照片取代",
       "category": "images",
       "prefix": "mootech_website",
       "format": "jpg",
@@ -4501,9 +4501,7 @@
       "frames": 1,
       "transparency": "不透明",
       "source": "source/images/mootech_website_SRCIMG053_culture-office.webp",
-      "references": [
-        "index.html"
-      ]
+      "references": []
     },
     {
       "id": "IMG177",
@@ -4546,6 +4544,47 @@
       "references": [
         "index.html"
       ]
+    },
+    {
+      "id": "SRCIMG057",
+      "path": "source/images/mootech_website_SRCIMG057_culture-office.png",
+      "usage": "source",
+      "purpose": "使用者ZIP提供的正式辦公室原始PNG，2282×1514，原檔保留",
+      "category": "images",
+      "prefix": "mootech_website",
+      "format": "png",
+      "bytes": 5359348,
+      "sha256": "c60160654efca305e1701b5c29f9eaefb92da27c33c431a04b0bf3853e9d4d96",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "width": 2282,
+      "height": 1514,
+      "frames": 1,
+      "transparency": "不透明",
+      "references": [
+        "assets/images/mootech_website_IMG179_culture-office.png"
+      ]
+    },
+    {
+      "id": "IMG179",
+      "path": "assets/images/mootech_website_IMG179_culture-office.png",
+      "usage": "runtime",
+      "purpose": "A–D辦公空間輪播正式照片，無損PNG、原尺寸、不調色不重繪",
+      "category": "images",
+      "prefix": "mootech_website",
+      "format": "png",
+      "bytes": 4096409,
+      "sha256": "024bcbbf9be9cc9fb3ba3089a6fa8998a6f332d2b604078cc500373fbf023cb2",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "width": 2282,
+      "height": 1514,
+      "frames": 1,
+      "transparency": "不透明",
+      "references": [
+        "index.html"
+      ],
+      "source": "source/images/mootech_website_SRCIMG057_culture-office.png"
     }
   ],
   "delegates": [],
