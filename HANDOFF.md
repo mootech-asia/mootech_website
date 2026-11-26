@@ -470,3 +470,9 @@ python3 tools/build-en.py
 - 已知既有問題（非拆分造成）：A～C 選單點「人才招募」停在 header 下 20～38px，英文手機點「關於我們」偏差 -5～-18px；合併頁實測數值完全相同。
 - 發布狀態：未推送、未部署。deploy-pages 只監聽 main 與預設分支，這個分支推送後不會部署。合併後資料夾網址為 `…/mootech_website/design-x/`，合併後需實際驗證。
 - 下一步：使用者決定是否推送或開 PR、是否要讓資料夾單獨部署成根網域（資料夾內的 robots.txt 才會生效），以及是否保留根目錄合併頁。之後改文案時，要同步根目錄與對應資料夾，或修改 index.html 後重新拆分（加 `--force` 會覆蓋資料夾內的修改）。
+
+### 2026-11-26：LinkedIn 連結換成公司頁
+
+- 依使用者指示，把 A～D 聯絡區的 LinkedIn 連結從 `https://www.linkedin.com/` 首頁暫時連結換成 `https://sg.linkedin.com/company/MOOTECH-private-limited`。E 原本就沒有 LinkedIn，未新增。改的是根目錄 index.html；`design-a`～`design-d` 是重跑 `tools/split-designs.py --force` 同步的，只差這 4 行。英文頁沿用同一連結。
+- 分支：`claude/split-designs-v2`，未推送。主線（正式站）還是舊連結。
+- 驗證：素材檢查、英文頁產生、`git diff --check` 都通過，`git grep` 確認沒有殘留的舊連結。LinkedIn 擋自動化請求（HTTP 403），沒能用程式確認公司頁存在，要由使用者用瀏覽器確認。
