@@ -336,14 +336,14 @@
     },
     {
       "id": "IMG135",
-      "path": "assets/images/mootech_website_IMG135_slender-team.png",
+      "path": "assets/images/mootech_website_IMG135_slender-team.webp",
       "usage": "runtime",
-      "purpose": "新版修長中性偏男性形象人／teamA–E 人才招募共用靜態情境圖",
+      "purpose": "新版修長中性偏男性形象人／teamA–E 人才招募共用靜態情境圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）",
       "category": "images",
       "prefix": "mootech_website",
-      "format": "png",
-      "bytes": 223791,
-      "sha256": "5251ff04f708b5e8b5dc176299fa3221be8f000ad9c26fa3c788292636a0aecc",
+      "format": "webp",
+      "bytes": 61274,
+      "sha256": "7af14d6075226b8c6ac08957d73f5be16f5526ac01952e4fec4e42bb6fde7567",
       "status": "delivered",
       "pathPolicy": "standard",
       "width": 640,
@@ -355,18 +355,18 @@
       "references": [
         "index.html"
       ],
-      "copiedFrom": "assets/images/mootech_website_IMG135_slender-team.png"
+      "copiedFrom": "assets/images/mootech_website_IMG135_slender-team.webp"
     },
     {
       "id": "IMG136",
-      "path": "assets/images/mootech_website_IMG136_slender-ideas.png",
+      "path": "assets/images/mootech_website_IMG136_slender-ideas.webp",
       "usage": "runtime",
-      "purpose": "新版修長中性偏男性形象人／ideasA–E 人才招募共用靜態情境圖",
+      "purpose": "新版修長中性偏男性形象人／ideasA–E 人才招募共用靜態情境圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）",
       "category": "images",
       "prefix": "mootech_website",
-      "format": "png",
-      "bytes": 226569,
-      "sha256": "59c2e9b435fd53d552e4b22a362d07b01e5ae1063edd77d6cfd1c2c21f94f734",
+      "format": "webp",
+      "bytes": 51634,
+      "sha256": "dbd0f778264153864f1d63bd3b670c975287dbde01373878899c5fa94b6edaad",
       "status": "delivered",
       "pathPolicy": "standard",
       "width": 640,
@@ -378,18 +378,18 @@
       "references": [
         "index.html"
       ],
-      "copiedFrom": "assets/images/mootech_website_IMG136_slender-ideas.png"
+      "copiedFrom": "assets/images/mootech_website_IMG136_slender-ideas.webp"
     },
     {
       "id": "IMG137",
-      "path": "assets/images/mootech_website_IMG137_slender-learning.png",
+      "path": "assets/images/mootech_website_IMG137_slender-learning.webp",
       "usage": "runtime",
-      "purpose": "新版修長中性偏男性形象人／learningA–E 人才招募共用靜態情境圖",
+      "purpose": "新版修長中性偏男性形象人／learningA–E 人才招募共用靜態情境圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）",
       "category": "images",
       "prefix": "mootech_website",
-      "format": "png",
-      "bytes": 174456,
-      "sha256": "c2196be2bea2fbf4083fbf3d4db40b746068904977cad5c3ca4d1aa6c72ece7a",
+      "format": "webp",
+      "bytes": 42998,
+      "sha256": "5e54cbed6e29e49615c1724c1f08c52a2fe658d45eab68edeea776255633994f",
       "status": "delivered",
       "pathPolicy": "standard",
       "width": 640,
@@ -401,18 +401,18 @@
       "references": [
         "index.html"
       ],
-      "copiedFrom": "assets/images/mootech_website_IMG137_slender-learning.png"
+      "copiedFrom": "assets/images/mootech_website_IMG137_slender-learning.webp"
     },
     {
       "id": "IMG138",
-      "path": "assets/images/mootech_website_IMG138_slender-workspace.png",
+      "path": "assets/images/mootech_website_IMG138_slender-workspace.webp",
       "usage": "runtime",
-      "purpose": "新版修長中性偏男性形象人／workspaceA–E 人才招募共用靜態情境圖",
+      "purpose": "新版修長中性偏男性形象人／workspaceA–E 人才招募共用靜態情境圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）",
       "category": "images",
       "prefix": "mootech_website",
-      "format": "png",
-      "bytes": 262959,
-      "sha256": "1e441493743db45641d03f3e480cc60d41f1dc6729670fc1688cf60d32160921",
+      "format": "webp",
+      "bytes": 62736,
+      "sha256": "0507b271fc3c67cfb6c28195e56d8e05c720e3bac25877ddc9eaa2d873292ba8",
       "status": "delivered",
       "pathPolicy": "standard",
       "width": 640,
@@ -424,18 +424,18 @@
       "references": [
         "index.html"
       ],
-      "copiedFrom": "assets/images/mootech_website_IMG138_slender-workspace.png"
+      "copiedFrom": "assets/images/mootech_website_IMG138_slender-workspace.webp"
     },
     {
       "id": "IMG139",
-      "path": "assets/images/mootech_website_IMG139_slender-coffee.png",
+      "path": "assets/images/mootech_website_IMG139_slender-coffee.webp",
       "usage": "runtime",
-      "purpose": "新版修長中性偏男性形象人／coffeeA–E 人才招募共用靜態情境圖",
+      "purpose": "新版修長中性偏男性形象人／coffeeA–E 人才招募共用靜態情境圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）",
       "category": "images",
       "prefix": "mootech_website",
-      "format": "png",
-      "bytes": 242941,
-      "sha256": "ee1f29d976e6363420722bfa854f697b73c2593bde2cc9e4cfcd4b09c9f2ca21",
+      "format": "webp",
+      "bytes": 47460,
+      "sha256": "5ac23f44c6b570851143bbe6d73e3a51ba712e2c6908e1bbb556e8a83c907be7",
       "status": "delivered",
       "pathPolicy": "standard",
       "width": 640,
@@ -447,18 +447,18 @@
       "references": [
         "index.html"
       ],
-      "copiedFrom": "assets/images/mootech_website_IMG139_slender-coffee.png"
+      "copiedFrom": "assets/images/mootech_website_IMG139_slender-coffee.webp"
     },
     {
       "id": "IMG140",
-      "path": "assets/images/mootech_website_IMG140_slender-fitness.png",
+      "path": "assets/images/mootech_website_IMG140_slender-fitness.webp",
       "usage": "runtime",
-      "purpose": "新版修長中性偏男性形象人／fitnessA–E 人才招募共用靜態情境圖",
+      "purpose": "新版修長中性偏男性形象人／fitnessA–E 人才招募共用靜態情境圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）",
       "category": "images",
       "prefix": "mootech_website",
-      "format": "png",
-      "bytes": 145478,
-      "sha256": "3819d8538b10479966d5b199fea87ffb1c37325dcf4da43aa56bdea0696e67e3",
+      "format": "webp",
+      "bytes": 33316,
+      "sha256": "6d11a1602578bba896be064b0aeed06e2a0ac76e0a78a5ea18523e51121ef668",
       "status": "delivered",
       "pathPolicy": "standard",
       "width": 640,
@@ -470,7 +470,53 @@
       "references": [
         "index.html"
       ],
-      "copiedFrom": "assets/images/mootech_website_IMG140_slender-fitness.png"
+      "copiedFrom": "assets/images/mootech_website_IMG140_slender-fitness.webp"
+    },
+    {
+      "id": "IMG173",
+      "path": "assets/images/mootech_website_IMG173_culture-dining.webp",
+      "usage": "runtime",
+      "purpose": "A–D願景輪播／dining使用者提供照片；A–E願景輪播現行使用（與原檔 SRCIMG054 位元相同）",
+      "category": "images",
+      "prefix": "mootech_website",
+      "format": "webp",
+      "bytes": 93144,
+      "sha256": "e3760acf782bbca0a92c674f9e4fd52cc026828f21f8b989066a591456e03b63",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "frames": 1,
+      "transparency": "不透明",
+      "origin": "https://www.mootech.asia/static/images/career/04.webp",
+      "width": 900,
+      "height": 500,
+      "source": "source/images/mootech_website_SRCIMG054_culture-dining.webp",
+      "references": [
+        "index.html"
+      ],
+      "copiedFrom": "assets/images/mootech_website_IMG173_culture-dining.webp"
+    },
+    {
+      "id": "IMG174",
+      "path": "assets/images/mootech_website_IMG174_culture-learning.webp",
+      "usage": "runtime",
+      "purpose": "A–D願景輪播／learning使用者提供照片；A–E願景輪播現行使用（與原檔 SRCIMG055 位元相同）",
+      "category": "images",
+      "prefix": "mootech_website",
+      "format": "webp",
+      "bytes": 47554,
+      "sha256": "d003ba6296b6ca1cf8af82833576dfa47e040eca80f9902beb9c324a8270e3d6",
+      "status": "delivered",
+      "pathPolicy": "standard",
+      "frames": 1,
+      "transparency": "不透明",
+      "origin": "https://www.mootech.asia/static/images/career/02.webp",
+      "width": 900,
+      "height": 506,
+      "source": "source/images/mootech_website_SRCIMG055_culture-learning.webp",
+      "references": [
+        "index.html"
+      ],
+      "copiedFrom": "assets/images/mootech_website_IMG174_culture-learning.webp"
     },
     {
       "id": "IMG175",
@@ -495,70 +541,26 @@
       "copiedFrom": "assets/images/mootech_website_IMG175_d-city-banner.webp"
     },
     {
-      "id": "IMG177",
-      "path": "assets/images/mootech_website_IMG177_culture-dining.jpg",
-      "usage": "runtime",
-      "purpose": "A–E輪播照片JPG最高品質／dining",
-      "category": "images",
-      "prefix": "mootech_website",
-      "format": "jpg",
-      "bytes": 524034,
-      "sha256": "07f890a80e1920b32564ad3c89c312176f8b255aef3ebd068aa942bf572a48a2",
-      "status": "delivered",
-      "pathPolicy": "standard",
-      "width": 900,
-      "height": 500,
-      "frames": 1,
-      "transparency": "不透明",
-      "source": "source/images/mootech_website_SRCIMG054_culture-dining.webp",
-      "references": [
-        "index.html"
-      ],
-      "copiedFrom": "assets/images/mootech_website_IMG177_culture-dining.jpg"
-    },
-    {
-      "id": "IMG178",
-      "path": "assets/images/mootech_website_IMG178_culture-learning.jpg",
-      "usage": "runtime",
-      "purpose": "A–E輪播照片JPG最高品質／learning",
-      "category": "images",
-      "prefix": "mootech_website",
-      "format": "jpg",
-      "bytes": 363499,
-      "sha256": "43febb1c22de451446ec0a76703637ec932447bc976cf66d4015a3f244bd8017",
-      "status": "delivered",
-      "pathPolicy": "standard",
-      "width": 900,
-      "height": 506,
-      "frames": 1,
-      "transparency": "不透明",
-      "source": "source/images/mootech_website_SRCIMG055_culture-learning.webp",
-      "references": [
-        "index.html"
-      ],
-      "copiedFrom": "assets/images/mootech_website_IMG178_culture-learning.jpg"
-    },
-    {
       "id": "IMG179",
-      "path": "assets/images/mootech_website_IMG179_culture-office.png",
+      "path": "assets/images/mootech_website_IMG179_culture-office.webp",
       "usage": "runtime",
-      "purpose": "A–E辦公空間輪播正式照片，無損PNG、原尺寸、不調色不重繪",
+      "purpose": "A–E辦公空間輪播正式照片網頁版：WebP 1600 寬、品質 90，保留原檔 ICC；原始無損 PNG 為 SRCIMG057（由 tools/export-culture-office.py 輸出）",
       "category": "images",
       "prefix": "mootech_website",
-      "format": "png",
-      "bytes": 4096409,
-      "sha256": "024bcbbf9be9cc9fb3ba3089a6fa8998a6f332d2b604078cc500373fbf023cb2",
+      "format": "webp",
+      "bytes": 162870,
+      "sha256": "b08c902c93c3615b39ee16f2d722f53cf7489bfe427aba9a97d00fc1f091d8cf",
       "status": "delivered",
       "pathPolicy": "standard",
-      "width": 2282,
-      "height": 1514,
+      "width": 1600,
+      "height": 1062,
       "frames": 1,
       "transparency": "不透明",
       "references": [
         "index.html"
       ],
       "source": "source/images/mootech_website_SRCIMG057_culture-office.png",
-      "copiedFrom": "assets/images/mootech_website_IMG179_culture-office.png"
+      "copiedFrom": "assets/images/mootech_website_IMG179_culture-office.webp"
     },
     {
       "path": "assets/og.jpg",

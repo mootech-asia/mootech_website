@@ -157,19 +157,19 @@
 | IMG133 | D 版願景：同文化卡系列之夥伴互助登階靜態情境圖（runtime） | [assets/images/mootech_website_IMG133_vision-together.png](../assets/images/mootech_website_IMG133_vision-together.png) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG015 | 修長、中性偏男性、無五官漸層人物設計稿；尚未替換網站情境圖（source） | [source/images/mootech_website_SRCIMG015_neutral-character-concept.png](../source/images/mootech_website_SRCIMG015_neutral-character-concept.png) | 1024×1536；保留 alpha | 標準前綴編號 |
 | SRCIMG016 | 新版修長中性偏男性形象人／vision獨立原稿（source） | [source/images/mootech_website_SRCIMG016_slender-vision.png](../source/images/mootech_website_SRCIMG016_slender-vision.png) | 1254×1254；保留 alpha | 標準前綴編號 |
-| IMG134 | 新版修長中性偏男性形象人／visionA–E 人才招募共用靜態情境圖（runtime） | [assets/images/mootech_website_IMG134_slender-vision.png](../assets/images/mootech_website_IMG134_slender-vision.png) | 640×640；保留 alpha | 標準前綴編號 |
+| IMG134 | 新版修長中性偏男性形象人／visionA–E 人才招募共用靜態情境圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG134_slender-vision.webp](../assets/images/mootech_website_IMG134_slender-vision.webp) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG017 | 新版修長中性偏男性形象人／team獨立原稿（source） | [source/images/mootech_website_SRCIMG017_slender-team.png](../source/images/mootech_website_SRCIMG017_slender-team.png) | 1254×1254；保留 alpha | 標準前綴編號 |
-| IMG135 | 新版修長中性偏男性形象人／teamA–E 人才招募共用靜態情境圖（runtime） | [assets/images/mootech_website_IMG135_slender-team.png](../assets/images/mootech_website_IMG135_slender-team.png) | 640×640；保留 alpha | 標準前綴編號 |
+| IMG135 | 新版修長中性偏男性形象人／teamA–E 人才招募共用靜態情境圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG135_slender-team.webp](../assets/images/mootech_website_IMG135_slender-team.webp) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG018 | 新版修長中性偏男性形象人／ideas獨立原稿（source） | [source/images/mootech_website_SRCIMG018_slender-ideas.png](../source/images/mootech_website_SRCIMG018_slender-ideas.png) | 1254×1254；保留 alpha | 標準前綴編號 |
-| IMG136 | 新版修長中性偏男性形象人／ideasA–E 人才招募共用靜態情境圖（runtime） | [assets/images/mootech_website_IMG136_slender-ideas.png](../assets/images/mootech_website_IMG136_slender-ideas.png) | 640×640；保留 alpha | 標準前綴編號 |
+| IMG136 | 新版修長中性偏男性形象人／ideasA–E 人才招募共用靜態情境圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG136_slender-ideas.webp](../assets/images/mootech_website_IMG136_slender-ideas.webp) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG019 | 新版修長中性偏男性形象人／learning獨立原稿（source） | [source/images/mootech_website_SRCIMG019_slender-learning.png](../source/images/mootech_website_SRCIMG019_slender-learning.png) | 1254×1254；保留 alpha | 標準前綴編號 |
-| IMG137 | 新版修長中性偏男性形象人／learningA–E 人才招募共用靜態情境圖（runtime） | [assets/images/mootech_website_IMG137_slender-learning.png](../assets/images/mootech_website_IMG137_slender-learning.png) | 640×640；保留 alpha | 標準前綴編號 |
+| IMG137 | 新版修長中性偏男性形象人／learningA–E 人才招募共用靜態情境圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG137_slender-learning.webp](../assets/images/mootech_website_IMG137_slender-learning.webp) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG020 | 新版修長中性偏男性形象人／workspace獨立原稿（source） | [source/images/mootech_website_SRCIMG020_slender-workspace.png](../source/images/mootech_website_SRCIMG020_slender-workspace.png) | 1254×1254；保留 alpha | 標準前綴編號 |
-| IMG138 | 新版修長中性偏男性形象人／workspaceA–E 人才招募共用靜態情境圖（runtime） | [assets/images/mootech_website_IMG138_slender-workspace.png](../assets/images/mootech_website_IMG138_slender-workspace.png) | 640×640；保留 alpha | 標準前綴編號 |
+| IMG138 | 新版修長中性偏男性形象人／workspaceA–E 人才招募共用靜態情境圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG138_slender-workspace.webp](../assets/images/mootech_website_IMG138_slender-workspace.webp) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG021 | 新版修長中性偏男性形象人／coffee獨立原稿（source） | [source/images/mootech_website_SRCIMG021_slender-coffee.png](../source/images/mootech_website_SRCIMG021_slender-coffee.png) | 1254×1254；保留 alpha | 標準前綴編號 |
-| IMG139 | 新版修長中性偏男性形象人／coffeeA–E 人才招募共用靜態情境圖（runtime） | [assets/images/mootech_website_IMG139_slender-coffee.png](../assets/images/mootech_website_IMG139_slender-coffee.png) | 640×640；保留 alpha | 標準前綴編號 |
+| IMG139 | 新版修長中性偏男性形象人／coffeeA–E 人才招募共用靜態情境圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG139_slender-coffee.webp](../assets/images/mootech_website_IMG139_slender-coffee.webp) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG022 | 新版修長中性偏男性形象人／fitness獨立原稿（source） | [source/images/mootech_website_SRCIMG022_slender-fitness.png](../source/images/mootech_website_SRCIMG022_slender-fitness.png) | 1254×1254；保留 alpha | 標準前綴編號 |
-| IMG140 | 新版修長中性偏男性形象人／fitnessA–E 人才招募共用靜態情境圖（runtime） | [assets/images/mootech_website_IMG140_slender-fitness.png](../assets/images/mootech_website_IMG140_slender-fitness.png) | 640×640；保留 alpha | 標準前綴編號 |
+| IMG140 | 新版修長中性偏男性形象人／fitnessA–E 人才招募共用靜態情境圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG140_slender-fitness.webp](../assets/images/mootech_website_IMG140_slender-fitness.webp) | 640×640；保留 alpha | 標準前綴編號 |
 | SRCIMG023 | D 版專屬分享宣傳圖／zh原稿（source） | [source/images/mootech_website_SRCIMG023_design-d-social-zh.png](../source/images/mootech_website_SRCIMG023_design-d-social-zh.png) | 1731×908；不透明 | 標準前綴編號 |
 | IMG141 | D 版專屬分享宣傳圖／zh社群連結預覽（runtime） | [assets/images/mootech_website_IMG141_design-d-social-zh.jpg](../assets/images/mootech_website_IMG141_design-d-social-zh.jpg) | 1200×630；不透明 | 標準前綴編號 |
 | SRCIMG024 | D 版專屬分享宣傳圖／en原稿（source） | [source/images/mootech_website_SRCIMG024_design-d-social-en.png](../source/images/mootech_website_SRCIMG024_design-d-social-en.png) | 1731×908；不透明 | 標準前綴編號 |
@@ -178,35 +178,35 @@
 | IMG143 | A–E 全版本人才招募扁長 Banner 共用背景；四位完整入鏡無五官形象人全景，等比完整顯示（runtime） | [assets/images/mootech_website_IMG143_careers-team-banner.webp](../assets/images/mootech_website_IMG143_careers-team-banner.webp) | 1600×533；不透明 | 標準前綴編號 |
 | SRCIMG026 | D 版人才招募全新全景構圖：人物、四肢、桌椅完整入鏡，取代初版裁切構圖（source） | [source/images/mootech_website_SRCIMG026_careers-panoramic-team.png](../source/images/mootech_website_SRCIMG026_careers-panoramic-team.png) | 2172×724；不透明 | 標準前綴編號 |
 | SRCIMG027 | A版全身同色鈷藍極簡插畫／vision獨立原稿（source） | [source/images/mootech_website_SRCIMG027_a-vision.png](../source/images/mootech_website_SRCIMG027_a-vision.png) | 1254×1254；保留alpha | 標準前綴編號 |
-| IMG144 | A版全身同色鈷藍極簡插畫／vision正式圖（runtime） | [assets/images/mootech_website_IMG144_a-vision.png](../assets/images/mootech_website_IMG144_a-vision.png) | 640×640；保留alpha | 標準前綴編號 |
+| IMG144 | A版全身同色鈷藍極簡插畫／vision正式圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG144_a-vision.webp](../assets/images/mootech_website_IMG144_a-vision.webp) | 640×640；保留alpha | 標準前綴編號 |
 | SRCIMG028 | A版全身同色鈷藍極簡插畫／team獨立原稿（source） | [source/images/mootech_website_SRCIMG028_a-team.png](../source/images/mootech_website_SRCIMG028_a-team.png) | 1254×1254；保留alpha | 標準前綴編號 |
-| IMG145 | A版全身同色鈷藍極簡插畫／team正式圖（runtime） | [assets/images/mootech_website_IMG145_a-team.png](../assets/images/mootech_website_IMG145_a-team.png) | 640×640；保留alpha | 標準前綴編號 |
+| IMG145 | A版全身同色鈷藍極簡插畫／team正式圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG145_a-team.webp](../assets/images/mootech_website_IMG145_a-team.webp) | 640×640；保留alpha | 標準前綴編號 |
 | SRCIMG029 | A版全身同色鈷藍極簡插畫／ideas獨立原稿（source） | [source/images/mootech_website_SRCIMG029_a-ideas.png](../source/images/mootech_website_SRCIMG029_a-ideas.png) | 1254×1254；保留alpha | 標準前綴編號 |
-| IMG146 | A版全身同色鈷藍極簡插畫／ideas正式圖（runtime） | [assets/images/mootech_website_IMG146_a-ideas.png](../assets/images/mootech_website_IMG146_a-ideas.png) | 640×640；保留alpha | 標準前綴編號 |
+| IMG146 | A版全身同色鈷藍極簡插畫／ideas正式圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG146_a-ideas.webp](../assets/images/mootech_website_IMG146_a-ideas.webp) | 640×640；保留alpha | 標準前綴編號 |
 | SRCIMG030 | A版全身同色鈷藍極簡插畫／learning獨立原稿（source） | [source/images/mootech_website_SRCIMG030_a-learning.png](../source/images/mootech_website_SRCIMG030_a-learning.png) | 1254×1254；保留alpha | 標準前綴編號 |
-| IMG147 | A版全身同色鈷藍極簡插畫／learning正式圖（runtime） | [assets/images/mootech_website_IMG147_a-learning.png](../assets/images/mootech_website_IMG147_a-learning.png) | 640×640；保留alpha | 標準前綴編號 |
+| IMG147 | A版全身同色鈷藍極簡插畫／learning正式圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG147_a-learning.webp](../assets/images/mootech_website_IMG147_a-learning.webp) | 640×640；保留alpha | 標準前綴編號 |
 | SRCIMG031 | A版全身同色鈷藍極簡插畫／workspace獨立原稿（source） | [source/images/mootech_website_SRCIMG031_a-workspace.png](../source/images/mootech_website_SRCIMG031_a-workspace.png) | 1254×1254；保留alpha | 標準前綴編號 |
-| IMG148 | A版全身同色鈷藍極簡插畫／workspace正式圖（runtime） | [assets/images/mootech_website_IMG148_a-workspace.png](../assets/images/mootech_website_IMG148_a-workspace.png) | 640×640；保留alpha | 標準前綴編號 |
+| IMG148 | A版全身同色鈷藍極簡插畫／workspace正式圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG148_a-workspace.webp](../assets/images/mootech_website_IMG148_a-workspace.webp) | 640×640；保留alpha | 標準前綴編號 |
 | SRCIMG032 | A版全身同色鈷藍極簡插畫／coffee獨立原稿（source） | [source/images/mootech_website_SRCIMG032_a-coffee.png](../source/images/mootech_website_SRCIMG032_a-coffee.png) | 1254×1254；保留alpha | 標準前綴編號 |
-| IMG149 | A版全身同色鈷藍極簡插畫／coffee正式圖（runtime） | [assets/images/mootech_website_IMG149_a-coffee.png](../assets/images/mootech_website_IMG149_a-coffee.png) | 640×640；保留alpha | 標準前綴編號 |
+| IMG149 | A版全身同色鈷藍極簡插畫／coffee正式圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG149_a-coffee.webp](../assets/images/mootech_website_IMG149_a-coffee.webp) | 640×640；保留alpha | 標準前綴編號 |
 | SRCIMG033 | A版全身同色鈷藍極簡插畫／fitness獨立原稿（source） | [source/images/mootech_website_SRCIMG033_a-fitness.png](../source/images/mootech_website_SRCIMG033_a-fitness.png) | 1254×1254；保留alpha | 標準前綴編號 |
-| IMG150 | A版全身同色鈷藍極簡插畫／fitness正式圖（runtime） | [assets/images/mootech_website_IMG150_a-fitness.png](../assets/images/mootech_website_IMG150_a-fitness.png) | 640×640；保留alpha | 標準前綴編號 |
+| IMG150 | A版全身同色鈷藍極簡插畫／fitness正式圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG150_a-fitness.webp](../assets/images/mootech_website_IMG150_a-fitness.webp) | 640×640；保留alpha | 標準前綴編號 |
 | SRCIMG041 | A版全身同色鈷藍極簡插畫／banner獨立原稿（source） | [source/images/mootech_website_SRCIMG041_a-banner.png](../source/images/mootech_website_SRCIMG041_a-banner.png) | 2172×724；不透明 | 標準前綴編號 |
 | IMG158 | A版全身同色鈷藍極簡插畫／banner正式圖（runtime） | [assets/images/mootech_website_IMG158_a-banner.webp](../assets/images/mootech_website_IMG158_a-banner.webp) | 1600×533；不透明 | 標準前綴編號 |
 | SRCIMG034 | E版熊北品牌角色／vision獨立原稿（source） | [source/images/mootech_website_SRCIMG034_e-vision.png](../source/images/mootech_website_SRCIMG034_e-vision.png) | 1254×1254；保留alpha | 標準前綴編號 |
-| IMG151 | E版熊北品牌角色／vision正式圖（runtime） | [assets/images/mootech_website_IMG151_e-vision.png](../assets/images/mootech_website_IMG151_e-vision.png) | 640×640；保留alpha | 標準前綴編號 |
+| IMG151 | E版熊北品牌角色／vision正式圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG151_e-vision.webp](../assets/images/mootech_website_IMG151_e-vision.webp) | 640×640；保留alpha | 標準前綴編號 |
 | SRCIMG035 | E版熊北品牌角色／team獨立原稿（source） | [source/images/mootech_website_SRCIMG035_e-team.png](../source/images/mootech_website_SRCIMG035_e-team.png) | 1254×1254；保留alpha | 標準前綴編號 |
-| IMG152 | E版熊北品牌角色／team正式圖（runtime） | [assets/images/mootech_website_IMG152_e-team.png](../assets/images/mootech_website_IMG152_e-team.png) | 640×640；保留alpha | 標準前綴編號 |
+| IMG152 | E版熊北品牌角色／team正式圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG152_e-team.webp](../assets/images/mootech_website_IMG152_e-team.webp) | 640×640；保留alpha | 標準前綴編號 |
 | SRCIMG036 | E版熊北品牌角色／ideas獨立原稿（source） | [source/images/mootech_website_SRCIMG036_e-ideas.png](../source/images/mootech_website_SRCIMG036_e-ideas.png) | 1254×1254；保留alpha | 標準前綴編號 |
-| IMG153 | E版熊北品牌角色／ideas正式圖（runtime） | [assets/images/mootech_website_IMG153_e-ideas.png](../assets/images/mootech_website_IMG153_e-ideas.png) | 640×640；保留alpha | 標準前綴編號 |
+| IMG153 | E版熊北品牌角色／ideas正式圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG153_e-ideas.webp](../assets/images/mootech_website_IMG153_e-ideas.webp) | 640×640；保留alpha | 標準前綴編號 |
 | SRCIMG037 | E版熊北品牌角色／learning獨立原稿（source） | [source/images/mootech_website_SRCIMG037_e-learning.png](../source/images/mootech_website_SRCIMG037_e-learning.png) | 1254×1254；保留alpha | 標準前綴編號 |
-| IMG154 | E版熊北品牌角色／learning正式圖（runtime） | [assets/images/mootech_website_IMG154_e-learning.png](../assets/images/mootech_website_IMG154_e-learning.png) | 640×640；保留alpha | 標準前綴編號 |
+| IMG154 | E版熊北品牌角色／learning正式圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG154_e-learning.webp](../assets/images/mootech_website_IMG154_e-learning.webp) | 640×640；保留alpha | 標準前綴編號 |
 | SRCIMG038 | E版熊北品牌角色／workspace獨立原稿（source） | [source/images/mootech_website_SRCIMG038_e-workspace.png](../source/images/mootech_website_SRCIMG038_e-workspace.png) | 1254×1254；保留alpha | 標準前綴編號 |
-| IMG155 | E版熊北品牌角色／workspace正式圖（runtime） | [assets/images/mootech_website_IMG155_e-workspace.png](../assets/images/mootech_website_IMG155_e-workspace.png) | 640×640；保留alpha | 標準前綴編號 |
+| IMG155 | E版熊北品牌角色／workspace正式圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG155_e-workspace.webp](../assets/images/mootech_website_IMG155_e-workspace.webp) | 640×640；保留alpha | 標準前綴編號 |
 | SRCIMG039 | E版熊北品牌角色／coffee獨立原稿（source） | [source/images/mootech_website_SRCIMG039_e-coffee.png](../source/images/mootech_website_SRCIMG039_e-coffee.png) | 1254×1254；保留alpha | 標準前綴編號 |
-| IMG156 | E版熊北品牌角色／coffee正式圖（runtime） | [assets/images/mootech_website_IMG156_e-coffee.png](../assets/images/mootech_website_IMG156_e-coffee.png) | 640×640；保留alpha | 標準前綴編號 |
+| IMG156 | E版熊北品牌角色／coffee正式圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG156_e-coffee.webp](../assets/images/mootech_website_IMG156_e-coffee.webp) | 640×640；保留alpha | 標準前綴編號 |
 | SRCIMG040 | E版熊北品牌角色／fitness獨立原稿（source） | [source/images/mootech_website_SRCIMG040_e-fitness.png](../source/images/mootech_website_SRCIMG040_e-fitness.png) | 1254×1254；保留alpha | 標準前綴編號 |
-| IMG157 | E版熊北品牌角色／fitness正式圖（runtime） | [assets/images/mootech_website_IMG157_e-fitness.png](../assets/images/mootech_website_IMG157_e-fitness.png) | 640×640；保留alpha | 標準前綴編號 |
+| IMG157 | E版熊北品牌角色／fitness正式圖（WebP 品質 92、alpha 無損；原 PNG 見 previousPath）（runtime） | [assets/images/mootech_website_IMG157_e-fitness.webp](../assets/images/mootech_website_IMG157_e-fitness.webp) | 640×640；保留alpha | 標準前綴編號 |
 | SRCIMG042 | E版熊北品牌角色／banner獨立原稿（source） | [source/images/mootech_website_SRCIMG042_e-banner.png](../source/images/mootech_website_SRCIMG042_e-banner.png) | 2172×724；不透明 | 標準前綴編號 |
 | IMG159 | E版熊北品牌角色／banner正式圖（runtime） | [assets/images/mootech_website_IMG159_e-banner.webp](../assets/images/mootech_website_IMG159_e-banner.webp) | 1600×533；不透明 | 標準前綴編號 |
 | SRCIMG043 | E人才招募滿版橫幅原稿，青藍主色與完整熊北安全構圖（source） | [source/images/mootech_website_SRCIMG043_e-banner-wide.png](../source/images/mootech_website_SRCIMG043_e-banner-wide.png) | 2172×724；不透明 | 標準前綴編號 |
@@ -234,16 +234,16 @@
 | SRCIMG053 | A–D願景輪播／office使用者提供照片（暫用辦公室，待使用者更換）（source） | [source/images/mootech_website_SRCIMG053_culture-office.webp](../source/images/mootech_website_SRCIMG053_culture-office.webp) | 900×506；不透明 | 標準前綴編號 |
 | IMG172 | A–D願景輪播／office使用者提供照片（暫用辦公室，待使用者更換）（runtime） | [assets/images/mootech_website_IMG172_culture-office.webp](../assets/images/mootech_website_IMG172_culture-office.webp) | 900×506；不透明 | 標準前綴編號 |
 | SRCIMG054 | A–D願景輪播／dining使用者提供照片（source） | [source/images/mootech_website_SRCIMG054_culture-dining.webp](../source/images/mootech_website_SRCIMG054_culture-dining.webp) | 900×500；不透明 | 標準前綴編號 |
-| IMG173 | A–D願景輪播／dining使用者提供照片（runtime） | [assets/images/mootech_website_IMG173_culture-dining.webp](../assets/images/mootech_website_IMG173_culture-dining.webp) | 900×500；不透明 | 標準前綴編號 |
+| IMG173 | A–D願景輪播／dining使用者提供照片；A–E願景輪播現行使用（與原檔 SRCIMG054 位元相同）（runtime） | [assets/images/mootech_website_IMG173_culture-dining.webp](../assets/images/mootech_website_IMG173_culture-dining.webp) | 900×500；不透明 | 標準前綴編號 |
 | SRCIMG055 | A–D願景輪播／learning使用者提供照片（source） | [source/images/mootech_website_SRCIMG055_culture-learning.webp](../source/images/mootech_website_SRCIMG055_culture-learning.webp) | 900×506；不透明 | 標準前綴編號 |
-| IMG174 | A–D願景輪播／learning使用者提供照片（runtime） | [assets/images/mootech_website_IMG174_culture-learning.webp](../assets/images/mootech_website_IMG174_culture-learning.webp) | 900×506；不透明 | 標準前綴編號 |
+| IMG174 | A–D願景輪播／learning使用者提供照片；A–E願景輪播現行使用（與原檔 SRCIMG055 位元相同）（runtime） | [assets/images/mootech_website_IMG174_culture-learning.webp](../assets/images/mootech_website_IMG174_culture-learning.webp) | 900×506；不透明 | 標準前綴編號 |
 | SRCIMG056 | D招募Banner白天都會高樓景觀示意，非實際辦公地址（source） | [source/images/mootech_website_SRCIMG056_d-city-banner.png](../source/images/mootech_website_SRCIMG056_d-city-banner.png) | 2172×724；不透明 | 標準前綴編號 |
 | IMG175 | A–D共用招募Banner白天都會高樓景觀示意，非實際辦公地址（runtime） | [assets/images/mootech_website_IMG175_d-city-banner.webp](../assets/images/mootech_website_IMG175_d-city-banner.webp) | 1799×400；不透明 | 標準前綴編號 |
 | IMG176 | 舊辦公室照片JPG歷史交付；現由IMG179使用者正式照片取代（runtime） | [assets/images/mootech_website_IMG176_culture-office.jpg](../assets/images/mootech_website_IMG176_culture-office.jpg) | 900×506；不透明 | 標準前綴編號 |
-| IMG177 | A–E輪播照片JPG最高品質／dining（runtime） | [assets/images/mootech_website_IMG177_culture-dining.jpg](../assets/images/mootech_website_IMG177_culture-dining.jpg) | 900×500；不透明 | 標準前綴編號 |
-| IMG178 | A–E輪播照片JPG最高品質／learning（runtime） | [assets/images/mootech_website_IMG178_culture-learning.jpg](../assets/images/mootech_website_IMG178_culture-learning.jpg) | 900×506；不透明 | 標準前綴編號 |
+| IMG177 | A–E輪播照片JPG最高品質／dining；歷史交付，網站已改用原始照片 IMG173（品質 100 JPG 為原檔的重新編碼，畫質不會更好）（runtime） | [assets/images/mootech_website_IMG177_culture-dining.jpg](../assets/images/mootech_website_IMG177_culture-dining.jpg) | 900×500；不透明 | 標準前綴編號 |
+| IMG178 | A–E輪播照片JPG最高品質／learning；歷史交付，網站已改用原始照片 IMG174（品質 100 JPG 為原檔的重新編碼，畫質不會更好）（runtime） | [assets/images/mootech_website_IMG178_culture-learning.jpg](../assets/images/mootech_website_IMG178_culture-learning.jpg) | 900×506；不透明 | 標準前綴編號 |
 | SRCIMG057 | 使用者ZIP提供的正式辦公室原始PNG，2282×1514，原檔保留（source） | [source/images/mootech_website_SRCIMG057_culture-office.png](../source/images/mootech_website_SRCIMG057_culture-office.png) | 2282×1514；不透明 | 標準前綴編號 |
-| IMG179 | A–E辦公空間輪播正式照片，無損PNG、原尺寸、不調色不重繪（runtime） | [assets/images/mootech_website_IMG179_culture-office.png](../assets/images/mootech_website_IMG179_culture-office.png) | 2282×1514；不透明 | 標準前綴編號 |
+| IMG179 | A–E辦公空間輪播正式照片網頁版：WebP 1600 寬、品質 90，保留原檔 ICC；原始無損 PNG 為 SRCIMG057（由 tools/export-culture-office.py 輸出）（runtime） | [assets/images/mootech_website_IMG179_culture-office.webp](../assets/images/mootech_website_IMG179_culture-office.webp) | 1600×1062；不透明 | 標準前綴編號 |
 
 ## 背景音樂
 
@@ -297,6 +297,14 @@
 |---|---|
 | [index.html](../index.html) | A～E 版型的 Canvas／CSS 場景、節點、粒子、地圖與客服動態；沒有獨立模型檔 |
 | [tools/gradient-motion.html](../tools/gradient-motion.html) | 七張獨立情境原稿的局部連續網格動畫，40 幀／2 秒，20 fps；不添加可見關節，不套用單一揮手姿勢 |
+
+## 獨立子清單
+
+- [design-a/ASSET_MANIFEST.json](../design-a/ASSET_MANIFEST.json)：`python3 tools/check-design-assets.py design-a`；該範圍不重複登錄。
+- [design-b/ASSET_MANIFEST.json](../design-b/ASSET_MANIFEST.json)：`python3 tools/check-design-assets.py design-b`；該範圍不重複登錄。
+- [design-c/ASSET_MANIFEST.json](../design-c/ASSET_MANIFEST.json)：`python3 tools/check-design-assets.py design-c`；該範圍不重複登錄。
+- [design-d/ASSET_MANIFEST.json](../design-d/ASSET_MANIFEST.json)：`python3 tools/check-design-assets.py design-d`；該範圍不重複登錄。
+- [design-e/ASSET_MANIFEST.json](../design-e/ASSET_MANIFEST.json)：`python3 tools/check-design-assets.py design-e`；該範圍不重複登錄。
 
 ## 專案說明
 
