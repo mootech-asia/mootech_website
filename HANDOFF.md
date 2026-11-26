@@ -482,3 +482,9 @@ python3 tools/build-en.py
 - 依使用者指示，五版中英文「軟體開發」下方的「內容待確認／Content to be confirmed」移除框線。共用規則 `.service-draft` 拿掉 border 與圓角，左右內距 7px 改為 0，讓文字和標題左緣對齊；字級和顏色不變。根目錄 index.html 修改後重新拆分，五個資料夾的 style.css 只差這一行。
 - 驗證：Chromium 1440 檢查 20 頁（五版 × 中英文 × 合併頁／獨立頁），所有 `.service-draft` 的框線為 0、內距為 0，無 pageerror；A 中文與 E 英文截圖已目視確認。素材檢查、英文頁產生、`git diff --check` 都通過。
 - 分支：`claude/split-designs-v2`，未推送，正式站未變更。
+
+### 2026-11-26：選單「人才招募」改連到「MOOTECH 願景」
+
+- 依使用者指示，A～E 主選單「人才招募／Careers」（B 是 `/人才招募`）的錨點由 `#vX-careers` 改成 `#vX-vision`，選單文字不變。招募區（`#vX-careers`）的 section 和四個職缺都保留，目前沒有其他連結指向它。根目錄 index.html 修改後重新拆分，五個資料夾的 index.html 只差這一行。
+- 驗證：Chromium 檢查 40 組（五版 × 中英文 × 合併頁／獨立頁 × 390／1440），點選單後都停在「MOOTECH 願景／MOOTECH HR Vision」標題，大多在 header 下 ±1px，無 pageerror。A 英文在頁面載入約 0.7 秒內點擊時，偶爾偏差 14～180px，合併頁和獨立頁都會出現，重跑多數都準確；判斷是載入初期圖片／字型改變版面造成的既有時序問題，不是這次修改引起的，未處理。素材檢查、英文頁產生、`git diff --check` 都通過。
+- 分支：`claude/split-designs-v2`，未推送，正式站未變更。
