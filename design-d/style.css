@@ -1147,7 +1147,3 @@ html[lang="en"] .career-role-en { display: none; }
 .career-role h3 { font-size: clamp(14px,1.25vw,18px); line-height: 1.5; white-space: nowrap; }
 html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
 @media(max-width:600px) { .career-role { min-height: 72px; } .career-role h3 { font-size: 18px; } }
-
-/* Careers title sits above the vision section and introduces the recruitment group. */
-.v section.careers-lead { padding-bottom: 0; background: transparent; }
-.v section.careers-lead + section { padding-top: 0; }
