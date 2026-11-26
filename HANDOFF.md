@@ -494,3 +494,12 @@ python3 tools/build-en.py
 - 依使用者指示，五版招募區的「CAREERS／人才招募」標題由置中改成靠左，和其他區塊標題（如員工福利）以及下方 Banner 的左緣對齊。修改 `.vd-careers > .wrap > .vd-head2`（A～D）與 `.hr-recruit > .wrap > .hr-head`（E），把 `text-align` 改成 left、`margin-inline` 改成 0。C 原本就靠左並有青綠左線，未變更。根目錄 index.html 修改後重新拆分，五個資料夾的 style.css 同步。
 - 驗證：Chromium 量測合併頁與獨立頁 × 390／1440 × 五版，標題左緣都和員工福利標題相同（1440 時 A／B／D 為 146px、C 為 170px、E 為 96px；390 時 A／B／D／E 為 16px、C 為 40px）。D 中文與 E 英文桌機截圖已目視確認。素材檢查、英文頁產生、`git diff --check` 都通過。
 - 分支：`claude/split-designs-v2`，未推送，正式站未變更。
+
+### 2026-11-26：「人才招募」標題移到「MOOTECH 願景」上方
+
+- 依使用者指示，五版的「CAREERS／人才招募」標題從招募區移出，放進新的 `section#vX-careers-lead.careers-lead`，排在願景 section 正上方，作為人才招募整組（願景→團隊→為什麼加入→福利→招募 Banner／職缺）的開頭。新區塊沿用原招募區的 class（A～D `vd-sec vd-careers`，E `ve-sec hr-section hr-recruit`），所以各版原本的標題字型與配色不變。
+- 原招募區 `#vX-careers` 保留 Banner 與四個職缺，仍在員工福利下方；拿掉了指向已移走標題的 `aria-labelledby`。
+- 間距：`careers-lead` 的下內距和下一個區塊的上內距都設為 0，背景透明，讓標題和願景連成一組。C 版的 2px 區塊分隔線改畫在人才招募上方，不夾在人才招募與願景之間。
+- 選單「人才招募」改連到 `#vX-careers-lead`，捲動後停在新標題位置（願景就在下方）。
+- 驗證：Chromium 檢查 40 組（五版 × 中英文 × 合併頁／獨立頁 × 390／1440）：順序正確、招募區不再有標題但 Banner 與四職缺保留、新標題和願景標題左緣對齊、選單捲動落點正確、無 pageerror。第一輪有 1 組失敗，兩次完整重跑共 80 組都通過，判斷是先前記錄的載入初期落點偏差。五版桌機截圖已目視確認，C 的分隔線位置已修正。素材檢查、英文頁產生、`git diff --check` 都通過。
+- 分支：`claude/split-designs-v2`，未推送，正式站未變更。
