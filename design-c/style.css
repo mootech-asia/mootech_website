@@ -1017,7 +1017,7 @@ body[data-v="c"] .site-top-btn { background: #00a19a; color: #0e1116; border: 2p
 
 
 /* D careers: compact panoramic team banner with centered copy. */
-.vd-careers > .wrap > .vd-head2 { text-align: center; margin-inline: auto; }
+.vd-careers > .wrap > .vd-head2 { text-align: left; margin-inline: 0; }
 .vd-careers-banner { position: relative; isolation: isolate; overflow: hidden; border: 1px solid var(--d-line); border-radius: 16px; height: auto; aspect-ratio: 4.5; display: grid; place-items: center; padding: 16px; background: #05070b; }
 .vd-careers-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .vd-careers-banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.15), rgba(0,0,0,.55) 38%, rgba(0,0,0,.55) 62%, rgba(0,0,0,.15)); }
@@ -1058,7 +1058,7 @@ body[data-v="c"] .site-top-btn { background: #00a19a; color: #0e1116; border: 2p
 .vc .hr-card { border-width: 0 0 2px; }
 .vc .hr-joingrid, .vc .hr-welfaregrid { gap: 0 24px; }
 .vc .hr-joincard { border-top: 1px solid var(--hr-line); }
-.hr-recruit > .wrap > .hr-head { margin-inline: auto; text-align: center; border-left: 0; padding-left: 0; }
+.hr-recruit > .wrap > .hr-head { margin-inline: 0; text-align: left; border-left: 0; padding-left: 0; }
 .hr-banner { position: relative; isolation: isolate; overflow: hidden; border: 1px solid var(--hr-line); border-radius: var(--hr-radius); height: clamp(240px,22vw,280px); display: grid; place-items: center; padding: 24px; background: #080e10; }
 .hr-banner-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .hr-banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, #0005 38%, #0005 62%, transparent); }

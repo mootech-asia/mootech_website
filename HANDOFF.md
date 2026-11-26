@@ -488,3 +488,9 @@ python3 tools/build-en.py
 - 依使用者指示，A～E 主選單「人才招募／Careers」（B 是 `/人才招募`）的錨點由 `#vX-careers` 改成 `#vX-vision`，選單文字不變。招募區（`#vX-careers`）的 section 和四個職缺都保留，目前沒有其他連結指向它。根目錄 index.html 修改後重新拆分，五個資料夾的 index.html 只差這一行。
 - 驗證：Chromium 檢查 40 組（五版 × 中英文 × 合併頁／獨立頁 × 390／1440），點選單後都停在「MOOTECH 願景／MOOTECH HR Vision」標題，大多在 header 下 ±1px，無 pageerror。A 英文在頁面載入約 0.7 秒內點擊時，偶爾偏差 14～180px，合併頁和獨立頁都會出現，重跑多數都準確；判斷是載入初期圖片／字型改變版面造成的既有時序問題，不是這次修改引起的，未處理。素材檢查、英文頁產生、`git diff --check` 都通過。
 - 分支：`claude/split-designs-v2`，未推送，正式站未變更。
+
+### 2026-11-26：「人才招募」標題靠左
+
+- 依使用者指示，五版招募區的「CAREERS／人才招募」標題由置中改成靠左，和其他區塊標題（如員工福利）以及下方 Banner 的左緣對齊。修改 `.vd-careers > .wrap > .vd-head2`（A～D）與 `.hr-recruit > .wrap > .hr-head`（E），把 `text-align` 改成 left、`margin-inline` 改成 0。C 原本就靠左並有青綠左線，未變更。根目錄 index.html 修改後重新拆分，五個資料夾的 style.css 同步。
+- 驗證：Chromium 量測合併頁與獨立頁 × 390／1440 × 五版，標題左緣都和員工福利標題相同（1440 時 A／B／D 為 146px、C 為 170px、E 為 96px；390 時 A／B／D／E 為 16px、C 為 40px）。D 中文與 E 英文桌機截圖已目視確認。素材檢查、英文頁產生、`git diff --check` 都通過。
+- 分支：`claude/split-designs-v2`，未推送，正式站未變更。
