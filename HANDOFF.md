@@ -519,3 +519,15 @@ python3 tools/build-en.py
 - 未變更：標題上方的大寫 kicker「CAREERS」、E 首屏「CAREERS · JOIN MOOTECH」、README／docs 裡描述用的「人才招募」，以及內部 id／class（`vX-careers` 等）。待使用者決定 kicker 是否也要改。字型子集已包含「加入我們」四個字，不需重新產生。
 - 驗證：Chromium 檢查 40 組（五版 × 中英文 × 合併頁／獨立頁 × 390／1440），可見文字已無「人才招募」、「Careers」、「/careers」；選單與標題在中文頁是「加入我們」、英文頁是「JOIN US」；無水平溢出與 pageerror。B 英文選單截圖已確認 `/JOIN US` 是大寫，和其他小寫路徑風格不同，待使用者確認。素材檢查、英文頁產生、`git diff --check` 都通過。
 - 分支：`claude/split-designs-v2`，未推送，正式站未變更。
+
+### 2026-11-26：移除「暫定」「內容待確認」等字樣（中英文）
+
+- 依使用者指示，五版中英文的軟體開發相關文字已移除暫定／待確認字樣：
+  - 卡片與詳情面板的「內容待確認／Content to be confirmed」標籤共 10 處，連同已不再使用的 `.service-draft` 樣式一起刪除。
+  - 三個項目名稱拿掉「（暫定）／(draft)」：需求規劃／Requirements planning、介面設計／Interface design、功能開發／Development。
+  - 兩段描述改寫：「規劃操作流程與畫面示意。／Explore user flows and interface concepts.」、「依需求範圍安排開發與測試。／Plan development and testing around the agreed scope.」
+  - 客服服務選項改為「軟體開發／Software development」，說明改為「從需求規劃、介面設計到功能開發與測試，依您的使用情境打造合適的軟體。」（英文同義）。這是新寫的文案，需業務確認。
+  - EN 字典刪除已不使用的「軟體開發服務規劃中…」條目。
+  - README 同步更新說明。
+- 驗證：Chromium 檢查 40 組（五版 × 中英文 × 合併頁／獨立頁 × 390／1440），展開「查看詳情」後頁面文字都沒有「暫定」「待確認」「規劃中」「pending」「to be confirmed」「(draft)」，三個項目名稱正確，無 pageerror。卡片標題到內文的間距五版都是 48px，和其他服務卡相同，刪除標籤後沒有留下空白。A 中文卡片與詳情截圖已目視確認。新文字的字元都在字型子集內。素材檢查、英文頁產生、`git diff --check` 都通過。
+- 分支：`claude/split-designs-v2`，未推送，正式站未變更。
