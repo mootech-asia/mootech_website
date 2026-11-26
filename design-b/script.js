@@ -891,11 +891,14 @@
     document.querySelectorAll("[data-query] .note").forEach(function (n) { n.textContent = l === "en" ? "demo data · not live traffic" : "示範資料 · 非實際流量"; });
     document.querySelectorAll("[data-lang-toggle]").forEach(function (b) { b.textContent = l === "en" ? "中文" : "EN"; b.setAttribute("aria-label", l === "en" ? "中文 切換為中文" : "EN 切換為英文"); });
   }
-  /* 中英切換不換頁：就地替換文字，網址與捲動位置不變 */
+  /* 中英切換不換頁：就地替換文字，網址與捲動位置不變；記住手動選擇，之後載入優先使用 */
   document.querySelectorAll("[data-lang-toggle]").forEach(function (b) { b.addEventListener("click", function () {
     setLang(lang === "en" ? "zh" : "en");
+    try { localStorage.setItem("mootech-lang", lang); } catch (e) {}
   }); });
   if (window.MOOTECH_LANG === "en") setLang("en");
+  /* 依訪客所在地切換語系（台灣中文，其餘英文），之後仍可用按鈕手動切換 */
+  if (window.MOOTECH_GEO) window.MOOTECH_GEO.then(function (l) { setLang(l); document.documentElement.classList.remove("lang-pending"); });
 })();
 
 /* 客服依版型換色，僅 E 使用既有北極熊角色：選擇題式對話，分求職者／需求方／其他三條路線，2～3 輪問答後

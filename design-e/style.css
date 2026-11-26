@@ -1,4 +1,7 @@
 /* MOOTECH 官網 E 縱深 版樣式：由 tools/split-designs.py 自 index.html 拆出，之後獨立維護。 */
+/* 語系偵測完成前先隱藏內容（見 head 的語系偵測腳本） */
+html.lang-pending body { visibility: hidden; }
+
 /* E vision: obsidian panels, cyan detail and soft rounded edges. */
 .ve .vision-carousel { --hr-accent: var(--e-safe); --hr-card: var(--e-panel); --hr-line: var(--e-line); --hr-ink: var(--e-ink); --hr-muted: var(--e-muted); --hr-radius: 18px; }
 .ve .vision-copy h3 { font-family: var(--e-display); letter-spacing: -.02em; }

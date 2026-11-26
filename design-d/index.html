@@ -28,6 +28,26 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"MOOTECH","legalName":"Mootech Pte. Ltd.","url":"https://mootech-asia.github.io/mootech_website/","logo":"https://mootech-asia.github.io/mootech_website/design-d/assets/images/mootech_website_IMG006_brand_logo-stacked.png","email":"contact@mootech.asia","foundingDate":"2016","address":[{"@type":"PostalAddress","addressCountry":"SG"},{"@type":"PostalAddress","addressCountry":"TW"}],"knowsAbout":["Live streaming","IP Transit","IPLC international private lines","CDN","Network optimisation","System integration"]}</script>
 <link rel="icon" type="image/png" href="assets/images/mootech_website_IMG002_brand_favicon.png">
 <link rel="apple-touch-icon" href="assets/images/mootech_website_IMG001_brand_apple-touch-icon.png">
+<script>
+  /* 語系偵測：使用者曾手動切換過就沿用（localStorage 的 mootech-lang），不再查詢；
+     否則向 Cloudflare 的 /cdn-cgi/trace 查訪客所在地，loc=TW 用中文，其餘或查詢失敗用英文。
+     結果放在 window.MOOTECH_GEO（Promise，"zh" 或 "en"），由主腳本套用；結果出來前先隱藏頁面，避免先看到中文再跳成英文。 */
+  (function () {
+    var root = document.documentElement;
+    root.classList.add("lang-pending");
+    setTimeout(function () { root.classList.remove("lang-pending"); }, 2500); // 保險：主腳本出錯也不會一直隱藏
+    var saved; try { saved = localStorage.getItem("mootech-lang"); } catch (e) {}
+    if (saved === "zh" || saved === "en") { window.MOOTECH_GEO = Promise.resolve(saved); return; }
+    window.MOOTECH_GEO = new Promise(function (resolve) {
+      var timer = setTimeout(function () { resolve("en"); }, 1500);
+      function done(l) { clearTimeout(timer); resolve(l); }
+      if (!window.fetch || !/^https?:$/.test(location.protocol)) return done("en");
+      fetch("/cdn-cgi/trace", { cache: "no-store" })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+        .then(function (t) { var m = t.match(/^loc=([A-Z]{2})\s*$/m); done(m && m[1] === "TW" ? "zh" : "en"); }, function () { done("en"); });
+    });
+  })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Manrope:wght@700;800&family=Inter:wght@300;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">

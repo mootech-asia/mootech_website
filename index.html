@@ -36,10 +36,32 @@
     if (/^[bcde]$/.test(v)) document.documentElement.setAttribute("data-init", v);
   })();
 </script>
+<script>
+  /* 語系偵測：使用者曾手動切換過就沿用（localStorage 的 mootech-lang），不再查詢；
+     否則向 Cloudflare 的 /cdn-cgi/trace 查訪客所在地，loc=TW 用中文，其餘或查詢失敗用英文。
+     結果放在 window.MOOTECH_GEO（Promise，"zh" 或 "en"），由主腳本套用；結果出來前先隱藏頁面，避免先看到中文再跳成英文。 */
+  (function () {
+    var root = document.documentElement;
+    root.classList.add("lang-pending");
+    setTimeout(function () { root.classList.remove("lang-pending"); }, 2500); // 保險：主腳本出錯也不會一直隱藏
+    var saved; try { saved = localStorage.getItem("mootech-lang"); } catch (e) {}
+    if (saved === "zh" || saved === "en") { window.MOOTECH_GEO = Promise.resolve(saved); return; }
+    window.MOOTECH_GEO = new Promise(function (resolve) {
+      var timer = setTimeout(function () { resolve("en"); }, 1500);
+      function done(l) { clearTimeout(timer); resolve(l); }
+      if (!window.fetch || !/^https?:$/.test(location.protocol)) return done("en");
+      fetch("/cdn-cgi/trace", { cache: "no-store" })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+        .then(function (t) { var m = t.match(/^loc=([A-Z]{2})\s*$/m); done(m && m[1] === "TW" ? "zh" : "en"); }, function () { done("en"); });
+    });
+  })();
+</script>
 <style>
   html[data-init] #va { display: none; }
   html[data-init="b"] #vb, html[data-init="c"] #vc, html[data-init="d"] #vd, html[data-init="e"] #ve { display: block; }
   html[data-init="b"] body { --page-bg: #060d18; } html[data-init="c"] body { --page-bg: #ffffff; } html[data-init="d"] body { --page-bg: #000000; } html[data-init="e"] body { --page-bg: #07090e; }
+/* 語系偵測完成前先隱藏內容（見 head 的語系偵測腳本） */
+html.lang-pending body { visibility: hidden; }
 /* Shared A–D recruitment block, matching the approved daytime skyline layout. */
 .vd-careers { background: var(--d-bg); color: var(--d-ink); font-family: var(--inter); font-size: 16px; line-height: 1.7; }
 
@@ -4241,11 +4263,14 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
     document.querySelectorAll("[data-query] .note").forEach(function (n) { n.textContent = l === "en" ? "demo data · not live traffic" : "示範資料 · 非實際流量"; });
     document.querySelectorAll("[data-lang-toggle]").forEach(function (b) { b.textContent = l === "en" ? "中文" : "EN"; b.setAttribute("aria-label", l === "en" ? "中文 切換為中文" : "EN 切換為英文"); });
   }
-  /* 中英切換不換頁：就地替換文字，網址與捲動位置不變 */
+  /* 中英切換不換頁：就地替換文字，網址與捲動位置不變；記住手動選擇，之後載入優先使用 */
   document.querySelectorAll("[data-lang-toggle]").forEach(function (b) { b.addEventListener("click", function () {
     setLang(lang === "en" ? "zh" : "en");
+    try { localStorage.setItem("mootech-lang", lang); } catch (e) {}
   }); });
   if (window.MOOTECH_LANG === "en") setLang("en");
+  /* 依訪客所在地切換語系（台灣中文，其餘英文），之後仍可用按鈕手動切換 */
+  if (window.MOOTECH_GEO) window.MOOTECH_GEO.then(function (l) { setLang(l); document.documentElement.classList.remove("lang-pending"); });
 })();
 </script>
 <div class="mtc pre" id="mt-chat">

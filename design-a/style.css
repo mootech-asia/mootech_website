@@ -1,4 +1,6 @@
 /* MOOTECH 官網 A 企業信賴 版樣式：由 tools/split-designs.py 自 index.html 拆出，之後獨立維護。 */
+/* 語系偵測完成前先隱藏內容（見 head 的語系偵測腳本） */
+html.lang-pending body { visibility: hidden; }
 /* Shared A–D recruitment block, matching the approved daytime skyline layout. */
 .vd-careers { background: var(--d-bg); color: var(--d-ink); font-family: var(--inter); font-size: 16px; line-height: 1.7; }
 
