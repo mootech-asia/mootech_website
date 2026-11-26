@@ -26,7 +26,6 @@ s = s.replace(f'<meta property="og:url" content="{BASE}">', f'<meta property="og
 s = s.replace(f'<link rel="canonical" href="{BASE}">', f'<link rel="canonical" href="{BASE}en/">', 1)
 s = s.replace('<meta property="og:locale" content="zh_TW">\n<meta property="og:locale:alternate" content="en_US">',
               '<meta property="og:locale" content="en_US">\n<meta property="og:locale:alternate" content="zh_TW">', 1)
-s = s.replace('<meta name="mootech-alt" content="en/">', '<meta name="mootech-alt" content="../">', 1)
 
 # 相對路徑的資源改成指向上一層
 s = re.sub(r'(?<=["\'(\s,])assets/', "../assets/", s)
@@ -45,7 +44,6 @@ def build_design_d(page, english=False):
     result = result.replace(f'<meta property="og:url" content="{BASE}{prefix}">', f'<meta property="og:url" content="{BASE}{prefix}d/">', 1)
     for code, destination in [("zh-Hant", "d/"), ("en", "en/d/"), ("x-default", "d/")]:
         result = re.sub(r'<link rel="alternate" hreflang="' + code + r'" href="[^"]*">', f'<link rel="alternate" hreflang="{code}" href="{BASE}{destination}">', result, count=1)
-    result = re.sub(r'<meta name="mootech-alt" content="[^"]*">', '<meta name="mootech-alt" content="' + ('../../d/' if english else '../en/d/') + '">', result, count=1)
     if english:
         result = result.replace('../assets/', '../../assets/')
     else:
@@ -79,7 +77,6 @@ def build_design_folder(folder):
         result = result.replace(tag.format(url), tag.format(url + "en/"), 1)
     result = result.replace('<meta property="og:locale" content="zh_TW">\n<meta property="og:locale:alternate" content="en_US">',
                             '<meta property="og:locale" content="en_US">\n<meta property="og:locale:alternate" content="zh_TW">', 1)
-    result = result.replace('<meta name="mootech-alt" content="en/">', '<meta name="mootech-alt" content="../">', 1)
     result = re.sub(r'(?<=["\'(\s,])assets/', "../assets/", result)
     result = result.replace('<link rel="stylesheet" href="style.css">', '<link rel="stylesheet" href="../style.css">', 1)
     result = result.replace('<script src="script.js"></script>',
