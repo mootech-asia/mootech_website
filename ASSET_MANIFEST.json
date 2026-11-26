@@ -4587,7 +4587,53 @@
       "source": "source/images/mootech_website_SRCIMG057_culture-office.png"
     }
   ],
-  "delegates": [],
+  "delegates": [
+    {
+      "root": "design-a",
+      "manifest": "design-a/ASSET_MANIFEST.json",
+      "check": [
+        "python3",
+        "tools/check-design-assets.py",
+        "design-a"
+      ]
+    },
+    {
+      "root": "design-b",
+      "manifest": "design-b/ASSET_MANIFEST.json",
+      "check": [
+        "python3",
+        "tools/check-design-assets.py",
+        "design-b"
+      ]
+    },
+    {
+      "root": "design-c",
+      "manifest": "design-c/ASSET_MANIFEST.json",
+      "check": [
+        "python3",
+        "tools/check-design-assets.py",
+        "design-c"
+      ]
+    },
+    {
+      "root": "design-d",
+      "manifest": "design-d/ASSET_MANIFEST.json",
+      "check": [
+        "python3",
+        "tools/check-design-assets.py",
+        "design-d"
+      ]
+    },
+    {
+      "root": "design-e",
+      "manifest": "design-e/ASSET_MANIFEST.json",
+      "check": [
+        "python3",
+        "tools/check-design-assets.py",
+        "design-e"
+      ]
+    }
+  ],
   "notes": [
     "網站正式圖片／影片與來源已分開；官方品牌包保留內部檔名與跨 repo 引用。",
     "E 版影片 poster 歸 images，影片歸 videos；MOO 客服貼圖由已登錄的對照表選取。"

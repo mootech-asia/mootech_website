@@ -441,3 +441,32 @@ python3 tools/build-en.py
 - 依最新指示，A–E整個人才招募section（標題／Banner／四職缺）從願景前移到員工福利section正下方，保留各版樣式、素材與既有id及menu錨點。移除五個Let's Go按鈕，不留空白或隱形導向；四個104職缺連結保留。Figma文件更新最終順序與移除按鈕規格。
 - 驗證：中英×390／1440×五版20組確認員工福利後緊接人才招募、四職缺保留、無Let's Go／隱形data-scroll連結、圖片解碼、手機選單操作及新位置落點正確、無水平溢出或JS錯誤。英文及D分享入口建置、diff check通過；Word交接文件已重建。
 - 已發布runtime `4e0a0af`，[Pages run45600607606](https://github.com/mootech-asia/mootech_website/actions/runs/45600607606)成功。正式中英文五版確認人才招募緊接福利、無Let's Go且四職缺保留。Word文件與基準網址已同步最新順序。
+
+
+### 2026-11-26：A～E 拆成五個獨立資料夾（新分支）
+
+- 任務與狀態：已完成，已在本機提交，尚未推送。工作分支 `claude/split-designs-v2`，由 `bb43e2c` 開出。使用者要求把 index.html 的 A～E 拆成獨立 HTML，各放不同資料夾，包含圖檔、CSS、robots.txt 與 sitemap.xml，並移除切換版型功能。
+- 修改範圍：新增 `design-a/`～`design-e/`，每個資料夾包含：
+  - `index.html`
+  - `style.css`
+  - `script.js`
+  - `assets/` 素材副本（A 30、B 29、C 30、D 21、E 41 項，約 40 MB）
+  - `ASSET_MANIFEST.json`
+  - `robots.txt`、`sitemap.xml`
+- 工具：
+  - 新增 `tools/split-designs.py`、`tools/check-design-assets.py`，取自舊分支 `claude/split-designs`（477511d），並配合現行 index.html 修正：
+    - head 前段新增的 `<style>`（招募 A～C 風格、E 願景、D 客服隱藏、anchor-ready）移入 style.css，並排在主樣式前，維持原層疊順序。
+    - 尾端第五段的願景輪播腳本五版都保留。
+    - 版型固定時保留 E 首屏與 data-query 的掛鉤，以及錨點導航序號。
+    - CSS 篩選改為：其他版命名的 class（例如 A～C 共用的 `.vd-careers`）只要本頁實際用到就保留。
+  - `tools/build-en.py` 增加產生 `design-x/en/`，D 分享圖常數與根目錄英文頁共用。
+  - deploy-pages 改為排除各層的 `ASSET_MANIFEST.json`。
+  - 根目錄清單加入五個 delegates。
+- 未變更：根目錄合併頁（含切換器）、`/en/`、`/d/` 都保留不變。D 獨立頁沿用現行設定隱藏客服。
+- 驗證：
+  - 靜態檢查：`python3 tools/assets.py check` 通過（242 項，5 份子清單）；`python3 tools/build-en.py` 產生 8 頁；五份 script.js 用 `node --check` 檢查、sitemap XML 解析、`git diff --check` 都通過。
+  - 樣式比對：Chromium 中英 × 390／1440 × 五版共 20 組，將獨立頁與合併頁 `#design-x` 的版型根節點下每個元素的 23 項 computed style 逐一比對，素材路徑正規化後 0 差異。另確認元素數相同、無切換器、無 pageerror 或 4xx、無破圖或水平溢出。
+  - 互動檢查（同 20 組）：願景左右箭頭、回到頂端、客服開啟（D 為隱藏）、語言切換導向同資料夾的 `en/` 或上一層，都通過。
+- 已知既有問題（非拆分造成）：A～C 選單點「人才招募」停在 header 下 20～38px，英文手機點「關於我們」偏差 -5～-18px；合併頁實測數值完全相同。
+- 發布狀態：未推送、未部署。deploy-pages 只監聽 main 與預設分支，這個分支推送後不會部署。合併後資料夾網址為 `…/mootech_website/design-x/`，合併後需實際驗證。
+- 下一步：使用者決定是否推送或開 PR、是否要讓資料夾單獨部署成根網域（資料夾內的 robots.txt 才會生效），以及是否保留根目錄合併頁。之後改文案時，要同步根目錄與對應資料夾，或修改 index.html 後重新拆分（加 `--force` 會覆蓋資料夾內的修改）。

@@ -27,15 +27,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build localized pages and D share entries
+      - name: Build localized pages, D share entries and design folder English pages
         run: python3 tools/build-en.py
 
+      # 素材清單（根目錄與 design-a～e 的子清單）不發布
       # 只上傳網站用得到的檔案：品牌素材資料夾與壓縮檔、原始照片、歸檔與工具不發布，部署包從 117 MB 降到約 10 MB，避免發布逾時
       - name: Stage site files
         run: |
           mkdir _site
           tar --exclude='./.git' --exclude='./.github' --exclude='./_site' --exclude='./tools' \
-            --exclude='./source' --exclude='./brand' --exclude='./docs' --exclude='./ASSET_MANIFEST.json' -cf - . | tar -xf - -C _site
+            --exclude='./source' --exclude='./brand' --exclude='./docs' --exclude='ASSET_MANIFEST.json' -cf - . | tar -xf - -C _site
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

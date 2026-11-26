@@ -24,6 +24,23 @@
 - 客服求職、服務諮詢及其他留言的最後聯絡表單，直接共用目前版型官網表單的欄位設定，包含中英文標籤、順序、必填／選填、輸入類型及送出按鈕；服務需求帶入官網時保留五欄資料。
 - 官網聯絡表單仍為設計預覽，尚未串接寄信服務；客服可整理內容後開啟郵件，寄到 contact@mootech.asia（人資信箱待提供）。
 
+## 獨立版型資料夾（design-a～design-e）
+
+由 `python3 tools/split-designs.py --force` 從根目錄 `index.html` 拆出五個獨立網站，各自只含一個版型、不含版型切換器：
+
+| 資料夾 | 內容 |
+| --- | --- |
+| `design-x/index.html` | 該版型 HTML、共用圖示、客服（D 依現行設定隱藏客服） |
+| `design-x/style.css` | 只保留該版會命中的樣式；切換器樣式與未用動畫已移除 |
+| `design-x/script.js` | 固定為該版型；其他版專屬互動段落已移除 |
+| `design-x/assets/` | 該頁實際引用的圖檔／影片副本（登錄在 `design-x/ASSET_MANIFEST.json`） |
+| `design-x/robots.txt`、`sitemap.xml` | 該版中英文網址 |
+| `design-x/en/` | 英文頁，由 `tools/build-en.py` 產生（不提交） |
+
+- 根目錄合併頁（含切換器）、`/en/`、`/d/` 保留不變。拆分後兩份內容需各自維護；以 `index.html` 重新拆分會覆蓋資料夾內的修改。
+- 資料夾內的 `robots.txt` 只有在該資料夾單獨部署成網域根目錄時才會被爬蟲讀取。
+- 素材副本由 `tools/check-design-assets.py` 檢查，經根目錄清單的 delegates 由 `python3 tools/assets.py check` 一併執行。
+
 ## 線上瀏覽
 
 部署於 GitHub Pages：https://mootech-asia.github.io/mootech_website/
