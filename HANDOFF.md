@@ -509,3 +509,13 @@ python3 tools/build-en.py
 - 使用者比較暫時預覽頁後，決定還原上一步：以 `git revert` 撤銷 `469d0b7`。標題回到招募區（員工福利下方、Banner 上方），維持 `a60191d` 的靠左對齊；`careers-lead` 區塊、相關 CSS 與 C 分隔線調整都已移除，選單「人才招募」再次連到 `#vX-vision`。上一節保留作為紀錄，但其中的修改已不在程式中。
 - 驗證：除 HANDOFF.md 外，工作樹與 `a60191d` 完全相同（`git diff a60191d --stat -- . ':!HANDOFF.md'` 無差異）。重新產生英文頁，素材檢查通過。
 - 分支：`claude/split-designs-v2`，未推送，正式站未變更。暫時預覽（scratchpad 的 8766 埠）已關閉並刪除。
+
+### 2026-11-26：「人才招募」改為「加入我們」／英文 JOIN US
+
+- 依使用者指示，網站上所有「人才招募」都改成「加入我們」，英文「Careers」改成「JOIN US」：
+  - 選單（5 版；B 依路徑風格為 `/加入我們`、`/JOIN US`）
+  - 招募區標題（5 版，中文和 `data-en`）
+  - 聯絡區標籤：A 的 h3、D 的 kicker、E 的 dt（經 EN 字典翻譯，字典鍵改為 `"加入我們": "JOIN US"`），以及 B 的 `<small>`、C 的 `.vc-label`（這兩個原本中英文頁都顯示英文 CAREERS／Careers）
+- 未變更：標題上方的大寫 kicker「CAREERS」、E 首屏「CAREERS · JOIN MOOTECH」、README／docs 裡描述用的「人才招募」，以及內部 id／class（`vX-careers` 等）。待使用者決定 kicker 是否也要改。字型子集已包含「加入我們」四個字，不需重新產生。
+- 驗證：Chromium 檢查 40 組（五版 × 中英文 × 合併頁／獨立頁 × 390／1440），可見文字已無「人才招募」、「Careers」、「/careers」；選單與標題在中文頁是「加入我們」、英文頁是「JOIN US」；無水平溢出與 pageerror。B 英文選單截圖已確認 `/JOIN US` 是大寫，和其他小寫路徑風格不同，待使用者確認。素材檢查、英文頁產生、`git diff --check` 都通過。
+- 分支：`claude/split-designs-v2`，未推送，正式站未變更。
