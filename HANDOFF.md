@@ -476,3 +476,9 @@ python3 tools/build-en.py
 - 依使用者指示，把 A～D 聯絡區的 LinkedIn 連結從 `https://www.linkedin.com/` 首頁暫時連結換成 `https://sg.linkedin.com/company/MOOTECH-private-limited`。E 原本就沒有 LinkedIn，未新增。改的是根目錄 index.html；`design-a`～`design-d` 是重跑 `tools/split-designs.py --force` 同步的，只差這 4 行。英文頁沿用同一連結。
 - 分支：`claude/split-designs-v2`，未推送。主線（正式站）還是舊連結。
 - 驗證：素材檢查、英文頁產生、`git diff --check` 都通過，`git grep` 確認沒有殘留的舊連結。LinkedIn 擋自動化請求（HTTP 403），沒能用程式確認公司頁存在，要由使用者用瀏覽器確認。
+
+### 2026-11-26：「內容待確認」移除外框
+
+- 依使用者指示，五版中英文「軟體開發」下方的「內容待確認／Content to be confirmed」移除框線。共用規則 `.service-draft` 拿掉 border 與圓角，左右內距 7px 改為 0，讓文字和標題左緣對齊；字級和顏色不變。根目錄 index.html 修改後重新拆分，五個資料夾的 style.css 只差這一行。
+- 驗證：Chromium 1440 檢查 20 頁（五版 × 中英文 × 合併頁／獨立頁），所有 `.service-draft` 的框線為 0、內距為 0，無 pageerror；A 中文與 E 英文截圖已目視確認。素材檢查、英文頁產生、`git diff --check` 都通過。
+- 分支：`claude/split-designs-v2`，未推送，正式站未變更。
