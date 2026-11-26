@@ -42,6 +42,17 @@
 - 資料夾內的 `robots.txt` 只有在該資料夾單獨部署成網域根目錄時才會被爬蟲讀取。
 - 素材副本由 `tools/check-design-assets.py` 檢查，經根目錄清單的 delegates 由 `python3 tools/assets.py check` 一併執行。
 
+### 發佈到其他網址
+
+```
+python3 tools/publish-design.py d https://www.example.com/
+```
+
+- 產生 `dist/design-d-www.example.com/`（`dist/` 不提交），把裡面的內容上傳到該網址的根目錄即可；也可發佈到子路徑，例如 `https://www.example.com/site/`。
+- 工具會先產生英文頁、檢查素材副本，再複製資料夾（排除 `ASSET_MANIFEST.json`），把 canonical、hreflang、og:url、og:image、twitter:image、JSON-LD、`robots.txt`、`sitemap.xml` 的網址換成新網址，最後確認沒有殘留舊網址、頁面引用的檔案都存在。
+- 只改輸出資料夾，不改 `design-x`。輸出資料夾已存在時需加 `--force`；`--out` 可指定其他位置，在專案內時只能放在 `dist/` 底下。
+- 依地區切換語系需要網站經過 Cloudflare 代理；沒有的話所有訪客都會先看到英文。
+
 ## 線上瀏覽
 
 部署於 GitHub Pages：https://mootech-asia.github.io/mootech_website/
@@ -82,6 +93,7 @@ GitHub Pages 的快取時間固定為 10 分鐘，若要更長需另外接 CDN�
 | `python3 tools/optimize-images.py` | 換照片後重新產生 WebP |
 | `python3 tools/update-font-subset.py` | 改動中文內容後更新字型子集 |
 | `python3 tools/build-en.py` | 本機產生英文版（部署時自動執行） |
+| `python3 tools/publish-design.py d https://www.example.com/` | 產生可發佈到其他網址的版型副本（輸出到 `dist/`） |
 | `python3 tools/make-loop.py 影片.mp4 --name e-hero-2` | 把 E 版首屏影片做成無縫循環並產生對齊的靜態圖（說明見 `assets/video/README.md`） |
 | `node tools/map-mask.mjs` | 重新產生地圖點陣（需先安裝檔案開頭註明的套件） |
 

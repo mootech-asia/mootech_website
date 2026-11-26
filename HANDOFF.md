@@ -573,3 +573,17 @@ python3 tools/build-en.py
   - 封鎖 localStorage：依地區顯示中文、按鈕可切換、無 pageerror，重新整理後依地區回到中文。
   - 回歸：語系切換 28 組通過（對照頁改用獨立瀏覽器環境開啟，避免讀到前一頁存的偏好；B 桌機 scrollY 變動同前，屬捲動錨定）。素材檢查 242 項、五個資料夾子清單通過。
 - 狀態：依使用者要求先不 commit。分支 `claude/split-designs-v2`，正式站未變更。
+
+### 2026-11-26：新增版型發佈工具 `tools/publish-design.py`（版型 D，不含自動部署）
+
+- 依使用者指示，新增發佈工具：`python3 tools/publish-design.py d https://www.example.com/`，輸出到 `dist/design-d-www.example.com/`，內容直接上傳到目標網址即可。`dist/` 已加入 `.gitignore`（否則根目錄素材檢查會把副本當成未登錄素材）。
+- 流程：執行 `build-en.py` 產生英文頁 → `check-design-assets.py` 檢查素材 → 複製資料夾（排除 `ASSET_MANIFEST.json`）→ 替換舊網址（D 版共 27 處：中英文頁各 9、sitemap 8、robots 1；先換 `design-d/` 網址，再換 JSON-LD 的網站根網址）→ 檢查。
+- 檢查：無殘留 `mootech-asia.github.io`；中英文頁的 canonical／hreflang／og:url／og:image 指向新網址；HTML、CSS 引用的本機檔案都存在。`script.js` 內 E 版客服貼圖路徑在 D 輸出中不存在，只列為注意（D 不載入，split-designs.py 本來就只附帶該版用到的素材）。
+- 安全限制：只改輸出資料夾，不改 `design-d`；輸出已存在需 `--force`；在專案內時輸出只能位於 `dist/` 底下（避免 `--force` 誤刪 `assets`、`tools` 等）。網址需 http(s)、不可帶 `?` 或 `#`，可為子路徑。
+- 驗證：
+  - 實際產生 D → `https://www.example.com/`：27 個檔案、5.8 MB；與 `design-d` 比對，`index.html` 除網址外完全相同。
+  - 子路徑 `https://www.example.com/site/` 的 canonical 正確；錯誤網址、帶查詢字串、`--out` 指向根目錄／`design-d`／`assets`／`tools/x`／`dist` 本身／上層、版型代號錯誤都會被拒絕。
+  - 輸出資料夾當成網站根目錄架設，Chromium 390／1440 × `/`、`/en/` × 模擬 TW／US／trace 404：語系正確（TW 中文，其餘英文）、手動切換後重新整理會記住、無破圖、無水平溢出、無 pageerror，除 Google 字型外沒有對外請求。
+  - 素材檢查 242 項通過。
+- 未做：自動部署（使用者不需要）、GitHub Pages 的 `CNAME` 檔（需要時再加參數）。
+- 狀態：未 commit。分支 `claude/split-designs-v2`，正式站未變更。
