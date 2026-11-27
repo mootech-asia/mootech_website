@@ -720,3 +720,9 @@ python3 tools/build-en.py
 - A–E 聯絡區「電子郵件／EMAIL／Email」下的 contact@mootech.asia 包成 `<a href="mailto:contact@mootech.asia">`，點擊開啟訪客的郵件程式。未加新樣式，沿用各版聯絡區既有連結樣式（與 LinkedIn／查看職缺相同：A 底線、B 青藍、C 青綠底線、D 青藍、E 依版型）。根目錄與 `design-*/index.html` 同步。
 - 驗證：英文頁重新產生；`git diff --check` 通過。headless Chrome 1440 截圖 A、D 英文聯絡區，信箱已呈現連結樣式且與同欄其他連結一致。未實測點擊後開啟郵件程式（依訪客裝置設定）。
 - 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：願景宣言卡片文字填滿
+
+- 依使用者要求，`.vision-card .vision-statement` 加 `max-width: none`，取消原 76ch 寬度上限，宣言文字填滿卡片內寬（與團隊文化段落一致）。根目錄與五份 `design-*/style.css` 同步；未改其他樣式。
+- 驗證：`git diff --check` 通過、英文頁重新產生。headless Chrome 1440 截圖 D 英文：宣言由 5 行變為 4 行、左右貼齊卡片內距。其他版、中文與手機未截圖。
+- 分支：`claude/split-designs-v2`，已 commit，未推送，正式站未變更。

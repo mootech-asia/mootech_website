@@ -1346,7 +1346,7 @@ body[data-v="e"] .site-top-btn { background: #0d1119; color: #29b6e8; border: 1p
 .vision-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .vision-statement { max-width: 76ch; margin: 0 0 clamp(28px,4vw,48px); font-size: clamp(17px,1.45vw,20px); line-height: 1.95; color: inherit; }
 .vision-statement:last-child { margin-bottom: 0; }
-.vision-card .vision-statement { font-size: clamp(17px,1.45vw,20px); line-height: 1.95; color: inherit; }
+.vision-card .vision-statement { max-width: none; font-size: clamp(17px,1.45vw,20px); line-height: 1.95; color: inherit; }
 * + .vision-carousel { margin-top: clamp(28px,4vw,48px); }
 .vision-carousel { position: relative; padding-inline: 28px; }
 .vision-controls { position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; margin: 0; color: var(--hr-ink); pointer-events: none; }
