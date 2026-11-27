@@ -175,6 +175,18 @@ button, input, textarea { font: inherit; }
 canvas.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .map { width: 100%; height: auto; display: block; }
 .form-note { font-size: .875rem; min-height: 1.4em; }
+/* Turnstile：桌機在送出按鈕旁、按鈕靠右；手機在按鈕上方，區塊固定 70px 高 */
+form[data-form] .row .cf-turnstile { flex: 0 0 auto; }
+form[data-form] .row .cf-turnstile:empty { display: none; }
+form[data-form] .row [type="submit"] { margin-left: auto; }
+form[data-form] .row .form-note { flex-basis: 100%; text-align: right; }
+form[data-form] .row .form-note:empty { min-height: 0; }
+@media (max-width: 560px) {
+  form[data-form] .row { flex-direction: column; align-items: flex-start; }
+  form[data-form] .row [type="submit"] { margin-left: 0; }
+  form[data-form] .row .form-note { text-align: left; }
+  form[data-form] .row .cf-turnstile, form[data-form] .row .cf-turnstile:empty { display: block; height: 70px; }
+}
 
 /* ============ 右下角智能客服（北極熊 · FaceTime 視訊通話風格） ============ */
 .mtc { --c-bg: #0b1220; --c-panel: #0f1828; --c-line: rgba(160,190,230,.16); --c-ink: #eef3fa; --c-mut: #9aa8bb; --c-acc: #29b6e8; --c-hot: #ff7a1a; --c-ok: #34c759; --c-end: #ff3b30;
@@ -2250,7 +2262,7 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
           <label for="a-email">電子郵件<input id="a-email" name="email" type="email" required autocomplete="email"></label>
           <label for="a-phone">聯絡電話（選填）<input id="a-phone" name="phone" type="tel" autocomplete="tel"></label>
           <label for="a-message">簡單描述需求（選填）<textarea id="a-message" name="message" rows="4"></textarea></label>
-          <div class="full row"><button class="va-btn" type="submit">送出需求</button><span class="form-note" role="status"></span></div>
+          <div class="full row"><div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="light"></div><button class="va-btn" type="submit">送出需求</button><span class="form-note" role="status"></span></div>
         </form>
       </div>
       <aside class="va-info">
@@ -2493,7 +2505,7 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
           <label for="b-email">電子郵件<input id="b-email" name="email" type="email" required autocomplete="email"></label>
           <label for="b-phone">聯絡電話（選填）<input id="b-phone" name="phone" type="tel" autocomplete="tel"></label>
           <label for="b-message">簡單描述需求（選填）<textarea id="b-message" name="message" rows="4"></textarea></label>
-          <div class="full row"><button class="vb-btn" type="submit">送出需求</button><span class="form-note" role="status"></span></div>
+          <div class="full row"><div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="dark"></div><button class="vb-btn" type="submit">送出需求</button><span class="form-note" role="status"></span></div>
         </form>
         <aside class="vb-info">
           <div><small>EMAIL</small><span><a href="mailto:contact@mootech.asia">contact@mootech.asia</a></span></div>
@@ -2702,7 +2714,7 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
           <label for="c-email"><span class="vc-label">電子郵件</span><input id="c-email" name="email" type="email" required autocomplete="email"></label>
           <label for="c-phone"><span class="vc-label">聯絡電話（選填）</span><input id="c-phone" name="phone" type="tel" autocomplete="tel"></label>
           <label for="c-message"><span class="vc-label">簡單描述需求（選填）</span><textarea id="c-message" name="message" rows="4"></textarea></label>
-          <div class="full row"><button class="vc-btn" type="submit">送出需求</button><span class="form-note" role="status"></span></div>
+          <div class="full row"><div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="light"></div><button class="vc-btn" type="submit">送出需求</button><span class="form-note" role="status"></span></div>
         </form>
         <div class="vc-info">
           <div><span class="vc-label">Email</span><p><a href="mailto:contact@mootech.asia">contact@mootech.asia</a></p></div>
@@ -2889,7 +2901,7 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
           <label for="d-email">電子郵件<input id="d-email" name="email" type="email" required autocomplete="email"></label>
           <label for="d-phone">聯絡電話（選填）<input id="d-phone" name="phone" type="tel" autocomplete="tel"></label>
           <label for="d-message">簡單描述需求（選填）<textarea id="d-message" name="message" rows="4"></textarea></label>
-          <div class="full row"><button class="vd-cta" type="submit"><span>送出需求</span><span class="vd-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button><span class="form-note" role="status"></span></div>
+          <div class="full row"><div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="dark"></div><button class="vd-cta" type="submit"><span>送出需求</span><span class="vd-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button><span class="form-note" role="status"></span></div>
         </form>
         <aside class="vd-info">
           <div class="vd-glass"><span class="vd-kicker">電子郵件</span><p><a href="mailto:contact@mootech.asia">contact@mootech.asia</a></p></div>
@@ -3150,7 +3162,7 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
           <label for="e-email">電子郵件<input id="e-email" name="email" type="email" required autocomplete="email"></label>
           <label for="e-phone">聯絡電話（選填）<input id="e-phone" name="phone" type="tel" autocomplete="tel"></label>
           <label for="e-message">簡單描述需求（選填）<textarea id="e-message" name="message" rows="4"></textarea></label>
-          <div class="full row"><button class="ve-btn" type="submit">送出需求</button><span class="form-note" role="status"></span></div>
+          <div class="full row"><div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="dark"></div><button class="ve-btn" type="submit">送出需求</button><span class="form-note" role="status"></span></div>
         </form>
     </div>
   </section>
@@ -3664,6 +3676,7 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
     setupArt(root); kick();
     root.querySelectorAll(".ve-hero").forEach(function (h) { if (h._play) h._play(); });
     root.querySelectorAll("[data-query]").forEach(function (f) { if (f._run && !f._ran) { f._ran = true; setTimeout(f._run, 700); } });
+    renderTurnstile();
     /* 載入時本來就在頂端，第一次不捲動，避免初始化時強制整頁排版 */
     if (shown) window.scrollTo({ top: 0, behavior: "instant" });
     shown = true;
@@ -3707,10 +3720,55 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
     });
   });
 
+  /* Cloudflare Turnstile：只渲染目前顯示版型的聯絡表單；固定 normal 尺寸（高 65px，手機容器 70px）。 */
+  var tsFailed = false;
+  function renderTurnstile() {
+    if (!window.turnstile) return;
+    document.querySelectorAll("form[data-form] .cf-turnstile").forEach(function (el) {
+      var v = el.closest(".v");
+      if (el.getAttribute("data-widget-id") || (v && v.hidden)) return;
+      var language = document.documentElement.lang.indexOf("en") === 0 ? "en" : "zh-tw";
+      var id = window.turnstile.render(el, { sitekey: el.getAttribute("data-sitekey"), theme: el.getAttribute("data-theme") || "auto", size: "normal", language: language });
+      if (id) el.setAttribute("data-widget-id", id);
+    });
+  }
+  window.mootechTurnstileLoad = renderTurnstile;
+  /* 中英切換時以新語言重新渲染（會清掉已完成的驗證） */
+  window.mootechTurnstileRelang = function () {
+    if (!window.turnstile) return;
+    document.querySelectorAll("form[data-form] .cf-turnstile[data-widget-id]").forEach(function (el) {
+      window.turnstile.remove(el.getAttribute("data-widget-id"));
+      el.removeAttribute("data-widget-id");
+    });
+    renderTurnstile();
+  };
+  if (document.querySelector("form[data-form] .cf-turnstile")) {
+    var tsScript = document.createElement("script");
+    tsScript.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=mootechTurnstileLoad";
+    tsScript.async = true;
+    tsScript.onerror = function () { tsFailed = true; };
+    document.head.appendChild(tsScript);
+  }
+
   document.querySelectorAll("form[data-form]").forEach(function (f) {
     f.addEventListener("submit", function (e) {
       e.preventDefault();
-      f.querySelector(".form-note").textContent = lang === "en" ? "Thanks for your message. This is a design preview; the form is not connected to email yet." : "感謝您的訊息。此為設計預覽，表單尚未串接寄信服務。";
+      var note = f.querySelector(".form-note"), ts = f.querySelector(".cf-turnstile");
+      var id = ts && ts.getAttribute("data-widget-id");
+      if (ts) {
+        if (!window.turnstile || !id) {
+          note.textContent = tsFailed
+            ? (lang === "en" ? "Verification could not load. Please try again later or email contact@mootech.asia." : "驗證元件無法載入，請稍後再試，或直接寄信至 contact@mootech.asia。")
+            : (lang === "en" ? "Verification is loading. Please try again in a moment." : "驗證載入中，請稍候再送出。");
+          return;
+        }
+        if (!window.turnstile.getResponse(id)) {
+          note.textContent = lang === "en" ? "Please complete the verification before sending." : "請先完成驗證再送出。";
+          return;
+        }
+      }
+      note.textContent = lang === "en" ? "Thanks for your message. This is a design preview; the form is not connected to email yet." : "感謝您的訊息。此為設計預覽，表單尚未串接寄信服務。";
+      if (id) window.turnstile.reset(id);
     });
   });
 
@@ -4268,6 +4326,7 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
     lang = l;
     running.forEach(function (cv) { if (!cv._draw) return; if (cv._vis) cv._draw(performance.now(), 0); else cv._needDraw = true; });
     document.documentElement.lang = l === "en" ? "en" : "zh-Hant";
+    if (window.mootechTurnstileRelang) window.mootechTurnstileRelang();
     document.title = l === "en" ? (EN[zhTitle] || zhTitle) : zhTitle;
     document.querySelectorAll("[data-query] .note").forEach(function (n) { n.textContent = l === "en" ? "demo data · not live traffic" : "示範資料 · 非實際流量"; });
     document.querySelectorAll("[data-lang-toggle]").forEach(function (b) { b.textContent = l === "en" ? "中文" : "EN"; b.setAttribute("aria-label", l === "en" ? "中文 切換為中文" : "EN 切換為英文"); });
@@ -4474,7 +4533,7 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
   function contactForm(done) {
     var source = document.querySelector('.v:not([hidden]) form[data-form]');
     if (!source) return;
-    var fields = Array.prototype.map.call(source.querySelectorAll('input,textarea'), function (el) {
+    var fields = Array.prototype.map.call(source.querySelectorAll('input:not([type="hidden"]),textarea'), function (el) {
       return { n: el.name, l: el.labels[0].textContent.trim(), req: el.required, ac: el.autocomplete,
         type: el.type, area: el.tagName === 'TEXTAREA', maxLength: el.maxLength };
     });

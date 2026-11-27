@@ -1184,3 +1184,15 @@ html[lang="en"] .career-role-en { display: none; }
 .career-role h3 { font-size: clamp(14px,1.25vw,18px); line-height: 1.5; white-space: nowrap; }
 html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
 @media(max-width:600px) { .career-role { min-height: 72px; } .career-role h3 { font-size: 18px; } }
+/* Turnstile：桌機在送出按鈕旁、按鈕靠右；手機在按鈕上方，區塊固定 70px 高 */
+form[data-form] .row .cf-turnstile { flex: 0 0 auto; }
+form[data-form] .row .cf-turnstile:empty { display: none; }
+form[data-form] .row [type="submit"] { margin-left: auto; }
+form[data-form] .row .form-note { flex-basis: 100%; text-align: right; }
+form[data-form] .row .form-note:empty { min-height: 0; }
+@media (max-width: 560px) {
+  form[data-form] .row { flex-direction: column; align-items: flex-start; }
+  form[data-form] .row [type="submit"] { margin-left: 0; }
+  form[data-form] .row .form-note { text-align: left; }
+  form[data-form] .row .cf-turnstile, form[data-form] .row .cf-turnstile:empty { display: block; height: 70px; }
+}

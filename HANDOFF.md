@@ -726,3 +726,19 @@ python3 tools/build-en.py
 - 依使用者要求，`.vision-card .vision-statement` 加 `max-width: none`，取消原 76ch 寬度上限，宣言文字填滿卡片內寬（與團隊文化段落一致）。根目錄與五份 `design-*/style.css` 同步；未改其他樣式。
 - 驗證：`git diff --check` 通過、英文頁重新產生。headless Chrome 1440 截圖 D 英文：宣言由 5 行變為 4 行、左右貼齊卡片內距。其他版、中文與手機未截圖。
 - 分支：`claude/split-designs-v2`，已 commit，未推送，正式站未變更。
+
+### 2026-11-27：聯絡表單加入 Cloudflare Turnstile
+
+- A–E「聯絡我們」表單在「送出需求」按鈕前加入 Turnstile 容器（`.cf-turnstile`，sitekey 暫用 Cloudflare 測試鍵 `1x00000000000000000000AA`；A／C `data-theme="light"`，B／D／E `dark`）。桌機與按鈕同列、在按鈕左側；≤560px 改直排，驗證在按鈕上方（共用樣式 `form[data-form] .row`，根目錄與五份 `style.css`）。
+- 腳本：動態載入 `https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=mootechTurnstileLoad`，只渲染目前顯示版型的表單（根目錄切版時 `show()` 再渲染）；容器寬度不足 300px 用 compact。語言依 `<html lang>`（en／zh-tw），中英切換時移除並重新渲染（已完成的驗證會清掉）。送出時未載入、載入失敗或尚未取得 token 會在 form-note 提示，不顯示送出成功；成功提示後 reset。
+- 客服「最後聯絡表單」讀取官網欄位時改為排除 hidden input，避免把 Turnstile 的 `cf-turnstile-response` 當成欄位（原本會因沒有 label 而出錯）。客服表單本身未加驗證。
+- 限制：網站沒有後端，token 未經 siteverify（需 secret key）驗證，目前只是前端門檻、不具實際防護；測試 sitekey 會顯示「For testing only」紅字且永遠通過。上線需換正式 sitekey（並把網域加入 Turnstile 設定），寄信後端串接時再做 siteverify。README 已註明。
+- 驗證：五份 `script.js` 與根目錄 inline JS `node --check` 通過；英文頁重新產生；`git diff --check`、素材檢查 242 項通過。本機 http.server + headless Chrome：D、A 英文、根目錄 B 皆只渲染目前版型的 widget 並產生 `cf-turnstile-response`；截圖確認 1100px 寬 D／A 驗證在按鈕左側、390px 寬 D 驗證在按鈕上方，英文頁元件顯示英文。未實測點擊送出（未通過／通過）流程與中英切換重新渲染（本機無 Puppeteer）。
+- 分支：`claude/split-designs-v2`，已 commit，未推送，正式站未變更。
+
+### 2026-11-27：Turnstile 版面微調
+
+- 桌機：「送出需求」按鈕 `margin-left: auto` 靠右，Turnstile 留在左側；form-note 改為獨佔一行（`flex-basis: 100%`、靠右，空白時 min-height 0）。
+- 手機（≤560px）：Turnstile 容器固定 `height: 70px`，載入前也保留空間（不再 display:none）；取消原「容器 <300px 改 compact（140px 高）」邏輯，一律 normal（300×65）。按鈕恢復靠左、提示靠左。容器窄於 300px 的極窄螢幕，元件會略超出表單內距（未裁切，以免遮住 Cloudflare 標誌）。
+- 根目錄與五份 `style.css`／`script.js` 同步。驗證：`node --check`、英文頁產生、`git diff --check` 通過；本機 http.server 截圖 1100px 寬 A／D 按鈕靠右、390px 寬 D 驗證在按鈕上方且高度 70px。未實測點擊送出流程。
+- 分支：`claude/split-designs-v2`，已 commit，未推送，正式站未變更。

@@ -470,6 +470,7 @@
     setupArt(root); kick();
     root.querySelectorAll(".ve-hero").forEach(function (h) { if (h._play) h._play(); });
     root.querySelectorAll("[data-query]").forEach(function (f) { if (f._run && !f._ran) { f._ran = true; setTimeout(f._run, 700); } });
+    renderTurnstile();
   }
 
   var anchorNavigation = 0;
@@ -494,10 +495,55 @@
     });
   });
 
+  /* Cloudflare Turnstile：只渲染目前顯示版型的聯絡表單；固定 normal 尺寸（高 65px，手機容器 70px）。 */
+  var tsFailed = false;
+  function renderTurnstile() {
+    if (!window.turnstile) return;
+    document.querySelectorAll("form[data-form] .cf-turnstile").forEach(function (el) {
+      var v = el.closest(".v");
+      if (el.getAttribute("data-widget-id") || (v && v.hidden)) return;
+      var language = document.documentElement.lang.indexOf("en") === 0 ? "en" : "zh-tw";
+      var id = window.turnstile.render(el, { sitekey: el.getAttribute("data-sitekey"), theme: el.getAttribute("data-theme") || "auto", size: "normal", language: language });
+      if (id) el.setAttribute("data-widget-id", id);
+    });
+  }
+  window.mootechTurnstileLoad = renderTurnstile;
+  /* 中英切換時以新語言重新渲染（會清掉已完成的驗證） */
+  window.mootechTurnstileRelang = function () {
+    if (!window.turnstile) return;
+    document.querySelectorAll("form[data-form] .cf-turnstile[data-widget-id]").forEach(function (el) {
+      window.turnstile.remove(el.getAttribute("data-widget-id"));
+      el.removeAttribute("data-widget-id");
+    });
+    renderTurnstile();
+  };
+  if (document.querySelector("form[data-form] .cf-turnstile")) {
+    var tsScript = document.createElement("script");
+    tsScript.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=mootechTurnstileLoad";
+    tsScript.async = true;
+    tsScript.onerror = function () { tsFailed = true; };
+    document.head.appendChild(tsScript);
+  }
+
   document.querySelectorAll("form[data-form]").forEach(function (f) {
     f.addEventListener("submit", function (e) {
       e.preventDefault();
-      f.querySelector(".form-note").textContent = lang === "en" ? "Thanks for your message. This is a design preview; the form is not connected to email yet." : "感謝您的訊息。此為設計預覽，表單尚未串接寄信服務。";
+      var note = f.querySelector(".form-note"), ts = f.querySelector(".cf-turnstile");
+      var id = ts && ts.getAttribute("data-widget-id");
+      if (ts) {
+        if (!window.turnstile || !id) {
+          note.textContent = tsFailed
+            ? (lang === "en" ? "Verification could not load. Please try again later or email contact@mootech.asia." : "驗證元件無法載入，請稍後再試，或直接寄信至 contact@mootech.asia。")
+            : (lang === "en" ? "Verification is loading. Please try again in a moment." : "驗證載入中，請稍候再送出。");
+          return;
+        }
+        if (!window.turnstile.getResponse(id)) {
+          note.textContent = lang === "en" ? "Please complete the verification before sending." : "請先完成驗證再送出。";
+          return;
+        }
+      }
+      note.textContent = lang === "en" ? "Thanks for your message. This is a design preview; the form is not connected to email yet." : "感謝您的訊息。此為設計預覽，表單尚未串接寄信服務。";
+      if (id) window.turnstile.reset(id);
     });
   });
 
@@ -1040,6 +1086,7 @@
     lang = l;
     running.forEach(function (cv) { if (!cv._draw) return; if (cv._vis) cv._draw(performance.now(), 0); else cv._needDraw = true; });
     document.documentElement.lang = l === "en" ? "en" : "zh-Hant";
+    if (window.mootechTurnstileRelang) window.mootechTurnstileRelang();
     document.title = l === "en" ? (EN[zhTitle] || zhTitle) : zhTitle;
     document.querySelectorAll("[data-query] .note").forEach(function (n) { n.textContent = l === "en" ? "demo data · not live traffic" : "示範資料 · 非實際流量"; });
     document.querySelectorAll("[data-lang-toggle]").forEach(function (b) { b.textContent = l === "en" ? "中文" : "EN"; b.setAttribute("aria-label", l === "en" ? "中文 切換為中文" : "EN 切換為英文"); });
@@ -1228,7 +1275,7 @@
   function contactForm(done) {
     var source = document.querySelector('.v:not([hidden]) form[data-form]');
     if (!source) return;
-    var fields = Array.prototype.map.call(source.querySelectorAll('input,textarea'), function (el) {
+    var fields = Array.prototype.map.call(source.querySelectorAll('input:not([type="hidden"]),textarea'), function (el) {
       return { n: el.name, l: el.labels[0].textContent.trim(), req: el.required, ac: el.autocomplete,
         type: el.type, area: el.tagName === 'TEXTAREA', maxLength: el.maxLength };
     });
