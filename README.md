@@ -23,8 +23,9 @@
 - 地圖上的資料中心位置（香港、新加坡、東京）是示意，請確認實際據點後修改 `index.html` 中的 `PINS`
 - 各版聯絡表單統一為單欄：公司名稱（選填）、聯絡人、電子郵件、聯絡電話（選填）、簡單描述需求（選填）；聯絡人與電子郵件必填，按鈕為「送出需求」。
 - 客服求職、服務諮詢及其他留言的最後聯絡表單，直接共用目前版型官網表單的欄位設定，包含中英文標籤、順序、必填／選填、輸入類型及送出按鈕；服務需求帶入官網時保留五欄資料。
-- 各版聯絡表單在「送出需求」旁加上 Cloudflare Turnstile 驗證（桌機按鈕靠右、驗證在左；手機寬度 ≤560px 時驗證改在按鈕上方，區塊固定 70px 高）；目前使用 Cloudflare 測試 sitekey `1x00000000000000000000AA`（永遠通過，元件會顯示測試用紅字），上線前需換成正式 sitekey。前端只在取得 token 後才顯示送出提示，token 尚未送到後端以 secret key 呼叫 siteverify 驗證，因此目前不具實際防護效果。
-- 官網聯絡表單仍為設計預覽，尚未串接寄信服務；客服可整理內容後開啟郵件，寄到 contact@mootech.asia（人資信箱待提供）。
+- 各版聯絡表單在「送出需求」旁加上 Cloudflare Turnstile 驗證（桌機按鈕靠右、驗證在左；手機寬度 ≤560px 時驗證改在按鈕上方，區塊固定 70px 高）；目前使用 Cloudflare 測試 sitekey `1x00000000000000000000AA`（永遠通過，元件會顯示測試用紅字），上線前需換成正式 sitekey。前端取得 token 後才會送出，token 隨表單送到寄信 API；需由 API 以 secret key 呼叫 siteverify 驗證才有實際防護效果。
+- 官網聯絡表單按「送出需求」時，以 JSON `POST` 到 `SEND_EMAIL_URL`（目前 `http://192.168.200.45:8888/api/v1/send_email`），欄位 `company`（≤200）、`name`（必填，≤100）、`email`（必填，email 格式）、`phone`（≤30）、`message`（≤5000）與 `cf-turnstile-response`；HTTP 2xx 視為成功並清空表單，其他狀態、網路錯誤或 15 秒逾時顯示失敗並保留內容，每次送出後重設 Turnstile。API 是內網 HTTP 位址：從 HTTPS 網站（例如 GitHub Pages）送出會被瀏覽器當成混合內容擋下，從公開網站連到內網位址也受瀏覽器的私有網路存取限制；API 需回應 CORS 預檢（允許 `Content-Type`）。
+- 客服可整理內容後開啟郵件，寄到 contact@mootech.asia（人資信箱待提供）。
 
 ## 獨立版型資料夾（design-a～design-e）
 

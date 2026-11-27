@@ -1182,6 +1182,13 @@ form[data-form] .row .cf-turnstile:empty { display: none; }
 form[data-form] .row [type="submit"] { margin-left: auto; }
 form[data-form] .row .form-note { flex-basis: 100%; text-align: right; }
 form[data-form] .row .form-note:empty { min-height: 0; }
+/* 送出中：按鈕停用樣式，並取消各版 hover 效果 */
+form[data-form] [type="submit"]:disabled { opacity: .5; cursor: not-allowed; }
+form[data-form] [type="submit"]:disabled:hover { transform: none; box-shadow: none; }
+form[data-form] [type="submit"]:disabled:hover .vd-arrow { transform: none; }
+.va-form .va-btn:disabled:hover { background: var(--a-blue); }
+.vc-form .vc-btn:disabled:hover { background: var(--c-ink); }
+.ve-form .ve-btn:disabled:hover { background: var(--e-accent); color: var(--e-bg); }
 @media (max-width: 560px) {
   form[data-form] .row { flex-direction: column; align-items: flex-start; }
   form[data-form] .row [type="submit"] { margin-left: 0; }

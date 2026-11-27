@@ -525,9 +525,29 @@
     document.head.appendChild(tsScript);
   }
 
+  /* 聯絡表單送出：JSON POST 到寄信 API；長度上限與欄位 maxlength 一致 */
+  var SEND_EMAIL_URL = "http://192.168.200.45:8888/api/v1/send_email";
+  var FIELD_LIMITS = { company: [200, "公司名稱", "Company name"], name: [100, "聯絡人", "Contact person"], phone: [30, "聯絡電話", "Phone"], message: [5000, "需求描述", "Message"] };
+  var EMAIL_RE = /^[^\s@]+@[^\s@.]+(\.[^\s@.]+)+$/;
+  function formData(f) {
+    var val = function (n) { var el = f.elements[n]; return el ? el.value.trim() : ""; };
+    return { company: val("company"), name: val("name"), email: val("email"), phone: val("phone"), message: val("message") };
+  }
+  function formProblem(d) {
+    var en = lang === "en";
+    if (!d.name) return en ? "Please enter a contact person." : "請填寫聯絡人。";
+    if (!EMAIL_RE.test(d.email)) return en ? "Please enter a valid email address." : "請輸入正確的電子郵件格式。";
+    for (var k in FIELD_LIMITS) {
+      var lim = FIELD_LIMITS[k];
+      if (d[k].length > lim[0]) return en ? lim[2] + " can be at most " + lim[0] + " characters." : lim[1] + "最多 " + lim[0] + " 個字。";
+    }
+    return "";
+  }
+
   document.querySelectorAll("form[data-form]").forEach(function (f) {
     f.addEventListener("submit", function (e) {
       e.preventDefault();
+      if (f._sending) return;
       var note = f.querySelector(".form-note"), ts = f.querySelector(".cf-turnstile");
       var id = ts && ts.getAttribute("data-widget-id");
       if (ts) {
@@ -542,8 +562,30 @@
           return;
         }
       }
-      note.textContent = lang === "en" ? "Thanks for your message. This is a design preview; the form is not connected to email yet." : "感謝您的訊息。此為設計預覽，表單尚未串接寄信服務。";
-      if (id) window.turnstile.reset(id);
+      var token = id ? window.turnstile.getResponse(id) : "";
+      var data = formData(f), problem = formProblem(data);
+      if (problem) { note.textContent = problem; return; }
+      data["cf-turnstile-response"] = token;
+      var btn = f.querySelector('[type="submit"]');
+      f._sending = true; if (btn) btn.disabled = true;
+      note.textContent = lang === "en" ? "Sending…" : "送出中…";
+      var ctrl = window.AbortController ? new AbortController() : null;
+      var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 15000) : 0;
+      fetch(SEND_EMAIL_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data), signal: ctrl ? ctrl.signal : undefined })
+        .then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          f.reset();
+          note.textContent = lang === "en" ? "Thanks, we have received your request and will get back to you soon." : "已收到您的需求，我們會盡快與您聯繫。";
+        })
+        .catch(function (err) {
+          if (window.console) console.error("send_email failed", err);
+          note.textContent = lang === "en" ? "Sending failed. Please try again later or email contact@mootech.asia." : "送出失敗，請稍後再試，或直接寄信至 contact@mootech.asia。";
+        })
+        .then(function () {
+          clearTimeout(timer);
+          f._sending = false; if (btn) btn.disabled = false;
+          if (id) window.turnstile.reset(id); // token 只能使用一次
+        });
     });
   });
 

@@ -181,6 +181,13 @@ form[data-form] .row .cf-turnstile:empty { display: none; }
 form[data-form] .row [type="submit"] { margin-left: auto; }
 form[data-form] .row .form-note { flex-basis: 100%; text-align: right; }
 form[data-form] .row .form-note:empty { min-height: 0; }
+/* 送出中：按鈕停用樣式，並取消各版 hover 效果 */
+form[data-form] [type="submit"]:disabled { opacity: .5; cursor: not-allowed; }
+form[data-form] [type="submit"]:disabled:hover { transform: none; box-shadow: none; }
+form[data-form] [type="submit"]:disabled:hover .vd-arrow { transform: none; }
+.va-form .va-btn:disabled:hover { background: var(--a-blue); }
+.vc-form .vc-btn:disabled:hover { background: var(--c-ink); }
+.ve-form .ve-btn:disabled:hover { background: var(--e-accent); color: var(--e-bg); }
 @media (max-width: 560px) {
   form[data-form] .row { flex-direction: column; align-items: flex-start; }
   form[data-form] .row [type="submit"] { margin-left: 0; }
@@ -2257,11 +2264,11 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
         <span class="va-kicker">CONTACT</span>
         <h2 class="va-h2" id="va-contact-heading">聯絡我們</h2>
         <form class="va-form" data-form>
-          <label for="a-company">公司名稱（選填）<input id="a-company" name="company" type="text" autocomplete="organization"></label>
-          <label for="a-name">聯絡人<input id="a-name" name="name" type="text" required autocomplete="name"></label>
+          <label for="a-company">公司名稱（選填）<input id="a-company" name="company" type="text" autocomplete="organization" maxlength="200"></label>
+          <label for="a-name">聯絡人<input id="a-name" name="name" type="text" required autocomplete="name" maxlength="100"></label>
           <label for="a-email">電子郵件<input id="a-email" name="email" type="email" required autocomplete="email"></label>
-          <label for="a-phone">聯絡電話（選填）<input id="a-phone" name="phone" type="tel" autocomplete="tel"></label>
-          <label for="a-message">簡單描述需求（選填）<textarea id="a-message" name="message" rows="4"></textarea></label>
+          <label for="a-phone">聯絡電話（選填）<input id="a-phone" name="phone" type="tel" autocomplete="tel" maxlength="30"></label>
+          <label for="a-message">簡單描述需求（選填）<textarea id="a-message" name="message" rows="4" maxlength="5000"></textarea></label>
           <div class="full row"><div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="light"></div><button class="va-btn" type="submit">送出需求</button><span class="form-note" role="status"></span></div>
         </form>
       </div>
@@ -2500,11 +2507,11 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
       <div class="vb-sec-head"><div><span class="vb-path">~/mootech/contact</span><h2 class="vb-h2" id="vb-contact-heading">聯絡我們</h2></div><p>告訴我們您的需求，工程團隊會盡快回覆。</p></div>
       <div class="vb-contact">
         <form class="vb-form" data-form>
-          <label for="b-company">公司名稱（選填）<input id="b-company" name="company" type="text" autocomplete="organization"></label>
-          <label for="b-name">聯絡人<input id="b-name" name="name" type="text" required autocomplete="name"></label>
+          <label for="b-company">公司名稱（選填）<input id="b-company" name="company" type="text" autocomplete="organization" maxlength="200"></label>
+          <label for="b-name">聯絡人<input id="b-name" name="name" type="text" required autocomplete="name" maxlength="100"></label>
           <label for="b-email">電子郵件<input id="b-email" name="email" type="email" required autocomplete="email"></label>
-          <label for="b-phone">聯絡電話（選填）<input id="b-phone" name="phone" type="tel" autocomplete="tel"></label>
-          <label for="b-message">簡單描述需求（選填）<textarea id="b-message" name="message" rows="4"></textarea></label>
+          <label for="b-phone">聯絡電話（選填）<input id="b-phone" name="phone" type="tel" autocomplete="tel" maxlength="30"></label>
+          <label for="b-message">簡單描述需求（選填）<textarea id="b-message" name="message" rows="4" maxlength="5000"></textarea></label>
           <div class="full row"><div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="dark"></div><button class="vb-btn" type="submit">送出需求</button><span class="form-note" role="status"></span></div>
         </form>
         <aside class="vb-info">
@@ -2709,11 +2716,11 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
       <div class="vc-sidehead"><span class="vc-label">Contact</span><h2 id="vc-contact-heading">聯絡我們</h2></div>
       <div class="vc-main">
         <form class="vc-form" data-form>
-          <label for="c-company"><span class="vc-label">公司名稱（選填）</span><input id="c-company" name="company" type="text" autocomplete="organization"></label>
-          <label for="c-name"><span class="vc-label">聯絡人</span><input id="c-name" name="name" type="text" required autocomplete="name"></label>
+          <label for="c-company"><span class="vc-label">公司名稱（選填）</span><input id="c-company" name="company" type="text" autocomplete="organization" maxlength="200"></label>
+          <label for="c-name"><span class="vc-label">聯絡人</span><input id="c-name" name="name" type="text" required autocomplete="name" maxlength="100"></label>
           <label for="c-email"><span class="vc-label">電子郵件</span><input id="c-email" name="email" type="email" required autocomplete="email"></label>
-          <label for="c-phone"><span class="vc-label">聯絡電話（選填）</span><input id="c-phone" name="phone" type="tel" autocomplete="tel"></label>
-          <label for="c-message"><span class="vc-label">簡單描述需求（選填）</span><textarea id="c-message" name="message" rows="4"></textarea></label>
+          <label for="c-phone"><span class="vc-label">聯絡電話（選填）</span><input id="c-phone" name="phone" type="tel" autocomplete="tel" maxlength="30"></label>
+          <label for="c-message"><span class="vc-label">簡單描述需求（選填）</span><textarea id="c-message" name="message" rows="4" maxlength="5000"></textarea></label>
           <div class="full row"><div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="light"></div><button class="vc-btn" type="submit">送出需求</button><span class="form-note" role="status"></span></div>
         </form>
         <div class="vc-info">
@@ -2896,11 +2903,11 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
       <div class="vd-head2"><span class="vd-kicker">CONTACT</span><h2 class="vd-h2" id="vd-contact-heading">聯絡我們</h2><p>告訴我們您的需求，工程團隊會盡快回覆。</p></div>
       <div class="vd-contact">
         <form class="vd-glass vd-form" data-form>
-          <label for="d-company">公司名稱（選填）<input id="d-company" name="company" type="text" autocomplete="organization"></label>
-          <label for="d-name">聯絡人<input id="d-name" name="name" type="text" required autocomplete="name"></label>
+          <label for="d-company">公司名稱（選填）<input id="d-company" name="company" type="text" autocomplete="organization" maxlength="200"></label>
+          <label for="d-name">聯絡人<input id="d-name" name="name" type="text" required autocomplete="name" maxlength="100"></label>
           <label for="d-email">電子郵件<input id="d-email" name="email" type="email" required autocomplete="email"></label>
-          <label for="d-phone">聯絡電話（選填）<input id="d-phone" name="phone" type="tel" autocomplete="tel"></label>
-          <label for="d-message">簡單描述需求（選填）<textarea id="d-message" name="message" rows="4"></textarea></label>
+          <label for="d-phone">聯絡電話（選填）<input id="d-phone" name="phone" type="tel" autocomplete="tel" maxlength="30"></label>
+          <label for="d-message">簡單描述需求（選填）<textarea id="d-message" name="message" rows="4" maxlength="5000"></textarea></label>
           <div class="full row"><div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="dark"></div><button class="vd-cta" type="submit"><span>送出需求</span><span class="vd-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button><span class="form-note" role="status"></span></div>
         </form>
         <aside class="vd-info">
@@ -3157,11 +3164,11 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
         <img class="ve-bear ve-bear-wave" src="assets/images/mootech_website_IMG014_mascot_bear-heart.webp" alt="" aria-hidden="true" width="460" height="483" loading="lazy" decoding="async">
       </div>
       <form class="ve-form" data-form>
-          <label for="e-company">公司名稱（選填）<input id="e-company" name="company" type="text" autocomplete="organization"></label>
-          <label for="e-name">聯絡人<input id="e-name" name="name" type="text" required autocomplete="name"></label>
+          <label for="e-company">公司名稱（選填）<input id="e-company" name="company" type="text" autocomplete="organization" maxlength="200"></label>
+          <label for="e-name">聯絡人<input id="e-name" name="name" type="text" required autocomplete="name" maxlength="100"></label>
           <label for="e-email">電子郵件<input id="e-email" name="email" type="email" required autocomplete="email"></label>
-          <label for="e-phone">聯絡電話（選填）<input id="e-phone" name="phone" type="tel" autocomplete="tel"></label>
-          <label for="e-message">簡單描述需求（選填）<textarea id="e-message" name="message" rows="4"></textarea></label>
+          <label for="e-phone">聯絡電話（選填）<input id="e-phone" name="phone" type="tel" autocomplete="tel" maxlength="30"></label>
+          <label for="e-message">簡單描述需求（選填）<textarea id="e-message" name="message" rows="4" maxlength="5000"></textarea></label>
           <div class="full row"><div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="dark"></div><button class="ve-btn" type="submit">送出需求</button><span class="form-note" role="status"></span></div>
         </form>
     </div>
@@ -3750,9 +3757,29 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
     document.head.appendChild(tsScript);
   }
 
+  /* 聯絡表單送出：JSON POST 到寄信 API；長度上限與欄位 maxlength 一致 */
+  var SEND_EMAIL_URL = "http://192.168.200.45:8888/api/v1/send_email";
+  var FIELD_LIMITS = { company: [200, "公司名稱", "Company name"], name: [100, "聯絡人", "Contact person"], phone: [30, "聯絡電話", "Phone"], message: [5000, "需求描述", "Message"] };
+  var EMAIL_RE = /^[^\s@]+@[^\s@.]+(\.[^\s@.]+)+$/;
+  function formData(f) {
+    var val = function (n) { var el = f.elements[n]; return el ? el.value.trim() : ""; };
+    return { company: val("company"), name: val("name"), email: val("email"), phone: val("phone"), message: val("message") };
+  }
+  function formProblem(d) {
+    var en = lang === "en";
+    if (!d.name) return en ? "Please enter a contact person." : "請填寫聯絡人。";
+    if (!EMAIL_RE.test(d.email)) return en ? "Please enter a valid email address." : "請輸入正確的電子郵件格式。";
+    for (var k in FIELD_LIMITS) {
+      var lim = FIELD_LIMITS[k];
+      if (d[k].length > lim[0]) return en ? lim[2] + " can be at most " + lim[0] + " characters." : lim[1] + "最多 " + lim[0] + " 個字。";
+    }
+    return "";
+  }
+
   document.querySelectorAll("form[data-form]").forEach(function (f) {
     f.addEventListener("submit", function (e) {
       e.preventDefault();
+      if (f._sending) return;
       var note = f.querySelector(".form-note"), ts = f.querySelector(".cf-turnstile");
       var id = ts && ts.getAttribute("data-widget-id");
       if (ts) {
@@ -3767,8 +3794,30 @@ html[lang="en"] .career-role h3 { font-size: clamp(14px,1.18vw,17px); }
           return;
         }
       }
-      note.textContent = lang === "en" ? "Thanks for your message. This is a design preview; the form is not connected to email yet." : "感謝您的訊息。此為設計預覽，表單尚未串接寄信服務。";
-      if (id) window.turnstile.reset(id);
+      var token = id ? window.turnstile.getResponse(id) : "";
+      var data = formData(f), problem = formProblem(data);
+      if (problem) { note.textContent = problem; return; }
+      data["cf-turnstile-response"] = token;
+      var btn = f.querySelector('[type="submit"]');
+      f._sending = true; if (btn) btn.disabled = true;
+      note.textContent = lang === "en" ? "Sending…" : "送出中…";
+      var ctrl = window.AbortController ? new AbortController() : null;
+      var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 15000) : 0;
+      fetch(SEND_EMAIL_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data), signal: ctrl ? ctrl.signal : undefined })
+        .then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          f.reset();
+          note.textContent = lang === "en" ? "Thanks, we have received your request and will get back to you soon." : "已收到您的需求，我們會盡快與您聯繫。";
+        })
+        .catch(function (err) {
+          if (window.console) console.error("send_email failed", err);
+          note.textContent = lang === "en" ? "Sending failed. Please try again later or email contact@mootech.asia." : "送出失敗，請稍後再試，或直接寄信至 contact@mootech.asia。";
+        })
+        .then(function () {
+          clearTimeout(timer);
+          f._sending = false; if (btn) btn.disabled = false;
+          if (id) window.turnstile.reset(id); // token 只能使用一次
+        });
     });
   });
 

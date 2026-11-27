@@ -742,3 +742,18 @@ python3 tools/build-en.py
 - 手機（≤560px）：Turnstile 容器固定 `height: 70px`，載入前也保留空間（不再 display:none）；取消原「容器 <300px 改 compact（140px 高）」邏輯，一律 normal（300×65）。按鈕恢復靠左、提示靠左。容器窄於 300px 的極窄螢幕，元件會略超出表單內距（未裁切，以免遮住 Cloudflare 標誌）。
 - 根目錄與五份 `style.css`／`script.js` 同步。驗證：`node --check`、英文頁產生、`git diff --check` 通過；本機 http.server 截圖 1100px 寬 A／D 按鈕靠右、390px 寬 D 驗證在按鈕上方且高度 70px。未實測點擊送出流程。
 - 分支：`claude/split-designs-v2`，已 commit，未推送，正式站未變更。
+
+### 2026-11-27：聯絡表單串接寄信 API（JSON POST）
+
+- A–E 官網聯絡表單按「送出需求」改為 `fetch` POST 到 `SEND_EMAIL_URL = "http://192.168.200.45:8888/api/v1/send_email"`，`Content-Type: application/json`，內容 `{company, name, email, phone, message, "cf-turnstile-response"}`（D 為 `#d-company`／`#d-name`／`#d-email`／`#d-phone`／`#d-message`，其他版同名欄位 `a-`～`e-` 前綴）。值會 trim。
+- 驗證：Turnstile 未載入／無 token 時不送；聯絡人必填；email 以 `type=email` 加正則（需含 @ 與網域點號）檢查；長度上限 company 200、name 100、phone 30、message 5000，HTML 同步加 `maxlength`（客服最後表單讀官網欄位，會一併套用），JS 再檢查一次（防程式帶入超長值）。中英文錯誤提示。
+- 送出中顯示「送出中…」並停用按鈕；HTTP 2xx 顯示成功並清空表單；非 2xx、網路錯誤或 15 秒逾時顯示失敗並保留內容、console 記錄錯誤；每次結束 reset Turnstile（token 只能用一次）。原「此為設計預覽」提示已移除。
+- 風險：API 為內網 HTTP。正式站是 HTTPS（GitHub Pages），瀏覽器會以混合內容擋下請求；公開網站連內網位址也受 Chrome 私有網路存取限制。只有在同網段、以 HTTP 開啟的網站才可能送達。API 需處理 CORS 預檢、以 secret key 呼叫 Turnstile siteverify，並自行驗證欄位長度。
+- 驗證：`node --check`（五份 script.js、根目錄 inline）、英文頁產生、`git diff --check` 通過。本機測試頁（同源 iframe 載入 design-d 英文頁，替換 fetch 與 Turnstile token）：maxlength 200／100／30／5000；公司 201 字被擋且未送出；`a@b` 原生驗證通過但被正則擋下；正常資料送出時按鈕停用、POST 至上述網址、JSON 與指定格式一致（含換行）；回 200 後清空表單、按鈕恢復、Turnstile reset 1 次；回 500 顯示失敗、保留資料。未連到實際 API 測試（本機無法連 192.168.200.45）。
+- 分支：`claude/split-designs-v2`，已 commit，未推送，正式站未變更。
+
+### 2026-11-27：送出按鈕停用樣式
+
+- 送出中按鈕已有 `disabled`（與 `_sending` 防重送），但五版原本沒有停用外觀。新增共用樣式：`form[data-form] [type="submit"]:disabled` 半透明（opacity .5）與 `cursor: not-allowed`；停用時取消 hover 效果（D 的上浮／陰影／箭頭旋轉、B 的光暈，A／C／E 的 hover 底色改回原色）。根目錄與五份 `style.css` 同步。
+- 驗證：英文頁產生、`git diff --check` 通過。本機測試頁將五版按鈕設為停用後截圖，A–E 皆呈現淡化。hover 取消效果未實測（headless 無法模擬滑鼠懸停）。
+- 分支：`claude/split-designs-v2`，已 commit，未推送，正式站未變更。

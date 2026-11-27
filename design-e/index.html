@@ -312,11 +312,11 @@
         <img class="ve-bear ve-bear-wave" src="assets/images/mootech_website_IMG014_mascot_bear-heart.webp" alt="" aria-hidden="true" width="460" height="483" loading="lazy" decoding="async">
       </div>
       <form class="ve-form" data-form>
-          <label for="e-company">公司名稱（選填）<input id="e-company" name="company" type="text" autocomplete="organization"></label>
-          <label for="e-name">聯絡人<input id="e-name" name="name" type="text" required autocomplete="name"></label>
+          <label for="e-company">公司名稱（選填）<input id="e-company" name="company" type="text" autocomplete="organization" maxlength="200"></label>
+          <label for="e-name">聯絡人<input id="e-name" name="name" type="text" required autocomplete="name" maxlength="100"></label>
           <label for="e-email">電子郵件<input id="e-email" name="email" type="email" required autocomplete="email"></label>
-          <label for="e-phone">聯絡電話（選填）<input id="e-phone" name="phone" type="tel" autocomplete="tel"></label>
-          <label for="e-message">簡單描述需求（選填）<textarea id="e-message" name="message" rows="4"></textarea></label>
+          <label for="e-phone">聯絡電話（選填）<input id="e-phone" name="phone" type="tel" autocomplete="tel" maxlength="30"></label>
+          <label for="e-message">簡單描述需求（選填）<textarea id="e-message" name="message" rows="4" maxlength="5000"></textarea></label>
           <div class="full row"><div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="dark"></div><button class="ve-btn" type="submit">送出需求</button><span class="form-note" role="status"></span></div>
         </form>
     </div>

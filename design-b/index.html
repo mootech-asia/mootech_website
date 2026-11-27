@@ -294,11 +294,11 @@
       <div class="vb-sec-head"><div><span class="vb-path">~/mootech/contact</span><h2 class="vb-h2" id="vb-contact-heading">聯絡我們</h2></div><p>告訴我們您的需求，工程團隊會盡快回覆。</p></div>
       <div class="vb-contact">
         <form class="vb-form" data-form>
-          <label for="b-company">公司名稱（選填）<input id="b-company" name="company" type="text" autocomplete="organization"></label>
-          <label for="b-name">聯絡人<input id="b-name" name="name" type="text" required autocomplete="name"></label>
+          <label for="b-company">公司名稱（選填）<input id="b-company" name="company" type="text" autocomplete="organization" maxlength="200"></label>
+          <label for="b-name">聯絡人<input id="b-name" name="name" type="text" required autocomplete="name" maxlength="100"></label>
           <label for="b-email">電子郵件<input id="b-email" name="email" type="email" required autocomplete="email"></label>
-          <label for="b-phone">聯絡電話（選填）<input id="b-phone" name="phone" type="tel" autocomplete="tel"></label>
-          <label for="b-message">簡單描述需求（選填）<textarea id="b-message" name="message" rows="4"></textarea></label>
+          <label for="b-phone">聯絡電話（選填）<input id="b-phone" name="phone" type="tel" autocomplete="tel" maxlength="30"></label>
+          <label for="b-message">簡單描述需求（選填）<textarea id="b-message" name="message" rows="4" maxlength="5000"></textarea></label>
           <div class="full row"><div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="dark"></div><button class="vb-btn" type="submit">送出需求</button><span class="form-note" role="status"></span></div>
         </form>
         <aside class="vb-info">
