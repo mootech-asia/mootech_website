@@ -10,7 +10,7 @@ src = open("index.html", encoding="utf-8").read()
 s = src.replace('<html lang="zh-Hant">', '<html lang="en">', 1)
 
 meta = {
-    "title": "MOOTECH | Driving business through innovation",
+    "title": "MOOTECH | Complete IT solutions, one move ahead.",
     "desc": "Since 2016 MOOTECH has provided live streaming, internet access, CDN, IP Transit, IPLC private lines, network optimisation and system integration, with offices in Singapore and Taiwan.",
 }
 s = re.sub(r"<title>.*?</title>", f"<title>{meta['title']}</title>", s, count=1)

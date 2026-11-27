@@ -285,7 +285,7 @@ def build_head(head, v):
         raise SystemExit("index.html 的 og:image 已不是 %s，請同步 split-designs.py 與 build-en.py 的 D 分享圖" % D_SOCIAL[0])
     if v != "d":
         head = head.replace(D_SOCIAL[0], DEFAULT_SOCIAL)
-        head = sub_once(r'<meta property="og:image:alt" content="[^"]*">', '<meta property="og:image:alt" content="MOOTECH｜透過創新推動企業發展">', head)
+        head = sub_once(r'<meta property="og:image:alt" content="[^"]*">', '<meta property="og:image:alt" content="MOOTECH｜Complete IT solutions, one move ahead.">', head)
     # 頁面自帶素材副本：絕對網址的圖片改指向本資料夾
     head = head.replace(BASE + "assets/", folder + "assets/")
     return head + '<link rel="stylesheet" href="style.css">\n</head>\n'

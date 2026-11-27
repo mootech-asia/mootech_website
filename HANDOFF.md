@@ -603,3 +603,120 @@ python3 tools/build-en.py
   - 樣式比對 20 組：每輪 1–2 組出現 0.02–0.2px 的文字寬度差，且每次出現在不同組合，重跑即通過，屬既有字型算繪浮動。互動測試：A／B／C 手機選單錨點偏差同前（既有）；另有偶發一次 7px 落點偏差（C 桌機），重跑 4 次皆在 1px 內，屬既有的載入初期偏差。
 - 未處理（評估後不需要）：E 首屏影片（720p、約 1 Mbps）、D 城市橫幅與熊圖（70–100 KB）、未引用的小綠人 GIF 約 7 MB（訪客不會下載）。
 - 分支：`claude/split-designs-v2`，未推送，正式站未變更。
+
+### 2026-11-27：願景照片輪播移到「團隊文化」段落下方
+
+- 依使用者要求，把 A–E「MOOTECH 願景」宣言下方的三主題照片輪播（辦公空間／聚餐／知識分享），整塊移到「團隊文化」介紹段落（「我們是一群由 7 年級與 8 年級工程師組成的團隊…」）之下。輪播 HTML、圖片、文字與控制按鈕都沒改；「願景」區只剩標題與宣言。
+- 根目錄 `index.html`（A–E 五處）與 `design-a`～`design-e/index.html` 都直接修改，沒有重新執行 split-designs（避免覆蓋資料夾內的既有改動）。
+- 樣式（根目錄與五份 `style.css` 同步）：宣言是區塊最後一個元素時去掉下方留白；輪播接在其他元素後面時上方留出原本的間距 `clamp(28px,4vw,48px)`。輪播腳本用 `[data-vision-carousel]` 選取，換位置不影響。
+- 驗證：10 處願景區都以宣言收尾、輪播都在團隊文化卡片之後；`git diff --check` 通過；`python3 tools/build-en.py` 產生英文頁；`python3 tools/assets.py check` 通過 242 項。D 版桌機 headless Chrome 截圖確認順序為願景宣言 → 團隊文化段落 → 輪播。未做 A–E × 中英文 × 手機的完整互動回歸（本次 Puppeteer 安裝被權限擋下）。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：英文「JOIN US」改為「Join Us」
+
+- 依使用者要求，所有英文「JOIN US」改為「Join Us」：A–E 選單（B 為 `/Join Us`）、招募區 h2 標題、B 聯絡區 `<small>`、C 聯絡區 `.vc-label`，以及 EN 字典 `"加入我們": "Join Us"`（A 的 h3、D 的 kicker、E 的 dt 經字典翻譯）。根目錄 `index.html` 與 `design-a`～`design-e` 的 `index.html`／`script.js` 同步。
+- C 的 `.vc-label` 與 D 聯絡區 `.vd-kicker` 有 `text-transform: uppercase`，改字後畫面仍會顯示 JOIN US，因此這兩處加上 `keep-case` class，並新增 `.vc-label.keep-case, .vd-kicker.keep-case { text-transform: none; }`（根目錄、design-c、design-d 的 style.css）。同一排其他標籤（Email／Locations／Social、電子郵件／地點／社群的英文）仍維持全大寫；B 聯絡區旁邊的 LOCATIONS／SOCIAL 原文就是全大寫，未改。招募區上方的 kicker「CAREERS」未改。
+- 驗證：英文頁重新產生後，網站檔案（含 en、d、design-x/en）已無「JOIN US」；`git diff --check` 通過；素材檢查 242 項通過。未做瀏覽器截圖確認。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：願景宣言加上與「團隊文化」相同的卡片底色與框線
+
+- A–E「MOOTECH 願景」宣言外層加一層卡片，沿用團隊文化介紹的同一組 class：A／B／C／E 為 `hr-card hr-prose`（C 依原設計只有底線），D 為 `vd-glass vd-team-intro`，另加 `vision-card` 標記。底色、框線、圓角、內距與團隊文化卡片相同。
+- 宣言原本的字級、行高與 76ch 寬度保留：新增 `.vision-card .vision-statement` 覆蓋卡片內 `p` 的 15.5／16px 字級。根目錄 `index.html` 與 `design-a`～`design-e` 的 `index.html`／`style.css` 同步。
+- 驗證：英文頁重新產生；`git diff --check` 通過；素材檢查 242 項通過。headless Chrome 桌機 1440 截圖目視 A、C、D：宣言卡片與團隊文化卡片外觀一致。B、E、手機與英文頁未截圖。
+- 另：先前 `graphify update` 產生的未追蹤 `graphify-out/` 已依使用者要求刪除。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：「成立年份」卡片 2016 → 2012
+
+- 依使用者要求，只把「成立年份，深耕企業 IT 服務」卡片的數字改為 2012（A、D、E 有此卡；根目錄 `index.html` 與 `design-a`／`design-d`／`design-e`）。
+- 使用者確認其他 2016 先不改：關於我們內文「成立於 2016 年」、首屏 SINCE 2016、B 版 FOUNDED／founded、C 版 Est. 與內文、E 版首屏「2016 成立」、客服公司介紹、meta description／og／JSON-LD，以及 `tools/build-d-tech-social.py`。目前同頁會同時出現 2012 與 2016，待業務確認正式成立年份後再統一。
+- 驗證：英文頁重新產生；`git diff --check` 通過。純文字數字修改，未截圖。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：「關於我們」公司介紹段落改寫
+
+- 依使用者提供文字，把 A／B／D／E「關於我們」的「MOOTECH 成立於 2016 年，據點位於新加坡與台灣…」改為「MOOTECH 於 2012 年在新加坡成立總部，2016 年設立台灣分公司，專注為企業打造低延遲、高可用的網路傳輸環境。我們的服務涵蓋企業級連線、國際專線、高併發直播串流，以及量身規劃的網路架構優化與系統整合。」C 版沒有這段。
+- EN 字典同步改鍵與英文（使用者定稿）：「Headquartered in Singapore since 2012 with a branch office established in Taiwan in 2016, MOOTECH specializes in building low-latency, high-availability network transmission environments for enterprises. Our services encompass enterprise connectivity, international private leased circuits (IPLC), high-concurrency live streaming, as well as tailored network architecture optimization and system integration.」根目錄與 `design-*/index.html`、`design-*/script.js` 同步。
+- 字典內另有一條舊的「…DDoS 防護…」版本（頁面未使用），未動。其他 2016 位置（SINCE 2016、B FOUNDED、C Est.、E 首屏、客服、SEO）依使用者前一輪決定仍未改。
+- 驗證：英文頁重新產生；`git diff --check` 通過。未截圖。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：「關於我們」對等互聯段落改寫（中英文）
+
+- A–E「關於我們」第二段依使用者定稿替換。中文：「我們建置亞洲區域優化線路，並在香港（HKIX）、馬來西亞（MYIX）、新加坡（SGIX）與日本（JPIX）等核心網路交換中心直接對等互聯（Peering）。流量不必繞經多層轉接，路由更短、延遲更低，讓您的關鍵業務隨時保持安全、流暢與穩定。」英文（EN 字典）：「We operate regionally optimized routes across Asia and maintain direct peering at major internet exchange points, including Hong Kong (HKIX), Malaysia (MYIX), Singapore (SGIX), and Japan (JPIX). By eliminating unnecessary multi-hop transit, we deliver shorter routing paths and lower latency—ensuring your mission-critical operations remain secure, seamless, and reliable at all times.」
+- 根目錄 `index.html` 與 `design-*/index.html`、`design-*/script.js` 同步；字典內舊的「…DDoS 緩解機制…」版本頁面未使用，未動。
+- 驗證：英文頁重新產生；`git diff --check` 通過；舊中英文已不在網站檔案。未截圖。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：主標語改為「Complete IT solutions, one move ahead.」（中英文同一句）
+
+- 依使用者要求，中文「透過創新推動企業發展」與英文「Driving business through innovation」都改為英文「Complete IT solutions, one move ahead.」，中文頁也顯示英文。
+- 首屏：A 副標 `<p>`；B h1 為「Complete IT solutions,<br>one move <em>ahead.</em>」（漸層強調移到 ahead.）；C claim 為「Complete IT solutions, <span>one move ahead</span>.」（青綠底強調）；D h1 兩行 l1「Complete IT solutions,」、l2「one move ahead.」（品牌漸層）。E 首屏原本沒有此標語。
+- 中英文 `<title>`、og:title、A／B／C／E 的 og:image:alt（`MOOTECH｜…`／`MOOTECH | …`）同步；EN 字典改值並刪除已不再需要的「透過創新推動企業發展」條目；`tools/build-en.py` 英文標題與 `tools/split-designs.py` 的 og:image:alt 同步。
+- 未改：D 版分享宣傳圖 IMG169／170 圖上仍印著舊標語，D 的 og:image:alt（中文、`build-en.py` 的 `D_SOCIAL_EN_ALT`）描述的是這張圖，所以保留；`tools/build-d-tech-social.py` 也未改。要換宣傳圖需重新產生素材並更新清單／指紋。
+- 驗證：英文頁重新產生；`git diff --check`、兩支 Python 工具語法檢查通過。headless Chrome 1440 截圖目視 A、B、C、D 首屏換行與強調樣式正常；390 截圖因 headless 視窗最小寬度限制不準確，手機版未實測（D h1 無 nowrap，會自動換行）。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：B／D 首屏副標改寫（中英文）
+
+- 依使用者定稿，B `.lead` 與 D `.vd-sub` 首屏副標替換。中文：「面對快速變動的市場，IT 不只是後勤支援，更是企業領先的關鍵。我們以全局視角為您打造完整的科技基礎建設，協助企業預見趨勢、超前部署，在數位轉型浪潮中始終快人一步。」英文（EN 字典）：「In a rapidly evolving market, IT is more than support—it’s your competitive edge. With a holistic view of your technology ecosystem, we build complete, future-ready IT foundations that keep your business one move ahead of change.」
+- 根目錄 `index.html` 與 `design-b`／`design-d/index.html`、五份 `design-*/script.js` 字典同步。A／C／E 首屏沒有這段。
+- 驗證：英文頁重新產生；`git diff --check` 通過。headless Chrome 1440 截圖 B、D 英文首屏：副標 4 行／3 行，未擠壓按鈕或下方資訊列。中文首屏與手機未截圖（本機預覽語系偵測預設顯示英文）。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：解決方案區說明句改寫（中文）
+
+- B、D「解決方案」標題下說明由「六個服務模組，可獨立導入，也能組合成完整的企業 IT 基礎。」改為「提供六個服務模組，可獨立導入，也能組合成完整的 IT 基礎架構解決方案。」A／C／E 沒有這句。根目錄與 `design-b`／`design-d/index.html`、五份 `design-*/script.js` 字典鍵同步。
+- 英文維持原譯「Six service modules, used independently or together as your enterprise IT foundation.」，待使用者決定是否改寫。
+- 驗證：英文頁重新產生；`git diff --check` 通過。純文字替換，未截圖。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：「6 大」卡片移除「解決方案：」前綴（中英文）
+
+- A／D／E「關於我們」的「6 大」卡片說明，由「解決方案：直播串流、網路連線、國際線路、架構優化、系統整合、軟體開發」改為「直播串流、網路連線、國際線路、架構優化、系統整合、軟體開發」。使用者訊息寫「播串流」，判斷為漏字，採「直播串流」。
+- 英文改為「Live streaming, connectivity, international lines, optimisation, integration and software development」（去掉「Solutions:」，streaming 補為 live streaming 與中文對應）。根目錄與 `design-a`／`design-d`／`design-e/index.html`、五份 `design-*/script.js` 字典同步；字典內 DDoS 等舊版條目頁面未使用，未動。
+- 驗證：英文頁重新產生；`git diff --check` 通過。純文字替換，未截圖。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：「6 大」改為「六大解決方案」（中英文）
+
+- A／D／E「關於我們」卡片大字由「6 大」改為「六大解決方案」；EN 字典 `"6 大": "6 core"` 改為 `"六大解決方案": "Six core solutions"`。D 首屏統計列的「6 大方案／6 core solutions」不在本次範圍，未動。根目錄與 `design-a`／`design-d`／`design-e/index.html`、五份 `design-*/script.js` 同步。
+- 驗證：英文頁重新產生；`git diff --check` 通過。headless Chrome 1440 英文頁截圖 A、D：「Six core solutions」單行、卡片未變形。E、中文頁與手機未截圖。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：願景區去掉「HR」字樣
+
+- A–E 願景區 kicker「HR VISION · INNOVATION」改為「VISION · INNOVATION」，英文標題「MOOTECH HR Vision」改為「MOOTECH Vision」；同一字串也出現在 Let’s Go 按鈕英文「Explore MOOTECH HR Vision」，一併成為「Explore MOOTECH Vision」。根目錄與 `design-*/index.html`、`design-*/script.js` 同步。
+- 驗證：英文頁重新產生；`git diff --check` 通過；網站檔案已無「HR Vision／HR VISION」。純文字替換，未截圖。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：D 首屏「6 大方案」改為「六大解決方案」
+
+- D 首屏服務標籤列下方統計由「6 大方案」改為「六大解決方案」，英文 data-en 由「6 core solutions」改為「Six core solutions」，與「關於我們」卡片一致。根目錄 `index.html` 與 `design-d/index.html` 同步。
+- 驗證：英文頁重新產生；`git diff --check` 通過。headless 截圖時此列仍在進場動畫中未顯示，未目視確認（16px 單行短字，影響低）。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：願景宣言改寫（中英文）
+
+- A–E 願景宣言依使用者定稿替換。中文：「MOOTECH 始終相信，卓越的網路服務源自於優秀的團隊。我們致力於為亞太企業打造低延遲、零中斷的數位連線體驗，並為渴望突破的你，提供一個橫跨新加坡與台灣的國際級舞台，讓每一次的技術創新與專案落地，都成為推動產業前進的關鍵力量。」英文（data-en）：「At MOOTECH, we firmly believe that exceptional network services stem from an extraordinary team. Dedicated to delivering low-latency, uninterrupted digital connectivity for enterprises across the Asia-Pacific region, we offer a cross-border stage spanning Singapore and Taiwan for ambitious talents—empowering you to turn every technological innovation and project delivery into a driving force for the industry.」根目錄與 `design-*/index.html` 同步。
+- 驗證：英文頁重新產生；`git diff --check` 通過。headless Chrome 1440 截圖 D 英文：宣言卡片 5 行，排版正常。其他版、中文與手機未截圖。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：團隊文化介紹改寫（中英文）
+
+- A–E「團隊文化」介紹段落依使用者定稿替換（原「我們是一群由 7 年級與 8 年級工程師組成的團隊…」）。中文：「我們擁有一支充滿活力且務實的專業團隊，擅長以創新思維解決並維護複雜的 IT 基礎設施。在創新、靈活且包容的氛圍下，每一天都充滿挑戰與腦力激盪，持續進化與技術精進更是深植於團隊 DNA 的核心精神。無論你是工程師、專案管理或維運人才，都能在這裡掌握最前沿的科技脈動、盡情發揮潛能，並透過跨領域協作參與亞太骨幹網路與大型串流專案，展現無可替代的影響力。」英文（data-en）為使用者提供的對應段落（We are a dynamic, pragmatic team of professionals…cross-functional teamwork.）。根目錄與 `design-*/index.html` 同步。
+- 驗證：英文頁重新產生；`git diff --check` 通過；舊中英文已不在網站檔案。純文字替換，未截圖（段落位於滿版卡片內，無寬度限制）。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：頁尾公司名稱改為「Mootech Pte. Ltd.」
+
+- A–E 頁尾「Mootech 私人有限公司」改為「Mootech Pte. Ltd.」（中文頁也顯示英文公司名）。EN 字典兩條合併字串的鍵同步改名；`"Mootech 私人有限公司": "Mootech Pte. Ltd."` 改名後成為自我對應，已刪除。根目錄與 `design-*/index.html`、`design-*/script.js` 同步。
+- 驗證：英文頁重新產生；`git diff --check` 通過；網站檔案已無「私人有限公司」。純文字替換，未截圖。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
+
+### 2026-11-27：聯絡區信箱改為 mailto 連結
+
+- A–E 聯絡區「電子郵件／EMAIL／Email」下的 contact@mootech.asia 包成 `<a href="mailto:contact@mootech.asia">`，點擊開啟訪客的郵件程式。未加新樣式，沿用各版聯絡區既有連結樣式（與 LinkedIn／查看職缺相同：A 底線、B 青藍、C 青綠底線、D 青藍、E 依版型）。根目錄與 `design-*/index.html` 同步。
+- 驗證：英文頁重新產生；`git diff --check` 通過。headless Chrome 1440 截圖 A、D 英文聯絡區，信箱已呈現連結樣式且與同欄其他連結一致。未實測點擊後開啟郵件程式（依訪客裝置設定）。
+- 分支：`claude/split-designs-v2`，已 commit（2026-11-27 文案與版面調整一併提交），未推送，正式站未變更。
